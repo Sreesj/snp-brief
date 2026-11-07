@@ -452,6 +452,246 @@
           "fda_recognized_database": ""
         }
       }
+    },
+    "submissions": {
+      "13310": [
+        {
+          "accession": "SCV000967587",
+          "description": "risk factor",
+          "review_status": "criteria provided, single submitter",
+          "traits": [
+            "Venous thromboembolism"
+          ]
+        },
+        {
+          "accession": "SCV001368932",
+          "description": "Uncertain significance",
+          "review_status": "flagged submission",
+          "traits": []
+        },
+        {
+          "accession": "SCV003844696",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        },
+        {
+          "accession": "SCV005090891",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": [
+            "not provided"
+          ]
+        },
+        {
+          "accession": "SCV000677907",
+          "description": "Pathogenic",
+          "review_status": "no assertion criteria provided",
+          "traits": []
+        },
+        {
+          "accession": "SCV000034485",
+          "description": "Pathogenic",
+          "review_status": "no assertion criteria provided",
+          "traits": [
+            "THROMBOPHILIA DUE TO THROMBIN DEFECT"
+          ]
+        },
+        {
+          "accession": "SCV000034486",
+          "description": "risk factor",
+          "review_status": "no assertion criteria provided",
+          "traits": [
+            "STROKE, ISCHEMIC, SUSCEPTIBILITY TO"
+          ]
+        },
+        {
+          "accession": "SCV000044018",
+          "description": "risk factor",
+          "review_status": "no assertion criteria provided",
+          "traits": [
+            "PREGNANCY LOSS, RECURRENT, SUSCEPTIBILITY TO, 2"
+          ]
+        },
+        {
+          "accession": "SCV001138282",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        },
+        {
+          "accession": "SCV001142420",
+          "description": "risk factor",
+          "review_status": "no assertion criteria provided",
+          "traits": [
+            "Hereditary factor II deficiency disease"
+          ]
+        },
+        {
+          "accession": "SCV001262797",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": [
+            "Not provided"
+          ]
+        },
+        {
+          "accession": "SCV003806787",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        },
+        {
+          "accession": "SCV004040661",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        },
+        {
+          "accession": "SCV001251846",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        },
+        {
+          "accession": "SCV005420901",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": [
+            "Thrombophilia due to thrombin defect"
+          ]
+        },
+        {
+          "accession": "SCV005679007",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        },
+        {
+          "accession": "SCV006555160",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        },
+        {
+          "accession": "SCV003921890",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        },
+        {
+          "accession": "SCV000262466",
+          "description": "Pathogenic, low penetrance",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        },
+        {
+          "accession": "SCV001737608",
+          "description": "risk factor",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        },
+        {
+          "accession": "SCV002500854",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        },
+        {
+          "accession": "SCV002058094",
+          "description": "not provided",
+          "review_status": "no classification provided",
+          "traits": []
+        },
+        {
+          "accession": "SCV002764637",
+          "description": "Established risk allele",
+          "review_status": "no assertion criteria provided",
+          "traits": [
+            "Thrombophilia caused by F2 prothrombin deficiency"
+          ]
+        },
+        {
+          "accession": "SCV001552413",
+          "description": "Pathogenic",
+          "review_status": "no assertion criteria provided",
+          "traits": []
+        },
+        {
+          "accession": "SCV001822471",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": [
+            "Not Provided"
+          ]
+        },
+        {
+          "accession": "SCV005197847",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": [
+            "not provided"
+          ]
+        },
+        {
+          "accession": "SCV005328465",
+          "description": "Likely pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": [
+            "not provided"
+          ]
+        },
+        {
+          "accession": "SCV006109805",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": [
+            "not provided"
+          ]
+        },
+        {
+          "accession": "SCV007223184",
+          "description": "Established risk allele",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        },
+        {
+          "accession": "SCV007294372",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        },
+        {
+          "accession": "SCV007580933",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        },
+        {
+          "accession": "SCV006583511",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        },
+        {
+          "accession": "SCV001248265",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        },
+        {
+          "accession": "SCV007654024",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        },
+        {
+          "accession": "SCV008128765",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        }
+      ]
     }
   }
 }

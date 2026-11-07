@@ -211,6 +211,50 @@
           "fda_recognized_database": ""
         }
       }
+    },
+    "submissions": {
+      "18312": [
+        {
+          "accession": "SCV000040272",
+          "description": "Benign",
+          "review_status": "no assertion criteria provided",
+          "traits": [
+            "ACTININ, ALPHA-3 POLYMORPHISM"
+          ]
+        },
+        {
+          "accession": "SCV000040273",
+          "description": "Affects",
+          "review_status": "no assertion criteria provided",
+          "traits": [
+            "ACTN3 DEFICIENCY"
+          ]
+        },
+        {
+          "accession": "SCV000040274",
+          "description": "Pathogenic",
+          "review_status": "no assertion criteria provided",
+          "traits": [
+            "SPRINTING PERFORMANCE"
+          ]
+        },
+        {
+          "accession": "SCV002774881",
+          "description": "Pathogenic",
+          "review_status": "no assertion criteria provided",
+          "traits": [
+            "INCREASED COLD TOLERANCE"
+          ]
+        },
+        {
+          "accession": "SCV006106436",
+          "description": "Benign",
+          "review_status": "criteria provided, single submitter",
+          "traits": [
+            "not specified"
+          ]
+        }
+      ]
     }
   }
 }

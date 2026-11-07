@@ -1060,6 +1060,186 @@
           "fda_recognized_database": ""
         }
       }
+    },
+    "submissions": {
+      "3520": [
+        {
+          "accession": "SCV001423141",
+          "description": "Uncertain significance",
+          "review_status": "no assertion criteria provided",
+          "traits": [
+            "Homocystinuria due to methylene tetrahydrofolate reductase deficiency"
+          ]
+        },
+        {
+          "accession": "SCV001366606",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        },
+        {
+          "accession": "SCV002031239",
+          "description": "drug response",
+          "review_status": "reviewed by expert panel",
+          "traits": [
+            "methotrexate response - Toxicity"
+          ]
+        },
+        {
+          "accession": "SCV001463167",
+          "description": "Benign",
+          "review_status": "no assertion criteria provided",
+          "traits": [
+            "Homocystinuria due to MTHFR deficiency"
+          ]
+        },
+        {
+          "accession": "SCV002538647",
+          "description": "Likely benign",
+          "review_status": "no assertion criteria provided",
+          "traits": [
+            "Neural tube defects, folate-sensitive"
+          ]
+        },
+        {
+          "accession": "SCV000023860",
+          "description": "Benign",
+          "review_status": "no assertion criteria provided",
+          "traits": [
+            "MTHFR THERMOLABILE POLYMORPHISM"
+          ]
+        },
+        {
+          "accession": "SCV001194043",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        },
+        {
+          "accession": "SCV007601567",
+          "description": "Likely risk allele",
+          "review_status": "no assertion criteria provided",
+          "traits": []
+        },
+        {
+          "accession": "SCV000187678",
+          "description": "Uncertain significance",
+          "review_status": "no assertion criteria provided",
+          "traits": [
+            "Gastrointestinal Stromal Tumors"
+          ]
+        },
+        {
+          "accession": "SCV000106043",
+          "description": "Pathogenic",
+          "review_status": "no assertion criteria provided",
+          "traits": []
+        },
+        {
+          "accession": "SCV000519504",
+          "description": "Benign",
+          "review_status": "criteria provided, single submitter",
+          "traits": [
+            "not specified"
+          ]
+        },
+        {
+          "accession": "SCV000891532",
+          "description": "Uncertain significance",
+          "review_status": "no assertion criteria provided",
+          "traits": []
+        },
+        {
+          "accession": "SCV001135171",
+          "description": "Likely benign",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        },
+        {
+          "accession": "SCV001549379",
+          "description": "Benign",
+          "review_status": "no assertion criteria provided",
+          "traits": [
+            "not specified"
+          ]
+        },
+        {
+          "accession": "SCV001917884",
+          "description": "Benign",
+          "review_status": "no assertion criteria provided",
+          "traits": [
+            "not specified"
+          ]
+        },
+        {
+          "accession": "SCV001930296",
+          "description": "Benign",
+          "review_status": "no assertion criteria provided",
+          "traits": [
+            "not specified"
+          ]
+        },
+        {
+          "accession": "SCV000884146",
+          "description": "Association",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        },
+        {
+          "accession": "SCV000203040",
+          "description": "other",
+          "review_status": "criteria provided, single submitter",
+          "traits": [
+            "not provided"
+          ]
+        },
+        {
+          "accession": "SCV002506425",
+          "description": "Uncertain significance",
+          "review_status": "criteria provided, single submitter",
+          "traits": [
+            "see cases"
+          ]
+        },
+        {
+          "accession": "SCV001733273",
+          "description": "Benign",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        },
+        {
+          "accession": "SCV007593630",
+          "description": "Likely Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        },
+        {
+          "accession": "SCV005904943",
+          "description": "Uncertain significance",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        },
+        {
+          "accession": "SCV001147149",
+          "description": "Uncertain significance",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        },
+        {
+          "accession": "SCV007918130",
+          "description": "Benign",
+          "review_status": "criteria provided, single submitter",
+          "traits": [
+            "Not specified"
+          ]
+        },
+        {
+          "accession": "SCV008100467",
+          "description": "Benign",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        }
+      ]
     }
   }
 }
