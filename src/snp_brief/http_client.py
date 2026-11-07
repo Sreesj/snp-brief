@@ -23,6 +23,16 @@ def _pace_ncbi(url: str) -> None:
     _last_ncbi = time.monotonic()
 
 
+def request_text(
+    url: str,
+    *,
+    params: dict[str, str] | None = None,
+    payload: dict | None = None,
+    timeout: float = 60,
+) -> str:
+    return _request(url, params=params, payload=payload, timeout=timeout, decode_json=False)
+
+
 def request_json(
     url: str,
     *,
@@ -30,6 +40,17 @@ def request_json(
     payload: dict | None = None,
     timeout: float = 60,
 ) -> dict:
+    return _request(url, params=params, payload=payload, timeout=timeout, decode_json=True)
+
+
+def _request(
+    url: str,
+    *,
+    params: dict[str, str] | None,
+    payload: dict | None,
+    timeout: float,
+    decode_json: bool,
+):
     if params:
         joiner = "&" if "?" in url else "?"
         url = f"{url}{joiner}{urllib.parse.urlencode(params)}"
@@ -44,7 +65,10 @@ def request_json(
         req = urllib.request.Request(url, data=data, headers=headers)
         try:
             with urllib.request.urlopen(req, timeout=timeout) as resp:
-                return json.loads(resp.read().decode())
+                text = resp.read().decode()
+                if not decode_json:
+                    return text
+                return json.loads(text)
         except urllib.error.HTTPError as exc:
             body = exc.read().decode(errors="replace")
             last_error = exc

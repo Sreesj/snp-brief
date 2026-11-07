@@ -15,6 +15,7 @@ from snp_brief.models import (
     Paper,
     UniProtHit,
     empty_significance,
+    interpretation_label,
 )
 from snp_brief.sources.gnomad import frequency_phrase
 
@@ -278,6 +279,11 @@ def _frequency(view: AlleleView, prefix: str) -> str:
 
 
 def _disease(view: AlleleView, *, clinvar_retrieved: bool, prefix: str) -> str:
+    # Disagreeing submissions replace the aggregate. A rollup such as
+    # "drug response" or "Conflicting classifications" is not a second call.
+    submitted = _submitted_conflict(view.records)
+    if submitted:
+        return f"{prefix}Disease relevance: unresolved. {submitted}."
     statements = _disease_statements(view.records)
     if not statements:
         if clinvar_retrieved:
@@ -304,6 +310,44 @@ def _disease(view: AlleleView, *, clinvar_retrieved: bool, prefix: str) -> str:
                 cites.append(cite)
     trait_text = _trait_text(traits)
     return f"{prefix}Disease relevance: {description}{trait_text} ({'; '.join(cites)})."
+
+
+def _submitted_conflict(records: list[ClinVarRecord]) -> str | None:
+    """Distinct submission interpretations when those calls disagree.
+
+    None when no submission is stored or every stored interpretation is the same
+    call. Review status can differ without making the call itself a conflict;
+    the aggregate citation is kept in that case.
+    """
+    grouped: dict[tuple[str, str], dict] = {}
+    order: list[tuple[str, str]] = []
+    labels: set[str] = set()
+    for record in records:
+        for submission in record.submissions:
+            for part in _split_description(submission.description):
+                label = interpretation_label(part)
+                if label is None:
+                    continue
+                labels.add(label)
+                review_key = " ".join(submission.review_status.lower().split())
+                key = (label, review_key)
+                if key not in grouped:
+                    grouped[key] = {"part": part, "record": record, "classification": submission, "traits": []}
+                    order.append(key)
+                bucket = grouped[key]
+                for trait in _kept_traits(submission.traits):
+                    if trait not in bucket["traits"]:
+                        bucket["traits"].append(trait)
+    if len(labels) <= 1:
+        return None
+    chunks: list[str] = []
+    for key in order:
+        bucket = grouped[key]
+        piece = f"{bucket['part']} ({_cite_classification(bucket['record'], bucket['classification'])})"
+        piece += _trait_text(bucket["traits"])
+        if piece not in chunks:
+            chunks.append(piece)
+    return "; ".join(chunks)
 
 
 def _unresolved_disease(records: list[ClinVarRecord]) -> str:
@@ -387,7 +431,7 @@ def _cite(record: ClinVarRecord) -> str:
 
 
 def _cite_classification(record: ClinVarRecord, classification: Classification) -> str:
-    cite = f"ClinVar {record.accession}"
+    cite = f"ClinVar {classification.accession or record.accession}"
     if classification.review_status:
         cite += f", {classification.review_status}"
     return cite

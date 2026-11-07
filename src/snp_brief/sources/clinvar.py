@@ -7,14 +7,16 @@ multi-variant haplotype (an HGVS allele set) is not this SNP and is dropped.
 from __future__ import annotations
 
 import re
+import xml.etree.ElementTree as ET
 from datetime import datetime, timezone
 
-from snp_brief.http_client import request_json
+from snp_brief.http_client import request_json, request_text
 from snp_brief.models import Classification, ClinVarRecord
 
 _TITLE_GENE = re.compile(r"\(([A-Za-z][A-Za-z0-9-]*)\):[cng]\.")
 _ESEARCH = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi"
 _ESUMMARY = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi"
+_EFETCH = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi"
 _SKIP_TRAITS = {"not provided", "not specified", "none", "see cases", ""}
 
 
@@ -58,11 +60,15 @@ def fetch_clinvar(rsid: str) -> dict:
                 "tool": "snp_brief",
             },
         )
+    submissions = fetch_submission_map(esummary, rsid) if esummary else {}
+    response = {"esearch": esearch, "esummary": esummary}
+    if submissions:
+        response["submissions"] = submissions
     return {
         "source": "clinvar",
         "retrieved": datetime.now(timezone.utc).replace(microsecond=0).isoformat(),
         "request": {"term": rsid},
-        "response": {"esearch": esearch, "esummary": esummary},
+        "response": response,
     }
 
 
@@ -70,7 +76,9 @@ def parse_clinvar(payload: dict | None, rsid: str) -> tuple[bool, list[ClinVarRe
     if not payload:
         return False, []
     numeric = rsid[2:]
-    esummary = (payload.get("response") or {}).get("esummary") or {}
+    response = payload.get("response") or {}
+    esummary = response.get("esummary") or {}
+    submission_map = response.get("submissions") or {}
     result = esummary.get("result") or {}
     records: list[ClinVarRecord] = []
     for uid in result.get("uids") or []:
@@ -96,9 +104,116 @@ def parse_clinvar(payload: dict | None, rsid: str) -> tuple[bool, list[ClinVarRe
                 cdna=cdna,
                 classifications=classifications,
                 no_change=no_change,
+                submissions=_classifications_from_submissions(submission_map.get(str(uid)) or []),
             )
         )
     return True, records
+
+
+def fetch_submission_map(esummary: dict | None, rsid: str) -> dict[str, list[dict]]:
+    """Submitted interpretations for each VCV that is this rsID.
+
+    esummary only carries ClinVar's aggregate call. The VCV XML lists each
+    current SCV. Haplotypes are not this SNP and are not fetched.
+    """
+    if not esummary:
+        return {}
+    numeric = rsid[2:] if rsid.lower().startswith("rs") else rsid
+    result = esummary.get("result") or {}
+    found: dict[str, list[dict]] = {}
+    for uid in result.get("uids") or []:
+        doc = result.get(str(uid))
+        if not isinstance(doc, dict):
+            continue
+        if numeric not in _dbsnp_ids(doc):
+            continue
+        title = (doc.get("title") or "").strip()
+        cdna = _cdna_change(_cdna(doc))
+        if _haplotype(title, cdna):
+            continue
+        accession = (doc.get("accession") or "").strip()
+        if not accession:
+            continue
+        xml_text = request_text(
+            _EFETCH,
+            params={
+                "db": "clinvar",
+                "rettype": "vcv",
+                "id": accession,
+                "tool": "snp_brief",
+            },
+            timeout=120,
+        )
+        found[str(uid)] = parse_submission_xml(xml_text)
+    return found
+
+
+def parse_submission_xml(xml_text: str) -> list[dict]:
+    """Current SCV germline interpretations. A removed submission is not a call."""
+    root = ET.fromstring(xml_text)
+    found: list[dict] = []
+    for assertion in root.iter("ClinicalAssertion"):
+        status = (assertion.findtext("RecordStatus") or "").strip().lower()
+        if status and status != "current":
+            continue
+        acc_el = assertion.find("ClinVarAccession")
+        accession = (acc_el.attrib.get("Accession") if acc_el is not None else "") or ""
+        accession = accession.strip()
+        description = (assertion.findtext("Classification/GermlineClassification") or "").strip()
+        review = (assertion.findtext("Classification/ReviewStatus") or "").strip()
+        if not accession or not description:
+            continue
+        found.append(
+            {
+                "accession": accession,
+                "description": description,
+                "review_status": review,
+                "traits": _assertion_traits(assertion),
+            }
+        )
+    return found
+
+
+def _assertion_traits(assertion: ET.Element) -> list[str]:
+    """Preferred condition on the submission itself, not an observed phenotype."""
+    names: list[str] = []
+    trait_set = assertion.find("TraitSet")
+    if trait_set is None:
+        return names
+    for trait in trait_set.findall("Trait"):
+        values = trait.findall("Name/ElementValue")
+        chosen = _trait_name(values, "Preferred") or _trait_name(values, "included")
+        if chosen and chosen not in names:
+            names.append(chosen)
+    return names
+
+
+def _trait_name(values: list[ET.Element], kind: str) -> str:
+    for value in values:
+        if value.attrib.get("Type") == kind and (value.text or "").strip():
+            return value.text.strip()
+    return ""
+
+
+def _classifications_from_submissions(items: list) -> list[Classification]:
+    found: list[Classification] = []
+    if not isinstance(items, list):
+        return found
+    for item in items:
+        if not isinstance(item, dict):
+            continue
+        description = str(item.get("description") or "").strip()
+        review = str(item.get("review_status") or "").strip()
+        accession = str(item.get("accession") or "").strip()
+        if not description or not accession:
+            continue
+        traits: list[str] = []
+        for trait in item.get("traits") or []:
+            name = str(trait).strip()
+            if name and name not in traits:
+                traits.append(name)
+        found.append(Classification(description, review, traits, accession))
+    return found
 
 
 def _dbsnp_ids(doc: dict) -> set[str]:

@@ -336,6 +336,208 @@
           "fda_recognized_database": ""
         }
       }
+    },
+    "submissions": {
+      "1940": [
+        {
+          "accession": "SCV001138694",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        },
+        {
+          "accession": "SCV000680283",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        },
+        {
+          "accession": "SCV000742130",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        },
+        {
+          "accession": "SCV000236518",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": [
+            "Parkinson disease 8"
+          ]
+        },
+        {
+          "accession": "SCV001365523",
+          "description": "risk factor",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        },
+        {
+          "accession": "SCV001652801",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        },
+        {
+          "accession": "SCV002034786",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        },
+        {
+          "accession": "SCV000056154",
+          "description": "not provided",
+          "review_status": "no classification provided",
+          "traits": []
+        },
+        {
+          "accession": "SCV005045124",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        },
+        {
+          "accession": "SCV000893982",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        },
+        {
+          "accession": "SCV002556835",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        },
+        {
+          "accession": "SCV001522345",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        },
+        {
+          "accession": "SCV001808299",
+          "description": "Pathogenic",
+          "review_status": "no assertion criteria provided",
+          "traits": [
+            "not provided"
+          ]
+        },
+        {
+          "accession": "SCV000329408",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": [
+            "Not Provided"
+          ]
+        },
+        {
+          "accession": "SCV001964680",
+          "description": "Pathogenic",
+          "review_status": "no assertion criteria provided",
+          "traits": [
+            "not provided"
+          ]
+        },
+        {
+          "accession": "SCV001984701",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        },
+        {
+          "accession": "SCV002050743",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        },
+        {
+          "accession": "SCV004812567",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        },
+        {
+          "accession": "SCV005374405",
+          "description": "Likely pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        },
+        {
+          "accession": "SCV000842686",
+          "description": "pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": [
+            "not provided"
+          ]
+        },
+        {
+          "accession": "SCV001446474",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": [
+            "not provided"
+          ]
+        },
+        {
+          "accession": "SCV006058795",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        },
+        {
+          "accession": "SCV006278470",
+          "description": "Likely pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        },
+        {
+          "accession": "SCV000022175",
+          "description": "Pathogenic",
+          "review_status": "no assertion criteria provided",
+          "traits": [
+            "PARKINSON DISEASE 8, AUTOSOMAL DOMINANT"
+          ]
+        },
+        {
+          "accession": "SCV007097224",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        },
+        {
+          "accession": "SCV005414073",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": [
+            "Not provided"
+          ]
+        },
+        {
+          "accession": "SCV000640135",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        },
+        {
+          "accession": "SCV002521485",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        },
+        {
+          "accession": "SCV001250090",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        },
+        {
+          "accession": "SCV004112443",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": [
+            "LRRK2-related condition"
+          ]
+        }
+      ]
     }
   }
 }

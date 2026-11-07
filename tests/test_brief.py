@@ -6,6 +6,7 @@ import unittest
 from pathlib import Path
 
 from snp_brief.brief import assemble_brief
+from snp_brief.pipeline import build_brief
 from snp_brief.models import (
     CallSet,
     Classification,
@@ -16,7 +17,7 @@ from snp_brief.models import (
     PopCount,
     UniProtHit,
 )
-from snp_brief.sources.clinvar import parse_clinvar
+from snp_brief.sources.clinvar import parse_clinvar, parse_submission_xml
 from snp_brief.sources.dbsnp import parse_dbsnp
 from snp_brief.sources.gnomad import disagrees, frequency_phrase
 
@@ -51,8 +52,13 @@ def db(**kwargs) -> DbSnpRecord:
     return DbSnpRecord(**base)
 
 
-def classification(description: str, traits: list[str] | None = None, review: str = "criteria provided") -> Classification:
-    return Classification(description, review, traits or [])
+def classification(
+    description: str,
+    traits: list[str] | None = None,
+    review: str = "criteria provided",
+    accession: str = "",
+) -> Classification:
+    return Classification(description, review, traits or [], accession)
 
 
 def record(**kwargs) -> ClinVarRecord:
@@ -169,6 +175,85 @@ class SourceParserTests(unittest.TestCase):
         retrieved, records = parse_clinvar(payload, "rs10")
         self.assertTrue(retrieved)
         self.assertEqual([item.accession for item in records], ["VCVKEEP"])
+
+    def test_submission_xml_keeps_current_calls_and_drops_removed(self) -> None:
+        xml = """
+        <ClinVarResult-Set>
+          <VariationArchive Accession="VCV000000642">
+            <ClassifiedRecord>
+              <ClinicalAssertionList>
+                <ClinicalAssertion>
+                  <ClinVarAccession Accession="SCV000020824"/>
+                  <RecordStatus>current</RecordStatus>
+                  <Classification>
+                    <ReviewStatus>no assertion criteria provided</ReviewStatus>
+                    <GermlineClassification>Pathogenic</GermlineClassification>
+                  </Classification>
+                  <ObservedInList>
+                    <ObservedIn>
+                      <TraitSet>
+                        <Trait><Name><ElementValue Type="Preferred">Palpitations</ElementValue></Name></Trait>
+                      </TraitSet>
+                    </ObservedIn>
+                  </ObservedInList>
+                  <TraitSet>
+                    <Trait>
+                      <Name><ElementValue Type="Preferred">THROMBOPHILIA DUE TO FACTOR V LEIDEN</ElementValue></Name>
+                    </Trait>
+                  </TraitSet>
+                </ClinicalAssertion>
+                <ClinicalAssertion>
+                  <ClinVarAccession Accession="SCVREMOVED"/>
+                  <RecordStatus>removed</RecordStatus>
+                  <Classification>
+                    <ReviewStatus>criteria provided, single submitter</ReviewStatus>
+                    <GermlineClassification>Benign</GermlineClassification>
+                  </Classification>
+                </ClinicalAssertion>
+              </ClinicalAssertionList>
+            </ClassifiedRecord>
+          </VariationArchive>
+        </ClinVarResult-Set>
+        """
+        parsed = parse_submission_xml(xml)
+        self.assertEqual(
+            parsed,
+            [
+                {
+                    "accession": "SCV000020824",
+                    "description": "Pathogenic",
+                    "review_status": "no assertion criteria provided",
+                    "traits": ["THROMBOPHILIA DUE TO FACTOR V LEIDEN"],
+                }
+            ],
+        )
+
+    def test_parse_clinvar_attaches_submission_interpretations(self) -> None:
+        summary = _summary("VCV000000642", "6025", "NM_000130.5(F5):c.1601G>A", "c.1601G>A", "drug response", ["missense variant"])
+        payload = {
+            "response": {
+                "esummary": {"result": {"uids": ["642"], "642": summary}},
+                "submissions": {
+                    "642": [
+                        {
+                            "accession": "SCVPATH",
+                            "description": "Pathogenic",
+                            "review_status": "criteria provided, single submitter",
+                            "traits": ["Thrombophilia due to activated protein C resistance"],
+                        },
+                        {
+                            "accession": "SCVDRUG",
+                            "description": "drug response",
+                            "review_status": "reviewed by expert panel",
+                            "traits": ["hormonal contraceptives for systemic use response - Toxicity"],
+                        },
+                    ]
+                },
+            }
+        }
+        _, records = parse_clinvar(payload, "rs6025")
+        self.assertEqual([item.accession for item in records[0].submissions], ["SCVPATH", "SCVDRUG"])
+        self.assertEqual(records[0].classifications[0].description, "drug response")
 
 
 class ConflictTests(unittest.TestCase):
@@ -302,6 +387,76 @@ class ConflictTests(unittest.TestCase):
         self.assertIn("VCVPATH", text)
         self.assertIn("VCVBENIGN", text)
 
+    def test_agreeing_submissions_keep_the_aggregate_claim(self) -> None:
+        item = record(
+            accession="VCVBENIGN",
+            classifications=[classification("Benign", ["not provided"], review="reviewed by expert panel")],
+            submissions=[
+                classification("Benign", [], review="criteria provided, single submitter", accession="SCV1"),
+                classification("Benign", [], review="no assertion criteria provided", accession="SCV2"),
+                classification("not provided", [], review="no classification provided", accession="SCV3"),
+            ],
+        )
+        text = assemble_brief(db(), [item], [], [], None, clinvar_retrieved=True)
+        self.assertIn("Disease relevance: Benign (ClinVar VCVBENIGN, reviewed by expert panel).", text)
+        self.assertNotIn("Disease relevance: unresolved", text)
+        self.assertNotIn("SCV1", text)
+
+    def test_disagreeing_submissions_are_listed_and_unresolved(self) -> None:
+        item = record(
+            accession="VCV000000642",
+            classifications=[
+                classification(
+                    "drug response",
+                    ["hormonal contraceptives for systemic use response - Toxicity"],
+                    review="reviewed by expert panel",
+                )
+            ],
+            submissions=[
+                classification(
+                    "Pathogenic",
+                    ["Factor V deficiency"],
+                    review="criteria provided, single submitter",
+                    accession="SCVPATH1",
+                ),
+                classification(
+                    "Pathogenic",
+                    ["Thrombophilia due to activated protein C resistance"],
+                    review="criteria provided, single submitter",
+                    accession="SCVPATH2",
+                ),
+                classification(
+                    "Pathogenic",
+                    ["THROMBOPHILIA DUE TO FACTOR V LEIDEN"],
+                    review="no assertion criteria provided",
+                    accession="SCVOMIM",
+                ),
+                classification(
+                    "drug response",
+                    ["hormonal contraceptives for systemic use response - Toxicity"],
+                    review="reviewed by expert panel",
+                    accession="SCVDRUG",
+                ),
+                classification("not provided", [], review="no classification provided", accession="SCVEMPTY"),
+            ],
+        )
+        text = assemble_brief(db(), [item], [], [], None, clinvar_retrieved=True)
+        disease = text.split("Disease relevance:", 1)[1]
+        self.assertTrue(disease.startswith(" unresolved."))
+        self.assertIn(
+            "Pathogenic (ClinVar SCVPATH1, criteria provided, single submitter), conditions Factor V deficiency; Thrombophilia due to activated protein C resistance",
+            disease,
+        )
+        self.assertNotIn("SCVPATH2", disease)
+        self.assertIn("Pathogenic (ClinVar SCVOMIM, no assertion criteria provided), conditions THROMBOPHILIA DUE TO FACTOR V LEIDEN", disease)
+        self.assertIn(
+            "drug response (ClinVar SCVDRUG, reviewed by expert panel), conditions hormonal contraceptives for systemic use response - Toxicity",
+            disease,
+        )
+        self.assertNotIn("VCV000000642", disease)
+        self.assertNotIn("SCVEMPTY", disease)
+        self.assertNotIn("not provided", disease)
+
     def test_conflict_phrase_is_unresolved(self) -> None:
         records = [
             record(classifications=[classification("Conflicting classifications of pathogenicity", ["Condition A"])])
@@ -364,6 +519,25 @@ class ConflictTests(unittest.TestCase):
         self.assertIn("Coordinate: unresolved.", text)
         self.assertIn("chr1:100", text)
         self.assertIn("chr1:999", text)
+
+    def test_rs6025_disease_lists_each_disagreeing_interpretation(self) -> None:
+        text = build_brief("rs6025", cache_dir=ROOT / "cache", refresh=False, offline=True)
+        disease = text.split("Disease relevance:", 1)[1].split("Papers:", 1)[0]
+        self.assertTrue(disease.startswith(" unresolved."))
+        self.assertIn("Pathogenic", disease)
+        self.assertIn("thrombophilia", disease.lower())
+        self.assertIn("drug response", disease)
+        self.assertIn("risk factor", disease)
+        self.assertIn("Established risk allele", disease)
+        self.assertIn("Pathogenic, low penetrance", disease)
+        self.assertIn("Uncertain significance", disease)
+        self.assertIn("Benign", disease)
+        self.assertIn("reviewed by expert panel", disease)
+        self.assertIn("criteria provided, single submitter", disease)
+        self.assertIn("flagged submission", disease)
+        self.assertIn("SCV", disease)
+        self.assertNotIn("VCV000000642", disease)
+        self.assertNotIn("diagnos", disease.lower())
 
 
 def _summary(accession: str, dbsnp: str, title: str, cdna: str, significance: str, consequences: list[str]) -> dict:

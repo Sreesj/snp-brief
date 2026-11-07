@@ -24,6 +24,8 @@ class Classification:
     description: str
     review_status: str
     traits: list[str]
+    # Set for one submitted interpretation (an SCV). Empty on the VCV aggregate.
+    accession: str = ""
 
 
 @dataclass
@@ -35,6 +37,8 @@ class ClinVarRecord:
     cdna: str
     classifications: list[Classification]
     no_change: bool
+    # Submitted interpretations (SCVs). Empty when the cache only has the aggregate.
+    submissions: list[Classification] = field(default_factory=list)
 
     @property
     def has_significance(self) -> bool:
@@ -54,6 +58,14 @@ def empty_significance(text: str) -> bool:
         "no data",
         "no classification for the individual variant",
     }
+
+
+def interpretation_label(text: str) -> str | None:
+    """Folded clinical significance, or None when the text is not an interpretation."""
+    folded = " ".join(text.lower().split())
+    if empty_significance(folded):
+        return None
+    return folded
 
 
 @dataclass
