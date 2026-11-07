@@ -29,6 +29,21 @@ def assemble_brief(
     *,
     clinvar_retrieved: bool,
 ) -> str:
+    return " ".join(
+        brief_sentences(db, records, variants, papers, uniprot, clinvar_retrieved=clinvar_retrieved)
+    )
+
+
+def brief_sentences(
+    db: DbSnpRecord,
+    records: list[ClinVarRecord],
+    variants: list[GnomadVariant],
+    papers: list[Paper],
+    uniprot: UniProtHit | None,
+    *,
+    clinvar_retrieved: bool,
+) -> list[str]:
+    """The paragraph in order. A field statement starts with its field name, after any allele prefix."""
     sentences = [_identity(db, variants)]
     note = _no_change_note(records)
     if note:
@@ -74,7 +89,7 @@ def assemble_brief(
     paper_line = _papers(papers)
     if paper_line:
         sentences.append(paper_line)
-    return " ".join(sentence.strip() for sentence in sentences if sentence.strip())
+    return [sentence.strip() for sentence in sentences if sentence.strip()]
 
 
 def _used_records(records: list[ClinVarRecord]) -> list[ClinVarRecord]:

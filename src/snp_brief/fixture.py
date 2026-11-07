@@ -8,6 +8,10 @@ from pathlib import Path
 _RSID = re.compile(r"^rs[1-9][0-9]*$")
 
 
+def is_rsid(text: str) -> bool:
+    return bool(_RSID.fullmatch(text))
+
+
 def read_rsids(path: Path) -> list[str]:
     if not path.is_file():
         raise FileNotFoundError(f"missing rsID list: {path}")

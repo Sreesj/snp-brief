@@ -26,6 +26,14 @@ uv run snp-brief --input fixture/held-out.txt --save briefs/held-out.txt
 
 `fixture/held-out.txt` is one rsID that is not in the demo list. It is run once and saved. It is not used to tune the brief.
 
+## Page
+
+```bash
+uv run snp-brief-demo
+```
+
+Serves a local page. Offline by default: it reads `cache/` and makes no network call. The sidebar starts filled with `fixture/snps.txt`. **Run briefs** builds one row per SNP, with function, frequency, and disease relevance marked sourced, unresolved, or blank. Select a row to open that paragraph, the gnomAD population counts when frequency is unresolved, the Europe PMC papers, and which sources answered. **Live fetching** calls the sources and writes a separate temp cache, leaving `cache/` unchanged.
+
 ## Sources, in order
 
 1. **dbSNP** (`src/snp_brief/sources/dbsnp.py`) turns the id into an rsID, a genomic coordinate, and the alternate alleles.
