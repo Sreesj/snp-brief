@@ -141,33 +141,65 @@ def parse_gnomad(payload: dict | None) -> tuple[bool, list[GnomadVariant]]:
 
 
 def frequency_phrase(callsets: list[CallSet]) -> tuple[bool, str]:
-    """Return whether the frequency field is unresolved, and the sourced text."""
+    """Return whether the frequency field is unresolved, and the sourced text.
+
+    Unresolved means two gnomAD call sets (exomes and genomes) report frequencies
+    that disagree. A spread between ancestry groups is not a disagreement between
+    sources: it is the finding, so it is reported as how frequency varies by
+    ancestry and the field stays resolved.
+    """
     usable = [call for call in callsets if _freq(call) is not None]
     if not usable:
         return False, "not reported"
     pieces: list[str] = []
+    unresolved = False
     if len(usable) >= 2:
         first, second = usable[0], usable[1]
         left, right = _freq(first), _freq(second)
         if left is not None and right is not None and disagrees(left, right):
             pieces.extend((_overall(first), _overall(second)))
+            unresolved = True
+    spread = population_spread(usable)
+    if not pieces:
+        chosen = spread[0] if spread else max(
+            usable, key=lambda call: (call.an or 0, len(_eligible(call.populations)))
+        )
+        pieces.append(_overall(chosen))
+    text = "; ".join(pieces)
+    if spread:
+        pop_set, low, high = spread
+        text += (
+            f"; varies by ancestry in {pop_set.name}: highest in {ANCESTRY[high.id]} "
+            f"{high.ac}/{high.an} alleles ({percent(high.ac, high.an)}), lowest in {ANCESTRY[low.id]} "
+            f"{low.ac}/{low.an} alleles ({percent(low.ac, low.an)})"
+        )
+    return unresolved, text
+
+
+def population_spread(callsets: list[CallSet]) -> tuple[CallSet, PopCount, PopCount] | None:
+    """The call set whose ancestry extremes disagree most, with its lowest and highest group."""
+    usable = [call for call in callsets if _freq(call) is not None]
     pop_set = _population_callset(usable)
-    extremes = _extremes(pop_set.populations) if pop_set else None
-    if extremes and pop_set is not None:
-        low, high = extremes
-        overall = _overall(pop_set)
-        if overall not in pieces:
-            pieces.append(overall)
-        pieces.append(f"{pop_set.name} {ANCESTRY[low.id]} {low.ac}/{low.an} alleles")
-        pieces.append(f"{pop_set.name} {ANCESTRY[high.id]} {high.ac}/{high.an} alleles")
-    if pieces:
-        unique: list[str] = []
-        for piece in pieces:
-            if piece not in unique:
-                unique.append(piece)
-        return True, "; ".join(unique)
-    chosen = max(usable, key=lambda call: (call.an or 0, len(_eligible(call.populations))))
-    return False, _overall(chosen)
+    if pop_set is None:
+        return None
+    pair = _extremes(pop_set.populations)
+    if pair is None:
+        return None
+    return pop_set, pair[0], pair[1]
+
+
+def percent(ac: int, an: int) -> str:
+    """ac/an as a percentage, computed from the returned counts. Not a new measurement."""
+    if not an:
+        return "n/a"
+    value = 100.0 * ac / an
+    if value == 0:
+        return "0%"
+    if value >= 10:
+        return f"{value:.0f}%"
+    if value >= 1:
+        return f"{value:.1f}%"
+    return f"{float(f'{value:.2g}'):g}%"
 
 
 def disagrees(low: float, high: float) -> bool:

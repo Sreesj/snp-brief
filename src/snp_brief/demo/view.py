@@ -16,7 +16,7 @@ from typing import NamedTuple
 from snp_brief.fixture import is_rsid
 from snp_brief.models import CallSet
 from snp_brief.pipeline import Gathered, SourceCall
-from snp_brief.sources.gnomad import ANCESTRY, MIN_AN, frequency_phrase
+from snp_brief.sources.gnomad import ANCESTRY, MIN_AN, frequency_phrase, population_spread
 
 FIELDS = ("Function", "Frequency", "Disease relevance")
 SOURCED = "sourced"
@@ -129,13 +129,18 @@ def summary_row(item: Gathered) -> dict[str, str]:
     return row
 
 
-def unresolved_populations(item: Gathered) -> list[PopulationTable]:
-    """One table per allele whose frequency the brief marks unresolved."""
+def population_tables(item: Gathered) -> list[PopulationTable]:
+    """One table per allele whose frequency varies by ancestry or is unresolved between call sets."""
     tables: list[PopulationTable] = []
     for variant in item.variants:
-        unresolved, phrase = frequency_phrase(variant.callsets)
-        if not unresolved:
+        unresolved, _phrase = frequency_phrase(variant.callsets)
+        spread = population_spread(variant.callsets)
+        if not unresolved and spread is None:
             continue
+        named_pops: set[tuple[str, str]] = set()
+        if spread is not None:
+            pop_set, low, high = spread
+            named_pops = {(ANCESTRY[low.id], pop_set.name), (ANCESTRY[high.id], pop_set.name)}
         callsets = [call for call in variant.callsets if any(pop.id in ANCESTRY for pop in call.populations)]
         table = PopulationTable(
             allele=f"{variant.ref}>{variant.alt}",
@@ -151,7 +156,7 @@ def unresolved_populations(item: Gathered) -> list[PopulationTable]:
                     row[call.name] = ""
                     continue
                 row[call.name] = f"{pop.ac}/{pop.an}"
-                if f"{call.name} {label} {pop.ac}/{pop.an} alleles" in phrase:
+                if (label, call.name) in named_pops:
                     table.named.add((label, call.name))
                 if pop.an < MIN_AN:
                     table.small.add((label, call.name))
@@ -159,6 +164,10 @@ def unresolved_populations(item: Gathered) -> list[PopulationTable]:
                 table.rows.append(row)
         tables.append(table)
     return tables
+
+
+# Older name kept for callers written before ancestry spread stopped meaning "unresolved".
+unresolved_populations = population_tables
 
 
 def paper_links(item: Gathered) -> list[PaperLink]:
@@ -193,9 +202,11 @@ def source_rows(item: Gathered) -> list[dict[str, str]]:
     return rows
 
 
-def briefs_text(items: list[Gathered]) -> str:
-    """All briefs as one text, the same as `uv run snp-brief` prints them."""
-    return "\n\n".join(item.text for item in items) + "\n"
+def briefs_text(items: list[Gathered], summary: str = "template") -> str:
+    """All briefs as one text, the same as `uv run snp-brief --summary <mode>` prints them."""
+    from snp_brief.cli import format_item
+
+    return "\n\n".join(format_item(item, summary) for item in items) + "\n"
 
 
 def _status(name: str, claim: str) -> str:

@@ -281,9 +281,11 @@ class ConflictTests(unittest.TestCase):
                 )
             ]
         )
-        self.assertTrue(unresolved)
-        self.assertIn("African/African American 1/1000 alleles", text)
-        self.assertIn("European (non-Finnish) 200/1000 alleles", text)
+        # Ancestry spread is the finding, not a disagreement between sources.
+        self.assertFalse(unresolved)
+        self.assertIn("varies by ancestry", text)
+        self.assertIn("highest in European (non-Finnish) 200/1000 alleles (20%)", text)
+        self.assertIn("lowest in African/African American 1/1000 alleles (0.1%)", text)
         self.assertNotIn("0/40", text)
 
     def test_close_populations_stay_one_claim(self) -> None:
@@ -340,10 +342,22 @@ class ConflictTests(unittest.TestCase):
                 ),
             ]
         )
+        self.assertFalse(unresolved)
+        self.assertIn("varies by ancestry in gnomAD v4 genomes", text)
+        self.assertIn("African/African American 1/1000 alleles", text)
+        self.assertIn("European (non-Finnish) 400/1000 alleles", text)
+        self.assertNotIn("20/2000", text)
+
+    def test_call_sets_that_disagree_are_unresolved(self) -> None:
+        unresolved, text = frequency_phrase(
+            [
+                CallSet("gnomAD v4 exomes", ac=16, an=10000, af=0.0016, populations=[]),
+                CallSet("gnomAD v4 genomes", ac=127, an=10000, af=0.0127, populations=[]),
+            ]
+        )
         self.assertTrue(unresolved)
-        self.assertIn("gnomAD v4 genomes African/African American 1/1000 alleles", text)
-        self.assertIn("gnomAD v4 genomes European (non-Finnish) 400/1000 alleles", text)
-        self.assertNotIn("exomes African/African American", text)
+        self.assertIn("exomes allele frequency 0.0016", text)
+        self.assertIn("genomes allele frequency 0.0127", text)
 
     def test_different_alleles_are_not_one_conflict(self) -> None:
         parsed = db(
@@ -402,7 +416,7 @@ class ConflictTests(unittest.TestCase):
         self.assertNotIn("Disease relevance: unresolved", text)
         self.assertNotIn("SCV1", text)
 
-    def test_disagreeing_submissions_are_listed_and_unresolved(self) -> None:
+    def test_best_reviewed_call_wins_and_other_assertions_are_not_conflicts(self) -> None:
         item = record(
             accession="VCV000000642",
             classifications=[
@@ -426,11 +440,12 @@ class ConflictTests(unittest.TestCase):
                     accession="SCVPATH2",
                 ),
                 classification(
-                    "Pathogenic",
-                    ["THROMBOPHILIA DUE TO FACTOR V LEIDEN"],
+                    "Benign",
+                    [],
                     review="no assertion criteria provided",
-                    accession="SCVOMIM",
+                    accession="SCVLOW",
                 ),
+                classification("Uncertain significance", [], review="flagged submission", accession="SCVFLAG"),
                 classification(
                     "drug response",
                     ["hormonal contraceptives for systemic use response - Toxicity"],
@@ -442,20 +457,46 @@ class ConflictTests(unittest.TestCase):
         )
         text = assemble_brief(db(), [item], [], [], None, clinvar_retrieved=True)
         disease = text.split("Disease relevance:", 1)[1]
-        self.assertTrue(disease.startswith(" unresolved."))
-        self.assertIn(
-            "Pathogenic (ClinVar SCVPATH1, criteria provided, single submitter), conditions Factor V deficiency; Thrombophilia due to activated protein C resistance",
-            disease,
-        )
-        self.assertNotIn("SCVPATH2", disease)
-        self.assertIn("Pathogenic (ClinVar SCVOMIM, no assertion criteria provided), conditions THROMBOPHILIA DUE TO FACTOR V LEIDEN", disease)
-        self.assertIn(
-            "drug response (ClinVar SCVDRUG, reviewed by expert panel), conditions hormonal contraceptives for systemic use response - Toxicity",
-            disease,
-        )
-        self.assertNotIn("VCV000000642", disease)
+        self.assertTrue(disease.startswith(" Pathogenic, conditions Factor V deficiency"))
+        self.assertNotIn("unresolved", disease)
+        self.assertIn("SCVPATH1", disease)
+        self.assertIn("all 2 submissions at the highest review level present", disease)
+        self.assertIn("Other ClinVar assertions: drug response", disease)
+        self.assertIn("SCVDRUG, reviewed by expert panel", disease)
+        self.assertIn("Lower-review submissions that disagree: Benign (ClinVar SCVLOW, no assertion criteria provided)", disease)
+        self.assertIn("1 flagged ClinVar submission was excluded", disease)
+        self.assertNotIn("SCVFLAG", disease)
         self.assertNotIn("SCVEMPTY", disease)
-        self.assertNotIn("not provided", disease)
+
+    def test_top_tier_disagreement_is_unresolved_with_tallies(self) -> None:
+        item = record(
+            classifications=[classification("Conflicting classifications of pathogenicity")],
+            submissions=[
+                classification("Benign", [], review="criteria provided, single submitter", accession="SCVB1"),
+                classification("Likely benign", [], review="criteria provided, single submitter", accession="SCVB2"),
+                classification("Pathogenic", [], review="criteria provided, single submitter", accession="SCVP1"),
+                classification("Pathogenic", [], review="no assertion criteria provided", accession="SCVP0"),
+            ],
+        )
+        text = assemble_brief(db(), [item], [], [], None, clinvar_retrieved=True)
+        disease = text.split("Disease relevance:", 1)[1]
+        self.assertTrue(disease.startswith(" unresolved."))
+        self.assertIn("Benign/Likely benign (2 submissions, e.g. ClinVar SCVB1, SCVB2)", disease)
+        self.assertIn("Pathogenic/Likely pathogenic (1 submissions, e.g. ClinVar SCVP1)", disease)
+        self.assertNotIn("SCVP0", disease)
+
+    def test_expert_panel_aggregate_is_the_headline(self) -> None:
+        item = record(
+            accession="VCVEP",
+            classifications=[classification("Pathogenic", ["Condition"], review="reviewed by expert panel")],
+            submissions=[
+                classification("Pathogenic", [], review="criteria provided, single submitter", accession="SCV1"),
+                classification("Benign", [], review="criteria provided, single submitter", accession="SCV2"),
+            ],
+        )
+        text = assemble_brief(db(), [item], [], [], None, clinvar_retrieved=True)
+        self.assertIn("Disease relevance: Pathogenic, conditions Condition (ClinVar VCVEP, reviewed by expert panel).", text)
+        self.assertIn("Lower-review submissions that disagree: Benign (ClinVar SCV2", text)
 
     def test_conflict_phrase_is_unresolved(self) -> None:
         records = [
@@ -520,24 +561,31 @@ class ConflictTests(unittest.TestCase):
         self.assertIn("chr1:100", text)
         self.assertIn("chr1:999", text)
 
-    def test_rs6025_disease_lists_each_disagreeing_interpretation(self) -> None:
+    def test_rs6025_headline_is_pathogenic(self) -> None:
         text = build_brief("rs6025", cache_dir=ROOT / "cache", refresh=False, offline=True)
         disease = text.split("Disease relevance:", 1)[1].split("Papers:", 1)[0]
-        self.assertTrue(disease.startswith(" unresolved."))
-        self.assertIn("Pathogenic", disease)
+        self.assertTrue(disease.startswith(" Pathogenic, conditions"))
         self.assertIn("thrombophilia", disease.lower())
+        self.assertIn("on the pathogenic side", disease)
         self.assertIn("drug response", disease)
         self.assertIn("risk factor", disease)
         self.assertIn("Established risk allele", disease)
-        self.assertIn("Pathogenic, low penetrance", disease)
-        self.assertIn("Uncertain significance", disease)
-        self.assertIn("Benign", disease)
-        self.assertIn("reviewed by expert panel", disease)
-        self.assertIn("criteria provided, single submitter", disease)
-        self.assertIn("flagged submission", disease)
-        self.assertIn("SCV", disease)
-        self.assertNotIn("VCV000000642", disease)
+        self.assertIn("flagged ClinVar submissions were excluded", disease)
+        self.assertIn("VCV000000642", disease)
+        self.assertNotIn("unresolved", disease)
         self.assertNotIn("diagnos", disease.lower())
+
+    def test_known_fixture_headlines(self) -> None:
+        expected = {
+            "rs334": "Allele T>A: Disease relevance: Pathogenic",
+            "rs1800562": "Allele G>A: Disease relevance: Pathogenic",
+            "rs1799963": "Disease relevance: Pathogenic",
+            "rs1815739": "Disease relevance: Benign",
+            "rs1801133": "Disease relevance: unresolved.",
+        }
+        for rsid, start in expected.items():
+            text = build_brief(rsid, cache_dir=ROOT / "cache", refresh=False, offline=True)
+            self.assertIn(start, text, rsid)
 
 
 def _summary(accession: str, dbsnp: str, title: str, cdna: str, significance: str, consequences: list[str]) -> dict:

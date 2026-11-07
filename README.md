@@ -16,7 +16,7 @@ uv run snp-brief
 
 On the first run uv creates `.venv/` and installs the package from `uv.lock`. It uses Python 3.12 from `.python-version` and downloads it if it is not installed.
 
-The command prints one paragraph per rsID in `fixture/snps.txt`. Cached responses live in `cache/`. When a cache file is present the command does not call that source, so the pitch still runs if a source is down. `--offline` refuses every network call. `--refresh` replaces the cache from the live sources.
+The command prints, for each rsID in `fixture/snps.txt`, a short plain-English summary and the full evidence brief. Cached responses live in `cache/`. When a cache file is present the command does not call that source, so the pitch still runs if a source is down. `--offline` refuses every network call. `--refresh` replaces the cache from the live sources.
 
 The same command runs any list:
 
@@ -51,9 +51,37 @@ After the fields are filled, sources are compared on each field.
 - If they conflict, the brief keeps both statements and marks the field unresolved.
 - If nobody reports it, the field says it was not reported. A missing frequency is not written as zero.
 
-When ClinVar submissions for one variant disagree, disease relevance lists each distinct interpretation with its review status and citation and marks that field unresolved.
+**Disease relevance is reconciled by ClinVar review status** (`src/snp_brief/reconcile.py`):
 
-gnomAD populations are part of that rule. Ancestry groups with fewer than 1000 alleles are not compared. Two frequencies disagree when the higher is at least twice the lower, or the gap is at least 0.1, or one is 0 and the other is at least 0.001. The brief then keeps both counts and names the populations. Exome and genome call sets use the same comparison on the allele frequency gnomAD reports. The comparison does not create a new number. Counts and frequencies in the paragraph are the ones the API returned.
+1. Flagged submissions are excluded and counted.
+2. Pathogenicity calls (pathogenic side, benign side, uncertain) are ranked by ClinVar review stars. The headline is what the highest review tier present agrees on. An aggregate classification reviewed by an expert panel or practice guideline is used directly.
+3. Lower-review submissions on another side are listed as named dissent, not as a conflict.
+4. Other assertion types (risk factor, drug response, protective, association, affects) are reported as additional ClinVar assertions, never as a conflict.
+5. The field is unresolved only when the top review tier itself disagrees (MTHFR rs1801133 in the fixture).
+
+So Factor V Leiden (rs6025) reads Pathogenic with its drug-response and risk-factor assertions alongside, and ACTN3 (rs1815739) reads Benign with two unreviewed "Pathogenic" submissions noted as dissent.
+
+**Frequency.** A spread between ancestry groups is the finding, not a disagreement between sources: the brief reports the overall frequency and the highest and lowest ancestry groups. Ancestry groups with fewer than 1000 alleles are not compared. Two frequencies differ when the higher is at least twice the lower, or the gap is at least 0.1, or one is 0 and the other is at least 0.001. Frequency is unresolved only when gnomAD's exome and genome call sets disagree by that rule. Counts are the ones the API returned; percentages are computed from those counts.
+
+## Plain-English summary
+
+Above each evidence brief the tool prints a three-to-five sentence summary (`src/snp_brief/summary.py`):
+
+1. Every fact the summary may use is listed with an id and its source (dbSNP, ClinVar, gnomAD, UniProt, Europe PMC).
+2. A writer produces sentences that end with the fact ids they use.
+3. A checker rejects any sentence that cites no fact, uses a number that is not in the facts it cites, names a gene or rsID no fact contains, or reads like clinical advice.
+4. Ids are replaced with source names, so each sentence ends with "(ClinVar)", "(gnomAD)", and so on.
+
+The default writer is a deterministic template, so the demo works offline. To use an LLM, point the tool at any OpenAI-compatible server (vLLM or NVIDIA NIM on a Brev or Nebius GPU, the NVIDIA API catalog, or Ollama):
+
+```bash
+export SNP_BRIEF_LLM_URL=http://<gpu-host>:8000/v1
+export SNP_BRIEF_LLM_MODEL=<model name>
+export SNP_BRIEF_LLM_KEY=<token, if needed>
+uv run snp-brief --summary llm
+```
+
+LLM sentences go through the same checker. If more sentences fail than pass, or the call fails, the template summary is printed instead. `--summary off` prints only the evidence brief. The demo page shows the summary, the facts it was written from, and any rejected sentences.
 
 ## What this is not
 
@@ -67,17 +95,22 @@ Not a pathogenicity classifier, and not a copy of the genomic-variant-classifier
 | ClinVar and function | `src/snp_brief/sources/clinvar.py`, `src/snp_brief/sources/uniprot.py` |
 | gnomAD frequency | `src/snp_brief/sources/gnomad.py` |
 | Europe PMC | `src/snp_brief/sources/europepmc.py` |
-| Brief writer, conflict rules, and the demo | `src/snp_brief/brief.py`, `src/snp_brief/cli.py` |
+| Brief writer, conflict rules, and the demo | `src/snp_brief/brief.py`, `src/snp_brief/reconcile.py`, `src/snp_brief/cli.py` |
+| Plain-English summary and fact checker | `src/snp_brief/summary.py`, `src/snp_brief/llm.py` |
 
 The product rules are in `prd.md`.
 
 ## Example
 
-`uv run snp-brief` prints one paragraph per id. This is the rs1815739 paragraph from the cached fixture. The stop-gained consequence is not treated as a disease claim, and the two ancestry counts are both kept because they disagree:
+`uv run snp-brief --input fixture/snps.txt` prints, for rs1815739 (ACTN3 R577X), from the cached fixture:
 
 ```text
-rs1815739 is GRCh38 chr11:66560624, alleles C>A, C>T (dbSNP). Function: nonsense in ACTN3. NM_001104.4(ACTN3):c.1729C>T (p.Arg577Ter) (ClinVar VCV000018312, criteria provided, single submitter). Frequency for C>T: unresolved. gnomAD v4 exomes allele frequency 0.445748 (651404/1461372 alleles); gnomAD v4 exomes African/African American 5239/33480 alleles; gnomAD v4 exomes Admixed American 29090/44712 alleles. Disease relevance: unresolved. Benign (ClinVar SCV000040272, no assertion criteria provided), conditions ACTININ, ALPHA-3 POLYMORPHISM; Affects (ClinVar SCV000040273, no assertion criteria provided), conditions ACTN3 DEFICIENCY; Pathogenic (ClinVar SCV000040274, no assertion criteria provided), conditions SPRINTING PERFORMANCE; INCREASED COLD TOLERANCE; Benign (ClinVar SCV006106436, criteria provided, single submitter). Papers: Alfred T et al., 2011, ACTN3 genotype, athletic status, and life course physical capability: meta-analysis of the published literature and findings from nine studies, PMID:21542061; Eynon N et al., 2012, The ACTN3 R577X polymorphism across three groups of elite male European athletes, PMID:22916217; Tharabenjasin P et al., 2019, Association of the ACTN3 R577X (rs1815739) polymorphism with elite power sports: A meta-analysis, PMID:31145768 (Europe PMC).
+rs1815739
+Summary (template): rs1815739 is a nonsense (stop-gained) variant in ACTN3 (p.Arg577Ter) (ClinVar). The C>T allele is carried on 45% of alleles in gnomAD v4 exomes, from 65% in Admixed American to 16% in African/African American (gnomAD). ClinVar's best-supported classification is Benign for ACTININ, ALPHA-3 POLYMORPHISM (ClinVar). ClinVar note: it also lists Affects assertions; 2 lower-review submissions disagree (ClinVar). Primary literature: Alfred T et al. 2011 (PMID:21542061); Eynon N et al. 2012 (PMID:22916217); Tharabenjasin P et al. 2019 (PMID:31145768) (Europe PMC).
+Evidence: rs1815739 is GRCh38 chr11:66560624, alleles C>A, C>T (dbSNP). Function: nonsense in ACTN3. ...
 ```
+
+The stop-gained consequence is not treated as a disease claim, and the unreviewed "Pathogenic" submissions are kept as dissent rather than overturning the reviewed Benign call.
 
 ## Tests
 

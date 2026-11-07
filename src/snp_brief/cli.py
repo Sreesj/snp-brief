@@ -7,7 +7,8 @@ import sys
 from pathlib import Path
 
 from snp_brief.fixture import read_rsids
-from snp_brief.pipeline import build_brief
+from snp_brief.pipeline import gather
+from snp_brief.summary import summarize
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -25,6 +26,13 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--cache", type=Path, default=Path("cache"), help="directory of cached source responses")
     parser.add_argument("--refresh", action="store_true", help="call the live sources and replace the cache")
     parser.add_argument("--offline", action="store_true", help="use the cache only")
+    parser.add_argument(
+        "--summary",
+        choices=("template", "llm", "off"),
+        default="template",
+        help="plain-English summary above each evidence brief: template (default, offline), "
+        "llm (SNP_BRIEF_LLM_URL / SNP_BRIEF_LLM_MODEL; falls back to template if it fails the check), or off",
+    )
     args = parser.parse_args(argv)
     if args.refresh and args.offline:
         print("Choose either --refresh or --offline.", file=sys.stderr)
@@ -38,12 +46,20 @@ def main(argv: list[str] | None = None) -> int:
     for rsid in rsids:
         if args.refresh:
             print(rsid, file=sys.stderr)
-        paragraphs.append(
-            build_brief(rsid, cache_dir=args.cache, refresh=args.refresh, offline=args.offline)
-        )
+        item = gather(rsid, cache_dir=args.cache, refresh=args.refresh, offline=args.offline)
+        paragraphs.append(format_item(item, args.summary))
     text = "\n\n".join(paragraphs) + "\n"
     sys.stdout.write(text)
     if args.save:
         args.save.parent.mkdir(parents=True, exist_ok=True)
         args.save.write_text(text, encoding="utf-8")
     return 0
+
+
+def format_item(item, mode: str) -> str:
+    """The evidence brief, with the checked plain-English summary above it unless mode is off."""
+    if mode == "off":
+        return item.text
+    summary = summarize(item, mode)
+    lines = [f"{item.rsid}", f"Summary ({summary.writer}): {summary.text}", f"Evidence: {item.text}"]
+    return "\n".join(lines)

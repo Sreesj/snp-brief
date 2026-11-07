@@ -72,7 +72,7 @@ class StatusTests(unittest.TestCase):
             ],
         )
 
-    def test_actn3_frequency_and_disease_are_unresolved(self) -> None:
+    def test_actn3_is_benign_with_ancestry_spread(self) -> None:
         item = cached("rs1815739")
         self.assertEqual(
             summary_row(item),
@@ -80,22 +80,25 @@ class StatusTests(unittest.TestCase):
                 "rsID": "rs1815739",
                 "Gene": "ACTN3",
                 "Function": "sourced",
-                "Frequency": "unresolved",
-                "Disease relevance": "unresolved",
+                "Frequency": "sourced",
+                "Disease relevance": "sourced",
             },
         )
         disease = next(sentence for sentence in item.sentences if sentence.startswith("Disease relevance:"))
-        self.assertTrue(disease.startswith("Disease relevance: unresolved."))
+        self.assertTrue(disease.startswith("Disease relevance: Benign"))
+        self.assertIn("Lower-review submissions that disagree: Pathogenic", disease)
 
-    def test_factor_v_leiden_lists_disagreeing_interpretations(self) -> None:
+    def test_factor_v_leiden_is_pathogenic(self) -> None:
         item = cached("rs6025")
-        self.assertEqual(summary_row(item)["Disease relevance"], "unresolved")
+        self.assertEqual(summary_row(item)["Disease relevance"], "sourced")
         disease = next(sentence for sentence in item.sentences if sentence.startswith("Disease relevance:"))
-        self.assertTrue(disease.startswith("Disease relevance: unresolved."))
-        self.assertIn("Pathogenic", disease)
+        self.assertTrue(disease.startswith("Disease relevance: Pathogenic"))
         self.assertIn("drug response", disease)
         self.assertIn("Thrombophilia", disease)
         self.assertIn("ClinVar SCV", disease)
+
+    def test_mthfr_stays_unresolved(self) -> None:
+        self.assertEqual(summary_row(cached("rs1801133"))["Disease relevance"], "unresolved")
 
     def test_uniprot_fills_function_and_disease_stays_blank(self) -> None:
         self.assertEqual(
@@ -104,7 +107,7 @@ class StatusTests(unittest.TestCase):
                 "rsID": "rs6054257",
                 "Gene": "DEFB125",
                 "Function": "sourced",
-                "Frequency": "unresolved",
+                "Frequency": "sourced",
                 "Disease relevance": "blank",
             },
         )

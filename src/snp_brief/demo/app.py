@@ -27,7 +27,9 @@ from snp_brief.demo.view import (
     summary_row,
     unresolved_populations,
 )
+from snp_brief.llm import LLMClient
 from snp_brief.pipeline import Gathered, gather
+from snp_brief.summary import summarize
 
 LIVE_CACHE = Path(tempfile.gettempdir()) / "snp-brief-live-cache"
 BADGE_COLOR = {SOURCED: "green", UNRESOLVED: "orange", BLANK: "gray"}
@@ -105,6 +107,9 @@ def sidebar() -> tuple[bool, bool]:
             )
         else:
             st.caption("Cached: reads the checked-in cache/ and makes no network call.")
+        if LLMClient.from_env() is not None:
+            st.toggle("LLM summary", key="use_llm", value=True)
+            st.caption("Sentences that fail the fact check are dropped; if too many fail, the template is used.")
         clicked = st.button("Run briefs", key="run_briefs", type="primary", width="stretch")
     return live, clicked
 
@@ -168,7 +173,7 @@ def show_results(current: Run) -> None:
             width="stretch",
         )
         st.caption(
-            "sourced: a source reports it. unresolved: sources disagree, so the brief keeps both. "
+            "sourced: a source reports it (for disease, the best-reviewed ClinVar call). unresolved: sources at the same review level disagree, so the brief keeps both. "
             "blank: not reported, or ClinVar found no clinical significance."
         )
     with detail_side:
@@ -187,11 +192,23 @@ def render_detail(item: Gathered) -> None:
         for name in FIELDS:
             status = field_status(found, name)
             st.badge(f"{name}: {status}", color=BADGE_COLOR[status])
-    st.markdown("**Brief**")
+    mode = "llm" if st.session_state.get("use_llm") else "template"
+    summary = cached_summary(item, mode)
+    st.markdown("**Summary**")
+    st.html(f'<div class="snp-brief">{html.escape(summary.text)}</div>')
+    checked = f"{len(summary.sentences)} sentences passed the fact check"
+    if summary.rejected:
+        checked += f"; {len(summary.rejected)} rejected"
+    st.caption(f"Written by {summary.writer} from {len(summary.facts)} retrieved facts. {checked}.")
+    with st.expander("Facts the summary may use"):
+        st.code("\n".join(f"[{fact.id}] ({fact.source}) {fact.text}" for fact in summary.facts), language=None)
+        for sentence, reason in summary.rejected:
+            st.caption(f"Rejected: {sentence} ({reason})")
+    st.markdown("**Evidence brief**")
     st.html(f'<div class="snp-brief">{html.escape(item.text)}</div>')
     tables = unresolved_populations(item)
     if tables:
-        st.markdown("**gnomAD populations** (frequency is unresolved)")
+        st.markdown("**gnomAD populations** (frequency varies by ancestry)")
         for table in tables:
             render_populations(table)
         st.caption(
@@ -218,6 +235,14 @@ def render_detail(item: Gathered) -> None:
         hide_index=True,
         border="horizontal",
     )
+
+
+def cached_summary(item: Gathered, mode: str):
+    store = st.session_state.setdefault("summaries", {})
+    key = (item.rsid, mode, item.text)
+    if key not in store:
+        store[key] = summarize(item, mode)
+    return store[key]
 
 
 def render_populations(table: PopulationTable) -> None:
