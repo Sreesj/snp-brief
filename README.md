@@ -6,13 +6,17 @@ This is one repository. Fixture parsing, ClinVar, gnomAD, Europe PMC, and the br
 
 ## Demo
 
-From this directory:
+Install [uv](https://docs.astral.sh/uv/getting-started/installation/), then:
 
 ```bash
+git clone https://github.com/Sreesj/snp-brief.git
+cd snp-brief
 uv run snp-brief
 ```
 
-That prints one paragraph per rsID in `fixture/snps.txt`. Cached responses live in `cache/`. When a cache file is present the command does not call that source, so the pitch still runs if a source is down. `--offline` refuses every network call. `--refresh` replaces the cache from the live sources.
+On the first run uv creates `.venv/` and installs the package from `uv.lock`. It uses Python 3.12 from `.python-version` and downloads it if it is not installed.
+
+The command prints one paragraph per rsID in `fixture/snps.txt`. Cached responses live in `cache/`. When a cache file is present the command does not call that source, so the pitch still runs if a source is down. `--offline` refuses every network call. `--refresh` replaces the cache from the live sources.
 
 The same command runs any list:
 
@@ -70,3 +74,5 @@ rs1815739 is GRCh38 chr11:66560624, alleles C>A, C>T (dbSNP). Function: nonsense
 ```bash
 uv run python -m unittest discover -s tests -v
 ```
+
+CI (`.github/workflows/ci.yml`) runs `uv sync --frozen`, these tests, and `uv run snp-brief --offline` on every push and pull request.
