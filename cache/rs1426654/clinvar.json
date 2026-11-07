@@ -1,0 +1,368 @@
+{
+  "source": "clinvar",
+  "retrieved": "2026-11-07T02:09:56+00:00",
+  "request": {
+    "term": "rs1426654"
+  },
+  "response": {
+    "esearch": {
+      "header": {
+        "type": "esearch",
+        "version": "0.3"
+      },
+      "esearchresult": {
+        "count": "2",
+        "retmax": "2",
+        "retstart": "0",
+        "idlist": [
+          "263273",
+          "1487"
+        ],
+        "translationset": [],
+        "translationstack": [
+          {
+            "term": "rs1426654[All Fields]",
+            "field": "All Fields",
+            "count": "2",
+            "explode": "N"
+          },
+          "GROUP"
+        ],
+        "querytranslation": "rs1426654[All Fields]"
+      }
+    },
+    "esummary": {
+      "header": {
+        "type": "esummary",
+        "version": "0.3"
+      },
+      "result": {
+        "uids": [
+          "263273",
+          "1487"
+        ],
+        "263273": {
+          "uid": "263273",
+          "obj_type": "single nucleotide variant",
+          "accession": "VCV000263273",
+          "accession_version": "VCV000263273.12",
+          "title": "NM_205850.3(SLC24A5):c.331A>G (p.Thr111Ala)",
+          "variation_set": [
+            {
+              "measure_id": "255247",
+              "variation_xrefs": [
+                {
+                  "db_source": "ClinGen",
+                  "db_id": "CA7545842"
+                },
+                {
+                  "db_source": "UniProtKB",
+                  "db_id": "Q71RS6#VAR_024922"
+                },
+                {
+                  "db_source": "dbSNP",
+                  "db_id": "1426654"
+                }
+              ],
+              "variation_name": "NM_205850.3(SLC24A5):c.331A>G (p.Thr111Ala)",
+              "cdna_change": "c.331A>G",
+              "aliases": [],
+              "variation_loc": [
+                {
+                  "status": "current",
+                  "assembly_name": "GRCh38",
+                  "chr": "15",
+                  "band": "15q21.1",
+                  "start": "48134287",
+                  "stop": "48134287",
+                  "inner_start": "",
+                  "inner_stop": "",
+                  "outer_start": "",
+                  "outer_stop": "",
+                  "display_start": "48134287",
+                  "display_stop": "48134287",
+                  "assembly_acc_ver": "GCF_000001405.38",
+                  "annotation_release": "",
+                  "alt": "",
+                  "ref": ""
+                },
+                {
+                  "status": "previous",
+                  "assembly_name": "GRCh37",
+                  "chr": "15",
+                  "band": "15q21.1",
+                  "start": "48426484",
+                  "stop": "48426484",
+                  "inner_start": "",
+                  "inner_stop": "",
+                  "outer_start": "",
+                  "outer_stop": "",
+                  "display_start": "48426484",
+                  "display_stop": "48426484",
+                  "assembly_acc_ver": "GCF_000001405.25",
+                  "annotation_release": "",
+                  "alt": "",
+                  "ref": ""
+                }
+              ],
+              "allele_freq_set": [
+                {
+                  "source": "The Genome Aggregation Database (gnomAD), exomes",
+                  "value": "0.22996",
+                  "minor_allele": ""
+                },
+                {
+                  "source": "The Genome Aggregation Database (gnomAD)",
+                  "value": "0.29775",
+                  "minor_allele": ""
+                },
+                {
+                  "source": "Exome Aggregation Consortium (ExAC)",
+                  "value": "0.22826",
+                  "minor_allele": ""
+                },
+                {
+                  "source": "The Genome Aggregation Database (gnomAD)",
+                  "value": "0.30113",
+                  "minor_allele": ""
+                },
+                {
+                  "source": "1000 Genomes Project",
+                  "value": "0.43770",
+                  "minor_allele": "A"
+                }
+              ],
+              "variant_type": "single nucleotide variant",
+              "canonical_spdi": "NC_000015.10:48134286:A:G",
+              "common_name": ""
+            }
+          ],
+          "supporting_submissions": {
+            "scv": [
+              "SCV000317184",
+              "SCV001950774",
+              "SCV005292890",
+              "SCV002403278"
+            ],
+            "rcv": [
+              "RCV000250857",
+              "RCV001723865"
+            ]
+          },
+          "germline_classification": {
+            "description": "Benign",
+            "last_evaluated": "2026/02/03 00:00",
+            "review_status": "criteria provided, multiple submitters, no conflicts",
+            "fda_recognized_database": "",
+            "trait_set": [
+              {
+                "trait_xrefs": [
+                  {
+                    "db_source": "MedGen",
+                    "db_id": "CN169374"
+                  }
+                ],
+                "trait_name": "not specified"
+              },
+              {
+                "trait_xrefs": [
+                  {
+                    "db_source": "MedGen",
+                    "db_id": "C3661900"
+                  }
+                ],
+                "trait_name": "not provided"
+              }
+            ]
+          },
+          "clinical_impact_classification": {
+            "description": "",
+            "last_evaluated": "1/01/01 00:00",
+            "review_status": "",
+            "fda_recognized_database": "",
+            "trait_set": []
+          },
+          "oncogenicity_classification": {
+            "description": "",
+            "last_evaluated": "1/01/01 00:00",
+            "review_status": "",
+            "fda_recognized_database": "",
+            "trait_set": []
+          },
+          "record_status": "",
+          "gene_sort": "SLC24A5",
+          "chr_sort": "15",
+          "location_sort": "00000000000048134287",
+          "variation_set_name": "",
+          "variation_set_id": "",
+          "genes": [
+            {
+              "symbol": "SLC24A5",
+              "geneid": "283652",
+              "strand": "+",
+              "source": "submitted"
+            }
+          ],
+          "molecular_consequence_list": [
+            "missense variant"
+          ],
+          "protein_change": "T111A",
+          "fda_recognized_database": ""
+        },
+        "1487": {
+          "uid": "1487",
+          "obj_type": "single nucleotide variant",
+          "accession": "VCV000001487",
+          "accession_version": "VCV000001487.5",
+          "title": "NM_205850.3(SLC24A5):c.331= (p.Thr111=)",
+          "variation_set": [
+            {
+              "measure_id": "16526",
+              "variation_xrefs": [
+                {
+                  "db_source": "OMIM",
+                  "db_id": "609802.0001"
+                },
+                {
+                  "db_source": "dbSNP",
+                  "db_id": "1426654"
+                }
+              ],
+              "variation_name": "NM_205850.3(SLC24A5):c.331= (p.Thr111=)",
+              "cdna_change": "c.331=",
+              "aliases": [
+                "A111T"
+              ],
+              "variation_loc": [
+                {
+                  "status": "current",
+                  "assembly_name": "GRCh38",
+                  "chr": "15",
+                  "band": "15q21.1",
+                  "start": "48134287",
+                  "stop": "48134287",
+                  "inner_start": "",
+                  "inner_stop": "",
+                  "outer_start": "",
+                  "outer_stop": "",
+                  "display_start": "48134287",
+                  "display_stop": "48134287",
+                  "assembly_acc_ver": "GCF_000001405.38",
+                  "annotation_release": "",
+                  "alt": "",
+                  "ref": ""
+                },
+                {
+                  "status": "previous",
+                  "assembly_name": "GRCh37",
+                  "chr": "15",
+                  "band": "15q21.1",
+                  "start": "48426484",
+                  "stop": "48426484",
+                  "inner_start": "",
+                  "inner_stop": "",
+                  "outer_start": "",
+                  "outer_stop": "",
+                  "display_start": "48426484",
+                  "display_stop": "48426484",
+                  "assembly_acc_ver": "GCF_000001405.25",
+                  "annotation_release": "",
+                  "alt": "",
+                  "ref": ""
+                }
+              ],
+              "allele_freq_set": [
+                {
+                  "source": "The Genome Aggregation Database (gnomAD)",
+                  "value": "0.69887",
+                  "minor_allele": ""
+                },
+                {
+                  "source": "The Genome Aggregation Database (gnomAD), exomes",
+                  "value": "0.77004",
+                  "minor_allele": ""
+                },
+                {
+                  "source": "Exome Aggregation Consortium (ExAC)",
+                  "value": "0.77174",
+                  "minor_allele": ""
+                },
+                {
+                  "source": "The Genome Aggregation Database (gnomAD)",
+                  "value": "0.70225",
+                  "minor_allele": ""
+                },
+                {
+                  "source": "1000 Genomes Project",
+                  "value": "0.43770",
+                  "minor_allele": "A"
+                }
+              ],
+              "variant_type": "single nucleotide variant",
+              "canonical_spdi": "NC_000015.10:48134286:A:A",
+              "common_name": ""
+            }
+          ],
+          "supporting_submissions": {
+            "scv": [
+              "SCV000021707"
+            ],
+            "rcv": [
+              "RCV000001552"
+            ]
+          },
+          "germline_classification": {
+            "description": "association",
+            "last_evaluated": "2022/09/21 00:00",
+            "review_status": "no assertion criteria provided",
+            "fda_recognized_database": "",
+            "trait_set": [
+              {
+                "trait_xrefs": [
+                  {
+                    "db_source": "MedGen",
+                    "db_id": "C2676042"
+                  }
+                ],
+                "trait_name": "Skin/hair/eye pigmentation, variation in, 4"
+              }
+            ]
+          },
+          "clinical_impact_classification": {
+            "description": "",
+            "last_evaluated": "1/01/01 00:00",
+            "review_status": "",
+            "fda_recognized_database": "",
+            "trait_set": []
+          },
+          "oncogenicity_classification": {
+            "description": "",
+            "last_evaluated": "1/01/01 00:00",
+            "review_status": "",
+            "fda_recognized_database": "",
+            "trait_set": []
+          },
+          "record_status": "",
+          "gene_sort": "SLC24A5",
+          "chr_sort": "15",
+          "location_sort": "00000000000048134287",
+          "variation_set_name": "",
+          "variation_set_id": "",
+          "genes": [
+            {
+              "symbol": "SLC24A5",
+              "geneid": "283652",
+              "strand": "+",
+              "source": "submitted"
+            }
+          ],
+          "molecular_consequence_list": [
+            "no sequence alteration"
+          ],
+          "protein_change": "",
+          "fda_recognized_database": ""
+        }
+      }
+    }
+  }
+}

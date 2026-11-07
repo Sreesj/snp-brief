@@ -1,0 +1,231 @@
+{
+  "source": "europepmc",
+  "retrieved": "2026-11-07T02:19:16+00:00",
+  "request": {
+    "query": "(TITLE:rs34637584 OR ABSTRACT:rs34637584) AND PUB_TYPE:\"research-article\" NOT PUB_TYPE:review"
+  },
+  "response": {
+    "version": "6.9",
+    "hitCount": 5,
+    "request": {
+      "queryString": "(TITLE:rs34637584 OR ABSTRACT:rs34637584) AND PUB_TYPE:\"research-article\" NOT PUB_TYPE:review",
+      "resultType": "lite",
+      "cursorMark": "*",
+      "pageSize": 15,
+      "sort": "CITED desc",
+      "synonym": false
+    },
+    "resultList": {
+      "result": [
+        {
+          "id": "21812969",
+          "source": "MED",
+          "pmid": "21812969",
+          "pmcid": "PMC3166909",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC3166909"
+            ]
+          },
+          "doi": "10.1186/1471-2350-12-104",
+          "title": "Genome-wide association study identifies candidate genes for Parkinson's disease in an Ashkenazi Jewish population.",
+          "authorString": "Liu X, Cheng R, Verbitsky M, Kisselev S, Browne A, Mejia-Sanatana H, Louis ED, Cote LJ, Andrews H, Waters C, Ford B, Frucht S, Fahn S, Marder K, Clark LN, Lee JH.",
+          "journalTitle": "BMC Med Genet",
+          "journalVolume": "12",
+          "pubYear": "2011",
+          "journalIssn": "1471-2350",
+          "pageInfo": "104",
+          "pubType": "research support, non-u.s. gov't; research-article; journal article; research support, n.i.h., extramural",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 133,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "Y",
+          "dbCrossReferenceList": {
+            "dbName": [
+              "INTERPRO"
+            ]
+          },
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp"
+            ]
+          },
+          "firstPublicationDate": "2011-08-03",
+          "firstIndexDate": "2011-08-05"
+        },
+        {
+          "id": "27494614",
+          "source": "MED",
+          "pmid": "27494614",
+          "pmcid": "PMC4975403",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC4975403"
+            ]
+          },
+          "doi": "10.1371/journal.pone.0157077",
+          "title": "Predictive Big Data Analytics: A Study of Parkinson's Disease Using Large, Complex, Heterogeneous, Incongruent, Multi-Source and Incomplete Observations.",
+          "authorString": "Dinov ID, Heavner B, Tang M, Glusman G, Chard K, Darcy M, Madduri R, Pa J, Spino C, Kesselman C, Foster I, Deutsch EW, Price ND, Van Horn JD, Ames J, Clark K, Hood L, Hampstead BM, Dauer W, Toga AW.",
+          "journalTitle": "PLoS One",
+          "issue": "8",
+          "journalVolume": "11",
+          "pubYear": "2016",
+          "journalIssn": "1932-6203",
+          "pageInfo": "e0157077",
+          "pubType": "research-article; journal article",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 68,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp",
+              "doi"
+            ]
+          },
+          "firstPublicationDate": "2016-08-05",
+          "firstIndexDate": "2016-08-10"
+        },
+        {
+          "id": "41026459",
+          "source": "MED",
+          "pmid": "41026459",
+          "pmcid": "PMC12644238",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC12644238"
+            ]
+          },
+          "doi": "10.1007/s13760-025-02897-7",
+          "title": "Elucidate biomarkers and the molecular pathways associated with genetic variants that contribute to the etiology of Parkinson's disease.",
+          "authorString": "Nguyen HD.",
+          "journalTitle": "Acta Neurol Belg",
+          "issue": "6",
+          "journalVolume": "125",
+          "pubYear": "2025",
+          "journalIssn": "0300-9009; 2240-2993; ",
+          "pageInfo": "1621-1641",
+          "pubType": "research-article; journal article",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 6,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp",
+              "uniprot",
+              "doi"
+            ]
+          },
+          "firstPublicationDate": "2025-09-30",
+          "firstIndexDate": "2025-10-01"
+        },
+        {
+          "id": "40998812",
+          "source": "MED",
+          "pmid": "40998812",
+          "pmcid": "PMC12462436",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC12462436"
+            ]
+          },
+          "doi": "10.1038/s41531-025-01078-w",
+          "title": "Genome-wide association study of REM sleep behavior disorder in Parkinson's disease.",
+          "authorString": "Sosero YL, Heilbron K, Fontanillas P, Norcliffe-Kaufmann L, Yu E, Rudakou U, Ruskey JA, Freeman K, Asayesh F, Brolin KA, Swanberg M, Morris HR, Wu L, Real R, Pihlstr\u00f8m L, Tan M, Gasser T, Brockmann K, Liu H, Hu MTM, Grosset DG, Lewis SJG, Kwok JB, Pastor P, Alvarez I, Skorvanek M, Lackova A, Ostrozovicova M, Rizig M, 23andMe Research Team, International Parkinson\u2019s Disease Genomics Consortium, Krohn L, Gan-Or Z.",
+          "journalTitle": "NPJ Parkinsons Dis",
+          "issue": "1",
+          "journalVolume": "11",
+          "pubYear": "2025",
+          "journalIssn": "2373-8057",
+          "pageInfo": "272",
+          "pubType": "research-article; journal article",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 3,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp"
+            ]
+          },
+          "firstPublicationDate": "2025-09-25",
+          "firstIndexDate": "2025-09-27"
+        },
+        {
+          "id": "38396963",
+          "source": "MED",
+          "pmid": "38396963",
+          "pmcid": "PMC10889274",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC10889274"
+            ]
+          },
+          "doi": "10.3390/ijms25042286",
+          "title": "The Impact of 90 Parkinson's Disease-Risk Single Nucleotide Polymorphisms on Urinary Bis(monoacylglycerol)phosphate Levels in the Prodromal and PD Cohorts.",
+          "authorString": "Fang S, Lee PAH, Wang Z, Zhao B.",
+          "journalTitle": "Int J Mol Sci",
+          "issue": "4",
+          "journalVolume": "25",
+          "pubYear": "2024",
+          "journalIssn": "1422-0067",
+          "pageInfo": "2286",
+          "pubType": "research-article; journal article",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 2,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp",
+              "doi"
+            ]
+          },
+          "firstPublicationDate": "2024-02-14",
+          "firstIndexDate": "2024-02-25"
+        }
+      ]
+    }
+  }
+}

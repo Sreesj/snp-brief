@@ -1,0 +1,46 @@
+{
+  "source": "uniprot",
+  "retrieved": "2026-11-07T02:10:34+00:00",
+  "request": {
+    "gene": "DEFB125",
+    "query": "(gene_exact:DEFB125) AND (organism_id:9606) AND (reviewed:true)"
+  },
+  "response": {
+    "results": [
+      {
+        "entryType": "UniProtKB reviewed (Swiss-Prot)",
+        "primaryAccession": "Q8N687",
+        "genes": [
+          {
+            "geneName": {
+              "value": "DEFB125"
+            },
+            "synonyms": [
+              {
+                "value": "DEFB25"
+              }
+            ]
+          }
+        ],
+        "comments": [
+          {
+            "texts": [
+              {
+                "evidences": [
+                  {
+                    "evidenceCode": "ECO:0000305"
+                  }
+                ],
+                "value": "Has antibacterial activity"
+              }
+            ],
+            "commentType": "FUNCTION"
+          }
+        ],
+        "extraAttributes": {
+          "uniParcId": "UPI00001A36DE"
+        }
+      }
+    ]
+  }
+}
