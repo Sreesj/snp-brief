@@ -1,0 +1,200 @@
+{
+  "source": "clinvar",
+  "retrieved": "2026-11-07T02:09:03+00:00",
+  "request": {
+    "term": "rs4988235"
+  },
+  "response": {
+    "esearch": {
+      "header": {
+        "type": "esearch",
+        "version": "0.3"
+      },
+      "esearchresult": {
+        "count": "1",
+        "retmax": "1",
+        "retstart": "0",
+        "idlist": [
+          "7685"
+        ],
+        "translationset": [],
+        "translationstack": [
+          {
+            "term": "rs4988235[All Fields]",
+            "field": "All Fields",
+            "count": "1",
+            "explode": "N"
+          },
+          "GROUP"
+        ],
+        "querytranslation": "rs4988235[All Fields]"
+      }
+    },
+    "esummary": {
+      "header": {
+        "type": "esummary",
+        "version": "0.3"
+      },
+      "result": {
+        "uids": [
+          "7685"
+        ],
+        "7685": {
+          "uid": "7685",
+          "obj_type": "single nucleotide variant",
+          "accession": "VCV000007685",
+          "accession_version": "VCV000007685.6",
+          "title": "NM_002299.2(LCT):c.-13907C>T",
+          "variation_set": [
+            {
+              "measure_id": "22724",
+              "variation_xrefs": [
+                {
+                  "db_source": "ClinGen",
+                  "db_id": "CA118998"
+                },
+                {
+                  "db_source": "OMIM",
+                  "db_id": "601806.0001"
+                },
+                {
+                  "db_source": "dbSNP",
+                  "db_id": "4988235"
+                }
+              ],
+              "variation_name": "NM_002299.2(LCT):c.-13907C>T",
+              "cdna_change": "NM_002299.2(LCT):c.-13907C>T",
+              "aliases": [
+                "-13910C*T",
+                "MCM6:c.1917+326C>T",
+                "IVS13, C/T"
+              ],
+              "variation_loc": [
+                {
+                  "status": "current",
+                  "assembly_name": "GRCh38",
+                  "chr": "2",
+                  "band": "2q21.3",
+                  "start": "135851076",
+                  "stop": "135851076",
+                  "inner_start": "",
+                  "inner_stop": "",
+                  "outer_start": "",
+                  "outer_stop": "",
+                  "display_start": "135851076",
+                  "display_stop": "135851076",
+                  "assembly_acc_ver": "GCF_000001405.38",
+                  "annotation_release": "",
+                  "alt": "",
+                  "ref": ""
+                },
+                {
+                  "status": "previous",
+                  "assembly_name": "GRCh37",
+                  "chr": "2",
+                  "band": "2q21.3",
+                  "start": "136608646",
+                  "stop": "136608646",
+                  "inner_start": "",
+                  "inner_stop": "",
+                  "outer_start": "",
+                  "outer_stop": "",
+                  "display_start": "136608646",
+                  "display_stop": "136608646",
+                  "assembly_acc_ver": "GCF_000001405.25",
+                  "annotation_release": "",
+                  "alt": "",
+                  "ref": ""
+                }
+              ],
+              "allele_freq_set": [
+                {
+                  "source": "Trans-Omics for Precision Medicine (TOPMed)",
+                  "value": "0.35901",
+                  "minor_allele": ""
+                },
+                {
+                  "source": "The Genome Aggregation Database (gnomAD)",
+                  "value": "0.39605",
+                  "minor_allele": ""
+                },
+                {
+                  "source": "The Genome Aggregation Database (gnomAD)",
+                  "value": "0.40976",
+                  "minor_allele": ""
+                },
+                {
+                  "source": "1000 Genomes Project",
+                  "value": "0.16134",
+                  "minor_allele": "A"
+                }
+              ],
+              "variant_type": "single nucleotide variant",
+              "canonical_spdi": "NC_000002.12:135851075:G:A",
+              "common_name": ""
+            }
+          ],
+          "supporting_submissions": {
+            "scv": [
+              "SCV000028329",
+              "SCV002538649"
+            ],
+            "rcv": [
+              "RCV000008124"
+            ]
+          },
+          "germline_classification": {
+            "description": "association",
+            "last_evaluated": "2021/01/26 00:00",
+            "review_status": "no assertion criteria provided",
+            "fda_recognized_database": "",
+            "trait_set": [
+              {
+                "trait_xrefs": [
+                  {
+                    "db_source": "MedGen",
+                    "db_id": "C1857231"
+                  }
+                ],
+                "trait_name": "LACTASE PERSISTENCE"
+              }
+            ]
+          },
+          "clinical_impact_classification": {
+            "description": "",
+            "last_evaluated": "1/01/01 00:00",
+            "review_status": "",
+            "fda_recognized_database": "",
+            "trait_set": []
+          },
+          "oncogenicity_classification": {
+            "description": "",
+            "last_evaluated": "1/01/01 00:00",
+            "review_status": "",
+            "fda_recognized_database": "",
+            "trait_set": []
+          },
+          "record_status": "",
+          "gene_sort": "MCM6",
+          "chr_sort": "02",
+          "location_sort": "00000000000135851076",
+          "variation_set_name": "",
+          "variation_set_id": "",
+          "genes": [
+            {
+              "symbol": "MCM6",
+              "geneid": "4175",
+              "strand": "-",
+              "source": "submitted"
+            }
+          ],
+          "molecular_consequence_list": [
+            "intron variant"
+          ],
+          "protein_change": "",
+          "fda_recognized_database": ""
+        }
+      }
+    }
+  }
+}

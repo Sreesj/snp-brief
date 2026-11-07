@@ -1,0 +1,633 @@
+{
+  "source": "europepmc",
+  "retrieved": "2026-11-07T02:09:33+00:00",
+  "request": {
+    "query": "(TITLE:rs4988235 OR ABSTRACT:rs4988235) AND PUB_TYPE:\"research-article\" NOT PUB_TYPE:review"
+  },
+  "response": {
+    "version": "6.9",
+    "hitCount": 52,
+    "nextCursorMark": "AoJbASg0OTk2NjQ1Nw==",
+    "nextPageUrl": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=%28TITLE%3Ars4988235+OR+ABSTRACT%3Ars4988235%29+AND+PUB_TYPE%3A%22research-article%22+NOT+PUB_TYPE%3Areview&cursorMark=AoJbASg0OTk2NjQ1Nw%3D%3D&resultType=lite&pageSize=15&sort=CITED+desc&format=json",
+    "request": {
+      "queryString": "(TITLE:rs4988235 OR ABSTRACT:rs4988235) AND PUB_TYPE:\"research-article\" NOT PUB_TYPE:review",
+      "resultType": "lite",
+      "cursorMark": "*",
+      "pageSize": 15,
+      "sort": "CITED desc",
+      "synonym": false
+    },
+    "resultList": {
+      "result": [
+        {
+          "id": "32572223",
+          "source": "MED",
+          "pmid": "32572223",
+          "pmcid": "PMC7610462",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC7610462"
+            ]
+          },
+          "doi": "10.1038/s41564-020-0743-8",
+          "title": "Genome-wide associations of human gut microbiome variation and implications for causal inference analyses.",
+          "authorString": "Hughes DA, Bacigalupe R, Wang J, R\u00fchlemann MC, Tito RY, Falony G, Joossens M, Vieira-Silva S, Henckaerts L, Rymenans L, Verspecht C, Ring S, Franke A, Wade KH, Timpson NJ, Raes J.",
+          "journalTitle": "Nat Microbiol",
+          "issue": "9",
+          "journalVolume": "5",
+          "pubYear": "2020",
+          "journalIssn": "2058-5276",
+          "pageInfo": "1079-1087",
+          "pubType": "research support, non-u.s. gov't; research-article; journal article",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 194,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp",
+              "doi"
+            ]
+          },
+          "firstPublicationDate": "2020-06-22",
+          "firstIndexDate": "2020-06-24"
+        },
+        {
+          "id": "29063188",
+          "source": "MED",
+          "pmid": "29063188",
+          "pmcid": "PMC5702378",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC5702378"
+            ]
+          },
+          "doi": "10.1007/s00439-017-1847-y",
+          "title": "World-wide distributions of lactase persistence alleles and the complex effects of recombination and selection.",
+          "authorString": "Liebert A, L\u00f3pez S, Jones BL, Montalva N, Gerbault P, Lau W, Thomas MG, Bradman N, Maniatis N, Swallow DM.",
+          "journalTitle": "Hum Genet",
+          "issue": "11-12",
+          "journalVolume": "136",
+          "pubYear": "2017",
+          "journalIssn": "0340-6717; 1432-1203; ",
+          "pageInfo": "1445-1453",
+          "pubType": "research support, non-u.s. gov't; research-article; journal article",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 59,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp"
+            ]
+          },
+          "firstPublicationDate": "2017-10-23",
+          "firstIndexDate": "2017-10-24"
+        },
+        {
+          "id": "21193851",
+          "source": "MED",
+          "pmid": "21193851",
+          "pmcid": "PMC4426982",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC4426982"
+            ]
+          },
+          "doi": "10.1038/oby.2010.320",
+          "title": "Association of the LCT-13910C>T polymorphism with obesity and its modulation by dairy products in a Mediterranean population.",
+          "authorString": "Corella D, Arregui M, Coltell O, Portol\u00e9s O, Guillem-S\u00e1iz P, Carrasco P, Sorl\u00ed JV, Ortega-Azor\u00edn C, Gonz\u00e1lez JI, Ordov\u00e1s JM.",
+          "journalTitle": "Obesity (Silver Spring)",
+          "issue": "8",
+          "journalVolume": "19",
+          "pubYear": "2011",
+          "journalIssn": "1930-7381; 1930-739x; ",
+          "pageInfo": "1707-1714",
+          "pubType": "research support, non-u.s. gov't; research-article; research support, u.s. gov't, non-p.h.s.; journal article; research support, n.i.h., extramural",
+          "isOpenAccess": "N",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 55,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "N",
+          "hasLabsLinks": "N",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp"
+            ]
+          },
+          "firstPublicationDate": "2010-12-30",
+          "firstIndexDate": "2011-01-12"
+        },
+        {
+          "id": "18797476",
+          "source": "MED",
+          "pmid": "18797476",
+          "pmcid": "PMC2986166",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC2986166"
+            ]
+          },
+          "doi": "10.1038/ejhg.2008.156",
+          "title": "Lactase persistence-related genetic variant: population substructure and health outcomes.",
+          "authorString": "Smith GD, Lawlor DA, Timpson NJ, Baban J, Kiessling M, Day IN, Ebrahim S.",
+          "journalTitle": "Eur J Hum Genet",
+          "issue": "3",
+          "journalVolume": "17",
+          "pubYear": "2009",
+          "journalIssn": "1018-4813; 1476-5438; ",
+          "pageInfo": "357-367",
+          "pubType": "research support, non-u.s. gov't; research-article; journal article",
+          "isOpenAccess": "N",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 52,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp"
+            ]
+          },
+          "firstPublicationDate": "2008-09-17",
+          "firstIndexDate": "2009-04-24"
+        },
+        {
+          "id": "30339693",
+          "source": "MED",
+          "pmid": "30339693",
+          "pmcid": "PMC6195297",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC6195297"
+            ]
+          },
+          "doi": "10.1371/journal.pone.0206189",
+          "title": "Association between functional lactase variants and a high abundance of Bifidobacterium in the gut of healthy Japanese people.",
+          "authorString": "Kato K, Ishida S, Tanaka M, Mitsuyama E, Xiao JZ, Odamaki T.",
+          "journalTitle": "PLoS One",
+          "issue": "10",
+          "journalVolume": "13",
+          "pubYear": "2018",
+          "journalIssn": "1932-6203",
+          "pageInfo": "e0206189",
+          "pubType": "research support, non-u.s. gov't; research-article; journal article",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 47,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp",
+              "doi"
+            ]
+          },
+          "firstPublicationDate": "2018-10-19",
+          "firstIndexDate": "2018-10-20"
+        },
+        {
+          "id": "20015952",
+          "source": "MED",
+          "pmid": "20015952",
+          "pmcid": "PMC2830824",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC2830824"
+            ]
+          },
+          "doi": "10.1093/hmg/ddp561",
+          "title": "European lactase persistence genotype shows evidence of association with increase in body mass index.",
+          "authorString": "Kettunen J, Silander K, Saarela O, Amin N, M\u00fcller M, Timpson N, Surakka I, Ripatti S, Laitinen J, Hartikainen AL, Pouta A, Lahermo P, Anttila V, M\u00e4nnist\u00f6 S, Jula A, Virtamo J, Salomaa V, Lehtim\u00e4ki T, Raitakari O, Gieger C, Wichmann EH, Van Duijn CM, Smith GD, McCarthy MI, J\u00e4rvelin MR, Perola M, Peltonen L.",
+          "journalTitle": "Hum Mol Genet",
+          "issue": "6",
+          "journalVolume": "19",
+          "pubYear": "2010",
+          "journalIssn": "0964-6906; 1460-2083; ",
+          "pageInfo": "1129-1136",
+          "pubType": "research support, non-u.s. gov't; research-article; journal article; research support, n.i.h., extramural",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 43,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "N",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp",
+              "omim"
+            ]
+          },
+          "firstPublicationDate": "2009-12-16",
+          "firstIndexDate": "2010-09-29"
+        },
+        {
+          "id": "29187356",
+          "source": "MED",
+          "pmid": "29187356",
+          "pmcid": "PMC5837824",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC5837824"
+            ]
+          },
+          "doi": "10.1373/clinchem.2017.280701",
+          "title": "Dairy Consumption and Body Mass Index Among Adults: Mendelian Randomization Analysis of 184802 Individuals from 25 Studies.",
+          "authorString": "Mendelian Randomization of Dairy Consumption Working Group.",
+          "journalTitle": "Clin Chem",
+          "issue": "1",
+          "journalVolume": "64",
+          "pubYear": "2018",
+          "journalIssn": "0009-9147; 1530-8561; ",
+          "pageInfo": "183-191",
+          "pubType": "research support, non-u.s. gov't; research-article; research support, u.s. gov't, non-p.h.s.; journal article; research support, n.i.h., extramural",
+          "isOpenAccess": "N",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 36,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp"
+            ]
+          },
+          "firstPublicationDate": "2017-11-29",
+          "firstIndexDate": "2017-12-05"
+        },
+        {
+          "id": "28424184",
+          "source": "MED",
+          "pmid": "28424184",
+          "pmcid": "PMC5445669",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC5445669"
+            ]
+          },
+          "doi": "10.3945/ajcn.116.143248",
+          "title": "Demographic, lifestyle, and genetic determinants of circulating concentrations of 25-hydroxyvitamin D and vitamin D-binding protein in African American and European American women.",
+          "authorString": "Yao S, Hong CC, Bandera EV, Zhu Q, Liu S, Cheng TD, Zirpoli G, Haddad SA, Lunetta KL, Ruiz-Narvaez EA, McCann SE, Troester MA, Rosenberg L, Palmer JR, Olshan AF, Ambrosone CB.",
+          "journalTitle": "Am J Clin Nutr",
+          "issue": "6",
+          "journalVolume": "105",
+          "pubYear": "2017",
+          "journalIssn": "0002-9165; 1938-3207; ",
+          "pageInfo": "1362-1371",
+          "pubType": "comparative study; research-article; journal article",
+          "isOpenAccess": "N",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 36,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "N",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp",
+              "doi"
+            ]
+          },
+          "firstPublicationDate": "2017-04-19",
+          "firstIndexDate": "2017-04-20"
+        },
+        {
+          "id": "22965418",
+          "source": "MED",
+          "pmid": "22965418",
+          "pmcid": "PMC3594976",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC3594976"
+            ]
+          },
+          "doi": "10.1002/ijc.27836",
+          "title": "Genetic variation in the lactase gene, dairy product intake and risk for prostate cancer in the European prospective investigation into cancer and nutrition.",
+          "authorString": "Travis RC, Appleby PN, Siddiq A, Allen NE, Kaaks R, Canzian F, Feller S, Tj\u00f8nneland A, F\u00f8ns Johnsen N, Overvad K, Ram\u00f3n Quir\u00f3s J, Gonz\u00e1lez CA, S\u00e1nchez MJ, Larra\u00f1aga N, Chirlaque MD, Barricarte A, Khaw KT, Wareham N, Trichopoulou A, Valanou E, Oustoglou E, Palli D, Sieri S, Tumino R, Sacerdote C, Bueno-de-Mesquita HB, Stattin P, Ferrari P, Johansson M, Norat T, Riboli E, Key TJ.",
+          "journalTitle": "Int J Cancer",
+          "issue": "8",
+          "journalVolume": "132",
+          "pubYear": "2013",
+          "journalIssn": "0020-7136; 1097-0215; ",
+          "pageInfo": "1901-1910",
+          "pubType": "research support, non-u.s. gov't; research-article; journal article",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 33,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "N",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp"
+            ]
+          },
+          "firstPublicationDate": "2012-10-17",
+          "firstIndexDate": "2012-09-12"
+        },
+        {
+          "id": "30728219",
+          "source": "MED",
+          "pmid": "30728219",
+          "pmcid": "PMC7340535",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC7340535"
+            ]
+          },
+          "doi": "10.2337/dc18-2034",
+          "title": "Dairy Product Intake and Risk of Type 2 Diabetes in EPIC-InterAct: A Mendelian Randomization Study.",
+          "authorString": "Vissers LET, Sluijs I, van der Schouw YT, Forouhi NG, Imamura F, Burgess S, Barricarte A, Boeing H, Bonet C, Chirlaque MD, Fagherazzi G, Franks PW, Freisling H, Gunter MJ, Quir\u00f3s JR, Ibsen DB, Kaaks R, Key T, Khaw KT, K\u00fchn T, Mokoroa O, Nilsson PM, Overvad K, Pala V, Palli D, Panico S, Sacerdote C, Spijkerman AMW, Tjonneland A, Tumino R, Rodr\u00edguez-Barranco M, Rolandsson O, Riboli E, Sharp SJ, Langenberg C, Wareham NJ.",
+          "journalTitle": "Diabetes Care",
+          "issue": "4",
+          "journalVolume": "42",
+          "pubYear": "2019",
+          "journalIssn": "0149-5992; 1935-5548; ",
+          "pageInfo": "568-575",
+          "pubType": "research support, non-u.s. gov't; research-article; journal article",
+          "isOpenAccess": "N",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 32,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp"
+            ]
+          },
+          "firstPublicationDate": "2019-02-06",
+          "firstIndexDate": "2019-02-08"
+        },
+        {
+          "id": "33261611",
+          "source": "MED",
+          "pmid": "33261611",
+          "pmcid": "PMC7709312",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC7709312"
+            ]
+          },
+          "doi": "10.1186/s12916-020-01839-9",
+          "title": "Genetically proxied milk consumption and risk of colorectal, bladder, breast, and prostate cancer: a two-sample Mendelian randomization study.",
+          "authorString": "Larsson SC, Mason AM, Kar S, Vithayathil M, Carter P, Baron JA, Micha\u00eblsson K, Burgess S.",
+          "journalTitle": "BMC Med",
+          "issue": "1",
+          "journalVolume": "18",
+          "pubYear": "2020",
+          "journalIssn": "1741-7015",
+          "pageInfo": "370",
+          "pubType": "research support, non-u.s. gov't; research-article; journal article",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 31,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "N",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp"
+            ]
+          },
+          "firstPublicationDate": "2020-12-02",
+          "firstIndexDate": "2020-12-03"
+        },
+        {
+          "id": "29125573",
+          "source": "MED",
+          "pmid": "29125573",
+          "pmcid": "PMC5748628",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC5748628"
+            ]
+          },
+          "doi": "10.3390/jpm7040016",
+          "title": "Tailoring Nutritional Advice for Mexicans Based on Prevalence Profiles of Diet-Related Adaptive Gene Polymorphisms.",
+          "authorString": "Ojeda-Granados C, Panduro A, Gonzalez-Aldaco K, Sepulveda-Villegas M, Rivera-I\u00f1iguez I, Roman S.",
+          "journalTitle": "J Pers Med",
+          "issue": "4",
+          "journalVolume": "7",
+          "pubYear": "2017",
+          "journalIssn": "2075-4426",
+          "pageInfo": "E16",
+          "pubType": "research-article; journal article",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 31,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp",
+              "doi"
+            ]
+          },
+          "firstPublicationDate": "2017-11-10",
+          "firstIndexDate": "2017-11-11"
+        },
+        {
+          "id": "22948027",
+          "source": "MED",
+          "pmid": "22948027",
+          "pmcid": "PMC3641376",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC3641376"
+            ]
+          },
+          "doi": "10.1038/ejhg.2012.199",
+          "title": "Stronger signal of recent selection for lactase persistence in Maasai than in Europeans.",
+          "authorString": "Schlebusch CM, Sj\u00f6din P, Skoglund P, Jakobsson M.",
+          "journalTitle": "Eur J Hum Genet",
+          "issue": "5",
+          "journalVolume": "21",
+          "pubYear": "2013",
+          "journalIssn": "1018-4813; 1476-5438; ",
+          "pageInfo": "550-553",
+          "pubType": "research support, non-u.s. gov't; research-article; journal article",
+          "isOpenAccess": "N",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 31,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp",
+              "omim"
+            ]
+          },
+          "firstPublicationDate": "2012-09-05",
+          "firstIndexDate": "2012-09-06"
+        },
+        {
+          "id": "37935687",
+          "source": "MED",
+          "pmid": "37935687",
+          "pmcid": "PMC10630423",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC10630423"
+            ]
+          },
+          "doi": "10.1038/s41467-023-42491-0",
+          "title": "Unappreciated subcontinental admixture in Europeans and European Americans and implications for genetic epidemiology studies.",
+          "authorString": "Gouveia MH, Bentley AR, Leal TP, Tarazona-Santos E, Bustamante CD, Adeyemo AA, Rotimi CN, Shriner D.",
+          "journalTitle": "Nat Commun",
+          "issue": "1",
+          "journalVolume": "14",
+          "pubYear": "2023",
+          "journalIssn": "2041-1723",
+          "pageInfo": "6802",
+          "pubType": "research support, n.i.h., intramural; research-article; journal article; research support, n.i.h., extramural",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 29,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp",
+              "dbgap",
+              "doi"
+            ]
+          },
+          "firstPublicationDate": "2023-11-07",
+          "firstIndexDate": "2023-11-08"
+        },
+        {
+          "id": "38253929",
+          "source": "MED",
+          "pmid": "38253929",
+          "pmcid": "PMC11097298",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC11097298"
+            ]
+          },
+          "doi": "10.1038/s42255-023-00961-1",
+          "title": "Variant of the lactase LCT gene explains association between milk intake and incident type 2 diabetes.",
+          "authorString": "Luo K, Chen GC, Zhang Y, Moon JY, Xing J, Peters BA, Usyk M, Wang Z, Hu G, Li J, Selvin E, Selvin E, Rebholz CM, Wang T, Isasi CR, Yu B, Knight R, Boerwinkle E, Burk RD, Kaplan RC, Qi Q.",
+          "journalTitle": "Nat Metab",
+          "issue": "1",
+          "journalVolume": "6",
+          "pubYear": "2024",
+          "journalIssn": "2522-5812",
+          "pageInfo": "169-186",
+          "pubType": "research-article; journal article",
+          "isOpenAccess": "N",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 27,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp"
+            ]
+          },
+          "firstPublicationDate": "2024-01-22",
+          "firstIndexDate": "2024-01-23"
+        }
+      ]
+    }
+  }
+}

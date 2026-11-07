@@ -1,0 +1,99 @@
+{
+  "source": "dbsnp",
+  "retrieved": "2026-11-07T02:19:13+00:00",
+  "request": {
+    "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi",
+    "id": "34637584"
+  },
+  "response": {
+    "header": {
+      "type": "esummary",
+      "version": "0.3"
+    },
+    "result": {
+      "uids": [
+        "34637584"
+      ],
+      "34637584": {
+        "uid": "34637584",
+        "snp_id": 34637584,
+        "allele_origin": "",
+        "global_mafs": [
+          {
+            "study": "1000Genomes",
+            "freq": "A=0.0001997/1"
+          },
+          {
+            "study": "1000Genomes_30X",
+            "freq": "A=0.0003123/2"
+          },
+          {
+            "study": "ExAC",
+            "freq": "A=0.0003873/47"
+          },
+          {
+            "study": "GnomAD_exomes",
+            "freq": "A=0.0003868/542"
+          },
+          {
+            "study": "GnomAD_genomes",
+            "freq": "A=0.0003553/53"
+          },
+          {
+            "study": "PAGE_STUDY",
+            "freq": "A=0.0005591/44"
+          },
+          {
+            "study": "PRJEB36033",
+            "freq": "A=0./0"
+          },
+          {
+            "study": "TOMMO",
+            "freq": "A=0.0000387/3"
+          },
+          {
+            "study": "TOPMED",
+            "freq": "A=0.0005856/155"
+          },
+          {
+            "study": "ALFA",
+            "freq": "A=0.0007727/163"
+          }
+        ],
+        "global_population": "",
+        "global_samplesize": "",
+        "suspected": "",
+        "clinical_significance": "pathogenic-likely-pathogenic,risk-factor,pathogenic",
+        "genes": [
+          {
+            "name": "LRRK2",
+            "gene_id": "120892"
+          }
+        ],
+        "acc": "NC_000012.12",
+        "chr": "12",
+        "handle": "TOMMO_GENOMICS,NHLBI-ESP,GNOMAD,SSMP,1000G_HIGH_COVERAGE,PAGE_CC,EVA,EVA_DECODE,CLINSEQ_SNP,AFFY,EVA_EXAC,MAYO-JAX,EXOME_CHIP,HUMAN_LONGEVITY,TOPMED,GSK-GENETICS,ILLUMINA,GENEREVIEWS,OMIM-CURATED-RECORDS,1000GENOMES,ZABETIAN-UW-NGEN,CRYSTAL_QCHIP,HUGCELL_USP",
+        "spdi": "NC_000012.12:40340399:G:A",
+        "fxn_class": "missense_variant,non_coding_transcript_variant,coding_sequence_variant,genic_downstream_transcript_variant",
+        "validated": "by-frequency,by-alfa,by-cluster",
+        "docsum": "HGVS=NC_000012.12:g.40340400G>A,NC_000012.11:g.40734202G>A,NG_011709.2:g.120405G>A,NG_011709.1:g.120390G>A,NM_198578.4:c.6055G>A,NM_198578.3:c.6055G>A,XM_005268629.5:c.6055G>A,XM_005268629.4:c.6055G>A,XM_005268629.3:c.6055G>A,XM_005268629.2:c.6055G>A,XM_005268629.1:c.6055G>A,XM_011537877.4:c.6055G>A,XM_011537877.3:c.6055G>A,XM_011537877.2:c.6055G>A,XM_011537877.1:c.6055G>A,XM_024448833.2:c.4852G>A,XM_024448833.1:c.4852G>A,XM_017018787.2:c.2971G>A,XM_017018787.1:c.2971G>A,XR_007063041.1:n.6190G>A,XM_047428277.1:c.6055G>A,XM_047428278.1:c.6055G>A,NP_940980.4:p.Gly2019Ser,XP_005268686.1:p.Gly2019Ser,XP_011536179.1:p.Gly2019Ser,XP_024304601.1:p.Gly1618Ser,XP_016874276.1:p.Gly991Ser,XP_047284233.1:p.Gly2019Ser,XP_047284234.1:p.Gly2019Ser|SEQ=[G/A]|LEN=1|GENE=LRRK2:120892",
+        "tax_id": 9606,
+        "orig_build": 126,
+        "upd_build": 157,
+        "createdate": "2006/03/14 07:56",
+        "updatedate": "2024/11/01 11:23",
+        "ss": "48398564,52084193,253281849,342353248,462818301,475883593,491040018,491466362,491663141,550896446,658665642,780909530,783597038,1344701761,1599119468,1690855143,1752066496,1917872480,1946336329,1959428552,2094873282,2189139407,2632949817,2632949818,2739732002,2748842312,2909601707,2984972605,2985615093,3021423274,3625621505,3625621506,3625621507,3625621508,3625621509,3625621510,3625621511,3626859525,3634500427,3640207760,3644589302,3651799154,3653745557,3693516657,3725318275,3744394073,3744801127,3771685780,3772300630,3824718633,3985586502,4915532941,6131740213,6259946325,6310469966,6404089471,6446552636,6907388262,8290531054,8314393861,8405141316,8485319082,8587882074,8847666438,8904078032,8944354147,8979388588,8982191645",
+        "allele": "R",
+        "snp_class": "snv",
+        "chrpos": "12:40340400",
+        "chrpos_prev_assm": "12:40734202",
+        "text": "",
+        "snp_id_sort": "0034637584",
+        "clinical_sort": "1",
+        "cited_sort": "",
+        "chrpos_sort": "0040340400",
+        "merged_sort": "0"
+      }
+    }
+  }
+}

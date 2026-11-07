@@ -1,0 +1,632 @@
+{
+  "source": "europepmc",
+  "retrieved": "2026-11-07T02:09:41+00:00",
+  "request": {
+    "query": "(TITLE:rs1815739 OR ABSTRACT:rs1815739) AND PUB_TYPE:\"research-article\" NOT PUB_TYPE:review"
+  },
+  "response": {
+    "version": "6.9",
+    "hitCount": 67,
+    "nextCursorMark": "AoJVASgzNTg2ODU1OQ==",
+    "nextPageUrl": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=%28TITLE%3Ars1815739+OR+ABSTRACT%3Ars1815739%29+AND+PUB_TYPE%3A%22research-article%22+NOT+PUB_TYPE%3Areview&cursorMark=AoJVASgzNTg2ODU1OQ%3D%3D&resultType=lite&pageSize=15&sort=CITED+desc&format=json",
+    "request": {
+      "queryString": "(TITLE:rs1815739 OR ABSTRACT:rs1815739) AND PUB_TYPE:\"research-article\" NOT PUB_TYPE:review",
+      "resultType": "lite",
+      "cursorMark": "*",
+      "pageSize": 15,
+      "sort": "CITED desc",
+      "synonym": false
+    },
+    "resultList": {
+      "result": [
+        {
+          "id": "21542061",
+          "source": "MED",
+          "pmid": "21542061",
+          "pmcid": "PMC3174315",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC3174315"
+            ]
+          },
+          "doi": "10.1002/humu.21526",
+          "title": "ACTN3 genotype, athletic status, and life course physical capability: meta-analysis of the published literature and findings from nine studies.",
+          "authorString": "Alfred T, Ben-Shlomo Y, Cooper R, Hardy R, Cooper C, Deary IJ, Gunnell D, Harris SE, Kumari M, Martin RM, Moran CN, Pitsiladis YP, Ring SM, Sayer AA, Smith GD, Starr JM, Kuh D, Day IN, HALCyon study team.",
+          "journalTitle": "Hum Mutat",
+          "issue": "9",
+          "journalVolume": "32",
+          "pubYear": "2011",
+          "journalIssn": "1059-7794; 1098-1004; ",
+          "pageInfo": "1008-1018",
+          "pubType": "meta-analysis; research support, non-u.s. gov't; research-article; journal article; research support, n.i.h., extramural",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 71,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp",
+              "omim"
+            ]
+          },
+          "firstPublicationDate": "2011-07-20",
+          "firstIndexDate": "2011-05-05"
+        },
+        {
+          "id": "22916217",
+          "source": "MED",
+          "pmid": "22916217",
+          "pmcid": "PMC3420864",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC3420864"
+            ]
+          },
+          "doi": "10.1371/journal.pone.0043132",
+          "title": "The ACTN3 R577X polymorphism across three groups of elite male European athletes.",
+          "authorString": "Eynon N, Ruiz JR, Femia P, Pushkarev VP, Cieszczyk P, Maciejewska-Karlowska A, Sawczuk M, Dyatlov DA, Lekontsev EV, Kulikov LM, Birk R, Bishop DJ, Lucia A.",
+          "journalTitle": "PLoS One",
+          "issue": "8",
+          "journalVolume": "7",
+          "pubYear": "2012",
+          "journalIssn": "1932-6203",
+          "pageInfo": "e43132",
+          "pubType": "research support, non-u.s. gov't; research-article; journal article",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 65,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp"
+            ]
+          },
+          "firstPublicationDate": "2012-08-16",
+          "firstIndexDate": "2012-08-24"
+        },
+        {
+          "id": "31145768",
+          "source": "MED",
+          "pmid": "31145768",
+          "pmcid": "PMC6542526",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC6542526"
+            ]
+          },
+          "doi": "10.1371/journal.pone.0217390",
+          "title": "Association of the ACTN3 R577X (rs1815739) polymorphism with elite power sports: A meta-analysis.",
+          "authorString": "Tharabenjasin P, Pabalan N, Jarjanazi H.",
+          "journalTitle": "PLoS One",
+          "issue": "5",
+          "journalVolume": "14",
+          "pubYear": "2019",
+          "journalIssn": "1932-6203",
+          "pageInfo": "e0217390",
+          "pubType": "meta-analysis; research-article; journal article",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 34,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp",
+              "doi"
+            ]
+          },
+          "firstPublicationDate": "2019-05-30",
+          "firstIndexDate": "2019-05-31"
+        },
+        {
+          "id": "32569264",
+          "source": "MED",
+          "pmid": "32569264",
+          "pmcid": "PMC7307776",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC7307776"
+            ]
+          },
+          "doi": "10.1371/journal.pone.0234458",
+          "title": "The genetic profile of elite youth soccer players and its association with power and speed depends on maturity status.",
+          "authorString": "Murtagh CF, Brownlee TE, Rienzi E, Roquero S, Moreno S, Huertas G, Lugioratto G, Baumert P, Turner DC, Lee D, Dickinson P, Lyon KA, Sheikhsaraf B, Biyik B, O'Boyle A, Morgans R, Massey A, Drust B, Erskine RM.",
+          "journalTitle": "PLoS One",
+          "issue": "6",
+          "journalVolume": "15",
+          "pubYear": "2020",
+          "journalIssn": "1932-6203",
+          "pageInfo": "e0234458",
+          "pubType": "research-article; journal article",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 33,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp",
+              "doi"
+            ]
+          },
+          "firstPublicationDate": "2020-06-22",
+          "firstIndexDate": "2020-06-23"
+        },
+        {
+          "id": "27798356",
+          "source": "MED",
+          "pmid": "27798356",
+          "pmcid": "PMC5099965",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC5099965"
+            ]
+          },
+          "doi": "10.14814/phy2.13003",
+          "title": "Lack of replication of associations between multiple genetic polymorphisms and endurance athlete status in Japanese population.",
+          "authorString": "Yvert T, Miyamoto-Mikami E, Murakami H, Miyachi M, Kawahara T, Fuku N.",
+          "journalTitle": "Physiol Rep",
+          "issue": "20",
+          "journalVolume": "4",
+          "pubYear": "2016",
+          "journalIssn": "2051-817x",
+          "pageInfo": "e13003",
+          "pubType": "research support, non-u.s. gov't; research-article; journal article",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 32,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "N",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp"
+            ]
+          },
+          "firstPublicationDate": "2016-10-24",
+          "firstIndexDate": "2016-11-02"
+        },
+        {
+          "id": "31146466",
+          "source": "MED",
+          "pmid": "31146466",
+          "pmcid": "PMC6627880",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC6627880"
+            ]
+          },
+          "doi": "10.3390/genes10060413",
+          "title": "<i>ACTN3</i> R577X Genotype and Exercise Phenotypes in Recreational Marathon Runners.",
+          "authorString": "Del Coso J, Moreno V, Guti\u00e9rrez-Hell\u00edn J, Baltazar-Martins G, Ru\u00edz-Moreno C, Aguilar-Navarro M, Lara B, Luc\u00eda A.",
+          "journalTitle": "Genes (Basel)",
+          "issue": "6",
+          "journalVolume": "10",
+          "pubYear": "2019",
+          "journalIssn": "2073-4425",
+          "pageInfo": "E413",
+          "pubType": "research support, non-u.s. gov't; research-article; journal article",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 30,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "N",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp",
+              "doi"
+            ]
+          },
+          "firstPublicationDate": "2019-05-29",
+          "firstIndexDate": "2019-06-01"
+        },
+        {
+          "id": "31139091",
+          "source": "MED",
+          "pmid": "31139091",
+          "pmcid": "PMC6518954",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC6518954"
+            ]
+          },
+          "doi": "10.3389/fphys.2019.00526",
+          "title": "Cellular Aspects of Muscle Specialization Demonstrate Genotype - Phenotype Interaction Effects in Athletes.",
+          "authorString": "Fl\u00fcck M, Kramer M, Fitze DP, Kasper S, Franchi MV, Valdivieso P.",
+          "journalTitle": "Front Physiol",
+          "journalVolume": "10",
+          "pubYear": "2019",
+          "journalIssn": "1664-042x",
+          "pageInfo": "526",
+          "pubType": "research-article; journal article",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 29,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp",
+              "doi"
+            ]
+          },
+          "firstPublicationDate": "2019-05-08",
+          "firstIndexDate": "2019-05-31"
+        },
+        {
+          "id": "36468031",
+          "source": "MED",
+          "pmid": "36468031",
+          "pmcid": "PMC9708895",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC9708895"
+            ]
+          },
+          "doi": "10.3389/fgene.2022.1035899",
+          "title": "Genetic profile in genes associated with muscle injuries and injury etiology in professional soccer players.",
+          "authorString": "Maestro A, Del Coso J, Aguilar-Navarro M, Guti\u00e9rrez-Hell\u00edn J, Morencos E, Revuelta G, Ruiz Casares E, Perucho T, Varillas-Delgado D.",
+          "journalTitle": "Front Genet",
+          "journalVolume": "13",
+          "pubYear": "2022",
+          "journalIssn": "1664-8021",
+          "pageInfo": "1035899",
+          "pubType": "research-article; journal article",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 28,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "N",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp",
+              "doi"
+            ]
+          },
+          "firstPublicationDate": "2022-11-16",
+          "firstIndexDate": "2022-12-06"
+        },
+        {
+          "id": "26757799",
+          "source": "MED",
+          "pmid": "26757799",
+          "pmcid": "PMC4929273",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC4929273"
+            ]
+          },
+          "doi": "10.1152/physiolgenomics.00107.2015",
+          "title": "Association of ACTN3 R577X but not ACE I/D gene variants with elite rugby union player status and playing position.",
+          "authorString": "Heffernan SM, Kilduff LP, Erskine RM, Day SH, McPhee JS, McMahon GE, Stebbings GK, Neale JP, Lockey SJ, Ribbans WJ, Cook CJ, Vance B, Raleigh SM, Roberts C, Bennett MA, Wang G, Collins M, Pitsiladis YP, Williams AG.",
+          "journalTitle": "Physiol Genomics",
+          "issue": "3",
+          "journalVolume": "48",
+          "pubYear": "2016",
+          "journalIssn": "1094-8341; 1531-2267; ",
+          "pageInfo": "196-201",
+          "pubType": "research-article; journal article",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 28,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "N",
+          "hasBook": "N",
+          "hasSuppl": "N",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp"
+            ]
+          },
+          "firstPublicationDate": "2016-01-12",
+          "firstIndexDate": "2016-01-14"
+        },
+        {
+          "id": "29345962",
+          "source": "MED",
+          "pmid": "29345962",
+          "pmcid": "PMC6008072",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC6008072"
+            ]
+          },
+          "doi": "10.1152/japplphysiol.00953.2017",
+          "title": "Role of selected polymorphisms in determining muscle fiber composition in Japanese men and women.",
+          "authorString": "Kumagai H, Tobina T, Ichinoseki-Sekine N, Kakigi R, Tsuzuki T, Zempo H, Shiose K, Yoshimura E, Kumahara H, Ayabe M, Higaki Y, Yamada R, Kobayashi H, Kiyonaga A, Naito H, Tanaka H, Fuku N.",
+          "journalTitle": "J Appl Physiol (1985)",
+          "issue": "5",
+          "journalVolume": "124",
+          "pubYear": "2018",
+          "journalIssn": "8750-7587; 1522-1601; ",
+          "pageInfo": "1377-1384",
+          "pubType": "research support, non-u.s. gov't; research-article; journal article",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 27,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "N",
+          "hasBook": "N",
+          "hasSuppl": "N",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp"
+            ]
+          },
+          "firstPublicationDate": "2018-01-18",
+          "firstIndexDate": "2018-01-19"
+        },
+        {
+          "id": "35309536",
+          "source": "MED",
+          "pmid": "35309536",
+          "pmcid": "PMC8919892",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC8919892"
+            ]
+          },
+          "doi": "10.5114/biolsport.2022.105333",
+          "title": "Speed and power-related gene polymorphisms associated with playing position in elite soccer players.",
+          "authorString": "Petr M, Thiel D, Kate\u0159ina K, Bro\u017e P, Mal\u00fd T, Zah\u00e1lka F, Vostatkov\u00e1 P, Wilk M, Chycki J, Stastny P.",
+          "journalTitle": "Biol Sport",
+          "issue": "2",
+          "journalVolume": "39",
+          "pubYear": "2022",
+          "journalIssn": "0860-021x; 2083-1862; ",
+          "pageInfo": "355-366",
+          "pubType": "research-article; journal article",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 25,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "N",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp",
+              "doi"
+            ]
+          },
+          "firstPublicationDate": "2021-04-21",
+          "firstIndexDate": "2022-03-21"
+        },
+        {
+          "id": "34768452",
+          "source": "MED",
+          "pmid": "34768452",
+          "pmcid": "PMC8584842",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC8584842"
+            ]
+          },
+          "doi": "10.3390/jcm10214933",
+          "title": "Sarcopenia, Obesity, and Sarcopenic Obesity: Relationship with Skeletal Muscle Phenotypes and Single Nucleotide Polymorphisms.",
+          "authorString": "Khanal P, Williams AG, He L, Stebbings GK, Onambele-Pearson GL, Thomis M, Degens H, Morse CI.",
+          "journalTitle": "J Clin Med",
+          "issue": "21",
+          "journalVolume": "10",
+          "pubYear": "2021",
+          "journalIssn": "2077-0383",
+          "pageInfo": "4933",
+          "pubType": "research-article; journal article",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 23,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp",
+              "doi"
+            ]
+          },
+          "firstPublicationDate": "2021-10-25",
+          "firstIndexDate": "2021-11-27"
+        },
+        {
+          "id": "21407828",
+          "source": "MED",
+          "pmid": "21407828",
+          "pmcid": "PMC3048287",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC3048287"
+            ]
+          },
+          "doi": "10.1371/journal.pone.0017558",
+          "title": "Are 'endurance' alleles 'survival' alleles? Insights from the ACTN3 R577X polymorphism.",
+          "authorString": "Fiuza-Luces C, Ruiz JR, Rodr\u00edguez-Romo G, Santiago C, G\u00f3mez-Gallego F, Yvert T, Cano-Nieto A, Garatachea N, Mor\u00e1n M, Lucia A.",
+          "journalTitle": "PLoS One",
+          "issue": "3",
+          "journalVolume": "6",
+          "pubYear": "2011",
+          "journalIssn": "1932-6203",
+          "pageInfo": "e17558",
+          "pubType": "research support, non-u.s. gov't; research-article; journal article",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 23,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "N",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp"
+            ]
+          },
+          "firstPublicationDate": "2011-03-03",
+          "firstIndexDate": "2011-03-17"
+        },
+        {
+          "id": "33679448",
+          "source": "MED",
+          "pmid": "33679448",
+          "pmcid": "PMC7925619",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC7925619"
+            ]
+          },
+          "doi": "10.3389/fphys.2021.636972",
+          "title": "Responses to Maximal Strength Training in Different Age and Gender Groups.",
+          "authorString": "Kittilsen HT, Goleva-Fjellet S, Freberg BI, Nicolaisen I, St\u00f8a EM, Bratland-Sanda S, Helgerud J, Wang E, S\u00e6b\u00f8 M, St\u00f8ren \u00d8.",
+          "journalTitle": "Front Physiol",
+          "journalVolume": "12",
+          "pubYear": "2021",
+          "journalIssn": "1664-042x",
+          "pageInfo": "636972",
+          "pubType": "research-article; journal article",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 21,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp",
+              "nct",
+              "doi"
+            ]
+          },
+          "firstPublicationDate": "2021-02-17",
+          "firstIndexDate": "2021-03-09"
+        },
+        {
+          "id": "27747845",
+          "source": "MED",
+          "pmid": "27747845",
+          "pmcid": "PMC4532716",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC4532716"
+            ]
+          },
+          "doi": "10.1186/s40798-015-0008-x",
+          "title": "ACTN3 R577X polymorphism is not associated with team sport athletic status in Italians.",
+          "authorString": "Massidda M, Bachis V, Corrias L, Piras F, Scorcu M, Culigioni C, Masala D, Cal\u00f2 CM.",
+          "journalTitle": "Sports Med Open",
+          "issue": "1",
+          "journalVolume": "1",
+          "pubYear": "2015",
+          "journalIssn": "2199-1170; 2198-9761; ",
+          "pageInfo": "6",
+          "pubType": "research-article; journal article",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 21,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "N",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "doi"
+            ]
+          },
+          "firstPublicationDate": "2015-03-27",
+          "firstIndexDate": "2016-10-19"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,127 @@
+{
+  "source": "dbsnp",
+  "retrieved": "2026-11-07T02:09:02+00:00",
+  "request": {
+    "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi",
+    "id": "4988235"
+  },
+  "response": {
+    "header": {
+      "type": "esummary",
+      "version": "0.3"
+    },
+    "result": {
+      "uids": [
+        "4988235"
+      ],
+      "4988235": {
+        "uid": "4988235",
+        "snp_id": 4988235,
+        "allele_origin": "",
+        "global_mafs": [
+          {
+            "study": "1000Genomes",
+            "freq": "A=0.161342/808"
+          },
+          {
+            "study": "1000Genomes_30X",
+            "freq": "A=0.168332/1078"
+          },
+          {
+            "study": "Daghestan",
+            "freq": "A=0.172535/196"
+          },
+          {
+            "study": "Estonian",
+            "freq": "A=0.491071/2200"
+          },
+          {
+            "study": "GENOME_DK",
+            "freq": "G=0.275/11"
+          },
+          {
+            "study": "GnomAD_genomes",
+            "freq": "A=0.396052/59045"
+          },
+          {
+            "study": "GoNL",
+            "freq": "G=0.280561/280"
+          },
+          {
+            "study": "HapMap",
+            "freq": "A=0.258656/254"
+          },
+          {
+            "study": "NorthernSweden",
+            "freq": "G=0.251667/151"
+          },
+          {
+            "study": "PAGE_STUDY",
+            "freq": "A=0.162121/12757"
+          },
+          {
+            "study": "PRJEB36033",
+            "freq": "A=0./0"
+          },
+          {
+            "study": "PRJEB37584",
+            "freq": "A=0.002525/2"
+          },
+          {
+            "study": "Qatari",
+            "freq": "A=0.027778/6"
+          },
+          {
+            "study": "SGDP_PRJ",
+            "freq": "G=0.353659/29"
+          },
+          {
+            "study": "Siberian",
+            "freq": "G=0.25/4"
+          },
+          {
+            "study": "TOPMED",
+            "freq": "A=0.359012/95027"
+          },
+          {
+            "study": "ALFA",
+            "freq": "G=0.494832/77561"
+          }
+        ],
+        "global_population": "",
+        "global_samplesize": "",
+        "suspected": "",
+        "clinical_significance": "association",
+        "genes": [
+          {
+            "name": "MCM6",
+            "gene_id": "4175"
+          }
+        ],
+        "acc": "NC_000002.12",
+        "chr": "2",
+        "handle": "SNP500CANCER,BIOINF_KMB_FNS_UNIBA,EVA-GONL,KHV_HUMAN_GENOMES,EVA_DECODE,ACPOP,SANFORD_IMAGENETICS,ABI,HUMANGENOME_JCVI,ENSEMBL,BCM-HGSC-SUB,URBANLAB,PAGE_CC,DSWALLOW,USC_VALOUEV,SGDP_PRJ,KRIBB_YJKIM,OMIM-CURATED-RECORDS,WEILL_CORNELL_DGM,EGCUT_WGS,EVA_GENOME_DK,1000GENOMES,BCMHGSC_JDW,YEGNASUBRAMANIAN_LAB,JJLAB,GENOMED,HAMMER_LAB,DDI,GMI,HUMAN_LONGEVITY,GNOMAD,HUGCELL_USP,COMPLETE_GENOMICS,HGSV,CSHL,EGP_SNPS,BL,SWEGEN,PJP,ILLUMINA,EVA_SVP,1000G_HIGH_COVERAGE,SSAHASNP,EVA,EVA_UK10K_TWINSUK,JMKIDD_LAB,TOPMED,EVA_UK10K_ALSPAC",
+        "spdi": "NC_000002.12:135851075:G:A,NC_000002.12:135851075:G:C,NC_000002.12:135851075:G:T",
+        "fxn_class": "intron_variant",
+        "validated": "by-frequency,by-alfa,by-cluster",
+        "docsum": "HGVS=NC_000002.12:g.135851076G>A,NC_000002.12:g.135851076G>C,NC_000002.12:g.135851076G>T,NC_000002.11:g.136608646G>A,NC_000002.11:g.136608646G>C,NC_000002.11:g.136608646G>T,NG_008104.2:g.9094C>T,NG_008104.2:g.9094C>G,NG_008104.2:g.9094C>A,NG_008958.1:g.30366C>T,NG_008958.1:g.30366C>G,NG_008958.1:g.30366C>A|SEQ=[G/A/C/T]|LEN=1|GENE=MCM6:4175",
+        "tax_id": 9606,
+        "orig_build": 113,
+        "upd_build": 157,
+        "createdate": "2003/03/31 15:56",
+        "updatedate": "2024/10/30 22:46",
+        "ss": "6905277,21718943,41791584,66536930,75046935,77533811,78390960,91358492,96429678,105437324,109911558,119497200,136140189,160735894,165275741,167206869,173903967,205615294,231373888,253507113,284442913,292373850,410938247,481126268,481148421,482137356,485358206,537302999,778555721,783124812,784081462,832383636,834012514,977391047,1069520152,1299460862,1397305328,1428750137,1505810855,1579099368,1586819657,1604632304,1604632305,1647626337,1647626338,1712492313,1752312553,1920650265,1958461414,1968896143,2020848212,2094807482,2095101017,2148915016,2234547850,2633676742,2710912514,2780042566,2990481553,3022020033,3024187558,3344495711,3625766164,3628172558,3631640190,3633217359,3633929867,3634788851,3635615714,3636477655,3637367658,3638289356,3640496150,3643256169,3647151363,3652460692,3652460693,3658324849,3704954997,3725826699,3728895000,3744480835,3745088704,3757422435,3770950711,3772585379,3801789303,3827236759,3837032809,3842451439,3853484061,3984490123,3984923669,4525091414,6215796381,6287707100,6322148472,6335687230,6349529324,6553299162,8250132797,8332552480,8449932701,8526461060,8624458241,8629875140,8799546152,8820850951,8932504291,8956076266",
+        "allele": "N",
+        "snp_class": "snv",
+        "chrpos": "2:135851076",
+        "chrpos_prev_assm": "2:136608646",
+        "text": "",
+        "snp_id_sort": "0004988235",
+        "clinical_sort": "1",
+        "cited_sort": "",
+        "chrpos_sort": "0135851076",
+        "merged_sort": "0"
+      }
+    }
+  }
+}

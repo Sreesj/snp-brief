@@ -1,0 +1,1764 @@
+{
+  "source": "gnomad",
+  "retrieved": "2026-11-07T02:17:28+00:00",
+  "request": {
+    "rsid": "rs1426654",
+    "dataset": "gnomad_r4"
+  },
+  "response": {
+    "dataset": "gnomad_r4",
+    "variants": [
+      {
+        "totals": {
+          "data": {
+            "variant": {
+              "variantId": "15-48134287-A-G",
+              "reference_genome": "GRCh38",
+              "chrom": "15",
+              "pos": 48134287,
+              "ref": "A",
+              "alt": "G",
+              "exome": {
+                "ac": 117787,
+                "an": 1461346,
+                "af": 0.08060171923692268
+              },
+              "genome": {
+                "ac": 45411,
+                "an": 152126,
+                "af": 0.29850913058911693
+              }
+            }
+          }
+        },
+        "populations": {
+          "exome": {
+            "data": {
+              "variant": {
+                "variantId": "15-48134287-A-G",
+                "exome": {
+                  "populations": [
+                    {
+                      "id": "remaining",
+                      "ac": 8421,
+                      "an": 60366
+                    },
+                    {
+                      "id": "remaining_XX",
+                      "ac": 4731,
+                      "an": 31782
+                    },
+                    {
+                      "id": "remaining_XY",
+                      "ac": 3690,
+                      "an": 28584
+                    },
+                    {
+                      "id": "amr",
+                      "ac": 22304,
+                      "an": 44698
+                    },
+                    {
+                      "id": "amr_XX",
+                      "ac": 13134,
+                      "an": 25672
+                    },
+                    {
+                      "id": "amr_XY",
+                      "ac": 9170,
+                      "an": 19026
+                    },
+                    {
+                      "id": "fin",
+                      "ac": 608,
+                      "an": 53418
+                    },
+                    {
+                      "id": "fin_XX",
+                      "ac": 312,
+                      "an": 27646
+                    },
+                    {
+                      "id": "fin_XY",
+                      "ac": 296,
+                      "an": 25772
+                    },
+                    {
+                      "id": "mid",
+                      "ac": 194,
+                      "an": 5764
+                    },
+                    {
+                      "id": "mid_XX",
+                      "ac": 91,
+                      "an": 2504
+                    },
+                    {
+                      "id": "mid_XY",
+                      "ac": 103,
+                      "an": 3260
+                    },
+                    {
+                      "id": "nfe",
+                      "ac": 2272,
+                      "an": 1111664
+                    },
+                    {
+                      "id": "nfe_XX",
+                      "ac": 1108,
+                      "an": 572104
+                    },
+                    {
+                      "id": "nfe_XY",
+                      "ac": 1164,
+                      "an": 539560
+                    },
+                    {
+                      "id": "sas",
+                      "ac": 16730,
+                      "an": 86220
+                    },
+                    {
+                      "id": "sas_XX",
+                      "ac": 4661,
+                      "an": 22028
+                    },
+                    {
+                      "id": "sas_XY",
+                      "ac": 12069,
+                      "an": 64192
+                    },
+                    {
+                      "id": "asj",
+                      "ac": 100,
+                      "an": 26116
+                    },
+                    {
+                      "id": "asj_XX",
+                      "ac": 49,
+                      "an": 12622
+                    },
+                    {
+                      "id": "asj_XY",
+                      "ac": 51,
+                      "an": 13494
+                    },
+                    {
+                      "id": "eas",
+                      "ac": 39449,
+                      "an": 39686
+                    },
+                    {
+                      "id": "eas_XX",
+                      "ac": 20594,
+                      "an": 20708
+                    },
+                    {
+                      "id": "eas_XY",
+                      "ac": 18855,
+                      "an": 18978
+                    },
+                    {
+                      "id": "afr",
+                      "ac": 27709,
+                      "an": 33414
+                    },
+                    {
+                      "id": "afr_XX",
+                      "ac": 15964,
+                      "an": 19294
+                    },
+                    {
+                      "id": "afr_XY",
+                      "ac": 11745,
+                      "an": 14120
+                    },
+                    {
+                      "id": "XX",
+                      "ac": 60644,
+                      "an": 734360
+                    },
+                    {
+                      "id": "XY",
+                      "ac": 57143,
+                      "an": 726986
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "genome": {
+            "data": {
+              "variant": {
+                "variantId": "15-48134287-A-G",
+                "genome": {
+                  "populations": [
+                    {
+                      "id": "remaining",
+                      "ac": 511,
+                      "an": 2108
+                    },
+                    {
+                      "id": "remaining_XX",
+                      "ac": 269,
+                      "an": 1044
+                    },
+                    {
+                      "id": "remaining_XY",
+                      "ac": 242,
+                      "an": 1064
+                    },
+                    {
+                      "id": "amr",
+                      "ac": 5068,
+                      "an": 15258
+                    },
+                    {
+                      "id": "amr_XX",
+                      "ac": 2447,
+                      "an": 6782
+                    },
+                    {
+                      "id": "amr_XY",
+                      "ac": 2621,
+                      "an": 8476
+                    },
+                    {
+                      "id": "fin",
+                      "ac": 132,
+                      "an": 10618
+                    },
+                    {
+                      "id": "fin_XX",
+                      "ac": 23,
+                      "an": 2572
+                    },
+                    {
+                      "id": "fin_XY",
+                      "ac": 109,
+                      "an": 8046
+                    },
+                    {
+                      "id": "ami",
+                      "ac": 0,
+                      "an": 912
+                    },
+                    {
+                      "id": "ami_XX",
+                      "ac": 0,
+                      "an": 470
+                    },
+                    {
+                      "id": "ami_XY",
+                      "ac": 0,
+                      "an": 442
+                    },
+                    {
+                      "id": "eas",
+                      "ac": 5100,
+                      "an": 5180
+                    },
+                    {
+                      "id": "eas_XX",
+                      "ac": 2239,
+                      "an": 2264
+                    },
+                    {
+                      "id": "eas_XY",
+                      "ac": 2861,
+                      "an": 2916
+                    },
+                    {
+                      "id": "mid",
+                      "ac": 5,
+                      "an": 294
+                    },
+                    {
+                      "id": "mid_XX",
+                      "ac": 1,
+                      "an": 144
+                    },
+                    {
+                      "id": "mid_XY",
+                      "ac": 4,
+                      "an": 150
+                    },
+                    {
+                      "id": "sas",
+                      "ac": 1197,
+                      "an": 4818
+                    },
+                    {
+                      "id": "sas_XX",
+                      "ac": 286,
+                      "an": 1152
+                    },
+                    {
+                      "id": "sas_XY",
+                      "ac": 911,
+                      "an": 3666
+                    },
+                    {
+                      "id": "asj",
+                      "ac": 9,
+                      "an": 3470
+                    },
+                    {
+                      "id": "asj_XX",
+                      "ac": 6,
+                      "an": 1868
+                    },
+                    {
+                      "id": "asj_XY",
+                      "ac": 3,
+                      "an": 1602
+                    },
+                    {
+                      "id": "afr",
+                      "ac": 33131,
+                      "an": 41466
+                    },
+                    {
+                      "id": "afr_XX",
+                      "ac": 17612,
+                      "an": 22100
+                    },
+                    {
+                      "id": "afr_XY",
+                      "ac": 15519,
+                      "an": 19366
+                    },
+                    {
+                      "id": "nfe",
+                      "ac": 258,
+                      "an": 68002
+                    },
+                    {
+                      "id": "nfe_XX",
+                      "ac": 138,
+                      "an": 39338
+                    },
+                    {
+                      "id": "nfe_XY",
+                      "ac": 120,
+                      "an": 28664
+                    },
+                    {
+                      "id": "XX",
+                      "ac": 23021,
+                      "an": 77734
+                    },
+                    {
+                      "id": "XY",
+                      "ac": 22390,
+                      "an": 74392
+                    },
+                    {
+                      "id": "hgdp:japanese",
+                      "ac": 56,
+                      "an": 56
+                    },
+                    {
+                      "id": "hgdp:japanese_XX",
+                      "ac": 16,
+                      "an": 16
+                    },
+                    {
+                      "id": "hgdp:japanese_XY",
+                      "ac": 40,
+                      "an": 40
+                    },
+                    {
+                      "id": "hgdp:adygei",
+                      "ac": 0,
+                      "an": 34
+                    },
+                    {
+                      "id": "hgdp:adygei_XX",
+                      "ac": 0,
+                      "an": 20
+                    },
+                    {
+                      "id": "hgdp:adygei_XY",
+                      "ac": 0,
+                      "an": 14
+                    },
+                    {
+                      "id": "hgdp:orcadian",
+                      "ac": 0,
+                      "an": 28
+                    },
+                    {
+                      "id": "hgdp:orcadian_XX",
+                      "ac": 0,
+                      "an": 16
+                    },
+                    {
+                      "id": "hgdp:orcadian_XY",
+                      "ac": 0,
+                      "an": 12
+                    },
+                    {
+                      "id": "hgdp:bantusouthafrica",
+                      "ac": 15,
+                      "an": 16
+                    },
+                    {
+                      "id": "hgdp:bantusouthafrica_XX",
+                      "ac": 0,
+                      "an": 0
+                    },
+                    {
+                      "id": "hgdp:bantusouthafrica_XY",
+                      "ac": 15,
+                      "an": 16
+                    },
+                    {
+                      "id": "hgdp:yakut",
+                      "ac": 38,
+                      "an": 50
+                    },
+                    {
+                      "id": "hgdp:yakut_XX",
+                      "ac": 13,
+                      "an": 14
+                    },
+                    {
+                      "id": "hgdp:yakut_XY",
+                      "ac": 25,
+                      "an": 36
+                    },
+                    {
+                      "id": "hgdp:han",
+                      "ac": 65,
+                      "an": 66
+                    },
+                    {
+                      "id": "hgdp:han_XX",
+                      "ac": 35,
+                      "an": 36
+                    },
+                    {
+                      "id": "hgdp:han_XY",
+                      "ac": 30,
+                      "an": 30
+                    },
+                    {
+                      "id": "hgdp:uygur",
+                      "ac": 8,
+                      "an": 12
+                    },
+                    {
+                      "id": "hgdp:uygur_XX",
+                      "ac": 2,
+                      "an": 4
+                    },
+                    {
+                      "id": "hgdp:uygur_XY",
+                      "ac": 6,
+                      "an": 8
+                    },
+                    {
+                      "id": "hgdp:balochi",
+                      "ac": 0,
+                      "an": 46
+                    },
+                    {
+                      "id": "hgdp:balochi_XX",
+                      "ac": 0,
+                      "an": 0
+                    },
+                    {
+                      "id": "hgdp:balochi_XY",
+                      "ac": 0,
+                      "an": 46
+                    },
+                    {
+                      "id": "hgdp:bedouin",
+                      "ac": 1,
+                      "an": 84
+                    },
+                    {
+                      "id": "hgdp:bedouin_XX",
+                      "ac": 0,
+                      "an": 34
+                    },
+                    {
+                      "id": "hgdp:bedouin_XY",
+                      "ac": 1,
+                      "an": 50
+                    },
+                    {
+                      "id": "hgdp:russian",
+                      "ac": 0,
+                      "an": 50
+                    },
+                    {
+                      "id": "hgdp:russian_XX",
+                      "ac": 0,
+                      "an": 18
+                    },
+                    {
+                      "id": "hgdp:russian_XY",
+                      "ac": 0,
+                      "an": 32
+                    },
+                    {
+                      "id": "hgdp:daur",
+                      "ac": 16,
+                      "an": 18
+                    },
+                    {
+                      "id": "hgdp:daur_XX",
+                      "ac": 4,
+                      "an": 4
+                    },
+                    {
+                      "id": "hgdp:daur_XY",
+                      "ac": 12,
+                      "an": 14
+                    },
+                    {
+                      "id": "hgdp:pima",
+                      "ac": 22,
+                      "an": 22
+                    },
+                    {
+                      "id": "hgdp:pima_XX",
+                      "ac": 10,
+                      "an": 10
+                    },
+                    {
+                      "id": "hgdp:pima_XY",
+                      "ac": 12,
+                      "an": 12
+                    },
+                    {
+                      "id": "hgdp:hezhen",
+                      "ac": 16,
+                      "an": 16
+                    },
+                    {
+                      "id": "hgdp:hezhen_XX",
+                      "ac": 4,
+                      "an": 4
+                    },
+                    {
+                      "id": "hgdp:hezhen_XY",
+                      "ac": 12,
+                      "an": 12
+                    },
+                    {
+                      "id": "hgdp:biaka",
+                      "ac": 44,
+                      "an": 44
+                    },
+                    {
+                      "id": "hgdp:biaka_XX",
+                      "ac": 0,
+                      "an": 0
+                    },
+                    {
+                      "id": "hgdp:biaka_XY",
+                      "ac": 44,
+                      "an": 44
+                    },
+                    {
+                      "id": "hgdp:miao",
+                      "ac": 20,
+                      "an": 20
+                    },
+                    {
+                      "id": "hgdp:miao_XX",
+                      "ac": 6,
+                      "an": 6
+                    },
+                    {
+                      "id": "hgdp:miao_XY",
+                      "ac": 14,
+                      "an": 14
+                    },
+                    {
+                      "id": "hgdp:sindhi",
+                      "ac": 6,
+                      "an": 44
+                    },
+                    {
+                      "id": "hgdp:sindhi_XX",
+                      "ac": 3,
+                      "an": 8
+                    },
+                    {
+                      "id": "hgdp:sindhi_XY",
+                      "ac": 3,
+                      "an": 36
+                    },
+                    {
+                      "id": "hgdp:northernhan",
+                      "ac": 20,
+                      "an": 20
+                    },
+                    {
+                      "id": "hgdp:northernhan_XX",
+                      "ac": 4,
+                      "an": 4
+                    },
+                    {
+                      "id": "hgdp:northernhan_XY",
+                      "ac": 16,
+                      "an": 16
+                    },
+                    {
+                      "id": "hgdp:oroqen",
+                      "ac": 13,
+                      "an": 16
+                    },
+                    {
+                      "id": "hgdp:oroqen_XX",
+                      "ac": 5,
+                      "an": 6
+                    },
+                    {
+                      "id": "hgdp:oroqen_XY",
+                      "ac": 8,
+                      "an": 10
+                    },
+                    {
+                      "id": "hgdp:san",
+                      "ac": 11,
+                      "an": 12
+                    },
+                    {
+                      "id": "hgdp:san_XX",
+                      "ac": 0,
+                      "an": 0
+                    },
+                    {
+                      "id": "hgdp:san_XY",
+                      "ac": 11,
+                      "an": 12
+                    },
+                    {
+                      "id": "hgdp:tu",
+                      "ac": 19,
+                      "an": 20
+                    },
+                    {
+                      "id": "hgdp:tu_XX",
+                      "ac": 6,
+                      "an": 6
+                    },
+                    {
+                      "id": "hgdp:tu_XY",
+                      "ac": 13,
+                      "an": 14
+                    },
+                    {
+                      "id": "hgdp:tuscan",
+                      "ac": 0,
+                      "an": 16
+                    },
+                    {
+                      "id": "hgdp:tuscan_XX",
+                      "ac": 0,
+                      "an": 4
+                    },
+                    {
+                      "id": "hgdp:tuscan_XY",
+                      "ac": 0,
+                      "an": 12
+                    },
+                    {
+                      "id": "hgdp:mbuti",
+                      "ac": 24,
+                      "an": 24
+                    },
+                    {
+                      "id": "hgdp:mbuti_XX",
+                      "ac": 4,
+                      "an": 4
+                    },
+                    {
+                      "id": "hgdp:mbuti_XY",
+                      "ac": 20,
+                      "an": 20
+                    },
+                    {
+                      "id": "hgdp:palestinian",
+                      "ac": 2,
+                      "an": 76
+                    },
+                    {
+                      "id": "hgdp:palestinian_XX",
+                      "ac": 2,
+                      "an": 50
+                    },
+                    {
+                      "id": "hgdp:palestinian_XY",
+                      "ac": 0,
+                      "an": 26
+                    },
+                    {
+                      "id": "hgdp:tujia",
+                      "ac": 20,
+                      "an": 20
+                    },
+                    {
+                      "id": "hgdp:tujia_XX",
+                      "ac": 2,
+                      "an": 2
+                    },
+                    {
+                      "id": "hgdp:tujia_XY",
+                      "ac": 18,
+                      "an": 18
+                    },
+                    {
+                      "id": "hgdp:druze",
+                      "ac": 0,
+                      "an": 70
+                    },
+                    {
+                      "id": "hgdp:druze_XX",
+                      "ac": 0,
+                      "an": 48
+                    },
+                    {
+                      "id": "hgdp:druze_XY",
+                      "ac": 0,
+                      "an": 22
+                    },
+                    {
+                      "id": "hgdp:pathan",
+                      "ac": 3,
+                      "an": 48
+                    },
+                    {
+                      "id": "hgdp:pathan_XX",
+                      "ac": 1,
+                      "an": 10
+                    },
+                    {
+                      "id": "hgdp:pathan_XY",
+                      "ac": 2,
+                      "an": 38
+                    },
+                    {
+                      "id": "hgdp:basque",
+                      "ac": 0,
+                      "an": 44
+                    },
+                    {
+                      "id": "hgdp:basque_XX",
+                      "ac": 0,
+                      "an": 14
+                    },
+                    {
+                      "id": "hgdp:basque_XY",
+                      "ac": 0,
+                      "an": 30
+                    },
+                    {
+                      "id": "hgdp:makrani",
+                      "ac": 3,
+                      "an": 44
+                    },
+                    {
+                      "id": "hgdp:makrani_XX",
+                      "ac": 0,
+                      "an": 8
+                    },
+                    {
+                      "id": "hgdp:makrani_XY",
+                      "ac": 3,
+                      "an": 36
+                    },
+                    {
+                      "id": "hgdp:burusho",
+                      "ac": 1,
+                      "an": 48
+                    },
+                    {
+                      "id": "hgdp:burusho_XX",
+                      "ac": 0,
+                      "an": 8
+                    },
+                    {
+                      "id": "hgdp:burusho_XY",
+                      "ac": 1,
+                      "an": 40
+                    },
+                    {
+                      "id": "hgdp:mongolian",
+                      "ac": 17,
+                      "an": 20
+                    },
+                    {
+                      "id": "hgdp:mongolian_XX",
+                      "ac": 5,
+                      "an": 6
+                    },
+                    {
+                      "id": "hgdp:mongolian_XY",
+                      "ac": 12,
+                      "an": 14
+                    },
+                    {
+                      "id": "hgdp:bougainville",
+                      "ac": 22,
+                      "an": 22
+                    },
+                    {
+                      "id": "hgdp:bougainville_XX",
+                      "ac": 14,
+                      "an": 14
+                    },
+                    {
+                      "id": "hgdp:bougainville_XY",
+                      "ac": 8,
+                      "an": 8
+                    },
+                    {
+                      "id": "hgdp:papuansepik",
+                      "ac": 2,
+                      "an": 2
+                    },
+                    {
+                      "id": "hgdp:papuansepik_XX",
+                      "ac": 2,
+                      "an": 2
+                    },
+                    {
+                      "id": "hgdp:papuansepik_XY",
+                      "ac": 0,
+                      "an": 0
+                    },
+                    {
+                      "id": "hgdp:yi",
+                      "ac": 20,
+                      "an": 20
+                    },
+                    {
+                      "id": "hgdp:yi_XX",
+                      "ac": 2,
+                      "an": 2
+                    },
+                    {
+                      "id": "hgdp:yi_XY",
+                      "ac": 18,
+                      "an": 18
+                    },
+                    {
+                      "id": "hgdp:naxi",
+                      "ac": 14,
+                      "an": 14
+                    },
+                    {
+                      "id": "hgdp:naxi_XX",
+                      "ac": 4,
+                      "an": 4
+                    },
+                    {
+                      "id": "hgdp:naxi_XY",
+                      "ac": 10,
+                      "an": 10
+                    },
+                    {
+                      "id": "hgdp:lahu",
+                      "ac": 10,
+                      "an": 10
+                    },
+                    {
+                      "id": "hgdp:lahu_XX",
+                      "ac": 2,
+                      "an": 2
+                    },
+                    {
+                      "id": "hgdp:lahu_XY",
+                      "ac": 8,
+                      "an": 8
+                    },
+                    {
+                      "id": "hgdp:sardinian",
+                      "ac": 1,
+                      "an": 54
+                    },
+                    {
+                      "id": "hgdp:sardinian_XX",
+                      "ac": 1,
+                      "an": 24
+                    },
+                    {
+                      "id": "hgdp:sardinian_XY",
+                      "ac": 0,
+                      "an": 30
+                    },
+                    {
+                      "id": "hgdp:karitiana",
+                      "ac": 20,
+                      "an": 20
+                    },
+                    {
+                      "id": "hgdp:karitiana_XX",
+                      "ac": 12,
+                      "an": 12
+                    },
+                    {
+                      "id": "hgdp:karitiana_XY",
+                      "ac": 8,
+                      "an": 8
+                    },
+                    {
+                      "id": "hgdp:mozabite",
+                      "ac": 4,
+                      "an": 50
+                    },
+                    {
+                      "id": "hgdp:mozabite_XX",
+                      "ac": 0,
+                      "an": 14
+                    },
+                    {
+                      "id": "hgdp:mozabite_XY",
+                      "ac": 4,
+                      "an": 36
+                    },
+                    {
+                      "id": "hgdp:yoruba",
+                      "ac": 41,
+                      "an": 42
+                    },
+                    {
+                      "id": "hgdp:yoruba_XX",
+                      "ac": 20,
+                      "an": 20
+                    },
+                    {
+                      "id": "hgdp:yoruba_XY",
+                      "ac": 21,
+                      "an": 22
+                    },
+                    {
+                      "id": "hgdp:dai",
+                      "ac": 18,
+                      "an": 18
+                    },
+                    {
+                      "id": "hgdp:dai_XX",
+                      "ac": 6,
+                      "an": 6
+                    },
+                    {
+                      "id": "hgdp:dai_XY",
+                      "ac": 12,
+                      "an": 12
+                    },
+                    {
+                      "id": "hgdp:bergamoitalian",
+                      "ac": 0,
+                      "an": 22
+                    },
+                    {
+                      "id": "hgdp:bergamoitalian_XX",
+                      "ac": 0,
+                      "an": 8
+                    },
+                    {
+                      "id": "hgdp:bergamoitalian_XY",
+                      "ac": 0,
+                      "an": 14
+                    },
+                    {
+                      "id": "hgdp:cambodian",
+                      "ac": 19,
+                      "an": 20
+                    },
+                    {
+                      "id": "hgdp:cambodian_XX",
+                      "ac": 8,
+                      "an": 8
+                    },
+                    {
+                      "id": "hgdp:cambodian_XY",
+                      "ac": 11,
+                      "an": 12
+                    },
+                    {
+                      "id": "hgdp:french",
+                      "ac": 0,
+                      "an": 54
+                    },
+                    {
+                      "id": "hgdp:french_XX",
+                      "ac": 0,
+                      "an": 32
+                    },
+                    {
+                      "id": "hgdp:french_XY",
+                      "ac": 0,
+                      "an": 22
+                    },
+                    {
+                      "id": "hgdp:mandenka",
+                      "ac": 34,
+                      "an": 40
+                    },
+                    {
+                      "id": "hgdp:mandenka_XX",
+                      "ac": 12,
+                      "an": 14
+                    },
+                    {
+                      "id": "hgdp:mandenka_XY",
+                      "ac": 22,
+                      "an": 26
+                    },
+                    {
+                      "id": "hgdp:surui",
+                      "ac": 14,
+                      "an": 14
+                    },
+                    {
+                      "id": "hgdp:surui_XX",
+                      "ac": 8,
+                      "an": 8
+                    },
+                    {
+                      "id": "hgdp:surui_XY",
+                      "ac": 6,
+                      "an": 6
+                    },
+                    {
+                      "id": "hgdp:brahui",
+                      "ac": 0,
+                      "an": 46
+                    },
+                    {
+                      "id": "hgdp:brahui_XX",
+                      "ac": 0,
+                      "an": 0
+                    },
+                    {
+                      "id": "hgdp:brahui_XY",
+                      "ac": 0,
+                      "an": 46
+                    },
+                    {
+                      "id": "hgdp:hazara",
+                      "ac": 11,
+                      "an": 32
+                    },
+                    {
+                      "id": "hgdp:hazara_XX",
+                      "ac": 0,
+                      "an": 0
+                    },
+                    {
+                      "id": "hgdp:hazara_XY",
+                      "ac": 11,
+                      "an": 32
+                    },
+                    {
+                      "id": "hgdp:kalash",
+                      "ac": 0,
+                      "an": 42
+                    },
+                    {
+                      "id": "hgdp:kalash_XX",
+                      "ac": 0,
+                      "an": 8
+                    },
+                    {
+                      "id": "hgdp:kalash_XY",
+                      "ac": 0,
+                      "an": 34
+                    },
+                    {
+                      "id": "hgdp:papuanhighlands",
+                      "ac": 4,
+                      "an": 4
+                    },
+                    {
+                      "id": "hgdp:papuanhighlands_XX",
+                      "ac": 2,
+                      "an": 2
+                    },
+                    {
+                      "id": "hgdp:papuanhighlands_XY",
+                      "ac": 2,
+                      "an": 2
+                    },
+                    {
+                      "id": "hgdp:xibo",
+                      "ac": 15,
+                      "an": 18
+                    },
+                    {
+                      "id": "hgdp:xibo_XX",
+                      "ac": 1,
+                      "an": 2
+                    },
+                    {
+                      "id": "hgdp:xibo_XY",
+                      "ac": 14,
+                      "an": 16
+                    },
+                    {
+                      "id": "hgdp:colombian",
+                      "ac": 6,
+                      "an": 6
+                    },
+                    {
+                      "id": "hgdp:colombian_XX",
+                      "ac": 4,
+                      "an": 4
+                    },
+                    {
+                      "id": "hgdp:colombian_XY",
+                      "ac": 2,
+                      "an": 2
+                    },
+                    {
+                      "id": "hgdp:bantukenya",
+                      "ac": 20,
+                      "an": 20
+                    },
+                    {
+                      "id": "hgdp:bantukenya_XX",
+                      "ac": 2,
+                      "an": 2
+                    },
+                    {
+                      "id": "hgdp:bantukenya_XY",
+                      "ac": 18,
+                      "an": 18
+                    },
+                    {
+                      "id": "hgdp:she",
+                      "ac": 18,
+                      "an": 18
+                    },
+                    {
+                      "id": "hgdp:she_XX",
+                      "ac": 6,
+                      "an": 6
+                    },
+                    {
+                      "id": "hgdp:she_XY",
+                      "ac": 12,
+                      "an": 12
+                    },
+                    {
+                      "id": "hgdp:maya",
+                      "ac": 34,
+                      "an": 38
+                    },
+                    {
+                      "id": "hgdp:maya_XX",
+                      "ac": 30,
+                      "an": 34
+                    },
+                    {
+                      "id": "hgdp:maya_XY",
+                      "ac": 4,
+                      "an": 4
+                    },
+                    {
+                      "id": "hgdp:XX",
+                      "ac": 258,
+                      "an": 588
+                    },
+                    {
+                      "id": "hgdp:XY",
+                      "ac": 509,
+                      "an": 1122
+                    },
+                    {
+                      "id": "1kg:esn",
+                      "ac": 200,
+                      "an": 206
+                    },
+                    {
+                      "id": "1kg:esn_XX",
+                      "ac": 91,
+                      "an": 94
+                    },
+                    {
+                      "id": "1kg:esn_XY",
+                      "ac": 109,
+                      "an": 112
+                    },
+                    {
+                      "id": "1kg:pur",
+                      "ac": 47,
+                      "an": 198
+                    },
+                    {
+                      "id": "1kg:pur_XX",
+                      "ac": 18,
+                      "an": 94
+                    },
+                    {
+                      "id": "1kg:pur_XY",
+                      "ac": 29,
+                      "an": 104
+                    },
+                    {
+                      "id": "1kg:pjl",
+                      "ac": 42,
+                      "an": 192
+                    },
+                    {
+                      "id": "1kg:pjl_XX",
+                      "ac": 14,
+                      "an": 92
+                    },
+                    {
+                      "id": "1kg:pjl_XY",
+                      "ac": 28,
+                      "an": 100
+                    },
+                    {
+                      "id": "1kg:clm",
+                      "ac": 51,
+                      "an": 188
+                    },
+                    {
+                      "id": "1kg:clm_XX",
+                      "ac": 29,
+                      "an": 102
+                    },
+                    {
+                      "id": "1kg:clm_XY",
+                      "ac": 22,
+                      "an": 86
+                    },
+                    {
+                      "id": "1kg:jpt",
+                      "ac": 203,
+                      "an": 204
+                    },
+                    {
+                      "id": "1kg:jpt_XX",
+                      "ac": 91,
+                      "an": 92
+                    },
+                    {
+                      "id": "1kg:jpt_XY",
+                      "ac": 112,
+                      "an": 112
+                    },
+                    {
+                      "id": "1kg:chb",
+                      "ac": 198,
+                      "an": 204
+                    },
+                    {
+                      "id": "1kg:chb_XX",
+                      "ac": 112,
+                      "an": 114
+                    },
+                    {
+                      "id": "1kg:chb_XY",
+                      "ac": 86,
+                      "an": 90
+                    },
+                    {
+                      "id": "1kg:stu",
+                      "ac": 101,
+                      "an": 196
+                    },
+                    {
+                      "id": "1kg:stu_XX",
+                      "ac": 39,
+                      "an": 84
+                    },
+                    {
+                      "id": "1kg:stu_XY",
+                      "ac": 62,
+                      "an": 112
+                    },
+                    {
+                      "id": "1kg:itu",
+                      "ac": 71,
+                      "an": 204
+                    },
+                    {
+                      "id": "1kg:itu_XX",
+                      "ac": 30,
+                      "an": 84
+                    },
+                    {
+                      "id": "1kg:itu_XY",
+                      "ac": 41,
+                      "an": 120
+                    },
+                    {
+                      "id": "1kg:tsi",
+                      "ac": 1,
+                      "an": 206
+                    },
+                    {
+                      "id": "1kg:tsi_XX",
+                      "ac": 0,
+                      "an": 100
+                    },
+                    {
+                      "id": "1kg:tsi_XY",
+                      "ac": 1,
+                      "an": 106
+                    },
+                    {
+                      "id": "1kg:mxl",
+                      "ac": 61,
+                      "an": 124
+                    },
+                    {
+                      "id": "1kg:mxl_XX",
+                      "ac": 29,
+                      "an": 60
+                    },
+                    {
+                      "id": "1kg:mxl_XY",
+                      "ac": 32,
+                      "an": 64
+                    },
+                    {
+                      "id": "1kg:ceu",
+                      "ac": 0,
+                      "an": 238
+                    },
+                    {
+                      "id": "1kg:ceu_XX",
+                      "ac": 0,
+                      "an": 118
+                    },
+                    {
+                      "id": "1kg:ceu_XY",
+                      "ac": 0,
+                      "an": 120
+                    },
+                    {
+                      "id": "1kg:msl",
+                      "ac": 147,
+                      "an": 160
+                    },
+                    {
+                      "id": "1kg:msl_XX",
+                      "ac": 73,
+                      "an": 80
+                    },
+                    {
+                      "id": "1kg:msl_XY",
+                      "ac": 74,
+                      "an": 80
+                    },
+                    {
+                      "id": "1kg:beb",
+                      "ac": 94,
+                      "an": 198
+                    },
+                    {
+                      "id": "1kg:beb_XX",
+                      "ac": 51,
+                      "an": 102
+                    },
+                    {
+                      "id": "1kg:beb_XY",
+                      "ac": 43,
+                      "an": 96
+                    },
+                    {
+                      "id": "1kg:yri",
+                      "ac": 229,
+                      "an": 232
+                    },
+                    {
+                      "id": "1kg:yri_XX",
+                      "ac": 112,
+                      "an": 114
+                    },
+                    {
+                      "id": "1kg:yri_XY",
+                      "ac": 117,
+                      "an": 118
+                    },
+                    {
+                      "id": "1kg:fin",
+                      "ac": 2,
+                      "an": 196
+                    },
+                    {
+                      "id": "1kg:fin_XX",
+                      "ac": 0,
+                      "an": 120
+                    },
+                    {
+                      "id": "1kg:fin_XY",
+                      "ac": 2,
+                      "an": 76
+                    },
+                    {
+                      "id": "1kg:khv",
+                      "ac": 201,
+                      "an": 202
+                    },
+                    {
+                      "id": "1kg:khv_XX",
+                      "ac": 108,
+                      "an": 108
+                    },
+                    {
+                      "id": "1kg:khv_XY",
+                      "ac": 93,
+                      "an": 94
+                    },
+                    {
+                      "id": "1kg:cdx",
+                      "ac": 176,
+                      "an": 176
+                    },
+                    {
+                      "id": "1kg:cdx_XX",
+                      "ac": 92,
+                      "an": 92
+                    },
+                    {
+                      "id": "1kg:cdx_XY",
+                      "ac": 84,
+                      "an": 84
+                    },
+                    {
+                      "id": "1kg:lwk",
+                      "ac": 158,
+                      "an": 172
+                    },
+                    {
+                      "id": "1kg:lwk_XX",
+                      "ac": 85,
+                      "an": 92
+                    },
+                    {
+                      "id": "1kg:lwk_XY",
+                      "ac": 73,
+                      "an": 80
+                    },
+                    {
+                      "id": "1kg:acb",
+                      "ac": 168,
+                      "an": 184
+                    },
+                    {
+                      "id": "1kg:acb_XX",
+                      "ac": 85,
+                      "an": 94
+                    },
+                    {
+                      "id": "1kg:acb_XY",
+                      "ac": 83,
+                      "an": 90
+                    },
+                    {
+                      "id": "1kg:asw",
+                      "ac": 84,
+                      "an": 102
+                    },
+                    {
+                      "id": "1kg:asw_XX",
+                      "ac": 47,
+                      "an": 56
+                    },
+                    {
+                      "id": "1kg:asw_XY",
+                      "ac": 37,
+                      "an": 46
+                    },
+                    {
+                      "id": "1kg:ibs",
+                      "ac": 0,
+                      "an": 208
+                    },
+                    {
+                      "id": "1kg:ibs_XX",
+                      "ac": 0,
+                      "an": 104
+                    },
+                    {
+                      "id": "1kg:ibs_XY",
+                      "ac": 0,
+                      "an": 104
+                    },
+                    {
+                      "id": "1kg:gbr",
+                      "ac": 0,
+                      "an": 174
+                    },
+                    {
+                      "id": "1kg:gbr_XX",
+                      "ac": 0,
+                      "an": 84
+                    },
+                    {
+                      "id": "1kg:gbr_XY",
+                      "ac": 0,
+                      "an": 90
+                    },
+                    {
+                      "id": "1kg:pel",
+                      "ac": 122,
+                      "an": 170
+                    },
+                    {
+                      "id": "1kg:pel_XX",
+                      "ac": 57,
+                      "an": 86
+                    },
+                    {
+                      "id": "1kg:pel_XY",
+                      "ac": 65,
+                      "an": 84
+                    },
+                    {
+                      "id": "1kg:gih",
+                      "ac": 9,
+                      "an": 200
+                    },
+                    {
+                      "id": "1kg:gih_XX",
+                      "ac": 5,
+                      "an": 92
+                    },
+                    {
+                      "id": "1kg:gih_XY",
+                      "ac": 4,
+                      "an": 108
+                    },
+                    {
+                      "id": "1kg:chs",
+                      "ac": 200,
+                      "an": 204
+                    },
+                    {
+                      "id": "1kg:chs_XX",
+                      "ac": 100,
+                      "an": 102
+                    },
+                    {
+                      "id": "1kg:chs_XY",
+                      "ac": 100,
+                      "an": 102
+                    },
+                    {
+                      "id": "1kg:gwd",
+                      "ac": 213,
+                      "an": 230
+                    },
+                    {
+                      "id": "1kg:gwd_XX",
+                      "ac": 106,
+                      "an": 116
+                    },
+                    {
+                      "id": "1kg:gwd_XY",
+                      "ac": 107,
+                      "an": 114
+                    },
+                    {
+                      "id": "1kg:XX",
+                      "ac": 1374,
+                      "an": 2476
+                    },
+                    {
+                      "id": "1kg:XY",
+                      "ac": 1404,
+                      "an": 2492
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "totals": {
+          "data": {
+            "variant": {
+              "variantId": "15-48134287-A-T",
+              "reference_genome": "GRCh38",
+              "chrom": "15",
+              "pos": 48134287,
+              "ref": "A",
+              "alt": "T",
+              "exome": {
+                "ac": 5,
+                "an": 1461420,
+                "af": 3.4213299393740333e-06
+              },
+              "genome": null
+            }
+          }
+        },
+        "populations": {
+          "exome": {
+            "data": {
+              "variant": {
+                "variantId": "15-48134287-A-T",
+                "exome": {
+                  "populations": [
+                    {
+                      "id": "remaining",
+                      "ac": 2,
+                      "an": 60380
+                    },
+                    {
+                      "id": "remaining_XX",
+                      "ac": 0,
+                      "an": 31788
+                    },
+                    {
+                      "id": "remaining_XY",
+                      "ac": 2,
+                      "an": 28592
+                    },
+                    {
+                      "id": "amr",
+                      "ac": 0,
+                      "an": 44704
+                    },
+                    {
+                      "id": "amr_XX",
+                      "ac": 0,
+                      "an": 25678
+                    },
+                    {
+                      "id": "amr_XY",
+                      "ac": 0,
+                      "an": 19026
+                    },
+                    {
+                      "id": "fin",
+                      "ac": 0,
+                      "an": 53418
+                    },
+                    {
+                      "id": "fin_XX",
+                      "ac": 0,
+                      "an": 27646
+                    },
+                    {
+                      "id": "fin_XY",
+                      "ac": 0,
+                      "an": 25772
+                    },
+                    {
+                      "id": "mid",
+                      "ac": 0,
+                      "an": 5766
+                    },
+                    {
+                      "id": "mid_XX",
+                      "ac": 0,
+                      "an": 2504
+                    },
+                    {
+                      "id": "mid_XY",
+                      "ac": 0,
+                      "an": 3262
+                    },
+                    {
+                      "id": "nfe",
+                      "ac": 2,
+                      "an": 1111670
+                    },
+                    {
+                      "id": "nfe_XX",
+                      "ac": 1,
+                      "an": 572108
+                    },
+                    {
+                      "id": "nfe_XY",
+                      "ac": 1,
+                      "an": 539562
+                    },
+                    {
+                      "id": "sas",
+                      "ac": 0,
+                      "an": 86244
+                    },
+                    {
+                      "id": "sas_XX",
+                      "ac": 0,
+                      "an": 22036
+                    },
+                    {
+                      "id": "sas_XY",
+                      "ac": 0,
+                      "an": 64208
+                    },
+                    {
+                      "id": "asj",
+                      "ac": 0,
+                      "an": 26116
+                    },
+                    {
+                      "id": "asj_XX",
+                      "ac": 0,
+                      "an": 12622
+                    },
+                    {
+                      "id": "asj_XY",
+                      "ac": 0,
+                      "an": 13494
+                    },
+                    {
+                      "id": "eas",
+                      "ac": 0,
+                      "an": 39686
+                    },
+                    {
+                      "id": "eas_XX",
+                      "ac": 0,
+                      "an": 20708
+                    },
+                    {
+                      "id": "eas_XY",
+                      "ac": 0,
+                      "an": 18978
+                    },
+                    {
+                      "id": "afr",
+                      "ac": 1,
+                      "an": 33436
+                    },
+                    {
+                      "id": "afr_XX",
+                      "ac": 0,
+                      "an": 19302
+                    },
+                    {
+                      "id": "afr_XY",
+                      "ac": 1,
+                      "an": 14134
+                    },
+                    {
+                      "id": "XX",
+                      "ac": 1,
+                      "an": 734392
+                    },
+                    {
+                      "id": "XY",
+                      "ac": 4,
+                      "an": 727028
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
+}

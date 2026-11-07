@@ -1,0 +1,619 @@
+{
+  "source": "europepmc",
+  "retrieved": "2026-11-07T02:09:02+00:00",
+  "request": {
+    "query": "(TITLE:rs1799963 OR ABSTRACT:rs1799963) AND PUB_TYPE:\"research-article\" NOT PUB_TYPE:review"
+  },
+  "response": {
+    "version": "6.9",
+    "hitCount": 40,
+    "nextCursorMark": "AoJIKDM0MTcxNjY5",
+    "nextPageUrl": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=%28TITLE%3Ars1799963+OR+ABSTRACT%3Ars1799963%29+AND+PUB_TYPE%3A%22research-article%22+NOT+PUB_TYPE%3Areview&cursorMark=AoJIKDM0MTcxNjY5&resultType=lite&pageSize=15&sort=CITED+desc&format=json",
+    "request": {
+      "queryString": "(TITLE:rs1799963 OR ABSTRACT:rs1799963) AND PUB_TYPE:\"research-article\" NOT PUB_TYPE:review",
+      "resultType": "lite",
+      "cursorMark": "*",
+      "pageSize": 15,
+      "sort": "CITED desc",
+      "synonym": false
+    },
+    "resultList": {
+      "result": [
+        {
+          "id": "22672568",
+          "source": "MED",
+          "pmid": "22672568",
+          "pmcid": "PMC3419811",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC3419811"
+            ]
+          },
+          "doi": "10.1111/j.1538-7836.2012.04810.x",
+          "title": "A genome-wide association study of venous thromboembolism identifies risk variants in chromosomes 1q24.2 and 9q.",
+          "authorString": "Heit JA, Armasu SM, Asmann YW, Cunningham JM, Matsumoto ME, Petterson TM, De Andrade M.",
+          "journalTitle": "J Thromb Haemost",
+          "issue": "8",
+          "journalVolume": "10",
+          "pubYear": "2012",
+          "journalIssn": "1538-7933; 1538-7836; ",
+          "pageInfo": "1521-1531",
+          "pubType": "research support, u.s. gov't, p.h.s.; research support, non-u.s. gov't; research-article; journal article; research support, n.i.h., extramural",
+          "isOpenAccess": "N",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 140,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp"
+            ]
+          },
+          "firstPublicationDate": "2012-08-01",
+          "firstIndexDate": "2012-06-08"
+        },
+        {
+          "id": "25341889",
+          "source": "MED",
+          "pmid": "25341889",
+          "pmcid": "PMC4323784",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC4323784"
+            ]
+          },
+          "doi": "10.1161/jaha.114.001060",
+          "title": "Multilocus genetic risk scores for venous thromboembolism risk assessment.",
+          "authorString": "Soria JM, Morange PE, Vila J, Souto JC, Moyano M, Tr\u00e9gou\u00ebt DA, Mateo J, Saut N, Salas E, Elosua R.",
+          "journalTitle": "J Am Heart Assoc",
+          "issue": "5",
+          "journalVolume": "3",
+          "pubYear": "2014",
+          "journalIssn": "2047-9980",
+          "pageInfo": "e001060",
+          "pubType": "comparative study; research support, non-u.s. gov't; research-article; journal article",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 52,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp"
+            ]
+          },
+          "firstPublicationDate": "2014-10-23",
+          "firstIndexDate": "2014-10-25"
+        },
+        {
+          "id": "25407022",
+          "source": "MED",
+          "pmid": "25407022",
+          "pmcid": "PMC4251949",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC4251949"
+            ]
+          },
+          "doi": "10.1186/1471-2407-14-845",
+          "title": "Increased coagulation activity and genetic polymorphisms in the F5, F10 and EPCR genes are associated with breast cancer: a case-control study.",
+          "authorString": "Tinholt M, Viken MK, Dahm AE, Vollan HK, Sahlberg KK, Garred O, B\u00f8rresen-Dale AL, Jacobsen AF, Kristensen V, Bukholm I, K\u00e5resen R, Schlichting E, Skretting G, Lie BA, Sandset PM, Iversen N.",
+          "journalTitle": "BMC Cancer",
+          "journalVolume": "14",
+          "pubYear": "2014",
+          "journalIssn": "1471-2407",
+          "pageInfo": "845",
+          "pubType": "research support, non-u.s. gov't; research-article; journal article",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 37,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp"
+            ]
+          },
+          "firstPublicationDate": "2014-11-19",
+          "firstIndexDate": "2014-11-20"
+        },
+        {
+          "id": "35112923",
+          "source": "MED",
+          "pmid": "35112923",
+          "pmcid": "PMC9245807",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC9245807"
+            ]
+          },
+          "doi": "10.1161/jaha.121.023018",
+          "title": "Classic Thrombophilias and Thrombotic Risk Among Middle-Aged and Older Adults: A Population-Based Cohort Study.",
+          "authorString": "Manderstedt E, Lind-Halld\u00e9n C, Halld\u00e9n C, Elf J, Svensson PJ, Dahlb\u00e4ck B, Engstr\u00f6m G, Melander O, Baras A, Lotta LA, Z\u00f6ller B, Regeneron Genetics Center 4 [Link].",
+          "journalTitle": "J Am Heart Assoc",
+          "issue": "4",
+          "journalVolume": "11",
+          "pubYear": "2022",
+          "journalIssn": "2047-9980",
+          "pageInfo": "e023018",
+          "pubType": "research support, non-u.s. gov't; research-article; journal article",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 26,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp"
+            ]
+          },
+          "firstPublicationDate": "2022-02-03",
+          "firstIndexDate": "2022-02-04"
+        },
+        {
+          "id": "38498041",
+          "source": "MED",
+          "pmid": "38498041",
+          "pmcid": "PMC11830983",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC11830983"
+            ]
+          },
+          "doi": "10.1182/blood.2023023326",
+          "title": "Thrombosis risk in single- and double-heterozygous carriers of factor V Leiden and prothrombin G20210A in FinnGen and the UK Biobank.",
+          "authorString": "Ryu J, R\u00e4m\u00f6 JT, Jurgens SJ, Niiranen T, Sanna-Cherchi S, Bauer KA, Haj A, Choi SH, Palotie A, Daly M, Ellinor PT, Bendapudi PK, Bendapudi PK.",
+          "journalTitle": "Blood",
+          "issue": "23",
+          "journalVolume": "143",
+          "pubYear": "2024",
+          "journalIssn": "0006-4971; 1528-0020; ",
+          "pageInfo": "2425-2432",
+          "pubType": "research support, non-u.s. gov't; research-article; journal article; research support, n.i.h., extramural",
+          "isOpenAccess": "N",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 24,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "N",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp",
+              "doi"
+            ]
+          },
+          "firstPublicationDate": "2024-06-01",
+          "firstIndexDate": "2024-03-19"
+        },
+        {
+          "id": "22675575",
+          "source": "MED",
+          "pmid": "22675575",
+          "pmcid": "PMC3366937",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC3366937"
+            ]
+          },
+          "doi": "10.1371/journal.pone.0038538",
+          "title": "Caution in interpreting results from imputation analysis when linkage disequilibrium extends over a large distance: a case study on venous thrombosis.",
+          "authorString": "Germain M, Saut N, Oudot-Mellakh T, Letenneur L, Dupuy AM, Bertrand M, Alessi MC, Lambert JC, Zelenika D, Emmerich J, Tiret L, Cambien F, Lathrop M, Amouyel P, Morange PE, Tr\u00e9gou\u00ebt DA.",
+          "journalTitle": "PLoS One",
+          "issue": "6",
+          "journalVolume": "7",
+          "pubYear": "2012",
+          "journalIssn": "1932-6203",
+          "pageInfo": "e38538",
+          "pubType": "research support, non-u.s. gov't; research-article; journal article",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 17,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp"
+            ]
+          },
+          "firstPublicationDate": "2012-06-04",
+          "firstIndexDate": "2012-06-08"
+        },
+        {
+          "id": "32342502",
+          "source": "MED",
+          "pmid": "32342502",
+          "pmcid": "PMC7586802",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC7586802"
+            ]
+          },
+          "doi": "10.1111/bjh.16666",
+          "title": "The joint effect of genetic risk factors and different types of combined oral contraceptives on venous thrombosis risk.",
+          "authorString": "Khialani D, le Cessie S, Lijfering WM, Cannegieter SC, Rosendaal FR, van Hylckama Vlieg A.",
+          "journalTitle": "Br J Haematol",
+          "issue": "1",
+          "journalVolume": "191",
+          "pubYear": "2020",
+          "journalIssn": "0007-1048; 1365-2141; ",
+          "pageInfo": "90-97",
+          "pubType": "clinical trial; research-article; multicenter study; journal article",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 14,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp"
+            ]
+          },
+          "firstPublicationDate": "2020-04-27",
+          "firstIndexDate": "2020-04-29"
+        },
+        {
+          "id": "21239755",
+          "source": "MED",
+          "pmid": "21239755",
+          "pmcid": "PMC3073870",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC3073870"
+            ]
+          },
+          "doi": "10.3899/jrheum.100728",
+          "title": "Functional polymorphisms of the coagulation factor II gene (F2) and susceptibility to systemic lupus erythematosus.",
+          "authorString": "Demirci FY, Dressen AS, Kammerer CM, Barmada MM, Kao AH, Ramsey-Goldman R, Manzi S, Kamboh MI.",
+          "journalTitle": "J Rheumatol",
+          "issue": "4",
+          "journalVolume": "38",
+          "pubYear": "2011",
+          "journalIssn": "0315-162x; 1499-2752; ",
+          "pageInfo": "652-657",
+          "pubType": "research-article; journal article; research support, n.i.h., extramural",
+          "isOpenAccess": "N",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 14,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "N",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp"
+            ]
+          },
+          "firstPublicationDate": "2011-01-15",
+          "firstIndexDate": "2011-01-18"
+        },
+        {
+          "id": "27588178",
+          "source": "MED",
+          "pmid": "27588178",
+          "pmcid": "PMC4998085",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC4998085"
+            ]
+          },
+          "doi": "10.3892/br.2016.717",
+          "title": "Association of <i>C677T MTHFR</i> and <i>G20210A FII</i> prothrombin polymorphisms with susceptibility to myocardial infarction.",
+          "authorString": "Hmimech W, Idrissi HH, Diakite B, Baghdadi D, Korchi F, Habbal R, Nadifi S.",
+          "journalTitle": "Biomed Rep",
+          "issue": "3",
+          "journalVolume": "5",
+          "pubYear": "2016",
+          "journalIssn": "2049-9434; 2049-9442; ",
+          "pageInfo": "361-366",
+          "pubType": "research-article; journal article",
+          "isOpenAccess": "N",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 11,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "N",
+          "hasLabsLinks": "N",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "doi"
+            ]
+          },
+          "firstPublicationDate": "2016-07-13",
+          "firstIndexDate": "2016-09-08"
+        },
+        {
+          "id": "22388798",
+          "source": "MED",
+          "pmid": "22388798",
+          "pmcid": "PMC3325375",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC3325375"
+            ]
+          },
+          "doi": "10.1097/fpc.0b013e3283516ff8",
+          "title": "Gene panels to help identify subgroups at high and low risk of coronary heart disease among those randomized to antihypertensive treatment:  the GenHAT study.",
+          "authorString": "Lynch AI, Eckfeldt JH, Davis BR, Ford CE, Boerwinkle E, Leiendecker-Foster C, Arnett DK.",
+          "journalTitle": "Pharmacogenet Genomics",
+          "issue": "5",
+          "journalVolume": "22",
+          "pubYear": "2012",
+          "journalIssn": "1744-6872; 1744-6880; ",
+          "pageInfo": "355-366",
+          "pubType": "research-article; multicenter study; randomized controlled trial; journal article; research support, n.i.h., extramural",
+          "isOpenAccess": "N",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 11,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "N",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp"
+            ]
+          },
+          "firstPublicationDate": "2012-05-01",
+          "firstIndexDate": "2012-03-06"
+        },
+        {
+          "id": "32594420",
+          "source": "MED",
+          "pmid": "32594420",
+          "pmcid": "PMC7886710",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC7886710"
+            ]
+          },
+          "doi": "10.1007/s11239-020-02169-6",
+          "title": "Role of prothrombin 19911 A>G polymorphism, blood group and male gender in patients with venous thromboembolism: Results of a German cohort study.",
+          "authorString": "Limperger V, Kenet G, Kiesau B, K\u00f6ther M, Schmeiser M, Langer F, Juhl D, Shneyder M, Franke A, Klostermeier UK, Mesters R, R\u00fchle F, Stoll M, Steppat D, Kowalski D, Rocke A, Kuta P, Bajorat T, Torge A, Neuner B, Junker R, Nowak-G\u00f6ttl U.",
+          "journalTitle": "J Thromb Thrombolysis",
+          "issue": "2",
+          "journalVolume": "51",
+          "pubYear": "2021",
+          "journalIssn": "0929-5305; 1573-742x; ",
+          "pageInfo": "494-501",
+          "pubType": "research-article; journal article",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 10,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp"
+            ]
+          },
+          "firstPublicationDate": "2021-02-01",
+          "firstIndexDate": "2020-06-29"
+        },
+        {
+          "id": "35264229",
+          "source": "MED",
+          "pmid": "35264229",
+          "pmcid": "PMC8905721",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC8905721"
+            ]
+          },
+          "doi": "10.1186/s13023-022-02264-2",
+          "title": "Association of MTHFR rs1801133 and homocysteine with Legg-Calv\u00e9-Perthes disease in Mexican patients.",
+          "authorString": "Buend\u00eda-Pazar\u00e1n JG, Hern\u00e1ndez-Zamora E, Rodr\u00edguez-Olivas AO, Casas-\u00c1vila L, Vald\u00e9s-Flores M, Reyes-Maldonado E.",
+          "journalTitle": "Orphanet J Rare Dis",
+          "issue": "1",
+          "journalVolume": "17",
+          "pubYear": "2022",
+          "journalIssn": "1750-1172",
+          "pageInfo": "123",
+          "pubType": "research-article; journal article",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 9,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "N",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp"
+            ]
+          },
+          "firstPublicationDate": "2022-03-09",
+          "firstIndexDate": "2022-03-11"
+        },
+        {
+          "id": "28889200",
+          "source": "MED",
+          "pmid": "28889200",
+          "pmcid": "PMC5658450",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC5658450"
+            ]
+          },
+          "doi": "10.1007/s11239-017-1543-8",
+          "title": "Prevalence of common hereditary risk factors for thrombophilia in Somalia and identification of a novel Gln544Arg mutation in coagulation factor V.",
+          "authorString": "Abdi AA, Osman A.",
+          "journalTitle": "J Thromb Thrombolysis",
+          "issue": "4",
+          "journalVolume": "44",
+          "pubYear": "2017",
+          "journalIssn": "0929-5305; 1573-742x; ",
+          "pageInfo": "536-543",
+          "pubType": "research-article; journal article",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 9,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "N",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp"
+            ]
+          },
+          "firstPublicationDate": "2017-11-01",
+          "firstIndexDate": "2017-09-11"
+        },
+        {
+          "id": "28488549",
+          "source": "MED",
+          "pmid": "28488549",
+          "pmcid": "PMC5708901",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC5708901"
+            ]
+          },
+          "doi": "10.17305/bjbms.2017.1954",
+          "title": "Prevalence of F5 1691G>A, F2 20210G>A, and MTHFR 677C>T polymorphisms in Bosnian women with pregnancy loss.",
+          "authorString": "Mahmutbegovi\u0107 E, Marjanovi\u0107 D, Medjedovi\u0107 E, Mahmutbegovi\u0107 N, Dogan S, Valjevac A, Czerska E, Pawi\u0144ska-Matecka A, Madlani A, Adler G.",
+          "journalTitle": "Bosn J Basic Med Sci",
+          "issue": "4",
+          "journalVolume": "17",
+          "pubYear": "2017",
+          "journalIssn": "1512-8601; 1840-4812; ",
+          "pageInfo": "309-314",
+          "pubType": "research-article; journal article",
+          "isOpenAccess": "N",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 8,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "N",
+          "hasLabsLinks": "N",
+          "hasTMAccessionNumbers": "N",
+          "firstPublicationDate": "2017-11-20",
+          "firstIndexDate": "2017-05-10"
+        },
+        {
+          "id": "26261801",
+          "source": "MED",
+          "pmid": "26261801",
+          "pmcid": "PMC4499574",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC4499574"
+            ]
+          },
+          "title": "Multiple Inherited Thrombophilic Gene Polymorphisms in Spontaneous\u00a0Abortions in Turkish Population.",
+          "authorString": "Yalcintepe S, Ozdemir O, Hacivelioglu SO, Akurut C, Koc E, Uludag A, Cosar E, Silan F.",
+          "journalTitle": "Int J Mol Cell Med",
+          "issue": "2",
+          "journalVolume": "4",
+          "pubYear": "2015",
+          "journalIssn": "2251-9637; 2251-9645; ",
+          "pageInfo": "120-127",
+          "pubType": "research-article; journal article",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 8,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "N",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp"
+            ]
+          },
+          "firstPublicationDate": "2015-01-01",
+          "firstIndexDate": "2015-08-14"
+        }
+      ]
+    }
+  }
+}

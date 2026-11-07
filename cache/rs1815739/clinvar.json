@@ -1,0 +1,216 @@
+{
+  "source": "clinvar",
+  "retrieved": "2026-11-07T02:09:34+00:00",
+  "request": {
+    "term": "rs1815739"
+  },
+  "response": {
+    "esearch": {
+      "header": {
+        "type": "esearch",
+        "version": "0.3"
+      },
+      "esearchresult": {
+        "count": "1",
+        "retmax": "1",
+        "retstart": "0",
+        "idlist": [
+          "18312"
+        ],
+        "translationset": [],
+        "translationstack": [
+          {
+            "term": "rs1815739[All Fields]",
+            "field": "All Fields",
+            "count": "1",
+            "explode": "N"
+          },
+          "GROUP"
+        ],
+        "querytranslation": "rs1815739[All Fields]"
+      }
+    },
+    "esummary": {
+      "header": {
+        "type": "esummary",
+        "version": "0.3"
+      },
+      "result": {
+        "uids": [
+          "18312"
+        ],
+        "18312": {
+          "uid": "18312",
+          "obj_type": "single nucleotide variant",
+          "accession": "VCV000018312",
+          "accession_version": "VCV000018312.5",
+          "title": "NM_001104.4(ACTN3):c.1729C>T (p.Arg577Ter)",
+          "variation_set": [
+            {
+              "measure_id": "33351",
+              "variation_xrefs": [
+                {
+                  "db_source": "ClinGen",
+                  "db_id": "CA128040"
+                },
+                {
+                  "db_source": "OMIM",
+                  "db_id": "102574.0001"
+                },
+                {
+                  "db_source": "dbSNP",
+                  "db_id": "1815739"
+                }
+              ],
+              "variation_name": "NM_001104.4(ACTN3):c.1729C>T (p.Arg577Ter)",
+              "cdna_change": "c.1729C>T",
+              "aliases": [
+                "ACTN3, ARG577TER (rs1815739)"
+              ],
+              "variation_loc": [
+                {
+                  "status": "current",
+                  "assembly_name": "GRCh38",
+                  "chr": "11",
+                  "band": "11q13.2",
+                  "start": "66560624",
+                  "stop": "66560624",
+                  "inner_start": "",
+                  "inner_stop": "",
+                  "outer_start": "",
+                  "outer_stop": "",
+                  "display_start": "66560624",
+                  "display_stop": "66560624",
+                  "assembly_acc_ver": "GCF_000001405.38",
+                  "annotation_release": "",
+                  "alt": "",
+                  "ref": ""
+                },
+                {
+                  "status": "previous",
+                  "assembly_name": "GRCh37",
+                  "chr": "11",
+                  "band": "11q13.2",
+                  "start": "66328095",
+                  "stop": "66328095",
+                  "inner_start": "",
+                  "inner_stop": "",
+                  "outer_start": "",
+                  "outer_stop": "",
+                  "display_start": "66328095",
+                  "display_stop": "66328095",
+                  "assembly_acc_ver": "GCF_000001405.25",
+                  "annotation_release": "",
+                  "alt": "",
+                  "ref": ""
+                }
+              ],
+              "allele_freq_set": [
+                {
+                  "source": "The Genome Aggregation Database (gnomAD)",
+                  "value": "0.36260",
+                  "minor_allele": ""
+                },
+                {
+                  "source": "The Genome Aggregation Database (gnomAD), exomes",
+                  "value": "0.44590",
+                  "minor_allele": ""
+                },
+                {
+                  "source": "The Genome Aggregation Database (gnomAD)",
+                  "value": "0.37345",
+                  "minor_allele": ""
+                },
+                {
+                  "source": "Trans-Omics for Precision Medicine (TOPMed)",
+                  "value": "0.38220",
+                  "minor_allele": ""
+                },
+                {
+                  "source": "1000 Genomes Project 30x",
+                  "value": "0.39538",
+                  "minor_allele": ""
+                }
+              ],
+              "variant_type": "single nucleotide variant",
+              "canonical_spdi": "NC_000011.10:66560623:C:T",
+              "common_name": ""
+            }
+          ],
+          "supporting_submissions": {
+            "scv": [
+              "SCV000040272",
+              "SCV000040273",
+              "SCV000040274",
+              "SCV002774881",
+              "SCV006106436"
+            ],
+            "rcv": [
+              "RCV000019976",
+              "RCV000019974",
+              "RCV000019975",
+              "RCV002482891",
+              "RCV005434609"
+            ]
+          },
+          "germline_classification": {
+            "description": "Benign",
+            "last_evaluated": "2025/02/16 00:00",
+            "review_status": "criteria provided, single submitter",
+            "fda_recognized_database": "",
+            "trait_set": [
+              {
+                "trait_xrefs": [
+                  {
+                    "db_source": "MedGen",
+                    "db_id": "CN169374"
+                  }
+                ],
+                "trait_name": "not specified"
+              }
+            ]
+          },
+          "clinical_impact_classification": {
+            "description": "",
+            "last_evaluated": "1/01/01 00:00",
+            "review_status": "",
+            "fda_recognized_database": "",
+            "trait_set": []
+          },
+          "oncogenicity_classification": {
+            "description": "",
+            "last_evaluated": "1/01/01 00:00",
+            "review_status": "",
+            "fda_recognized_database": "",
+            "trait_set": []
+          },
+          "record_status": "",
+          "gene_sort": "ACTN3",
+          "chr_sort": "11",
+          "location_sort": "00000000000066560624",
+          "variation_set_name": "",
+          "variation_set_id": "",
+          "genes": [
+            {
+              "symbol": "ACTN3",
+              "geneid": "89",
+              "strand": "+",
+              "source": "submitted"
+            },
+            {
+              "symbol": "CTSF",
+              "geneid": "8722",
+              "strand": "-",
+              "source": "submitted"
+            }
+          ],
+          "molecular_consequence_list": [
+            "nonsense"
+          ],
+          "protein_change": "R577*, R620*",
+          "fda_recognized_database": ""
+        }
+      }
+    }
+  }
+}
