@@ -4,10 +4,14 @@ version = "0.1.0"
 description = "Sourced plain-text briefs for SNP rsIDs"
 readme = "README.md"
 requires-python = ">=3.12"
-dependencies = []
+dependencies = [
+    "pandas>=3.1.1",
+    "streamlit>=1.67.0",
+]
 
 [project.scripts]
 snp-brief = "snp_brief.cli:main"
+snp-brief-demo = "snp_brief.demo:main"
 
 [build-system]
 requires = ["hatchling"]
