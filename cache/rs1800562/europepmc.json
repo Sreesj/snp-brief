@@ -1,0 +1,640 @@
+{
+  "source": "europepmc",
+  "retrieved": "2026-11-07T02:08:46+00:00",
+  "request": {
+    "query": "(TITLE:rs1800562 OR ABSTRACT:rs1800562) AND PUB_TYPE:\"research-article\" NOT PUB_TYPE:review"
+  },
+  "response": {
+    "version": "6.9",
+    "hitCount": 42,
+    "nextCursorMark": "AoJRASg0NjM1MDQ2OQ==",
+    "nextPageUrl": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=%28TITLE%3Ars1800562+OR+ABSTRACT%3Ars1800562%29+AND+PUB_TYPE%3A%22research-article%22+NOT+PUB_TYPE%3Areview&cursorMark=AoJRASg0NjM1MDQ2OQ%3D%3D&resultType=lite&pageSize=15&sort=CITED+desc&format=json",
+    "request": {
+      "queryString": "(TITLE:rs1800562 OR ABSTRACT:rs1800562) AND PUB_TYPE:\"research-article\" NOT PUB_TYPE:review",
+      "resultType": "lite",
+      "cursorMark": "*",
+      "pageSize": 15,
+      "sort": "CITED desc",
+      "synonym": false
+    },
+    "resultList": {
+      "result": [
+        {
+          "id": "20858683",
+          "source": "MED",
+          "pmid": "20858683",
+          "pmcid": "PMC2992787",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC2992787"
+            ]
+          },
+          "doi": "10.2337/db10-0502",
+          "title": "Common variants at 10 genomic loci influence hemoglobin A\u2081(C) levels via glycemic and nonglycemic pathways.",
+          "authorString": "Soranzo N, Sanna S, Wheeler E, Gieger C, Radke D, Dupuis J, Bouatia-Naji N, Langenberg C, Prokopenko I, Stolerman E, Sandhu MS, Heeney MM, Devaney JM, Reilly MP, Ricketts SL, Stewart AF, Voight BF, Willenborg C, Wright B, Altshuler D, Arking D, Balkau B, Barnes D, Boerwinkle E, B\u00f6hm B, Bonnefond A, Bonnycastle LL, Boomsma DI, Bornstein SR, B\u00f6ttcher Y, Bumpstead S, Burnett-Miller MS, Campbell H, Cao A, Chambers J, Clark R, Collins FS, Coresh J, de Geus EJ, Dei M, Deloukas P, D\u00f6ring A, Egan JM, Elosua R, Ferrucci L, Forouhi N, Fox CS, Franklin C, Franzosi MG, Gallina S, Goel A, Graessler J, Grallert H, Greinacher A, Hadley D, Hall A, Hamsten A, Hayward C, Heath S, Herder C, Homuth G, Hottenga JJ, Hunter-Merrill R, Illig T, Jackson AU, Jula A, Kleber M, Knouff CW, Kong A, Kooner J, K\u00f6ttgen A, Kovacs P, Krohn K, K\u00fchnel B, Kuusisto J, Laakso M, Lathrop M, Lecoeur C, Li M, Li M, Loos RJ, Luan J, Lyssenko V, M\u00e4gi R, Magnusson PK, M\u00e4larstig A, Mangino M, Mart\u00ednez-Larrad MT, M\u00e4rz W, McArdle WL, McPherson R, Meisinger C, Meitinger T, Melander O, Mohlke KL, Mooser VE, Morken MA, Narisu N, Nathan DM, Nauck M, O'Donnell C, Oexle K, Olla N, Pankow JS, Payne F, Peden JF, Pedersen NL, Peltonen L, Perola M, Polasek O, Porcu E, Rader DJ, Rathmann W, Ripatti S, Rocheleau G, Roden M, Rudan I, Salomaa V, Saxena R, Schlessinger D, Schunkert H, Schwarz P, Seedorf U, Selvin E, Serrano-R\u00edos M, Shrader P, Silveira A, Siscovick D, Song K, Spector TD, Stefansson K, Steinthorsdottir V, Strachan DP, Strawbridge R, Stumvoll M, Surakka I, Swift AJ, Tanaka T, Teumer A, Thorleifsson G, Thorsteinsdottir U, T\u00f6njes A, Usala G, Vitart V, V\u00f6lzke H, Wallaschofski H, Waterworth DM, Watkins H, Wichmann HE, Wild SH, Willemsen G, Williams GH, Wilson JF, Winkelmann J, Wright AF, WTCCC, Zabena C, Zhao JH, Epstein SE, Erdmann J, Hakonarson HH, Kathiresan S, Khaw KT, Roberts R, Samani NJ, Fleming MD, Sladek R, Abecasis G, Boehnke M, Froguel P, Groop L, McCarthy MI, Kao WH, Florez JC, Uda M, Wareham NJ, Barroso I, Meigs JB.",
+          "journalTitle": "Diabetes",
+          "issue": "12",
+          "journalVolume": "59",
+          "pubYear": "2010",
+          "journalIssn": "1939-327x; 0012-1797; ",
+          "pageInfo": "3229-3239",
+          "pubType": "research-article; journal article",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 377,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp",
+              "omim"
+            ]
+          },
+          "firstPublicationDate": "2010-09-21",
+          "firstIndexDate": "2010-12-02"
+        },
+        {
+          "id": "23750121",
+          "source": "MED",
+          "pmid": "23750121",
+          "pmcid": "PMC3672214",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC3672214"
+            ]
+          },
+          "doi": "10.1371/journal.pmed.1001462",
+          "title": "Serum iron levels and the risk of Parkinson disease: a Mendelian randomization study.",
+          "authorString": "Pichler I, Del Greco M F, G\u00f6gele M, Lill CM, Bertram L, Do CB, Eriksson N, Foroud T, Myers RH, PD GWAS Consortium, Nalls M, Keller MF, International Parkinson's Disease Genomics Consortium, Wellcome Trust Case Control Consortium 2, Benyamin B, Whitfield JB, Genetics of Iron Status Consortium, Pramstaller PP, Hicks AA, Thompson JR, Minelli C.",
+          "journalTitle": "PLoS Med",
+          "issue": "6",
+          "journalVolume": "10",
+          "pubYear": "2013",
+          "journalIssn": "1549-1277; 1549-1676; ",
+          "pageInfo": "e1001462",
+          "pubType": "research support, n.i.h., intramural; research support, non-u.s. gov't; research-article; research support, u.s. gov't, non-p.h.s.; journal article; research support, n.i.h., extramural",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 111,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp"
+            ]
+          },
+          "firstPublicationDate": "2013-06-04",
+          "firstIndexDate": "2013-06-11"
+        },
+        {
+          "id": "31220083",
+          "source": "MED",
+          "pmid": "31220083",
+          "pmcid": "PMC6586257",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC6586257"
+            ]
+          },
+          "doi": "10.1371/journal.pmed.1002833",
+          "title": "Associations of genetically determined iron status across the phenome: A mendelian randomization study.",
+          "authorString": "Gill D, Benyamin B, Moore LSP, Monori G, Zhou A, Koskeridis F, Evangelou E, Laffan M, Walker AP, Tsilidis KK, Dehghan A, Elliott P, Hypp\u00f6nen E, Tzoulaki I.",
+          "journalTitle": "PLoS Med",
+          "issue": "6",
+          "journalVolume": "16",
+          "pubYear": "2019",
+          "journalIssn": "1549-1277; 1549-1676; ",
+          "pageInfo": "e1002833",
+          "pubType": "research support, non-u.s. gov't; research-article; journal article; observational study",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 57,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp",
+              "doi"
+            ]
+          },
+          "firstPublicationDate": "2019-06-20",
+          "firstIndexDate": "2019-06-24"
+        },
+        {
+          "id": "21483845",
+          "source": "MED",
+          "pmid": "21483845",
+          "pmcid": "PMC3069025",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC3069025"
+            ]
+          },
+          "doi": "10.1371/journal.pone.0017390",
+          "title": "Genome-wide association study identifies genetic loci associated with iron deficiency.",
+          "authorString": "McLaren CE, Garner CP, Constantine CC, McLachlan S, Vulpe CD, Snively BM, Gordeuk VR, Nickerson DA, Cook JD, Leiendecker-Foster C, Beckman KB, Eckfeldt JH, Barcellos LF, Murray JA, Adams PC, Acton RT, Killeen AA, McLaren GD.",
+          "journalTitle": "PLoS One",
+          "issue": "3",
+          "journalVolume": "6",
+          "pubYear": "2011",
+          "journalIssn": "1932-6203",
+          "pageInfo": "e17390",
+          "pubType": "research-article; research support, u.s. gov't, non-p.h.s.; journal article; research support, n.i.h., extramural",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 55,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "N",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp"
+            ]
+          },
+          "firstPublicationDate": "2011-03-31",
+          "firstIndexDate": "2011-04-13"
+        },
+        {
+          "id": "20029940",
+          "source": "MED",
+          "pmid": "20029940",
+          "pmcid": "PMC2877151",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC2877151"
+            ]
+          },
+          "doi": "10.1002/ajmg.b.31053",
+          "title": "Suggestive synergy between genetic variants in TF and HFE as risk factors for Alzheimer's disease.",
+          "authorString": "Kauwe JS, Bertelsen S, Mayo K, Cruchaga C, Abraham R, Hollingworth P, Harold D, Owen MJ, Williams J, Lovestone S, Morris JC, Goate AM, Alzheimer's Disease Neuroimaging Initiative.",
+          "journalTitle": "Am J Med Genet B Neuropsychiatr Genet",
+          "issue": "4",
+          "journalVolume": "153B",
+          "pubYear": "2010",
+          "journalIssn": "1552-4841; 1552-485x; ",
+          "pageInfo": "955-959",
+          "pubType": "research support, non-u.s. gov't; research-article; journal article; research support, n.i.h., extramural",
+          "isOpenAccess": "N",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 45,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "Y",
+          "dbCrossReferenceList": {
+            "dbName": [
+              "OMIM"
+            ]
+          },
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "N",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp",
+              "omim"
+            ]
+          },
+          "firstPublicationDate": "2010-06-01",
+          "firstIndexDate": "2010-09-04"
+        },
+        {
+          "id": "22611049",
+          "source": "MED",
+          "pmid": "22611049",
+          "pmcid": "PMC3462887",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC3462887"
+            ]
+          },
+          "doi": "10.1002/hep.25856",
+          "title": "Lower serum hepcidin and greater parenchymal iron in nonalcoholic fatty liver disease patients with C282Y HFE mutations.",
+          "authorString": "Nelson JE, Brunt EM, Kowdley KV, Nonalcoholic Steatohepatitis Clinical Research Network.",
+          "journalTitle": "Hepatology",
+          "issue": "5",
+          "journalVolume": "56",
+          "pubYear": "2012",
+          "journalIssn": "0270-9139; 1527-3350; ",
+          "pageInfo": "1730-1740",
+          "pubType": "research-article; journal article; research support, n.i.h., extramural",
+          "isOpenAccess": "N",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 40,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "N",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp"
+            ]
+          },
+          "firstPublicationDate": "2012-09-20",
+          "firstIndexDate": "2012-05-23"
+        },
+        {
+          "id": "29201641",
+          "source": "MED",
+          "pmid": "29201641",
+          "pmcid": "PMC5699896",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC5699896"
+            ]
+          },
+          "doi": "10.1016/j.nicl.2017.11.003",
+          "title": "Iron-related gene variants and brain iron in multiple sclerosis and healthy individuals.",
+          "authorString": "Hagemeier J, Ramanathan M, Schweser F, Dwyer MG, Lin F, Bergsland N, Weinstock-Guttman B, Zivadinov R.",
+          "journalTitle": "Neuroimage Clin",
+          "journalVolume": "17",
+          "pubYear": "2018",
+          "journalIssn": "2213-1582",
+          "pageInfo": "530-540",
+          "pubType": "research-article; journal article",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 38,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp"
+            ]
+          },
+          "firstPublicationDate": "2017-11-08",
+          "firstIndexDate": "2017-12-06"
+        },
+        {
+          "id": "23794717",
+          "source": "MED",
+          "pmid": "23794717",
+          "pmcid": "PMC7784039",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC7784039"
+            ]
+          },
+          "doi": "10.1136/jmedgenet-2013-101673",
+          "title": "Associations of common variants in HFE and TMPRSS6 with iron parameters are independent of serum hepcidin in a general population: a replication study.",
+          "authorString": "Galesloot TE, Geurts-Moespot AJ, den Heijer M, Sweep FC, Fleming RE, Kiemeney LA, Vermeulen SH, Swinkels DW.",
+          "journalTitle": "J Med Genet",
+          "issue": "9",
+          "journalVolume": "50",
+          "pubYear": "2013",
+          "journalIssn": "0022-2593; 1468-6244; ",
+          "pageInfo": "593-598",
+          "pubType": "research support, non-u.s. gov't; research-article; journal article",
+          "isOpenAccess": "N",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 32,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "Y",
+          "dbCrossReferenceList": {
+            "dbName": [
+              "OMIM"
+            ]
+          },
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp"
+            ]
+          },
+          "firstPublicationDate": "2013-06-21",
+          "firstIndexDate": "2013-06-26"
+        },
+        {
+          "id": "24663082",
+          "source": "MED",
+          "pmid": "24663082",
+          "pmcid": "PMC3975385",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC3975385"
+            ]
+          },
+          "doi": "10.3390/ijms15034077",
+          "title": "Influence of diet, menstruation and genetic factors on iron status: a cross-sectional study in Spanish women of childbearing age.",
+          "authorString": "Blanco-Rojo R, Toxqui L, L\u00f3pez-Parra AM, Baeza-Richer C, P\u00e9rez-Granados AM, Arroyo-Pardo E, Vaquero MP.",
+          "journalTitle": "Int J Mol Sci",
+          "issue": "3",
+          "journalVolume": "15",
+          "pubYear": "2014",
+          "journalIssn": "1422-0067",
+          "pageInfo": "4077-4087",
+          "pubType": "research support, non-u.s. gov't; research-article; journal article",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 31,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "N",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp"
+            ]
+          },
+          "firstPublicationDate": "2014-03-06",
+          "firstIndexDate": "2014-03-26"
+        },
+        {
+          "id": "23389292",
+          "source": "MED",
+          "pmid": "23389292",
+          "pmcid": "PMC3670256",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC3670256"
+            ]
+          },
+          "doi": "10.1093/carcin/bgt045",
+          "title": "Hemochromatosis (HFE) gene mutations and risk of gastric cancer in the European Prospective Investigation into Cancer and Nutrition (EPIC) study.",
+          "authorString": "Agudo A, Bonet C, Sala N, Mu\u00f1oz X, Aranda N, Fonseca-Nunes A, Clavel-Chapelon F, Boutron-Ruault MC, Vineis P, Panico S, Palli D, Tumino R, Grioni S, Quir\u00f3s JR, Molina E, Navarro C, Barricarte A, Chamosa S, Allen NE, Khaw KT, Bueno-de-Mesquita HB, Siersema PD, Numans ME, Trichopoulou A, Lagiou P, Trichopoulos D, Kaaks R, Canzian F, Boeing H, Meidtner K, Johansson M, Sund M, Manjer J, Overvad K, Tjonneland A, Lund E, Weiderpass E, Jenab M, Fedirko V, Offerhaus GJ, Riboli E, Gonz\u00e1lez CA, Jakszyn P.",
+          "journalTitle": "Carcinogenesis",
+          "issue": "6",
+          "journalVolume": "34",
+          "pubYear": "2013",
+          "journalIssn": "0143-3334; 1460-2180; ",
+          "pageInfo": "1244-1250",
+          "pubType": "research support, non-u.s. gov't; research-article; multicenter study; journal article",
+          "isOpenAccess": "N",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 30,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "N",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp"
+            ]
+          },
+          "firstPublicationDate": "2013-02-06",
+          "firstIndexDate": "2013-02-08"
+        },
+        {
+          "id": "31226389",
+          "source": "MED",
+          "pmid": "31226389",
+          "pmcid": "PMC6694204",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC6694204"
+            ]
+          },
+          "doi": "10.1016/j.jhep.2019.05.032",
+          "title": "Genetic studies of abdominal MRI data identify genes regulating hepcidin as major determinants of liver iron concentration.",
+          "authorString": "Wilman HR, Parisinos CA, Atabaki-Pasdar N, Kelly M, Thomas EL, Neubauer S, IMI DIRECT Consortium, Mahajan A, Hingorani AD, Patel RS, Hemingway H, Franks PW, Bell JD, Banerjee R, Yaghootkar H.",
+          "journalTitle": "J Hepatol",
+          "issue": "3",
+          "journalVolume": "71",
+          "pubYear": "2019",
+          "journalIssn": "0168-8278; 1600-0641; ",
+          "pageInfo": "594-602",
+          "pubType": "research support, non-u.s. gov't; research-article; journal article",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 27,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp"
+            ]
+          },
+          "firstPublicationDate": "2019-06-19",
+          "firstIndexDate": "2019-06-24"
+        },
+        {
+          "id": "26582562",
+          "source": "MED",
+          "pmid": "26582562",
+          "pmcid": "PMC4760079",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC4760079"
+            ]
+          },
+          "doi": "10.1093/molbev/msv267",
+          "title": "Signatures of Evolutionary Adaptation in Quantitative Trait Loci Influencing Trace Element Homeostasis in Liver.",
+          "authorString": "Engelken J, Espadas G, Mancuso FM, Bonet N, Scherr AL, J\u00edmenez-\u00c1lvarez V, Codina-Sol\u00e0 M, Medina-Stacey D, Spataro N, Stoneking M, Calafell F, Sabid\u00f3 E, Bosch E.",
+          "journalTitle": "Mol Biol Evol",
+          "issue": "3",
+          "journalVolume": "33",
+          "pubYear": "2016",
+          "journalIssn": "0737-4038; 1537-1719; ",
+          "pageInfo": "738-754",
+          "pubType": "research support, non-u.s. gov't; research-article; journal article",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 23,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp",
+              "uniprot",
+              "ega",
+              "doi"
+            ]
+          },
+          "firstPublicationDate": "2015-11-17",
+          "firstIndexDate": "2015-11-20"
+        },
+        {
+          "id": "37235137",
+          "source": "MED",
+          "pmid": "37235137",
+          "pmcid": "PMC10206181",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC10206181"
+            ]
+          },
+          "doi": "10.1016/j.jhepr.2023.100744",
+          "title": "Genetic variants in HFE are associated with non-alcoholic fatty liver disease in lean individuals.",
+          "authorString": "Sun Z, Pan X, Tian A, Surakka I, Wang T, Jiao X, He S, Song J, Tian X, Tong D, Wen J, Zhang Y, Liu W, Chen P.",
+          "journalTitle": "JHEP Rep",
+          "issue": "7",
+          "journalVolume": "5",
+          "pubYear": "2023",
+          "journalIssn": "2589-5559",
+          "pageInfo": "100744",
+          "pubType": "research-article; journal article",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 20,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp",
+              "doi"
+            ]
+          },
+          "firstPublicationDate": "2023-03-27",
+          "firstIndexDate": "2023-05-26"
+        },
+        {
+          "id": "24398642",
+          "source": "MED",
+          "pmid": "24398642",
+          "pmcid": "PMC3975809",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC3975809"
+            ]
+          },
+          "doi": "10.1038/ejcn.2013.265",
+          "title": "Maternal iron levels early in pregnancy are not associated with offspring IQ score at age 8, findings from a Mendelian randomization study.",
+          "authorString": "Lewis SJ, Bonilla C, Brion MJ, Lawlor DA, Gunnell D, Ben-Shlomo Y, Ness A, Smith GD.",
+          "journalTitle": "Eur J Clin Nutr",
+          "issue": "4",
+          "journalVolume": "68",
+          "pubYear": "2014",
+          "journalIssn": "0954-3007; 1476-5640; ",
+          "pageInfo": "496-502",
+          "pubType": "research support, non-u.s. gov't; research-article; journal article",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 18,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "N",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp"
+            ]
+          },
+          "firstPublicationDate": "2014-01-08",
+          "firstIndexDate": "2014-01-11"
+        },
+        {
+          "id": "35811987",
+          "source": "MED",
+          "pmid": "35811987",
+          "pmcid": "PMC9257254",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC9257254"
+            ]
+          },
+          "doi": "10.3389/fnut.2022.913155",
+          "title": "Causal Relationship of Genetically Predicted Serum Micronutrients Levels With Sarcopenia: A Mendelian Randomization Study.",
+          "authorString": "Sha T, Li W, He H, Wu J, Wang Y, Li H.",
+          "journalTitle": "Front Nutr",
+          "journalVolume": "9",
+          "pubYear": "2022",
+          "journalIssn": "2296-861x",
+          "pageInfo": "913155",
+          "pubType": "research-article; journal article",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 17,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp"
+            ]
+          },
+          "firstPublicationDate": "2022-06-22",
+          "firstIndexDate": "2022-07-12"
+        }
+      ]
+    }
+  }
+}

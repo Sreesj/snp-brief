@@ -1,0 +1,632 @@
+{
+  "source": "europepmc",
+  "retrieved": "2026-11-07T02:09:55+00:00",
+  "request": {
+    "query": "(TITLE:rs1801133 OR ABSTRACT:rs1801133) AND PUB_TYPE:\"research-article\" NOT PUB_TYPE:review"
+  },
+  "response": {
+    "version": "6.9",
+    "hitCount": 352,
+    "nextCursorMark": "AoJTAyg0MDQwMzEyNg==",
+    "nextPageUrl": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=%28TITLE%3Ars1801133+OR+ABSTRACT%3Ars1801133%29+AND+PUB_TYPE%3A%22research-article%22+NOT+PUB_TYPE%3Areview&cursorMark=AoJTAyg0MDQwMzEyNg%3D%3D&resultType=lite&pageSize=15&sort=CITED+desc&format=json",
+    "request": {
+      "queryString": "(TITLE:rs1801133 OR ABSTRACT:rs1801133) AND PUB_TYPE:\"research-article\" NOT PUB_TYPE:review",
+      "resultType": "lite",
+      "cursorMark": "*",
+      "pageSize": 15,
+      "sort": "CITED desc",
+      "synonym": false
+    },
+    "resultList": {
+      "result": [
+        {
+          "id": "28373541",
+          "source": "MED",
+          "pmid": "28373541",
+          "pmcid": "PMC5402460",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC5402460"
+            ]
+          },
+          "doi": "10.1073/pnas.1617042114",
+          "title": "Genetic signatures of high-altitude adaptation in Tibetans.",
+          "authorString": "Yang J, Jin ZB, Chen J, Huang XF, Li XM, Liang YB, Mao JY, Chen X, Zheng Z, Bakshi A, Zheng DD, Zheng MQ, Wray NR, Visscher PM, Lu F, Qu J.",
+          "journalTitle": "Proc Natl Acad Sci U S A",
+          "issue": "16",
+          "journalVolume": "114",
+          "pubYear": "2017",
+          "journalIssn": "0027-8424; 1091-6490; ",
+          "pageInfo": "4189-4194",
+          "pubType": "research support, non-u.s. gov't; research-article; journal article",
+          "isOpenAccess": "N",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 197,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp",
+              "dbgap"
+            ]
+          },
+          "firstPublicationDate": "2017-04-03",
+          "firstIndexDate": "2017-04-04"
+        },
+        {
+          "id": "17903296",
+          "source": "MED",
+          "pmid": "17903296",
+          "pmcid": "PMC1995606",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC1995606"
+            ]
+          },
+          "doi": "10.1186/1471-2350-8-s1-s14",
+          "title": "Genome-wide association with bone mass and geometry in the Framingham Heart Study.",
+          "authorString": "Kiel DP, Demissie S, Dupuis J, Lunetta KL, Murabito JM, Karasik D.",
+          "journalTitle": "BMC Med Genet",
+          "journalVolume": "8 Suppl 1",
+          "pubYear": "2007",
+          "journalIssn": "1471-2350",
+          "pageInfo": "S14",
+          "pubType": "research-article; journal article; research support, n.i.h., extramural",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 187,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "N",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp"
+            ]
+          },
+          "firstPublicationDate": "2007-09-19",
+          "firstIndexDate": "2010-08-19"
+        },
+        {
+          "id": "19744961",
+          "source": "MED",
+          "pmid": "19744961",
+          "pmcid": "PMC2773275",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC2773275"
+            ]
+          },
+          "doi": "10.1093/hmg/ddp428",
+          "title": "Genome-wide significant predictors of metabolites in the one-carbon metabolism pathway.",
+          "authorString": "Hazra A, Kraft P, Lazarus R, Chen C, Chanock SJ, Jacques P, Selhub J, Hunter DJ.",
+          "journalTitle": "Hum Mol Genet",
+          "issue": "23",
+          "journalVolume": "18",
+          "pubYear": "2009",
+          "journalIssn": "0964-6906; 1460-2083; ",
+          "pageInfo": "4677-4687",
+          "pubType": "meta-analysis; research-article; journal article; research support, n.i.h., extramural",
+          "isOpenAccess": "N",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 166,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp"
+            ]
+          },
+          "firstPublicationDate": "2009-09-10",
+          "firstIndexDate": "2010-02-13"
+        },
+        {
+          "id": "22363213",
+          "source": "MED",
+          "pmid": "22363213",
+          "pmcid": "PMC3283559",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC3283559"
+            ]
+          },
+          "doi": "10.1371/journal.pmed.1001177",
+          "title": "Homocysteine and coronary heart disease: meta-analysis of MTHFR case-control studies, avoiding publication bias.",
+          "authorString": "Clarke R, Bennett DA, Parish S, Verhoef P, D\u00f6tsch-Klerk M, Lathrop M, Xu P, Nordestgaard BG, Holm H, Hopewell JC, Saleheen D, Tanaka T, Anand SS, Chambers JC, Kleber ME, Ouwehand WH, Yamada Y, Elbers C, Peters B, Stewart AF, Reilly MM, Thorand B, Yusuf S, Engert JC, Assimes TL, Kooner J, Danesh J, Watkins H, Samani NJ, Collins R, Peto R, MTHFR Studies Collaborative Group.",
+          "journalTitle": "PLoS Med",
+          "issue": "2",
+          "journalVolume": "9",
+          "pubYear": "2012",
+          "journalIssn": "1549-1277; 1549-1676; ",
+          "pageInfo": "e1001177",
+          "pubType": "meta-analysis; research support, non-u.s. gov't; research-article; journal article",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 142,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp"
+            ]
+          },
+          "firstPublicationDate": "2012-02-21",
+          "firstIndexDate": "2012-03-04"
+        },
+        {
+          "id": "19493349",
+          "source": "MED",
+          "pmid": "19493349",
+          "pmcid": "PMC2700092",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC2700092"
+            ]
+          },
+          "doi": "10.1186/1471-2350-10-49",
+          "title": "118 SNPs of folate-related genes and risks of spina bifida and conotruncal heart defects.",
+          "authorString": "Shaw GM, Lu W, Zhu H, Yang W, Briggs FB, Carmichael SL, Barcellos LF, Lammer EJ, Finnell RH.",
+          "journalTitle": "BMC Med Genet",
+          "journalVolume": "10",
+          "pubYear": "2009",
+          "journalIssn": "1471-2350",
+          "pageInfo": "49",
+          "pubType": "research support, u.s. gov't, p.h.s.; research-article; journal article; research support, n.i.h., extramural",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 140,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp"
+            ]
+          },
+          "firstPublicationDate": "2009-06-03",
+          "firstIndexDate": "2010-08-11"
+        },
+        {
+          "id": "20031578",
+          "source": "MED",
+          "pmid": "20031578",
+          "pmcid": "PMC2745176",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC2745176"
+            ]
+          },
+          "doi": "10.1161/circgenetics.108.829804",
+          "title": "Novel associations of CPS1, MUT, NOX4, and DPEP1 with plasma homocysteine in a healthy population: a genome-wide evaluation of 13 974 participants in the Women's Genome Health Study.",
+          "authorString": "Par\u00e9 G, Chasman DI, Parker AN, Zee RR, M\u00e4larstig A, Seedorf U, Collins R, Watkins H, Hamsten A, Miletich JP, Ridker PM.",
+          "journalTitle": "Circ Cardiovasc Genet",
+          "issue": "2",
+          "journalVolume": "2",
+          "pubYear": "2009",
+          "journalIssn": "1942-325x; 1942-3268; ",
+          "pageInfo": "142-150",
+          "pubType": "research support, non-u.s. gov't; research-article; journal article; research support, n.i.h., extramural",
+          "isOpenAccess": "N",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 96,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp"
+            ]
+          },
+          "firstPublicationDate": "2009-04-01",
+          "firstIndexDate": "2010-09-29"
+        },
+        {
+          "id": "17035141",
+          "source": "MED",
+          "pmid": "17035141",
+          "pmcid": "PMC1626421",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC1626421"
+            ]
+          },
+          "doi": "10.1289/ehp.9166",
+          "title": "Neural tube defects and folate pathway genes: family-based association tests of gene-gene and gene-environment interactions.",
+          "authorString": "Boyles AL, Billups AV, Deak KL, Siegel DG, Mehltretter L, Slifer SH, Bassuk AG, Kessler JA, Reed MC, Nijhout HF, George TM, Enterline DS, Gilbert JR, Speer MC, NTD Collaborative Group.",
+          "journalTitle": "Environ Health Perspect",
+          "issue": "10",
+          "journalVolume": "114",
+          "pubYear": "2006",
+          "journalIssn": "0091-6765; 1552-9924; ",
+          "pageInfo": "1547-1552",
+          "pubType": "research-article; journal article; research support, n.i.h., extramural",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 84,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "N",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "gen",
+              "refsnp",
+              "refseq"
+            ]
+          },
+          "firstPublicationDate": "2006-10-01",
+          "firstIndexDate": "2009-12-23"
+        },
+        {
+          "id": "18988738",
+          "source": "MED",
+          "pmid": "18988738",
+          "pmcid": "PMC2582272",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC2582272"
+            ]
+          },
+          "doi": "10.1073/pnas.0803727105",
+          "title": "MTHFR 677C --> T genotype disrupts prefrontal function in schizophrenia through an interaction with COMT 158Val --> Met.",
+          "authorString": "Roffman JL, Gollub RL, Calhoun VD, Wassink TH, Weiss AP, Ho BC, White T, Clark VP, Fries J, Andreasen NC, Goff DC, Manoach DS.",
+          "journalTitle": "Proc Natl Acad Sci U S A",
+          "issue": "45",
+          "journalVolume": "105",
+          "pubYear": "2008",
+          "journalIssn": "0027-8424; 1091-6490; ",
+          "pageInfo": "17573-17578",
+          "pubType": "comparative study; research-article; research support, u.s. gov't, non-p.h.s.; journal article; research support, n.i.h., extramural",
+          "isOpenAccess": "N",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 76,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp"
+            ]
+          },
+          "firstPublicationDate": "2008-11-06",
+          "firstIndexDate": "2009-12-24"
+        },
+        {
+          "id": "18672474",
+          "source": "MED",
+          "pmid": "18672474",
+          "pmcid": "PMC2562562",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC2562562"
+            ]
+          },
+          "doi": "10.1212/01.wnl.0000316198.34558.e5",
+          "title": "Interrelationships among the MTHFR 677C&gt;T polymorphism, migraine, and cardiovascular disease.",
+          "authorString": "Sch\u00fcrks M, Zee RY, Buring JE, Kurth T.",
+          "journalTitle": "Neurology",
+          "issue": "7",
+          "journalVolume": "71",
+          "pubYear": "2008",
+          "journalIssn": "0028-3878; 1526-632x; ",
+          "pageInfo": "505-513",
+          "pubType": "research support, non-u.s. gov't; research-article; journal article; research support, n.i.h., extramural",
+          "isOpenAccess": "N",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 75,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "N",
+          "hasLabsLinks": "N",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp"
+            ]
+          },
+          "firstPublicationDate": "2008-07-30",
+          "firstIndexDate": "2009-12-24"
+        },
+        {
+          "id": "21254359",
+          "source": "MED",
+          "pmid": "21254359",
+          "pmcid": "PMC4098909",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC4098909"
+            ]
+          },
+          "doi": "10.1002/bdra.20740",
+          "title": "Folate pathway and nonsyndromic cleft lip and palate.",
+          "authorString": "Blanton SH, Henry RR, Yuan Q, Mulliken JB, Stal S, Finnell RH, Hecht JT.",
+          "journalTitle": "Birth Defects Res A Clin Mol Teratol",
+          "issue": "1",
+          "journalVolume": "91",
+          "pubYear": "2011",
+          "journalIssn": "1542-0752; 1542-0760; ",
+          "pageInfo": "50-60",
+          "pubType": "research-article; journal article; research support, n.i.h., extramural",
+          "isOpenAccess": "N",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 64,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp"
+            ]
+          },
+          "firstPublicationDate": "2010-12-01",
+          "firstIndexDate": "2011-01-22"
+        },
+        {
+          "id": "20154341",
+          "source": "MED",
+          "pmid": "20154341",
+          "pmcid": "PMC2860887",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC2860887"
+            ]
+          },
+          "doi": "10.1093/hmg/ddq062",
+          "title": "Genome-wide association study of homocysteine levels in Filipinos provides evidence for CPS1 in women and a stronger MTHFR effect in young adults.",
+          "authorString": "Lange LA, Croteau-Chonka DC, Marvelle AF, Qin L, Gaulton KJ, Kuzawa CW, McDade TW, Wang Y, Li Y, Levy S, Borja JB, Lange EM, Adair LS, Mohlke KL.",
+          "journalTitle": "Hum Mol Genet",
+          "issue": "10",
+          "journalVolume": "19",
+          "pubYear": "2010",
+          "journalIssn": "0964-6906; 1460-2083; ",
+          "pageInfo": "2050-2058",
+          "pubType": "research-article; journal article; research support, n.i.h., extramural",
+          "isOpenAccess": "N",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 63,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "Y",
+          "dbCrossReferenceList": {
+            "dbName": [
+              "OMIM"
+            ]
+          },
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp"
+            ]
+          },
+          "firstPublicationDate": "2010-02-13",
+          "firstIndexDate": "2010-07-22"
+        },
+        {
+          "id": "37479695",
+          "source": "MED",
+          "pmid": "37479695",
+          "pmcid": "PMC10362040",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC10362040"
+            ]
+          },
+          "doi": "10.1038/s41421-023-00582-8",
+          "title": "The STROMICS genome study: deep whole-genome sequencing and analysis of 10K Chinese patients with ischemic stroke reveal complex genetic and phenotypic interplay.",
+          "authorString": "Cheng S, Xu Z, Bian S, Chen X, Shi Y, Li Y, Duan Y, Liu Y, Lin J, Jiang Y, Jing J, Li Z, Wang Y, Meng X, Liu Y, Fang M, Jin X, Xu X, Wang J, Wang C, Li H, Liu S, Wang Y.",
+          "journalTitle": "Cell Discov",
+          "issue": "1",
+          "journalVolume": "9",
+          "pubYear": "2023",
+          "journalIssn": "2056-5968",
+          "pageInfo": "75",
+          "pubType": "research-article; journal article",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 61,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp",
+              "uniprot",
+              "doi"
+            ]
+          },
+          "firstPublicationDate": "2023-07-21",
+          "firstIndexDate": "2023-07-23"
+        },
+        {
+          "id": "22856873",
+          "source": "MED",
+          "pmid": "22856873",
+          "pmcid": "PMC3458983",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC3458983"
+            ]
+          },
+          "doi": "10.1186/1471-2350-13-62",
+          "title": "Evaluation of common genetic variants in 82 candidate genes as risk factors for neural tube defects.",
+          "authorString": "Pangilinan F, Molloy AM, Mills JL, Troendle JF, Parle-McDermott A, Signore C, O'Leary VB, Chines P, Seay JM, Geiler-Samerotte K, Mitchell A, VanderMeer JE, Krebs KM, Sanchez A, Cornman-Homonoff J, Stone N, Conley M, Kirke PN, Shane B, Scott JM, Brody LC.",
+          "journalTitle": "BMC Med Genet",
+          "journalVolume": "13",
+          "pubYear": "2012",
+          "journalIssn": "1471-2350",
+          "pageInfo": "62",
+          "pubType": "research support, n.i.h., intramural; research-article; journal article; research support, n.i.h., extramural",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 60,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "N",
+          "hasLabsLinks": "N",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp"
+            ]
+          },
+          "firstPublicationDate": "2012-08-02",
+          "firstIndexDate": "2012-08-04"
+        },
+        {
+          "id": "25052622",
+          "source": "MED",
+          "pmid": "25052622",
+          "pmcid": "PMC4190518",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC4190518"
+            ]
+          },
+          "doi": "10.1093/ije/dyu132",
+          "title": "Maternal homocysteine in pregnancy and offspring birthweight: epidemiological associations and Mendelian randomization analysis.",
+          "authorString": "Yajnik CS, Chandak GR, Joglekar C, Katre P, Bhat DS, Singh SN, Janipalli CS, Refsum H, Krishnaveni G, Veena S, Osmond C, Fall CH.",
+          "journalTitle": "Int J Epidemiol",
+          "issue": "5",
+          "journalVolume": "43",
+          "pubYear": "2014",
+          "journalIssn": "0300-5771; 1464-3685; ",
+          "pageInfo": "1487-1497",
+          "pubType": "research support, non-u.s. gov't; research-article; journal article",
+          "isOpenAccess": "N",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 59,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp"
+            ]
+          },
+          "firstPublicationDate": "2014-07-22",
+          "firstIndexDate": "2014-07-24"
+        },
+        {
+          "id": "31494266",
+          "source": "MED",
+          "pmid": "31494266",
+          "pmcid": "PMC6818495",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC6818495"
+            ]
+          },
+          "doi": "10.1016/j.gpb.2019.07.002",
+          "title": "Whole Genome Analyses of Chinese Population and De Novo Assembly of A Northern Han Genome.",
+          "authorString": "Du Z, Ma L, Qu H, Chen W, Zhang B, Lu X, Zhai W, Sheng X, Sun Y, Li W, Lei M, Qi Q, Yuan N, Shi S, Zeng J, Wang J, Yang Y, Liu Q, Hong Y, Dong L, Zhang Z, Zou D, Wang Y, Song S, Liu F, Fang X, Chen H, Liu X, Xiao J, Zeng C.",
+          "journalTitle": "Genomics Proteomics Bioinformatics",
+          "issue": "3",
+          "journalVolume": "17",
+          "pubYear": "2019",
+          "journalIssn": "1672-0229; 2210-3244; ",
+          "pageInfo": "229-247",
+          "pubType": "research support, non-u.s. gov't; research-article; journal article",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 51,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp"
+            ]
+          },
+          "firstPublicationDate": "2019-06-01",
+          "firstIndexDate": "2019-09-09"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,14 @@
+[project]
+name = "snp-brief"
+version = "0.1.0"
+description = "Sourced plain-text briefs for SNP rsIDs"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = []
+
+[project.scripts]
+snp-brief = "snp_brief.cli:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"

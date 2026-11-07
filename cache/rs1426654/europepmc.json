@@ -1,0 +1,630 @@
+{
+  "source": "europepmc",
+  "retrieved": "2026-11-07T02:10:10+00:00",
+  "request": {
+    "query": "(TITLE:rs1426654 OR ABSTRACT:rs1426654) AND PUB_TYPE:\"research-article\" NOT PUB_TYPE:review"
+  },
+  "response": {
+    "version": "6.9",
+    "hitCount": 19,
+    "nextCursorMark": "AoJHKDQzODY1MzY3",
+    "nextPageUrl": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=%28TITLE%3Ars1426654+OR+ABSTRACT%3Ars1426654%29+AND+PUB_TYPE%3A%22research-article%22+NOT+PUB_TYPE%3Areview&cursorMark=AoJHKDQzODY1MzY3&resultType=lite&pageSize=15&sort=CITED+desc&format=json",
+    "request": {
+      "queryString": "(TITLE:rs1426654 OR ABSTRACT:rs1426654) AND PUB_TYPE:\"research-article\" NOT PUB_TYPE:review",
+      "resultType": "lite",
+      "cursorMark": "*",
+      "pageSize": 15,
+      "sort": "CITED desc",
+      "synonym": false
+    },
+    "resultList": {
+      "result": [
+        {
+          "id": "24244186",
+          "source": "MED",
+          "pmid": "24244186",
+          "pmcid": "PMC3820762",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC3820762"
+            ]
+          },
+          "doi": "10.1371/journal.pgen.1003912",
+          "title": "The light skin allele of SLC24A5 in South Asians and Europeans shares identity by descent.",
+          "authorString": "Basu Mallick C, Iliescu FM, M\u00f6ls M, Hill S, Tamang R, Chaubey G, Goto R, Ho SY, Gallego Romero I, Crivellaro F, Hudjashov G, Rai N, Metspalu M, Mascie-Taylor CG, Pitchappan R, Singh L, Mirazon-Lahr M, Thangaraj K, Villems R, Kivisild T.",
+          "journalTitle": "PLoS Genet",
+          "issue": "11",
+          "journalVolume": "9",
+          "pubYear": "2013",
+          "journalIssn": "1553-7390; 1553-7404; ",
+          "pageInfo": "e1003912",
+          "pubType": "research support, non-u.s. gov't; research-article; journal article",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 94,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp",
+              "omim",
+              "refseq"
+            ]
+          },
+          "firstPublicationDate": "2013-11-07",
+          "firstIndexDate": "2013-11-21"
+        },
+        {
+          "id": "23771755",
+          "source": "MED",
+          "pmid": "23771755",
+          "pmcid": "PMC3694299",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC3694299"
+            ]
+          },
+          "doi": "10.3325/cmj.2013.54.248",
+          "title": "Improved eye- and skin-color prediction based on 8 SNPs.",
+          "authorString": "Hart KL, Kimura SL, Mushailov V, Budimlija ZM, Prinz M, Wurmbach E.",
+          "journalTitle": "Croat Med J",
+          "issue": "3",
+          "journalVolume": "54",
+          "pubYear": "2013",
+          "journalIssn": "0353-9504; 1332-8166; ",
+          "pageInfo": "248-256",
+          "pubType": "research-article; research support, u.s. gov't, non-p.h.s.; journal article",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 56,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "N",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp"
+            ]
+          },
+          "firstPublicationDate": "2013-06-01",
+          "firstIndexDate": "2013-06-18"
+        },
+        {
+          "id": "31315583",
+          "source": "MED",
+          "pmid": "31315583",
+          "pmcid": "PMC6637524",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC6637524"
+            ]
+          },
+          "doi": "10.1186/s12863-019-0765-5",
+          "title": "Meta-analysis of GWA studies provides new insights on the genetic architecture of skin pigmentation in recently admixed populations.",
+          "authorString": "Lona-Durazo F, Hernandez-Pacheco N, Fan S, Zhang T, Choi J, Kovacs MA, Loftus SK, Le P, Edwards M, Fortes-Lima CA, Fortes-Lima CA, Eng C, Huntsman S, Hu D, G\u00f3mez-Cabezas EJ, Mar\u00edn-Padr\u00f3n LC, Grauholm J, Mors O, Burchard EG, Norton HL, Pavan WJ, Brown KM, Tishkoff S, Pino-Yanes M, Beleza S, Marcheco-Teruel B, Parra EJ.",
+          "journalTitle": "BMC Genet",
+          "issue": "1",
+          "journalVolume": "20",
+          "pubYear": "2019",
+          "journalIssn": "1471-2156",
+          "pageInfo": "59",
+          "pubType": "meta-analysis; research support, n.i.h., intramural; research support, non-u.s. gov't; research-article; research support, u.s. gov't, non-p.h.s.; journal article; research support, n.i.h., extramural",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 46,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp"
+            ]
+          },
+          "firstPublicationDate": "2019-07-17",
+          "firstIndexDate": "2019-07-19"
+        },
+        {
+          "id": "22073278",
+          "source": "MED",
+          "pmid": "22073278",
+          "pmcid": "PMC3206941",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC3206941"
+            ]
+          },
+          "doi": "10.1371/journal.pone.0027162",
+          "title": "Genomic ancestry, self-reported \"color\" and quantitative measures of skin pigmentation in Brazilian admixed siblings.",
+          "authorString": "Leite TK, Fonseca RM, de Fran\u00e7a NM, Parra EJ, Pereira RW.",
+          "journalTitle": "PLoS One",
+          "issue": "11",
+          "journalVolume": "6",
+          "pubYear": "2011",
+          "journalIssn": "1932-6203",
+          "pageInfo": "e27162",
+          "pubType": "research support, non-u.s. gov't; research-article; journal article",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 44,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp"
+            ]
+          },
+          "firstPublicationDate": "2011-11-02",
+          "firstIndexDate": "2011-11-11"
+        },
+        {
+          "id": "24416183",
+          "source": "MED",
+          "pmid": "24416183",
+          "pmcid": "PMC3885524",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC3885524"
+            ]
+          },
+          "doi": "10.1371/journal.pone.0083926",
+          "title": "Association of genetic variants with self-assessed color categories in Brazilians.",
+          "authorString": "Durso DF, Bydlowski SP, Hutz MH, Suarez-Kurtz G, Magalh\u00e3es TR, Pena SD.",
+          "journalTitle": "PLoS One",
+          "issue": "1",
+          "journalVolume": "9",
+          "pubYear": "2014",
+          "journalIssn": "1932-6203",
+          "pageInfo": "e83926",
+          "pubType": "research support, non-u.s. gov't; research-article; journal article",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 39,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp",
+              "omim"
+            ]
+          },
+          "firstPublicationDate": "2014-01-08",
+          "firstIndexDate": "2014-01-15"
+        },
+        {
+          "id": "28300201",
+          "source": "MED",
+          "pmid": "28300201",
+          "pmcid": "PMC5353593",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC5353593"
+            ]
+          },
+          "doi": "10.1038/srep44548",
+          "title": "Identification of a novel locus associated with skin colour in African-admixed populations.",
+          "authorString": "Hernandez-Pacheco N, Flores C, Alonso S, Eng C, Mak AC, Hunstman S, Hu D, White MJ, Oh SS, Meade K, Farber HJ, Avila PC, Serebrisky D, Thyne SM, Brigino-Buenaventura E, Rodriguez-Cintron W, Sen S, Kumar R, Lenoir M, Rodriguez-Santana JR, Burchard EG, Pino-Yanes M.",
+          "journalTitle": "Sci Rep",
+          "journalVolume": "7",
+          "pubYear": "2017",
+          "journalIssn": "2045-2322",
+          "pageInfo": "44548",
+          "pubType": "research support, non-u.s. gov't; research-article; journal article; research support, n.i.h., extramural",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 32,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp",
+              "pdb"
+            ]
+          },
+          "firstPublicationDate": "2017-03-16",
+          "firstIndexDate": "2017-03-17"
+        },
+        {
+          "id": "26395555",
+          "source": "MED",
+          "pmid": "26395555",
+          "pmcid": "PMC4930091",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC4930091"
+            ]
+          },
+          "doi": "10.1038/ejhg.2015.187",
+          "title": "A minimum set of ancestry informative markers for determining admixture proportions in a mixed American population: the Brazilian set.",
+          "authorString": "Santos HC, Horimoto AV, Tarazona-Santos E, Rodrigues-Soares F, Barreto ML, Horta BL, Lima-Costa MF, Gouveia MH, Machado M, Silva TM, Sanches JM, Esteban N, Magalhaes WC, Rodrigues MR, Kehdy FS, Pereira AC, Brazilian EPIGEN Project Consortium.",
+          "journalTitle": "Eur J Hum Genet",
+          "issue": "5",
+          "journalVolume": "24",
+          "pubYear": "2016",
+          "journalIssn": "1018-4813; 1476-5438; ",
+          "pageInfo": "725-731",
+          "pubType": "research support, non-u.s. gov't; research-article; journal article",
+          "isOpenAccess": "N",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 31,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp",
+              "ega"
+            ]
+          },
+          "firstPublicationDate": "2015-09-23",
+          "firstIndexDate": "2015-09-24"
+        },
+        {
+          "id": "30895295",
+          "source": "MED",
+          "pmid": "30895295",
+          "pmcid": "PMC6456006",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC6456006"
+            ]
+          },
+          "doi": "10.1093/gbe/evz057",
+          "title": "A Genome-Wide Association Study of Skin and Iris Pigmentation among Individuals of South Asian Ancestry.",
+          "authorString": "Jonnalagadda M, Faizan MA, Ozarkar S, Ashma R, Kulkarni S, Norton HL, Parra E.",
+          "journalTitle": "Genome Biol Evol",
+          "issue": "4",
+          "journalVolume": "11",
+          "pubYear": "2019",
+          "journalIssn": "1759-6653",
+          "pageInfo": "1066-1076",
+          "pubType": "meta-analysis; research support, non-u.s. gov't; research-article; research support, u.s. gov't, non-p.h.s.; journal article",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 27,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp"
+            ]
+          },
+          "firstPublicationDate": "2019-04-01",
+          "firstIndexDate": "2019-03-22"
+        },
+        {
+          "id": "24809478",
+          "source": "MED",
+          "pmid": "24809478",
+          "pmcid": "PMC4014568",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC4014568"
+            ]
+          },
+          "doi": "10.1371/journal.pone.0096886",
+          "title": "Implications of the admixture process in skin color molecular assessment.",
+          "authorString": "Cerqueira CC, H\u00fcnemeier T, Gomez-Vald\u00e9s J, Ramallo V, Volasko-Krause CD, Barbosa AA, Vargas-Pinilla P, Dornelles RC, Longo D, Rothhammer F, Bedoya G, Canizales-Quinteros S, Acu\u00f1a-Alonzo V, Gallo C, Poletti G, Gonz\u00e1lez-Jos\u00e9 R, Salzano FM, Callegari-Jacques SM, Schuler-Faccini L, Ruiz-Linares A, C\u00e1tira Bortolini M, for CANDELA (Consortium for the Analysis of the Diversity and Evolution of Latin America).",
+          "journalTitle": "PLoS One",
+          "issue": "5",
+          "journalVolume": "9",
+          "pubYear": "2014",
+          "journalIssn": "1932-6203",
+          "pageInfo": "e96886",
+          "pubType": "research support, non-u.s. gov't; research-article; journal article",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 23,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp"
+            ]
+          },
+          "firstPublicationDate": "2014-05-08",
+          "firstIndexDate": "2014-05-09"
+        },
+        {
+          "id": "19440451",
+          "source": "MED",
+          "pmid": "19440451",
+          "pmcid": "PMC2674805",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC2674805"
+            ]
+          },
+          "doi": "10.2174/138920208784139528",
+          "title": "Haplotypes in SLC24A5 Gene as Ancestry Informative Markers in Different Populations.",
+          "authorString": "Giardina E, Pietrangeli I, Mart\u00ednez-Labarga C, Martone C, de Angelis F, Spinella A, De Stefano G, Rickards O, Novelli G.",
+          "journalTitle": "Curr Genomics",
+          "issue": "2",
+          "journalVolume": "9",
+          "pubYear": "2008",
+          "journalIssn": "1389-2029; 1875-5488; ",
+          "pageInfo": "110-114",
+          "pubType": "research-article; journal article",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 23,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "N",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp",
+              "omim"
+            ]
+          },
+          "firstPublicationDate": "2008-04-01",
+          "firstIndexDate": "2009-12-25"
+        },
+        {
+          "id": "25370040",
+          "source": "MED",
+          "pmid": "25370040",
+          "pmcid": "PMC4351897",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC4351897"
+            ]
+          },
+          "doi": "10.1038/ejhg.2014.233",
+          "title": "Novel genomic signals of recent selection in an Ethiopian population.",
+          "authorString": "Tekola-Ayele F, Adeyemo A, Chen G, Hailu E, Aseffa A, Davey G, Newport MJ, Rotimi CN.",
+          "journalTitle": "Eur J Hum Genet",
+          "issue": "8",
+          "journalVolume": "23",
+          "pubYear": "2015",
+          "journalIssn": "1018-4813; 1476-5438; ",
+          "pageInfo": "1085-1092",
+          "pubType": "research support, non-u.s. gov't; research-article; journal article; research support, n.i.h., extramural",
+          "isOpenAccess": "N",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 21,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp"
+            ]
+          },
+          "firstPublicationDate": "2014-11-05",
+          "firstIndexDate": "2014-11-11"
+        },
+        {
+          "id": "23100201",
+          "source": "MED",
+          "pmid": "23100201",
+          "pmcid": "PMC3490452",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC3490452"
+            ]
+          },
+          "doi": "10.3325/cmj.2012.53.401",
+          "title": "A single-nucleotide polymorphism (SNP) multiplex system: the association of five SNPs with human eye and hair color in the Slovenian population and comparison using a Bayesian network and logistic regression model.",
+          "authorString": "Kastelic V, Drobnic K.",
+          "journalTitle": "Croat Med J",
+          "issue": "5",
+          "journalVolume": "53",
+          "pubYear": "2012",
+          "journalIssn": "0353-9504; 1332-8166; ",
+          "pageInfo": "401-408",
+          "pubType": "research-article; journal article",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 18,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp"
+            ]
+          },
+          "firstPublicationDate": "2012-10-01",
+          "firstIndexDate": "2012-10-27"
+        },
+        {
+          "id": "33167923",
+          "source": "MED",
+          "pmid": "33167923",
+          "pmcid": "PMC7650158",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC7650158"
+            ]
+          },
+          "doi": "10.1186/s12885-020-07485-x",
+          "title": "Skin pigmentation polymorphisms associated with increased risk of melanoma in a case-control sample from southern Brazil.",
+          "authorString": "Reis LB, Bakos RM, Vianna FSL, Macedo GS, Jacovas VC, Ribeiro-Dos-Santos AM, Santos S, Bakos L, Ashton-Prolla P.",
+          "journalTitle": "BMC Cancer",
+          "issue": "1",
+          "journalVolume": "20",
+          "pubYear": "2020",
+          "journalIssn": "1471-2407",
+          "pageInfo": "1069",
+          "pubType": "research-article; journal article",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 16,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp"
+            ]
+          },
+          "firstPublicationDate": "2020-11-09",
+          "firstIndexDate": "2020-11-11"
+        },
+        {
+          "id": "33318654",
+          "source": "MED",
+          "pmid": "33318654",
+          "pmcid": "PMC7736583",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC7736583"
+            ]
+          },
+          "doi": "10.1038/s42003-020-01461-8",
+          "title": "Genetic ancestry, skin pigmentation, and the risk of cutaneous squamous cell carcinoma in Hispanic/Latino and non-Hispanic white populations.",
+          "authorString": "Jorgenson E, Choquet H, Yin J, Hoffmann TJ, Banda Y, Kvale MN, Risch N, Schaefer C, Asgari MM.",
+          "journalTitle": "Commun Biol",
+          "issue": "1",
+          "journalVolume": "3",
+          "pubYear": "2020",
+          "journalIssn": "2399-3642",
+          "pageInfo": "765",
+          "pubType": "research-article; journal article; research support, n.i.h., extramural",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 9,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp"
+            ]
+          },
+          "firstPublicationDate": "2020-12-14",
+          "firstIndexDate": "2020-12-24"
+        },
+        {
+          "id": "34068188",
+          "source": "MED",
+          "pmid": "34068188",
+          "pmcid": "PMC8152963",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC8152963"
+            ]
+          },
+          "doi": "10.3390/genes12050733",
+          "title": "Analysis of Skin Pigmentation and Genetic Ancestry in Three Subpopulations from Pakistan: Punjabi, Pashtun, and Baloch.",
+          "authorString": "Shan MA, Meyer OS, Refn M, Morling N, Andersen JD, B\u00f8rsting C.",
+          "journalTitle": "Genes (Basel)",
+          "issue": "5",
+          "journalVolume": "12",
+          "pubYear": "2021",
+          "journalIssn": "2073-4425",
+          "pageInfo": "733",
+          "pubType": "research support, non-u.s. gov't; research-article; journal article",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 7,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp"
+            ]
+          },
+          "firstPublicationDate": "2021-05-13",
+          "firstIndexDate": "2021-06-03"
+        }
+      ]
+    }
+  }
+}

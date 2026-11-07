@@ -1,0 +1,37 @@
+{
+  "source": "clinvar",
+  "retrieved": "2026-11-07T02:10:18+00:00",
+  "request": {
+    "term": "rs6054257"
+  },
+  "response": {
+    "esearch": {
+      "header": {
+        "type": "esearch",
+        "version": "0.3"
+      },
+      "esearchresult": {
+        "count": "0",
+        "retmax": "0",
+        "retstart": "0",
+        "idlist": [],
+        "translationset": [],
+        "querytranslation": "(rs6054257[All Fields])",
+        "errorlist": {
+          "phrasesnotfound": [
+            "rs6054257"
+          ],
+          "fieldsnotfound": []
+        },
+        "warninglist": {
+          "phrasesignored": [],
+          "quotedphrasesnotfound": [],
+          "outputmessages": [
+            "No items found."
+          ]
+        }
+      }
+    },
+    "esummary": null
+  }
+}

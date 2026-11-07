@@ -1,0 +1,644 @@
+{
+  "source": "europepmc",
+  "retrieved": "2026-11-07T02:10:17+00:00",
+  "request": {
+    "query": "(TITLE:rs12913832 OR ABSTRACT:rs12913832) AND PUB_TYPE:\"research-article\" NOT PUB_TYPE:review"
+  },
+  "response": {
+    "version": "6.9",
+    "hitCount": 39,
+    "nextCursorMark": "AoJYASgzNTU0NDIyMA==",
+    "nextPageUrl": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=%28TITLE%3Ars12913832+OR+ABSTRACT%3Ars12913832%29+AND+PUB_TYPE%3A%22research-article%22+NOT+PUB_TYPE%3Areview&cursorMark=AoJYASgzNTU0NDIyMA%3D%3D&resultType=lite&pageSize=15&sort=CITED+desc&format=json",
+    "request": {
+      "queryString": "(TITLE:rs12913832 OR ABSTRACT:rs12913832) AND PUB_TYPE:\"research-article\" NOT PUB_TYPE:review",
+      "resultType": "lite",
+      "cursorMark": "*",
+      "pageSize": 15,
+      "sort": "CITED desc",
+      "synonym": false
+    },
+    "resultList": {
+      "result": [
+        {
+          "id": "18252222",
+          "source": "MED",
+          "pmid": "18252222",
+          "pmcid": "PMC2427173",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC2427173"
+            ]
+          },
+          "doi": "10.1016/j.ajhg.2007.11.005",
+          "title": "A single SNP in an evolutionary conserved region within intron 86 of the HERC2 gene determines human blue-brown eye color.",
+          "authorString": "Sturm RA, Duffy DL, Zhao ZZ, Leite FP, Stark MS, Hayward NK, Martin NG, Montgomery GW.",
+          "journalTitle": "Am J Hum Genet",
+          "issue": "2",
+          "journalVolume": "82",
+          "pubYear": "2008",
+          "journalIssn": "0002-9297; 1537-6605; ",
+          "pageInfo": "424-431",
+          "pubType": "research support, non-u.s. gov't; research-article; journal article; research support, n.i.h., extramural",
+          "isOpenAccess": "N",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 279,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "Y",
+          "dbCrossReferenceList": {
+            "dbName": [
+              "INTERPRO",
+              "OMIM",
+              "UNIPROT"
+            ]
+          },
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "N",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp",
+              "omim",
+              "refseq"
+            ]
+          },
+          "firstPublicationDate": "2008-01-24",
+          "firstIndexDate": "2009-12-24"
+        },
+        {
+          "id": "22234890",
+          "source": "MED",
+          "pmid": "22234890",
+          "pmcid": "PMC3290780",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC3290780"
+            ]
+          },
+          "doi": "10.1101/gr.128652.111",
+          "title": "HERC2 rs12913832 modulates human pigmentation by attenuating chromatin-loop formation between a long-range enhancer and the OCA2 promoter.",
+          "authorString": "Visser M, Kayser M, Palstra RJ.",
+          "journalTitle": "Genome Res",
+          "issue": "3",
+          "journalVolume": "22",
+          "pubYear": "2012",
+          "journalIssn": "1088-9051; 1549-5469; ",
+          "pageInfo": "446-455",
+          "pubType": "research support, non-u.s. gov't; research-article; journal article",
+          "isOpenAccess": "N",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 225,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "Y",
+          "dbCrossReferenceList": {
+            "dbName": [
+              "OMIM",
+              "UNIPROT"
+            ]
+          },
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "N",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "gen",
+              "refsnp"
+            ]
+          },
+          "firstPublicationDate": "2012-01-10",
+          "firstIndexDate": "2012-01-12"
+        },
+        {
+          "id": "21926416",
+          "source": "MED",
+          "pmid": "21926416",
+          "pmcid": "PMC3298855",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC3298855"
+            ]
+          },
+          "doi": "10.1093/hmg/ddr415",
+          "title": "Genome-wide association study identifies novel loci predisposing to cutaneous melanoma.",
+          "authorString": "Amos CI, Wang LE, Lee JE, Gershenwald JE, Chen WV, Fang S, Kosoy R, Zhang M, Qureshi AA, Vattathil S, Schacherer CW, Gardner JM, Wang Y, Bishop DT, Barrett JH, GenoMEL Investigators, MacGregor S, Hayward NK, Martin NG, Duffy DL, Q-Mega Investigators, Mann GJ, Cust A, Hopper J, AMFS Investigators, Brown KM, Grimm EA, Xu Y, Han Y, Jing K, McHugh C, Laurie CC, Doheny KF, Pugh EW, Seldin MF, Han J, Wei Q.",
+          "journalTitle": "Hum Mol Genet",
+          "issue": "24",
+          "journalVolume": "20",
+          "pubYear": "2011",
+          "journalIssn": "0964-6906; 1460-2083; ",
+          "pageInfo": "5012-5023",
+          "pubType": "research support, n.i.h., intramural; research support, u.s. gov't, p.h.s.; research support, non-u.s. gov't; research-article; journal article; research support, n.i.h., extramural",
+          "isOpenAccess": "N",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 169,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp",
+              "dbgap"
+            ]
+          },
+          "firstPublicationDate": "2011-09-17",
+          "firstIndexDate": "2011-09-20"
+        },
+        {
+          "id": "23548203",
+          "source": "MED",
+          "pmid": "23548203",
+          "pmcid": "PMC3690971",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC3690971"
+            ]
+          },
+          "doi": "10.1093/hmg/ddt142",
+          "title": "Genome-wide association studies identify several new loci associated with pigmentation traits and skin cancer risk in European Americans.",
+          "authorString": "Zhang M, Song F, Liang L, Nan H, Zhang J, Liu H, Wang LE, Wei Q, Lee JE, Amos CI, Kraft P, Qureshi AA, Han J.",
+          "journalTitle": "Hum Mol Genet",
+          "issue": "14",
+          "journalVolume": "22",
+          "pubYear": "2013",
+          "journalIssn": "0964-6906; 1460-2083; ",
+          "pageInfo": "2948-2959",
+          "pubType": "research-article; journal article; research support, n.i.h., extramural",
+          "isOpenAccess": "N",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 90,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "geo",
+              "refsnp"
+            ]
+          },
+          "firstPublicationDate": "2013-04-01",
+          "firstIndexDate": "2013-04-04"
+        },
+        {
+          "id": "23771755",
+          "source": "MED",
+          "pmid": "23771755",
+          "pmcid": "PMC3694299",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC3694299"
+            ]
+          },
+          "doi": "10.3325/cmj.2013.54.248",
+          "title": "Improved eye- and skin-color prediction based on 8 SNPs.",
+          "authorString": "Hart KL, Kimura SL, Mushailov V, Budimlija ZM, Prinz M, Wurmbach E.",
+          "journalTitle": "Croat Med J",
+          "issue": "3",
+          "journalVolume": "54",
+          "pubYear": "2013",
+          "journalIssn": "0353-9504; 1332-8166; ",
+          "pageInfo": "248-256",
+          "pubType": "research-article; research support, u.s. gov't, non-p.h.s.; journal article",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 56,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "N",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp"
+            ]
+          },
+          "firstPublicationDate": "2013-06-01",
+          "firstIndexDate": "2013-06-18"
+        },
+        {
+          "id": "37902747",
+          "source": "MED",
+          "pmid": "37902747",
+          "pmcid": "PMC10617638",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC10617638"
+            ]
+          },
+          "doi": "10.1167/iovs.64.13.45",
+          "title": "Worldwide Incidence of Ocular Melanoma and Correlation With Pigmentation-Related Risk Factors.",
+          "authorString": "Wu M, Yavuzyigitoglu S, Brosens E, Ramdas WD, Kili\u00e7 E, Rotterdam Ocular Melanoma Study Group (ROMS).",
+          "journalTitle": "Invest Ophthalmol Vis Sci",
+          "issue": "13",
+          "journalVolume": "64",
+          "pubYear": "2023",
+          "journalIssn": "0146-0404; 1552-5783; ",
+          "pageInfo": "45",
+          "pubType": "research-article; journal article",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 47,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp",
+              "doi"
+            ]
+          },
+          "firstPublicationDate": "2023-10-01",
+          "firstIndexDate": "2023-10-31"
+        },
+        {
+          "id": "31315583",
+          "source": "MED",
+          "pmid": "31315583",
+          "pmcid": "PMC6637524",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC6637524"
+            ]
+          },
+          "doi": "10.1186/s12863-019-0765-5",
+          "title": "Meta-analysis of GWA studies provides new insights on the genetic architecture of skin pigmentation in recently admixed populations.",
+          "authorString": "Lona-Durazo F, Hernandez-Pacheco N, Fan S, Zhang T, Choi J, Kovacs MA, Loftus SK, Le P, Edwards M, Fortes-Lima CA, Fortes-Lima CA, Eng C, Huntsman S, Hu D, G\u00f3mez-Cabezas EJ, Mar\u00edn-Padr\u00f3n LC, Grauholm J, Mors O, Burchard EG, Norton HL, Pavan WJ, Brown KM, Tishkoff S, Pino-Yanes M, Beleza S, Marcheco-Teruel B, Parra EJ.",
+          "journalTitle": "BMC Genet",
+          "issue": "1",
+          "journalVolume": "20",
+          "pubYear": "2019",
+          "journalIssn": "1471-2156",
+          "pageInfo": "59",
+          "pubType": "meta-analysis; research support, n.i.h., intramural; research support, non-u.s. gov't; research-article; research support, u.s. gov't, non-p.h.s.; journal article; research support, n.i.h., extramural",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 46,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp"
+            ]
+          },
+          "firstPublicationDate": "2019-07-17",
+          "firstIndexDate": "2019-07-19"
+        },
+        {
+          "id": "25918132",
+          "source": "MED",
+          "pmid": "25918132",
+          "pmcid": "PMC4560052",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC4560052"
+            ]
+          },
+          "doi": "10.1093/toxsci/kfv084",
+          "title": "Genome-Wide Association Study Identifies Novel Loci Associated With Diisocyanate-Induced Occupational Asthma.",
+          "authorString": "Yucesoy B, Kaufman KM, Lummus ZL, Weirauch MT, Zhang G, Cartier A, Boulet LP, Sastre J, Quirce S, Tarlo SM, Cruz MJ, Munoz X, Harley JB, Bernstein DI.",
+          "journalTitle": "Toxicol Sci",
+          "issue": "1",
+          "journalVolume": "146",
+          "pubYear": "2015",
+          "journalIssn": "1096-6080; 1096-0929; ",
+          "pageInfo": "192-201",
+          "pubType": "research support, non-u.s. gov't; research-article; journal article; research support, n.i.h., extramural",
+          "isOpenAccess": "N",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 41,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp"
+            ]
+          },
+          "firstPublicationDate": "2015-04-26",
+          "firstIndexDate": "2015-04-29"
+        },
+        {
+          "id": "24392023",
+          "source": "MED",
+          "pmid": "24392023",
+          "pmcid": "PMC3877376",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC3877376"
+            ]
+          },
+          "doi": "10.1371/journal.pone.0085642",
+          "title": "Joint effect of multiple common SNPs predicts melanoma susceptibility.",
+          "authorString": "Fang S, Han J, Zhang M, Wang LE, Wei Q, Amos CI, Lee JE.",
+          "journalTitle": "PLoS One",
+          "issue": "12",
+          "journalVolume": "8",
+          "pubYear": "2013",
+          "journalIssn": "1932-6203",
+          "pageInfo": "e85642",
+          "pubType": "research support, non-u.s. gov't; research-article; journal article; research support, n.i.h., extramural",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 36,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp"
+            ]
+          },
+          "firstPublicationDate": "2013-12-31",
+          "firstIndexDate": "2014-01-08"
+        },
+        {
+          "id": "27499155",
+          "source": "MED",
+          "pmid": "27499155",
+          "pmcid": "PMC4976361",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC4976361"
+            ]
+          },
+          "doi": "10.1038/srep31191",
+          "title": "Genetic markers of pigmentation are novel risk loci for uveal melanoma.",
+          "authorString": "Ferguson R, Vogelsang M, Ucisik-Akkaya E, Rai K, Pilarski R, Martinez CN, Rendleman J, Kazlow E, Nagdimov K, Osman I, Klein RJ, Davidorf FH, Cebulla CM, Abdel-Rahman MH, Kirchhoff T.",
+          "journalTitle": "Sci Rep",
+          "journalVolume": "6",
+          "pubYear": "2016",
+          "journalIssn": "2045-2322",
+          "pageInfo": "31191",
+          "pubType": "research-article; journal article",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 35,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp"
+            ]
+          },
+          "firstPublicationDate": "2016-08-08",
+          "firstIndexDate": "2016-08-10"
+        },
+        {
+          "id": "25125603",
+          "source": "MED",
+          "pmid": "25125603",
+          "pmcid": "PMC4165367",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC4165367"
+            ]
+          },
+          "doi": "10.1167/iovs.14-14602",
+          "title": "Sunlight exposure, pigmentation, and incident age-related macular degeneration.",
+          "authorString": "Klein BE, Howard KP, Iyengar SK, Sivakumaran TA, Meyers KJ, Cruickshanks KJ, Klein R.",
+          "journalTitle": "Invest Ophthalmol Vis Sci",
+          "issue": "9",
+          "journalVolume": "55",
+          "pubYear": "2014",
+          "journalIssn": "0146-0404; 1552-5783; ",
+          "pageInfo": "5855-5861",
+          "pubType": "research support, non-u.s. gov't; research-article; journal article; research support, n.i.h., extramural",
+          "isOpenAccess": "N",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 31,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "N",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp"
+            ]
+          },
+          "firstPublicationDate": "2014-08-14",
+          "firstIndexDate": "2014-08-16"
+        },
+        {
+          "id": "23986280",
+          "source": "MED",
+          "pmid": "23986280",
+          "pmcid": "PMC3760663",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC3760663"
+            ]
+          },
+          "doi": "10.3325/cmj.2013.54.381",
+          "title": "Prediction of eye color in the Slovenian population using the IrisPlex SNPs.",
+          "authorString": "Kastelic V, Po\u015bpiech E, Draus-Barini J, Branicki W, Drobni\u010d K.",
+          "journalTitle": "Croat Med J",
+          "issue": "4",
+          "journalVolume": "54",
+          "pubYear": "2013",
+          "journalIssn": "0353-9504; 1332-8166; ",
+          "pageInfo": "381-386",
+          "pubType": "research support, non-u.s. gov't; research-article; journal article",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 30,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp"
+            ]
+          },
+          "firstPublicationDate": "2013-08-01",
+          "firstIndexDate": "2013-08-30"
+        },
+        {
+          "id": "30895295",
+          "source": "MED",
+          "pmid": "30895295",
+          "pmcid": "PMC6456006",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC6456006"
+            ]
+          },
+          "doi": "10.1093/gbe/evz057",
+          "title": "A Genome-Wide Association Study of Skin and Iris Pigmentation among Individuals of South Asian Ancestry.",
+          "authorString": "Jonnalagadda M, Faizan MA, Ozarkar S, Ashma R, Kulkarni S, Norton HL, Parra E.",
+          "journalTitle": "Genome Biol Evol",
+          "issue": "4",
+          "journalVolume": "11",
+          "pubYear": "2019",
+          "journalIssn": "1759-6653",
+          "pageInfo": "1066-1076",
+          "pubType": "meta-analysis; research support, non-u.s. gov't; research-article; research support, u.s. gov't, non-p.h.s.; journal article",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 27,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp"
+            ]
+          },
+          "firstPublicationDate": "2019-04-01",
+          "firstIndexDate": "2019-03-22"
+        },
+        {
+          "id": "25410285",
+          "source": "MED",
+          "pmid": "25410285",
+          "pmcid": "PMC4257874",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC4257874"
+            ]
+          },
+          "doi": "10.1158/1055-9965.epi-14-0633",
+          "title": "Interactions between ultraviolet light and MC1R and OCA2 variants are determinants of childhood nevus and freckle phenotypes.",
+          "authorString": "Bar\u00f3n AE, Asdigian NL, Gonzalez V, Aalborg J, Terzian T, Stiegmann RA, Torchia EC, Berwick M, Dellavalle RP, Morelli JG, Mokrohisky ST, Crane LA, Box NF.",
+          "journalTitle": "Cancer Epidemiol Biomarkers Prev",
+          "issue": "12",
+          "journalVolume": "23",
+          "pubYear": "2014",
+          "journalIssn": "1055-9965; 1538-7755; ",
+          "pageInfo": "2829-2839",
+          "pubType": "research-article; journal article; research support, n.i.h., extramural",
+          "isOpenAccess": "N",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 26,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp"
+            ]
+          },
+          "firstPublicationDate": "2014-12-01",
+          "firstIndexDate": "2014-11-21"
+        },
+        {
+          "id": "27468418",
+          "source": "MED",
+          "pmid": "27468418",
+          "pmcid": "PMC4947861",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC4947861"
+            ]
+          },
+          "doi": "10.1002/mgg3.213",
+          "title": "Importance of nonsynonymous OCA2 variants in human eye color prediction.",
+          "authorString": "Andersen JD, Pietroni C, Johansen P, Andersen MM, Pereira V, B\u00f8rsting C, Morling N.",
+          "journalTitle": "Mol Genet Genomic Med",
+          "issue": "4",
+          "journalVolume": "4",
+          "pubYear": "2016",
+          "journalIssn": "2324-9269",
+          "pageInfo": "420-430",
+          "pubType": "research-article; journal article",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 24,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp",
+              "omim"
+            ]
+          },
+          "firstPublicationDate": "2016-03-11",
+          "firstIndexDate": "2016-07-29"
+        }
+      ]
+    }
+  }
+}
