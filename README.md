@@ -40,6 +40,15 @@ Serves a local page. Run the list in the sidebar, or search any rsID at the top.
 
 Module results stay in the session when you switch tabs or SNPs. The checked-in `cache/` is never changed by the page.
 
+## Deploy (Streamlit Community Cloud)
+
+1. Push to GitHub. The repo has `streamlit_app.py` (entry point) and `requirements.txt`.
+2. At share.streamlit.io, sign in with GitHub, choose **New app**, repo `Sreesj/snp-brief`, branch `main`, main file `streamlit_app.py`.
+3. Under **Advanced settings → Secrets**, paste the contents of `.streamlit/secrets.toml.example` with your values: the Nebius key, the model, an app password, and the per-session limit on AI hypothesis runs.
+4. Deploy, then open the link and search a few rsIDs.
+
+The password keeps strangers from spending the Nebius credits. Live responses are saved in the app's own cache; if the disk is read-only, results are shown but not saved.
+
 ## LLM: Nebius Token Factory
 
 ```bash

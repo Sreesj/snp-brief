@@ -45,6 +45,9 @@ def save_result(cache_dir: Path | None, rsid: str, module: str, key: str, result
     if cache_dir is None:
         return stored
     path = Path(cache_dir) / rsid / f"{module}.json"
-    path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(stored, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    try:
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(json.dumps(stored, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    except OSError:
+        pass  # a read-only deployment still shows the result; it is just not saved
     return stored

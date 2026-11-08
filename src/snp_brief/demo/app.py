@@ -8,7 +8,9 @@ LLM stage, in cache/<rsid>/forge.json.
 
 from __future__ import annotations
 
+import hmac
 import html
+import os
 import re
 from dataclasses import dataclass
 from pathlib import Path
@@ -75,8 +77,51 @@ class Run:
     failed: list[str]
 
 
+def load_secrets() -> None:
+    """On Streamlit Cloud, settings live in st.secrets; copy the known ones into the environment."""
+    try:
+        secrets = dict(st.secrets)
+    except Exception:  # no secrets file locally
+        return
+    for name in (
+        "NEBIUS_API_KEY",
+        "SNP_BRIEF_LLM_MODEL",
+        "SNP_BRIEF_FORGE_MODEL",
+        "SNP_BRIEF_LLM_URL",
+        "SNP_BRIEF_LLM_KEY",
+        "SNP_BRIEF_USER_CACHE",
+        "SNP_BRIEF_APP_PASSWORD",
+        "SNP_BRIEF_FORGE_LIMIT",
+    ):
+        if name in secrets and not os.environ.get(name):
+            os.environ[name] = str(secrets[name])
+
+
+def password_ok() -> bool:
+    """If SNP_BRIEF_APP_PASSWORD is set, ask for it once per session."""
+    expected = os.environ.get("SNP_BRIEF_APP_PASSWORD")
+    if not expected or st.session_state.get("unlocked"):
+        return True
+    st.title("Variant Atlas")
+    entered = st.text_input("Password", type="password", key="password")
+    if entered:
+        if hmac.compare_digest(entered, expected):
+            st.session_state.unlocked = True
+            st.rerun()
+        st.error("Wrong password.")
+    return False
+
+
+def forge_runs_left() -> int:
+    limit = int(os.environ.get("SNP_BRIEF_FORGE_LIMIT", "20"))
+    return max(0, limit - st.session_state.get("forge_llm_runs", 0))
+
+
 def main() -> None:
     st.set_page_config(page_title="Variant Atlas", layout="wide")
+    load_secrets()
+    if not password_ok():
+        return
     st.html(PAGE_CSS)
     root = repo_root()
     if "rsid_text" not in st.session_state:
@@ -395,9 +440,15 @@ def render_forge(item: Gathered) -> None:
         )
         if client is None:
             st.caption("No LLM connected (set NEBIUS_API_KEY). Stage 1 runs; cached hypotheses are shown if present.")
+        if client is not None and forge_runs_left() == 0:
+            st.caption("This session has used its AI hypothesis runs; stage 1 and cached results still work.")
+            client = None
         if st.button("Run Hypothesis Forge", key=f"run-forge-{item.rsid}", type="primary"):
             with st.spinner("Forging hypotheses…" if client else "Running stage 1…"):
-                results[key] = forge(item, client=client, cache_dir=module_cache(item))
+                found = forge(item, client=client, cache_dir=module_cache(item))
+            if found.writer.startswith("llm:") and "(cached)" not in found.writer:
+                st.session_state.forge_llm_runs = st.session_state.get("forge_llm_runs", 0) + 1
+            results[key] = found
             st.rerun()
         return
     found = results[key]

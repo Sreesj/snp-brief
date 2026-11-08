@@ -131,7 +131,9 @@ class HypothesisTests(unittest.TestCase):
             again = forge(item, client=client, cache_dir=Path(tmp))
             self.assertEqual(client.calls, 1)
             self.assertIn("cached", again.writer)
-            offline = forge(item, client=None, cache_dir=Path(tmp))
+            # No key in the environment: the stored result is reused, nothing is called.
+            with mock.patch.dict(os.environ, {}, clear=True):
+                offline = forge(item, client=None, cache_dir=Path(tmp))
             self.assertEqual(len(offline.hypotheses), 2)
 
     def test_bad_reply_falls_back_to_stage_1(self) -> None:
@@ -193,10 +195,25 @@ class RippleTests(unittest.TestCase):
         self.assertEqual(labels, {OBSERVED, PREDICTED, UNKNOWN})
         self.assertTrue(any("nearest annotation" in link.text for link in result.links))
 
+    def test_without_clinvar_dbsnp_decides_context_and_gene_source(self) -> None:
+        result = ripple(cached("rs6054257"))
+        self.assertEqual(result.context_key, "utr")
+        self.assertTrue(any(link.source == "dbSNP" and "upstream" in link.text for link in result.links))
+        self.assertTrue(any("named by dbSNP" in link.text for link in result.links))
+        self.assertFalse(any("named by ClinVar" in link.text for link in result.links))
+
     def test_missense_priorities(self) -> None:
         result = ripple(cached("rs6025"))
         self.assertEqual(result.context_key, "missense")
         self.assertIn("Protein domain at this position", result.priorities)
+
+
+class ReadOnlyCacheTests(unittest.TestCase):
+    def test_saving_to_a_read_only_place_does_not_crash(self) -> None:
+        from snp_brief.module_cache import save_result
+
+        stored = save_result(Path("/proc/not-writable"), "rs1", "forge", "k", {"a": 1})
+        self.assertEqual(stored["a"], 1)
 
 
 class ClientTests(unittest.TestCase):

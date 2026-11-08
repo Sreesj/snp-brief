@@ -81,7 +81,7 @@ def context_key(consequence: str) -> str:
         ("missense", ("missense",)),
         ("synonymous", ("synonymous",)),
         ("intron", ("intron",)),
-        ("utr", ("utr", "upstream", "downstream", "5 prime", "3 prime")),
+        ("utr", ("utr", "upstream", "downstream", "5 prime", "3 prime", "2kb", "500b")),
     ):
         if any(word in text for word in words):
             return key
@@ -92,9 +92,17 @@ def ripple(item) -> RippleResult:
     plan = _plan(item)
     view = _main_view(item)
     record = view.records[0] if view is not None and view.records else None
-    key = context_key(plan.consequence)
+    db_classes = ", ".join(c.replace("_", " ") for c in item.db.fxn_class)
+    # Without a ClinVar consequence, dbSNP's function class decides the context.
+    consequence = plan.consequence or db_classes
+    gene_source = "ClinVar" if record is not None and record.genes else "dbSNP"
+    key = context_key(consequence)
     name, priorities = CONTEXTS[key]
     result = RippleResult(item.rsid, key, name, plan.gene, plan.change, priorities)
+    if record is None and db_classes:
+        result.links.append(
+            Link(OBSERVED, f"{item.rsid} → {plan.gene or 'no gene named'}: {db_classes}", "dbSNP")
+        )
     if record is not None:
         result.links.append(
             Link(
@@ -119,7 +127,13 @@ def ripple(item) -> RippleResult:
         Link(PREDICTED, "Pathogenicity and splicing scores (AlphaMissense, SpliceAI, CADD) — not yet retrieved; next step is Ensembl VEP.")
     )
     if key in {"intron", "intergenic", "utr", "synonymous"}:
-        result.links.append(Link(UNKNOWN, f"Which gene this variant regulates; the gene named by ClinVar ({plan.gene or 'none'}) is the nearest annotation, not proof of the target."))
+        result.links.append(
+            Link(
+                UNKNOWN,
+                f"Which gene this variant regulates; the gene named by {gene_source} ({plan.gene or 'none'}) "
+                "is the nearest annotation, not proof of the target.",
+            )
+        )
         result.links.append(Link(UNKNOWN, "Whether this SNP is causal or tags a nearby causal variant."))
     elif key == "missense":
         result.links.append(Link(UNKNOWN, "How much the amino-acid change alters protein activity in this allele's studies."))
