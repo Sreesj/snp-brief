@@ -111,7 +111,7 @@ def forge_runs_left() -> int:
 
 def main() -> None:
     st.set_page_config(page_title="Variant Atlas", page_icon=":material/genetics:", layout="wide")
-    st.html(theme.FONTS + theme.CSS + theme.EXTRA_CSS)
+    st.html(theme.FONTS + theme.CSS + theme.EXTRA_CSS + theme.METHOD_CSS)
     load_secrets()
     if not password_ok():
         return
@@ -408,6 +408,7 @@ def render_observatory(item: Gathered, plan=None) -> None:
     mode = "llm" if st.session_state.get("use_llm") else "template"
     summary = cached_summary(item, mode)
     st.html(theme.section("Summary") + theme.summary_html(summary.sentences, summary.facts))
+    st.html(theme.method("summary") + theme.method("frequency") + theme.method("reconcile"))
     tables = unresolved_populations(item)
     if tables:
         with st.expander("Population frequencies"):
@@ -520,11 +521,12 @@ def render_timeline(item: Gathered) -> None:
     trend = {"growing": "interest is growing", "declining": "interest is declining", "steady": "interest is steady"}.get(t.trend, "")
     st.html(theme.section(f"Papers per year · {t.total} in Europe PMC" + (f" · {trend}" if trend else "")))
     st.bar_chart(frame, color="#7c86ff", height=180, x_label="", y_label="")
+    st.html(theme.method("timeline"))
 
 
 def render_interpretation(item: Gathered) -> None:
     """Computed aids for the people who act on a variant: ACMG draft, genotype rates, drugs, cancer."""
-    st.html(theme.section("ACMG/AMP evidence draft") + theme.acmg_html(acmg_draft(item), NOT_COMPUTED))
+    st.html(theme.section("ACMG/AMP evidence draft") + theme.acmg_html(acmg_draft(item), NOT_COMPUTED) + theme.method("acmg"))
     rates = genotype_rates(item)
     st.html(theme.section("How common is it in people"))
     if rates:
@@ -541,7 +543,7 @@ def render_interpretation(item: Gathered) -> None:
             ]
         )
         st.table(frame, hide_index=True, border="horizontal")
-        st.caption("Estimated from gnomAD allele frequencies assuming Hardy-Weinberg equilibrium; groups with fewer than 2,000 alleles are left out.")
+        st.html(theme.method("carriers"))
     else:
         st.caption("gnomAD has no frequency for this variant.")
     pgx = theme.pgx_html(item.pgx)
@@ -553,7 +555,7 @@ def render_interpretation(item: Gathered) -> None:
 def render_ripple(item: Gathered) -> None:
     grid = theme.score_grid(item)
     if grid:
-        st.html(theme.section("Prediction and constraint scores") + grid)
+        st.html(theme.section("Prediction and constraint scores") + grid + theme.method("scores"))
     results = st.session_state.setdefault("modules", {})
     key = (item.rsid, "ripple")
     if key not in results:
@@ -570,7 +572,7 @@ def render_ripple(item: Gathered) -> None:
         return
     found = results[key]
     st.markdown(f"**Variant context:** {found.context}" + (f" · {found.gene}" if found.gene else ""))
-    st.html(theme.section("What to examine"))
+    st.html(theme.method("ripple") + theme.section("What to examine"))
     st.markdown("\n".join(f"- {line}" for line in found.priorities))
     st.html(theme.section("Molecular links") + theme.link_rows(found.links))
     st.html(theme.section("Evidence graph"))
@@ -620,6 +622,7 @@ def render_forge(item: Gathered) -> None:
     tri = found.triage
     category = tri.category[:1].upper() + tri.category[1:]
     st.html(f'<div class="va-chips" style="margin:0 0 .6rem 0">{theme.chip(category, CATEGORY_KIND.get(tri.category, "neutral"))}</div>')
+    st.html(theme.method("forge"))
     st.markdown(f"**Why:** {tri.reason}")
     st.markdown(f"**Open problem:** {tri.open_problem}")
     if tri.exploratory:

@@ -602,3 +602,25 @@ EXTRA_CSS = """
 @media (max-width: 700px) { .va-acmg-row { grid-template-columns: 56px 1fr; } .va-acmg-ev, .va-acmg-row .va-src { grid-column: 1 / -1; } }
 </style>
 """
+
+
+def method(key: str) -> str:
+    """A collapsed 'How this is computed' note for a result we compute ourselves."""
+    from snp_brief.methods import method_items
+
+    title, steps = method_items(key)
+    items = "".join(f"<li>{e(step)}</li>" for step in steps)
+    return f'<details class="va-method"><summary>How this is computed · {e(title)}</summary><ol>{items}</ol></details>'
+
+
+METHOD_CSS = """
+<style>
+.va-method { margin: .5rem 0 1rem 0; border: 1px solid var(--va-border); border-radius: 10px; background: rgba(16,17,19,.9); }
+.va-method summary { cursor: pointer; list-style: none; padding: .55rem .85rem; color: var(--va-muted); font-size: .8rem; }
+.va-method summary::-webkit-details-marker { display: none; }
+.va-method summary::before { content: "ƒ"; font-family: "JetBrains Mono", monospace; color: var(--va-accent-2); margin-right: .55rem; }
+.va-method[open] summary { color: var(--va-text); border-bottom: 1px solid var(--va-border); }
+.va-method ol { margin: .6rem 1rem .8rem 2.1rem; padding: 0; color: #c9cdd3; font-size: .84rem; line-height: 1.55; }
+.va-method li { margin: .25rem 0; }
+</style>
+"""

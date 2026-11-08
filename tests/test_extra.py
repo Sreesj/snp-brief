@@ -128,3 +128,34 @@ class InterpretTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class CachedPlusLiveTests(unittest.TestCase):
+    def test_cached_snp_gets_new_sources_live_into_user_cache(self) -> None:
+        import os
+        from unittest import mock
+
+        from snp_brief import pipeline
+
+        root = Path(__file__).resolve().parents[1]
+        user = Path(tempfile.mkdtemp())
+        self.addCleanup(shutil.rmtree, user)
+        self.addCleanup(pipeline._RECENT_FAIL.clear)
+        repo = root / "tests" / "cache"
+        assert not (repo / "rs6025" / "myvariant.json").exists()
+        live = []
+
+        def fake_myvariant(rsid, timeout=20):
+            live.append(rsid)
+            return {"retrieved": "2026-11-08T00:00:00+00:00", "request": {}, "response": {"hits": [{"cadd": {"phred": 23.4}}]}}
+
+        import contextlib, io
+        with mock.patch.object(pipeline.extra, "fetch_myvariant", fake_myvariant), \
+             mock.patch.dict(os.environ, {"SNP_BRIEF_EXTRAS": "on"}), contextlib.redirect_stderr(io.StringIO()), \
+             mock.patch("snp_brief.http_client.request_json", side_effect=RuntimeError("offline in tests")):
+            item = pipeline.load_variant("rs6025", repo_cache=repo, user_cache=user, offline=False, budget=10)
+        self.assertEqual(live, ["rs6025"])
+        self.assertEqual(item.scores.cadd_phred, 23.4)
+        self.assertEqual(item.calls["clinvar"].origin, "cache", "cached sources are not fetched again")
+        self.assertTrue((user / "rs6025" / "myvariant.json").is_file(), "the new source is saved to the user cache")
+        self.assertFalse((repo / "rs6025" / "myvariant.json").exists(), "the checked-in cache is left alone")
