@@ -155,7 +155,7 @@ def _plan(item) -> _Plan:
             "ClinVar",
         )
         if record.aliases:
-            plan.alias_names = record.aliases[0]
+            plan.alias_names = _short_alias(record.aliases, plan.gene, item.rsid)
             plan.aliases = add(
                 f"ClinVar lists other names for this same variant: {', '.join(record.aliases)}.", "ClinVar"
             )
@@ -391,6 +391,30 @@ def _location_from_fxn(classes: list[str]) -> str:
     return "near the gene"
 
 
+def _short_alias(aliases: list[str], gene: str, rsid: str) -> str:
+    """A legacy variant name such as "677C-T" or "F508del" from ClinVar's alias list, or ""."""
+    genes = {g.strip().upper() for g in (gene or "").split(",")}
+    for alias in aliases:
+        for part in re.sub(r"\([^)]*\)", "", alias).split(","):
+            part = part.strip()
+            if not part or part.upper() in genes or part.lower() == rsid.lower() or not re.search(r"\d", part):
+                continue
+            if len(part) > 24:
+                continue
+            return part
+    return ""
+
+
+def _readable(trait: str) -> str:
+    """ClinVar condition names in ALL CAPS ("THROMBOPHILIA DUE TO FACTOR V LEIDEN") as sentence case."""
+    if trait.isupper() and len(trait) > 4:
+        words = trait.lower().split(" ")
+        words = [w.upper() if len(w) == 1 and w.isalpha() else w for w in words]  # "factor V"
+        text = " ".join(words)
+        return text[:1].upper() + text[1:]
+    return trait
+
+
 def _strip_refs(text: str) -> str:
     """Drop UniProt's inline evidence lists such as "(PubMed:10500182, PubMed:12887909)"."""
     text = re.sub(r"\s*\((?:PubMed|ECO|By similarity)[^)]*\)", "", text)
@@ -456,7 +480,7 @@ def _disease_facts(plan: _Plan, view: AlleleView, add) -> None:
             return
         top = meaningful[0]
         plan.headline = top.description
-        plan.conditions = _kept_traits(top.traits)[:3]
+        plan.conditions = [_readable(t) for t in _kept_traits(top.traits)[:3]]
         plan.disease = add(
             f"ClinVar classification: {top.description}"
             + (f", conditions {'; '.join(plan.conditions)}" if plan.conditions else "")
@@ -475,7 +499,7 @@ def _disease_facts(plan: _Plan, view: AlleleView, add) -> None:
         )
     elif verdict.headline:
         plan.headline = verdict.headline
-        plan.conditions = verdict.traits[:3]
+        plan.conditions = [_readable(t) for t in verdict.traits[:3]]
         plan.disease = add(
             f"Best-reviewed ClinVar classification: {verdict.headline}"
             + (f", conditions {'; '.join(plan.conditions)}" if plan.conditions else "")

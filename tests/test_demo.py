@@ -230,11 +230,12 @@ class PageTests(unittest.TestCase):
         page.toggle(key="offline").set_value(True).run()  # demo SNPs not in cache/ would otherwise be fetched live
         page.button(key="run_briefs").click().run()
         self.assertFalse(page.exception)
-        table = page.dataframe[0].value
-        # A merged rsID is shown as "old → current"; compare the ID that was asked for.
-        self.assertEqual([label.split(" → ")[0] for label in table["rsID"]], FIXTURE_IDS)
-        self.assertEqual(list(table.columns), ["rsID", "Gene", *FIELDS])
-        self.assertEqual(len(page.get("download_button")), 1)
+        picks = [button.key for button in page.button if (button.key or "").startswith("pick-")]
+        self.assertEqual(len(picks), len(FIXTURE_IDS))  # one entry per SNP (a merged rsID shows its current ID)
+        self.assertEqual(len(page.tabs), 3, "the first SNP opens automatically")
+        self.assertGreaterEqual(len(page.get("download_button")), 1)
+        page.button(key=picks[1]).click().run()
+        self.assertFalse(page.exception)
 
     def test_uploaded_list_replaces_the_pasted_one(self) -> None:
         page = AppTest.from_file(str(APP), default_timeout=30).run()
@@ -242,17 +243,21 @@ class PageTests(unittest.TestCase):
         page.file_uploader(key="upload").upload("two.txt", b"rs6025\nrs334\n", "text/plain").run()
         self.assertEqual(page.text_area(key="rsid_text").value, "rs6025\nrs334\n")
         page.button(key="run_briefs").click().run()
-        self.assertEqual(list(page.dataframe[0].value["rsID"]), ["rs6025", "rs334"])
+        picks = [button.key for button in page.button if (button.key or "").startswith("pick-")]
+        self.assertEqual(picks, ["pick-rs6025", "pick-rs334"])
 
     def test_detail_shows_brief_populations_and_fallback_source(self) -> None:
         page = AppTest.from_function(_detail_page, args=(str(CACHE), "rs6054257"), default_timeout=30).run()
         self.assertFalse(page.exception)
-        self.assertEqual(page.subheader[0].value, "rs6054257 · DEFB125")
-        self.assertTrue(any("UniProt Q8N687" in block.value for block in page.get("html")))
+        blocks = " ".join(block.value for block in page.get("html"))
+        self.assertIn("rs6054257", blocks)
+        self.assertIn("DEFB125", blocks)
+        self.assertIn("UniProt Q8N687", blocks)
+        self.assertNotIn("passed the fact check", blocks)
         self.assertIn("35083/41528", page.dataframe[0].value.to_string())
         sources = page.table[0].value
         fallback = sources[sources["Source"] == "UniProt (fallback)"].iloc[0]
-        self.assertEqual(fallback["Answered"], "yes")
+        self.assertEqual(fallback["Status"], "Loaded")
 
     def test_module_tabs_run_on_demand(self) -> None:
         with mock.patch.dict(os.environ, {}, clear=True):

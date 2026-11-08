@@ -17,7 +17,6 @@ def main() -> int:
         "--server.showEmailPrompt=false",
         "--browser.gatherUsageStats=false",
         "--client.toolbarMode=minimal",
-        "--theme.primaryColor=#2563eb",
         *sys.argv[1:],
     ]
     return cli.main()

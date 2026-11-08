@@ -102,7 +102,7 @@ class TemplateTests(unittest.TestCase):
 
     def test_association_is_not_called_pathogenic(self) -> None:
         text = summarize(cached("rs4988235")).text
-        self.assertIn("association with LACTASE PERSISTENCE, not as a pathogenicity call", text)
+        self.assertIn("association with Lactase persistence, not as a pathogenicity call", text)
 
     def test_upstream_variant_is_not_called_in_the_gene(self) -> None:
         text = summarize(cached("rs6054257")).text

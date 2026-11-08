@@ -1,0 +1,18 @@
+[theme]
+base = "light"
+primaryColor = "#1f4fd8"
+backgroundColor = "#f6f7f9"
+secondaryBackgroundColor = "#ffffff"
+textColor = "#0e1726"
+borderColor = "#e6e8ec"
+baseRadius = "10px"
+
+[client]
+toolbarMode = "minimal"
+showSidebarNavigation = false
+
+[browser]
+gatherUsageStats = false
+
+[server]
+showEmailPrompt = false

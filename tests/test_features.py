@@ -230,3 +230,30 @@ class MergedAndIndelTests(unittest.TestCase):
         from snp_brief.summary import _strip_refs
 
         self.assertEqual(_strip_refs("Plays a role in DNA repair (PubMed:10500182, PubMed:12887909)."), "Plays a role in DNA repair.")
+
+
+class ThemeTests(unittest.TestCase):
+    def test_header_facts_and_summary_markup(self) -> None:
+        from snp_brief.demo import theme
+        from snp_brief.summary import _plan
+
+        item = cached("rs6025")
+        plan = _plan(item)
+        head = theme.header_card(item, plan, "F5", "2026-11-08")
+        self.assertIn("rs6025", head)
+        self.assertIn("va-chip pathogenic", head)
+        facts = theme.facts_grid(plan)
+        self.assertIn("Missense variant", facts)
+        self.assertIn("2.2% of alleles", facts)
+        summary = summarize(item)
+        body = theme.summary_html(summary.sentences, summary.facts)
+        self.assertIn('<span class="va-src">ClinVar</span>', body)
+        self.assertNotIn("[F", body)
+        self.assertIn("va-helix", theme.loader("Analyzing rs6025", "1 of 2", 1, 2))
+
+    def test_conflicting_and_unknown_clinical_cards(self) -> None:
+        from snp_brief.demo import theme
+        from snp_brief.summary import _plan
+
+        self.assertEqual(theme.clinical(_plan(cached("rs1801133")))[0], "Conflicting")
+        self.assertEqual(theme.clinical(_plan(cached("rs6054257")))[0], "No clinical significance")

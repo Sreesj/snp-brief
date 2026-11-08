@@ -48,7 +48,7 @@ class FakeClient:
 
 def forge_reply(facts) -> str:
     gene_fact = next(f.id for f in facts if "intron variant" in f.text)
-    trait_fact = next(f.id for f in facts if "LACTASE PERSISTENCE" in f.text)
+    trait_fact = next(f.id for f in facts if "Lactase persistence" in f.text)
     return json.dumps(
         {
             "open_questions": ["Which gene does the variant regulate?"],
@@ -68,7 +68,7 @@ def forge_reply(facts) -> str:
                 {
                     "title": "Tags a nearby causal variant",
                     "mechanism": "The SNP could be linked to the variant that acts.",
-                    "support": [{"text": "ClinVar records an association with LACTASE PERSISTENCE", "facts": [trait_fact]}],
+                    "support": [{"text": "ClinVar records an association with Lactase persistence", "facts": [trait_fact]}],
                     "gaps": ["No fine-mapping"],
                     "discriminating_observation": "The signal is explained by another variant after fine-mapping.",
                     "experiment": "Statistical fine-mapping of the locus",
