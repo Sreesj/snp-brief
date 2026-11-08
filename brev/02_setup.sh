@@ -5,7 +5,14 @@ cd "$(dirname "$0")"
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -q --upgrade pip
-pip install -q torch borzoi-pytorch pyfaidx pandas numpy
+# ARM64 machines (GH200) need PyTorch's CUDA build from its own index; PyPI's ARM wheel is CPU-only.
+if [ "$(uname -m)" = "aarch64" ]; then
+  pip install -q torch --index-url https://download.pytorch.org/whl/cu128
+else
+  pip install -q torch
+fi
+pip install -q borzoi-pytorch pyfaidx pandas numpy
+python3 -c "import torch, sys; ok = torch.cuda.is_available(); print('torch', torch.__version__, 'CUDA', ok, torch.cuda.device_count(), 'GPU(s)'); sys.exit(0 if ok else 'PyTorch cannot see the GPU; stop here and send this output')"
 mkdir -p ref
 [ -f ref/hg38.fa ] || { curl -L -o ref/hg38.fa.gz https://hgdownload.soe.ucsc.edu/goldenPath/hg38/bigZips/hg38.fa.gz && gunzip ref/hg38.fa.gz; }
 python3 -c "import pyfaidx; pyfaidx.Fasta('ref/hg38.fa'); print('genome indexed')"
