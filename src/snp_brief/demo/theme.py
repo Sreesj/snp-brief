@@ -36,9 +36,10 @@ html, body, [class*="css"], .stApp, button, input, textarea, select {
   font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
   -webkit-font-smoothing: antialiased;
 }
-.stApp { background: var(--va-bg); color: var(--va-text); }
-.stApp::before { content: ""; position: fixed; inset: 0 0 auto 0; height: 420px; pointer-events: none; z-index: 0;
-  background: radial-gradient(60% 100% at 50% 0%, rgba(124, 134, 255, .10), transparent 70%); }
+html, body { background: var(--va-bg) !important; }
+.stApp, [data-testid="stAppViewContainer"], [data-testid="stMain"] { background: transparent !important; color: var(--va-text); }
+[data-testid="stSidebarContent"] { position: relative; z-index: 1; }
+.element-container:has(> iframe[height="0"]), [data-testid="stElementContainer"]:has(iframe[height="0"]) { display: none !important; }
 [data-testid="stMainBlockContainer"] { padding-top: 1.4rem; max-width: 1200px; position: relative; z-index: 1; }
 #MainMenu, footer, [data-testid="stDecoration"], [data-testid="stDeployButton"], .stDeployButton,
 [data-testid="stStatusWidget"] { display: none !important; }
@@ -54,7 +55,7 @@ a:hover { text-decoration: underline; }
 /* top bar and hero */
 .va-top { display: flex; align-items: center; gap: .6rem; margin: .2rem 0 1.2rem 0; }
 .va-logo { width: 26px; height: 26px; border-radius: 7px; display: grid; place-items: center;
-  background: linear-gradient(135deg, var(--va-accent), var(--va-accent-2)); }
+  background: #f4f5f6 url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%230a0a0b%22%20stroke-width%3D%222.3%22%20stroke-linecap%3D%22round%22%3E%3Cpath%20d%3D%22M7%202.5c0%206.5%2010%206.5%2010%2013S7%2021.5%207%2021.5%22/%3E%3Cpath%20d%3D%22M17%202.5c0%206.5-10%206.5-10%2013s10%206%2010%206%22/%3E%3Cpath%20d%3D%22M9%206.5h6M9.6%2012h4.8M9%2017.5h6%22%20stroke-width%3D%221.8%22/%3E%3C/svg%3E") center / 16px 16px no-repeat; box-shadow: 0 0 0 1px rgba(255,255,255,.08), 0 4px 14px rgba(0,0,0,.4); }
 .va-brand { font-size: 1rem; font-weight: 600; color: var(--va-text); letter-spacing: -0.01em; }
 .va-hero { text-align: center; padding: 9vh 0 1.6rem 0; }
 .va-hero h1 { font-size: clamp(2.2rem, 5vw, 3.6rem); font-weight: 600; letter-spacing: -0.035em; line-height: 1.05; margin: 0;
@@ -170,14 +171,37 @@ div[class*="st-key-pick-"] button { justify-content: flex-start; text-align: lef
   border-color: transparent; color: var(--va-muted); font-family: "JetBrains Mono", ui-monospace, monospace !important; font-size: .84rem; padding: .42rem .65rem; }
 div[class*="st-key-pick-"] button:hover { background: var(--va-surface-2); color: var(--va-text); border-color: var(--va-border); }
 div[class*="st-key-pick-"] button[kind="primary"] { background: var(--va-surface-2); color: var(--va-text); border-color: var(--va-border-strong); }
+/* about section and scroll reveal */
+.va-reveal { opacity: 0; transform: translateY(26px); transition: opacity .9s cubic-bezier(.2,.7,.2,1), transform .9s cubic-bezier(.2,.7,.2,1); }
+.va-reveal.va-in { opacity: 1; transform: none; }
+.va-about { margin: 14vh auto 6vh auto; max-width: 980px; }
+.va-about-block { margin: 0 0 13vh 0; }
+.va-eyebrow { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: .74rem; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--va-accent-2); margin-bottom: .8rem; }
+.va-about h2 { font-size: clamp(1.7rem, 3.4vw, 2.6rem); font-weight: 600; letter-spacing: -0.03em; line-height: 1.1; margin: 0 0 1rem 0; color: var(--va-text); }
+.va-about .va-lede { font-size: 1.05rem; line-height: 1.65; color: #b4b8bf; max-width: 680px; margin: 0 0 2rem 0; }
+.va-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: .9rem; }
+.va-grid.va-two { grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); }
+.va-hero h1 { filter: drop-shadow(0 2px 18px rgba(8,9,10,.95)); }
+.va-hero p, .va-about h2, .va-about .va-lede { text-shadow: 0 2px 24px rgba(8,9,10,.9), 0 0 2px rgba(8,9,10,.8); }
+.va-tile { background: rgba(16,17,19,.72); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--va-border); border-radius: 12px; padding: 1.1rem 1.15rem; }
+.va-tile b { display: flex; align-items: center; gap: .5rem; color: var(--va-text); font-weight: 600; font-size: .95rem; margin-bottom: .4rem; }
+.va-tile b i { width: 7px; height: 7px; border-radius: 2px; display: inline-block; }
+.va-tile span { color: var(--va-muted); font-size: .88rem; line-height: 1.55; display: block; }
+.va-steps { counter-reset: step; }
+.va-steps .va-tile b::before { counter-increment: step; content: "0" counter(step); font-family: "JetBrains Mono", monospace;
+  font-size: .72rem; color: var(--va-accent); font-weight: 500; }
+.va-note { border-left: 2px solid var(--va-border-strong); padding: .2rem 0 .2rem 1rem; color: var(--va-muted); font-size: .88rem; line-height: 1.6; max-width: 720px; }
+.va-scroll-cue { text-align: center; color: var(--va-muted); font-size: .76rem; letter-spacing: .12em; text-transform: uppercase; margin-top: 7vh; }
+.va-scroll-cue::after { content: ""; display: block; width: 1px; height: 42px; margin: .7rem auto 0; background: linear-gradient(var(--va-muted), transparent);
+  animation: va-cue 2.2s ease-in-out infinite; }
+@keyframes va-cue { 0%,100% { opacity: .3; transform: scaleY(.6); transform-origin: top; } 50% { opacity: 1; transform: scaleY(1); } }
 </style>
 """
 
-LOGO = (
-    '<div class="va-logo"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.2" '
-    'stroke-linecap="round"><path d="M7 3c0 6 10 6 10 12s-10 6-10 6"/><path d="M17 3c0 6-10 6-10 12s10 6 10 6" opacity=".55"/>'
-    '<path d="M8.5 7h7M8.5 17h7" opacity=".8"/></svg></div>'
-)
+# The DNA mark is a CSS background image: st.html strips inline <svg> elements.
+LOGO = '<div class="va-logo" role="img" aria-label="Variant Atlas"></div>'
 
 
 def e(text) -> str:
@@ -225,6 +249,74 @@ def features() -> str:
     return '<div class="va-features">' + "".join(
         f'<div class="va-feature"><b>{e(name)}</b>{e(text)}</div>' for name, text in items
     ) + "</div>"
+
+
+ABOUT_WHAT = (
+    ("#7c86ff", "Variant Observatory", "The evidence, reconciled. Clinical classification from ClinVar, allele frequencies "
+     "across gnomAD populations, GWAS associations, gene function and the literature, merged into one plain-language "
+     "summary where every sentence names its source."),
+    ("#4cc9b0", "Molecular Ripple", "What the variant touches. Protein changes, expression effects in GTEx tissues, "
+     "regulatory overlap, linked variants and gene prioritisation, each labelled observed, predicted or unknown."),
+    ("#f0b73c", "Hypothesis Forge", "Where the knowledge runs out. Competing explanations for what the variant does, "
+     "the evidence for and against each, and the experiments that would tell them apart."),
+)
+
+ABOUT_WHO = (
+    ("Clinical and lab geneticists", "Check a variant's classification, review status and conflicts before interpretation."),
+    ("Genetic counsellors", "Get a clear, sourced summary of what is and is not known to prepare for a conversation."),
+    ("Researchers", "Triage GWAS hits and candidate variants, see mechanisms and find the open question worth testing."),
+    ("Students and bioinformaticians", "Learn how the major genomic databases describe the same variant, side by side."),
+)
+
+ABOUT_HOW = (
+    ("Ask", "Enter one rsID or a whole list, separated by commas or spaces."),
+    ("Gather", "Thirteen public databases are queried in parallel, from ClinVar and gnomAD to GTEx, Open Targets and Europe PMC."),
+    ("Reconcile", "Sources are ranked by reliability, so when they disagree the conflict is shown rather than hidden."),
+    ("Explain", "A plain-text summary is written from the collected facts and checked so it says nothing the data does not."),
+)
+
+
+def about() -> str:
+    def tiles(rows, dots: bool) -> str:
+        out = []
+        for row in rows:
+            if dots:
+                color, name, text = row
+                head = f'<i style="background:{color}"></i>{e(name)}'
+            else:
+                name, text = row
+                head = e(name)
+            out.append(f'<div class="va-tile va-reveal"><b>{head}</b><span>{e(text)}</span></div>')
+        return "".join(out)
+
+    return (
+        '<div class="va-scroll-cue">About Variant Atlas</div>'
+        '<div class="va-about">'
+        '<div class="va-about-block">'
+        '<div class="va-eyebrow va-reveal">What it does</div>'
+        '<h2 class="va-reveal">From an rsID to an answer you can trust.</h2>'
+        '<p class="va-lede va-reveal">Information about a single variant is scattered across a dozen databases and '
+        "thousands of papers, often in disagreement. Variant Atlas collects it, reconciles it and explains it in plain "
+        "text: what the variant does, how common it is, which diseases and traits it is linked to, and how sure anyone "
+        "really is.</p>"
+        f'<div class="va-grid">{tiles(ABOUT_WHAT, True)}</div>'
+        "</div>"
+        '<div class="va-about-block">'
+        '<div class="va-eyebrow va-reveal">Who it is for</div>'
+        '<h2 class="va-reveal">Built for people who read variants for a living.</h2>'
+        '<p class="va-lede va-reveal">Whether you are interpreting a clinical report, planning an experiment or '
+        "learning genomics, the same question comes up: what do we actually know about this variant?</p>"
+        f'<div class="va-grid va-two">{tiles(ABOUT_WHO, False)}</div>'
+        "</div>"
+        '<div class="va-about-block">'
+        '<div class="va-eyebrow va-reveal">How it works</div>'
+        '<h2 class="va-reveal">Every claim traced to its source.</h2>'
+        f'<div class="va-grid va-two va-steps">{tiles(ABOUT_HOW, False)}</div>'
+        "</div>"
+        '<div class="va-note va-reveal">Variant Atlas summarises public research data. It is not a diagnostic tool and '
+        "does not give medical advice; clinical decisions belong with qualified professionals.</div>"
+        "</div>"
+    )
 
 
 def chip(text: str, kind: str = "neutral") -> str:

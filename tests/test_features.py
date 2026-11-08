@@ -257,3 +257,19 @@ class ThemeTests(unittest.TestCase):
 
         self.assertEqual(theme.clinical(_plan(cached("rs1801133")))[0], "Conflicting")
         self.assertEqual(theme.clinical(_plan(cached("rs6054257")))[0], "No clinical significance")
+
+
+class MotionTests(unittest.TestCase):
+    def test_injector_installs_once_and_sets_mode(self) -> None:
+        from snp_brief.demo import motion, theme
+
+        landing = motion.injector("landing")
+        self.assertIn("__vaSetMode", landing)
+        self.assertIn('w.__vaSetMode("landing")', landing)
+        self.assertIn('w.__vaSetMode("app")', motion.injector("app"))
+        self.assertEqual(landing.count("</script>"), 1, "drawing code must not close the script tag early")
+        about = theme.about()
+        for heading in ("What it does", "Who it is for", "How it works", "not a diagnostic tool"):
+            self.assertIn(heading, about)
+        self.assertIn("va-reveal", about)
+        self.assertNotIn("<svg", theme.LOGO, "st.html strips inline svg; the mark is a CSS background")

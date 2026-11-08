@@ -16,8 +16,9 @@ from pathlib import Path
 
 import pandas as pd
 import streamlit as st
+import streamlit.components.v1 as components
 
-from snp_brief.demo import theme
+from snp_brief.demo import motion, theme
 from snp_brief.demo.view import (
     PopulationTable,
     briefs_text,
@@ -123,12 +124,15 @@ def main() -> None:
         with middle:
             search_bar(root, offline)
             st.html(theme.features())
+        st.html(theme.about())
+        components.html(motion.injector("landing"), height=0)
         if st.session_state.get("last_run") is not None and st.session_state.last_run.results:
             st.rerun()
         if current is not None:
             show_results(current)
         return
     st.html(theme.top_bar())
+    components.html(motion.injector("app"), height=0)
     search_bar(root, offline)
     show_results(current)
 
