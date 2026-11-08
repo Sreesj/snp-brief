@@ -273,3 +273,63 @@ class MotionTests(unittest.TestCase):
             self.assertIn(heading, about)
         self.assertIn("va-reveal", about)
         self.assertNotIn("<svg", theme.LOGO, "st.html strips inline svg; the mark is a CSS background")
+
+
+class ReliabilityTests(unittest.TestCase):
+    def test_gwas_falls_back_to_phenotype_endpoint(self) -> None:
+        from snp_brief import providers
+
+        calls = []
+
+        def fake(url, params=None, timeout=0, attempts=1, **kw):
+            calls.append(url)
+            if "ebi.ac.uk" in url:
+                raise RuntimeError("request failed: The read operation timed out")
+            if "/variation/human/" in url:
+                raise RuntimeError("HTTP 500 for x: <!doctype html><html>")
+            return [{"source": "NHGRI-EBI GWAS catalog", "description": "Hepatitis C clearance",
+                     "attributes": {"p_value": "1e-20", "risk_allele": "rs12979860-C", "external_reference": "PMID:19684573",
+                                    "associated_gene": "IFNL3"}},
+                    {"source": "ClinVar", "description": "not gwas"}]
+
+        with mock.patch.object(providers, "request_json", side_effect=fake):
+            payload = providers.fetch_gwas("rs12979860")
+        self.assertEqual(payload["request"]["api"], "ensembl-phenotype-variant")
+        hits = providers.parse_gwas(payload, "rs12979860").hits
+        self.assertEqual([(h.trait, h.risk_allele, h.pmid) for h in hits], [("Hepatitis C clearance", "C", "19684573")])
+
+    def test_errors_are_one_line(self) -> None:
+        from snp_brief import providers
+
+        with mock.patch.object(providers, "request_json", side_effect=RuntimeError("HTTP 500 for u: <!doctype html>\n<html>")):
+            with self.assertRaises(RuntimeError) as ctx:
+                providers.fetch_gwas("rs1")
+        self.assertNotIn("<", str(ctx.exception))
+
+    def test_concurrent_fetches_share_one_request(self) -> None:
+        import threading
+        import time as _time
+
+        from snp_brief import pipeline
+
+        tmp = Path(tempfile.mkdtemp())
+        self.addCleanup(shutil.rmtree, tmp)
+        count = []
+
+        def slow():
+            count.append(1)
+            _time.sleep(0.3)
+            return {"retrieved": "2026-11-08T00:00:00+00:00", "x": 1}
+
+        out = []
+        args = dict(dirs=(tmp,), write=tmp, refresh=False, offline=False)
+        threads = [threading.Thread(target=lambda: out.append(pipeline._cached_multi("rs1", "gwas", slow, **args))) for _ in range(3)]
+        for t in threads:
+            t.start()
+        _time.sleep(0.1)
+        self.assertTrue(pipeline.in_flight("rs1", ["gwas"]))
+        for t in threads:
+            t.join()
+        self.assertEqual(len(count), 1)
+        self.assertEqual({payload["x"] for payload, _ in out}, {1})
+        self.assertFalse(pipeline.in_flight("rs1", ["gwas"]))

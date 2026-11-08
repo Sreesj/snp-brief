@@ -205,6 +205,8 @@ def source_rows(item: Gathered) -> list[dict[str, str]]:
             answered, detail, gave = "yes", _response(call), _gave(source.key, item)
         elif call.origin == "pending":
             answered, detail, gave = "loading", "still loading when the time budget ran out", ""
+        elif call.origin == "failed":
+            answered, detail, gave = "unavailable", _response(call), "The database did not respond; it is retried on the next refresh"
         else:
             answered, detail, gave = "no", _response(call), ""
         rows.append(

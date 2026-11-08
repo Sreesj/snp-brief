@@ -54,6 +54,15 @@ from snp_brief.sources.uniprot import fetch_uniprot, parse_uniprot
 # Shared so a provider that misses the deadline keeps running after gather returns.
 _POOL = ThreadPoolExecutor(max_workers=12, thread_name_prefix="provider")
 _LOCK = threading.Lock()
+# Fetches in flight, keyed by (rsid, source). A second request for the same source waits for the
+# first instead of starting another one, so "Check again" picks up a slow answer when it lands.
+_INFLIGHT: dict[tuple[str, str], "_Flight"] = {}
+
+
+class _Flight:
+    def __init__(self) -> None:
+        self.done = threading.Event()
+        self.result: tuple[dict | None, "SourceCall"] | None = None
 
 
 @dataclass
@@ -306,6 +315,25 @@ def _cached_multi(
     if offline:
         print(f"{rsid} {source}: no cached response", file=sys.stderr)
         return None, SourceCall("no cache")
+    key = (rsid, source)
+    with _LOCK:
+        flight = _INFLIGHT.get(key)
+        mine = flight is None
+        if mine:
+            flight = _INFLIGHT[key] = _Flight()
+    if not mine:
+        flight.done.wait(180)
+        return flight.result or (None, SourceCall("failed", error="no answer"))
+    try:
+        flight.result = _fetch_and_save(rsid, source, fetcher, write, started)
+        return flight.result
+    finally:
+        with _LOCK:
+            _INFLIGHT.pop(key, None)
+        flight.done.set()
+
+
+def _fetch_and_save(rsid: str, source: str, fetcher, write: Path, started: float) -> tuple[dict | None, "SourceCall"]:
     try:
         payload = fetcher()
     except Exception as exc:
@@ -381,3 +409,9 @@ def load_variant(
         # Checked-in SNP: new providers missing from cache/ are fetched into the user cache.
         return gather(rsid, cache_dir=repo_cache, refresh=False, offline=offline, extras_cache=user_cache, budget=budget)
     return gather(rsid, cache_dir=user_cache, refresh=False, offline=offline, budget=budget)
+
+
+def in_flight(rsid: str, sources) -> bool:
+    """True while any of these sources for this rsID is still being fetched in the background."""
+    with _LOCK:
+        return any((rsid, source) in _INFLIGHT for source in sources)

@@ -32,8 +32,8 @@ from snp_brief.forge import CONFLICTING, EXPLORATORY, INSUFFICIENT, REPORTED, TR
 from snp_brief.graph import evidence_dot
 from snp_brief.literature import Finding, extract_findings
 from snp_brief.llm import LLMClient
-from snp_brief.pipeline import Gathered, default_user_cache, load_variant
-from snp_brief.providers import SPEED_BUDGETS
+from snp_brief.pipeline import Gathered, default_user_cache, in_flight, load_variant
+from snp_brief.providers import BY_KEY, SPEED_BUDGETS
 from snp_brief.report import build_report, load_notes, save_notes
 from snp_brief.ripple import ripple_cached
 from snp_brief.summary import _plan, summarize
@@ -125,16 +125,26 @@ def main() -> None:
             search_bar(root, offline)
             st.html(theme.features())
         st.html(theme.about())
-        components.html(motion.injector("landing"), height=0)
+        install_motion("landing")
         if st.session_state.get("last_run") is not None and st.session_state.last_run.results:
             st.rerun()
         if current is not None:
             show_results(current)
         return
     st.html(theme.top_bar())
-    components.html(motion.injector("app"), height=0)
+    install_motion("app")
     search_bar(root, offline)
     show_results(current)
+
+
+def install_motion(mode: str) -> None:
+    """The moving helix needs a script, which st.html does not run; a 1-pixel iframe does."""
+    code = motion.injector(mode)
+    if hasattr(st, "iframe"):
+        with st.container(key="va-motion"):
+            st.iframe(code, height=1)
+    else:
+        components.html(code, height=0)
 
 
 def repo_root() -> Path:
@@ -165,8 +175,9 @@ def sidebar() -> bool:
 # ---------------------------------------------------------------- loading
 
 
-def fetch(root: Path, rsid: str, *, offline: bool, refresh: bool = False) -> Gathered:
-    budget = SPEED_BUDGETS.get(st.session_state.get("speed", "balanced"), 20.0)
+def fetch(root: Path, rsid: str, *, offline: bool, refresh: bool = False, budget: float | None = None) -> Gathered:
+    if budget is None:
+        budget = SPEED_BUDGETS.get(st.session_state.get("speed", "balanced"), 20.0)
     return load_variant(
         rsid, repo_cache=root / "cache", user_cache=USER_CACHE, offline=offline, refresh=refresh, budget=budget
     )
@@ -175,7 +186,7 @@ def fetch(root: Path, rsid: str, *, offline: bool, refresh: bool = False) -> Gat
 def reload_variant(item: Gathered) -> None:
     """Pick up providers that finished in the background (cache first, nothing re-fetched)."""
     current: Run | None = st.session_state.get("last_run")
-    fresh = fetch(repo_root(), item.rsid, offline=bool(st.session_state.get("offline")))
+    fresh = fetch(repo_root(), item.rsid, offline=bool(st.session_state.get("offline")), budget=4.0)
     if current is not None:
         current.results = [fresh if old.rsid == item.rsid else old for old in current.results]
     _forget_modules(item.rsid)
@@ -238,6 +249,7 @@ def search(root: Path, ids: list[str], rejected: list[str], offline: bool) -> No
 def refresh_variant(item: Gathered) -> list[str]:
     """Re-fetch one SNP live; keep the previous evidence if any source fails."""
     current: Run | None = st.session_state.get("last_run")
+    st.session_state.setdefault("pickup_tries", {}).pop(item.rsid, None)
     fresh = fetch(repo_root(), item.rsid, offline=False, refresh=True)
     failed = [name for name, call in fresh.calls.items() if call.origin == "failed"]
     if failed:
@@ -329,6 +341,8 @@ def render_detail(item: Gathered) -> None:
     if item.pending and actions[1].button("Check again", key=f"again-{item.rsid}", help="Add sources that were still loading"):
         reload_variant(item)
         st.rerun()
+    if item.pending:
+        pick_up_late_sources(item.rsid)
     observatory, ripple_tab, forge_tab = st.tabs(list(MODULES))
     with observatory:
         render_observatory(item, plan)
@@ -337,6 +351,26 @@ def render_detail(item: Gathered) -> None:
     with forge_tab:
         render_forge(item)
     render_notebook(item)
+
+
+@st.fragment(run_every=3)
+def pick_up_late_sources(rsid: str) -> None:
+    """While slow databases are still answering in the background, check every few seconds and
+    redraw the page as soon as they land, so nobody has to press Check again."""
+    current: Run | None = st.session_state.get("last_run")
+    item = next((x for x in (current.results if current else []) if x.rsid == rsid), None)
+    if item is None or not item.pending:
+        return
+    tries = st.session_state.setdefault("pickup_tries", {})
+    if in_flight(item.rsid, item.pending):
+        names = ", ".join((BY_KEY[key].name if key in BY_KEY else key) for key in item.pending)
+        st.html(f'<div class="va-waiting"><i></i>Still waiting on {html.escape(names)}. This page updates by itself.</div>')
+        return
+    tries[rsid] = tries.get(rsid, 0) + 1
+    if tries[rsid] > 3:
+        return
+    reload_variant(item)
+    st.rerun(scope="app")
 
 
 def run_module(item: Gathered, key: str, work) -> None:
@@ -395,7 +429,7 @@ def render_observatory(item: Gathered, plan=None) -> None:
                 {
                     "Source": row["Source"],
                     "Kind": row["Used for"].split("·", 1)[-1].strip(),
-                    "Status": {"yes": "Loaded", "no": "No data", "loading": "Loading", "not consulted": "Not needed"}.get(
+                    "Status": {"yes": "Loaded", "no": "No data", "loading": "Loading…", "unavailable": "Unavailable", "not consulted": "Not needed"}.get(
                         row["Answered"], row["Answered"]
                     ),
                     "Result": row["Gave"],

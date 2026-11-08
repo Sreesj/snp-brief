@@ -114,13 +114,13 @@ def fetch_vep(rsid: str, timeout: float = 25) -> dict:
     """With prediction plugins first; they make Ensembl slow, so on failure retry once without them."""
     url = VEP_URL.format(rsid=urllib.parse.quote(rsid))
     try:
-        body = request_json(url, params={**VEP_PARAMS, "content-type": "application/json"}, timeout=timeout, attempts=1)
+        body = request_json(url, params={**VEP_PARAMS, "content-type": "application/json"}, timeout=timeout, attempts=2)
         used = VEP_PARAMS
     except RuntimeError as first:
         if "HTTP 400" in str(first):  # unknown rsID: no point retrying
             raise
         used = VEP_BASIC
-        body = request_json(url, params={**VEP_BASIC, "content-type": "application/json"}, timeout=timeout, attempts=1)
+        body = request_json(url, params={**VEP_BASIC, "content-type": "application/json"}, timeout=timeout, attempts=2)
     return {"source": "Ensembl VEP", "retrieved": _now(), "request": {"rsid": rsid, "params": used}, "response": body}
 
 
@@ -214,6 +214,7 @@ class GwasResult:
 
 
 ENSEMBL_VARIATION = "https://rest.ensembl.org/variation/human/{rsid}"
+ENSEMBL_PHENOTYPE_VARIANT = "https://rest.ensembl.org/phenotype/variant/human/{rsid}"
 
 
 def fetch_gwas(rsid: str, timeout: float = 60) -> dict:
@@ -233,29 +234,39 @@ def fetch_gwas(rsid: str, timeout: float = 60) -> dict:
         except RuntimeError as exc:
             if "HTTP 404" in str(exc):
                 return {"source": "GWAS Catalog", "retrieved": _now(), "request": {"rsid": rsid, "api": "v2"}, "response": {"pages": []}}
-            errors.append(f"EBI v2: {str(exc)[:160]}")
+            errors.append(f"EBI v2: {_short_error(exc)}")
             break
         pages.append(body)
         if len(_rows(body)) < GWAS_PAGE_SIZE:
             break
     if pages:
         return {"source": "GWAS Catalog", "retrieved": _now(), "request": {"rsid": rsid, "api": "v2"}, "response": {"pages": pages}}
-    try:
-        body = request_json(
-            ENSEMBL_VARIATION.format(rsid=urllib.parse.quote(rsid)),
-            params={"phenotypes": "1", "content-type": "application/json"},
-            timeout=min(timeout, 30), attempts=1,
-        )
-    except RuntimeError as exc:
-        errors.append(f"Ensembl: {str(exc)[:160]}")
-        raise RuntimeError("; ".join(errors)) from exc
-    rows = [row for row in (body.get("phenotypes") or []) if _is_gwas(row)]
-    return {
-        "source": "GWAS Catalog",
-        "retrieved": _now(),
-        "request": {"rsid": rsid, "api": "ensembl-phenotypes"},
-        "response": {"ensembl_phenotypes": rows},
-    }
+    # Ensembl, two ways: the variation endpoint with phenotypes, then the lighter phenotype
+    # endpoint (the first sometimes returns HTTP 500 for variants with many associations).
+    for api, url, params in (
+        ("ensembl-phenotypes", ENSEMBL_VARIATION.format(rsid=urllib.parse.quote(rsid)), {"phenotypes": "1", "content-type": "application/json"}),
+        ("ensembl-phenotype-variant", ENSEMBL_PHENOTYPE_VARIANT.format(rsid=urllib.parse.quote(rsid)), {"content-type": "application/json"}),
+    ):
+        try:
+            body = request_json(url, params=params, timeout=min(timeout, 30), attempts=2)
+        except RuntimeError as exc:
+            errors.append(f"Ensembl ({api}): {_short_error(exc)}")
+            continue
+        rows = body if isinstance(body, list) else (body.get("phenotypes") or [])
+        return {
+            "source": "GWAS Catalog",
+            "retrieved": _now(),
+            "request": {"rsid": rsid, "api": api},
+            "response": {"ensembl_phenotypes": [row for row in rows if _is_gwas(row)]},
+        }
+    raise RuntimeError("; ".join(errors))
+
+
+def _short_error(exc: Exception) -> str:
+    """One line: drop HTML error pages that some servers return with HTTP 500."""
+    text = str(exc)
+    cut = text.find("<")
+    return (text[:cut].rstrip(": ") if cut > 0 else text)[:160]
 
 
 def _is_gwas(row) -> bool:
@@ -435,7 +446,7 @@ EUTILS = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils"
 
 
 def fetch_citations(rsid: str, timeout: float = 20) -> dict:
-    body = request_json(REFSNP_URL.format(number=rsid.removeprefix("rs")), timeout=timeout, attempts=1)
+    body = request_json(REFSNP_URL.format(number=rsid.removeprefix("rs")), timeout=timeout, attempts=2)
     pmids = [str(p) for p in (body.get("citations") or [])]
     # Keep only what is used; the full RefSNP record is large.
     return {"source": "dbSNP citations", "retrieved": _now(), "request": {"rsid": rsid}, "response": {"citations": pmids}}
@@ -468,7 +479,7 @@ def fetch_gene_summary(symbol: str, timeout: float = 20) -> dict:
             f"{EUTILS}/esummary.fcgi",
             params={"db": "gene", "id": ids[0], "retmode": "json", "tool": "snp_brief"},
             timeout=timeout,
-            attempts=1,
+            attempts=2,
         )
     return {"source": "NCBI Gene", "retrieved": _now(), "request": {"gene": symbol}, "response": body}
 
@@ -508,7 +519,7 @@ def fetch_gtex(rsid: str, fallback_ids: list[str], timeout: float = 20) -> dict:
     """Resolve the rsID to GTEx variant ids, then fetch significant single-tissue eQTLs."""
     ids: list[str] = []
     try:
-        lookup = request_json(f"{GTEX}/dataset/variant", params={"snpId": rsid, "datasetId": "gtex_v8"}, timeout=timeout, attempts=1)
+        lookup = request_json(f"{GTEX}/dataset/variant", params={"snpId": rsid, "datasetId": "gtex_v8"}, timeout=timeout, attempts=2)
         for row in lookup.get("data") or []:
             vid = (row or {}).get("variantId")
             if vid and vid not in ids:
@@ -522,7 +533,7 @@ def fetch_gtex(rsid: str, fallback_ids: list[str], timeout: float = 20) -> dict:
             f"{GTEX}/association/singleTissueEqtl",
             params={"variantId": vid, "datasetId": "gtex_v8", "itemsPerPage": "250"},
             timeout=timeout,
-            attempts=1,
+            attempts=2,
         )
         rows.extend(r for r in body.get("data") or [] if isinstance(r, dict))
     return {"source": "GTEx", "retrieved": _now(), "request": {"rsid": rsid, "variant_ids": ids[:3]}, "response": {"data": rows}}
@@ -557,7 +568,7 @@ def fetch_ld(rsid: str, timeout: float = 20, population: str = "EUR") -> dict:
         LD_URL.format(rsid=urllib.parse.quote(rsid), pop=population),
         params={"r2": "0.8", "window_size": "250", "content-type": "application/json"},
         timeout=timeout,
-        attempts=1,
+        attempts=2,
     )
     return {"source": "Ensembl LD", "retrieved": _now(), "request": {"rsid": rsid, "population": population}, "response": body}
 
@@ -608,7 +619,7 @@ def ot_variant_id(chrom: str | None, pos: int | None, ref: str, alt: str) -> str
 def fetch_open_targets(variant_ids: list[str], timeout: float = 20) -> dict:
     rows = []
     for vid in [v for v in variant_ids if v][:3]:
-        body = request_json(OPEN_TARGETS, payload={"query": OT_QUERY, "variables": {"id": vid}}, timeout=timeout, attempts=1)
+        body = request_json(OPEN_TARGETS, payload={"query": OT_QUERY, "variables": {"id": vid}}, timeout=timeout, attempts=2)
         rows.append({"variant_id": vid, "body": body})
     return {"source": "Open Targets", "retrieved": _now(), "request": {"variant_ids": variant_ids[:3]}, "response": rows}
 
@@ -639,7 +650,7 @@ LITVAR = "https://www.ncbi.nlm.nih.gov/research/litvar2-api/variant/get/{vid}/pu
 
 def fetch_litvar(rsid: str, timeout: float = 20) -> dict:
     vid = urllib.parse.quote(f"litvar@{rsid}##", safe="")
-    body = request_json(LITVAR.format(vid=vid), timeout=timeout, attempts=1)
+    body = request_json(LITVAR.format(vid=vid), timeout=timeout, attempts=2)
     return {"source": "LitVar2", "retrieved": _now(), "request": {"rsid": rsid}, "response": body}
 
 
