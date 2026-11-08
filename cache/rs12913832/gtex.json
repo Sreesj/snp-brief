@@ -1,0 +1,29 @@
+{
+  "source": "GTEx",
+  "retrieved": "2026-11-08T03:11:43+00:00",
+  "request": {
+    "rsid": "rs12913832",
+    "variant_ids": [
+      "chr15_28120472_A_G_b38"
+    ]
+  },
+  "response": {
+    "data": [
+      {
+        "snpId": "rs12913832",
+        "pos": 28120472,
+        "snpIdUpper": "RS12913832",
+        "variantId": "chr15_28120472_A_G_b38",
+        "geneSymbol": "HERC2",
+        "pValue": 2.99296e-15,
+        "geneSymbolUpper": "HERC2",
+        "datasetId": "gtex_v8",
+        "tissueSiteDetailId": "Whole_Blood",
+        "ontologyId": "UBERON:0013756",
+        "chromosome": "chr15",
+        "gencodeId": "ENSG00000128731.15",
+        "nes": -0.33165
+      }
+    ]
+  }
+}

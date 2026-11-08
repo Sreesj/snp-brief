@@ -1,0 +1,29 @@
+{
+  "source": "GTEx",
+  "retrieved": "2026-11-08T03:11:13+00:00",
+  "request": {
+    "rsid": "rs1426654",
+    "variant_ids": [
+      "chr15_48134287_A_G_b38"
+    ]
+  },
+  "response": {
+    "data": [
+      {
+        "snpId": "rs1426654",
+        "pos": 48134287,
+        "snpIdUpper": "RS1426654",
+        "variantId": "chr15_48134287_A_G_b38",
+        "geneSymbol": "SLC12A1",
+        "pValue": 6.41605e-05,
+        "geneSymbolUpper": "SLC12A1",
+        "datasetId": "gtex_v8",
+        "tissueSiteDetailId": "Brain_Cortex",
+        "ontologyId": "UBERON:0001870",
+        "chromosome": "chr15",
+        "gencodeId": "ENSG00000074803.17",
+        "nes": 0.932203
+      }
+    ]
+  }
+}

@@ -1,0 +1,193 @@
+{
+  "source": "Open Targets",
+  "retrieved": "2026-11-08T03:10:33+00:00",
+  "request": {
+    "variant_ids": [
+      "1_11796321_G_A",
+      "1_11796321_G_C",
+      "1_11796321_G_T"
+    ]
+  },
+  "response": [
+    {
+      "variant_id": "1_11796321_G_A",
+      "body": {
+        "data": {
+          "variant": {
+            "id": "1_11796321_G_A",
+            "credibleSets": {
+              "rows": [
+                {
+                  "study": {
+                    "traitFromSource": "Serum folate levels"
+                  },
+                  "l2GPredictions": {
+                    "rows": [
+                      {
+                        "score": 0.8643617033958435,
+                        "target": {
+                          "approvedSymbol": "MTHFR"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "study": {
+                    "traitFromSource": "Red cell distribution width"
+                  },
+                  "l2GPredictions": {
+                    "rows": [
+                      {
+                        "score": 0.872511625289917,
+                        "target": {
+                          "approvedSymbol": "MTHFR"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "study": {
+                    "traitFromSource": "Mean sphered cell volume (UKB data field 30270)"
+                  },
+                  "l2GPredictions": {
+                    "rows": [
+                      {
+                        "score": 0.8619664907455444,
+                        "target": {
+                          "approvedSymbol": "MTHFR"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "study": {
+                    "traitFromSource": "Red cell distribution width"
+                  },
+                  "l2GPredictions": {
+                    "rows": [
+                      {
+                        "score": 0.8666849136352539,
+                        "target": {
+                          "approvedSymbol": "MTHFR"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "study": {
+                    "traitFromSource": "Homocysteine levels"
+                  },
+                  "l2GPredictions": {
+                    "rows": [
+                      {
+                        "score": 0.8556423187255859,
+                        "target": {
+                          "approvedSymbol": "MTHFR"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "study": {
+                    "traitFromSource": "Homocysteine levels"
+                  },
+                  "l2GPredictions": {
+                    "rows": [
+                      {
+                        "score": 0.8643617033958435,
+                        "target": {
+                          "approvedSymbol": "MTHFR"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "study": {
+                    "traitFromSource": "X-24337 levels"
+                  },
+                  "l2GPredictions": {
+                    "rows": [
+                      {
+                        "score": 0.872511625289917,
+                        "target": {
+                          "approvedSymbol": "MTHFR"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "study": {
+                    "traitFromSource": "Glycine levels"
+                  },
+                  "l2GPredictions": {
+                    "rows": [
+                      {
+                        "score": 0.8643243312835693,
+                        "target": {
+                          "approvedSymbol": "MTHFR"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "study": {
+                    "traitFromSource": "Mean reticulocyte volume"
+                  },
+                  "l2GPredictions": {
+                    "rows": [
+                      {
+                        "score": 0.872511625289917,
+                        "target": {
+                          "approvedSymbol": "MTHFR"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "study": {
+                    "traitFromSource": "mean corpuscular hemoglobin (MCH, maximum, inv-norm transformed)"
+                  },
+                  "l2GPredictions": {
+                    "rows": [
+                      {
+                        "score": 0.8643243312835693,
+                        "target": {
+                          "approvedSymbol": "MTHFR"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "variant_id": "1_11796321_G_C",
+      "body": {
+        "data": {
+          "variant": null
+        }
+      }
+    },
+    {
+      "variant_id": "1_11796321_G_T",
+      "body": {
+        "data": {
+          "variant": null
+        }
+      }
+    }
+  ]
+}

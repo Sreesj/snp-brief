@@ -1,0 +1,223 @@
+{
+  "source": "Open Targets",
+  "retrieved": "2026-11-08T03:11:13+00:00",
+  "request": {
+    "variant_ids": [
+      "15_48134287_A_C",
+      "15_48134287_A_G",
+      "15_48134287_A_T"
+    ]
+  },
+  "response": [
+    {
+      "variant_id": "15_48134287_A_C",
+      "body": {
+        "data": {
+          "variant": null
+        }
+      }
+    },
+    {
+      "variant_id": "15_48134287_A_G",
+      "body": {
+        "data": {
+          "variant": {
+            "id": "15_48134287_A_G",
+            "credibleSets": {
+              "rows": [
+                {
+                  "study": {
+                    "traitFromSource": "Basal cell carcinoma, excluding all cancers (controls excluding all cancers)"
+                  },
+                  "l2GPredictions": {
+                    "rows": [
+                      {
+                        "score": 0.3940975069999695,
+                        "target": {
+                          "approvedSymbol": "SLC24A5"
+                        }
+                      },
+                      {
+                        "score": 0.13784122467041016,
+                        "target": {
+                          "approvedSymbol": "CTXN2"
+                        }
+                      },
+                      {
+                        "score": 0.10404568910598755,
+                        "target": {
+                          "approvedSymbol": "SLC12A1"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "study": {
+                    "traitFromSource": "Degeneration of macula and posterior pole of retina (PheCode 362.2)"
+                  },
+                  "l2GPredictions": {
+                    "rows": [
+                      {
+                        "score": 0.9514991641044617,
+                        "target": {
+                          "approvedSymbol": "SLC24A5"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "study": {
+                    "traitFromSource": "Actinic keratosis (PheCode 702.1)"
+                  },
+                  "l2GPredictions": {
+                    "rows": [
+                      {
+                        "score": 0.9190055131912231,
+                        "target": {
+                          "approvedSymbol": "SLC24A5"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "study": {
+                    "traitFromSource": "Neoplasm of uncertain behavior of skin (PheCode 173)"
+                  },
+                  "l2GPredictions": {
+                    "rows": [
+                      {
+                        "score": 0.9140475988388062,
+                        "target": {
+                          "approvedSymbol": "SLC24A5"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "study": {
+                    "traitFromSource": "Squamous cell carcinoma (PheCode 172.22)"
+                  },
+                  "l2GPredictions": {
+                    "rows": [
+                      {
+                        "score": 0.9514991641044617,
+                        "target": {
+                          "approvedSymbol": "SLC24A5"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "study": {
+                    "traitFromSource": "Skin cancer"
+                  },
+                  "l2GPredictions": {
+                    "rows": [
+                      {
+                        "score": 0.700417697429657,
+                        "target": {
+                          "approvedSymbol": "SLC24A5"
+                        }
+                      },
+                      {
+                        "score": 0.114131860435009,
+                        "target": {
+                          "approvedSymbol": "CTXN2"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "study": {
+                    "traitFromSource": "Basal cell carcinoma (PheCode 172.21)"
+                  },
+                  "l2GPredictions": {
+                    "rows": [
+                      {
+                        "score": 0.9085112810134888,
+                        "target": {
+                          "approvedSymbol": "SLC24A5"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "study": {
+                    "traitFromSource": "Basal cell carcinoma, including avohilmo, excluding all cancers (controls excluding all cancers)"
+                  },
+                  "l2GPredictions": {
+                    "rows": [
+                      {
+                        "score": 0.4685521423816681,
+                        "target": {
+                          "approvedSymbol": "SLC24A5"
+                        }
+                      },
+                      {
+                        "score": 0.14015868306159973,
+                        "target": {
+                          "approvedSymbol": "CTXN2"
+                        }
+                      },
+                      {
+                        "score": 0.09863896667957306,
+                        "target": {
+                          "approvedSymbol": "SLC12A1"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "study": {
+                    "traitFromSource": "Benign neoplasm of eye, uveal (PheCode 224.1)"
+                  },
+                  "l2GPredictions": {
+                    "rows": [
+                      {
+                        "score": 0.9514991641044617,
+                        "target": {
+                          "approvedSymbol": "SLC24A5"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "study": {
+                    "traitFromSource": "Melanomas of skin, dx or hx (PheCode 172.1)"
+                  },
+                  "l2GPredictions": {
+                    "rows": [
+                      {
+                        "score": 0.9514991641044617,
+                        "target": {
+                          "approvedSymbol": "SLC24A5"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "variant_id": "15_48134287_A_T",
+      "body": {
+        "data": {
+          "variant": null
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "key": "summary_llm|0.2|openai/gpt-oss-120b|4f3fbdb38149dda1",
+  "created": "2026-11-08T01:24:49+00:00",
+  "model": "openai/gpt-oss-120b",
+  "facts_hash": "4f3fbdb38149dda1",
+  "sentences": [
+    "rs1800562 is a missense variant in HFE (p.Cys282Tyr) [F2].",
+    "The alternate A allele (G>A) is observed in 5.9% of alleles in gnomAD v4 exomes (86298/1461852) and its frequency differs by ancestry, being highest in European (non‑Finnish) at 7.1% (79409/1111990) and lowest in East Asian at 0.018% (7/39700) [F3, F4].",
+    "ClinVar classifies this variant as Pathogenic for HFE‑related disorders, hereditary cancer‑predisposing syndrome, and cardiomyopathy, and also records it as a risk factor [F5, F6].",
+    "The variant is discussed in the paper titled “Associations of genetically determined iron status across the phenome: A mendelian randomization study” [F9]."
+  ],
+  "filled": [
+    "function"
+  ]
+}

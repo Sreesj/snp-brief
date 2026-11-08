@@ -1,0 +1,13 @@
+{
+  "key": "summary_llm|0.2|openai/gpt-oss-120b|3e57ed421669512e",
+  "created": "2026-11-08T01:25:18+00:00",
+  "model": "openai/gpt-oss-120b",
+  "facts_hash": "3e57ed421669512e",
+  "sentences": [
+    "rs6054257 (G>A) is located 2 kb upstream of DEFB125, making it an upstream transcript variant [F1, F2].",
+    "In the gnomAD v4 genomes dataset the alternate A allele is present on 80% of chromosomes (121434/152156 alleles; af 0.798089) [F4].",
+    "The A‑allele frequency differs by ancestry, being highest in African/African American individuals at 84% (35083/41528 alleles) and lowest in East Asian individuals at 57% (2926/5166 alleles) [F5].",
+    "ClinVar does not assign any clinical significance to rs6054257 [F6]."
+  ],
+  "filled": []
+}

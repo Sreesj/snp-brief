@@ -1,0 +1,220 @@
+{
+  "source": "Open Targets",
+  "retrieved": "2026-11-08T03:08:18+00:00",
+  "request": {
+    "variant_ids": [
+      "6_26092913_G_A",
+      "6_26092913_G_T"
+    ]
+  },
+  "response": [
+    {
+      "variant_id": "6_26092913_G_A",
+      "body": {
+        "data": {
+          "variant": {
+            "id": "6_26092913_G_A",
+            "credibleSets": {
+              "rows": [
+                {
+                  "study": {
+                    "traitFromSource": "Free cholesterol levels in IDL"
+                  },
+                  "l2GPredictions": {
+                    "rows": [
+                      {
+                        "score": 0.12135376036167145,
+                        "target": {
+                          "approvedSymbol": "HFE"
+                        }
+                      },
+                      {
+                        "score": 0.06002611294388771,
+                        "target": {
+                          "approvedSymbol": "SLC17A3"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "study": {
+                    "traitFromSource": "Triglycerides to total lipids ratio in large LDL"
+                  },
+                  "l2GPredictions": {
+                    "rows": [
+                      {
+                        "score": 0.12517626583576202,
+                        "target": {
+                          "approvedSymbol": "HFE"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "study": {
+                    "traitFromSource": "IDP T1 FAST ROIs R cerebellum VI"
+                  },
+                  "l2GPredictions": {
+                    "rows": [
+                      {
+                        "score": 0.1210005059838295,
+                        "target": {
+                          "approvedSymbol": "HFE"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "study": {
+                    "traitFromSource": "Phospholipids in medium LDL (UKB data field 23539)"
+                  },
+                  "l2GPredictions": {
+                    "rows": [
+                      {
+                        "score": 0.12135376036167145,
+                        "target": {
+                          "approvedSymbol": "HFE"
+                        }
+                      },
+                      {
+                        "score": 0.06002611294388771,
+                        "target": {
+                          "approvedSymbol": "SLC17A3"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "study": {
+                    "traitFromSource": "Cholesteryl esters in LDL (UKB data field 23417)"
+                  },
+                  "l2GPredictions": {
+                    "rows": [
+                      {
+                        "score": 0.12345925718545914,
+                        "target": {
+                          "approvedSymbol": "HFE"
+                        }
+                      },
+                      {
+                        "score": 0.05559922754764557,
+                        "target": {
+                          "approvedSymbol": "SLC17A3"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "study": {
+                    "traitFromSource": "LDL cholesterol levels (UKB data field 23405)"
+                  },
+                  "l2GPredictions": {
+                    "rows": [
+                      {
+                        "score": 0.12345925718545914,
+                        "target": {
+                          "approvedSymbol": "HFE"
+                        }
+                      },
+                      {
+                        "score": 0.05559922754764557,
+                        "target": {
+                          "approvedSymbol": "SLC17A3"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "study": {
+                    "traitFromSource": "Phospholipids to total lipids ratio in small VLDL"
+                  },
+                  "l2GPredictions": {
+                    "rows": [
+                      {
+                        "score": 0.11905591189861298,
+                        "target": {
+                          "approvedSymbol": "HFE"
+                        }
+                      },
+                      {
+                        "score": 0.06751783192157745,
+                        "target": {
+                          "approvedSymbol": "SLC17A3"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "study": {
+                    "traitFromSource": "Impedance of arm left (UKB data field 23110)"
+                  },
+                  "l2GPredictions": {
+                    "rows": [
+                      {
+                        "score": 0.10895629972219467,
+                        "target": {
+                          "approvedSymbol": "HFE"
+                        }
+                      },
+                      {
+                        "score": 0.06751783192157745,
+                        "target": {
+                          "approvedSymbol": "SLC17A3"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "study": {
+                    "traitFromSource": "Cholesterol to Total Lipids in Very Small VLDL percentage"
+                  },
+                  "l2GPredictions": {
+                    "rows": [
+                      {
+                        "score": 0.1210005059838295,
+                        "target": {
+                          "approvedSymbol": "HFE"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "study": {
+                    "traitFromSource": "Serum alkaline phosphatase levels"
+                  },
+                  "l2GPredictions": {
+                    "rows": [
+                      {
+                        "score": 0.15194082260131836,
+                        "target": {
+                          "approvedSymbol": "SCGN"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "variant_id": "6_26092913_G_T",
+      "body": {
+        "data": {
+          "variant": null
+        }
+      }
+    }
+  ]
+}

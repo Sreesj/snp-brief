@@ -1,0 +1,13 @@
+{
+  "key": "summary_llm|0.2|openai/gpt-oss-120b|ab6e94c9e9df8d1a",
+  "created": "2026-11-08T01:25:11+00:00",
+  "model": "openai/gpt-oss-120b",
+  "facts_hash": "ab6e94c9e9df8d1a",
+  "sentences": [
+    "rs12913832 is an intron variant in HERC2 (NM_004667.6:c.13272+874T>C) that has been shown to determine human blue‑brown eye color and modulate pigmentation. [F2, F7].",
+    "In the gnomAD v4 genomes dataset the alternate G allele (A>G) is present on 49% of alleles (74054/152216) with an allele frequency of 0.486506. [F4].",
+    "The G‑allele frequency varies by ancestry, reaching a maximum of 89% (9400/10616) in Finnish Europeans and a minimum of 0.17% (9/5182) in East Asians. [F5].",
+    "ClinVar classifies the variant as an association with skin, hair and eye pigmentation, specifically blue versus non‑blue eyes, though no assertion criteria are provided. [F6]."
+  ],
+  "filled": []
+}

@@ -1,0 +1,289 @@
+{
+  "source": "Open Targets",
+  "retrieved": "2026-11-08T03:09:19+00:00",
+  "request": {
+    "variant_ids": [
+      "2_135851076_G_A",
+      "2_135851076_G_C",
+      "2_135851076_G_T"
+    ]
+  },
+  "response": [
+    {
+      "variant_id": "2_135851076_G_A",
+      "body": {
+        "data": {
+          "variant": {
+            "id": "2_135851076_G_A",
+            "credibleSets": {
+              "rows": [
+                {
+                  "study": {
+                    "traitFromSource": "Body mass index"
+                  },
+                  "l2GPredictions": {
+                    "rows": [
+                      {
+                        "score": 0.6013306975364685,
+                        "target": {
+                          "approvedSymbol": "LCT"
+                        }
+                      },
+                      {
+                        "score": 0.05215322598814964,
+                        "target": {
+                          "approvedSymbol": "ZRANB3"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "study": {
+                    "traitFromSource": "Free cholesterol in chylomicrons and extremely large VLDL (PGS-adjusted)"
+                  },
+                  "l2GPredictions": {
+                    "rows": [
+                      {
+                        "score": 0.4168282151222229,
+                        "target": {
+                          "approvedSymbol": "LCT"
+                        }
+                      },
+                      {
+                        "score": 0.20298439264297485,
+                        "target": {
+                          "approvedSymbol": "R3HDM1"
+                        }
+                      },
+                      {
+                        "score": 0.18535305559635162,
+                        "target": {
+                          "approvedSymbol": "ZRANB3"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "study": {
+                    "traitFromSource": "Albumin (maximum, inv-norm transformed)"
+                  },
+                  "l2GPredictions": {
+                    "rows": [
+                      {
+                        "score": 0.5780091285705566,
+                        "target": {
+                          "approvedSymbol": "LCT"
+                        }
+                      },
+                      {
+                        "score": 0.08898289501667023,
+                        "target": {
+                          "approvedSymbol": "R3HDM1"
+                        }
+                      },
+                      {
+                        "score": 0.06720444560050964,
+                        "target": {
+                          "approvedSymbol": "MCM6"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "study": {
+                    "traitFromSource": "Cholesterol levels in chylomicrons and extremely large VLDL"
+                  },
+                  "l2GPredictions": {
+                    "rows": [
+                      {
+                        "score": 0.6815128922462463,
+                        "target": {
+                          "approvedSymbol": "LCT"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "study": {
+                    "traitFromSource": "Free cholesterol in medium HDL"
+                  },
+                  "l2GPredictions": {
+                    "rows": [
+                      {
+                        "score": 0.6434949040412903,
+                        "target": {
+                          "approvedSymbol": "LCT"
+                        }
+                      },
+                      {
+                        "score": 0.09244119375944138,
+                        "target": {
+                          "approvedSymbol": "R3HDM1"
+                        }
+                      },
+                      {
+                        "score": 0.057771794497966766,
+                        "target": {
+                          "approvedSymbol": "MCM6"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "study": {
+                    "traitFromSource": "Cholesterol in Medium HDL"
+                  },
+                  "l2GPredictions": {
+                    "rows": [
+                      {
+                        "score": 0.6434949040412903,
+                        "target": {
+                          "approvedSymbol": "LCT"
+                        }
+                      },
+                      {
+                        "score": 0.09055265784263611,
+                        "target": {
+                          "approvedSymbol": "R3HDM1"
+                        }
+                      },
+                      {
+                        "score": 0.06977779418230057,
+                        "target": {
+                          "approvedSymbol": "MCM6"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "study": {
+                    "traitFromSource": "total cholesterol (minimum, inv-norm transformed)"
+                  },
+                  "l2GPredictions": {
+                    "rows": [
+                      {
+                        "score": 0.7980772852897644,
+                        "target": {
+                          "approvedSymbol": "LCT"
+                        }
+                      },
+                      {
+                        "score": 0.25591152906417847,
+                        "target": {
+                          "approvedSymbol": "MCM6"
+                        }
+                      },
+                      {
+                        "score": 0.0657912939786911,
+                        "target": {
+                          "approvedSymbol": "UBXN4"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "study": {
+                    "traitFromSource": "Cholesterol in very large HDL"
+                  },
+                  "l2GPredictions": {
+                    "rows": [
+                      {
+                        "score": 0.6434949040412903,
+                        "target": {
+                          "approvedSymbol": "LCT"
+                        }
+                      },
+                      {
+                        "score": 0.08898289501667023,
+                        "target": {
+                          "approvedSymbol": "R3HDM1"
+                        }
+                      },
+                      {
+                        "score": 0.06977779418230057,
+                        "target": {
+                          "approvedSymbol": "MCM6"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "study": {
+                    "traitFromSource": "Omega-3 fatty acids to total fatty acids percentage"
+                  },
+                  "l2GPredictions": {
+                    "rows": [
+                      {
+                        "score": 0.6714159250259399,
+                        "target": {
+                          "approvedSymbol": "LCT"
+                        }
+                      },
+                      {
+                        "score": 0.5857415199279785,
+                        "target": {
+                          "approvedSymbol": "MCM6"
+                        }
+                      },
+                      {
+                        "score": 0.14951002597808838,
+                        "target": {
+                          "approvedSymbol": "DARS1"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "study": {
+                    "traitFromSource": "Morbid obesity (PheCode 278.11)"
+                  },
+                  "l2GPredictions": {
+                    "rows": [
+                      {
+                        "score": 0.9436426758766174,
+                        "target": {
+                          "approvedSymbol": "LCT"
+                        }
+                      },
+                      {
+                        "score": 0.32158777117729187,
+                        "target": {
+                          "approvedSymbol": "MCM6"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "variant_id": "2_135851076_G_C",
+      "body": {
+        "data": {
+          "variant": null
+        }
+      }
+    },
+    {
+      "variant_id": "2_135851076_G_T",
+      "body": {
+        "data": {
+          "variant": null
+        }
+      }
+    }
+  ]
+}

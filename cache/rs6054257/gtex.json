@@ -1,0 +1,13 @@
+{
+  "source": "GTEx",
+  "retrieved": "2026-11-08T03:12:19+00:00",
+  "request": {
+    "rsid": "rs6054257",
+    "variant_ids": [
+      "chr20_85729_G_A_b38"
+    ]
+  },
+  "response": {
+    "data": []
+  }
+}

@@ -1,0 +1,193 @@
+{
+  "source": "Open Targets",
+  "retrieved": "2026-11-08T03:08:49+00:00",
+  "request": {
+    "variant_ids": [
+      "11_46739505_G_A"
+    ]
+  },
+  "response": [
+    {
+      "variant_id": "11_46739505_G_A",
+      "body": {
+        "data": {
+          "variant": {
+            "id": "11_46739505_G_A",
+            "credibleSets": {
+              "rows": [
+                {
+                  "study": {
+                    "traitFromSource": "Primary hypercoagulable state (PheCode 286.81)"
+                  },
+                  "l2GPredictions": {
+                    "rows": [
+                      {
+                        "score": 0.9422162771224976,
+                        "target": {
+                          "approvedSymbol": "F2"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "study": {
+                    "traitFromSource": "High density lipoprotein cholesterol levels"
+                  },
+                  "l2GPredictions": {
+                    "rows": [
+                      {
+                        "score": 0.940626323223114,
+                        "target": {
+                          "approvedSymbol": "F2"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "study": {
+                    "traitFromSource": "Pulmonary embolism and infarction, acute (PheCode 415.11)"
+                  },
+                  "l2GPredictions": {
+                    "rows": [
+                      {
+                        "score": 0.9422162771224976,
+                        "target": {
+                          "approvedSymbol": "F2"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "study": {
+                    "traitFromSource": "Monounsaturated fatty acids to total fatty acids percentage"
+                  },
+                  "l2GPredictions": {
+                    "rows": [
+                      {
+                        "score": 0.38775569200515747,
+                        "target": {
+                          "approvedSymbol": "F2"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "study": {
+                    "traitFromSource": "Triglyceride levels"
+                  },
+                  "l2GPredictions": {
+                    "rows": [
+                      {
+                        "score": 0.8495952486991882,
+                        "target": {
+                          "approvedSymbol": "F2"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "study": {
+                    "traitFromSource": "Pulmonary heart disease (PheCode 415)"
+                  },
+                  "l2GPredictions": {
+                    "rows": [
+                      {
+                        "score": 0.7373721599578857,
+                        "target": {
+                          "approvedSymbol": "F2"
+                        }
+                      },
+                      {
+                        "score": 0.07764748483896255,
+                        "target": {
+                          "approvedSymbol": "ARHGAP1"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "study": {
+                    "traitFromSource": "Blood clot / pulmonary embolism / deep vein thrombosis (DVT)"
+                  },
+                  "l2GPredictions": {
+                    "rows": [
+                      {
+                        "score": 0.9399035573005676,
+                        "target": {
+                          "approvedSymbol": "F2"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "study": {
+                    "traitFromSource": "Phospholipids in VLDL"
+                  },
+                  "l2GPredictions": {
+                    "rows": [
+                      {
+                        "score": 0.42276260256767273,
+                        "target": {
+                          "approvedSymbol": "F2"
+                        }
+                      },
+                      {
+                        "score": 0.11143506318330765,
+                        "target": {
+                          "approvedSymbol": "AMBRA1"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "study": {
+                    "traitFromSource": "Triglycerides in VLDL"
+                  },
+                  "l2GPredictions": {
+                    "rows": [
+                      {
+                        "score": 0.3839011788368225,
+                        "target": {
+                          "approvedSymbol": "F2"
+                        }
+                      },
+                      {
+                        "score": 0.13101458549499512,
+                        "target": {
+                          "approvedSymbol": "AMBRA1"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "study": {
+                    "traitFromSource": "Deep venous thrombosis"
+                  },
+                  "l2GPredictions": {
+                    "rows": [
+                      {
+                        "score": 0.9461638331413269,
+                        "target": {
+                          "approvedSymbol": "F2"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  ]
+}

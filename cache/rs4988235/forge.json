@@ -1,0 +1,125 @@
+{
+  "key": "forge|0.2|openai/gpt-oss-120b|2ce64575b568663e",
+  "created": "2026-11-08T01:24:57+00:00",
+  "open_questions": [
+    "How does rs4988235 (an intron variant in MCM6) produce its association with LACTASE PERSISTENCE?"
+  ],
+  "hypotheses": [
+    {
+      "title": "cis‑regulatory enhancer creation",
+      "mechanism": "The rs4988235 A allele may create or strengthen a transcription‑factor binding site within the MCM6 intron that acts as an enhancer for the downstream LCT promoter, leading to higher lactase expression in adulthood.",
+      "support": [
+        {
+          "text": "rs4988235 is an intron variant in MCM6 (ClinVar) (F2).",
+          "facts": [
+            "F2"
+          ],
+          "rendered": "rs4988235 is an intron variant in MCM6 (ClinVar) (F2) (ClinVar)."
+        },
+        {
+          "text": "ClinVar classifies the variant as associated with lactase persistence (F6).",
+          "facts": [
+            "F6"
+          ],
+          "rendered": "ClinVar classifies the variant as associated with lactase persistence (F6) (ClinVar)."
+        }
+      ],
+      "gaps": [
+        "Direct evidence that the A allele creates a functional TF binding site.",
+        "Chromatin or reporter assays showing increased LCT transcription driven by the rs4988235 region."
+      ],
+      "discriminating_observation": "The A allele shows allele‑specific binding of a known intestinal transcription factor and drives higher reporter activity in intestinal cell lines compared with the G allele.",
+      "experiment": "Perform electrophoretic mobility shift assays (EMSAs) and luciferase reporter assays with the MCM6 intronic fragment containing either the G or A allele in Caco‑2 cells, and assess allele‑specific TF binding and transcriptional activation of a linked LCT promoter.",
+      "feasibility": "medium",
+      "rejected_support": [],
+      "consistency": "consistent"
+    },
+    {
+      "title": "linkage disequilibrium with a distal causal variant",
+      "mechanism": "rs4988235 may be in strong LD with another, yet unidentified, regulatory variant that directly modulates LCT expression; the observed association would thus be due to the linked causal allele rather than rs4988235 itself.",
+      "support": [
+        {
+          "text": "The A allele frequency is high in European (non‑Finnish) populations (64%) and low in East Asian populations (0.21%) (F5).",
+          "facts": [
+            "F5"
+          ],
+          "rendered": "The A allele frequency is high in European (non‑Finnish) populations (64%) and low in East Asian populations (0.21%) (F5) (gnomAD)."
+        }
+      ],
+      "gaps": [
+        "Fine‑mapping data showing the LD structure around the LCT/MCM6 locus.",
+        "Identification of alternative candidate variants that could be the true functional driver."
+      ],
+      "discriminating_observation": "High‑resolution haplotype analysis reveals another variant in perfect LD with rs4988235 that shows stronger functional effects on LCT expression.",
+      "experiment": "Use population‑scale whole‑genome sequencing data to construct LD maps across the LCT region, then test candidate variants in CRISPR‑based enhancer perturbation assays for impact on LCT mRNA levels.",
+      "feasibility": "medium",
+      "rejected_support": [
+        {
+          "text": "ClinVar lists rs4988235 as associated with lactase persistence (F6).",
+          "reason": "number 988235 is not in the cited facts"
+        }
+      ],
+      "consistency": "consistent"
+    },
+    {
+      "title": "chromatin‑structure alteration",
+      "mechanism": "The intronic change may modify nucleosome positioning or chromatin accessibility at the LCT regulatory domain, thereby facilitating a more open chromatin state that permits increased transcription of lactase.",
+      "support": [
+        {
+          "text": "rs4988235 is located in an intron of MCM6, a region that can contain regulatory elements (F2).",
+          "facts": [
+            "F2"
+          ],
+          "rendered": "rs4988235 is located in an intron of MCM6, a region that can contain regulatory elements (F2) (ClinVar)."
+        },
+        {
+          "text": "World‑wide distributions of lactase persistence alleles and evidence of selection have been reported (F8).",
+          "facts": [
+            "F8"
+          ],
+          "rendered": "World‑wide distributions of lactase persistence alleles and evidence of selection have been reported (F8) (Europe PMC)."
+        }
+      ],
+      "gaps": [
+        "Epigenomic data (e.g., ATAC‑seq, DNase‑I hypersensitivity) comparing chromatin state of the G vs. A allele.",
+        "Evidence linking altered chromatin at this site to LCT transcription levels."
+      ],
+      "discriminating_observation": "Allele‑specific ATAC‑seq in intestinal tissue shows increased accessibility at the rs4988235 locus for the A allele, correlating with higher LCT expression.",
+      "experiment": "Collect intestinal biopsy samples from individuals homozygous for G or A alleles, perform allele‑specific ATAC‑seq and RNA‑seq, and correlate chromatin openness with LCT transcript abundance.",
+      "feasibility": "low",
+      "rejected_support": [],
+      "consistency": "partly"
+    }
+  ],
+  "ranking": [
+    {
+      "experiment": "Perform electrophoretic mobility shift assays (EMSAs) and luciferase reporter assays with the MCM6 intronic fragment containing either the G or A allele in Caco‑2 cells, and assess allele‑specific TF binding and transcriptional activation of a linked LCT promoter.",
+      "tests": "cis‑regulatory enhancer creation",
+      "consistency": "consistent",
+      "support": 2,
+      "feasibility": "medium",
+      "open_gaps": 2,
+      "rank": 1
+    },
+    {
+      "experiment": "Use population‑scale whole‑genome sequencing data to construct LD maps across the LCT region, then test candidate variants in CRISPR‑based enhancer perturbation assays for impact on LCT mRNA levels.",
+      "tests": "linkage disequilibrium with a distal causal variant",
+      "consistency": "consistent",
+      "support": 1,
+      "feasibility": "medium",
+      "open_gaps": 2,
+      "rank": 2
+    },
+    {
+      "experiment": "Collect intestinal biopsy samples from individuals homozygous for G or A alleles, perform allele‑specific ATAC‑seq and RNA‑seq, and correlate chromatin openness with LCT transcript abundance.",
+      "tests": "chromatin‑structure alteration",
+      "consistency": "partly",
+      "support": 2,
+      "feasibility": "low",
+      "open_gaps": 2,
+      "rank": 3
+    }
+  ],
+  "writer": "llm:openai/gpt-oss-120b",
+  "facts_hash": "2ce64575b568663e"
+}

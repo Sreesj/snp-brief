@@ -1,0 +1,244 @@
+{
+  "source": "Open Targets",
+  "retrieved": "2026-11-08T03:11:43+00:00",
+  "request": {
+    "variant_ids": [
+      "15_28120472_A_C",
+      "15_28120472_A_G"
+    ]
+  },
+  "response": [
+    {
+      "variant_id": "15_28120472_A_C",
+      "body": {
+        "data": {
+          "variant": null
+        }
+      }
+    },
+    {
+      "variant_id": "15_28120472_A_G",
+      "body": {
+        "data": {
+          "variant": {
+            "id": "15_28120472_A_G",
+            "credibleSets": {
+              "rows": [
+                {
+                  "study": {
+                    "traitFromSource": "Macular degeneration, dry (PheCode 362.21)"
+                  },
+                  "l2GPredictions": {
+                    "rows": [
+                      {
+                        "score": 0.4801712930202484,
+                        "target": {
+                          "approvedSymbol": "HERC2"
+                        }
+                      },
+                      {
+                        "score": 0.166717991232872,
+                        "target": {
+                          "approvedSymbol": "OCA2"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "study": {
+                    "traitFromSource": "Right eye retinal fundus image self-supervised embedding endophenotype 110"
+                  },
+                  "l2GPredictions": {
+                    "rows": [
+                      {
+                        "score": 0.440202921628952,
+                        "target": {
+                          "approvedSymbol": "HERC2"
+                        }
+                      },
+                      {
+                        "score": 0.2088378369808197,
+                        "target": {
+                          "approvedSymbol": "OCA2"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "study": {
+                    "traitFromSource": "Retinal venular median diameter"
+                  },
+                  "l2GPredictions": {
+                    "rows": [
+                      {
+                        "score": 0.3737143576145172,
+                        "target": {
+                          "approvedSymbol": "HERC2"
+                        }
+                      },
+                      {
+                        "score": 0.2146967202425003,
+                        "target": {
+                          "approvedSymbol": "OCA2"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "study": {
+                    "traitFromSource": "Right eye retinal fundus image self-supervised embedding endophenotype 27"
+                  },
+                  "l2GPredictions": {
+                    "rows": [
+                      {
+                        "score": 0.3774603605270386,
+                        "target": {
+                          "approvedSymbol": "HERC2"
+                        }
+                      },
+                      {
+                        "score": 0.31914031505584717,
+                        "target": {
+                          "approvedSymbol": "OCA2"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "study": {
+                    "traitFromSource": "Neoplasm of uncertain behavior of skin (PheCode 173)"
+                  },
+                  "l2GPredictions": {
+                    "rows": [
+                      {
+                        "score": 0.4544888436794281,
+                        "target": {
+                          "approvedSymbol": "HERC2"
+                        }
+                      },
+                      {
+                        "score": 0.23850829899311066,
+                        "target": {
+                          "approvedSymbol": "OCA2"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "study": {
+                    "traitFromSource": "Hair color"
+                  },
+                  "l2GPredictions": {
+                    "rows": [
+                      {
+                        "score": 0.4553844630718231,
+                        "target": {
+                          "approvedSymbol": "HERC2"
+                        }
+                      },
+                      {
+                        "score": 0.20461727678775787,
+                        "target": {
+                          "approvedSymbol": "OCA2"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "study": {
+                    "traitFromSource": "Right eye retinal fundus image self-supervised embedding endophenotype 17"
+                  },
+                  "l2GPredictions": {
+                    "rows": [
+                      {
+                        "score": 0.440202921628952,
+                        "target": {
+                          "approvedSymbol": "HERC2"
+                        }
+                      },
+                      {
+                        "score": 0.2088378369808197,
+                        "target": {
+                          "approvedSymbol": "OCA2"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "study": {
+                    "traitFromSource": "Basal cell carcinoma, excluding all cancers (controls excluding all cancers)"
+                  },
+                  "l2GPredictions": {
+                    "rows": [
+                      {
+                        "score": 0.44718655943870544,
+                        "target": {
+                          "approvedSymbol": "HERC2"
+                        }
+                      },
+                      {
+                        "score": 0.3446088135242462,
+                        "target": {
+                          "approvedSymbol": "OCA2"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "study": {
+                    "traitFromSource": "Benign neoplasm of eye, uveal (PheCode 224.1)"
+                  },
+                  "l2GPredictions": {
+                    "rows": [
+                      {
+                        "score": 0.2753441631793976,
+                        "target": {
+                          "approvedSymbol": "OCA2"
+                        }
+                      },
+                      {
+                        "score": 0.19388030469417572,
+                        "target": {
+                          "approvedSymbol": "HERC2"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "study": {
+                    "traitFromSource": "Corneal resistance factor (MTAG)"
+                  },
+                  "l2GPredictions": {
+                    "rows": [
+                      {
+                        "score": 0.44267794489860535,
+                        "target": {
+                          "approvedSymbol": "HERC2"
+                        }
+                      },
+                      {
+                        "score": 0.11502420902252197,
+                        "target": {
+                          "approvedSymbol": "OCA2"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  ]
+}

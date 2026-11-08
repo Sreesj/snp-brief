@@ -1,0 +1,31 @@
+{
+  "source": "Ensembl LD",
+  "retrieved": "2026-11-08T03:09:23+00:00",
+  "request": {
+    "rsid": "rs4988235",
+    "population": "EUR"
+  },
+  "response": [
+    {
+      "variation1": "rs4988235",
+      "r2": "0.996031",
+      "variation2": "rs182549",
+      "d_prime": "1.000000",
+      "population_name": "1000GENOMES:phase_3:EUR"
+    },
+    {
+      "population_name": "1000GENOMES:phase_3:EUR",
+      "d_prime": "0.991968",
+      "variation2": "rs6754311",
+      "r2": "0.972328",
+      "variation1": "rs4988235"
+    },
+    {
+      "d_prime": "1.000000",
+      "population_name": "1000GENOMES:phase_3:EUR",
+      "variation1": "rs4988235",
+      "variation2": "rs160329",
+      "r2": "0.818866"
+    }
+  ]
+}

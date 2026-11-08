@@ -1,0 +1,9 @@
+{
+  "source": "Ensembl LD",
+  "retrieved": "2026-11-08T03:12:27+00:00",
+  "request": {
+    "rsid": "rs6054257",
+    "population": "EUR"
+  },
+  "response": []
+}

@@ -1,0 +1,161 @@
+{
+  "key": "forge|0.2|openai/gpt-oss-120b|0957ed4d1e4c5875",
+  "created": "2026-11-08T01:25:07+00:00",
+  "open_questions": [
+    "Why do equally reviewed ClinVar submissions disagree about rs1801133 in MTHFR, and which mechanism, if any, makes this allele disease-relevant?"
+  ],
+  "hypotheses": [
+    {
+      "title": "Context‑dependent metabolic effect",
+      "mechanism": "The Ala222Val substitution modestly reduces MTHFR enzymatic activity, leading to altered folate and homocysteine metabolism that only translates into disease risk under specific environmental or nutritional conditions (e.g., low folate intake), which explains the mixed clinical interpretations.",
+      "support": [
+        {
+          "text": "rs1801133 is a missense variant in MTHFR; NM_005957.5(MTHFR):c.665C>T (p.Ala222Val) (ClinVar VCV000003520).",
+          "facts": [
+            "F2"
+          ],
+          "rendered": "rs1801133 is a missense variant in MTHFR; NM_005957.5(MTHFR):c.665C>T (p.Ala222Val) (ClinVar VCV000003520) (ClinVar)."
+        },
+        {
+          "text": "The alternate allele A is common (32% of alleles in gnomAD exomes).",
+          "facts": [
+            "F4"
+          ],
+          "rendered": "The alternate allele A is common (32% of alleles in gnomAD exomes) (gnomAD)."
+        },
+        {
+          "text": "Allele frequency varies by ancestry, highest in Admixed American (49%) and lowest in African/African American (11%).",
+          "facts": [
+            "F5"
+          ],
+          "rendered": "Allele frequency varies by ancestry, highest in Admixed American (49%) and lowest in African/African American (11%) (gnomAD)."
+        },
+        {
+          "text": "ClinVar submissions at the highest review level disagree: 5 Benign/Likely benign; 3 Pathogenic/Likely pathogenic; 3 Uncertain significance.",
+          "facts": [
+            "F6"
+          ],
+          "rendered": "ClinVar submissions at the highest review level disagree: 5 Benign/Likely benign; 3 Pathogenic/Likely pathogenic; 3 Uncertain significance (ClinVar)."
+        },
+        {
+          "text": "Paper (Hazra et al. 2009) reports genome‑wide significant predictors of metabolites in the one‑carbon metabolism pathway.",
+          "facts": [
+            "F10"
+          ],
+          "rendered": "Paper (Hazra et al. 2009) reports genome‑wide significant predictors of metabolites in the one‑carbon metabolism pathway (Europe PMC)."
+        }
+      ],
+      "gaps": [
+        "Direct measurements of MTHFR enzyme activity for each genotype under varying folate concentrations.",
+        "Large epidemiologic cohorts with both genotype and detailed dietary folate data linked to disease outcomes.",
+        "Longitudinal homocysteine and methylation biomarker data stratified by rs1801133 genotype."
+      ],
+      "discriminating_observation": "Carriers of the A allele show a significant increase in homocysteine and disease incidence only in low‑folate subpopulations, while no effect is seen in high‑folate groups.",
+      "experiment": "Create isogenic cell lines (CRISPR‑edited) differing only at rs1801133, measure MTHFR activity and homocysteine production under a gradient of folate concentrations; complement with a population‑based analysis stratifying disease risk by folate intake.",
+      "feasibility": "medium",
+      "rejected_support": [],
+      "consistency": "consistent"
+    },
+    {
+      "title": "Tagging a nearby causal regulatory variant",
+      "mechanism": "rs1801133 is in strong linkage disequilibrium with another functional variant that directly influences gene expression or splicing; the observed disease associations are driven by that variant, leading some submitters to label rs1801133 pathogenic based on association data, while others consider it benign because it is not the functional culprit.",
+      "support": [
+        {
+          "text": "Paper (Kiel et al. 2007) reports genome‑wide association with bone mass and geometry, implicating the region containing MTHFR.",
+          "facts": [
+            "F9"
+          ],
+          "rendered": "Paper (Kiel et al. 2007) reports genome‑wide association with bone mass and geometry, implicating the region containing MTHFR (Europe PMC)."
+        },
+        {
+          "text": "ClinVar submissions at the highest review level disagree: 5 Benign/Likely benign; 3 Pathogenic/Likely pathogenic; 3 Uncertain significance.",
+          "facts": [
+            "F6"
+          ],
+          "rendered": "ClinVar submissions at the highest review level disagree: 5 Benign/Likely benign; 3 Pathogenic/Likely pathogenic; 3 Uncertain significance (ClinVar)."
+        }
+      ],
+      "gaps": [
+        "Fine‑mapping of the MTHFR locus to identify all variants in LD with rs1801133 across ancestries.",
+        "Functional assays (e.g., reporter gene, eQTL) for candidate regulatory variants.",
+        "Conditional association analyses that adjust for the candidate variant."
+      ],
+      "discriminating_observation": "The disease/trait association signal disappears after statistically conditioning on a nearby regulatory variant, while rs1801133 alone shows no independent effect.",
+      "experiment": "Perform high‑resolution haplotype phasing in diverse cohorts, conduct conditional GWAS analyses, and test candidate regulatory variants in luciferase reporter assays to assess impact on MTHFR expression.",
+      "feasibility": "high",
+      "rejected_support": [
+        {
+          "text": "ClinVar records drug response (methotrexate response - Toxicity) and association assertions for rs1801133.",
+          "reason": "number 801133 is not in the cited facts"
+        }
+      ],
+      "consistency": "consistent"
+    },
+    {
+      "title": "Pharmacogenomic relevance rather than disease causality",
+      "mechanism": "The Ala222Val allele primarily influences drug metabolism (e.g., methotrexate toxicity) without substantially affecting disease risk; submitters focusing on pharmacogenomic evidence label it pathogenic, whereas those evaluating general disease risk consider it benign, creating the observed discordance.",
+      "support": [
+        {
+          "text": "ClinVar submissions at the highest review level disagree: 5 Benign/Likely benign; 3 Pathogenic/Likely pathogenic; 3 Uncertain significance.",
+          "facts": [
+            "F6"
+          ],
+          "rendered": "ClinVar submissions at the highest review level disagree: 5 Benign/Likely benign; 3 Pathogenic/Likely pathogenic; 3 Uncertain significance (ClinVar)."
+        },
+        {
+          "text": "rs1801133 is a missense variant in MTHFR (p.Ala222Val).",
+          "facts": [
+            "F2"
+          ],
+          "rendered": "rs1801133 is a missense variant in MTHFR (p.Ala222Val) (ClinVar)."
+        }
+      ],
+      "gaps": [
+        "Clinical trial or cohort data linking rs1801133 genotype to methotrexate toxicity outcomes.",
+        "Functional studies showing how the variant alters folate pathway flux relevant to methotrexate metabolism.",
+        "Comparison of disease association signals after excluding pharmacogenomic phenotypes."
+      ],
+      "discriminating_observation": "Individuals carrying the A allele have a significantly higher rate of methotrexate‑induced toxicity independent of any increase in disease incidence.",
+      "experiment": "Analyze a retrospective cohort of patients treated with methotrexate, genotype rs1801133, and compare toxicity rates between genotypes while adjusting for disease severity and folate supplementation.",
+      "feasibility": "medium",
+      "rejected_support": [
+        {
+          "text": "ClinVar records drug response (methotrexate response - Toxicity) for rs1801133.",
+          "reason": "number 801133 is not in the cited facts"
+        }
+      ],
+      "consistency": "consistent"
+    }
+  ],
+  "ranking": [
+    {
+      "experiment": "Create isogenic cell lines (CRISPR‑edited) differing only at rs1801133, measure MTHFR activity and homocysteine production under a gradient of folate concentrations; complement with a population‑based analysis stratifying disease risk by folate intake.",
+      "tests": "Context‑dependent metabolic effect",
+      "consistency": "consistent",
+      "support": 5,
+      "feasibility": "medium",
+      "open_gaps": 3,
+      "rank": 1
+    },
+    {
+      "experiment": "Perform high‑resolution haplotype phasing in diverse cohorts, conduct conditional GWAS analyses, and test candidate regulatory variants in luciferase reporter assays to assess impact on MTHFR expression.",
+      "tests": "Tagging a nearby causal regulatory variant",
+      "consistency": "consistent",
+      "support": 2,
+      "feasibility": "high",
+      "open_gaps": 3,
+      "rank": 2
+    },
+    {
+      "experiment": "Analyze a retrospective cohort of patients treated with methotrexate, genotype rs1801133, and compare toxicity rates between genotypes while adjusting for disease severity and folate supplementation.",
+      "tests": "Pharmacogenomic relevance rather than disease causality",
+      "consistency": "consistent",
+      "support": 2,
+      "feasibility": "medium",
+      "open_gaps": 3,
+      "rank": 3
+    }
+  ],
+  "writer": "llm:openai/gpt-oss-120b",
+  "facts_hash": "0957ed4d1e4c5875"
+}

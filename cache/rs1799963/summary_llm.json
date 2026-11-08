@@ -1,0 +1,13 @@
+{
+  "key": "summary_llm|0.2|openai/gpt-oss-120b|befbae4253d8af24",
+  "created": "2026-11-08T01:24:51+00:00",
+  "model": "openai/gpt-oss-120b",
+  "facts_hash": "befbae4253d8af24",
+  "sentences": [
+    "rs1799963 is a G>A substitution located at GRCh38 chr11:46739505 and lies in the 3′ UTR of the F2 gene. [F1, F2].",
+    "The alternate A allele is observed in 1.2% of alleles in gnomAD v4 exomes (15393/1327714) and its frequency varies by ancestry, being highest in Ashkenazi Jewish individuals at 3.6% (900/25144) and lowest in East Asian individuals at 0.0051% (2/39002). [F4, F5].",
+    "ClinVar classifies this variant as Pathogenic for thrombophilia due to thrombin defect and also records it as a risk factor and established risk allele for venous thromboembolism. [F6, F7].",
+    "The variant was highlighted in a genome‑wide association study of venous thromboembolism that identified risk variants on chromosomes 1q24.2 and 9q. [F8]."
+  ],
+  "filled": []
+}

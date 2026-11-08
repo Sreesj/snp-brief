@@ -1,0 +1,15 @@
+{
+  "key": "summary_llm|0.2|openai/gpt-oss-120b|0a7acc1a4db3231e",
+  "created": "2026-11-08T01:24:44+00:00",
+  "model": "openai/gpt-oss-120b",
+  "facts_hash": "0a7acc1a4db3231e",
+  "sentences": [
+    "The rs6025 variant is a missense change in the F5 gene, NM_000130.4(F5):c.1601G>A (p.Arg534Gln), also known as Factor V Leiden [F2, F3].",
+    "The alternate T allele (C>T) is present on 2.2% of alleles in gnomAD v4 exomes, with frequencies ranging from 3.8% in Middle Eastern individuals to 0.0076% in East Asian individuals [F4, F5].",
+    "ClinVar's best-supported classification is Pathogenic for THROMBOPHILIA DUE TO FACTOR V LEIDEN, Factor V deficiency, Thrombophilia due to activated protein C resistance [F6].",
+    "ClinVar note: it also lists drug response, risk factor, Established risk allele assertions [F7]."
+  ],
+  "filled": [
+    "disease"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "key": "summary_llm|0.2|openai/gpt-oss-120b|6703c058991d8094",
+  "created": "2026-11-08T01:25:08+00:00",
+  "model": "openai/gpt-oss-120b",
+  "facts_hash": "6703c058991d8094",
+  "sentences": [
+    "rs1426654 is a missense variant in SLC24A5 (p.Thr111Ala) [F2].",
+    "The alternate G allele (A>G) is observed at 8.1% of alleles in gnomAD v4 exomes and at 30% of alleles in gnomAD v4 genomes, reflecting the different population compositions of the call sets [F3].",
+    "Within the exome data the G allele frequency ranges from 99% in East Asian individuals to 0.2% in European (non‑Finnish) individuals [F5].",
+    "ClinVar classifies this variant as benign, and it has been discussed in the context of the light‑skin allele shared by South Asians and Europeans (Basu Mallick C et al. 2013) [F6, F7]."
+  ],
+  "filled": [
+    "function"
+  ]
+}

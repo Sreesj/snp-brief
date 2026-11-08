@@ -1,0 +1,13 @@
+{
+  "key": "summary_llm|0.2|openai/gpt-oss-120b|602942e76978e4c7",
+  "created": "2026-11-08T01:24:47+00:00",
+  "model": "openai/gpt-oss-120b",
+  "facts_hash": "602942e76978e4c7",
+  "sentences": [
+    "rs334 is a missense variant in HBB that changes codon 20 from A to T, resulting in the p.Glu7Val substitution also known as E6V or HbS [F2, F3].",
+    "The alternate allele A (T>A) is observed at 0.16% in gnomAD v4 exomes and at 1.3% in gnomAD v4 genomes, with ancestry‑specific frequencies in the exomes ranging from 5.7% in African/African American individuals to 0% in European (Finnish) individuals [F4, F5, F6].",
+    "ClinVar classifies this variant as Pathogenic for Hb SS disease and other HBB‑related disorders, while also recording assertions of malaria resistance [F7, F8].",
+    "Whole‑genome sequencing analysis reported a single origin of the sickle allele during the Holocene wet phase (Shriner D et al. 2018) [F9]."
+  ],
+  "filled": []
+}

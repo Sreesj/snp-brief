@@ -1,0 +1,198 @@
+{
+  "source": "Open Targets",
+  "retrieved": "2026-11-08T03:07:38+00:00",
+  "request": {
+    "variant_ids": [
+      "11_5227002_T_A",
+      "11_5227002_T_C",
+      "11_5227002_T_G"
+    ]
+  },
+  "response": [
+    {
+      "variant_id": "11_5227002_T_A",
+      "body": {
+        "data": {
+          "variant": {
+            "id": "11_5227002_T_A",
+            "credibleSets": {
+              "rows": [
+                {
+                  "study": {
+                    "traitFromSource": "Malaria"
+                  },
+                  "l2GPredictions": {
+                    "rows": [
+                      {
+                        "score": 0.8428218364715576,
+                        "target": {
+                          "approvedSymbol": "HBB"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "study": {
+                    "traitFromSource": "Blood urea nitrogen (BUN, maximum, inv-norm transformed)"
+                  },
+                  "l2GPredictions": {
+                    "rows": [
+                      {
+                        "score": 0.8548035025596619,
+                        "target": {
+                          "approvedSymbol": "HBB"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "study": {
+                    "traitFromSource": "chloride  (minimum, inv-norm transformed)"
+                  },
+                  "l2GPredictions": {
+                    "rows": [
+                      {
+                        "score": 0.8387795090675354,
+                        "target": {
+                          "approvedSymbol": "HBB"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "study": {
+                    "traitFromSource": "platelet count (maximum, inv-norm transformed)"
+                  },
+                  "l2GPredictions": {
+                    "rows": [
+                      {
+                        "score": 0.8387795090675354,
+                        "target": {
+                          "approvedSymbol": "HBB"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "study": {
+                    "traitFromSource": "platelet count (minimum, inv-norm transformed)"
+                  },
+                  "l2GPredictions": {
+                    "rows": [
+                      {
+                        "score": 0.8387795090675354,
+                        "target": {
+                          "approvedSymbol": "HBB"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "study": {
+                    "traitFromSource": "estimated glomerular filtration rate (eGFR, maximum, inv-norm transformed)"
+                  },
+                  "l2GPredictions": {
+                    "rows": [
+                      {
+                        "score": 0.8387795090675354,
+                        "target": {
+                          "approvedSymbol": "HBB"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "study": {
+                    "traitFromSource": "neutrophil (fraction, maximum, inv-norm transformed)"
+                  },
+                  "l2GPredictions": {
+                    "rows": [
+                      {
+                        "score": 0.8387795090675354,
+                        "target": {
+                          "approvedSymbol": "HBB"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "study": {
+                    "traitFromSource": "Sodium (mean, inv-norm transformed)"
+                  },
+                  "l2GPredictions": {
+                    "rows": [
+                      {
+                        "score": 0.8387795090675354,
+                        "target": {
+                          "approvedSymbol": "HBB"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "study": {
+                    "traitFromSource": "Type 2 diabetes with renal manifestations (PheCode 250.22)"
+                  },
+                  "l2GPredictions": {
+                    "rows": [
+                      {
+                        "score": 0.8548035025596619,
+                        "target": {
+                          "approvedSymbol": "HBB"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "study": {
+                    "traitFromSource": "Anemia of chronic disease (PheCode 285.2)"
+                  },
+                  "l2GPredictions": {
+                    "rows": [
+                      {
+                        "score": 0.8387795090675354,
+                        "target": {
+                          "approvedSymbol": "HBB"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "variant_id": "11_5227002_T_C",
+      "body": {
+        "data": {
+          "variant": null
+        }
+      }
+    },
+    {
+      "variant_id": "11_5227002_T_G",
+      "body": {
+        "data": {
+          "variant": {
+            "id": "11_5227002_T_G",
+            "credibleSets": {
+              "rows": []
+            }
+          }
+        }
+      }
+    }
+  ]
+}

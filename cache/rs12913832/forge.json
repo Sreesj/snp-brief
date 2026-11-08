@@ -1,0 +1,154 @@
+{
+  "key": "forge|0.2|openai/gpt-oss-120b|fdda1ce13474d121",
+  "created": "2026-11-08T01:25:16+00:00",
+  "open_questions": [
+    "What experimental observation would confirm the mechanism proposed for rs12913832 (attenuation of a chromatin loop between a long‑range enhancer and the OCA2 promoter), in which tissue should it be observed, and what aspects of eye/skin pigmentation does this mechanism leave unexplained?"
+  ],
+  "hypotheses": [
+    {
+      "title": "Loop attenuation in skin melanocytes",
+      "mechanism": "The rs12913832 A>G (or A>C) allele could reduce formation of the long‑range enhancer‑OCA2 promoter loop in dermal melanocytes, lowering OCA2 transcription and thereby decreasing melanin production in skin and iris.",
+      "support": [
+        {
+          "text": "rs12913832 is an intron variant in HERC2 (ClinVar) and is associated with eye colour (ClinVar).",
+          "facts": [
+            "F2",
+            "F6"
+          ],
+          "rendered": "rs12913832 is an intron variant in HERC2 (ClinVar) and is associated with eye colour (ClinVar) (ClinVar)."
+        },
+        {
+          "text": "Visser et al. (2012) propose that rs12913832 modulates human pigmentation by attenuating chromatin‑loop formation between a long‑range enhancer and the OCA2 promoter.",
+          "facts": [
+            "F8"
+          ],
+          "rendered": "Visser et al. (2012) propose that rs12913832 modulates human pigmentation by attenuating chromatin‑loop formation between a long‑range enhancer and the OCA2 promoter (Europe PMC)."
+        },
+        {
+          "text": "Sturm et al. (2008) showed that a single SNP in intron 86 of HERC2 determines human blue‑brown eye colour.",
+          "facts": [
+            "F7"
+          ],
+          "rendered": "Sturm et al. (2008) showed that a single SNP in intron 86 of HERC2 determines human blue‑brown eye colour (Europe PMC)."
+        }
+      ],
+      "gaps": [
+        "No allele‑specific chromatin‑conformation data (e.g., 3C/Hi‑C) have been reported for primary melanocytes.",
+        "Expression of OCA2 in adult skin melanocytes relative to the enhancer‑promoter interaction has not been quantified for each rs12913832 genotype.",
+        "Functional reporter assays linking the loop change to melanin output in melanocytes are missing."
+      ],
+      "discriminating_observation": "Allele‑specific loss of the enhancer‑OCA2 promoter loop in primary melanocytes from individuals homozygous for the G (or C) allele, accompanied by reduced OCA2 mRNA.",
+      "experiment": "Perform allele‑specific Capture‑C (or Hi‑C) on cultured primary human melanocytes derived from donors homozygous AA versus GG (or CC) at rs12913832, and measure OCA2 expression by qRT‑PCR.",
+      "feasibility": "medium",
+      "rejected_support": [],
+      "consistency": "consistent"
+    },
+    {
+      "title": "Loop attenuation in retinal pigment epithelium (RPE)",
+      "mechanism": "The rs12913832 risk allele may weaken the enhancer‑OCA2 promoter loop specifically in retinal pigment epithelium cells, decreasing OCA2 expression during iris development and thus producing lighter eye colour, while having a secondary effect on skin pigmentation.",
+      "support": [
+        {
+          "text": "rs12913832 is an intron variant in HERC2 and is linked to blue/non‑blue eye colour (ClinVar).",
+          "facts": [
+            "F2",
+            "F6"
+          ],
+          "rendered": "rs12913832 is an intron variant in HERC2 and is linked to blue/non‑blue eye colour (ClinVar) (ClinVar)."
+        },
+        {
+          "text": "Visser et al. (2012) propose that rs12913832 modulates pigmentation by attenuating a chromatin loop between a long‑range enhancer and the OCA2 promoter.",
+          "facts": [
+            "F8"
+          ],
+          "rendered": "Visser et al. (2012) propose that rs12913832 modulates pigmentation by attenuating a chromatin loop between a long‑range enhancer and the OCA2 promoter (Europe PMC)."
+        },
+        {
+          "text": "Sturm et al. (2008) identified a single SNP in HERC2 intron 86 that determines human blue‑brown eye colour.",
+          "facts": [
+            "F7"
+          ],
+          "rendered": "Sturm et al. (2008) identified a single SNP in HERC2 intron 86 that determines human blue‑brown eye colour (Europe PMC)."
+        }
+      ],
+      "gaps": [
+        "No chromatin‑conformation data for the rs12913832 region in human RPE or fetal eye tissue.",
+        "OCA2 expression dynamics in developing RPE relative to the enhancer‑promoter loop have not been measured for each genotype.",
+        "The mechanism does not explain the observed association of the variant with skin pigmentation."
+      ],
+      "discriminating_observation": "A genotype‑dependent reduction of the enhancer‑OCA2 promoter loop in primary human RPE cells (or fetal eye tissue) together with lower OCA2 transcript levels in the G (or C) allele carriers.",
+      "experiment": "Isolate primary RPE cells (or differentiate iPSC‑derived RPE) from donors homozygous AA and GG (or CC) at rs12913832, perform allele‑specific Capture‑C and RNA‑seq to assess looping and OCA2 expression.",
+      "feasibility": "medium",
+      "rejected_support": [],
+      "consistency": "consistent"
+    },
+    {
+      "title": "Loop attenuation in a shared neural‑crest precursor",
+      "mechanism": "The rs12913832 allele could act early in neural‑crest‑derived progenitors, reducing the enhancer‑OCA2 promoter interaction before lineage commitment, thereby influencing both melanocyte (skin) and RPE (eye) pigmentation.",
+      "support": [
+        {
+          "text": "rs12913832 is an intron variant in HERC2 associated with eye colour (ClinVar).",
+          "facts": [
+            "F2",
+            "F6"
+          ],
+          "rendered": "rs12913832 is an intron variant in HERC2 associated with eye colour (ClinVar) (ClinVar)."
+        },
+        {
+          "text": "Visser et al. (2012) describe rs12913832 as modulating pigmentation by attenuating a chromatin loop between a long‑range enhancer and the OCA2 promoter.",
+          "facts": [
+            "F8"
+          ],
+          "rendered": "Visser et al. (2012) describe rs12913832 as modulating pigmentation by attenuating a chromatin loop between a long‑range enhancer and the OCA2 promoter (Europe PMC)."
+        },
+        {
+          "text": "Sturm et al. (2008) reported that a single SNP in HERC2 intron 86 determines human blue‑brown eye colour.",
+          "facts": [
+            "F7"
+          ],
+          "rendered": "Sturm et al. (2008) reported that a single SNP in HERC2 intron 86 determines human blue‑brown eye colour (Europe PMC)."
+        }
+      ],
+      "gaps": [
+        "No data on chromatin architecture of the rs12913832 region in early neural‑crest cells or in induced pluripotent‑stem‑cell‑derived melanocyte/RPE precursors.",
+        "The timing of OCA2 enhancer‑promoter looping during development has not been mapped for each allele.",
+        "It remains unclear whether the same looping change can account for both skin and eye pigmentation phenotypes."
+      ],
+      "discriminating_observation": "Allele‑specific loss of the enhancer‑OCA2 promoter loop in neural‑crest progenitors (or iPSC‑derived precursors) before they differentiate into melanocytes or RPE, with a corresponding decrease in OCA2 expression.",
+      "experiment": "Differentiate iPSCs from AA and GG (or CC) rs12913832 donors into neural‑crest progenitors, then perform allele‑specific Capture‑C and OCA2 expression profiling at the progenitor stage and after differentiation into melanocytes and RPE.",
+      "feasibility": "low",
+      "rejected_support": [],
+      "consistency": "partly"
+    }
+  ],
+  "ranking": [
+    {
+      "experiment": "Perform allele‑specific Capture‑C (or Hi‑C) on cultured primary human melanocytes derived from donors homozygous AA versus GG (or CC) at rs12913832, and measure OCA2 expression by qRT‑PCR.",
+      "tests": "Loop attenuation in skin melanocytes",
+      "consistency": "consistent",
+      "support": 3,
+      "feasibility": "medium",
+      "open_gaps": 3,
+      "rank": 1
+    },
+    {
+      "experiment": "Isolate primary RPE cells (or differentiate iPSC‑derived RPE) from donors homozygous AA and GG (or CC) at rs12913832, perform allele‑specific Capture‑C and RNA‑seq to assess looping and OCA2 expression.",
+      "tests": "Loop attenuation in retinal pigment epithelium (RPE)",
+      "consistency": "consistent",
+      "support": 3,
+      "feasibility": "medium",
+      "open_gaps": 3,
+      "rank": 2
+    },
+    {
+      "experiment": "Differentiate iPSCs from AA and GG (or CC) rs12913832 donors into neural‑crest progenitors, then perform allele‑specific Capture‑C and OCA2 expression profiling at the progenitor stage and after differentiation into melanocytes and RPE.",
+      "tests": "Loop attenuation in a shared neural‑crest precursor",
+      "consistency": "partly",
+      "support": 3,
+      "feasibility": "low",
+      "open_gaps": 3,
+      "rank": 3
+    }
+  ],
+  "writer": "llm:openai/gpt-oss-120b",
+  "facts_hash": "fdda1ce13474d121"
+}

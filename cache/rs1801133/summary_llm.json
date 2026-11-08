@@ -1,0 +1,12 @@
+{
+  "key": "summary_llm|0.2|openai/gpt-oss-120b|b763429c9d441b56",
+  "created": "2026-11-08T01:25:01+00:00",
+  "model": "openai/gpt-oss-120b",
+  "facts_hash": "b763429c9d441b56",
+  "sentences": [
+    "The rs1801133 variant is a missense change in the MTHFR gene, described as NM_005957.5(MTHFR):c.665C>T (p.Ala222Val) [F2].",
+    "The alternate A allele (G>A) is present on 32% of alleles in the gnomAD v4 exome dataset (471698/1461758 alleles; af 0.322692), with frequencies ranging from 49% in Admixed American individuals to 11% in African/African American individuals [F4, F5].",
+    "ClinVar submissions with the highest review level disagree on its clinical significance, reporting 5 benign/likely benign, 3 pathogenic/likely pathogenic, and 3 uncertain significance assertions, and also note associations with drug response (methotrexate toxicity) and other traits [F6, F7]."
+  ],
+  "filled": []
+}

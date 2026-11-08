@@ -1,0 +1,12 @@
+{
+  "key": "summary_llm|0.2|openai/gpt-oss-120b|a4d7a58c7b4b111d",
+  "created": "2026-11-08T01:24:53+00:00",
+  "model": "openai/gpt-oss-120b",
+  "facts_hash": "a4d7a58c7b4b111d",
+  "sentences": [
+    "rs4988235 is an intron variant in MCM6 (NM_002299.2(LCT):c.-13907C>T) with alleles G>A, G>C, and G>T [F2, F1].",
+    "The alternate A allele (G>A) is present on about 40% of alleles in gnomAD v4 genomes (60356/152102; af 0.396813) and its frequency varies by ancestry, being highest in European (non‑Finnish) at 64% (43184/67976) and lowest in East Asian at 0.21% (11/5186) [F4, F5].",
+    "ClinVar classifies this variant as associated with lactase persistence, though no assertion criteria are provided [F6]."
+  ],
+  "filled": []
+}
