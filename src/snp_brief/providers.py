@@ -65,6 +65,7 @@ PROVIDERS = (
     Provider("regulome", "RegulomeDB", 5, "regulatory evidence score", ("prediction",), 20),
     Provider("constraint", "gnomAD constraint", 2, "gene-level population constraint", ("context",), 20),
     Provider("timeline", "Literature timeline", 7, "papers per year (Europe PMC)", ("papers",), 20),
+    Provider("borzoi", "Borzoi (our model run)", 5, "computed regulatory prediction, run by Variant Atlas", ("prediction",), 5),
 )
 PROVIDERS = tuple(sorted(PROVIDERS, key=lambda p: p.rank))  # stable: keeps the listed order within a rank
 BY_KEY = {provider.key: provider for provider in PROVIDERS}
@@ -557,6 +558,7 @@ class Eqtl:
     tissue: str
     p_value: float | None
     nes: float | None
+    variant_id: str = ""  # GTEx id, chr_pos_ref_alt_b38: the effect is for this alt allele
 
 
 def gtex_variant_id(chrom: str | None, pos: int | None, ref: str, alt: str) -> str:
@@ -595,7 +597,7 @@ def parse_gtex(payload: dict | None) -> list[Eqtl]:
         gene = str(row.get("geneSymbol") or row.get("gencodeId") or "")
         tissue = str(row.get("tissueSiteDetailId") or row.get("tissueSiteDetail") or "").replace("_", " ")
         if gene and tissue:
-            out.append(Eqtl(gene, tissue, _num(row.get("pValue")), _num(row.get("nes"))))
+            out.append(Eqtl(gene, tissue, _num(row.get("pValue")), _num(row.get("nes")), str(row.get("variantId") or "")))
     out.sort(key=lambda e: e.p_value if e.p_value is not None else 1.0)
     return out
 

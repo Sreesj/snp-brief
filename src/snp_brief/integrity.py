@@ -204,6 +204,22 @@ def check(item, summary=None) -> CheckReport:
     if (pgx is not None and pgx.annotations) or (sc is not None and sc.civic) or (t is not None and t.by_year):
         report.add("Evidence levels and paper counts are valid", problems)
 
+    # our Borzoi run
+    bz = getattr(item, "borzoi", None)
+    if bz is not None and bz.retrieved:
+        problems = []
+        import math as _math
+
+        letters = {a for pair in (db.alleles if db else []) for a in pair}
+        for allele in bz.alleles:
+            if letters and allele.alt not in letters:
+                problems.append(f"Borzoi scored allele {allele.alt}, which dbSNP does not list for this variant")
+            for g in allele.genes:
+                values = [g.mean_lfc, g.max_abs_lfc, *g.tissues.values()]
+                if not all(_math.isfinite(v) for v in values) or max(abs(v) for v in values) > 20:
+                    problems.append(f"Borzoi value for {g.gene} is not a plausible log2 ratio")
+        report.add("Borzoi prediction is for this variant's alleles and plausible", problems)
+
     # ACMG frequency codes vs ClinVar
     criteria = acmg_draft(item)
     codes = {x.code for x in criteria}

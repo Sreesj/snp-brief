@@ -57,6 +57,7 @@ SOURCES = (
     Source("spliceai", "SpliceAI", "rank 5 · predicted splice-site gain or loss"),
     Source("regulome", "RegulomeDB", "rank 5 · regulatory evidence at this position"),
     Source("timeline", "Literature timeline", "rank 7 · papers per year naming the rsID"),
+    Source("borzoi", "Borzoi (our model run)", "rank 5 · predicted effect on gene expression and chromatin, run on GPU by Variant Atlas"),
 )
 NOT_CONSULTED = "not consulted"
 
@@ -343,6 +344,13 @@ def _gave(key: str, item: Gathered) -> str:
     if key == "constraint":
         c = item.constraint
         return f"{c.gene} LOEUF {c.loeuf:.2f}" if c.loeuf is not None else "no constraint data"
+    if key == "borzoi":
+        bz = item.borzoi
+        genes = [g for a in bz.alleles for g in a.genes]
+        if not genes:
+            return "no prediction"
+        top = max(genes, key=lambda g: abs(g.mean_lfc))
+        return f"strongest predicted change: {top.gene} (log2 {top.mean_lfc:+.3f})"
     if key == "timeline":
         t = item.timeline
         return f"{t.total} papers" + (f", {t.trend}" if t.trend else "") if t.total else "no papers"

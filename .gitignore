@@ -9,3 +9,7 @@ build/
 .streamlit/secrets.toml
 cache/*/ripple.json
 tests/cache/*/ripple.json
+brev/.venv/
+brev/ref/
+brev/out/
+brev/*.tgz

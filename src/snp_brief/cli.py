@@ -50,12 +50,28 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--probe", metavar="RSID", help="call every provider live for one rsID and print status, time and response shape")
     parser.add_argument("--list-models", action="store_true", help="list the models your LLM provider offers, then exit")
     parser.add_argument("--check", nargs="+", metavar="RSID", help="load these rsIDs (cache first, live for the rest) and run the data checks")
+    parser.add_argument("--export-variants", type=Path, metavar="FILE", help="write chrom/pos/ref/alt for the rsIDs (default: the demo list) for brev/score_borzoi.py")
+    parser.add_argument("--import-borzoi", type=Path, metavar="DIR", help="copy <rsid>/borzoi.json files from a Borzoi run into cache/")
     parser.add_argument("--build-gwas", type=Path, metavar="FILE", help="slim the GWAS Catalog download (.tsv or .zip) into data/gwas_catalog.tsv.gz")
     args = parser.parse_args(argv)
     if args.list_models:
         return list_models()
     if args.probe:
         return probe(args.probe)
+    if args.export_variants:
+        ids = [line.strip() for line in args.input.read_text().splitlines() if line.strip()]
+        return export_variants(args.export_variants, ids, args.offline)
+    if args.import_borzoi:
+        import shutil
+
+        count = 0
+        for src in sorted(args.import_borzoi.glob("rs*/borzoi.json")):
+            dest = Path("cache") / src.parent.name / "borzoi.json"
+            dest.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copyfile(src, dest)
+            count += 1
+        print(f"copied {count} Borzoi results into cache/")
+        return 0
     if args.check:
         return run_checks(args.check, args.offline)
     if args.build_gwas:
@@ -158,6 +174,28 @@ def list_models() -> int:
     print(f"{client.provider}: {len(models)} models (current: {client.model})")
     for model in models:
         print(model)
+    return 0
+
+
+def export_variants(path: Path, ids: list[str] | None, offline: bool) -> int:
+    """One row per GRCh38 SNV allele: the input for brev/score_borzoi.py."""
+    from snp_brief.pipeline import default_user_cache, load_variant
+
+    if not ids:
+        ids = [line.strip() for line in Path("fixture/snps.txt").read_text().splitlines() if line.strip()]
+    rows = ["rsid\tchrom\tpos\tref\talt"]
+    for rsid in ids:
+        item = load_variant(rsid, repo_cache=Path("cache"), user_cache=default_user_cache(), offline=offline, budget=30)
+        db = item.db
+        if db.assembly != "GRCh38" or not db.pos:
+            print(f"{rsid}: no GRCh38 position; skipped")
+            continue
+        for ref, alt in db.alleles:
+            if len(ref) == 1 and len(alt) == 1:
+                rows.append(f"{item.rsid}\t{db.chrom}\t{db.pos}\t{ref}\t{alt}")
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text("\n".join(rows) + "\n", encoding="utf-8")
+    print(f"wrote {len(rows) - 1} alleles to {path}")
     return 0
 
 

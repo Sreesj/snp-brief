@@ -242,3 +242,23 @@ class StrandTests(unittest.TestCase):
         rg = extra.parse_regulome(wrap({"regulome_score": {"ranking": "1f", "probability": "0.55"},
                                         "features": {"ChIP": True, "QTL": True, "Footprint": False}}))
         self.assertEqual(rg.feature_count, 2)
+
+
+class BorzoiTests(unittest.TestCase):
+    def test_parse_and_concordance(self) -> None:
+        from snp_brief.providers import Eqtl
+
+        payload = wrap({"model": "Borzoi, 4 replicates", "alleles": [
+            {"ref": "C", "alt": "T", "ref_matches_genome": True,
+             "genes": [{"gene": "IFNL4", "mean_lfc": -0.12, "max_abs_lfc": 0.4, "distance": 1200,
+                        "tissues": {"liver": -0.3, "Whole Blood": 0.02}}],
+             "chromatin": [{"assay": "DNASE", "label": "HepG2", "lfc": -0.5}]},
+            {"ref": "C", "alt": "G", "ref_matches_genome": True, "genes": []}]})
+        bz = extra.parse_borzoi(payload)
+        self.assertEqual(bz.alleles[0].genes[0].tissues["liver"], -0.3)
+        eqtls = [Eqtl("IFNL4", "Liver", 1e-9, -0.8, "chr19_39248147_C_T_b38"),
+                 Eqtl("IFNL4", "Whole Blood", 1e-5, -0.4, "chr19_39248147_C_T_b38"),
+                 Eqtl("NOTHERE", "Liver", 1e-5, 0.4, "")]
+        conc = extra.concordance(eqtls, bz)
+        self.assertEqual([(c.tissue, c.matched_track, c.agrees) for c in conc],
+                         [("Liver", "liver", True), ("Whole Blood", "Whole Blood", False)])

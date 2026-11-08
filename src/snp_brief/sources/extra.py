@@ -531,3 +531,94 @@ def splice_variant_ids(chrom: str, pos: int, ref: str, alt: str) -> str:
 
 def quote(text: str) -> str:
     return urllib.parse.quote(text, safe="")
+
+
+# ---------------------------------------------------------------- Borzoi (our model run)
+
+
+@dataclass
+class BorzoiGene:
+    gene: str
+    mean_lfc: float
+    max_abs_lfc: float
+    distance: int
+    tissues: dict[str, float]
+
+
+@dataclass
+class BorzoiAllele:
+    ref: str
+    alt: str
+    ref_matches_genome: bool
+    genes: list[BorzoiGene] = field(default_factory=list)
+    chromatin: list[dict] = field(default_factory=list)
+    assay_summary: dict[str, float] = field(default_factory=dict)
+    error: str = ""
+
+
+@dataclass
+class BorzoiResult:
+    retrieved: bool
+    model: str = ""
+    alleles: list[BorzoiAllele] = field(default_factory=list)
+
+
+def parse_borzoi(payload: dict | None) -> BorzoiResult:
+    if not payload:
+        return BorzoiResult(False)
+    body = payload.get("response") or {}
+    alleles = []
+    for a in body.get("alleles") or []:
+        genes = [
+            BorzoiGene(str(g.get("gene")), float(g.get("mean_lfc") or 0), float(g.get("max_abs_lfc") or 0),
+                       int(g.get("distance") or 0), {str(k): float(v) for k, v in (g.get("tissues") or {}).items()})
+            for g in a.get("genes") or []
+        ]
+        alleles.append(BorzoiAllele(str(a.get("ref", "")), str(a.get("alt", "")), bool(a.get("ref_matches_genome", True)),
+                                    genes, list(a.get("chromatin") or []), dict(a.get("assay_summary") or {}), str(a.get("error") or "")))
+    return BorzoiResult(True, str(body.get("model") or "Borzoi"), alleles)
+
+
+_STOP = {"of", "the", "and", "tissue", "cells", "cell", "primary", "adult", "male", "female", "rna", "seq", "total", "polya", "plus", "minus"}
+
+
+def _tokens(text: str) -> set[str]:
+    import re as _re
+
+    return {w for w in _re.findall(r"[a-z]+", text.lower()) if len(w) > 2 and w not in _STOP}
+
+
+@dataclass
+class Concordance:
+    gene: str
+    tissue: str
+    gtex_nes: float
+    predicted: float
+    matched_track: str  # the Borzoi tissue used, or "all tissues"
+    agrees: bool
+
+
+def concordance(eqtls, borzoi: BorzoiResult) -> list[Concordance]:
+    """For each GTEx eQTL, does Borzoi predict the same direction for that gene, in that tissue if it has one?"""
+    out = []
+    if not borzoi.retrieved:
+        return out
+    for eq in eqtls or []:
+        if eq.nes is None or eq.nes == 0:
+            continue
+        alt = eq.variant_id.split("_")[3] if eq.variant_id.count("_") >= 4 else ""
+        allele = next((a for a in borzoi.alleles if a.genes and (not alt or a.alt == alt)), None)
+        gene = next((g for g in (allele.genes if allele else []) if g.gene == eq.gene), None)
+        if gene is None:
+            continue
+        want = _tokens(eq.tissue)
+        best, score = None, 0
+        for track, value in gene.tissues.items():
+            overlap = len(want & _tokens(track))
+            if overlap > score:
+                best, score = (track, value), overlap
+        track, value = best if best else ("all tissues", gene.mean_lfc)
+        if abs(value) < 1e-4:
+            continue  # no predicted change: neither agrees nor disagrees
+        out.append(Concordance(eq.gene, eq.tissue, eq.nes, value, track, (value > 0) == (eq.nes > 0)))
+    return out

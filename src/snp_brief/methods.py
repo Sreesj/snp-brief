@@ -92,6 +92,23 @@ METHODS: dict[str, tuple[str, list[str]]] = {
             "Associations are ordered by p-value, read from the exact text so values smaller than 1e-308 still sort correctly.",
         ],
     ),
+    "borzoi": (
+        "Predicted regulatory effect (Borzoi)",
+        [
+            "Borzoi (Linder et al., Nature Genetics 2025) is a deep-learning model that predicts RNA-seq, CAGE, DNase/ATAC and ChIP "
+            "coverage from 524,288 bases of DNA. We run it ourselves on NVIDIA GPUs; nothing here comes from a database.",
+            "Input: the hg38 sequence centred on the variant, checked against the reference base, with the reference and the "
+            "alternate allele. The four published model replicates are run on both, and on their reverse complements, and averaged.",
+            "Model outputs are converted back to coverage by undoing Borzoi's target transforms (scale, soft clip, 3/4 power).",
+            "Gene effect: RNA-seq coverage is summed over each gene's canonical exons (GENCODE v44) inside the 196,608-base output "
+            "window; effect = log2((alt + 1) ÷ (ref + 1)) per track, averaged over tracks with the same tissue or cell type. "
+            "'x% higher' = 2^|log2| − 1.",
+            "Local effect: the same ratio for DNase/ATAC, ChIP and CAGE tracks over the 512 bases around the variant.",
+            "Prediction vs measurement: for each GTEx eQTL of this variant, the sign of GTEx's normalized effect size is compared "
+            "with Borzoi's predicted change for the same gene, in the closest-named tissue when one matches, else across all tissues.",
+            "Predictions are hypotheses about mechanism, not measurements; agreement with GTEx raises confidence, disagreement is a flag.",
+        ],
+    ),
     "timeline": (
         "Papers per year",
         [

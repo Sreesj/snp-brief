@@ -18,7 +18,7 @@ from snp_brief.brief import assemble_brief, brief_sentences
 from snp_brief.cache_store import cache_path, load_cache, save_cache
 from snp_brief.models import ClinVarRecord, DbSnpRecord, GnomadVariant, Paper, UniProtHit
 from snp_brief.sources import extra
-from snp_brief.sources.extra import Constraint, PgxResult, PredictionScores, RegulomeResult, SpliceResult, Timeline
+from snp_brief.sources.extra import BorzoiResult, Constraint, PgxResult, PredictionScores, RegulomeResult, SpliceResult, Timeline
 from snp_brief.providers import (
     BY_KEY,
     GeneSummary,
@@ -115,6 +115,7 @@ class Gathered:
     regulome: RegulomeResult = field(default_factory=lambda: RegulomeResult(False))
     constraint: Constraint = field(default_factory=lambda: Constraint(False))
     timeline: Timeline = field(default_factory=lambda: Timeline(False))
+    borzoi: BorzoiResult = field(default_factory=lambda: BorzoiResult(False))
 
     @property
     def pending(self) -> list[str]:
@@ -210,6 +211,16 @@ def gather(
                 return None, SourceCall("no data", error="no gene at this position")
             return run("constraint", lambda: extra.fetch_constraint(genes[0]), dirs=extra_dirs, write=extra_write)
 
+        def borzoi_task():
+            # Precomputed on a GPU by brev/score_borzoi.py; never fetched over the network.
+            for directory in extra_dirs:
+                path = cache_path(directory, rsid, "borzoi")
+                if path.is_file():
+                    payload = load_cache(path)
+                    return payload, SourceCall("cache", _stamp(payload))
+            return None, SourceCall("no data", error="not computed for this variant yet")
+
+        futures["borzoi"] = _POOL.submit(borzoi_task)
         futures["spliceai"] = _POOL.submit(splice_task)
         futures["constraint"] = _POOL.submit(constraint_task)
     def gnomad_task():
@@ -304,6 +315,7 @@ def gather(
         regulome=extra.parse_regulome(results.get("regulome")) if "regulome" in results else RegulomeResult(False),
         constraint=extra.parse_constraint(results.get("constraint")) if "constraint" in results else Constraint(False),
         timeline=extra.parse_timeline(results.get("timeline")) if "timeline" in results else Timeline(False),
+        borzoi=extra.parse_borzoi(results.get("borzoi")) if "borzoi" in results else BorzoiResult(False),
         merged_from=merged_from,
     )
 

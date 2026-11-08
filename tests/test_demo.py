@@ -164,6 +164,7 @@ class StatusTests(unittest.TestCase):
                 "SpliceAI": "no",
                 "RegulomeDB": "no",
                 "Literature timeline": "no",
+                "Borzoi (our model run)": "no",
             },
         )
 

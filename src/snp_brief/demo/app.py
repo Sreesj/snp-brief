@@ -113,7 +113,7 @@ def forge_runs_left() -> int:
 
 def main() -> None:
     st.set_page_config(page_title="Variant Atlas", page_icon=":material/genetics:", layout="wide")
-    st.html(theme.FONTS + theme.CSS + theme.EXTRA_CSS + theme.METHOD_CSS + theme.CHECKS_CSS)
+    st.html(theme.FONTS + theme.CSS + theme.EXTRA_CSS + theme.METHOD_CSS + theme.CHECKS_CSS + theme.BORZOI_CSS)
     load_secrets()
     if not password_ok():
         return
@@ -562,6 +562,9 @@ def render_ripple(item: Gathered) -> None:
     grid = theme.score_grid(item)
     if grid:
         st.html(theme.section("Prediction and constraint scores") + grid + theme.method("scores"))
+    bz = theme.borzoi_html(item)
+    if bz:
+        st.html(theme.section("Predicted regulatory effect · Borzoi, run by Variant Atlas") + bz + theme.method("borzoi"))
     results = st.session_state.setdefault("modules", {})
     key = (item.rsid, "ripple")
     if key not in results:

@@ -661,3 +661,62 @@ CHECKS_CSS = """
 .va-checks .va-acmg-note { margin: 0 1rem .7rem 1rem; }
 </style>
 """
+
+
+def borzoi_html(item) -> str:
+    """Predicted regulatory effect from our Borzoi run, and how it compares with measured GTEx eQTLs."""
+    from snp_brief.sources.extra import concordance
+
+    bz = getattr(item, "borzoi", None)
+    if bz is None or not bz.retrieved:
+        return ""
+    parts = []
+    for allele in bz.alleles:
+        if not allele.ref_matches_genome:
+            parts.append(f'<div class="va-acmg-empty">{e(allele.ref)}&gt;{e(allele.alt)}: the reference genome has a different base here, so it was not scored.</div>')
+            continue
+        if not allele.genes and not allele.chromatin:
+            continue
+        rows = []
+        for g in allele.genes[:6]:
+            direction = "higher" if g.mean_lfc > 0 else "lower"
+            pct = (2 ** abs(g.mean_lfc) - 1) * 100
+            top_tissue = max(g.tissues.items(), key=lambda kv: abs(kv[1]))[0] if g.tissues else ""
+            rows.append(
+                f'<div class="va-bz-row"><b>{e(g.gene)}</b><span class="va-bz-bar {"up" if g.mean_lfc > 0 else "down"}" '
+                f'style="width:{min(100, abs(g.mean_lfc) * 400):.0f}%"></span><span>{pct:.2g}% {direction} expression '
+                f'(log2 {g.mean_lfc:+.3f})</span><span class="va-fact-sub">strongest in {e(top_tissue)}; {g.distance / 1000:.0f} kb away</span></div>'
+            )
+        local = ", ".join(f'{e(c["assay"])} {e(c["label"])} ({c["lfc"]:+.2f})' for c in allele.chromatin[:4])
+        parts.append(
+            f'<div class="va-card"><div class="va-fact-label">Predicted for the {e(allele.alt)} allele vs {e(allele.ref)}</div>'
+            f'{"".join(rows) or "<div class=va-acmg-empty>No gene in range has a predicted change.</div>"}'
+            + (f'<div class="va-pgx-sum" style="margin-top:.6rem">Largest local changes at the variant: {local}</div>' if local else "")
+            + "</div>"
+        )
+    conc = concordance(getattr(item, "eqtls", None), bz)
+    if conc:
+        agree = sum(c.agrees for c in conc)
+        rows = "".join(
+            f'<div class="va-bz-conc"><span class="{"ok" if c.agrees else "no"}">{"agrees" if c.agrees else "disagrees"}</span>'
+            f'<span><b>{e(c.gene)}</b> in {e(c.tissue)}: GTEx measured {"higher" if c.gtex_nes > 0 else "lower"} expression '
+            f'(NES {c.gtex_nes:+.2f}); Borzoi predicts {"higher" if c.predicted > 0 else "lower"} (log2 {c.predicted:+.3f}, {e(c.matched_track)})</span></div>'
+            for c in conc[:8]
+        )
+        parts.append(
+            f'<div class="va-card"><div class="va-fact-label">Prediction vs measurement · {agree} of {len(conc)} GTEx eQTLs agree in direction</div>{rows}</div>'
+        )
+    return "".join(parts)
+
+
+BORZOI_CSS = """
+<style>
+.va-bz-row { display: grid; grid-template-columns: 90px 120px 1fr; gap: .2rem .8rem; align-items: center; padding: .5rem 0; border-bottom: 1px solid var(--va-border); color: #e6e8eb; font-size: .88rem; }
+.va-bz-row .va-fact-sub { grid-column: 3; margin-top: 0; }
+.va-bz-bar { height: 6px; border-radius: 3px; min-width: 3px; }
+.va-bz-bar.up { background: #4cc9b0; } .va-bz-bar.down { background: #f2555a; }
+.va-bz-conc { display: grid; grid-template-columns: 82px 1fr; gap: .8rem; padding: .45rem 0; font-size: .86rem; color: #c9cdd3; border-bottom: 1px solid var(--va-border); }
+.va-bz-conc span.ok { color: #6fdca5; } .va-bz-conc span.no { color: #ff8a8e; }
+.va-bz-conc b { color: var(--va-text); }
+</style>
+"""
