@@ -1,0 +1,191 @@
+{
+  "source": "gnomad",
+  "retrieved": "2026-11-08T03:55:43+00:00",
+  "request": {
+    "rsid": "rs80357783",
+    "dataset": "gnomad_r4"
+  },
+  "response": {
+    "dataset": "gnomad_r4",
+    "variants": [
+      {
+        "totals": {
+          "data": {
+            "variant": {
+              "variantId": "17-43124030-C-CT",
+              "reference_genome": "GRCh38",
+              "chrom": "17",
+              "pos": 43124030,
+              "ref": "C",
+              "alt": "CT",
+              "exome": {
+                "ac": 2,
+                "an": 1460784,
+                "af": 1.3691278108193956e-06
+              },
+              "genome": null
+            }
+          }
+        },
+        "populations": {
+          "exome": {
+            "data": {
+              "variant": {
+                "variantId": "17-43124030-C-CT",
+                "exome": {
+                  "populations": [
+                    {
+                      "id": "remaining",
+                      "ac": 0,
+                      "an": 60334
+                    },
+                    {
+                      "id": "remaining_XX",
+                      "ac": 0,
+                      "an": 31764
+                    },
+                    {
+                      "id": "remaining_XY",
+                      "ac": 0,
+                      "an": 28570
+                    },
+                    {
+                      "id": "amr",
+                      "ac": 0,
+                      "an": 44718
+                    },
+                    {
+                      "id": "amr_XX",
+                      "ac": 0,
+                      "an": 25686
+                    },
+                    {
+                      "id": "amr_XY",
+                      "ac": 0,
+                      "an": 19032
+                    },
+                    {
+                      "id": "fin",
+                      "ac": 0,
+                      "an": 53412
+                    },
+                    {
+                      "id": "fin_XX",
+                      "ac": 0,
+                      "an": 27646
+                    },
+                    {
+                      "id": "fin_XY",
+                      "ac": 0,
+                      "an": 25766
+                    },
+                    {
+                      "id": "mid",
+                      "ac": 0,
+                      "an": 5762
+                    },
+                    {
+                      "id": "mid_XX",
+                      "ac": 0,
+                      "an": 2502
+                    },
+                    {
+                      "id": "mid_XY",
+                      "ac": 0,
+                      "an": 3260
+                    },
+                    {
+                      "id": "nfe",
+                      "ac": 2,
+                      "an": 1111104
+                    },
+                    {
+                      "id": "nfe_XX",
+                      "ac": 1,
+                      "an": 571732
+                    },
+                    {
+                      "id": "nfe_XY",
+                      "ac": 1,
+                      "an": 539372
+                    },
+                    {
+                      "id": "sas",
+                      "ac": 0,
+                      "an": 86234
+                    },
+                    {
+                      "id": "sas_XX",
+                      "ac": 0,
+                      "an": 22032
+                    },
+                    {
+                      "id": "sas_XY",
+                      "ac": 0,
+                      "an": 64202
+                    },
+                    {
+                      "id": "asj",
+                      "ac": 0,
+                      "an": 26114
+                    },
+                    {
+                      "id": "asj_XX",
+                      "ac": 0,
+                      "an": 12628
+                    },
+                    {
+                      "id": "asj_XY",
+                      "ac": 0,
+                      "an": 13486
+                    },
+                    {
+                      "id": "eas",
+                      "ac": 0,
+                      "an": 39646
+                    },
+                    {
+                      "id": "eas_XX",
+                      "ac": 0,
+                      "an": 20686
+                    },
+                    {
+                      "id": "eas_XY",
+                      "ac": 0,
+                      "an": 18960
+                    },
+                    {
+                      "id": "afr",
+                      "ac": 0,
+                      "an": 33460
+                    },
+                    {
+                      "id": "afr_XX",
+                      "ac": 0,
+                      "an": 19318
+                    },
+                    {
+                      "id": "afr_XY",
+                      "ac": 0,
+                      "an": 14142
+                    },
+                    {
+                      "id": "XX",
+                      "ac": 1,
+                      "an": 733994
+                    },
+                    {
+                      "id": "XY",
+                      "ac": 1,
+                      "an": 726790
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
+}

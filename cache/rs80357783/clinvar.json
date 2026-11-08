@@ -1,0 +1,567 @@
+{
+  "source": "clinvar",
+  "retrieved": "2026-11-08T03:55:45+00:00",
+  "request": {
+    "term": "rs80357783"
+  },
+  "response": {
+    "esearch": {
+      "header": {
+        "type": "esearch",
+        "version": "0.3"
+      },
+      "esearchresult": {
+        "count": "1",
+        "retmax": "1",
+        "retstart": "0",
+        "idlist": [
+          "37691"
+        ],
+        "translationset": [],
+        "translationstack": [
+          {
+            "term": "rs80357783[All Fields]",
+            "field": "All Fields",
+            "count": "1",
+            "explode": "N"
+          },
+          "GROUP"
+        ],
+        "querytranslation": "rs80357783[All Fields]"
+      }
+    },
+    "esummary": {
+      "header": {
+        "type": "esummary",
+        "version": "0.3"
+      },
+      "result": {
+        "uids": [
+          "37691"
+        ],
+        "37691": {
+          "uid": "37691",
+          "obj_type": "Duplication",
+          "accession": "VCV000037691",
+          "accession_version": "VCV000037691.85",
+          "title": "NM_007294.4(BRCA1):c.66dup (p.Glu23fs)",
+          "variation_set": [
+            {
+              "measure_id": "46247",
+              "variation_xrefs": [
+                {
+                  "db_source": "Breast Cancer Information Core (BIC) (BRCA1)",
+                  "db_id": "185&base_change=ins A"
+                },
+                {
+                  "db_source": "ClinGen",
+                  "db_id": "CA003784"
+                },
+                {
+                  "db_source": "dbSNP",
+                  "db_id": "80357783"
+                }
+              ],
+              "variation_name": "NM_007294.4(BRCA1):c.66dup (p.Glu23fs)",
+              "cdna_change": "c.66dup",
+              "aliases": [
+                "185_186insA",
+                "NP_009225.1:p.Glu23ArgfsTer18",
+                "185insA"
+              ],
+              "variation_loc": [
+                {
+                  "status": "current",
+                  "assembly_name": "GRCh38",
+                  "chr": "17",
+                  "band": "17q21.31",
+                  "start": "43124030",
+                  "stop": "43124031",
+                  "inner_start": "",
+                  "inner_stop": "",
+                  "outer_start": "",
+                  "outer_stop": "",
+                  "display_start": "43124030",
+                  "display_stop": "43124031",
+                  "assembly_acc_ver": "GCF_000001405.38",
+                  "annotation_release": "",
+                  "alt": "",
+                  "ref": ""
+                },
+                {
+                  "status": "previous",
+                  "assembly_name": "GRCh37",
+                  "chr": "17",
+                  "band": "17q21.31",
+                  "start": "41276047",
+                  "stop": "41276048",
+                  "inner_start": "",
+                  "inner_stop": "",
+                  "outer_start": "",
+                  "outer_stop": "",
+                  "display_start": "41276047",
+                  "display_stop": "41276048",
+                  "assembly_acc_ver": "GCF_000001405.25",
+                  "annotation_release": "",
+                  "alt": "",
+                  "ref": ""
+                }
+              ],
+              "allele_freq_set": [
+                {
+                  "source": "The Genome Aggregation Database (gnomAD), exomes",
+                  "value": "0.00000",
+                  "minor_allele": ""
+                },
+                {
+                  "source": "Trans-Omics for Precision Medicine (TOPMed)",
+                  "value": "0.00001",
+                  "minor_allele": ""
+                }
+              ],
+              "variant_type": "Duplication",
+              "canonical_spdi": "NC_000017.11:43124030:T:TT",
+              "common_name": ""
+            }
+          ],
+          "supporting_submissions": {
+            "scv": [
+              "SCV000282347",
+              "SCV000564708",
+              "SCV000077100",
+              "SCV000144170",
+              "SCV000564309",
+              "SCV000699283",
+              "SCV000925806",
+              "SCV000693501",
+              "SCV001906189",
+              "SCV001931017",
+              "SCV001972604",
+              "SCV000326376",
+              "SCV000839318",
+              "SCV004215028",
+              "SCV005424226",
+              "SCV005640307",
+              "SCV000911363",
+              "SCV000265852",
+              "SCV000053877",
+              "SCV000587005",
+              "SCV000914333",
+              "SCV000923766",
+              "SCV001499756",
+              "SCV001552235",
+              "SCV001797997",
+              "SCV001741091",
+              "SCV002003984",
+              "SCV002026050",
+              "SCV002520918",
+              "SCV002537883",
+              "SCV000296291",
+              "SCV004244205",
+              "SCV005199764",
+              "SCV005363303",
+              "SCV000213973",
+              "SCV005872206",
+              "SCV000227401",
+              "SCV001774819",
+              "SCV004027618",
+              "SCV000488962",
+              "SCV003809723",
+              "SCV006554532",
+              "SCV007449507",
+              "SCV007592291",
+              "SCV007664198"
+            ],
+            "rcv": [
+              "RCV000031272",
+              "RCV000049087",
+              "RCV000163427",
+              "RCV000240681",
+              "RCV000478017",
+              "RCV000785198",
+              "RCV000778174",
+              "RCV001554246",
+              "RCV004802995",
+              "RCV004758615",
+              "RCV005007902"
+            ]
+          },
+          "germline_classification": {
+            "description": "Pathogenic",
+            "last_evaluated": "2016/04/22 00:00",
+            "review_status": "reviewed by expert panel",
+            "fda_recognized_database": "",
+            "trait_set": [
+              {
+                "trait_xrefs": [
+                  {
+                    "db_source": "Orphanet",
+                    "db_id": "145"
+                  },
+                  {
+                    "db_source": "MedGen",
+                    "db_id": "C2676676"
+                  },
+                  {
+                    "db_source": "MONDO",
+                    "db_id": "MONDO:0011450"
+                  },
+                  {
+                    "db_source": "OMIM",
+                    "db_id": "604370"
+                  }
+                ],
+                "trait_name": "Breast-ovarian cancer, familial, susceptibility to, 1"
+              }
+            ]
+          },
+          "clinical_impact_classification": {
+            "description": "",
+            "last_evaluated": "1/01/01 00:00",
+            "review_status": "",
+            "fda_recognized_database": "",
+            "trait_set": []
+          },
+          "oncogenicity_classification": {
+            "description": "",
+            "last_evaluated": "1/01/01 00:00",
+            "review_status": "",
+            "fda_recognized_database": "",
+            "trait_set": []
+          },
+          "record_status": "",
+          "gene_sort": "BRCA1",
+          "chr_sort": "17",
+          "location_sort": "00000000000043124030",
+          "variation_set_name": "",
+          "variation_set_id": "",
+          "genes": [
+            {
+              "symbol": "BRCA1",
+              "geneid": "672",
+              "strand": "-",
+              "source": "submitted"
+            }
+          ],
+          "molecular_consequence_list": [
+            "frameshift variant",
+            "5 prime UTR variant",
+            "non-coding transcript variant"
+          ],
+          "protein_change": "E23fs",
+          "fda_recognized_database": ""
+        }
+      }
+    },
+    "submissions": {
+      "37691": [
+        {
+          "accession": "SCV000282347",
+          "description": "Pathogenic",
+          "review_status": "reviewed by expert panel",
+          "traits": []
+        },
+        {
+          "accession": "SCV000564708",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": [
+            "Not Provided"
+          ]
+        },
+        {
+          "accession": "SCV000077100",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        },
+        {
+          "accession": "SCV000144170",
+          "description": "Pathogenic",
+          "review_status": "no assertion criteria provided",
+          "traits": [
+            "Breast-ovarian cancer, familial 1"
+          ]
+        },
+        {
+          "accession": "SCV000564309",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        },
+        {
+          "accession": "SCV000699283",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        },
+        {
+          "accession": "SCV000925806",
+          "description": "Pathogenic",
+          "review_status": "no assertion criteria provided",
+          "traits": []
+        },
+        {
+          "accession": "SCV000693501",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": [
+            "not provided"
+          ]
+        },
+        {
+          "accession": "SCV001906189",
+          "description": "Pathogenic",
+          "review_status": "no assertion criteria provided",
+          "traits": [
+            "not provided"
+          ]
+        },
+        {
+          "accession": "SCV001931017",
+          "description": "Pathogenic",
+          "review_status": "no assertion criteria provided",
+          "traits": [
+            "not provided"
+          ]
+        },
+        {
+          "accession": "SCV001972604",
+          "description": "Pathogenic",
+          "review_status": "no assertion criteria provided",
+          "traits": [
+            "not provided"
+          ]
+        },
+        {
+          "accession": "SCV000326376",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        },
+        {
+          "accession": "SCV000839318",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": [
+            "Hereditary breast and ovarian cancer syndrome"
+          ]
+        },
+        {
+          "accession": "SCV004215028",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        },
+        {
+          "accession": "SCV005424226",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        },
+        {
+          "accession": "SCV005640307",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        },
+        {
+          "accession": "SCV000911363",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        },
+        {
+          "accession": "SCV000265852",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        },
+        {
+          "accession": "SCV000053877",
+          "description": "Pathogenic",
+          "review_status": "no assertion criteria provided",
+          "traits": [
+            "Breast-ovarian cancer, familial 1"
+          ]
+        },
+        {
+          "accession": "SCV000587005",
+          "description": "Pathogenic",
+          "review_status": "no assertion criteria provided",
+          "traits": []
+        },
+        {
+          "accession": "SCV000914333",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": [
+            "Hereditary Breast Carcinoma"
+          ]
+        },
+        {
+          "accession": "SCV000923766",
+          "description": "Pathogenic",
+          "review_status": "no assertion criteria provided",
+          "traits": []
+        },
+        {
+          "accession": "SCV001499756",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        },
+        {
+          "accession": "SCV001552235",
+          "description": "Uncertain significance",
+          "review_status": "no assertion criteria provided",
+          "traits": [
+            "not provided"
+          ]
+        },
+        {
+          "accession": "SCV001797997",
+          "description": "Pathogenic",
+          "review_status": "no assertion criteria provided",
+          "traits": [
+            "not provided"
+          ]
+        },
+        {
+          "accession": "SCV001741091",
+          "description": "Pathogenic",
+          "review_status": "no assertion criteria provided",
+          "traits": [
+            "not provided"
+          ]
+        },
+        {
+          "accession": "SCV002003984",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        },
+        {
+          "accession": "SCV002026050",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        },
+        {
+          "accession": "SCV002520918",
+          "description": "Pathogenic",
+          "review_status": "no assertion criteria provided",
+          "traits": []
+        },
+        {
+          "accession": "SCV002537883",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        },
+        {
+          "accession": "SCV000296291",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": [
+            "not provided"
+          ]
+        },
+        {
+          "accession": "SCV004244205",
+          "description": "Pathogenic",
+          "review_status": "no assertion criteria provided",
+          "traits": []
+        },
+        {
+          "accession": "SCV005199764",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": [
+            "not provided"
+          ]
+        },
+        {
+          "accession": "SCV005363303",
+          "description": "Pathogenic",
+          "review_status": "no assertion criteria provided",
+          "traits": [
+            "BRCA1-related condition"
+          ]
+        },
+        {
+          "accession": "SCV000213973",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        },
+        {
+          "accession": "SCV005872206",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": [
+            "not provided"
+          ]
+        },
+        {
+          "accession": "SCV000227401",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": [
+            "not provided"
+          ]
+        },
+        {
+          "accession": "SCV001774819",
+          "description": "Pathogenic",
+          "review_status": "no assertion criteria provided",
+          "traits": []
+        },
+        {
+          "accession": "SCV004027618",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        },
+        {
+          "accession": "SCV000488962",
+          "description": "Pathogenic",
+          "review_status": "no assertion criteria provided",
+          "traits": []
+        },
+        {
+          "accession": "SCV003809723",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": [
+            "not provided"
+          ]
+        },
+        {
+          "accession": "SCV006554532",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        },
+        {
+          "accession": "SCV007449507",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        },
+        {
+          "accession": "SCV007592291",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        },
+        {
+          "accession": "SCV007664198",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        }
+      ]
+    }
+  }
+}

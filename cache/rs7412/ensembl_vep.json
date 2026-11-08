@@ -1,0 +1,2718 @@
+{
+  "source": "Ensembl VEP",
+  "retrieved": "2026-11-08T03:54:43+00:00",
+  "request": {
+    "rsid": "rs7412",
+    "params": {
+      "AlphaMissense": "1",
+      "CADD": "1",
+      "SpliceAI": "1",
+      "canonical": "1",
+      "variant_class": "1",
+      "domains": "1"
+    }
+  },
+  "response": [
+    {
+      "start": 44908822,
+      "most_severe_consequence": "missense_variant",
+      "end": 44908822,
+      "allele_string": "C/T",
+      "strand": 1,
+      "transcript_consequences": [
+        {
+          "strand": 1,
+          "consequence_terms": [
+            "missense_variant"
+          ],
+          "cadd_raw": 4.372081,
+          "sift_score": 0,
+          "gene_id": "ENSG00000130203",
+          "cadd_phred": 25.1,
+          "cdna_end": 595,
+          "spliceai": {
+            "DS_DL": 0,
+            "SYMBOL": "APOE",
+            "DP_DL": 10,
+            "DS_AL": 0,
+            "DP_AG": 10,
+            "DP_DG": -39,
+            "DP_AL": 0,
+            "DS_DG": 0,
+            "DS_AG": 0
+          },
+          "cds_start": 526,
+          "hgnc_id": "HGNC:613",
+          "protein_start": 176,
+          "gene_symbol_source": "HGNC",
+          "gene_symbol": "APOE",
+          "cdna_start": 595,
+          "codons": "Cgc/Tgc",
+          "alphamissense": {
+            "am_class": "ambiguous",
+            "am_pathogenicity": 0.4222
+          },
+          "cds_end": 526,
+          "canonical": 1,
+          "variant_allele": "T",
+          "biotype": "protein_coding",
+          "impact": "MODERATE",
+          "amino_acids": "R/C",
+          "transcript_id": "ENST00000252486",
+          "sift_prediction": "deleterious",
+          "protein_end": 176,
+          "domains": [
+            {
+              "db": "Gene3D",
+              "name": 1
+            },
+            {
+              "db": "ENSP_mappings",
+              "name": "1b68"
+            },
+            {
+              "db": "ENSP_mappings",
+              "name": "1bz4"
+            },
+            {
+              "name": "1ea8",
+              "db": "ENSP_mappings"
+            },
+            {
+              "name": "1gs9",
+              "db": "ENSP_mappings"
+            },
+            {
+              "db": "ENSP_mappings",
+              "name": "1h7i"
+            },
+            {
+              "name": "1le2",
+              "db": "ENSP_mappings"
+            },
+            {
+              "name": "1le4",
+              "db": "ENSP_mappings"
+            },
+            {
+              "name": "1lpe",
+              "db": "ENSP_mappings"
+            },
+            {
+              "name": "1nfn",
+              "db": "ENSP_mappings"
+            },
+            {
+              "name": "1nfo",
+              "db": "ENSP_mappings"
+            },
+            {
+              "db": "ENSP_mappings",
+              "name": "1or2"
+            },
+            {
+              "db": "ENSP_mappings",
+              "name": "1or3"
+            },
+            {
+              "db": "ENSP_mappings",
+              "name": "2kc3"
+            },
+            {
+              "db": "ENSP_mappings",
+              "name": "2l7b"
+            },
+            {
+              "name": "6iwb",
+              "db": "ENSP_mappings"
+            },
+            {
+              "db": "ENSP_mappings",
+              "name": "6iwb"
+            },
+            {
+              "name": "6ncn",
+              "db": "ENSP_mappings"
+            },
+            {
+              "name": "6nco",
+              "db": "ENSP_mappings"
+            },
+            {
+              "name": "6v7m",
+              "db": "ENSP_mappings"
+            },
+            {
+              "db": "ENSP_mappings",
+              "name": "7fcr"
+            },
+            {
+              "db": "ENSP_mappings",
+              "name": "7fcs"
+            },
+            {
+              "db": "ENSP_mappings",
+              "name": "7uvj"
+            },
+            {
+              "db": "ENSP_mappings",
+              "name": "7uvj"
+            },
+            {
+              "db": "ENSP_mappings",
+              "name": "8ax8"
+            },
+            {
+              "name": "8ax9",
+              "db": "ENSP_mappings"
+            },
+            {
+              "db": "ENSP_mappings",
+              "name": "8cdy"
+            },
+            {
+              "name": "8ce0",
+              "db": "ENSP_mappings"
+            },
+            {
+              "name": "8grx",
+              "db": "ENSP_mappings"
+            },
+            {
+              "db": "ENSP_mappings",
+              "name": "8grx"
+            },
+            {
+              "name": "AF",
+              "db": "ENSP_mappings"
+            },
+            {
+              "name": "AF",
+              "db": "ENSP_mappings"
+            },
+            {
+              "db": "Phobius",
+              "name": "NON_CYTOPLASMIC_DOMAIN"
+            },
+            {
+              "name": "PF01442",
+              "db": "Pfam"
+            },
+            {
+              "name": "PTHR18976",
+              "db": "PANTHER"
+            },
+            {
+              "name": "SSF58113",
+              "db": "Superfamily"
+            },
+            {
+              "db": "Superfamily",
+              "name": "SSF58113"
+            }
+          ]
+        },
+        {
+          "amino_acids": "R/C",
+          "impact": "MODERATE",
+          "transcript_id": "ENST00000425718",
+          "biotype": "protein_coding",
+          "domains": [
+            {
+              "name": 1,
+              "db": "Gene3D"
+            },
+            {
+              "db": "ENSP_mappings",
+              "name": "AF"
+            },
+            {
+              "db": "ENSP_mappings",
+              "name": "AF"
+            },
+            {
+              "db": "Phobius",
+              "name": "NON_CYTOPLASMIC_DOMAIN"
+            },
+            {
+              "db": "Pfam",
+              "name": "PF01442"
+            },
+            {
+              "name": "PTHR18976",
+              "db": "PANTHER"
+            },
+            {
+              "name": "SSF47162",
+              "db": "Superfamily"
+            },
+            {
+              "db": "Superfamily",
+              "name": "SSF47162"
+            }
+          ],
+          "sift_prediction": "deleterious",
+          "protein_end": 176,
+          "cdna_start": 791,
+          "codons": "Cgc/Tgc",
+          "gene_symbol_source": "HGNC",
+          "gene_symbol": "APOE",
+          "variant_allele": "T",
+          "alphamissense": {
+            "am_pathogenicity": 0.4222,
+            "am_class": "ambiguous"
+          },
+          "cds_end": 526,
+          "cdna_end": 791,
+          "spliceai": {
+            "DS_DL": 0,
+            "SYMBOL": "APOE",
+            "DS_DG": 0,
+            "DS_AG": 0,
+            "DP_DG": -39,
+            "DP_AL": 0,
+            "DS_AL": 0,
+            "DP_DL": 10,
+            "DP_AG": 10
+          },
+          "cadd_phred": 25.1,
+          "flags": [
+            "cds_end_NF"
+          ],
+          "protein_start": 176,
+          "cds_start": 526,
+          "hgnc_id": "HGNC:613",
+          "strand": 1,
+          "sift_score": 0,
+          "gene_id": "ENSG00000130203",
+          "cadd_raw": 4.372081,
+          "consequence_terms": [
+            "missense_variant"
+          ]
+        },
+        {
+          "protein_end": 202,
+          "sift_prediction": "deleterious",
+          "domains": [
+            {
+              "name": 1,
+              "db": "Gene3D"
+            },
+            {
+              "name": "AF",
+              "db": "ENSP_mappings"
+            },
+            {
+              "db": "ENSP_mappings",
+              "name": "AF"
+            },
+            {
+              "db": "Phobius",
+              "name": "NON_CYTOPLASMIC_DOMAIN"
+            },
+            {
+              "db": "Pfam",
+              "name": "PF01442"
+            },
+            {
+              "name": "PTHR18976",
+              "db": "PANTHER"
+            },
+            {
+              "name": "SSF47162",
+              "db": "Superfamily"
+            },
+            {
+              "name": "SSF47162",
+              "db": "Superfamily"
+            }
+          ],
+          "impact": "MODERATE",
+          "amino_acids": "R/C",
+          "transcript_id": "ENST00000434152",
+          "biotype": "protein_coding",
+          "variant_allele": "T",
+          "alphamissense": {
+            "am_class": "ambiguous",
+            "am_pathogenicity": 0.4222
+          },
+          "cds_end": 604,
+          "cdna_start": 661,
+          "codons": "Cgc/Tgc",
+          "gene_symbol_source": "HGNC",
+          "gene_symbol": "APOE",
+          "flags": [
+            "cds_end_NF"
+          ],
+          "protein_start": 202,
+          "cds_start": 604,
+          "hgnc_id": "HGNC:613",
+          "cdna_end": 661,
+          "spliceai": {
+            "DP_AL": 0,
+            "DP_DG": -39,
+            "DS_DG": 0,
+            "DS_AG": 0,
+            "DP_AG": 10,
+            "DP_DL": 10,
+            "DS_AL": 0,
+            "DS_DL": 0,
+            "SYMBOL": "APOE"
+          },
+          "polyphen_prediction": "probably_damaging",
+          "cadd_phred": 25.1,
+          "gene_id": "ENSG00000130203",
+          "sift_score": 0,
+          "consequence_terms": [
+            "missense_variant"
+          ],
+          "cadd_raw": 4.372081,
+          "polyphen_score": 1,
+          "strand": 1
+        },
+        {
+          "strand": 1,
+          "sift_score": 0,
+          "gene_id": "ENSG00000130203",
+          "consequence_terms": [
+            "missense_variant"
+          ],
+          "cadd_raw": 4.372081,
+          "spliceai": {
+            "SYMBOL": "APOE",
+            "DS_DL": 0,
+            "DS_AG": 0,
+            "DS_DG": 0,
+            "DP_DG": -39,
+            "DP_AL": 0,
+            "DP_AG": 10,
+            "DS_AL": 0,
+            "DP_DL": 10
+          },
+          "cdna_end": 615,
+          "cadd_phred": 25.1,
+          "flags": [
+            "cds_end_NF"
+          ],
+          "protein_start": 176,
+          "cds_start": 526,
+          "hgnc_id": "HGNC:613",
+          "codons": "Cgc/Tgc",
+          "cdna_start": 615,
+          "gene_symbol_source": "HGNC",
+          "gene_symbol": "APOE",
+          "variant_allele": "T",
+          "alphamissense": {
+            "am_pathogenicity": 0.4222,
+            "am_class": "ambiguous"
+          },
+          "cds_end": 526,
+          "amino_acids": "R/C",
+          "impact": "MODERATE",
+          "transcript_id": "ENST00000446996",
+          "biotype": "protein_coding",
+          "sift_prediction": "deleterious",
+          "protein_end": 176,
+          "domains": [
+            {
+              "db": "Gene3D",
+              "name": 1
+            },
+            {
+              "db": "ENSP_mappings",
+              "name": "AF"
+            },
+            {
+              "name": "AF",
+              "db": "ENSP_mappings"
+            },
+            {
+              "db": "Phobius",
+              "name": "NON_CYTOPLASMIC_DOMAIN"
+            },
+            {
+              "name": "PF01442",
+              "db": "Pfam"
+            },
+            {
+              "db": "PANTHER",
+              "name": "PTHR18976"
+            },
+            {
+              "name": "SSF47162",
+              "db": "Superfamily"
+            },
+            {
+              "db": "Superfamily",
+              "name": "SSF47162"
+            }
+          ]
+        },
+        {
+          "biotype": "retained_intron",
+          "cadd_phred": 25.1,
+          "impact": "MODIFIER",
+          "spliceai": {
+            "SYMBOL": "APOE",
+            "DS_DL": 0,
+            "DS_DG": 0,
+            "DS_AG": 0,
+            "DP_AL": 0,
+            "DP_DG": -39,
+            "DS_AL": 0,
+            "DP_DL": 10,
+            "DP_AG": 10
+          },
+          "transcript_id": "ENST00000485628",
+          "hgnc_id": "HGNC:613",
+          "distance": 1496,
+          "gene_symbol_source": "HGNC",
+          "gene_symbol": "APOE",
+          "strand": 1,
+          "cadd_raw": 4.372081,
+          "consequence_terms": [
+            "downstream_gene_variant"
+          ],
+          "variant_allele": "T",
+          "gene_id": "ENSG00000130203"
+        },
+        {
+          "biotype": "protein_coding",
+          "impact": "MODERATE",
+          "amino_acids": "R/C",
+          "transcript_id": "ENST00000864817",
+          "sift_prediction": "deleterious",
+          "protein_end": 176,
+          "domains": [
+            {
+              "name": 1,
+              "db": "Gene3D"
+            },
+            {
+              "db": "Gene3D",
+              "name": 1
+            },
+            {
+              "db": "Phobius",
+              "name": "NON_CYTOPLASMIC_DOMAIN"
+            },
+            {
+              "db": "Pfam",
+              "name": "PF01442"
+            },
+            {
+              "db": "PANTHER",
+              "name": "PTHR18976"
+            },
+            {
+              "db": "Superfamily",
+              "name": "SSF58113"
+            },
+            {
+              "db": "Superfamily",
+              "name": "SSF58113"
+            }
+          ],
+          "gene_symbol_source": "HGNC",
+          "gene_symbol": "APOE",
+          "codons": "Cgc/Tgc",
+          "cdna_start": 697,
+          "alphamissense": {
+            "am_class": "ambiguous",
+            "am_pathogenicity": 0.4222
+          },
+          "cds_end": 526,
+          "variant_allele": "T",
+          "cadd_phred": 25.1,
+          "spliceai": {
+            "DS_AL": 0,
+            "DP_DL": 10,
+            "DP_AG": 10,
+            "DS_DG": 0,
+            "DS_AG": 0,
+            "DP_DG": -39,
+            "DP_AL": 0,
+            "SYMBOL": "APOE",
+            "DS_DL": 0
+          },
+          "cdna_end": 697,
+          "cds_start": 526,
+          "hgnc_id": "HGNC:613",
+          "protein_start": 176,
+          "strand": 1,
+          "cadd_raw": 4.372081,
+          "consequence_terms": [
+            "missense_variant"
+          ],
+          "sift_score": 0,
+          "gene_id": "ENSG00000130203"
+        },
+        {
+          "strand": 1,
+          "consequence_terms": [
+            "missense_variant"
+          ],
+          "cadd_raw": 4.372081,
+          "sift_score": 0,
+          "gene_id": "ENSG00000130203",
+          "cadd_phred": 25.1,
+          "cdna_end": 628,
+          "spliceai": {
+            "SYMBOL": "APOE",
+            "DS_DL": 0,
+            "DP_AL": 0,
+            "DP_DG": -39,
+            "DS_DG": 0,
+            "DS_AG": 0,
+            "DS_AL": 0,
+            "DP_DL": 10,
+            "DP_AG": 10
+          },
+          "cds_start": 526,
+          "hgnc_id": "HGNC:613",
+          "protein_start": 176,
+          "gene_symbol_source": "HGNC",
+          "gene_symbol": "APOE",
+          "codons": "Cgc/Tgc",
+          "cdna_start": 628,
+          "alphamissense": {
+            "am_class": "ambiguous",
+            "am_pathogenicity": 0.4222
+          },
+          "cds_end": 526,
+          "variant_allele": "T",
+          "biotype": "protein_coding",
+          "impact": "MODERATE",
+          "amino_acids": "R/C",
+          "transcript_id": "ENST00000864820",
+          "protein_end": 176,
+          "sift_prediction": "deleterious",
+          "domains": [
+            {
+              "db": "Gene3D",
+              "name": 1
+            },
+            {
+              "name": 1,
+              "db": "Gene3D"
+            },
+            {
+              "name": "NON_CYTOPLASMIC_DOMAIN",
+              "db": "Phobius"
+            },
+            {
+              "db": "Pfam",
+              "name": "PF01442"
+            },
+            {
+              "name": "PTHR18976",
+              "db": "PANTHER"
+            },
+            {
+              "db": "Superfamily",
+              "name": "SSF58113"
+            },
+            {
+              "name": "SSF58113",
+              "db": "Superfamily"
+            }
+          ]
+        },
+        {
+          "gene_symbol_source": "HGNC",
+          "gene_symbol": "APOE",
+          "codons": "Cgc/Tgc",
+          "cdna_start": 1042,
+          "alphamissense": {
+            "am_class": "ambiguous",
+            "am_pathogenicity": 0.4222
+          },
+          "cds_end": 526,
+          "variant_allele": "T",
+          "biotype": "protein_coding",
+          "amino_acids": "R/C",
+          "impact": "MODERATE",
+          "transcript_id": "ENST00000864822",
+          "domains": [
+            {
+              "db": "Gene3D",
+              "name": 1
+            },
+            {
+              "name": 1,
+              "db": "Gene3D"
+            },
+            {
+              "db": "Phobius",
+              "name": "NON_CYTOPLASMIC_DOMAIN"
+            },
+            {
+              "db": "Pfam",
+              "name": "PF01442"
+            },
+            {
+              "db": "PANTHER",
+              "name": "PTHR18976"
+            },
+            {
+              "db": "Superfamily",
+              "name": "SSF58113"
+            },
+            {
+              "name": "SSF58113",
+              "db": "Superfamily"
+            }
+          ],
+          "sift_prediction": "deleterious",
+          "protein_end": 176,
+          "strand": 1,
+          "consequence_terms": [
+            "missense_variant"
+          ],
+          "cadd_raw": 4.372081,
+          "gene_id": "ENSG00000130203",
+          "sift_score": 0,
+          "cadd_phred": 25.1,
+          "cdna_end": 1042,
+          "spliceai": {
+            "DS_AG": 0,
+            "DS_DG": 0,
+            "DP_DG": -39,
+            "DP_AL": 0,
+            "DP_AG": 10,
+            "DS_AL": 0,
+            "DP_DL": 10,
+            "DS_DL": 0,
+            "SYMBOL": "APOE"
+          },
+          "cds_start": 526,
+          "hgnc_id": "HGNC:613",
+          "protein_start": 176
+        },
+        {
+          "consequence_terms": [
+            "intron_variant"
+          ],
+          "cadd_raw": 4.372081,
+          "gene_id": "ENSG00000130203",
+          "variant_allele": "T",
+          "gene_symbol_source": "HGNC",
+          "gene_symbol": "APOE",
+          "strand": 1,
+          "hgnc_id": "HGNC:613",
+          "cadd_phred": 25.1,
+          "biotype": "protein_coding",
+          "spliceai": {
+            "SYMBOL": "APOE",
+            "DS_DL": 0,
+            "DP_AG": 10,
+            "DP_DL": 10,
+            "DS_AL": 0,
+            "DS_AG": 0,
+            "DS_DG": 0,
+            "DP_DG": -39,
+            "DP_AL": 0
+          },
+          "impact": "MODIFIER",
+          "transcript_id": "ENST00000864824"
+        },
+        {
+          "protein_start": 176,
+          "hgnc_id": "HGNC:613",
+          "cds_start": 526,
+          "spliceai": {
+            "DP_DL": 10,
+            "DS_AL": 0,
+            "DP_AG": 10,
+            "DP_DG": -39,
+            "DP_AL": 0,
+            "DS_AG": 0,
+            "DS_DG": 0,
+            "SYMBOL": "APOE",
+            "DS_DL": 0
+          },
+          "cdna_end": 578,
+          "cadd_phred": 25.1,
+          "gene_id": "ENSG00000130203",
+          "sift_score": 0,
+          "consequence_terms": [
+            "missense_variant"
+          ],
+          "cadd_raw": 4.372081,
+          "strand": 1,
+          "sift_prediction": "deleterious",
+          "domains": [
+            {
+              "name": 1,
+              "db": "Gene3D"
+            },
+            {
+              "db": "Gene3D",
+              "name": 1
+            },
+            {
+              "name": "NON_CYTOPLASMIC_DOMAIN",
+              "db": "Phobius"
+            },
+            {
+              "db": "Pfam",
+              "name": "PF01442"
+            },
+            {
+              "name": "PTHR18976",
+              "db": "PANTHER"
+            },
+            {
+              "db": "Superfamily",
+              "name": "SSF58113"
+            },
+            {
+              "db": "Superfamily",
+              "name": "SSF58113"
+            }
+          ],
+          "protein_end": 176,
+          "transcript_id": "ENST00000864826",
+          "amino_acids": "R/C",
+          "impact": "MODERATE",
+          "biotype": "protein_coding",
+          "variant_allele": "T",
+          "cds_end": 526,
+          "alphamissense": {
+            "am_pathogenicity": 0.4222,
+            "am_class": "ambiguous"
+          },
+          "cdna_start": 578,
+          "codons": "Cgc/Tgc",
+          "gene_symbol": "APOE",
+          "gene_symbol_source": "HGNC"
+        },
+        {
+          "strand": 1,
+          "sift_score": 0,
+          "gene_id": "ENSG00000130203",
+          "cadd_raw": 4.372081,
+          "consequence_terms": [
+            "missense_variant"
+          ],
+          "cdna_end": 702,
+          "spliceai": {
+            "DP_AL": 0,
+            "DP_DG": -39,
+            "DS_DG": 0,
+            "DS_AG": 0,
+            "DP_AG": 10,
+            "DP_DL": 10,
+            "DS_AL": 0,
+            "DS_DL": 0,
+            "SYMBOL": "APOE"
+          },
+          "cadd_phred": 25.1,
+          "protein_start": 176,
+          "cds_start": 526,
+          "hgnc_id": "HGNC:613",
+          "codons": "Cgc/Tgc",
+          "cdna_start": 702,
+          "gene_symbol_source": "HGNC",
+          "gene_symbol": "APOE",
+          "variant_allele": "T",
+          "alphamissense": {
+            "am_class": "ambiguous",
+            "am_pathogenicity": 0.4222
+          },
+          "cds_end": 526,
+          "impact": "MODERATE",
+          "amino_acids": "R/C",
+          "transcript_id": "ENST00000864828",
+          "biotype": "protein_coding",
+          "protein_end": 176,
+          "sift_prediction": "deleterious",
+          "domains": [
+            {
+              "db": "Gene3D",
+              "name": 1
+            },
+            {
+              "db": "Gene3D",
+              "name": 1
+            },
+            {
+              "db": "Phobius",
+              "name": "NON_CYTOPLASMIC_DOMAIN"
+            },
+            {
+              "db": "Pfam",
+              "name": "PF01442"
+            },
+            {
+              "db": "PANTHER",
+              "name": "PTHR18976"
+            },
+            {
+              "db": "Superfamily",
+              "name": "SSF58113"
+            },
+            {
+              "name": "SSF58113",
+              "db": "Superfamily"
+            }
+          ]
+        },
+        {
+          "codons": "Cgc/Tgc",
+          "cdna_start": 901,
+          "gene_symbol_source": "HGNC",
+          "gene_symbol": "APOE",
+          "variant_allele": "T",
+          "alphamissense": {
+            "am_pathogenicity": 0.4222,
+            "am_class": "ambiguous"
+          },
+          "cds_end": 526,
+          "amino_acids": "R/C",
+          "impact": "MODERATE",
+          "transcript_id": "ENST00000864829",
+          "biotype": "protein_coding",
+          "sift_prediction": "deleterious",
+          "domains": [
+            {
+              "db": "Gene3D",
+              "name": 1
+            },
+            {
+              "db": "Gene3D",
+              "name": 1
+            },
+            {
+              "db": "Phobius",
+              "name": "NON_CYTOPLASMIC_DOMAIN"
+            },
+            {
+              "name": "PF01442",
+              "db": "Pfam"
+            },
+            {
+              "name": "PTHR18976",
+              "db": "PANTHER"
+            },
+            {
+              "db": "Superfamily",
+              "name": "SSF58113"
+            },
+            {
+              "db": "Superfamily",
+              "name": "SSF58113"
+            }
+          ],
+          "protein_end": 176,
+          "strand": 1,
+          "gene_id": "ENSG00000130203",
+          "sift_score": 0,
+          "consequence_terms": [
+            "missense_variant"
+          ],
+          "cadd_raw": 4.372081,
+          "spliceai": {
+            "DS_DL": 0,
+            "SYMBOL": "APOE",
+            "DS_AG": 0,
+            "DS_DG": 0,
+            "DP_DG": -39,
+            "DP_AL": 0,
+            "DP_AG": 10,
+            "DS_AL": 0,
+            "DP_DL": 10
+          },
+          "cdna_end": 901,
+          "cadd_phred": 25.1,
+          "protein_start": 176,
+          "cds_start": 526,
+          "hgnc_id": "HGNC:613"
+        },
+        {
+          "hgnc_id": "HGNC:613",
+          "cadd_phred": 25.1,
+          "biotype": "protein_coding",
+          "transcript_id": "ENST00000864830",
+          "spliceai": {
+            "DS_DL": 0,
+            "SYMBOL": "APOE",
+            "DP_AG": 10,
+            "DP_DL": 10,
+            "DS_AL": 0,
+            "DS_DG": 0,
+            "DS_AG": 0,
+            "DP_DG": -39,
+            "DP_AL": 0
+          },
+          "impact": "MODIFIER",
+          "consequence_terms": [
+            "intron_variant"
+          ],
+          "cadd_raw": 4.372081,
+          "variant_allele": "T",
+          "gene_id": "ENSG00000130203",
+          "gene_symbol": "APOE",
+          "gene_symbol_source": "HGNC",
+          "strand": 1
+        },
+        {
+          "protein_start": 194,
+          "cds_start": 580,
+          "hgnc_id": "HGNC:613",
+          "spliceai": {
+            "DP_DG": -39,
+            "DP_AL": 0,
+            "DS_DG": 0,
+            "DS_AG": 0,
+            "DP_DL": 10,
+            "DS_AL": 0,
+            "DP_AG": 10,
+            "SYMBOL": "APOE",
+            "DS_DL": 0
+          },
+          "cdna_end": 974,
+          "cadd_phred": 25.1,
+          "gene_id": "ENSG00000130203",
+          "sift_score": 0,
+          "consequence_terms": [
+            "missense_variant"
+          ],
+          "cadd_raw": 4.372081,
+          "strand": 1,
+          "sift_prediction": "deleterious",
+          "domains": [
+            {
+              "db": "Superfamily",
+              "name": "SSF58113"
+            },
+            {
+              "name": "PF01442",
+              "db": "Pfam"
+            },
+            {
+              "db": "Gene3D",
+              "name": 1
+            },
+            {
+              "name": "NON_CYTOPLASMIC_DOMAIN",
+              "db": "Phobius"
+            },
+            {
+              "name": "NON_CYTOPLASMIC_DOMAIN",
+              "db": "Phobius"
+            },
+            {
+              "name": "PTHR18976",
+              "db": "PANTHER"
+            }
+          ],
+          "protein_end": 194,
+          "impact": "MODERATE",
+          "amino_acids": "R/C",
+          "transcript_id": "ENST00000864831",
+          "biotype": "protein_coding",
+          "variant_allele": "T",
+          "alphamissense": {
+            "am_class": "ambiguous",
+            "am_pathogenicity": 0.4222
+          },
+          "cds_end": 580,
+          "cdna_start": 974,
+          "codons": "Cgc/Tgc",
+          "gene_symbol_source": "HGNC",
+          "gene_symbol": "APOE"
+        },
+        {
+          "strand": 1,
+          "cadd_raw": 4.372081,
+          "consequence_terms": [
+            "missense_variant"
+          ],
+          "gene_id": "ENSG00000130203",
+          "sift_score": 0,
+          "cadd_phred": 25.1,
+          "cdna_end": 971,
+          "spliceai": {
+            "SYMBOL": "APOE",
+            "DS_DL": 0,
+            "DP_DG": -39,
+            "DP_AL": 0,
+            "DS_DG": 0,
+            "DS_AG": 0,
+            "DP_AG": 10,
+            "DS_AL": 0,
+            "DP_DL": 10
+          },
+          "hgnc_id": "HGNC:613",
+          "cds_start": 577,
+          "protein_start": 193,
+          "gene_symbol": "APOE",
+          "gene_symbol_source": "HGNC",
+          "cdna_start": 971,
+          "codons": "Cgc/Tgc",
+          "cds_end": 577,
+          "alphamissense": {
+            "am_class": "ambiguous",
+            "am_pathogenicity": 0.4222
+          },
+          "variant_allele": "T",
+          "biotype": "protein_coding",
+          "transcript_id": "ENST00000864832",
+          "amino_acids": "R/C",
+          "impact": "MODERATE",
+          "sift_prediction": "deleterious",
+          "protein_end": 193,
+          "domains": [
+            {
+              "db": "Gene3D",
+              "name": 1
+            },
+            {
+              "db": "Gene3D",
+              "name": 1
+            },
+            {
+              "db": "Phobius",
+              "name": "NON_CYTOPLASMIC_DOMAIN"
+            },
+            {
+              "db": "Pfam",
+              "name": "PF01442"
+            },
+            {
+              "name": "PTHR18976",
+              "db": "PANTHER"
+            },
+            {
+              "name": "SSF58113",
+              "db": "Superfamily"
+            },
+            {
+              "name": "SSF58113",
+              "db": "Superfamily"
+            }
+          ]
+        },
+        {
+          "cadd_phred": 25.1,
+          "biotype": "protein_coding",
+          "impact": "LOW",
+          "spliceai": {
+            "DP_AG": 10,
+            "DP_DL": 10,
+            "DS_AL": 0,
+            "DP_AL": 0,
+            "DP_DG": -39,
+            "DS_DG": 0,
+            "DS_AG": 0,
+            "DS_DL": 0,
+            "SYMBOL": "APOE"
+          },
+          "transcript_id": "ENST00000864833",
+          "hgnc_id": "HGNC:613",
+          "gene_symbol_source": "HGNC",
+          "gene_symbol": "APOE",
+          "strand": 1,
+          "cadd_raw": 4.372081,
+          "consequence_terms": [
+            "splice_polypyrimidine_tract_variant",
+            "intron_variant"
+          ],
+          "variant_allele": "T",
+          "gene_id": "ENSG00000130203"
+        },
+        {
+          "gene_symbol": "APOE",
+          "gene_symbol_source": "HGNC",
+          "cdna_start": 905,
+          "codons": "Cgc/Tgc",
+          "cds_end": 526,
+          "alphamissense": {
+            "am_class": "ambiguous",
+            "am_pathogenicity": 0.4222
+          },
+          "variant_allele": "T",
+          "biotype": "protein_coding",
+          "transcript_id": "ENST00000864834",
+          "impact": "MODERATE",
+          "amino_acids": "R/C",
+          "protein_end": 176,
+          "sift_prediction": "deleterious",
+          "domains": [
+            {
+              "db": "Pfam",
+              "name": "PF01442"
+            },
+            {
+              "db": "Gene3D",
+              "name": 1
+            },
+            {
+              "name": "NON_CYTOPLASMIC_DOMAIN",
+              "db": "Phobius"
+            },
+            {
+              "db": "Superfamily",
+              "name": "SSF58113"
+            },
+            {
+              "db": "PANTHER",
+              "name": "PTHR18976"
+            }
+          ],
+          "strand": 1,
+          "cadd_raw": 4.372081,
+          "consequence_terms": [
+            "missense_variant"
+          ],
+          "sift_score": 0,
+          "gene_id": "ENSG00000130203",
+          "cadd_phred": 25.1,
+          "spliceai": {
+            "SYMBOL": "APOE",
+            "DS_DL": 0,
+            "DS_AG": 0,
+            "DS_DG": 0,
+            "DP_DG": -39,
+            "DP_AL": 0,
+            "DP_AG": 10,
+            "DS_AL": 0,
+            "DP_DL": 10
+          },
+          "cdna_end": 905,
+          "hgnc_id": "HGNC:613",
+          "cds_start": 526,
+          "protein_start": 176
+        },
+        {
+          "variant_allele": "T",
+          "cds_end": 526,
+          "alphamissense": {
+            "am_pathogenicity": 0.4222,
+            "am_class": "ambiguous"
+          },
+          "cdna_start": 1037,
+          "codons": "Cgc/Tgc",
+          "gene_symbol": "APOE",
+          "gene_symbol_source": "HGNC",
+          "sift_prediction": "deleterious",
+          "domains": [
+            {
+              "name": 1,
+              "db": "Gene3D"
+            },
+            {
+              "db": "Gene3D",
+              "name": 1
+            },
+            {
+              "name": "NON_CYTOPLASMIC_DOMAIN",
+              "db": "Phobius"
+            },
+            {
+              "db": "Pfam",
+              "name": "PF01442"
+            },
+            {
+              "name": "PTHR18976",
+              "db": "PANTHER"
+            },
+            {
+              "name": "SSF58113",
+              "db": "Superfamily"
+            },
+            {
+              "db": "Superfamily",
+              "name": "SSF58113"
+            }
+          ],
+          "protein_end": 176,
+          "transcript_id": "ENST00000864835",
+          "impact": "MODERATE",
+          "amino_acids": "R/C",
+          "biotype": "protein_coding",
+          "gene_id": "ENSG00000130203",
+          "sift_score": 0,
+          "cadd_raw": 4.372081,
+          "consequence_terms": [
+            "missense_variant"
+          ],
+          "strand": 1,
+          "protein_start": 176,
+          "hgnc_id": "HGNC:613",
+          "cds_start": 526,
+          "cdna_end": 1037,
+          "spliceai": {
+            "DP_AG": 10,
+            "DS_AL": 0,
+            "DP_DL": 10,
+            "DP_AL": 0,
+            "DP_DG": -39,
+            "DS_AG": 0,
+            "DS_DG": 0,
+            "DS_DL": 0,
+            "SYMBOL": "APOE"
+          },
+          "cadd_phred": 25.1
+        },
+        {
+          "cds_start": 526,
+          "hgnc_id": "HGNC:613",
+          "protein_start": 176,
+          "cadd_phred": 25.1,
+          "spliceai": {
+            "DP_AG": 10,
+            "DP_DL": 10,
+            "DS_AL": 0,
+            "DS_DG": 0,
+            "DS_AG": 0,
+            "DP_DG": -39,
+            "DP_AL": 0,
+            "SYMBOL": "APOE",
+            "DS_DL": 0
+          },
+          "cdna_end": 750,
+          "cadd_raw": 4.372081,
+          "consequence_terms": [
+            "missense_variant"
+          ],
+          "sift_score": 0,
+          "gene_id": "ENSG00000130203",
+          "strand": 1,
+          "protein_end": 176,
+          "sift_prediction": "deleterious",
+          "domains": [
+            {
+              "name": 1,
+              "db": "Gene3D"
+            },
+            {
+              "name": 1,
+              "db": "Gene3D"
+            },
+            {
+              "db": "Phobius",
+              "name": "NON_CYTOPLASMIC_DOMAIN"
+            },
+            {
+              "db": "Pfam",
+              "name": "PF01442"
+            },
+            {
+              "name": "PTHR18976",
+              "db": "PANTHER"
+            },
+            {
+              "db": "Superfamily",
+              "name": "SSF58113"
+            },
+            {
+              "db": "Superfamily",
+              "name": "SSF58113"
+            }
+          ],
+          "biotype": "protein_coding",
+          "amino_acids": "R/C",
+          "impact": "MODERATE",
+          "transcript_id": "ENST00000864836",
+          "alphamissense": {
+            "am_pathogenicity": 0.4222,
+            "am_class": "ambiguous"
+          },
+          "cds_end": 526,
+          "variant_allele": "T",
+          "gene_symbol_source": "HGNC",
+          "gene_symbol": "APOE",
+          "cdna_start": 750,
+          "codons": "Cgc/Tgc"
+        },
+        {
+          "cdna_end": 709,
+          "spliceai": {
+            "DP_AL": 0,
+            "DP_DG": -39,
+            "DS_DG": 0,
+            "DS_AG": 0,
+            "DP_AG": 10,
+            "DP_DL": 10,
+            "DS_AL": 0,
+            "DS_DL": 0,
+            "SYMBOL": "APOE"
+          },
+          "cadd_phred": 25.1,
+          "protein_start": 176,
+          "cds_start": 526,
+          "hgnc_id": "HGNC:613",
+          "strand": 1,
+          "sift_score": 0,
+          "gene_id": "ENSG00000130203",
+          "consequence_terms": [
+            "missense_variant"
+          ],
+          "cadd_raw": 4.372081,
+          "amino_acids": "R/C",
+          "impact": "MODERATE",
+          "transcript_id": "ENST00000864837",
+          "biotype": "protein_coding",
+          "sift_prediction": "deleterious",
+          "domains": [
+            {
+              "name": 1,
+              "db": "Gene3D"
+            },
+            {
+              "db": "Gene3D",
+              "name": 1
+            },
+            {
+              "name": "NON_CYTOPLASMIC_DOMAIN",
+              "db": "Phobius"
+            },
+            {
+              "db": "Pfam",
+              "name": "PF01442"
+            },
+            {
+              "db": "PANTHER",
+              "name": "PTHR18976"
+            },
+            {
+              "name": "SSF58113",
+              "db": "Superfamily"
+            },
+            {
+              "db": "Superfamily",
+              "name": "SSF58113"
+            }
+          ],
+          "protein_end": 176,
+          "codons": "Cgc/Tgc",
+          "cdna_start": 709,
+          "gene_symbol_source": "HGNC",
+          "gene_symbol": "APOE",
+          "variant_allele": "T",
+          "alphamissense": {
+            "am_pathogenicity": 0.4222,
+            "am_class": "ambiguous"
+          },
+          "cds_end": 526
+        },
+        {
+          "alphamissense": {
+            "am_pathogenicity": 0.4222,
+            "am_class": "ambiguous"
+          },
+          "cds_end": 526,
+          "variant_allele": "T",
+          "gene_symbol_source": "HGNC",
+          "gene_symbol": "APOE",
+          "codons": "Cgc/Tgc",
+          "cdna_start": 612,
+          "domains": [
+            {
+              "name": 1,
+              "db": "Gene3D"
+            },
+            {
+              "db": "Gene3D",
+              "name": 1
+            },
+            {
+              "name": "NON_CYTOPLASMIC_DOMAIN",
+              "db": "Phobius"
+            },
+            {
+              "db": "Pfam",
+              "name": "PF01442"
+            },
+            {
+              "name": "PTHR18976",
+              "db": "PANTHER"
+            },
+            {
+              "name": "SSF58113",
+              "db": "Superfamily"
+            },
+            {
+              "name": "SSF58113",
+              "db": "Superfamily"
+            }
+          ],
+          "sift_prediction": "deleterious",
+          "protein_end": 176,
+          "biotype": "protein_coding",
+          "amino_acids": "R/C",
+          "impact": "MODERATE",
+          "transcript_id": "ENST00000864838",
+          "consequence_terms": [
+            "missense_variant"
+          ],
+          "cadd_raw": 4.372081,
+          "gene_id": "ENSG00000130203",
+          "sift_score": 0,
+          "strand": 1,
+          "cds_start": 526,
+          "hgnc_id": "HGNC:613",
+          "protein_start": 176,
+          "cadd_phred": 25.1,
+          "cdna_end": 612,
+          "spliceai": {
+            "DP_DG": -39,
+            "DP_AL": 0,
+            "DS_DG": 0,
+            "DS_AG": 0,
+            "DP_AG": 10,
+            "DP_DL": 10,
+            "DS_AL": 0,
+            "SYMBOL": "APOE",
+            "DS_DL": 0
+          }
+        },
+        {
+          "sift_prediction": "deleterious",
+          "domains": [
+            {
+              "db": "Gene3D",
+              "name": 1
+            },
+            {
+              "name": 1,
+              "db": "Gene3D"
+            },
+            {
+              "name": "NON_CYTOPLASMIC_DOMAIN",
+              "db": "Phobius"
+            },
+            {
+              "db": "Pfam",
+              "name": "PF01442"
+            },
+            {
+              "db": "PANTHER",
+              "name": "PTHR18976"
+            },
+            {
+              "name": "SSF58113",
+              "db": "Superfamily"
+            },
+            {
+              "db": "Superfamily",
+              "name": "SSF58113"
+            }
+          ],
+          "protein_end": 176,
+          "biotype": "protein_coding",
+          "amino_acids": "R/C",
+          "impact": "MODERATE",
+          "transcript_id": "ENST00000864839",
+          "alphamissense": {
+            "am_pathogenicity": 0.4222,
+            "am_class": "ambiguous"
+          },
+          "cds_end": 526,
+          "variant_allele": "T",
+          "gene_symbol_source": "HGNC",
+          "gene_symbol": "APOE",
+          "cdna_start": 765,
+          "codons": "Cgc/Tgc",
+          "cds_start": 526,
+          "hgnc_id": "HGNC:613",
+          "protein_start": 176,
+          "cadd_phred": 25.1,
+          "spliceai": {
+            "DS_AG": 0,
+            "DS_DG": 0,
+            "DP_DG": -39,
+            "DP_AL": 0,
+            "DS_AL": 0,
+            "DP_DL": 10,
+            "DP_AG": 10,
+            "DS_DL": 0,
+            "SYMBOL": "APOE"
+          },
+          "cdna_end": 765,
+          "cadd_raw": 4.372081,
+          "consequence_terms": [
+            "missense_variant"
+          ],
+          "gene_id": "ENSG00000130203",
+          "sift_score": 0,
+          "strand": 1
+        },
+        {
+          "transcript_id": "ENST00000864840",
+          "impact": "MODERATE",
+          "amino_acids": "R/C",
+          "biotype": "protein_coding",
+          "sift_prediction": "deleterious",
+          "protein_end": 176,
+          "domains": [
+            {
+              "db": "Gene3D",
+              "name": 1
+            },
+            {
+              "name": 1,
+              "db": "Gene3D"
+            },
+            {
+              "name": "NON_CYTOPLASMIC_DOMAIN",
+              "db": "Phobius"
+            },
+            {
+              "db": "Pfam",
+              "name": "PF01442"
+            },
+            {
+              "db": "PANTHER",
+              "name": "PTHR18976"
+            },
+            {
+              "db": "Superfamily",
+              "name": "SSF58113"
+            },
+            {
+              "name": "SSF58113",
+              "db": "Superfamily"
+            }
+          ],
+          "cdna_start": 582,
+          "codons": "Cgc/Tgc",
+          "gene_symbol": "APOE",
+          "gene_symbol_source": "HGNC",
+          "variant_allele": "T",
+          "cds_end": 526,
+          "alphamissense": {
+            "am_class": "ambiguous",
+            "am_pathogenicity": 0.4222
+          },
+          "cdna_end": 582,
+          "spliceai": {
+            "DS_AG": 0,
+            "DS_DG": 0,
+            "DP_DG": -39,
+            "DP_AL": 0,
+            "DP_AG": 10,
+            "DP_DL": 10,
+            "DS_AL": 0,
+            "DS_DL": 0,
+            "SYMBOL": "APOE"
+          },
+          "cadd_phred": 25.1,
+          "protein_start": 176,
+          "hgnc_id": "HGNC:613",
+          "cds_start": 526,
+          "strand": 1,
+          "sift_score": 0,
+          "gene_id": "ENSG00000130203",
+          "cadd_raw": 4.372081,
+          "consequence_terms": [
+            "missense_variant"
+          ]
+        },
+        {
+          "gene_symbol_source": "HGNC",
+          "gene_symbol": "APOE",
+          "codons": "Cgc/Tgc",
+          "cdna_start": 791,
+          "alphamissense": {
+            "am_pathogenicity": 0.4222,
+            "am_class": "ambiguous"
+          },
+          "cds_end": 526,
+          "variant_allele": "T",
+          "biotype": "protein_coding",
+          "amino_acids": "R/C",
+          "impact": "MODERATE",
+          "transcript_id": "ENST00000864841",
+          "domains": [
+            {
+              "name": 1,
+              "db": "Gene3D"
+            },
+            {
+              "db": "Gene3D",
+              "name": 1
+            },
+            {
+              "db": "Phobius",
+              "name": "NON_CYTOPLASMIC_DOMAIN"
+            },
+            {
+              "name": "PF01442",
+              "db": "Pfam"
+            },
+            {
+              "db": "PANTHER",
+              "name": "PTHR18976"
+            },
+            {
+              "db": "Superfamily",
+              "name": "SSF58113"
+            },
+            {
+              "name": "SSF58113",
+              "db": "Superfamily"
+            }
+          ],
+          "sift_prediction": "deleterious",
+          "protein_end": 176,
+          "strand": 1,
+          "consequence_terms": [
+            "missense_variant"
+          ],
+          "cadd_raw": 4.372081,
+          "sift_score": 0,
+          "gene_id": "ENSG00000130203",
+          "cadd_phred": 25.1,
+          "spliceai": {
+            "DS_DL": 0,
+            "SYMBOL": "APOE",
+            "DP_DL": 10,
+            "DS_AL": 0,
+            "DP_AG": 10,
+            "DS_DG": 0,
+            "DS_AG": 0,
+            "DP_DG": -39,
+            "DP_AL": 0
+          },
+          "cdna_end": 791,
+          "cds_start": 526,
+          "hgnc_id": "HGNC:613",
+          "protein_start": 176
+        },
+        {
+          "cadd_raw": 4.372081,
+          "consequence_terms": [
+            "missense_variant"
+          ],
+          "gene_id": "ENSG00000130203",
+          "sift_score": 0,
+          "strand": 1,
+          "cds_start": 526,
+          "hgnc_id": "HGNC:613",
+          "protein_start": 176,
+          "cadd_phred": 25.1,
+          "spliceai": {
+            "SYMBOL": "APOE",
+            "DS_DL": 0,
+            "DS_AL": 0,
+            "DP_DL": 10,
+            "DP_AG": 10,
+            "DP_DG": -39,
+            "DP_AL": 0,
+            "DS_DG": 0,
+            "DS_AG": 0
+          },
+          "cdna_end": 760,
+          "alphamissense": {
+            "am_pathogenicity": 0.4222,
+            "am_class": "ambiguous"
+          },
+          "cds_end": 526,
+          "variant_allele": "T",
+          "gene_symbol_source": "HGNC",
+          "gene_symbol": "APOE",
+          "cdna_start": 760,
+          "codons": "Cgc/Tgc",
+          "sift_prediction": "deleterious",
+          "domains": [
+            {
+              "name": 1,
+              "db": "Gene3D"
+            },
+            {
+              "db": "Gene3D",
+              "name": 1
+            },
+            {
+              "db": "Phobius",
+              "name": "NON_CYTOPLASMIC_DOMAIN"
+            },
+            {
+              "name": "PF01442",
+              "db": "Pfam"
+            },
+            {
+              "name": "PTHR18976",
+              "db": "PANTHER"
+            },
+            {
+              "db": "Superfamily",
+              "name": "SSF58113"
+            },
+            {
+              "db": "Superfamily",
+              "name": "SSF58113"
+            }
+          ],
+          "protein_end": 176,
+          "biotype": "protein_coding",
+          "impact": "MODERATE",
+          "amino_acids": "R/C",
+          "transcript_id": "ENST00000864842"
+        },
+        {
+          "sift_score": 0,
+          "gene_id": "ENSG00000130203",
+          "consequence_terms": [
+            "missense_variant"
+          ],
+          "cadd_raw": 4.372081,
+          "strand": 1,
+          "protein_start": 176,
+          "hgnc_id": "HGNC:613",
+          "cds_start": 526,
+          "spliceai": {
+            "DS_DL": 0,
+            "SYMBOL": "APOE",
+            "DP_DG": -39,
+            "DP_AL": 0,
+            "DS_AG": 0,
+            "DS_DG": 0,
+            "DS_AL": 0,
+            "DP_DL": 10,
+            "DP_AG": 10
+          },
+          "cdna_end": 682,
+          "cadd_phred": 25.1,
+          "variant_allele": "T",
+          "cds_end": 526,
+          "alphamissense": {
+            "am_pathogenicity": 0.4222,
+            "am_class": "ambiguous"
+          },
+          "codons": "Cgc/Tgc",
+          "cdna_start": 682,
+          "gene_symbol": "APOE",
+          "gene_symbol_source": "HGNC",
+          "domains": [
+            {
+              "db": "Gene3D",
+              "name": 1
+            },
+            {
+              "db": "Gene3D",
+              "name": 1
+            },
+            {
+              "name": "NON_CYTOPLASMIC_DOMAIN",
+              "db": "Phobius"
+            },
+            {
+              "name": "PF01442",
+              "db": "Pfam"
+            },
+            {
+              "name": "PTHR18976",
+              "db": "PANTHER"
+            },
+            {
+              "name": "SSF58113",
+              "db": "Superfamily"
+            },
+            {
+              "db": "Superfamily",
+              "name": "SSF58113"
+            }
+          ],
+          "sift_prediction": "deleterious",
+          "protein_end": 176,
+          "transcript_id": "ENST00000864843",
+          "amino_acids": "R/C",
+          "impact": "MODERATE",
+          "biotype": "protein_coding"
+        },
+        {
+          "biotype": "protein_coding",
+          "impact": "MODERATE",
+          "amino_acids": "R/C",
+          "transcript_id": "ENST00000864844",
+          "sift_prediction": "deleterious",
+          "domains": [
+            {
+              "db": "Gene3D",
+              "name": 1
+            },
+            {
+              "db": "Gene3D",
+              "name": 1
+            },
+            {
+              "name": "NON_CYTOPLASMIC_DOMAIN",
+              "db": "Phobius"
+            },
+            {
+              "name": "PF01442",
+              "db": "Pfam"
+            },
+            {
+              "db": "PANTHER",
+              "name": "PTHR18976"
+            },
+            {
+              "db": "Superfamily",
+              "name": "SSF58113"
+            },
+            {
+              "name": "SSF58113",
+              "db": "Superfamily"
+            }
+          ],
+          "protein_end": 176,
+          "gene_symbol_source": "HGNC",
+          "gene_symbol": "APOE",
+          "codons": "Cgc/Tgc",
+          "cdna_start": 806,
+          "alphamissense": {
+            "am_class": "ambiguous",
+            "am_pathogenicity": 0.4222
+          },
+          "cds_end": 526,
+          "variant_allele": "T",
+          "cadd_phred": 25.1,
+          "spliceai": {
+            "DS_DL": 0,
+            "SYMBOL": "APOE",
+            "DP_DG": -39,
+            "DP_AL": 0,
+            "DS_AG": 0,
+            "DS_DG": 0,
+            "DS_AL": 0,
+            "DP_DL": 10,
+            "DP_AG": 10
+          },
+          "cdna_end": 806,
+          "cds_start": 526,
+          "hgnc_id": "HGNC:613",
+          "protein_start": 176,
+          "strand": 1,
+          "cadd_raw": 4.372081,
+          "consequence_terms": [
+            "missense_variant"
+          ],
+          "gene_id": "ENSG00000130203",
+          "sift_score": 0
+        },
+        {
+          "gene_symbol": "APOE",
+          "gene_symbol_source": "HGNC",
+          "codons": "Cgc/Tgc",
+          "cdna_start": 589,
+          "cds_end": 526,
+          "alphamissense": {
+            "am_class": "ambiguous",
+            "am_pathogenicity": 0.4222
+          },
+          "variant_allele": "T",
+          "biotype": "protein_coding",
+          "transcript_id": "ENST00000864845",
+          "amino_acids": "R/C",
+          "impact": "MODERATE",
+          "sift_prediction": "deleterious",
+          "protein_end": 176,
+          "domains": [
+            {
+              "name": "PF01442",
+              "db": "Pfam"
+            },
+            {
+              "db": "Gene3D",
+              "name": 1
+            },
+            {
+              "name": "NON_CYTOPLASMIC_DOMAIN",
+              "db": "Phobius"
+            },
+            {
+              "db": "Superfamily",
+              "name": "SSF58113"
+            },
+            {
+              "db": "PANTHER",
+              "name": "PTHR18976"
+            }
+          ],
+          "strand": 1,
+          "consequence_terms": [
+            "missense_variant"
+          ],
+          "cadd_raw": 4.372081,
+          "gene_id": "ENSG00000130203",
+          "sift_score": 0,
+          "cadd_phred": 25.1,
+          "spliceai": {
+            "SYMBOL": "APOE",
+            "DS_DL": 0,
+            "DP_AG": 10,
+            "DP_DL": 10,
+            "DS_AL": 0,
+            "DP_DG": -39,
+            "DP_AL": 0,
+            "DS_AG": 0,
+            "DS_DG": 0
+          },
+          "cdna_end": 589,
+          "hgnc_id": "HGNC:613",
+          "cds_start": 526,
+          "protein_start": 176
+        },
+        {
+          "amino_acids": "R/C",
+          "impact": "MODERATE",
+          "transcript_id": "ENST00000864846",
+          "biotype": "protein_coding",
+          "sift_prediction": "deleterious",
+          "domains": [
+            {
+              "name": 1,
+              "db": "Gene3D"
+            },
+            {
+              "db": "Gene3D",
+              "name": 1
+            },
+            {
+              "name": "NON_CYTOPLASMIC_DOMAIN",
+              "db": "Phobius"
+            },
+            {
+              "name": "PF01442",
+              "db": "Pfam"
+            },
+            {
+              "name": "PTHR18976",
+              "db": "PANTHER"
+            },
+            {
+              "name": "SSF58113",
+              "db": "Superfamily"
+            },
+            {
+              "name": "SSF58113",
+              "db": "Superfamily"
+            }
+          ],
+          "protein_end": 176,
+          "cdna_start": 641,
+          "codons": "Cgc/Tgc",
+          "gene_symbol_source": "HGNC",
+          "gene_symbol": "APOE",
+          "variant_allele": "T",
+          "alphamissense": {
+            "am_pathogenicity": 0.4222,
+            "am_class": "ambiguous"
+          },
+          "cds_end": 526,
+          "spliceai": {
+            "DS_AG": 0,
+            "DS_DG": 0,
+            "DP_AL": 0,
+            "DP_DG": -39,
+            "DP_AG": 10,
+            "DP_DL": 10,
+            "DS_AL": 0,
+            "DS_DL": 0,
+            "SYMBOL": "APOE"
+          },
+          "cdna_end": 641,
+          "cadd_phred": 25.1,
+          "protein_start": 176,
+          "cds_start": 526,
+          "hgnc_id": "HGNC:613",
+          "strand": 1,
+          "gene_id": "ENSG00000130203",
+          "sift_score": 0,
+          "cadd_raw": 4.372081,
+          "consequence_terms": [
+            "missense_variant"
+          ]
+        },
+        {
+          "sift_prediction": "deleterious",
+          "domains": [
+            {
+              "db": "PANTHER",
+              "name": "PTHR18976"
+            },
+            {
+              "name": "NON_CYTOPLASMIC_DOMAIN",
+              "db": "Phobius"
+            },
+            {
+              "name": "SSF58113",
+              "db": "Superfamily"
+            },
+            {
+              "name": "PF01442",
+              "db": "Pfam"
+            },
+            {
+              "name": 1,
+              "db": "Gene3D"
+            }
+          ],
+          "protein_end": 176,
+          "biotype": "protein_coding",
+          "transcript_id": "ENST00000864847",
+          "impact": "MODERATE",
+          "amino_acids": "R/C",
+          "cds_end": 526,
+          "alphamissense": {
+            "am_class": "ambiguous",
+            "am_pathogenicity": 0.4222
+          },
+          "variant_allele": "T",
+          "gene_symbol": "APOE",
+          "gene_symbol_source": "HGNC",
+          "cdna_start": 650,
+          "codons": "Cgc/Tgc",
+          "hgnc_id": "HGNC:613",
+          "cds_start": 526,
+          "protein_start": 176,
+          "cadd_phred": 25.1,
+          "cdna_end": 650,
+          "spliceai": {
+            "SYMBOL": "APOE",
+            "DS_DL": 0,
+            "DP_DL": 10,
+            "DS_AL": 0,
+            "DP_AG": 10,
+            "DP_AL": 0,
+            "DP_DG": -39,
+            "DS_AG": 0,
+            "DS_DG": 0
+          },
+          "cadd_raw": 4.372081,
+          "consequence_terms": [
+            "missense_variant"
+          ],
+          "sift_score": 0,
+          "gene_id": "ENSG00000130203",
+          "strand": 1
+        },
+        {
+          "hgnc_id": "HGNC:613",
+          "cds_start": 526,
+          "protein_start": 176,
+          "cadd_phred": 25.1,
+          "spliceai": {
+            "DP_AL": 0,
+            "DP_DG": -39,
+            "DS_AG": 0,
+            "DS_DG": 0,
+            "DS_AL": 0,
+            "DP_DL": 10,
+            "DP_AG": 10,
+            "SYMBOL": "APOE",
+            "DS_DL": 0
+          },
+          "cdna_end": 698,
+          "consequence_terms": [
+            "missense_variant"
+          ],
+          "cadd_raw": 4.372081,
+          "sift_score": 0,
+          "gene_id": "ENSG00000130203",
+          "strand": 1,
+          "sift_prediction": "deleterious",
+          "domains": [
+            {
+              "db": "Gene3D",
+              "name": 1
+            },
+            {
+              "name": 1,
+              "db": "Gene3D"
+            },
+            {
+              "name": "NON_CYTOPLASMIC_DOMAIN",
+              "db": "Phobius"
+            },
+            {
+              "db": "Pfam",
+              "name": "PF01442"
+            },
+            {
+              "db": "PANTHER",
+              "name": "PTHR18976"
+            },
+            {
+              "name": "SSF58113",
+              "db": "Superfamily"
+            },
+            {
+              "db": "Superfamily",
+              "name": "SSF58113"
+            }
+          ],
+          "protein_end": 176,
+          "biotype": "protein_coding",
+          "transcript_id": "ENST00000864848",
+          "amino_acids": "R/C",
+          "impact": "MODERATE",
+          "cds_end": 526,
+          "alphamissense": {
+            "am_class": "ambiguous",
+            "am_pathogenicity": 0.4222
+          },
+          "variant_allele": "T",
+          "gene_symbol": "APOE",
+          "gene_symbol_source": "HGNC",
+          "cdna_start": 698,
+          "codons": "Cgc/Tgc"
+        },
+        {
+          "amino_acids": "R/C",
+          "impact": "MODERATE",
+          "transcript_id": "ENST00000864849",
+          "biotype": "protein_coding",
+          "sift_prediction": "deleterious",
+          "domains": [
+            {
+              "db": "Gene3D",
+              "name": 1
+            },
+            {
+              "name": 1,
+              "db": "Gene3D"
+            },
+            {
+              "name": "NON_CYTOPLASMIC_DOMAIN",
+              "db": "Phobius"
+            },
+            {
+              "name": "PF01442",
+              "db": "Pfam"
+            },
+            {
+              "db": "PANTHER",
+              "name": "PTHR18976"
+            },
+            {
+              "db": "Superfamily",
+              "name": "SSF58113"
+            },
+            {
+              "name": "SSF58113",
+              "db": "Superfamily"
+            }
+          ],
+          "protein_end": 176,
+          "codons": "Cgc/Tgc",
+          "cdna_start": 713,
+          "gene_symbol_source": "HGNC",
+          "gene_symbol": "APOE",
+          "variant_allele": "T",
+          "alphamissense": {
+            "am_class": "ambiguous",
+            "am_pathogenicity": 0.4222
+          },
+          "cds_end": 526,
+          "cdna_end": 713,
+          "spliceai": {
+            "DS_AL": 0,
+            "DP_DL": 10,
+            "DP_AG": 10,
+            "DS_AG": 0,
+            "DS_DG": 0,
+            "DP_AL": 0,
+            "DP_DG": -39,
+            "SYMBOL": "APOE",
+            "DS_DL": 0
+          },
+          "cadd_phred": 25.1,
+          "protein_start": 176,
+          "cds_start": 526,
+          "hgnc_id": "HGNC:613",
+          "strand": 1,
+          "gene_id": "ENSG00000130203",
+          "sift_score": 0,
+          "cadd_raw": 4.372081,
+          "consequence_terms": [
+            "missense_variant"
+          ]
+        },
+        {
+          "strand": 1,
+          "gene_symbol_source": "HGNC",
+          "gene_symbol": "APOC1",
+          "variant_allele": "T",
+          "gene_id": "ENSG00000130208",
+          "consequence_terms": [
+            "upstream_gene_variant"
+          ],
+          "cadd_raw": 4.372081,
+          "impact": "MODIFIER",
+          "transcript_id": "ENST00000876409",
+          "biotype": "protein_coding",
+          "cadd_phred": 25.1,
+          "distance": 4311,
+          "hgnc_id": "HGNC:607"
+        },
+        {
+          "gene_id": "ENSG00000130203",
+          "consequence_terms": [
+            "3_prime_UTR_variant"
+          ],
+          "cadd_raw": 4.372081,
+          "strand": 1,
+          "hgnc_id": "HGNC:613",
+          "spliceai": {
+            "SYMBOL": "APOE",
+            "DS_DL": 0,
+            "DP_AG": 10,
+            "DP_DL": 10,
+            "DS_AL": 0,
+            "DS_DG": 0,
+            "DS_AG": 0,
+            "DP_AL": 0,
+            "DP_DG": -39
+          },
+          "cdna_end": 912,
+          "cadd_phred": 25.1,
+          "variant_allele": "T",
+          "cdna_start": 912,
+          "gene_symbol_source": "HGNC",
+          "gene_symbol": "APOE",
+          "impact": "MODIFIER",
+          "transcript_id": "ENST00001005584",
+          "biotype": "protein_coding"
+        },
+        {
+          "gene_symbol": "APOE",
+          "gene_symbol_source": "HGNC",
+          "strand": 1,
+          "cadd_raw": 4.372081,
+          "consequence_terms": [
+            "intron_variant"
+          ],
+          "gene_id": "ENSG00000130203",
+          "variant_allele": "T",
+          "biotype": "protein_coding",
+          "cadd_phred": 25.1,
+          "transcript_id": "ENST00001101301",
+          "spliceai": {
+            "SYMBOL": "APOE",
+            "DS_DL": 0,
+            "DP_AL": 0,
+            "DP_DG": -39,
+            "DS_DG": 0,
+            "DS_AG": 0,
+            "DP_AG": 10,
+            "DP_DL": 10,
+            "DS_AL": 0
+          },
+          "impact": "MODIFIER",
+          "hgnc_id": "HGNC:613"
+        },
+        {
+          "strand": 1,
+          "gene_symbol_source": "HGNC",
+          "gene_symbol": "APOE",
+          "gene_id": "ENSG00000130203",
+          "variant_allele": "T",
+          "cadd_raw": 4.372081,
+          "consequence_terms": [
+            "intron_variant"
+          ],
+          "spliceai": {
+            "DS_DL": 0,
+            "SYMBOL": "APOE",
+            "DP_AG": 10,
+            "DP_DL": 10,
+            "DS_AL": 0,
+            "DS_DG": 0,
+            "DS_AG": 0,
+            "DP_AL": 0,
+            "DP_DG": -39
+          },
+          "impact": "MODIFIER",
+          "transcript_id": "ENST00001101302",
+          "biotype": "protein_coding",
+          "cadd_phred": 25.1,
+          "hgnc_id": "HGNC:613"
+        },
+        {
+          "consequence_terms": [
+            "3_prime_UTR_variant"
+          ],
+          "cadd_raw": 4.372081,
+          "gene_id": "ENSG00000130203",
+          "strand": 1,
+          "hgnc_id": "HGNC:613",
+          "cadd_phred": 25.1,
+          "spliceai": {
+            "DS_DL": 0,
+            "SYMBOL": "APOE",
+            "DS_AL": 0,
+            "DP_DL": 10,
+            "DP_AG": 10,
+            "DP_AL": 0,
+            "DP_DG": -39,
+            "DS_DG": 0,
+            "DS_AG": 0
+          },
+          "cdna_end": 727,
+          "variant_allele": "T",
+          "gene_symbol_source": "HGNC",
+          "gene_symbol": "APOE",
+          "cdna_start": 727,
+          "biotype": "protein_coding",
+          "impact": "MODIFIER",
+          "transcript_id": "ENST00001121352"
+        },
+        {
+          "gene_id": "ENSG00000130203",
+          "cadd_raw": 4.372081,
+          "consequence_terms": [
+            "3_prime_UTR_variant"
+          ],
+          "strand": 1,
+          "hgnc_id": "HGNC:613",
+          "spliceai": {
+            "DS_AG": 0,
+            "DS_DG": 0,
+            "DP_AL": 0,
+            "DP_DG": -39,
+            "DP_AG": 10,
+            "DS_AL": 0,
+            "DP_DL": 10,
+            "SYMBOL": "APOE",
+            "DS_DL": 0
+          },
+          "cdna_end": 972,
+          "cadd_phred": 25.1,
+          "variant_allele": "T",
+          "cdna_start": 972,
+          "gene_symbol_source": "HGNC",
+          "gene_symbol": "APOE",
+          "impact": "MODIFIER",
+          "transcript_id": "ENST00001121353",
+          "biotype": "protein_coding"
+        },
+        {
+          "cdna_start": 924,
+          "gene_symbol_source": "HGNC",
+          "gene_symbol": "APOE",
+          "variant_allele": "T",
+          "impact": "MODIFIER",
+          "transcript_id": "ENST00001126687",
+          "biotype": "protein_coding",
+          "strand": 1,
+          "gene_id": "ENSG00000130203",
+          "consequence_terms": [
+            "3_prime_UTR_variant"
+          ],
+          "cadd_raw": 4.372081,
+          "cdna_end": 924,
+          "spliceai": {
+            "SYMBOL": "APOE",
+            "DS_DL": 0,
+            "DP_AG": 10,
+            "DP_DL": 10,
+            "DS_AL": 0,
+            "DP_AL": 0,
+            "DP_DG": -39,
+            "DS_AG": 0,
+            "DS_DG": 0
+          },
+          "cadd_phred": 25.1,
+          "hgnc_id": "HGNC:613"
+        },
+        {
+          "cds_end": 526,
+          "alphamissense": {
+            "am_class": "ambiguous",
+            "am_pathogenicity": 0.4222
+          },
+          "variant_allele": "T",
+          "gene_symbol": "APOE",
+          "gene_symbol_source": "HGNC",
+          "cdna_start": 920,
+          "codons": "Cgc/Tgc",
+          "sift_prediction": "deleterious",
+          "domains": [
+            {
+              "db": "Gene3D",
+              "name": 1
+            },
+            {
+              "name": 1,
+              "db": "Gene3D"
+            },
+            {
+              "db": "Phobius",
+              "name": "NON_CYTOPLASMIC_DOMAIN"
+            },
+            {
+              "name": "PF01442",
+              "db": "Pfam"
+            },
+            {
+              "db": "PANTHER",
+              "name": "PTHR18976"
+            },
+            {
+              "name": "SSF58113",
+              "db": "Superfamily"
+            },
+            {
+              "db": "Superfamily",
+              "name": "SSF58113"
+            }
+          ],
+          "protein_end": 176,
+          "biotype": "protein_coding",
+          "transcript_id": "ENST00001139730",
+          "amino_acids": "R/C",
+          "impact": "MODERATE",
+          "cadd_raw": 4.372081,
+          "consequence_terms": [
+            "missense_variant"
+          ],
+          "gene_id": "ENSG00000130203",
+          "sift_score": 0,
+          "strand": 1,
+          "hgnc_id": "HGNC:613",
+          "cds_start": 526,
+          "protein_start": 176,
+          "cadd_phred": 25.1,
+          "spliceai": {
+            "DS_DL": 0,
+            "SYMBOL": "APOE",
+            "DP_DG": -39,
+            "DP_AL": 0,
+            "DS_AG": 0,
+            "DS_DG": 0,
+            "DP_AG": 10,
+            "DP_DL": 10,
+            "DS_AL": 0
+          },
+          "cdna_end": 920
+        }
+      ],
+      "id": "rs7412",
+      "variant_class": "SNV",
+      "input": "rs7412",
+      "colocated_variants": [
+        {
+          "strand": 1,
+          "start": 44908822,
+          "seq_region_name": "19",
+          "id": "CM860003",
+          "allele_string": "HGMD_MUTATION",
+          "phenotype_or_disease": 1,
+          "end": 44908822
+        },
+        {
+          "id": "COSV52986153",
+          "allele_string": "COSMIC_MUTATION",
+          "seq_region_name": "19",
+          "strand": 1,
+          "start": 44908822,
+          "somatic": 1,
+          "end": 44908822,
+          "var_synonyms": {
+            "COSMIC": [
+              "COSM4986746"
+            ]
+          },
+          "phenotype_or_disease": 1
+        },
+        {
+          "clin_sig": [
+            "benign",
+            "likely_benign",
+            "pathogenic",
+            "drug_response",
+            "other",
+            "risk_factor"
+          ],
+          "phenotype_or_disease": 1,
+          "clin_sig_ref_allele": "C",
+          "end": 44908822,
+          "frequencies": {
+            "T": {
+              "eur": 0.0626,
+              "gnomadg_sas": 0.03725,
+              "gnomadg_afr": 0.1045,
+              "eas": 0.1002,
+              "amr": 0.0476,
+              "afr": 0.1029,
+              "gnomade_amr": 0.03193,
+              "gnomadg": 0.07784,
+              "gnomadg_eas": 0.08014,
+              "gnomadg_mid": 0.04795,
+              "gnomade": 0.07385,
+              "gnomade_afr": 0.107,
+              "gnomade_eas": 0.05769,
+              "gnomade_nfe": 0.07823,
+              "gnomade_mid": 0.0588,
+              "gnomade_fin": 0.04987,
+              "sas": 0.044,
+              "gnomadg_amr": 0.04188,
+              "gnomadg_remaining": 0.07718,
+              "gnomade_sas": 0.04191,
+              "gnomadg_asj": 0.06945,
+              "gnomade_remaining": 0.07026,
+              "af": 0.0751,
+              "gnomadg_ami": 0.01206,
+              "gnomade_asj": 0.07481,
+              "gnomadg_fin": 0.04187,
+              "gnomadg_nfe": 0.07943
+            }
+          },
+          "var_synonyms": {
+            "UniProt": [
+              "VAR_000664"
+            ],
+            "ClinVar": [
+              "RCV000019454",
+              "VCV000441266",
+              "RCV000019452",
+              "VCV000441265",
+              "RCV000019439",
+              "VCV000441262",
+              "RCV000019428",
+              "VCV000017848",
+              "RCV000346955",
+              "RCV000211178",
+              "RCV001529800",
+              "RCV001262472",
+              "RCV000845582"
+            ],
+            "PharmGKB": [
+              "PA166155341"
+            ]
+          },
+          "clin_sig_allele": "T:pathogenic;T:likely_benign;T:drug_response;T:benign",
+          "strand": 1,
+          "pubmed": [
+            21467728,
+            18513389,
+            18603647,
+            19131662,
+            19263529,
+            21146954,
+            21894447,
+            23497168,
+            25361584,
+            26621708,
+            26627480,
+            27584680,
+            28605058,
+            29972410,
+            30182779,
+            30571812,
+            31396257,
+            34137427,
+            34276231,
+            35124268,
+            35387194,
+            18216863,
+            20538124,
+            21054877,
+            21094359,
+            21647738,
+            21845926,
+            21937998,
+            27589735,
+            28659664,
+            20734064,
+            20549395,
+            22303384,
+            24244950,
+            26365620,
+            24842701,
+            23894628,
+            30112393,
+            21773006,
+            22328972,
+            28464262,
+            30584432,
+            33763108,
+            21738487,
+            22911757,
+            26985771,
+            21708280,
+            21767357,
+            23533563,
+            17048007,
+            21857382,
+            22992668,
+            23820649,
+            25333069,
+            28086795,
+            33519226,
+            34958284,
+            18974842,
+            32398726,
+            35088019,
+            21901424,
+            18254975,
+            19001172,
+            24987407,
+            35351696,
+            26690118,
+            26680604,
+            31249592,
+            17903299,
+            23073467,
+            18976728,
+            21547229,
+            22694956,
+            28253266,
+            20565774,
+            22024213,
+            21862702,
+            29340220,
+            32100327,
+            21829380,
+            19802338,
+            19913121,
+            19951432,
+            21738485,
+            22042884,
+            26971241,
+            27112212,
+            28577571,
+            28686695,
+            30740535,
+            23050023,
+            25073452,
+            25682026,
+            28371326,
+            28539666,
+            29374275,
+            21418511,
+            19299407,
+            20832063,
+            23100282,
+            24771538,
+            27716211,
+            27943270,
+            28167353,
+            28705542,
+            33296721,
+            29932521,
+            30202567,
+            25649863,
+            22022476,
+            22666427,
+            24675670,
+            25558172,
+            2624327
+          ],
+          "start": 44908822,
+          "id": "rs7412",
+          "allele_string": "C/T",
+          "seq_region_name": "19"
+        }
+      ],
+      "seq_region_name": "19",
+      "assembly_name": "GRCh38"
+    }
+  ]
+}

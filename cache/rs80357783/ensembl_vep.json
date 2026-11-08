@@ -1,0 +1,3049 @@
+{
+  "source": "Ensembl VEP",
+  "retrieved": "2026-11-08T03:55:44+00:00",
+  "request": {
+    "rsid": "rs80357783",
+    "params": {
+      "AlphaMissense": "1",
+      "CADD": "1",
+      "SpliceAI": "1",
+      "canonical": "1",
+      "variant_class": "1",
+      "domains": "1"
+    }
+  },
+  "response": [
+    {
+      "end": 43124031,
+      "colocated_variants": [
+        {
+          "allele_string": "T/TT",
+          "phenotype_or_disease": 1,
+          "id": "rs80357783",
+          "strand": 1,
+          "frequencies": {
+            "T": {
+              "gnomade_amr": 0,
+              "gnomade": 1.369e-06,
+              "gnomade_asj": 0,
+              "gnomade_fin": 0,
+              "gnomade_sas": 0,
+              "gnomade_remaining": 0,
+              "gnomade_nfe": 1.8e-06,
+              "gnomade_afr": 0,
+              "gnomade_mid": 0,
+              "gnomade_eas": 0
+            }
+          },
+          "var_synonyms": {
+            "ClinVar": [
+              "RCV004802995",
+              "RCV004758615",
+              "RCV005007902",
+              "RCV000478017",
+              "RCV000240681",
+              "RCV000031272",
+              "VCV000037691",
+              "RCV000163427",
+              "RCV000049087",
+              "RCV001554246",
+              "RCV000785198",
+              "RCV000778174"
+            ]
+          },
+          "end": 43124031,
+          "start": 43124031,
+          "seq_region_name": "17",
+          "pubmed": [
+            25741868,
+            24033266,
+            22703879,
+            26467025,
+            26845104,
+            22006311,
+            20104584,
+            16683254,
+            21203900,
+            15617999,
+            21324516,
+            22009639,
+            23199084,
+            26295337,
+            23683081,
+            11179017,
+            16168118,
+            18627636,
+            27257965,
+            16998791,
+            15024741,
+            17688236,
+            21559243,
+            33643918,
+            19329713,
+            22535016,
+            21643751,
+            22430266,
+            9145676,
+            12473589,
+            15994883,
+            20301425,
+            23867111,
+            8807330,
+            15383404,
+            21503673,
+            7837387,
+            22516946,
+            23233716,
+            8531968,
+            8533757,
+            7611277,
+            7894492,
+            20950396,
+            7550349,
+            8595420,
+            8642955,
+            8651293,
+            8764110,
+            9042909,
+            9921907,
+            10739756,
+            11352856,
+            11896106,
+            16941470,
+            17307836,
+            18034184,
+            18594935,
+            19147582,
+            19906413,
+            20651350,
+            20711688,
+            22274685,
+            22763381,
+            23086583,
+            23531862,
+            23788959,
+            23855721,
+            23941904,
+            24764757,
+            31454914,
+            32733560,
+            35393538,
+            35464868,
+            35693198,
+            28392550,
+            38918649,
+            39414907,
+            40167152,
+            40489436
+          ],
+          "clin_sig": [
+            "pathogenic"
+          ]
+        }
+      ],
+      "start": 43124032,
+      "seq_region_name": "17",
+      "allele_string": "-/T",
+      "id": "rs80357783",
+      "most_severe_consequence": "frameshift_variant",
+      "variant_class": "indel",
+      "strand": 1,
+      "transcript_consequences": [
+        {
+          "amino_acids": "L/LX",
+          "domains": [
+            {
+              "name": "SSF57850",
+              "db": "Superfamily"
+            },
+            {
+              "db": "Phobius",
+              "name": "NON_CYTOPLASMIC_DOMAIN"
+            },
+            {
+              "db": "PIRSF",
+              "name": "PIRSF001734"
+            },
+            {
+              "name": 3,
+              "db": "Gene3D"
+            },
+            {
+              "db": "CDD",
+              "name": "cd16498"
+            },
+            {
+              "db": "ENSP_mappings",
+              "name": "AF"
+            }
+          ],
+          "protein_start": 22,
+          "gene_symbol_source": "HGNC",
+          "spliceai": {
+            "DS_DL": 0,
+            "DP_DG": -14,
+            "SYMBOL": "BRCA1",
+            "DS_DG": 0,
+            "DP_AG": 8,
+            "DP_DL": 36,
+            "DS_AL": 0,
+            "DS_AG": 0,
+            "DP_AL": -14
+          },
+          "gene_symbol": "BRCA1",
+          "transcript_id": "ENST00000352993",
+          "strand": -1,
+          "hgnc_id": "HGNC:1100",
+          "gene_id": "ENSG00000012048",
+          "cds_end": 66,
+          "codons": "tta/ttAa",
+          "protein_end": 22,
+          "biotype": "protein_coding",
+          "cds_start": 65,
+          "consequence_terms": [
+            "frameshift_variant"
+          ],
+          "cdna_end": 185,
+          "impact": "HIGH",
+          "cdna_start": 184,
+          "variant_allele": "T"
+        },
+        {
+          "transcript_id": "ENST00000354071",
+          "strand": -1,
+          "hgnc_id": "HGNC:1100",
+          "gene_symbol": "BRCA1",
+          "variant_allele": "T",
+          "gene_id": "ENSG00000012048",
+          "biotype": "retained_intron",
+          "cdna_end": 130,
+          "consequence_terms": [
+            "non_coding_transcript_exon_variant"
+          ],
+          "impact": "MODIFIER",
+          "cdna_start": 129,
+          "spliceai": {
+            "DS_AL": 0,
+            "DP_AG": 8,
+            "DP_DL": 36,
+            "DP_AL": -14,
+            "DS_AG": 0,
+            "SYMBOL": "BRCA1",
+            "DP_DG": -14,
+            "DS_DL": 0,
+            "DS_DG": 0
+          },
+          "gene_symbol_source": "HGNC"
+        },
+        {
+          "strand": 1,
+          "transcript_id": "ENST00000356906",
+          "hgnc_id": "HGNC:20691",
+          "gene_symbol": "NBR2",
+          "gene_id": "ENSG00000198496",
+          "variant_allele": "T",
+          "biotype": "lncRNA",
+          "impact": "MODIFIER",
+          "consequence_terms": [
+            "upstream_gene_variant"
+          ],
+          "gene_symbol_source": "HGNC",
+          "distance": 1388
+        },
+        {
+          "protein_start": 22,
+          "domains": [
+            {
+              "db": "ENSP_mappings",
+              "name": "1jm7"
+            },
+            {
+              "db": "Gene3D",
+              "name": 3
+            },
+            {
+              "name": "7jzv",
+              "db": "ENSP_mappings"
+            },
+            {
+              "name": "7lyb",
+              "db": "ENSP_mappings"
+            },
+            {
+              "name": "8grq",
+              "db": "ENSP_mappings"
+            },
+            {
+              "name": "AF",
+              "db": "ENSP_mappings"
+            },
+            {
+              "name": "NON_CYTOPLASMIC_DOMAIN",
+              "db": "Phobius"
+            },
+            {
+              "db": "PIRSF",
+              "name": "PIRSF001734"
+            },
+            {
+              "db": "Superfamily",
+              "name": "SSF57850"
+            },
+            {
+              "name": "cd16498",
+              "db": "CDD"
+            }
+          ],
+          "amino_acids": "L/LX",
+          "gene_symbol_source": "HGNC",
+          "spliceai": {
+            "SYMBOL": "BRCA1",
+            "DP_DG": -14,
+            "DS_DL": 0,
+            "DS_DG": 0,
+            "DS_AL": 0,
+            "DP_AG": 8,
+            "DP_DL": 36,
+            "DP_AL": -14,
+            "DS_AG": 0
+          },
+          "gene_symbol": "BRCA1",
+          "strand": -1,
+          "transcript_id": "ENST00000357654",
+          "hgnc_id": "HGNC:1100",
+          "gene_id": "ENSG00000012048",
+          "cds_end": 66,
+          "codons": "tta/ttAa",
+          "protein_end": 22,
+          "biotype": "protein_coding",
+          "cds_start": 65,
+          "cdna_end": 179,
+          "consequence_terms": [
+            "frameshift_variant"
+          ],
+          "impact": "HIGH",
+          "cdna_start": 178,
+          "canonical": 1,
+          "variant_allele": "T"
+        },
+        {
+          "gene_symbol": "NBR2",
+          "transcript_id": "ENST00000460115",
+          "hgnc_id": "HGNC:20691",
+          "strand": 1,
+          "gene_id": "ENSG00000198496",
+          "variant_allele": "T",
+          "biotype": "lncRNA",
+          "gene_symbol_source": "HGNC",
+          "distance": 1578,
+          "consequence_terms": [
+            "upstream_gene_variant"
+          ],
+          "impact": "MODIFIER"
+        },
+        {
+          "variant_allele": "T",
+          "cdna_end": 192,
+          "consequence_terms": [
+            "frameshift_variant",
+            "NMD_transcript_variant"
+          ],
+          "impact": "HIGH",
+          "cdna_start": 191,
+          "protein_end": 22,
+          "biotype": "nonsense_mediated_decay",
+          "cds_start": 65,
+          "gene_id": "ENSG00000012048",
+          "codons": "tta/ttAa",
+          "cds_end": 66,
+          "gene_symbol": "BRCA1",
+          "transcript_id": "ENST00000461221",
+          "strand": -1,
+          "hgnc_id": "HGNC:1100",
+          "gene_symbol_source": "HGNC",
+          "spliceai": {
+            "DS_DG": 0,
+            "DS_DL": 0,
+            "SYMBOL": "BRCA1",
+            "DP_DG": -14,
+            "DS_AG": 0,
+            "DP_AL": -14,
+            "DP_AG": 8,
+            "DP_DL": 36,
+            "DS_AL": 0
+          },
+          "protein_start": 22,
+          "amino_acids": "L/LX",
+          "domains": [
+            {
+              "db": "ENSP_mappings",
+              "name": "AF"
+            }
+          ]
+        },
+        {
+          "gene_symbol": "BRCA1",
+          "transcript_id": "ENST00000461574",
+          "strand": -1,
+          "hgnc_id": "HGNC:1100",
+          "gene_id": "ENSG00000012048",
+          "codons": "tta/ttAa",
+          "cds_end": 66,
+          "protein_start": 22,
+          "domains": [
+            {
+              "db": "Gene3D",
+              "name": 3
+            },
+            {
+              "db": "Phobius",
+              "name": "NON_CYTOPLASMIC_DOMAIN"
+            },
+            {
+              "name": "PIRSF001734",
+              "db": "PIRSF"
+            },
+            {
+              "name": "SSF57850",
+              "db": "Superfamily"
+            },
+            {
+              "name": "cd16498",
+              "db": "CDD"
+            }
+          ],
+          "amino_acids": "L/LX",
+          "gene_symbol_source": "HGNC",
+          "spliceai": {
+            "DS_AL": 0,
+            "DP_AG": 8,
+            "DP_DL": 36,
+            "DP_AL": -14,
+            "DS_AG": 0,
+            "DS_DL": 0,
+            "SYMBOL": "BRCA1",
+            "DP_DG": -14,
+            "DS_DG": 0
+          },
+          "variant_allele": "T",
+          "biotype": "protein_coding",
+          "protein_end": 22,
+          "cds_start": 65,
+          "consequence_terms": [
+            "frameshift_variant"
+          ],
+          "cdna_end": 185,
+          "impact": "HIGH",
+          "cdna_start": 184
+        },
+        {
+          "biotype": "nonsense_mediated_decay",
+          "protein_end": 22,
+          "cds_start": 65,
+          "consequence_terms": [
+            "frameshift_variant",
+            "NMD_transcript_variant"
+          ],
+          "cdna_end": 179,
+          "impact": "HIGH",
+          "cdna_start": 178,
+          "variant_allele": "T",
+          "domains": [
+            {
+              "name": "AF",
+              "db": "ENSP_mappings"
+            }
+          ],
+          "protein_start": 22,
+          "amino_acids": "L/LX",
+          "gene_symbol_source": "HGNC",
+          "spliceai": {
+            "DP_DL": 36,
+            "DP_AG": 8,
+            "DS_AL": 0,
+            "DS_AG": 0,
+            "DP_AL": -14,
+            "DP_DG": -14,
+            "DS_DL": 0,
+            "SYMBOL": "BRCA1",
+            "DS_DG": 0
+          },
+          "gene_symbol": "BRCA1",
+          "hgnc_id": "HGNC:1100",
+          "transcript_id": "ENST00000461798",
+          "strand": -1,
+          "gene_id": "ENSG00000012048",
+          "codons": "tta/ttAa",
+          "cds_end": 66
+        },
+        {
+          "consequence_terms": [
+            "upstream_gene_variant"
+          ],
+          "impact": "MODIFIER",
+          "distance": 1612,
+          "gene_symbol_source": "HGNC",
+          "biotype": "lncRNA",
+          "variant_allele": "T",
+          "gene_id": "ENSG00000198496",
+          "strand": 1,
+          "transcript_id": "ENST00000467245",
+          "hgnc_id": "HGNC:20691",
+          "gene_symbol": "NBR2"
+        },
+        {
+          "consequence_terms": [
+            "frameshift_variant"
+          ],
+          "cdna_end": 260,
+          "impact": "HIGH",
+          "cdna_start": 259,
+          "cds_start": 65,
+          "protein_end": 22,
+          "biotype": "protein_coding",
+          "variant_allele": "T",
+          "spliceai": {
+            "DS_AL": 0,
+            "DP_DL": 36,
+            "DP_AG": 8,
+            "DP_AL": -14,
+            "DS_AG": 0,
+            "SYMBOL": "BRCA1",
+            "DP_DG": -14,
+            "DS_DL": 0,
+            "DS_DG": 0
+          },
+          "gene_symbol_source": "HGNC",
+          "amino_acids": "L/LX",
+          "domains": [
+            {
+              "db": "Gene3D",
+              "name": 3
+            },
+            {
+              "db": "ENSP_mappings",
+              "name": "AF"
+            },
+            {
+              "name": "NON_CYTOPLASMIC_DOMAIN",
+              "db": "Phobius"
+            },
+            {
+              "db": "PIRSF",
+              "name": "PIRSF001734"
+            },
+            {
+              "name": "SSF57850",
+              "db": "Superfamily"
+            },
+            {
+              "name": "cd16498",
+              "db": "CDD"
+            }
+          ],
+          "protein_start": 22,
+          "cds_end": 66,
+          "codons": "tta/ttAa",
+          "gene_id": "ENSG00000012048",
+          "hgnc_id": "HGNC:1100",
+          "transcript_id": "ENST00000468300",
+          "strand": -1,
+          "gene_symbol": "BRCA1"
+        },
+        {
+          "protein_start": 22,
+          "domains": [
+            {
+              "name": "1jm7",
+              "db": "ENSP_mappings"
+            },
+            {
+              "name": "7jzv",
+              "db": "ENSP_mappings"
+            },
+            {
+              "name": "7lyb",
+              "db": "ENSP_mappings"
+            },
+            {
+              "db": "ENSP_mappings",
+              "name": "8grq"
+            },
+            {
+              "name": "cd16498",
+              "db": "CDD"
+            },
+            {
+              "name": "NON_CYTOPLASMIC_DOMAIN",
+              "db": "Phobius"
+            },
+            {
+              "db": "Superfamily",
+              "name": "SSF57850"
+            },
+            {
+              "name": 3,
+              "db": "Gene3D"
+            },
+            {
+              "name": "PIRSF001734",
+              "db": "PIRSF"
+            },
+            {
+              "db": "ENSP_mappings",
+              "name": "AF"
+            },
+            {
+              "name": "AF",
+              "db": "ENSP_mappings"
+            }
+          ],
+          "amino_acids": "L/LX",
+          "gene_symbol_source": "HGNC",
+          "spliceai": {
+            "DS_DL": 0,
+            "SYMBOL": "BRCA1",
+            "DP_DG": -14,
+            "DS_DG": 0,
+            "DS_AL": 0,
+            "DP_AG": 8,
+            "DP_DL": 36,
+            "DP_AL": -14,
+            "DS_AG": 0
+          },
+          "gene_symbol": "BRCA1",
+          "transcript_id": "ENST00000470026",
+          "hgnc_id": "HGNC:1100",
+          "strand": -1,
+          "gene_id": "ENSG00000012048",
+          "cds_end": 66,
+          "codons": "tta/ttAa",
+          "protein_end": 22,
+          "biotype": "protein_coding",
+          "cds_start": 65,
+          "cdna_start": 246,
+          "consequence_terms": [
+            "frameshift_variant"
+          ],
+          "cdna_end": 247,
+          "impact": "HIGH",
+          "variant_allele": "T"
+        },
+        {
+          "amino_acids": "L/LX",
+          "protein_start": 22,
+          "domains": [
+            {
+              "name": 3,
+              "db": "Gene3D"
+            },
+            {
+              "name": "AF",
+              "db": "ENSP_mappings"
+            },
+            {
+              "db": "Phobius",
+              "name": "NON_CYTOPLASMIC_DOMAIN"
+            },
+            {
+              "db": "PIRSF",
+              "name": "PIRSF001734"
+            },
+            {
+              "name": "SSF57850",
+              "db": "Superfamily"
+            },
+            {
+              "name": "cd16498",
+              "db": "CDD"
+            }
+          ],
+          "spliceai": {
+            "DS_AL": 0,
+            "DP_DL": 36,
+            "DP_AG": 8,
+            "DP_AL": -14,
+            "DS_AG": 0,
+            "DP_DG": -14,
+            "SYMBOL": "BRCA1",
+            "DS_DL": 0,
+            "DS_DG": 0
+          },
+          "gene_symbol_source": "HGNC",
+          "hgnc_id": "HGNC:1100",
+          "transcript_id": "ENST00000471181",
+          "strand": -1,
+          "gene_symbol": "BRCA1",
+          "cds_end": 66,
+          "codons": "tta/ttAa",
+          "gene_id": "ENSG00000012048",
+          "cds_start": 65,
+          "biotype": "protein_coding",
+          "protein_end": 22,
+          "cdna_start": 297,
+          "cdna_end": 298,
+          "consequence_terms": [
+            "frameshift_variant"
+          ],
+          "impact": "HIGH",
+          "variant_allele": "T"
+        },
+        {
+          "variant_allele": "T",
+          "consequence_terms": [
+            "frameshift_variant"
+          ],
+          "cdna_end": 179,
+          "impact": "HIGH",
+          "cdna_start": 178,
+          "cds_start": 65,
+          "protein_end": 22,
+          "biotype": "protein_coding",
+          "codons": "tta/ttAa",
+          "cds_end": 66,
+          "gene_id": "ENSG00000012048",
+          "hgnc_id": "HGNC:1100",
+          "transcript_id": "ENST00000473961",
+          "strand": -1,
+          "gene_symbol": "BRCA1",
+          "spliceai": {
+            "DP_AL": -14,
+            "DS_AG": 0,
+            "DS_AL": 0,
+            "DP_AG": 8,
+            "DP_DL": 36,
+            "DS_DG": 0,
+            "SYMBOL": "BRCA1",
+            "DS_DL": 0,
+            "DP_DG": -14
+          },
+          "gene_symbol_source": "HGNC",
+          "protein_start": 22,
+          "domains": [
+            {
+              "name": 3,
+              "db": "Gene3D"
+            },
+            {
+              "name": "NON_CYTOPLASMIC_DOMAIN",
+              "db": "Phobius"
+            },
+            {
+              "name": "PIRSF001734",
+              "db": "PIRSF"
+            },
+            {
+              "name": "SSF57850",
+              "db": "Superfamily"
+            },
+            {
+              "name": "cd16498",
+              "db": "CDD"
+            }
+          ],
+          "amino_acids": "L/LX"
+        },
+        {
+          "transcript_id": "ENST00000476777",
+          "hgnc_id": "HGNC:1100",
+          "strand": -1,
+          "gene_symbol": "BRCA1",
+          "cds_end": 66,
+          "codons": "tta/ttAa",
+          "gene_id": "ENSG00000012048",
+          "protein_start": 22,
+          "domains": [
+            {
+              "db": "Gene3D",
+              "name": 3
+            },
+            {
+              "db": "ENSP_mappings",
+              "name": "AF"
+            },
+            {
+              "name": "NON_CYTOPLASMIC_DOMAIN",
+              "db": "Phobius"
+            },
+            {
+              "name": "PIRSF001734",
+              "db": "PIRSF"
+            },
+            {
+              "name": "SSF57850",
+              "db": "Superfamily"
+            },
+            {
+              "db": "CDD",
+              "name": "cd16498"
+            }
+          ],
+          "amino_acids": "L/LX",
+          "spliceai": {
+            "DP_AG": 8,
+            "DP_DL": 36,
+            "DS_AL": 0,
+            "DS_AG": 0,
+            "DP_AL": -14,
+            "DS_DL": 0,
+            "DP_DG": -14,
+            "SYMBOL": "BRCA1",
+            "DS_DG": 0
+          },
+          "gene_symbol_source": "HGNC",
+          "variant_allele": "T",
+          "cds_start": 65,
+          "protein_end": 22,
+          "biotype": "protein_coding",
+          "consequence_terms": [
+            "frameshift_variant"
+          ],
+          "cdna_end": 175,
+          "impact": "HIGH",
+          "cdna_start": 174
+        },
+        {
+          "cds_end": 66,
+          "codons": "tta/ttAa",
+          "gene_id": "ENSG00000012048",
+          "hgnc_id": "HGNC:1100",
+          "transcript_id": "ENST00000477152",
+          "strand": -1,
+          "gene_symbol": "BRCA1",
+          "spliceai": {
+            "DS_AG": 0,
+            "DP_AL": -14,
+            "DP_DL": 36,
+            "DP_AG": 8,
+            "DS_AL": 0,
+            "DS_DG": 0,
+            "DS_DL": 0,
+            "SYMBOL": "BRCA1",
+            "DP_DG": -14
+          },
+          "gene_symbol_source": "HGNC",
+          "amino_acids": "L/LX",
+          "protein_start": 22,
+          "domains": [
+            {
+              "name": 3,
+              "db": "Gene3D"
+            },
+            {
+              "name": "AF",
+              "db": "ENSP_mappings"
+            },
+            {
+              "name": "NON_CYTOPLASMIC_DOMAIN",
+              "db": "Phobius"
+            },
+            {
+              "db": "PIRSF",
+              "name": "PIRSF001734"
+            },
+            {
+              "db": "Superfamily",
+              "name": "SSF57850"
+            }
+          ],
+          "variant_allele": "T",
+          "cdna_start": 178,
+          "impact": "HIGH",
+          "consequence_terms": [
+            "frameshift_variant"
+          ],
+          "cdna_end": 179,
+          "cds_start": 65,
+          "protein_end": 22,
+          "biotype": "protein_coding"
+        },
+        {
+          "impact": "HIGH",
+          "consequence_terms": [
+            "frameshift_variant"
+          ],
+          "cdna_end": 168,
+          "cdna_start": 167,
+          "biotype": "protein_coding",
+          "protein_end": 22,
+          "cds_start": 65,
+          "variant_allele": "T",
+          "gene_symbol_source": "HGNC",
+          "spliceai": {
+            "DP_DL": 36,
+            "DP_AG": 8,
+            "DS_AL": 0,
+            "DS_AG": 0,
+            "DP_AL": -14,
+            "DS_DL": 0,
+            "SYMBOL": "BRCA1",
+            "DP_DG": -14,
+            "DS_DG": 0
+          },
+          "domains": [
+            {
+              "name": "cd16498",
+              "db": "CDD"
+            },
+            {
+              "name": "SSF57850",
+              "db": "Superfamily"
+            },
+            {
+              "db": "Phobius",
+              "name": "NON_CYTOPLASMIC_DOMAIN"
+            },
+            {
+              "db": "Gene3D",
+              "name": 3
+            },
+            {
+              "db": "PIRSF",
+              "name": "PIRSF001734"
+            },
+            {
+              "name": "AF",
+              "db": "ENSP_mappings"
+            }
+          ],
+          "amino_acids": "L/LX",
+          "protein_start": 22,
+          "gene_id": "ENSG00000012048",
+          "codons": "tta/ttAa",
+          "cds_end": 66,
+          "gene_symbol": "BRCA1",
+          "strand": -1,
+          "transcript_id": "ENST00000478531",
+          "hgnc_id": "HGNC:1100"
+        },
+        {
+          "cdna_start": 157,
+          "cdna_end": 158,
+          "consequence_terms": [
+            "frameshift_variant"
+          ],
+          "impact": "HIGH",
+          "cds_start": 65,
+          "protein_end": 22,
+          "biotype": "protein_coding",
+          "variant_allele": "T",
+          "spliceai": {
+            "DS_DG": 0,
+            "DS_DL": 0,
+            "DP_DG": -14,
+            "SYMBOL": "BRCA1",
+            "DS_AG": 0,
+            "DP_AL": -14,
+            "DP_AG": 8,
+            "DP_DL": 36,
+            "DS_AL": 0
+          },
+          "gene_symbol_source": "HGNC",
+          "domains": [
+            {
+              "name": 3,
+              "db": "Gene3D"
+            },
+            {
+              "db": "ENSP_mappings",
+              "name": "AF"
+            },
+            {
+              "db": "Phobius",
+              "name": "NON_CYTOPLASMIC_DOMAIN"
+            },
+            {
+              "name": "PIRSF001734",
+              "db": "PIRSF"
+            },
+            {
+              "db": "Superfamily",
+              "name": "SSF57850"
+            },
+            {
+              "name": "cd16498",
+              "db": "CDD"
+            }
+          ],
+          "amino_acids": "L/LX",
+          "protein_start": 22,
+          "codons": "tta/ttAa",
+          "cds_end": 66,
+          "gene_id": "ENSG00000012048",
+          "hgnc_id": "HGNC:1100",
+          "transcript_id": "ENST00000484087",
+          "strand": -1,
+          "gene_symbol": "BRCA1"
+        },
+        {
+          "protein_end": 22,
+          "biotype": "protein_coding",
+          "cds_start": 65,
+          "cdna_start": 224,
+          "consequence_terms": [
+            "frameshift_variant"
+          ],
+          "impact": "HIGH",
+          "cdna_end": 225,
+          "variant_allele": "T",
+          "amino_acids": "L/LX",
+          "protein_start": 22,
+          "domains": [
+            {
+              "name": 3,
+              "db": "Gene3D"
+            },
+            {
+              "db": "ENSP_mappings",
+              "name": "AF"
+            },
+            {
+              "name": "NON_CYTOPLASMIC_DOMAIN",
+              "db": "Phobius"
+            },
+            {
+              "db": "PIRSF",
+              "name": "PIRSF001734"
+            },
+            {
+              "name": "SSF57850",
+              "db": "Superfamily"
+            }
+          ],
+          "gene_symbol_source": "HGNC",
+          "spliceai": {
+            "DS_DL": 0,
+            "DP_DG": -14,
+            "SYMBOL": "BRCA1",
+            "DS_DG": 0,
+            "DP_DL": 36,
+            "DP_AG": 8,
+            "DS_AL": 0,
+            "DS_AG": 0,
+            "DP_AL": -14
+          },
+          "gene_symbol": "BRCA1",
+          "strand": -1,
+          "transcript_id": "ENST00000489037",
+          "hgnc_id": "HGNC:1100",
+          "gene_id": "ENSG00000012048",
+          "codons": "tta/ttAa",
+          "cds_end": 66
+        },
+        {
+          "amino_acids": "L/LX",
+          "domains": [
+            {
+              "name": 3,
+              "db": "Gene3D"
+            },
+            {
+              "name": "PIRSF001734",
+              "db": "PIRSF"
+            },
+            {
+              "name": "cd16498",
+              "db": "CDD"
+            },
+            {
+              "name": "SSF57850",
+              "db": "Superfamily"
+            },
+            {
+              "db": "Phobius",
+              "name": "NON_CYTOPLASMIC_DOMAIN"
+            },
+            {
+              "db": "ENSP_mappings",
+              "name": "AF"
+            }
+          ],
+          "protein_start": 22,
+          "gene_symbol_source": "HGNC",
+          "spliceai": {
+            "DS_AL": 0,
+            "DP_DL": 36,
+            "DP_AG": 8,
+            "DP_AL": -14,
+            "DS_AG": 0,
+            "SYMBOL": "BRCA1",
+            "DP_DG": -14,
+            "DS_DL": 0,
+            "DS_DG": 0
+          },
+          "gene_symbol": "BRCA1",
+          "transcript_id": "ENST00000491747",
+          "hgnc_id": "HGNC:1100",
+          "strand": -1,
+          "gene_id": "ENSG00000012048",
+          "cds_end": 66,
+          "codons": "tta/ttAa",
+          "biotype": "protein_coding",
+          "protein_end": 22,
+          "cds_start": 65,
+          "consequence_terms": [
+            "frameshift_variant"
+          ],
+          "cdna_end": 165,
+          "impact": "HIGH",
+          "cdna_start": 164,
+          "variant_allele": "T"
+        },
+        {
+          "variant_allele": "T",
+          "cds_start": 65,
+          "biotype": "nonsense_mediated_decay",
+          "protein_end": 22,
+          "consequence_terms": [
+            "frameshift_variant",
+            "NMD_transcript_variant"
+          ],
+          "impact": "HIGH",
+          "cdna_end": 115,
+          "cdna_start": 114,
+          "strand": -1,
+          "transcript_id": "ENST00000492859",
+          "hgnc_id": "HGNC:1100",
+          "gene_symbol": "BRCA1",
+          "codons": "tta/ttAa",
+          "cds_end": 66,
+          "gene_id": "ENSG00000012048",
+          "domains": [
+            {
+              "name": "AF",
+              "db": "ENSP_mappings"
+            }
+          ],
+          "protein_start": 22,
+          "amino_acids": "L/LX",
+          "spliceai": {
+            "DP_DL": 36,
+            "DP_AG": 8,
+            "DS_AL": 0,
+            "DS_AG": 0,
+            "DP_AL": -14,
+            "DS_DL": 0,
+            "SYMBOL": "BRCA1",
+            "DP_DG": -14,
+            "DS_DG": 0
+          },
+          "gene_symbol_source": "HGNC"
+        },
+        {
+          "biotype": "protein_coding",
+          "gene_symbol_source": "HGNC",
+          "spliceai": {
+            "DP_AL": -14,
+            "DS_AG": 0,
+            "DS_AL": 0,
+            "DP_AG": 8,
+            "DP_DL": 36,
+            "DS_DG": 0,
+            "SYMBOL": "BRCA1",
+            "DS_DL": 0,
+            "DP_DG": -14
+          },
+          "cdna_start": 210,
+          "consequence_terms": [
+            "5_prime_UTR_variant"
+          ],
+          "impact": "MODIFIER",
+          "cdna_end": 211,
+          "gene_symbol": "BRCA1",
+          "hgnc_id": "HGNC:1100",
+          "transcript_id": "ENST00000493795",
+          "strand": -1,
+          "gene_id": "ENSG00000012048",
+          "variant_allele": "T"
+        },
+        {
+          "biotype": "protein_coding",
+          "spliceai": {
+            "DS_AL": 0,
+            "DP_DL": 36,
+            "DP_AG": 8,
+            "DP_AL": -14,
+            "DS_AG": 0,
+            "DP_DG": -14,
+            "SYMBOL": "BRCA1",
+            "DS_DL": 0,
+            "DS_DG": 0
+          },
+          "cdna_start": 210,
+          "cdna_end": 211,
+          "consequence_terms": [
+            "5_prime_UTR_variant"
+          ],
+          "impact": "MODIFIER",
+          "gene_symbol_source": "HGNC",
+          "transcript_id": "ENST00000493919",
+          "hgnc_id": "HGNC:1100",
+          "strand": -1,
+          "gene_symbol": "BRCA1",
+          "gene_id": "ENSG00000012048",
+          "variant_allele": "T"
+        },
+        {
+          "hgnc_id": "HGNC:1100",
+          "transcript_id": "ENST00000494123",
+          "strand": -1,
+          "gene_symbol": "BRCA1",
+          "codons": "tta/ttAa",
+          "cds_end": 66,
+          "gene_id": "ENSG00000012048",
+          "domains": [
+            {
+              "db": "ENSP_mappings",
+              "name": "1jm7"
+            },
+            {
+              "db": "ENSP_mappings",
+              "name": "7jzv"
+            },
+            {
+              "db": "ENSP_mappings",
+              "name": "7lyb"
+            },
+            {
+              "name": "8grq",
+              "db": "ENSP_mappings"
+            },
+            {
+              "name": 3,
+              "db": "Gene3D"
+            },
+            {
+              "name": "PIRSF001734",
+              "db": "PIRSF"
+            },
+            {
+              "db": "Superfamily",
+              "name": "SSF57850"
+            },
+            {
+              "name": "NON_CYTOPLASMIC_DOMAIN",
+              "db": "Phobius"
+            },
+            {
+              "db": "CDD",
+              "name": "cd16498"
+            },
+            {
+              "db": "ENSP_mappings",
+              "name": "AF"
+            },
+            {
+              "db": "ENSP_mappings",
+              "name": "AF"
+            }
+          ],
+          "protein_start": 22,
+          "amino_acids": "L/LX",
+          "spliceai": {
+            "SYMBOL": "BRCA1",
+            "DS_DL": 0,
+            "DP_DG": -14,
+            "DS_DG": 0,
+            "DS_AL": 0,
+            "DP_AG": 8,
+            "DP_DL": 36,
+            "DP_AL": -14,
+            "DS_AG": 0
+          },
+          "gene_symbol_source": "HGNC",
+          "variant_allele": "T",
+          "cds_start": 65,
+          "protein_end": 22,
+          "biotype": "protein_coding",
+          "impact": "HIGH",
+          "consequence_terms": [
+            "frameshift_variant"
+          ],
+          "cdna_end": 259,
+          "cdna_start": 258
+        },
+        {
+          "gene_symbol": "BRCA1",
+          "strand": -1,
+          "transcript_id": "ENST00000497488",
+          "hgnc_id": "HGNC:1100",
+          "gene_id": "ENSG00000012048",
+          "variant_allele": "T",
+          "biotype": "protein_coding",
+          "gene_symbol_source": "HGNC",
+          "spliceai": {
+            "DS_AL": 0,
+            "DP_AG": 8,
+            "DP_DL": 36,
+            "DP_AL": -14,
+            "DS_AG": 0,
+            "DS_DL": 0,
+            "SYMBOL": "BRCA1",
+            "DP_DG": -14,
+            "DS_DG": 0
+          },
+          "impact": "MODIFIER",
+          "consequence_terms": [
+            "intron_variant"
+          ]
+        },
+        {
+          "gene_symbol": "BRCA1",
+          "strand": -1,
+          "transcript_id": "ENST00000586385",
+          "hgnc_id": "HGNC:1100",
+          "gene_id": "ENSG00000012048",
+          "variant_allele": "T",
+          "biotype": "protein_coding",
+          "gene_symbol_source": "HGNC",
+          "spliceai": {
+            "DS_AG": 0,
+            "DP_AL": -14,
+            "DP_AG": 8,
+            "DP_DL": 36,
+            "DS_AL": 0,
+            "DS_DG": 0,
+            "SYMBOL": "BRCA1",
+            "DS_DL": 0,
+            "DP_DG": -14
+          },
+          "consequence_terms": [
+            "intron_variant"
+          ],
+          "impact": "MODIFIER"
+        },
+        {
+          "spliceai": {
+            "DP_DL": 36,
+            "DP_AG": 8,
+            "DS_AL": 0,
+            "DS_AG": 0,
+            "DP_AL": -14,
+            "DS_DL": 0,
+            "DP_DG": -14,
+            "SYMBOL": "BRCA1",
+            "DS_DG": 0
+          },
+          "consequence_terms": [
+            "intron_variant"
+          ],
+          "impact": "MODIFIER",
+          "gene_symbol_source": "HGNC",
+          "biotype": "protein_coding",
+          "gene_id": "ENSG00000012048",
+          "variant_allele": "T",
+          "hgnc_id": "HGNC:1100",
+          "transcript_id": "ENST00000591534",
+          "strand": -1,
+          "gene_symbol": "BRCA1"
+        },
+        {
+          "transcript_id": "ENST00000591849",
+          "strand": -1,
+          "hgnc_id": "HGNC:1100",
+          "gene_symbol": "BRCA1",
+          "variant_allele": "T",
+          "gene_id": "ENSG00000012048",
+          "biotype": "protein_coding",
+          "impact": "MODIFIER",
+          "consequence_terms": [
+            "intron_variant"
+          ],
+          "spliceai": {
+            "DS_DG": 0,
+            "SYMBOL": "BRCA1",
+            "DP_DG": -14,
+            "DS_DL": 0,
+            "DS_AG": 0,
+            "DP_AL": -14,
+            "DP_AG": 8,
+            "DP_DL": 36,
+            "DS_AL": 0
+          },
+          "gene_symbol_source": "HGNC"
+        },
+        {
+          "domains": [
+            {
+              "db": "ENSP_mappings",
+              "name": "1jm7"
+            },
+            {
+              "name": 3,
+              "db": "Gene3D"
+            },
+            {
+              "name": "7jzv",
+              "db": "ENSP_mappings"
+            },
+            {
+              "db": "ENSP_mappings",
+              "name": "7lyb"
+            },
+            {
+              "name": "8grq",
+              "db": "ENSP_mappings"
+            },
+            {
+              "name": "AF",
+              "db": "ENSP_mappings"
+            },
+            {
+              "db": "ENSP_mappings",
+              "name": "AF"
+            },
+            {
+              "db": "Phobius",
+              "name": "NON_CYTOPLASMIC_DOMAIN"
+            },
+            {
+              "name": "PIRSF001734",
+              "db": "PIRSF"
+            },
+            {
+              "db": "Superfamily",
+              "name": "SSF57850"
+            },
+            {
+              "db": "CDD",
+              "name": "cd16498"
+            }
+          ],
+          "protein_start": 22,
+          "amino_acids": "L/LX",
+          "spliceai": {
+            "DP_AL": -14,
+            "DS_AG": 0,
+            "DS_AL": 0,
+            "DP_AG": 8,
+            "DP_DL": 36,
+            "DS_DG": 0,
+            "SYMBOL": "BRCA1",
+            "DS_DL": 0,
+            "DP_DG": -14
+          },
+          "gene_symbol_source": "HGNC",
+          "transcript_id": "ENST00000618469",
+          "hgnc_id": "HGNC:1100",
+          "strand": -1,
+          "gene_symbol": "BRCA1",
+          "codons": "tta/ttAa",
+          "cds_end": 66,
+          "gene_id": "ENSG00000012048",
+          "cds_start": 65,
+          "protein_end": 22,
+          "biotype": "protein_coding",
+          "cdna_start": 712,
+          "consequence_terms": [
+            "frameshift_variant"
+          ],
+          "cdna_end": 713,
+          "impact": "HIGH",
+          "variant_allele": "T"
+        },
+        {
+          "cds_start": 65,
+          "biotype": "protein_coding",
+          "protein_end": 22,
+          "impact": "HIGH",
+          "consequence_terms": [
+            "frameshift_variant"
+          ],
+          "cdna_end": 205,
+          "cdna_start": 204,
+          "variant_allele": "T",
+          "protein_start": 22,
+          "amino_acids": "L/LX",
+          "domains": [
+            {
+              "db": "CDD",
+              "name": "cd16498"
+            },
+            {
+              "db": "Gene3D",
+              "name": 3
+            },
+            {
+              "name": "PIRSF001734",
+              "db": "PIRSF"
+            },
+            {
+              "name": "NON_CYTOPLASMIC_DOMAIN",
+              "db": "Phobius"
+            },
+            {
+              "db": "Superfamily",
+              "name": "SSF57850"
+            },
+            {
+              "name": "AF",
+              "db": "ENSP_mappings"
+            }
+          ],
+          "spliceai": {
+            "DS_DG": 0,
+            "DP_DG": -14,
+            "SYMBOL": "BRCA1",
+            "DS_DL": 0,
+            "DP_AL": -14,
+            "DS_AG": 0,
+            "DS_AL": 0,
+            "DP_DL": 36,
+            "DP_AG": 8
+          },
+          "gene_symbol_source": "HGNC",
+          "hgnc_id": "HGNC:1100",
+          "transcript_id": "ENST00000634433",
+          "strand": -1,
+          "gene_symbol": "BRCA1",
+          "cds_end": 66,
+          "codons": "tta/ttAa",
+          "gene_id": "ENSG00000012048"
+        },
+        {
+          "cds_end": 66,
+          "codons": "tta/ttAa",
+          "gene_id": "ENSG00000012048",
+          "hgnc_id": "HGNC:1100",
+          "transcript_id": "ENST00000642945",
+          "strand": -1,
+          "gene_symbol": "BRCA1",
+          "spliceai": {
+            "DS_DG": 0,
+            "SYMBOL": "BRCA1",
+            "DS_DL": 0,
+            "DP_DG": -14,
+            "DS_AG": 0,
+            "DP_AL": -14,
+            "DP_AG": 8,
+            "DP_DL": 36,
+            "DS_AL": 0
+          },
+          "gene_symbol_source": "HGNC",
+          "amino_acids": "L/LX",
+          "domains": [
+            {
+              "db": "ENSP_mappings",
+              "name": "AF"
+            }
+          ],
+          "protein_start": 22,
+          "variant_allele": "T",
+          "cdna_start": 151,
+          "cdna_end": 152,
+          "consequence_terms": [
+            "frameshift_variant",
+            "NMD_transcript_variant"
+          ],
+          "impact": "HIGH",
+          "cds_start": 65,
+          "protein_end": 22,
+          "biotype": "nonsense_mediated_decay"
+        },
+        {
+          "amino_acids": "L/LX",
+          "domains": [
+            {
+              "name": 3,
+              "db": "Gene3D"
+            },
+            {
+              "name": "NON_CYTOPLASMIC_DOMAIN",
+              "db": "Phobius"
+            },
+            {
+              "db": "PIRSF",
+              "name": "PIRSF001734"
+            },
+            {
+              "db": "Superfamily",
+              "name": "SSF57850"
+            },
+            {
+              "name": "cd16498",
+              "db": "CDD"
+            }
+          ],
+          "protein_start": 22,
+          "spliceai": {
+            "DP_AG": 8,
+            "DP_DL": 36,
+            "DS_AL": 0,
+            "DS_AG": 0,
+            "DP_AL": -14,
+            "DP_DG": -14,
+            "DS_DL": 0,
+            "SYMBOL": "BRCA1",
+            "DS_DG": 0
+          },
+          "gene_symbol_source": "HGNC",
+          "strand": -1,
+          "transcript_id": "ENST00000644379",
+          "hgnc_id": "HGNC:1100",
+          "gene_symbol": "BRCA1",
+          "cds_end": 66,
+          "codons": "tta/ttAa",
+          "gene_id": "ENSG00000012048",
+          "cds_start": 65,
+          "protein_end": 22,
+          "biotype": "protein_coding",
+          "impact": "HIGH",
+          "consequence_terms": [
+            "frameshift_variant"
+          ],
+          "cdna_end": 179,
+          "cdna_start": 178,
+          "variant_allele": "T"
+        },
+        {
+          "gene_symbol_source": "HGNC",
+          "cdna_end": 185,
+          "consequence_terms": [
+            "5_prime_UTR_variant"
+          ],
+          "impact": "MODIFIER",
+          "spliceai": {
+            "DP_DL": 36,
+            "DP_AG": 8,
+            "DS_AL": 0,
+            "DS_AG": 0,
+            "DP_AL": -14,
+            "DS_DL": 0,
+            "SYMBOL": "BRCA1",
+            "DP_DG": -14,
+            "DS_DG": 0
+          },
+          "cdna_start": 184,
+          "biotype": "protein_coding",
+          "variant_allele": "T",
+          "gene_id": "ENSG00000012048",
+          "gene_symbol": "BRCA1",
+          "transcript_id": "ENST00000644555",
+          "strand": -1,
+          "hgnc_id": "HGNC:1100"
+        },
+        {
+          "gene_symbol_source": "HGNC",
+          "cdna_start": 291,
+          "spliceai": {
+            "DS_AG": 0,
+            "DP_AL": -14,
+            "DP_DL": 36,
+            "DP_AG": 8,
+            "DS_AL": 0,
+            "DS_DG": 0,
+            "DS_DL": 0,
+            "SYMBOL": "BRCA1",
+            "DP_DG": -14
+          },
+          "impact": "MODIFIER",
+          "consequence_terms": [
+            "5_prime_UTR_variant"
+          ],
+          "cdna_end": 292,
+          "biotype": "protein_coding",
+          "gene_id": "ENSG00000012048",
+          "variant_allele": "T",
+          "gene_symbol": "BRCA1",
+          "transcript_id": "ENST00000652672",
+          "strand": -1,
+          "hgnc_id": "HGNC:1100"
+        },
+        {
+          "distance": 1519,
+          "gene_symbol_source": "HGNC",
+          "consequence_terms": [
+            "upstream_gene_variant"
+          ],
+          "impact": "MODIFIER",
+          "biotype": "lncRNA",
+          "variant_allele": "T",
+          "gene_id": "ENSG00000198496",
+          "gene_symbol": "NBR2",
+          "strand": 1,
+          "transcript_id": "ENST00000657841",
+          "hgnc_id": "HGNC:20691",
+          "canonical": 1
+        },
+        {
+          "domains": [
+            {
+              "name": 3,
+              "db": "Gene3D"
+            },
+            {
+              "name": "AF",
+              "db": "ENSP_mappings"
+            },
+            {
+              "db": "PIRSF",
+              "name": "PIRSF001734"
+            },
+            {
+              "db": "PANTHER",
+              "name": "PTHR13763"
+            },
+            {
+              "name": "SSF57850",
+              "db": "Superfamily"
+            }
+          ],
+          "protein_start": 22,
+          "amino_acids": "L/LX",
+          "spliceai": {
+            "DS_DG": 0,
+            "SYMBOL": "BRCA1",
+            "DS_DL": 0,
+            "DP_DG": -14,
+            "DS_AG": 0,
+            "DP_AL": -14,
+            "DP_DL": 36,
+            "DP_AG": 8,
+            "DS_AL": 0
+          },
+          "gene_symbol_source": "HGNC",
+          "strand": -1,
+          "transcript_id": "ENST00000700182",
+          "hgnc_id": "HGNC:1100",
+          "gene_symbol": "BRCA1",
+          "codons": "tta/ttAa",
+          "cds_end": 66,
+          "gene_id": "ENSG00000012048",
+          "cds_start": 65,
+          "biotype": "protein_coding",
+          "protein_end": 22,
+          "cdna_start": 157,
+          "consequence_terms": [
+            "frameshift_variant"
+          ],
+          "impact": "HIGH",
+          "cdna_end": 158,
+          "variant_allele": "T"
+        },
+        {
+          "strand": -1,
+          "transcript_id": "ENST00000700183",
+          "hgnc_id": "HGNC:1100",
+          "gene_symbol": "BRCA1",
+          "codons": "tta/ttAa",
+          "cds_end": 66,
+          "gene_id": "ENSG00000012048",
+          "domains": [
+            {
+              "name": "AF",
+              "db": "ENSP_mappings"
+            }
+          ],
+          "protein_start": 22,
+          "amino_acids": "L/LX",
+          "spliceai": {
+            "DS_DL": 0,
+            "SYMBOL": "BRCA1",
+            "DP_DG": -14,
+            "DS_DG": 0,
+            "DP_DL": 36,
+            "DP_AG": 8,
+            "DS_AL": 0,
+            "DS_AG": 0,
+            "DP_AL": -14
+          },
+          "gene_symbol_source": "HGNC",
+          "variant_allele": "T",
+          "cds_start": 65,
+          "protein_end": 22,
+          "biotype": "nonsense_mediated_decay",
+          "cdna_end": 158,
+          "consequence_terms": [
+            "frameshift_variant",
+            "NMD_transcript_variant"
+          ],
+          "impact": "HIGH",
+          "cdna_start": 157
+        },
+        {
+          "variant_allele": "T",
+          "gene_id": "ENSG00000012048",
+          "hgnc_id": "HGNC:1100",
+          "transcript_id": "ENST00000700184",
+          "strand": -1,
+          "gene_symbol": "BRCA1",
+          "impact": "MODIFIER",
+          "consequence_terms": [
+            "non_coding_transcript_exon_variant"
+          ],
+          "cdna_end": 309,
+          "spliceai": {
+            "DS_DG": 0,
+            "DP_DG": -14,
+            "SYMBOL": "BRCA1",
+            "DS_DL": 0,
+            "DP_AL": -14,
+            "DS_AG": 0,
+            "DS_AL": 0,
+            "DP_AG": 8,
+            "DP_DL": 36
+          },
+          "cdna_start": 308,
+          "gene_symbol_source": "HGNC",
+          "biotype": "retained_intron"
+        },
+        {
+          "transcript_id": "ENST00000700185",
+          "strand": -1,
+          "hgnc_id": "HGNC:1100",
+          "gene_symbol": "BRCA1",
+          "gene_id": "ENSG00000012048",
+          "variant_allele": "T",
+          "biotype": "protein_coding_CDS_not_defined",
+          "spliceai": {
+            "DP_AG": 8,
+            "DP_DL": 36,
+            "DS_AL": 0,
+            "DS_AG": 0,
+            "DP_AL": -14,
+            "DS_DL": 0,
+            "SYMBOL": "BRCA1",
+            "DP_DG": -14,
+            "DS_DG": 0
+          },
+          "cdna_start": 184,
+          "cdna_end": 185,
+          "consequence_terms": [
+            "non_coding_transcript_exon_variant"
+          ],
+          "impact": "MODIFIER",
+          "gene_symbol_source": "HGNC"
+        },
+        {
+          "biotype": "protein_coding_CDS_not_defined",
+          "gene_symbol_source": "HGNC",
+          "spliceai": {
+            "DS_DG": 0,
+            "SYMBOL": "BRCA1",
+            "DP_DG": -14,
+            "DS_DL": 0,
+            "DP_AL": -14,
+            "DS_AG": 0,
+            "DS_AL": 0,
+            "DP_DL": 36,
+            "DP_AG": 8
+          },
+          "cdna_start": 184,
+          "consequence_terms": [
+            "non_coding_transcript_exon_variant"
+          ],
+          "cdna_end": 185,
+          "impact": "MODIFIER",
+          "gene_symbol": "BRCA1",
+          "transcript_id": "ENST00000700186",
+          "strand": -1,
+          "hgnc_id": "HGNC:1100",
+          "gene_id": "ENSG00000012048",
+          "variant_allele": "T"
+        },
+        {
+          "variant_allele": "T",
+          "cds_start": 65,
+          "biotype": "protein_coding",
+          "protein_end": 22,
+          "cdna_start": 138,
+          "cdna_end": 139,
+          "consequence_terms": [
+            "frameshift_variant"
+          ],
+          "impact": "HIGH",
+          "transcript_id": "ENST00000713676",
+          "strand": -1,
+          "hgnc_id": "HGNC:1100",
+          "gene_symbol": "BRCA1",
+          "codons": "tta/ttAa",
+          "cds_end": 66,
+          "gene_id": "ENSG00000012048",
+          "protein_start": 22,
+          "amino_acids": "L/LX",
+          "domains": [
+            {
+              "db": "Gene3D",
+              "name": 3
+            },
+            {
+              "name": "NON_CYTOPLASMIC_DOMAIN",
+              "db": "Phobius"
+            },
+            {
+              "db": "PIRSF",
+              "name": "PIRSF001734"
+            },
+            {
+              "name": "SSF57850",
+              "db": "Superfamily"
+            },
+            {
+              "db": "CDD",
+              "name": "cd16498"
+            }
+          ],
+          "spliceai": {
+            "DP_DL": 36,
+            "DP_AG": 8,
+            "DS_AL": 0,
+            "DS_AG": 0,
+            "DP_AL": -14,
+            "DS_DL": 0,
+            "SYMBOL": "BRCA1",
+            "DP_DG": -14,
+            "DS_DG": 0
+          },
+          "gene_symbol_source": "HGNC"
+        },
+        {
+          "biotype": "lncRNA",
+          "impact": "MODIFIER",
+          "consequence_terms": [
+            "upstream_gene_variant"
+          ],
+          "gene_symbol_source": "HGNC",
+          "distance": 1563,
+          "strand": 1,
+          "transcript_id": "ENST00000790195",
+          "hgnc_id": "HGNC:20691",
+          "gene_symbol": "NBR2",
+          "gene_id": "ENSG00000198496",
+          "variant_allele": "T"
+        },
+        {
+          "biotype": "lncRNA",
+          "impact": "MODIFIER",
+          "consequence_terms": [
+            "upstream_gene_variant"
+          ],
+          "gene_symbol_source": "HGNC",
+          "distance": 1569,
+          "transcript_id": "ENST00000790196",
+          "hgnc_id": "HGNC:20691",
+          "strand": 1,
+          "gene_symbol": "NBR2",
+          "gene_id": "ENSG00000198496",
+          "variant_allele": "T"
+        },
+        {
+          "gene_symbol": "NBR2",
+          "transcript_id": "ENST00000790197",
+          "strand": 1,
+          "hgnc_id": "HGNC:20691",
+          "gene_id": "ENSG00000198496",
+          "variant_allele": "T",
+          "biotype": "lncRNA",
+          "gene_symbol_source": "HGNC",
+          "distance": 1610,
+          "impact": "MODIFIER",
+          "consequence_terms": [
+            "upstream_gene_variant"
+          ]
+        },
+        {
+          "hgnc_id": "HGNC:20691",
+          "transcript_id": "ENST00000790198",
+          "strand": 1,
+          "gene_symbol": "NBR2",
+          "gene_id": "ENSG00000198496",
+          "variant_allele": "T",
+          "biotype": "lncRNA",
+          "consequence_terms": [
+            "upstream_gene_variant"
+          ],
+          "impact": "MODIFIER",
+          "gene_symbol_source": "HGNC",
+          "distance": 2340
+        },
+        {
+          "variant_allele": "T",
+          "gene_id": "ENSG00000198496",
+          "gene_symbol": "NBR2",
+          "strand": 1,
+          "transcript_id": "ENST00000790199",
+          "hgnc_id": "HGNC:20691",
+          "distance": 1555,
+          "gene_symbol_source": "HGNC",
+          "consequence_terms": [
+            "upstream_gene_variant"
+          ],
+          "impact": "MODIFIER",
+          "biotype": "lncRNA"
+        },
+        {
+          "variant_allele": "T",
+          "gene_id": "ENSG00000198496",
+          "strand": 1,
+          "transcript_id": "ENST00000790200",
+          "hgnc_id": "HGNC:20691",
+          "gene_symbol": "NBR2",
+          "impact": "MODIFIER",
+          "consequence_terms": [
+            "upstream_gene_variant"
+          ],
+          "distance": 1607,
+          "gene_symbol_source": "HGNC",
+          "biotype": "lncRNA"
+        },
+        {
+          "biotype": "lncRNA",
+          "distance": 1535,
+          "gene_symbol_source": "HGNC",
+          "consequence_terms": [
+            "upstream_gene_variant"
+          ],
+          "impact": "MODIFIER",
+          "gene_symbol": "NBR2",
+          "strand": 1,
+          "transcript_id": "ENST00000790201",
+          "hgnc_id": "HGNC:20691",
+          "variant_allele": "T",
+          "gene_id": "ENSG00000198496"
+        },
+        {
+          "gene_symbol": "NBR2",
+          "transcript_id": "ENST00000790202",
+          "hgnc_id": "HGNC:20691",
+          "strand": 1,
+          "gene_id": "ENSG00000198496",
+          "variant_allele": "T",
+          "biotype": "lncRNA",
+          "gene_symbol_source": "HGNC",
+          "distance": 1558,
+          "consequence_terms": [
+            "upstream_gene_variant"
+          ],
+          "impact": "MODIFIER"
+        },
+        {
+          "impact": "MODIFIER",
+          "consequence_terms": [
+            "upstream_gene_variant"
+          ],
+          "distance": 1565,
+          "gene_symbol_source": "HGNC",
+          "biotype": "lncRNA",
+          "variant_allele": "T",
+          "gene_id": "ENSG00000198496",
+          "hgnc_id": "HGNC:20691",
+          "transcript_id": "ENST00000790203",
+          "strand": 1,
+          "gene_symbol": "NBR2"
+        },
+        {
+          "distance": 1569,
+          "gene_symbol_source": "HGNC",
+          "consequence_terms": [
+            "upstream_gene_variant"
+          ],
+          "impact": "MODIFIER",
+          "biotype": "lncRNA",
+          "variant_allele": "T",
+          "gene_id": "ENSG00000198496",
+          "gene_symbol": "NBR2",
+          "transcript_id": "ENST00000790204",
+          "strand": 1,
+          "hgnc_id": "HGNC:20691"
+        },
+        {
+          "hgnc_id": "HGNC:20691",
+          "transcript_id": "ENST00000790205",
+          "strand": 1,
+          "gene_symbol": "NBR2",
+          "variant_allele": "T",
+          "gene_id": "ENSG00000198496",
+          "biotype": "lncRNA",
+          "impact": "MODIFIER",
+          "consequence_terms": [
+            "upstream_gene_variant"
+          ],
+          "distance": 1611,
+          "gene_symbol_source": "HGNC"
+        },
+        {
+          "gene_symbol": "NBR2",
+          "transcript_id": "ENST00000790206",
+          "strand": 1,
+          "hgnc_id": "HGNC:20691",
+          "variant_allele": "T",
+          "gene_id": "ENSG00000198496",
+          "biotype": "lncRNA",
+          "distance": 1602,
+          "gene_symbol_source": "HGNC",
+          "impact": "MODIFIER",
+          "consequence_terms": [
+            "upstream_gene_variant"
+          ]
+        },
+        {
+          "hgnc_id": "HGNC:1100",
+          "transcript_id": "ENST00000899954",
+          "strand": -1,
+          "gene_symbol": "BRCA1",
+          "cds_end": 66,
+          "codons": "tta/ttAa",
+          "gene_id": "ENSG00000012048",
+          "domains": [
+            {
+              "db": "Phobius",
+              "name": "NON_CYTOPLASMIC_DOMAIN"
+            },
+            {
+              "db": "PIRSF",
+              "name": "PIRSF001734"
+            },
+            {
+              "name": 3,
+              "db": "Gene3D"
+            },
+            {
+              "db": "CDD",
+              "name": "cd16498"
+            },
+            {
+              "name": "SSF57850",
+              "db": "Superfamily"
+            }
+          ],
+          "protein_start": 22,
+          "amino_acids": "L/LX",
+          "spliceai": {
+            "DP_AL": -14,
+            "DS_AG": 0,
+            "DS_AL": 0,
+            "DP_DL": 36,
+            "DP_AG": 8,
+            "DS_DG": 0,
+            "SYMBOL": "BRCA1",
+            "DP_DG": -14,
+            "DS_DL": 0
+          },
+          "gene_symbol_source": "HGNC",
+          "variant_allele": "T",
+          "cds_start": 65,
+          "protein_end": 22,
+          "biotype": "protein_coding",
+          "cdna_start": 291,
+          "cdna_end": 292,
+          "consequence_terms": [
+            "frameshift_variant"
+          ],
+          "impact": "HIGH"
+        },
+        {
+          "variant_allele": "T",
+          "cdna_end": 291,
+          "consequence_terms": [
+            "frameshift_variant"
+          ],
+          "impact": "HIGH",
+          "cdna_start": 290,
+          "biotype": "protein_coding",
+          "protein_end": 22,
+          "cds_start": 65,
+          "gene_id": "ENSG00000012048",
+          "cds_end": 66,
+          "codons": "tta/ttAa",
+          "gene_symbol": "BRCA1",
+          "transcript_id": "ENST00000921914",
+          "hgnc_id": "HGNC:1100",
+          "strand": -1,
+          "gene_symbol_source": "HGNC",
+          "spliceai": {
+            "DP_DG": -14,
+            "SYMBOL": "BRCA1",
+            "DS_DL": 0,
+            "DS_DG": 0,
+            "DS_AL": 0,
+            "DP_DL": 36,
+            "DP_AG": 8,
+            "DP_AL": -14,
+            "DS_AG": 0
+          },
+          "amino_acids": "L/LX",
+          "protein_start": 22,
+          "domains": [
+            {
+              "db": "Gene3D",
+              "name": 3
+            },
+            {
+              "name": "NON_CYTOPLASMIC_DOMAIN",
+              "db": "Phobius"
+            },
+            {
+              "db": "PIRSF",
+              "name": "PIRSF001734"
+            },
+            {
+              "db": "Superfamily",
+              "name": "SSF57850"
+            },
+            {
+              "db": "CDD",
+              "name": "cd16498"
+            }
+          ]
+        },
+        {
+          "domains": [
+            {
+              "name": "cd16498",
+              "db": "CDD"
+            },
+            {
+              "db": "Gene3D",
+              "name": 3
+            },
+            {
+              "db": "PIRSF",
+              "name": "PIRSF001734"
+            },
+            {
+              "db": "Phobius",
+              "name": "NON_CYTOPLASMIC_DOMAIN"
+            },
+            {
+              "db": "Superfamily",
+              "name": "SSF57850"
+            }
+          ],
+          "amino_acids": "L/LX",
+          "protein_start": 22,
+          "spliceai": {
+            "DS_DG": 0,
+            "SYMBOL": "BRCA1",
+            "DS_DL": 0,
+            "DP_DG": -14,
+            "DS_AG": 0,
+            "DP_AL": -14,
+            "DP_DL": 36,
+            "DP_AG": 8,
+            "DS_AL": 0
+          },
+          "gene_symbol_source": "HGNC",
+          "hgnc_id": "HGNC:1100",
+          "transcript_id": "ENST00000921915",
+          "strand": -1,
+          "gene_symbol": "BRCA1",
+          "codons": "tta/ttAa",
+          "cds_end": 66,
+          "gene_id": "ENSG00000012048",
+          "cds_start": 65,
+          "biotype": "protein_coding",
+          "protein_end": 22,
+          "cdna_end": 716,
+          "consequence_terms": [
+            "frameshift_variant"
+          ],
+          "impact": "HIGH",
+          "cdna_start": 715,
+          "variant_allele": "T"
+        },
+        {
+          "cdna_start": 161,
+          "impact": "HIGH",
+          "consequence_terms": [
+            "frameshift_variant"
+          ],
+          "cdna_end": 162,
+          "cds_start": 65,
+          "protein_end": 22,
+          "biotype": "protein_coding",
+          "variant_allele": "T",
+          "spliceai": {
+            "DP_DG": -14,
+            "DS_DL": 0,
+            "SYMBOL": "BRCA1",
+            "DS_DG": 0,
+            "DS_AL": 0,
+            "DP_DL": 36,
+            "DP_AG": 8,
+            "DP_AL": -14,
+            "DS_AG": 0
+          },
+          "gene_symbol_source": "HGNC",
+          "protein_start": 22,
+          "amino_acids": "L/LX",
+          "domains": [
+            {
+              "name": "cd16498",
+              "db": "CDD"
+            },
+            {
+              "db": "Gene3D",
+              "name": 3
+            },
+            {
+              "db": "PIRSF",
+              "name": "PIRSF001734"
+            },
+            {
+              "db": "Phobius",
+              "name": "NON_CYTOPLASMIC_DOMAIN"
+            },
+            {
+              "db": "Superfamily",
+              "name": "SSF57850"
+            }
+          ],
+          "codons": "tta/ttAa",
+          "cds_end": 66,
+          "gene_id": "ENSG00000012048",
+          "hgnc_id": "HGNC:1100",
+          "transcript_id": "ENST00000921916",
+          "strand": -1,
+          "gene_symbol": "BRCA1"
+        },
+        {
+          "cdna_start": 218,
+          "consequence_terms": [
+            "frameshift_variant"
+          ],
+          "cdna_end": 219,
+          "impact": "HIGH",
+          "protein_end": 22,
+          "biotype": "protein_coding",
+          "cds_start": 65,
+          "variant_allele": "T",
+          "gene_symbol_source": "HGNC",
+          "spliceai": {
+            "DS_DG": 0,
+            "SYMBOL": "BRCA1",
+            "DS_DL": 0,
+            "DP_DG": -14,
+            "DP_AL": -14,
+            "DS_AG": 0,
+            "DS_AL": 0,
+            "DP_AG": 8,
+            "DP_DL": 36
+          },
+          "protein_start": 22,
+          "domains": [
+            {
+              "name": 3,
+              "db": "Gene3D"
+            },
+            {
+              "db": "Phobius",
+              "name": "NON_CYTOPLASMIC_DOMAIN"
+            },
+            {
+              "name": "PIRSF001734",
+              "db": "PIRSF"
+            },
+            {
+              "name": "SSF57850",
+              "db": "Superfamily"
+            },
+            {
+              "db": "CDD",
+              "name": "cd16498"
+            }
+          ],
+          "amino_acids": "L/LX",
+          "gene_id": "ENSG00000012048",
+          "codons": "tta/ttAa",
+          "cds_end": 66,
+          "gene_symbol": "BRCA1",
+          "transcript_id": "ENST00000945268",
+          "strand": -1,
+          "hgnc_id": "HGNC:1100"
+        },
+        {
+          "strand": -1,
+          "transcript_id": "ENST00000945269",
+          "hgnc_id": "HGNC:1100",
+          "gene_symbol": "BRCA1",
+          "codons": "tta/ttAa",
+          "cds_end": 66,
+          "gene_id": "ENSG00000012048",
+          "protein_start": 22,
+          "amino_acids": "L/LX",
+          "domains": [
+            {
+              "name": 3,
+              "db": "Gene3D"
+            },
+            {
+              "name": "NON_CYTOPLASMIC_DOMAIN",
+              "db": "Phobius"
+            },
+            {
+              "db": "PIRSF",
+              "name": "PIRSF001734"
+            },
+            {
+              "db": "Superfamily",
+              "name": "SSF57850"
+            },
+            {
+              "name": "cd16498",
+              "db": "CDD"
+            }
+          ],
+          "spliceai": {
+            "DP_AG": 8,
+            "DP_DL": 36,
+            "DS_AL": 0,
+            "DS_AG": 0,
+            "DP_AL": -14,
+            "DS_DL": 0,
+            "SYMBOL": "BRCA1",
+            "DP_DG": -14,
+            "DS_DG": 0
+          },
+          "gene_symbol_source": "HGNC",
+          "variant_allele": "T",
+          "cds_start": 65,
+          "protein_end": 22,
+          "biotype": "protein_coding",
+          "cdna_start": 301,
+          "impact": "HIGH",
+          "consequence_terms": [
+            "frameshift_variant"
+          ],
+          "cdna_end": 302
+        },
+        {
+          "cdna_end": 365,
+          "consequence_terms": [
+            "frameshift_variant"
+          ],
+          "impact": "HIGH",
+          "cdna_start": 364,
+          "protein_end": 22,
+          "biotype": "protein_coding",
+          "cds_start": 65,
+          "variant_allele": "T",
+          "gene_symbol_source": "HGNC",
+          "spliceai": {
+            "DS_AL": 0,
+            "DP_AG": 8,
+            "DP_DL": 36,
+            "DP_AL": -14,
+            "DS_AG": 0,
+            "DS_DL": 0,
+            "SYMBOL": "BRCA1",
+            "DP_DG": -14,
+            "DS_DG": 0
+          },
+          "domains": [
+            {
+              "name": 3,
+              "db": "Gene3D"
+            },
+            {
+              "db": "Phobius",
+              "name": "NON_CYTOPLASMIC_DOMAIN"
+            },
+            {
+              "name": "PIRSF001734",
+              "db": "PIRSF"
+            },
+            {
+              "db": "Superfamily",
+              "name": "SSF57850"
+            },
+            {
+              "db": "CDD",
+              "name": "cd16498"
+            }
+          ],
+          "protein_start": 22,
+          "amino_acids": "L/LX",
+          "gene_id": "ENSG00000012048",
+          "codons": "tta/ttAa",
+          "cds_end": 66,
+          "gene_symbol": "BRCA1",
+          "hgnc_id": "HGNC:1100",
+          "transcript_id": "ENST00001010568",
+          "strand": -1
+        },
+        {
+          "biotype": "protein_coding",
+          "protein_end": 22,
+          "cds_start": 65,
+          "cdna_start": 301,
+          "consequence_terms": [
+            "frameshift_variant"
+          ],
+          "cdna_end": 302,
+          "impact": "HIGH",
+          "variant_allele": "T",
+          "domains": [
+            {
+              "db": "Gene3D",
+              "name": 3
+            },
+            {
+              "db": "Phobius",
+              "name": "NON_CYTOPLASMIC_DOMAIN"
+            },
+            {
+              "db": "PIRSF",
+              "name": "PIRSF001734"
+            },
+            {
+              "name": "SSF57850",
+              "db": "Superfamily"
+            },
+            {
+              "db": "CDD",
+              "name": "cd16498"
+            }
+          ],
+          "protein_start": 22,
+          "amino_acids": "L/LX",
+          "gene_symbol_source": "HGNC",
+          "spliceai": {
+            "DS_AL": 0,
+            "DP_DL": 36,
+            "DP_AG": 8,
+            "DP_AL": -14,
+            "DS_AG": 0,
+            "DP_DG": -14,
+            "SYMBOL": "BRCA1",
+            "DS_DL": 0,
+            "DS_DG": 0
+          },
+          "gene_symbol": "BRCA1",
+          "hgnc_id": "HGNC:1100",
+          "transcript_id": "ENST00001010569",
+          "strand": -1,
+          "gene_id": "ENSG00000012048",
+          "codons": "tta/ttAa",
+          "cds_end": 66
+        },
+        {
+          "gene_id": "ENSG00000012048",
+          "codons": "tta/ttAa",
+          "cds_end": 66,
+          "gene_symbol": "BRCA1",
+          "transcript_id": "ENST00001010570",
+          "hgnc_id": "HGNC:1100",
+          "strand": -1,
+          "gene_symbol_source": "HGNC",
+          "spliceai": {
+            "DS_AG": 0,
+            "DP_AL": -14,
+            "DP_DL": 36,
+            "DP_AG": 8,
+            "DS_AL": 0,
+            "DS_DG": 0,
+            "DP_DG": -14,
+            "SYMBOL": "BRCA1",
+            "DS_DL": 0
+          },
+          "domains": [
+            {
+              "db": "Gene3D",
+              "name": 3
+            },
+            {
+              "db": "PIRSF",
+              "name": "PIRSF001734"
+            },
+            {
+              "db": "Superfamily",
+              "name": "SSF57850"
+            },
+            {
+              "name": "cd16498",
+              "db": "CDD"
+            }
+          ],
+          "protein_start": 22,
+          "amino_acids": "L/LX",
+          "variant_allele": "T",
+          "consequence_terms": [
+            "frameshift_variant"
+          ],
+          "cdna_end": 296,
+          "impact": "HIGH",
+          "cdna_start": 295,
+          "biotype": "protein_coding",
+          "protein_end": 22,
+          "cds_start": 65
+        },
+        {
+          "domains": [
+            {
+              "name": "PIRSF001734",
+              "db": "PIRSF"
+            },
+            {
+              "db": "Gene3D",
+              "name": 3
+            },
+            {
+              "db": "Superfamily",
+              "name": "SSF57850"
+            },
+            {
+              "db": "CDD",
+              "name": "cd16498"
+            },
+            {
+              "name": "NON_CYTOPLASMIC_DOMAIN",
+              "db": "Phobius"
+            }
+          ],
+          "protein_start": 22,
+          "amino_acids": "L/LX",
+          "spliceai": {
+            "DS_AG": 0,
+            "DP_AL": -14,
+            "DP_DL": 36,
+            "DP_AG": 8,
+            "DS_AL": 0,
+            "DS_DG": 0,
+            "DP_DG": -14,
+            "SYMBOL": "BRCA1",
+            "DS_DL": 0
+          },
+          "gene_symbol_source": "HGNC",
+          "hgnc_id": "HGNC:1100",
+          "transcript_id": "ENST00001076718",
+          "strand": -1,
+          "gene_symbol": "BRCA1",
+          "codons": "tta/ttAa",
+          "cds_end": 66,
+          "gene_id": "ENSG00000012048",
+          "cds_start": 65,
+          "protein_end": 22,
+          "biotype": "protein_coding",
+          "cdna_start": 300,
+          "cdna_end": 301,
+          "consequence_terms": [
+            "frameshift_variant"
+          ],
+          "impact": "HIGH",
+          "variant_allele": "T"
+        },
+        {
+          "cds_start": 65,
+          "protein_end": 22,
+          "biotype": "protein_coding",
+          "cdna_start": 196,
+          "cdna_end": 197,
+          "consequence_terms": [
+            "frameshift_variant"
+          ],
+          "impact": "HIGH",
+          "variant_allele": "T",
+          "protein_start": 22,
+          "domains": [
+            {
+              "db": "CDD",
+              "name": "cd16498"
+            },
+            {
+              "name": "NON_CYTOPLASMIC_DOMAIN",
+              "db": "Phobius"
+            },
+            {
+              "db": "Superfamily",
+              "name": "SSF57850"
+            },
+            {
+              "db": "Gene3D",
+              "name": 3
+            },
+            {
+              "db": "PIRSF",
+              "name": "PIRSF001734"
+            }
+          ],
+          "amino_acids": "L/LX",
+          "spliceai": {
+            "DS_DL": 0,
+            "SYMBOL": "BRCA1",
+            "DP_DG": -14,
+            "DS_DG": 0,
+            "DP_AG": 8,
+            "DP_DL": 36,
+            "DS_AL": 0,
+            "DS_AG": 0,
+            "DP_AL": -14
+          },
+          "gene_symbol_source": "HGNC",
+          "hgnc_id": "HGNC:1100",
+          "transcript_id": "ENST00001076719",
+          "strand": -1,
+          "gene_symbol": "BRCA1",
+          "codons": "tta/ttAa",
+          "cds_end": 66,
+          "gene_id": "ENSG00000012048"
+        },
+        {
+          "spliceai": {
+            "DS_DL": 0,
+            "SYMBOL": "BRCA1",
+            "DP_DG": -14,
+            "DS_DG": 0,
+            "DP_AG": 8,
+            "DP_DL": 36,
+            "DS_AL": 0,
+            "DS_AG": 0,
+            "DP_AL": -14
+          },
+          "gene_symbol_source": "HGNC",
+          "amino_acids": "L/LX",
+          "domains": [
+            {
+              "db": "Gene3D",
+              "name": 3
+            },
+            {
+              "name": "NON_CYTOPLASMIC_DOMAIN",
+              "db": "Phobius"
+            },
+            {
+              "db": "PIRSF",
+              "name": "PIRSF001734"
+            },
+            {
+              "name": "SSF57850",
+              "db": "Superfamily"
+            },
+            {
+              "name": "cd16498",
+              "db": "CDD"
+            }
+          ],
+          "protein_start": 22,
+          "cds_end": 66,
+          "codons": "tta/ttAa",
+          "gene_id": "ENSG00000012048",
+          "hgnc_id": "HGNC:1100",
+          "transcript_id": "ENST00001076720",
+          "strand": -1,
+          "gene_symbol": "BRCA1",
+          "cdna_start": 191,
+          "cdna_end": 192,
+          "consequence_terms": [
+            "frameshift_variant"
+          ],
+          "impact": "HIGH",
+          "cds_start": 65,
+          "protein_end": 22,
+          "biotype": "protein_coding",
+          "variant_allele": "T"
+        },
+        {
+          "cdna_start": 190,
+          "consequence_terms": [
+            "frameshift_variant"
+          ],
+          "impact": "HIGH",
+          "cdna_end": 191,
+          "cds_start": 65,
+          "protein_end": 22,
+          "biotype": "protein_coding",
+          "variant_allele": "T",
+          "spliceai": {
+            "DS_AG": 0,
+            "DP_AL": -14,
+            "DP_AG": 8,
+            "DP_DL": 36,
+            "DS_AL": 0,
+            "DS_DG": 0,
+            "DP_DG": -14,
+            "DS_DL": 0,
+            "SYMBOL": "BRCA1"
+          },
+          "gene_symbol_source": "HGNC",
+          "domains": [
+            {
+              "db": "Gene3D",
+              "name": 3
+            },
+            {
+              "name": "NON_CYTOPLASMIC_DOMAIN",
+              "db": "Phobius"
+            },
+            {
+              "name": "PIRSF001734",
+              "db": "PIRSF"
+            },
+            {
+              "db": "Superfamily",
+              "name": "SSF57850"
+            },
+            {
+              "db": "CDD",
+              "name": "cd16498"
+            }
+          ],
+          "amino_acids": "L/LX",
+          "protein_start": 22,
+          "codons": "tta/ttAa",
+          "cds_end": 66,
+          "gene_id": "ENSG00000012048",
+          "strand": -1,
+          "transcript_id": "ENST00001076721",
+          "hgnc_id": "HGNC:1100",
+          "gene_symbol": "BRCA1"
+        },
+        {
+          "protein_end": 22,
+          "biotype": "protein_coding",
+          "cds_start": 65,
+          "cdna_start": 189,
+          "consequence_terms": [
+            "frameshift_variant"
+          ],
+          "impact": "HIGH",
+          "cdna_end": 190,
+          "variant_allele": "T",
+          "amino_acids": "L/LX",
+          "protein_start": 22,
+          "domains": [
+            {
+              "name": 3,
+              "db": "Gene3D"
+            },
+            {
+              "name": "NON_CYTOPLASMIC_DOMAIN",
+              "db": "Phobius"
+            },
+            {
+              "name": "PIRSF001734",
+              "db": "PIRSF"
+            },
+            {
+              "name": "SSF57850",
+              "db": "Superfamily"
+            },
+            {
+              "name": "cd16498",
+              "db": "CDD"
+            }
+          ],
+          "gene_symbol_source": "HGNC",
+          "spliceai": {
+            "DS_DG": 0,
+            "DS_DL": 0,
+            "SYMBOL": "BRCA1",
+            "DP_DG": -14,
+            "DP_AL": -14,
+            "DS_AG": 0,
+            "DS_AL": 0,
+            "DP_AG": 8,
+            "DP_DL": 36
+          },
+          "gene_symbol": "BRCA1",
+          "transcript_id": "ENST00001076722",
+          "strand": -1,
+          "hgnc_id": "HGNC:1100",
+          "gene_id": "ENSG00000012048",
+          "codons": "tta/ttAa",
+          "cds_end": 66
+        },
+        {
+          "cdna_start": 164,
+          "impact": "HIGH",
+          "consequence_terms": [
+            "frameshift_variant",
+            "NMD_transcript_variant"
+          ],
+          "cdna_end": 165,
+          "biotype": "nonsense_mediated_decay",
+          "protein_end": 22,
+          "cds_start": 65,
+          "variant_allele": "T",
+          "gene_symbol_source": "HGNC",
+          "spliceai": {
+            "DS_AL": 0,
+            "DP_AG": 8,
+            "DP_DL": 36,
+            "DP_AL": -14,
+            "DS_AG": 0,
+            "SYMBOL": "BRCA1",
+            "DS_DL": 0,
+            "DP_DG": -14,
+            "DS_DG": 0
+          },
+          "protein_start": 22,
+          "amino_acids": "L/LX",
+          "gene_id": "ENSG00000012048",
+          "codons": "tta/ttAa",
+          "cds_end": 66,
+          "gene_symbol": "BRCA1",
+          "transcript_id": "ENST00001076723",
+          "hgnc_id": "HGNC:1100",
+          "strand": -1
+        },
+        {
+          "amino_acids": "L/LX",
+          "protein_start": 22,
+          "domains": [
+            {
+              "name": 3,
+              "db": "Gene3D"
+            },
+            {
+              "name": "NON_CYTOPLASMIC_DOMAIN",
+              "db": "Phobius"
+            },
+            {
+              "db": "PIRSF",
+              "name": "PIRSF001734"
+            },
+            {
+              "name": "SSF57850",
+              "db": "Superfamily"
+            },
+            {
+              "db": "CDD",
+              "name": "cd16498"
+            }
+          ],
+          "spliceai": {
+            "DS_AG": 0,
+            "DP_AL": -14,
+            "DP_AG": 8,
+            "DP_DL": 36,
+            "DS_AL": 0,
+            "DS_DG": 0,
+            "DS_DL": 0,
+            "SYMBOL": "BRCA1",
+            "DP_DG": -14
+          },
+          "gene_symbol_source": "HGNC",
+          "transcript_id": "ENST00001076724",
+          "hgnc_id": "HGNC:1100",
+          "strand": -1,
+          "gene_symbol": "BRCA1",
+          "cds_end": 66,
+          "codons": "tta/ttAa",
+          "gene_id": "ENSG00000012048",
+          "cds_start": 65,
+          "biotype": "protein_coding",
+          "protein_end": 22,
+          "cdna_start": 177,
+          "impact": "HIGH",
+          "consequence_terms": [
+            "frameshift_variant"
+          ],
+          "cdna_end": 178,
+          "variant_allele": "T"
+        },
+        {
+          "variant_allele": "T",
+          "protein_end": 22,
+          "biotype": "protein_coding",
+          "cds_start": 65,
+          "impact": "HIGH",
+          "consequence_terms": [
+            "frameshift_variant"
+          ],
+          "cdna_end": 702,
+          "cdna_start": 701,
+          "gene_symbol": "BRCA1",
+          "transcript_id": "ENST00001076725",
+          "strand": -1,
+          "hgnc_id": "HGNC:1100",
+          "gene_id": "ENSG00000012048",
+          "cds_end": 66,
+          "codons": "tta/ttAa",
+          "amino_acids": "L/LX",
+          "protein_start": 22,
+          "domains": [
+            {
+              "name": 3,
+              "db": "Gene3D"
+            },
+            {
+              "name": "NON_CYTOPLASMIC_DOMAIN",
+              "db": "Phobius"
+            },
+            {
+              "name": "PIRSF001734",
+              "db": "PIRSF"
+            },
+            {
+              "db": "Superfamily",
+              "name": "SSF57850"
+            },
+            {
+              "name": "cd16498",
+              "db": "CDD"
+            }
+          ],
+          "gene_symbol_source": "HGNC",
+          "spliceai": {
+            "DS_DG": 0,
+            "DS_DL": 0,
+            "SYMBOL": "BRCA1",
+            "DP_DG": -14,
+            "DP_AL": -14,
+            "DS_AG": 0,
+            "DS_AL": 0,
+            "DP_DL": 36,
+            "DP_AG": 8
+          }
+        },
+        {
+          "variant_allele": "T",
+          "cdna_start": 178,
+          "cdna_end": 179,
+          "consequence_terms": [
+            "frameshift_variant"
+          ],
+          "impact": "HIGH",
+          "cds_start": 65,
+          "biotype": "protein_coding",
+          "protein_end": 22,
+          "cds_end": 66,
+          "codons": "tta/ttAa",
+          "gene_id": "ENSG00000012048",
+          "transcript_id": "ENST00001136804",
+          "hgnc_id": "HGNC:1100",
+          "strand": -1,
+          "gene_symbol": "BRCA1",
+          "spliceai": {
+            "DS_DG": 0,
+            "SYMBOL": "BRCA1",
+            "DS_DL": 0,
+            "DP_DG": -14,
+            "DP_AL": -14,
+            "DS_AG": 0,
+            "DS_AL": 0,
+            "DP_DL": 36,
+            "DP_AG": 8
+          },
+          "gene_symbol_source": "HGNC",
+          "protein_start": 22,
+          "amino_acids": "L/LX",
+          "domains": [
+            {
+              "name": 3,
+              "db": "Gene3D"
+            },
+            {
+              "name": "NON_CYTOPLASMIC_DOMAIN",
+              "db": "Phobius"
+            },
+            {
+              "name": "PIRSF001734",
+              "db": "PIRSF"
+            },
+            {
+              "db": "Superfamily",
+              "name": "SSF57850"
+            },
+            {
+              "db": "CDD",
+              "name": "cd16498"
+            }
+          ]
+        }
+      ],
+      "input": "rs80357783",
+      "assembly_name": "GRCh38"
+    }
+  ]
+}

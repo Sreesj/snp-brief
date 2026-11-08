@@ -1,0 +1,19 @@
+{
+  "source": "Open Targets",
+  "retrieved": "2026-11-08T03:55:43+00:00",
+  "request": {
+    "variant_ids": [
+      "17_43124030_T_TT"
+    ]
+  },
+  "response": [
+    {
+      "variant_id": "17_43124030_T_TT",
+      "body": {
+        "data": {
+          "variant": null
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,2383 @@
+{
+  "source": "Ensembl VEP",
+  "retrieved": "2026-11-08T03:49:42+00:00",
+  "request": {
+    "rsid": "rs987870",
+    "params": {
+      "AlphaMissense": "1",
+      "CADD": "1",
+      "SpliceAI": "1",
+      "canonical": "1",
+      "variant_class": "1",
+      "domains": "1"
+    }
+  },
+  "response": [
+    {
+      "seq_region_name": "6",
+      "end": 33075103,
+      "colocated_variants": [
+        {
+          "pubmed": [
+            23886662,
+            23755072,
+            27313329,
+            20018078,
+            21779181,
+            22694930,
+            26119467,
+            21814517,
+            31785132,
+            30541564,
+            29751569,
+            23792949,
+            23637549,
+            24223962,
+            24794577,
+            23740775,
+            27439200,
+            30661310,
+            26006746,
+            25119688,
+            39766875
+          ],
+          "seq_region_name": "6",
+          "end": 33075103,
+          "start": 33075103,
+          "frequencies": {
+            "G": {
+              "gnomadg_asj": 0.152,
+              "gnomadg_mid": 0.1667,
+              "gnomadg_ami": 0.1066,
+              "gnomadg_sas": 0.2469,
+              "gnomadg_amr": 0.1857,
+              "gnomadg_remaining": 0.2033,
+              "gnomadg_fin": 0.0738,
+              "gnomadg_eas": 0.1021,
+              "sas": 0.2628,
+              "eur": 0.1531,
+              "eas": 0.1012,
+              "gnomadg_nfe": 0.1409,
+              "gnomadg": 0.193,
+              "amr": 0.2363,
+              "af": 0.235,
+              "gnomadg_afr": 0.3217,
+              "afr": 0.3782
+            }
+          },
+          "strand": 1,
+          "id": "rs987870",
+          "phenotype_or_disease": 1,
+          "allele_string": "A/G"
+        }
+      ],
+      "start": 33075103,
+      "transcript_consequences": [
+        {
+          "gene_symbol_source": "HGNC",
+          "flags": [
+            "cds_end_NF"
+          ],
+          "consequence_terms": [
+            "intron_variant"
+          ],
+          "impact": "MODIFIER",
+          "spliceai": {
+            "DP_AL": -5,
+            "DS_AG": 0,
+            "DS_AL": 0,
+            "DP_AG": 12,
+            "DP_DL": 4,
+            "DS_DG": 0,
+            "DS_DL": 0,
+            "SYMBOL": "HLA-DPA1",
+            "DP_DG": -10
+          },
+          "cadd_phred": 6.85,
+          "biotype": "protein_coding",
+          "variant_allele": "G",
+          "gene_id": "ENSG00000231389",
+          "cadd_raw": 0.64188,
+          "gene_symbol": "HLA-DPA1",
+          "transcript_id": "ENST00000417724",
+          "strand": -1,
+          "hgnc_id": "HGNC:4938"
+        },
+        {
+          "biotype": "protein_coding",
+          "cadd_phred": 6.85,
+          "consequence_terms": [
+            "upstream_gene_variant"
+          ],
+          "impact": "MODIFIER",
+          "gene_symbol_source": "HGNC",
+          "distance": 887,
+          "transcript_id": "ENST00000418931",
+          "hgnc_id": "HGNC:4940",
+          "strand": 1,
+          "canonical": 1,
+          "gene_symbol": "HLA-DPB1",
+          "cadd_raw": 0.64188,
+          "gene_id": "ENSG00000223865",
+          "variant_allele": "G"
+        },
+        {
+          "gene_symbol_source": "HGNC",
+          "impact": "MODIFIER",
+          "consequence_terms": [
+            "intron_variant"
+          ],
+          "cadd_phred": 6.85,
+          "spliceai": {
+            "DS_AG": 0,
+            "DP_AL": -5,
+            "DP_DL": 4,
+            "DP_AG": 12,
+            "DS_AL": 0,
+            "DS_DG": 0,
+            "DS_DL": 0,
+            "SYMBOL": "HLA-DPA1",
+            "DP_DG": -10
+          },
+          "biotype": "protein_coding",
+          "variant_allele": "G",
+          "gene_id": "ENSG00000231389",
+          "cadd_raw": 0.64188,
+          "gene_symbol": "HLA-DPA1",
+          "transcript_id": "ENST00000419277",
+          "strand": -1,
+          "hgnc_id": "HGNC:4938"
+        },
+        {
+          "biotype": "processed_pseudogene",
+          "distance": 4348,
+          "gene_symbol_source": "HGNC",
+          "consequence_terms": [
+            "upstream_gene_variant"
+          ],
+          "impact": "MODIFIER",
+          "cadd_phred": 6.85,
+          "gene_symbol": "RPL32P1",
+          "canonical": 1,
+          "transcript_id": "ENST00000439737",
+          "strand": 1,
+          "hgnc_id": "HGNC:10339",
+          "variant_allele": "G",
+          "gene_id": "ENSG00000224796",
+          "cadd_raw": 0.64188
+        },
+        {
+          "hgnc_id": "HGNC:4938",
+          "transcript_id": "ENST00000453337",
+          "strand": -1,
+          "gene_symbol": "HLA-DPA1",
+          "cadd_raw": 0.64188,
+          "gene_id": "ENSG00000231389",
+          "variant_allele": "G",
+          "biotype": "protein_coding",
+          "spliceai": {
+            "DS_AG": 0,
+            "DP_AL": -5,
+            "DP_DL": 4,
+            "DP_AG": 12,
+            "DS_AL": 0,
+            "DS_DG": 0,
+            "DS_DL": 0,
+            "SYMBOL": "HLA-DPA1",
+            "DP_DG": -10
+          },
+          "cadd_phred": 6.85,
+          "impact": "MODIFIER",
+          "consequence_terms": [
+            "intron_variant"
+          ],
+          "flags": [
+            "cds_end_NF"
+          ],
+          "gene_symbol_source": "HGNC"
+        },
+        {
+          "biotype": "protein_coding_CDS_not_defined",
+          "gene_symbol_source": "HGNC",
+          "distance": 1470,
+          "cadd_phred": 6.85,
+          "spliceai": {
+            "DS_AL": 0,
+            "DP_DL": 4,
+            "DP_AG": 12,
+            "DP_AL": -5,
+            "DS_AG": 0,
+            "DP_DG": -10,
+            "DS_DL": 0,
+            "SYMBOL": "HLA-DPA1",
+            "DS_DG": 0
+          },
+          "consequence_terms": [
+            "upstream_gene_variant"
+          ],
+          "impact": "MODIFIER",
+          "gene_symbol": "HLA-DPA1",
+          "strand": -1,
+          "transcript_id": "ENST00000463066",
+          "hgnc_id": "HGNC:4938",
+          "gene_id": "ENSG00000231389",
+          "variant_allele": "G",
+          "cadd_raw": 0.64188
+        },
+        {
+          "variant_allele": "G",
+          "gene_id": "ENSG00000223865",
+          "cadd_raw": 0.64188,
+          "gene_symbol": "HLA-DPB1",
+          "hgnc_id": "HGNC:4940",
+          "transcript_id": "ENST00000469120",
+          "strand": 1,
+          "distance": 907,
+          "gene_symbol_source": "HGNC",
+          "consequence_terms": [
+            "upstream_gene_variant"
+          ],
+          "impact": "MODIFIER",
+          "cadd_phred": 6.85,
+          "biotype": "retained_intron"
+        },
+        {
+          "biotype": "protein_coding_CDS_not_defined",
+          "gene_symbol_source": "HGNC",
+          "impact": "MODIFIER",
+          "consequence_terms": [
+            "intron_variant",
+            "non_coding_transcript_variant"
+          ],
+          "cadd_phred": 6.85,
+          "spliceai": {
+            "DS_DG": 0,
+            "SYMBOL": "HLA-DPA1",
+            "DS_DL": 0,
+            "DP_DG": -10,
+            "DP_AL": -5,
+            "DS_AG": 0,
+            "DS_AL": 0,
+            "DP_DL": 4,
+            "DP_AG": 12
+          },
+          "gene_symbol": "HLA-DPA1",
+          "transcript_id": "ENST00000476642",
+          "hgnc_id": "HGNC:4938",
+          "strand": -1,
+          "variant_allele": "G",
+          "gene_id": "ENSG00000231389",
+          "cadd_raw": 0.64188
+        },
+        {
+          "biotype": "retained_intron",
+          "spliceai": {
+            "DS_DG": 0,
+            "DS_DL": 0,
+            "DP_DG": -10,
+            "SYMBOL": "HLA-DPA1",
+            "DS_AG": 0,
+            "DP_AL": -5,
+            "DP_DL": 4,
+            "DP_AG": 12,
+            "DS_AL": 0
+          },
+          "cadd_phred": 6.85,
+          "consequence_terms": [
+            "upstream_gene_variant"
+          ],
+          "impact": "MODIFIER",
+          "gene_symbol_source": "HGNC",
+          "distance": 1488,
+          "strand": -1,
+          "transcript_id": "ENST00000479107",
+          "hgnc_id": "HGNC:4938",
+          "gene_symbol": "HLA-DPA1",
+          "cadd_raw": 0.64188,
+          "gene_id": "ENSG00000231389",
+          "variant_allele": "G"
+        },
+        {
+          "gene_symbol_source": "HGNC",
+          "spliceai": {
+            "DP_DG": -10,
+            "SYMBOL": "HLA-DPA1",
+            "DS_DL": 0,
+            "DS_DG": 0,
+            "DS_AL": 0,
+            "DP_AG": 12,
+            "DP_DL": 4,
+            "DP_AL": -5,
+            "DS_AG": 0
+          },
+          "cadd_phred": 6.85,
+          "gene_symbol": "HLA-DPA1",
+          "transcript_id": "ENST00000692443",
+          "hgnc_id": "HGNC:4938",
+          "strand": -1,
+          "gene_id": "ENSG00000231389",
+          "biotype": "protein_coding",
+          "distance": 1454,
+          "consequence_terms": [
+            "upstream_gene_variant"
+          ],
+          "impact": "MODIFIER",
+          "canonical": 1,
+          "variant_allele": "G",
+          "cadd_raw": 0.64188
+        },
+        {
+          "distance": 833,
+          "gene_symbol_source": "HGNC",
+          "consequence_terms": [
+            "upstream_gene_variant"
+          ],
+          "impact": "MODIFIER",
+          "cadd_phred": 6.85,
+          "biotype": "protein_coding",
+          "variant_allele": "G",
+          "gene_id": "ENSG00000223865",
+          "cadd_raw": 0.64188,
+          "gene_symbol": "HLA-DPB1",
+          "transcript_id": "ENST00000714454",
+          "hgnc_id": "HGNC:4940",
+          "strand": 1
+        },
+        {
+          "variant_allele": "G",
+          "gene_id": "ENSG00000223865",
+          "cadd_raw": 0.64188,
+          "gene_symbol": "HLA-DPB1",
+          "transcript_id": "ENST00000714455",
+          "strand": 1,
+          "hgnc_id": "HGNC:4940",
+          "distance": 857,
+          "gene_symbol_source": "HGNC",
+          "impact": "MODIFIER",
+          "consequence_terms": [
+            "upstream_gene_variant"
+          ],
+          "cadd_phred": 6.85,
+          "biotype": "nonsense_mediated_decay"
+        },
+        {
+          "gene_id": "ENSG00000223865",
+          "variant_allele": "G",
+          "cadd_raw": 0.64188,
+          "gene_symbol": "HLA-DPB1",
+          "transcript_id": "ENST00000714456",
+          "hgnc_id": "HGNC:4940",
+          "strand": 1,
+          "gene_symbol_source": "HGNC",
+          "distance": 863,
+          "cadd_phred": 6.85,
+          "impact": "MODIFIER",
+          "consequence_terms": [
+            "upstream_gene_variant"
+          ],
+          "biotype": "nonsense_mediated_decay"
+        },
+        {
+          "gene_symbol_source": "HGNC",
+          "impact": "MODIFIER",
+          "consequence_terms": [
+            "intron_variant"
+          ],
+          "cadd_phred": 6.85,
+          "biotype": "protein_coding",
+          "variant_allele": "G",
+          "gene_id": "ENSG00000223865",
+          "cadd_raw": 0.64188,
+          "gene_symbol": "HLA-DPB1",
+          "transcript_id": "ENST00000907475",
+          "strand": 1,
+          "hgnc_id": "HGNC:4940"
+        },
+        {
+          "biotype": "protein_coding",
+          "cadd_phred": 6.85,
+          "consequence_terms": [
+            "upstream_gene_variant"
+          ],
+          "impact": "MODIFIER",
+          "gene_symbol_source": "HGNC",
+          "distance": 825,
+          "strand": 1,
+          "transcript_id": "ENST00000907476",
+          "hgnc_id": "HGNC:4940",
+          "gene_symbol": "HLA-DPB1",
+          "cadd_raw": 0.64188,
+          "gene_id": "ENSG00000223865",
+          "variant_allele": "G"
+        },
+        {
+          "gene_symbol": "HLA-DPB1",
+          "transcript_id": "ENST00000907477",
+          "strand": 1,
+          "hgnc_id": "HGNC:4940",
+          "variant_allele": "G",
+          "gene_id": "ENSG00000223865",
+          "cadd_raw": 0.64188,
+          "biotype": "protein_coding",
+          "distance": 825,
+          "gene_symbol_source": "HGNC",
+          "impact": "MODIFIER",
+          "consequence_terms": [
+            "upstream_gene_variant"
+          ],
+          "cadd_phred": 6.85
+        },
+        {
+          "biotype": "protein_coding",
+          "cadd_phred": 6.85,
+          "consequence_terms": [
+            "upstream_gene_variant"
+          ],
+          "impact": "MODIFIER",
+          "gene_symbol_source": "HGNC",
+          "distance": 825,
+          "strand": 1,
+          "transcript_id": "ENST00000907478",
+          "hgnc_id": "HGNC:4940",
+          "gene_symbol": "HLA-DPB1",
+          "cadd_raw": 0.64188,
+          "gene_id": "ENSG00000223865",
+          "variant_allele": "G"
+        },
+        {
+          "transcript_id": "ENST00000910957",
+          "strand": -1,
+          "hgnc_id": "HGNC:4938",
+          "gene_symbol": "HLA-DPA1",
+          "cadd_raw": 0.64188,
+          "variant_allele": "G",
+          "gene_id": "ENSG00000231389",
+          "biotype": "protein_coding",
+          "consequence_terms": [
+            "upstream_gene_variant"
+          ],
+          "impact": "MODIFIER",
+          "cadd_phred": 6.85,
+          "spliceai": {
+            "DP_DL": 4,
+            "DP_AG": 12,
+            "DS_AL": 0,
+            "DS_AG": 0,
+            "DP_AL": -5,
+            "DP_DG": -10,
+            "SYMBOL": "HLA-DPA1",
+            "DS_DL": 0,
+            "DS_DG": 0
+          },
+          "distance": 1229,
+          "gene_symbol_source": "HGNC"
+        },
+        {
+          "gene_id": "ENSG00000231389",
+          "variant_allele": "G",
+          "cadd_raw": 0.64188,
+          "gene_symbol": "HLA-DPA1",
+          "transcript_id": "ENST00000910958",
+          "hgnc_id": "HGNC:4938",
+          "strand": -1,
+          "gene_symbol_source": "HGNC",
+          "distance": 1229,
+          "spliceai": {
+            "SYMBOL": "HLA-DPA1",
+            "DS_DL": 0,
+            "DP_DG": -10,
+            "DS_DG": 0,
+            "DS_AL": 0,
+            "DP_AG": 12,
+            "DP_DL": 4,
+            "DP_AL": -5,
+            "DS_AG": 0
+          },
+          "cadd_phred": 6.85,
+          "consequence_terms": [
+            "upstream_gene_variant"
+          ],
+          "impact": "MODIFIER",
+          "biotype": "protein_coding"
+        },
+        {
+          "cadd_raw": 0.64188,
+          "variant_allele": "G",
+          "gene_id": "ENSG00000231389",
+          "strand": -1,
+          "transcript_id": "ENST00000923943",
+          "hgnc_id": "HGNC:4938",
+          "gene_symbol": "HLA-DPA1",
+          "impact": "MODIFIER",
+          "consequence_terms": [
+            "intron_variant"
+          ],
+          "cadd_phred": 6.85,
+          "spliceai": {
+            "DS_AL": 0,
+            "DP_AG": 12,
+            "DP_DL": 4,
+            "DP_AL": -5,
+            "DS_AG": 0,
+            "DS_DL": 0,
+            "SYMBOL": "HLA-DPA1",
+            "DP_DG": -10,
+            "DS_DG": 0
+          },
+          "gene_symbol_source": "HGNC",
+          "biotype": "protein_coding"
+        },
+        {
+          "gene_symbol": "HLA-DPB1",
+          "hgnc_id": "HGNC:4940",
+          "transcript_id": "ENST00000966802",
+          "strand": 1,
+          "gene_id": "ENSG00000223865",
+          "variant_allele": "G",
+          "cadd_raw": 0.64188,
+          "biotype": "protein_coding",
+          "gene_symbol_source": "HGNC",
+          "distance": 825,
+          "cadd_phred": 6.85,
+          "consequence_terms": [
+            "upstream_gene_variant"
+          ],
+          "impact": "MODIFIER"
+        },
+        {
+          "gene_symbol_source": "HGNC",
+          "distance": 825,
+          "cadd_phred": 6.85,
+          "impact": "MODIFIER",
+          "consequence_terms": [
+            "upstream_gene_variant"
+          ],
+          "biotype": "protein_coding",
+          "gene_id": "ENSG00000223865",
+          "variant_allele": "G",
+          "cadd_raw": 0.64188,
+          "gene_symbol": "HLA-DPB1",
+          "transcript_id": "ENST00000966803",
+          "strand": 1,
+          "hgnc_id": "HGNC:4940"
+        },
+        {
+          "cadd_raw": 0.64188,
+          "gene_id": "ENSG00000223865",
+          "variant_allele": "G",
+          "transcript_id": "ENST00000966804",
+          "hgnc_id": "HGNC:4940",
+          "strand": 1,
+          "gene_symbol": "HLA-DPB1",
+          "cadd_phred": 6.85,
+          "impact": "MODIFIER",
+          "consequence_terms": [
+            "upstream_gene_variant"
+          ],
+          "gene_symbol_source": "HGNC",
+          "distance": 825,
+          "biotype": "protein_coding"
+        },
+        {
+          "cadd_raw": 0.64188,
+          "gene_id": "ENSG00000231389",
+          "variant_allele": "G",
+          "strand": -1,
+          "transcript_id": "ENST00000973506",
+          "hgnc_id": "HGNC:4938",
+          "gene_symbol": "HLA-DPA1",
+          "spliceai": {
+            "DP_DL": 4,
+            "DP_AG": 12,
+            "DS_AL": 0,
+            "DS_AG": 0,
+            "DP_AL": -5,
+            "SYMBOL": "HLA-DPA1",
+            "DS_DL": 0,
+            "DP_DG": -10,
+            "DS_DG": 0
+          },
+          "cadd_phred": 6.85,
+          "consequence_terms": [
+            "upstream_gene_variant"
+          ],
+          "impact": "MODIFIER",
+          "gene_symbol_source": "HGNC",
+          "distance": 1441,
+          "biotype": "protein_coding"
+        },
+        {
+          "gene_symbol_source": "HGNC",
+          "distance": 858,
+          "cadd_phred": 6.85,
+          "consequence_terms": [
+            "upstream_gene_variant"
+          ],
+          "impact": "MODIFIER",
+          "biotype": "nonsense_mediated_decay",
+          "gene_id": "ENSG00000223865",
+          "variant_allele": "G",
+          "cadd_raw": 0.64188,
+          "gene_symbol": "HLA-DPB1",
+          "strand": 1,
+          "transcript_id": "ENST00000973634",
+          "hgnc_id": "HGNC:4940"
+        },
+        {
+          "impact": "MODIFIER",
+          "consequence_terms": [
+            "upstream_gene_variant"
+          ],
+          "cadd_phred": 6.85,
+          "distance": 885,
+          "gene_symbol_source": "HGNC",
+          "biotype": "nonsense_mediated_decay",
+          "cadd_raw": 0.64188,
+          "variant_allele": "G",
+          "gene_id": "ENSG00000223865",
+          "strand": 1,
+          "transcript_id": "ENST00000973636",
+          "hgnc_id": "HGNC:4940",
+          "gene_symbol": "HLA-DPB1"
+        },
+        {
+          "gene_symbol_source": "HGNC",
+          "distance": 810,
+          "cadd_phred": 6.85,
+          "consequence_terms": [
+            "upstream_gene_variant"
+          ],
+          "impact": "MODIFIER",
+          "biotype": "nonsense_mediated_decay",
+          "gene_id": "ENSG00000223865",
+          "variant_allele": "G",
+          "cadd_raw": 0.64188,
+          "gene_symbol": "HLA-DPB1",
+          "hgnc_id": "HGNC:4940",
+          "transcript_id": "ENST00001057251",
+          "strand": 1
+        },
+        {
+          "biotype": "nonsense_mediated_decay",
+          "gene_symbol_source": "HGNC",
+          "distance": 876,
+          "cadd_phred": 6.85,
+          "consequence_terms": [
+            "upstream_gene_variant"
+          ],
+          "impact": "MODIFIER",
+          "gene_symbol": "HLA-DPB1",
+          "transcript_id": "ENST00001057253",
+          "hgnc_id": "HGNC:4940",
+          "strand": 1,
+          "gene_id": "ENSG00000223865",
+          "variant_allele": "G",
+          "cadd_raw": 0.64188
+        },
+        {
+          "transcript_id": "ENST00001057254",
+          "strand": 1,
+          "hgnc_id": "HGNC:4940",
+          "gene_symbol": "HLA-DPB1",
+          "cadd_raw": 0.64188,
+          "gene_id": "ENSG00000223865",
+          "variant_allele": "G",
+          "biotype": "nonsense_mediated_decay",
+          "cadd_phred": 6.85,
+          "consequence_terms": [
+            "upstream_gene_variant"
+          ],
+          "impact": "MODIFIER",
+          "gene_symbol_source": "HGNC",
+          "distance": 875
+        },
+        {
+          "biotype": "nonsense_mediated_decay",
+          "distance": 833,
+          "gene_symbol_source": "HGNC",
+          "consequence_terms": [
+            "upstream_gene_variant"
+          ],
+          "impact": "MODIFIER",
+          "cadd_phred": 6.85,
+          "gene_symbol": "HLA-DPB1",
+          "strand": 1,
+          "transcript_id": "ENST00001057255",
+          "hgnc_id": "HGNC:4940",
+          "variant_allele": "G",
+          "gene_id": "ENSG00000223865",
+          "cadd_raw": 0.64188
+        },
+        {
+          "biotype": "nonsense_mediated_decay",
+          "consequence_terms": [
+            "upstream_gene_variant"
+          ],
+          "impact": "MODIFIER",
+          "spliceai": {
+            "DS_DG": 0,
+            "SYMBOL": "HLA-DPA1",
+            "DS_DL": 0,
+            "DP_DG": -10,
+            "DP_AL": -5,
+            "DS_AG": 0,
+            "DS_AL": 0,
+            "DP_DL": 4,
+            "DP_AG": 12
+          },
+          "cadd_phred": 6.85,
+          "distance": 1494,
+          "gene_symbol_source": "HGNC",
+          "transcript_id": "ENST00001103662",
+          "strand": -1,
+          "hgnc_id": "HGNC:4938",
+          "gene_symbol": "HLA-DPA1",
+          "cadd_raw": 0.64188,
+          "variant_allele": "G",
+          "gene_id": "ENSG00000231389"
+        },
+        {
+          "consequence_terms": [
+            "upstream_gene_variant"
+          ],
+          "impact": "MODIFIER",
+          "cadd_phred": 6.85,
+          "distance": 832,
+          "gene_symbol_source": "HGNC",
+          "biotype": "nonsense_mediated_decay",
+          "cadd_raw": 0.64188,
+          "variant_allele": "G",
+          "gene_id": "ENSG00000223865",
+          "hgnc_id": "HGNC:4940",
+          "transcript_id": "ENST00001103695",
+          "strand": 1,
+          "gene_symbol": "HLA-DPB1"
+        },
+        {
+          "consequence_terms": [
+            "upstream_gene_variant"
+          ],
+          "impact": "MODIFIER",
+          "cadd_phred": 6.85,
+          "distance": 825,
+          "gene_symbol_source": "HGNC",
+          "biotype": "protein_coding",
+          "cadd_raw": 0.64188,
+          "variant_allele": "G",
+          "gene_id": "ENSG00000223865",
+          "transcript_id": "ENST00001103696",
+          "strand": 1,
+          "hgnc_id": "HGNC:4940",
+          "gene_symbol": "HLA-DPB1"
+        },
+        {
+          "gene_symbol_source": "HGNC",
+          "distance": 1466,
+          "cadd_phred": 6.85,
+          "spliceai": {
+            "DS_DG": 0,
+            "SYMBOL": "HLA-DPA1",
+            "DS_DL": 0,
+            "DP_DG": -10,
+            "DS_AG": 0,
+            "DP_AL": -5,
+            "DP_AG": 12,
+            "DP_DL": 4,
+            "DS_AL": 0
+          },
+          "consequence_terms": [
+            "upstream_gene_variant"
+          ],
+          "impact": "MODIFIER",
+          "biotype": "nonsense_mediated_decay",
+          "gene_id": "ENSG00000231389",
+          "variant_allele": "G",
+          "cadd_raw": 0.64188,
+          "gene_symbol": "HLA-DPA1",
+          "transcript_id": "ENST00001127092",
+          "strand": -1,
+          "hgnc_id": "HGNC:4938"
+        },
+        {
+          "biotype": "protein_coding",
+          "gene_symbol_source": "HGNC",
+          "distance": 825,
+          "cadd_phred": 6.85,
+          "impact": "MODIFIER",
+          "consequence_terms": [
+            "upstream_gene_variant"
+          ],
+          "gene_symbol": "HLA-DPB1",
+          "transcript_id": "ENST00001133678",
+          "hgnc_id": "HGNC:4940",
+          "strand": 1,
+          "gene_id": "ENSG00000223865",
+          "variant_allele": "G",
+          "cadd_raw": 0.64188
+        }
+      ],
+      "input": "rs987870",
+      "assembly_name": "GRCh38",
+      "allele_string": "A/G",
+      "strand": 1,
+      "variant_class": "SNV",
+      "most_severe_consequence": "intron_variant",
+      "id": "rs987870"
+    },
+    {
+      "start": 4379765,
+      "colocated_variants": [
+        {
+          "strand": 1,
+          "id": "rs987870",
+          "phenotype_or_disease": 1,
+          "allele_string": "A/G",
+          "pubmed": [
+            23886662,
+            23755072,
+            27313329,
+            20018078,
+            21779181,
+            22694930,
+            26119467,
+            21814517,
+            31785132,
+            30541564,
+            29751569,
+            23792949,
+            23637549,
+            24223962,
+            24794577,
+            23740775,
+            27439200,
+            30661310,
+            26006746,
+            25119688,
+            39766875
+          ],
+          "seq_region_name": "HSCHR6_MHC_APD_CTG1",
+          "end": 4379765,
+          "start": 4379765
+        }
+      ],
+      "end": 4379765,
+      "seq_region_name": "HSCHR6_MHC_APD_CTG1",
+      "strand": 1,
+      "variant_class": "SNV",
+      "id": "rs987870",
+      "most_severe_consequence": "intron_variant",
+      "allele_string": "A/G",
+      "assembly_name": "GRCh38",
+      "input": "rs987870",
+      "transcript_consequences": [
+        {
+          "variant_allele": "G",
+          "gene_id": "ENSG00000236693",
+          "gene_symbol": "HLA-DPB1",
+          "transcript_id": "ENST00000411749",
+          "strand": 1,
+          "hgnc_id": "HGNC:4940",
+          "canonical": 1,
+          "distance": 823,
+          "gene_symbol_source": "HGNC",
+          "consequence_terms": [
+            "upstream_gene_variant"
+          ],
+          "impact": "MODIFIER",
+          "biotype": "protein_coding"
+        },
+        {
+          "hgnc_id": "HGNC:4938",
+          "transcript_id": "ENST00000413109",
+          "strand": -1,
+          "gene_symbol": "HLA-DPA1",
+          "variant_allele": "G",
+          "gene_id": "ENSG00000235844",
+          "biotype": "protein_coding",
+          "impact": "MODIFIER",
+          "consequence_terms": [
+            "intron_variant"
+          ],
+          "flags": [
+            "cds_end_NF"
+          ],
+          "gene_symbol_source": "HGNC"
+        },
+        {
+          "gene_symbol": "RPL32P1",
+          "transcript_id": "ENST00000425426",
+          "hgnc_id": "HGNC:10339",
+          "canonical": 1,
+          "strand": 1,
+          "gene_id": "ENSG00000231580",
+          "variant_allele": "G",
+          "biotype": "processed_pseudogene",
+          "gene_symbol_source": "HGNC",
+          "distance": 4354,
+          "impact": "MODIFIER",
+          "consequence_terms": [
+            "upstream_gene_variant"
+          ]
+        },
+        {
+          "variant_allele": "G",
+          "gene_id": "ENSG00000235844",
+          "strand": -1,
+          "transcript_id": "ENST00000439571",
+          "hgnc_id": "HGNC:4938",
+          "gene_symbol": "HLA-DPA1",
+          "impact": "MODIFIER",
+          "consequence_terms": [
+            "intron_variant"
+          ],
+          "gene_symbol_source": "HGNC",
+          "flags": [
+            "cds_end_NF"
+          ],
+          "biotype": "protein_coding"
+        },
+        {
+          "gene_symbol_source": "HGNC",
+          "distance": 869,
+          "consequence_terms": [
+            "upstream_gene_variant"
+          ],
+          "impact": "MODIFIER",
+          "biotype": "protein_coding",
+          "gene_id": "ENSG00000236693",
+          "variant_allele": "G",
+          "gene_symbol": "HLA-DPB1",
+          "hgnc_id": "HGNC:4940",
+          "transcript_id": "ENST00000441981",
+          "strand": 1
+        },
+        {
+          "consequence_terms": [
+            "intron_variant"
+          ],
+          "impact": "MODIFIER",
+          "gene_symbol_source": "HGNC",
+          "biotype": "protein_coding",
+          "gene_id": "ENSG00000235844",
+          "variant_allele": "G",
+          "strand": -1,
+          "transcript_id": "ENST00000443117",
+          "hgnc_id": "HGNC:4938",
+          "canonical": 1,
+          "gene_symbol": "HLA-DPA1"
+        },
+        {
+          "gene_id": "ENSG00000235844",
+          "variant_allele": "G",
+          "strand": -1,
+          "transcript_id": "ENST00000447657",
+          "hgnc_id": "HGNC:4938",
+          "gene_symbol": "HLA-DPA1",
+          "impact": "MODIFIER",
+          "consequence_terms": [
+            "upstream_gene_variant"
+          ],
+          "flags": [
+            "cds_end_NF"
+          ],
+          "gene_symbol_source": "HGNC",
+          "distance": 1466,
+          "biotype": "protein_coding"
+        },
+        {
+          "gene_symbol": "HLA-DPA1",
+          "transcript_id": "ENST00000463243",
+          "strand": -1,
+          "hgnc_id": "HGNC:4938",
+          "gene_id": "ENSG00000235844",
+          "variant_allele": "G",
+          "biotype": "protein_coding_CDS_not_defined",
+          "gene_symbol_source": "HGNC",
+          "impact": "MODIFIER",
+          "consequence_terms": [
+            "intron_variant",
+            "non_coding_transcript_variant"
+          ]
+        },
+        {
+          "impact": "MODIFIER",
+          "consequence_terms": [
+            "upstream_gene_variant"
+          ],
+          "distance": 907,
+          "gene_symbol_source": "HGNC",
+          "biotype": "retained_intron",
+          "variant_allele": "G",
+          "gene_id": "ENSG00000236693",
+          "transcript_id": "ENST00000478718",
+          "strand": 1,
+          "hgnc_id": "HGNC:4940",
+          "gene_symbol": "HLA-DPB1"
+        },
+        {
+          "gene_symbol": "HLA-DPA1",
+          "transcript_id": "ENST00000480521",
+          "hgnc_id": "HGNC:4938",
+          "strand": -1,
+          "variant_allele": "G",
+          "gene_id": "ENSG00000235844",
+          "biotype": "protein_coding_CDS_not_defined",
+          "distance": 1470,
+          "gene_symbol_source": "HGNC",
+          "consequence_terms": [
+            "upstream_gene_variant"
+          ],
+          "impact": "MODIFIER"
+        },
+        {
+          "biotype": "retained_intron",
+          "impact": "MODIFIER",
+          "consequence_terms": [
+            "upstream_gene_variant"
+          ],
+          "gene_symbol_source": "HGNC",
+          "distance": 1488,
+          "hgnc_id": "HGNC:4938",
+          "transcript_id": "ENST00000485095",
+          "strand": -1,
+          "gene_symbol": "HLA-DPA1",
+          "gene_id": "ENSG00000235844",
+          "variant_allele": "G"
+        }
+      ]
+    },
+    {
+      "seq_region_name": "HSCHR6_MHC_COX_CTG1",
+      "start": 4486954,
+      "colocated_variants": [
+        {
+          "pubmed": [
+            23886662,
+            23755072,
+            27313329,
+            20018078,
+            21779181,
+            22694930,
+            26119467,
+            21814517,
+            31785132,
+            30541564,
+            29751569,
+            23792949,
+            23637549,
+            24223962,
+            24794577,
+            23740775,
+            27439200,
+            30661310,
+            26006746,
+            25119688,
+            39766875
+          ],
+          "end": 4486954,
+          "start": 4486954,
+          "seq_region_name": "HSCHR6_MHC_COX_CTG1",
+          "id": "rs987870",
+          "strand": 1,
+          "phenotype_or_disease": 1,
+          "allele_string": "A/G"
+        }
+      ],
+      "end": 4486954,
+      "assembly_name": "GRCh38",
+      "input": "rs987870",
+      "transcript_consequences": [
+        {
+          "biotype": "protein_coding",
+          "gene_symbol_source": "HGNC",
+          "distance": 823,
+          "consequence_terms": [
+            "upstream_gene_variant"
+          ],
+          "impact": "MODIFIER",
+          "gene_symbol": "HLA-DPB1",
+          "hgnc_id": "HGNC:4940",
+          "transcript_id": "ENST00000383102",
+          "canonical": 1,
+          "strand": 1,
+          "gene_id": "ENSG00000230708",
+          "variant_allele": "G"
+        },
+        {
+          "gene_symbol": "HLA-DPA1",
+          "transcript_id": "ENST00000415247",
+          "strand": -1,
+          "canonical": 1,
+          "hgnc_id": "HGNC:4938",
+          "variant_allele": "G",
+          "gene_id": "ENSG00000224103",
+          "biotype": "protein_coding",
+          "distance": 1481,
+          "gene_symbol_source": "HGNC",
+          "impact": "MODIFIER",
+          "consequence_terms": [
+            "upstream_gene_variant"
+          ]
+        },
+        {
+          "variant_allele": "G",
+          "gene_id": "ENSG00000224103",
+          "gene_symbol": "HLA-DPA1",
+          "strand": -1,
+          "transcript_id": "ENST00000425105",
+          "hgnc_id": "HGNC:4938",
+          "gene_symbol_source": "HGNC",
+          "flags": [
+            "cds_end_NF"
+          ],
+          "consequence_terms": [
+            "intron_variant"
+          ],
+          "impact": "MODIFIER",
+          "biotype": "protein_coding"
+        },
+        {
+          "hgnc_id": "HGNC:10339",
+          "transcript_id": "ENST00000436201",
+          "strand": 1,
+          "canonical": 1,
+          "gene_symbol": "RPL32P1",
+          "variant_allele": "G",
+          "gene_id": "ENSG00000228579",
+          "biotype": "processed_pseudogene",
+          "consequence_terms": [
+            "upstream_gene_variant"
+          ],
+          "impact": "MODIFIER",
+          "distance": 4347,
+          "gene_symbol_source": "HGNC"
+        },
+        {
+          "impact": "MODIFIER",
+          "consequence_terms": [
+            "upstream_gene_variant"
+          ],
+          "distance": 1466,
+          "flags": [
+            "cds_end_NF"
+          ],
+          "gene_symbol_source": "HGNC",
+          "biotype": "protein_coding",
+          "variant_allele": "G",
+          "gene_id": "ENSG00000224103",
+          "hgnc_id": "HGNC:4938",
+          "transcript_id": "ENST00000439393",
+          "strand": -1,
+          "gene_symbol": "HLA-DPA1"
+        },
+        {
+          "variant_allele": "G",
+          "gene_id": "ENSG00000230708",
+          "transcript_id": "ENST00000441857",
+          "strand": 1,
+          "hgnc_id": "HGNC:4940",
+          "gene_symbol": "HLA-DPB1",
+          "impact": "MODIFIER",
+          "consequence_terms": [
+            "upstream_gene_variant"
+          ],
+          "distance": 869,
+          "gene_symbol_source": "HGNC",
+          "biotype": "protein_coding"
+        },
+        {
+          "biotype": "protein_coding",
+          "gene_symbol_source": "HGNC",
+          "flags": [
+            "cds_end_NF"
+          ],
+          "consequence_terms": [
+            "intron_variant"
+          ],
+          "impact": "MODIFIER",
+          "gene_symbol": "HLA-DPA1",
+          "strand": -1,
+          "transcript_id": "ENST00000448742",
+          "hgnc_id": "HGNC:4938",
+          "variant_allele": "G",
+          "gene_id": "ENSG00000224103"
+        },
+        {
+          "variant_allele": "G",
+          "gene_id": "ENSG00000230708",
+          "gene_symbol": "HLA-DPB1",
+          "transcript_id": "ENST00000476677",
+          "strand": 1,
+          "hgnc_id": "HGNC:4940",
+          "distance": 907,
+          "gene_symbol_source": "HGNC",
+          "consequence_terms": [
+            "upstream_gene_variant"
+          ],
+          "impact": "MODIFIER",
+          "biotype": "retained_intron"
+        },
+        {
+          "variant_allele": "G",
+          "gene_id": "ENSG00000224103",
+          "gene_symbol": "HLA-DPA1",
+          "hgnc_id": "HGNC:4938",
+          "transcript_id": "ENST00000484255",
+          "strand": -1,
+          "distance": 1470,
+          "gene_symbol_source": "HGNC",
+          "impact": "MODIFIER",
+          "consequence_terms": [
+            "upstream_gene_variant"
+          ],
+          "biotype": "protein_coding_CDS_not_defined"
+        },
+        {
+          "variant_allele": "G",
+          "gene_id": "ENSG00000224103",
+          "gene_symbol": "HLA-DPA1",
+          "transcript_id": "ENST00000486369",
+          "strand": -1,
+          "hgnc_id": "HGNC:4938",
+          "distance": 1488,
+          "gene_symbol_source": "HGNC",
+          "impact": "MODIFIER",
+          "consequence_terms": [
+            "upstream_gene_variant"
+          ],
+          "biotype": "retained_intron"
+        },
+        {
+          "gene_id": "ENSG00000224103",
+          "variant_allele": "G",
+          "gene_symbol": "HLA-DPA1",
+          "hgnc_id": "HGNC:4938",
+          "transcript_id": "ENST00000497834",
+          "strand": -1,
+          "gene_symbol_source": "HGNC",
+          "consequence_terms": [
+            "intron_variant",
+            "non_coding_transcript_variant"
+          ],
+          "impact": "MODIFIER",
+          "biotype": "protein_coding_CDS_not_defined"
+        }
+      ],
+      "most_severe_consequence": "intron_variant",
+      "id": "rs987870",
+      "strand": 1,
+      "variant_class": "SNV",
+      "allele_string": "A/G"
+    },
+    {
+      "end": 4318634,
+      "colocated_variants": [
+        {
+          "pubmed": [
+            23886662,
+            23755072,
+            27313329,
+            20018078,
+            21779181,
+            22694930,
+            26119467,
+            21814517,
+            31785132,
+            30541564,
+            29751569,
+            23792949,
+            23637549,
+            24223962,
+            24794577,
+            23740775,
+            27439200,
+            30661310,
+            26006746,
+            25119688,
+            39766875
+          ],
+          "end": 4318634,
+          "start": 4318634,
+          "seq_region_name": "HSCHR6_MHC_DBB_CTG1",
+          "strand": 1,
+          "id": "rs987870",
+          "allele_string": "A/G",
+          "phenotype_or_disease": 1
+        }
+      ],
+      "start": 4318634,
+      "seq_region_name": "HSCHR6_MHC_DBB_CTG1",
+      "allele_string": "A/G",
+      "most_severe_consequence": "intron_variant",
+      "id": "rs987870",
+      "strand": 1,
+      "variant_class": "SNV",
+      "transcript_consequences": [
+        {
+          "consequence_terms": [
+            "upstream_gene_variant"
+          ],
+          "impact": "MODIFIER",
+          "gene_symbol_source": "HGNC",
+          "distance": 869,
+          "biotype": "protein_coding",
+          "gene_id": "ENSG00000237710",
+          "variant_allele": "G",
+          "hgnc_id": "HGNC:4940",
+          "transcript_id": "ENST00000411424",
+          "strand": 1,
+          "gene_symbol": "HLA-DPB1"
+        },
+        {
+          "biotype": "processed_pseudogene",
+          "gene_symbol_source": "HGNC",
+          "distance": 4348,
+          "consequence_terms": [
+            "upstream_gene_variant"
+          ],
+          "impact": "MODIFIER",
+          "gene_symbol": "RPL32P1",
+          "transcript_id": "ENST00000418583",
+          "hgnc_id": "HGNC:10339",
+          "canonical": 1,
+          "strand": 1,
+          "gene_id": "ENSG00000226879",
+          "variant_allele": "G"
+        },
+        {
+          "consequence_terms": [
+            "intron_variant"
+          ],
+          "impact": "MODIFIER",
+          "flags": [
+            "cds_end_NF"
+          ],
+          "gene_symbol_source": "HGNC",
+          "biotype": "protein_coding",
+          "gene_id": "ENSG00000229685",
+          "variant_allele": "G",
+          "transcript_id": "ENST00000423630",
+          "hgnc_id": "HGNC:4938",
+          "strand": -1,
+          "gene_symbol": "HLA-DPA1"
+        },
+        {
+          "gene_symbol_source": "HGNC",
+          "flags": [
+            "cds_end_NF"
+          ],
+          "impact": "MODIFIER",
+          "consequence_terms": [
+            "intron_variant"
+          ],
+          "biotype": "protein_coding",
+          "variant_allele": "G",
+          "gene_id": "ENSG00000229685",
+          "gene_symbol": "HLA-DPA1",
+          "transcript_id": "ENST00000436183",
+          "strand": -1,
+          "hgnc_id": "HGNC:4938"
+        },
+        {
+          "biotype": "protein_coding",
+          "impact": "MODIFIER",
+          "consequence_terms": [
+            "upstream_gene_variant"
+          ],
+          "flags": [
+            "cds_end_NF"
+          ],
+          "gene_symbol_source": "HGNC",
+          "distance": 1466,
+          "strand": -1,
+          "transcript_id": "ENST00000437676",
+          "hgnc_id": "HGNC:4938",
+          "gene_symbol": "HLA-DPA1",
+          "gene_id": "ENSG00000229685",
+          "variant_allele": "G"
+        },
+        {
+          "gene_symbol": "HLA-DPB1",
+          "transcript_id": "ENST00000454006",
+          "canonical": 1,
+          "hgnc_id": "HGNC:4940",
+          "strand": 1,
+          "variant_allele": "G",
+          "gene_id": "ENSG00000237710",
+          "biotype": "protein_coding",
+          "distance": 823,
+          "gene_symbol_source": "HGNC",
+          "impact": "MODIFIER",
+          "consequence_terms": [
+            "upstream_gene_variant"
+          ]
+        },
+        {
+          "gene_symbol": "HLA-DPA1",
+          "strand": -1,
+          "transcript_id": "ENST00000454805",
+          "hgnc_id": "HGNC:4938",
+          "canonical": 1,
+          "variant_allele": "G",
+          "gene_id": "ENSG00000229685",
+          "biotype": "protein_coding",
+          "gene_symbol_source": "HGNC",
+          "consequence_terms": [
+            "intron_variant"
+          ],
+          "impact": "MODIFIER"
+        },
+        {
+          "gene_id": "ENSG00000229685",
+          "variant_allele": "G",
+          "gene_symbol": "HLA-DPA1",
+          "hgnc_id": "HGNC:4938",
+          "transcript_id": "ENST00000475500",
+          "strand": -1,
+          "gene_symbol_source": "HGNC",
+          "distance": 1470,
+          "consequence_terms": [
+            "upstream_gene_variant"
+          ],
+          "impact": "MODIFIER",
+          "biotype": "protein_coding_CDS_not_defined"
+        },
+        {
+          "distance": 1488,
+          "gene_symbol_source": "HGNC",
+          "impact": "MODIFIER",
+          "consequence_terms": [
+            "upstream_gene_variant"
+          ],
+          "biotype": "retained_intron",
+          "variant_allele": "G",
+          "gene_id": "ENSG00000229685",
+          "gene_symbol": "HLA-DPA1",
+          "transcript_id": "ENST00000484244",
+          "strand": -1,
+          "hgnc_id": "HGNC:4938"
+        },
+        {
+          "biotype": "protein_coding_CDS_not_defined",
+          "gene_symbol_source": "HGNC",
+          "consequence_terms": [
+            "intron_variant",
+            "non_coding_transcript_variant"
+          ],
+          "impact": "MODIFIER",
+          "gene_symbol": "HLA-DPA1",
+          "hgnc_id": "HGNC:4938",
+          "transcript_id": "ENST00000486449",
+          "strand": -1,
+          "gene_id": "ENSG00000229685",
+          "variant_allele": "G"
+        },
+        {
+          "biotype": "retained_intron",
+          "distance": 907,
+          "gene_symbol_source": "HGNC",
+          "impact": "MODIFIER",
+          "consequence_terms": [
+            "upstream_gene_variant"
+          ],
+          "gene_symbol": "HLA-DPB1",
+          "hgnc_id": "HGNC:4940",
+          "transcript_id": "ENST00000497181",
+          "strand": 1,
+          "variant_allele": "G",
+          "gene_id": "ENSG00000237710"
+        }
+      ],
+      "input": "rs987870",
+      "assembly_name": "GRCh38"
+    },
+    {
+      "seq_region_name": "HSCHR6_MHC_MANN_CTG1",
+      "end": 4494800,
+      "start": 4494800,
+      "colocated_variants": [
+        {
+          "strand": 1,
+          "id": "rs987870",
+          "allele_string": "A/G",
+          "phenotype_or_disease": 1,
+          "pubmed": [
+            23886662,
+            23755072,
+            27313329,
+            20018078,
+            21779181,
+            22694930,
+            26119467,
+            21814517,
+            31785132,
+            30541564,
+            29751569,
+            23792949,
+            23637549,
+            24223962,
+            24794577,
+            23740775,
+            27439200,
+            30661310,
+            26006746,
+            25119688,
+            39766875
+          ],
+          "seq_region_name": "HSCHR6_MHC_MANN_CTG1",
+          "start": 4494800,
+          "end": 4494800
+        }
+      ],
+      "input": "rs987870",
+      "transcript_consequences": [
+        {
+          "gene_symbol_source": "HGNC",
+          "distance": 823,
+          "consequence_terms": [
+            "upstream_gene_variant"
+          ],
+          "impact": "MODIFIER",
+          "biotype": "protein_coding",
+          "gene_id": "ENSG00000229295",
+          "variant_allele": "G",
+          "gene_symbol": "HLA-DPB1",
+          "canonical": 1,
+          "transcript_id": "ENST00000415996",
+          "hgnc_id": "HGNC:4940",
+          "strand": 1
+        },
+        {
+          "biotype": "protein_coding",
+          "gene_symbol_source": "HGNC",
+          "consequence_terms": [
+            "intron_variant"
+          ],
+          "impact": "MODIFIER",
+          "gene_symbol": "HLA-DPA1",
+          "strand": -1,
+          "transcript_id": "ENST00000422504",
+          "canonical": 1,
+          "hgnc_id": "HGNC:4938",
+          "variant_allele": "G",
+          "gene_id": "ENSG00000228163"
+        },
+        {
+          "variant_allele": "G",
+          "gene_id": "ENSG00000228163",
+          "gene_symbol": "HLA-DPA1",
+          "transcript_id": "ENST00000427518",
+          "hgnc_id": "HGNC:4938",
+          "strand": -1,
+          "gene_symbol_source": "HGNC",
+          "flags": [
+            "cds_end_NF"
+          ],
+          "consequence_terms": [
+            "intron_variant"
+          ],
+          "impact": "MODIFIER",
+          "biotype": "protein_coding"
+        },
+        {
+          "consequence_terms": [
+            "upstream_gene_variant"
+          ],
+          "impact": "MODIFIER",
+          "distance": 869,
+          "gene_symbol_source": "HGNC",
+          "biotype": "protein_coding",
+          "variant_allele": "G",
+          "gene_id": "ENSG00000229295",
+          "strand": 1,
+          "transcript_id": "ENST00000447783",
+          "hgnc_id": "HGNC:4940",
+          "gene_symbol": "HLA-DPB1"
+        },
+        {
+          "variant_allele": "G",
+          "gene_id": "ENSG00000228163",
+          "gene_symbol": "HLA-DPA1",
+          "transcript_id": "ENST00000452619",
+          "strand": -1,
+          "hgnc_id": "HGNC:4938",
+          "distance": 1466,
+          "flags": [
+            "cds_end_NF"
+          ],
+          "gene_symbol_source": "HGNC",
+          "consequence_terms": [
+            "upstream_gene_variant"
+          ],
+          "impact": "MODIFIER",
+          "biotype": "protein_coding"
+        },
+        {
+          "gene_symbol": "HLA-DPA1",
+          "hgnc_id": "HGNC:4938",
+          "transcript_id": "ENST00000456525",
+          "strand": -1,
+          "variant_allele": "G",
+          "gene_id": "ENSG00000228163",
+          "biotype": "protein_coding",
+          "gene_symbol_source": "HGNC",
+          "flags": [
+            "cds_end_NF"
+          ],
+          "consequence_terms": [
+            "intron_variant"
+          ],
+          "impact": "MODIFIER"
+        },
+        {
+          "biotype": "processed_pseudogene",
+          "impact": "MODIFIER",
+          "consequence_terms": [
+            "upstream_gene_variant"
+          ],
+          "gene_symbol_source": "HGNC",
+          "distance": 4354,
+          "transcript_id": "ENST00000457701",
+          "canonical": 1,
+          "strand": 1,
+          "hgnc_id": "HGNC:10339",
+          "gene_symbol": "RPL32P1",
+          "gene_id": "ENSG00000233972",
+          "variant_allele": "G"
+        },
+        {
+          "transcript_id": "ENST00000472997",
+          "strand": -1,
+          "hgnc_id": "HGNC:4938",
+          "gene_symbol": "HLA-DPA1",
+          "variant_allele": "G",
+          "gene_id": "ENSG00000228163",
+          "biotype": "retained_intron",
+          "impact": "MODIFIER",
+          "consequence_terms": [
+            "upstream_gene_variant"
+          ],
+          "distance": 1488,
+          "gene_symbol_source": "HGNC"
+        },
+        {
+          "consequence_terms": [
+            "upstream_gene_variant"
+          ],
+          "impact": "MODIFIER",
+          "gene_symbol_source": "HGNC",
+          "distance": 907,
+          "biotype": "retained_intron",
+          "gene_id": "ENSG00000229295",
+          "variant_allele": "G",
+          "strand": 1,
+          "transcript_id": "ENST00000483210",
+          "hgnc_id": "HGNC:4940",
+          "gene_symbol": "HLA-DPB1"
+        },
+        {
+          "hgnc_id": "HGNC:4938",
+          "transcript_id": "ENST00000494775",
+          "strand": -1,
+          "gene_symbol": "HLA-DPA1",
+          "gene_id": "ENSG00000228163",
+          "variant_allele": "G",
+          "biotype": "protein_coding_CDS_not_defined",
+          "impact": "MODIFIER",
+          "consequence_terms": [
+            "upstream_gene_variant"
+          ],
+          "gene_symbol_source": "HGNC",
+          "distance": 1470
+        },
+        {
+          "biotype": "protein_coding_CDS_not_defined",
+          "impact": "MODIFIER",
+          "consequence_terms": [
+            "intron_variant",
+            "non_coding_transcript_variant"
+          ],
+          "gene_symbol_source": "HGNC",
+          "transcript_id": "ENST00000495074",
+          "strand": -1,
+          "hgnc_id": "HGNC:4938",
+          "gene_symbol": "HLA-DPA1",
+          "gene_id": "ENSG00000228163",
+          "variant_allele": "G"
+        }
+      ],
+      "assembly_name": "GRCh38",
+      "allele_string": "A/G",
+      "variant_class": "SNV",
+      "strand": 1,
+      "most_severe_consequence": "intron_variant",
+      "id": "rs987870"
+    },
+    {
+      "allele_string": "A/G",
+      "strand": 1,
+      "variant_class": "SNV",
+      "id": "rs987870",
+      "most_severe_consequence": "intron_variant",
+      "transcript_consequences": [
+        {
+          "gene_symbol": "HLA-DPA1",
+          "transcript_id": "ENST00000374808",
+          "hgnc_id": "HGNC:4938",
+          "canonical": 1,
+          "strand": -1,
+          "gene_id": "ENSG00000168384",
+          "variant_allele": "G",
+          "biotype": "protein_coding",
+          "gene_symbol_source": "HGNC",
+          "consequence_terms": [
+            "intron_variant"
+          ],
+          "impact": "MODIFIER"
+        },
+        {
+          "gene_symbol_source": "HGNC",
+          "distance": 869,
+          "impact": "MODIFIER",
+          "consequence_terms": [
+            "upstream_gene_variant"
+          ],
+          "biotype": "protein_coding",
+          "gene_id": "ENSG00000230763",
+          "variant_allele": "G",
+          "gene_symbol": "HLA-DPB1",
+          "transcript_id": "ENST00000411558",
+          "strand": 1,
+          "hgnc_id": "HGNC:4940"
+        },
+        {
+          "impact": "MODIFIER",
+          "consequence_terms": [
+            "intron_variant"
+          ],
+          "gene_symbol_source": "HGNC",
+          "flags": [
+            "cds_end_NF"
+          ],
+          "biotype": "protein_coding",
+          "variant_allele": "G",
+          "gene_id": "ENSG00000168384",
+          "transcript_id": "ENST00000414177",
+          "strand": -1,
+          "hgnc_id": "HGNC:4938",
+          "gene_symbol": "HLA-DPA1"
+        },
+        {
+          "consequence_terms": [
+            "upstream_gene_variant"
+          ],
+          "impact": "MODIFIER",
+          "gene_symbol_source": "HGNC",
+          "distance": 823,
+          "biotype": "protein_coding",
+          "gene_id": "ENSG00000230763",
+          "variant_allele": "G",
+          "strand": 1,
+          "transcript_id": "ENST00000425130",
+          "hgnc_id": "HGNC:4940",
+          "canonical": 1,
+          "gene_symbol": "HLA-DPB1"
+        },
+        {
+          "flags": [
+            "cds_end_NF"
+          ],
+          "gene_symbol_source": "HGNC",
+          "consequence_terms": [
+            "intron_variant"
+          ],
+          "impact": "MODIFIER",
+          "biotype": "protein_coding",
+          "variant_allele": "G",
+          "gene_id": "ENSG00000168384",
+          "gene_symbol": "HLA-DPA1",
+          "transcript_id": "ENST00000432811",
+          "hgnc_id": "HGNC:4938",
+          "strand": -1
+        },
+        {
+          "transcript_id": "ENST00000436579",
+          "strand": 1,
+          "canonical": 1,
+          "hgnc_id": "HGNC:10339",
+          "gene_symbol": "RPL32P1",
+          "variant_allele": "G",
+          "gene_id": "ENSG00000231288",
+          "biotype": "processed_pseudogene",
+          "consequence_terms": [
+            "upstream_gene_variant"
+          ],
+          "impact": "MODIFIER",
+          "distance": 4354,
+          "gene_symbol_source": "HGNC"
+        },
+        {
+          "gene_id": "ENSG00000168384",
+          "variant_allele": "G",
+          "gene_symbol": "HLA-DPA1",
+          "transcript_id": "ENST00000441306",
+          "strand": -1,
+          "hgnc_id": "HGNC:4938",
+          "gene_symbol_source": "HGNC",
+          "flags": [
+            "cds_end_NF"
+          ],
+          "distance": 1466,
+          "consequence_terms": [
+            "upstream_gene_variant"
+          ],
+          "impact": "MODIFIER",
+          "biotype": "protein_coding"
+        },
+        {
+          "biotype": "protein_coding_CDS_not_defined",
+          "impact": "MODIFIER",
+          "consequence_terms": [
+            "intron_variant",
+            "non_coding_transcript_variant"
+          ],
+          "gene_symbol_source": "HGNC",
+          "strand": -1,
+          "transcript_id": "ENST00000480481",
+          "hgnc_id": "HGNC:4938",
+          "gene_symbol": "HLA-DPA1",
+          "variant_allele": "G",
+          "gene_id": "ENSG00000168384"
+        },
+        {
+          "distance": 1488,
+          "gene_symbol_source": "HGNC",
+          "consequence_terms": [
+            "upstream_gene_variant"
+          ],
+          "impact": "MODIFIER",
+          "biotype": "retained_intron",
+          "variant_allele": "G",
+          "gene_id": "ENSG00000168384",
+          "gene_symbol": "HLA-DPA1",
+          "transcript_id": "ENST00000480689",
+          "strand": -1,
+          "hgnc_id": "HGNC:4938"
+        },
+        {
+          "gene_symbol_source": "HGNC",
+          "distance": 907,
+          "consequence_terms": [
+            "upstream_gene_variant"
+          ],
+          "impact": "MODIFIER",
+          "biotype": "retained_intron",
+          "gene_id": "ENSG00000230763",
+          "variant_allele": "G",
+          "gene_symbol": "HLA-DPB1",
+          "hgnc_id": "HGNC:4940",
+          "transcript_id": "ENST00000487219",
+          "strand": 1
+        },
+        {
+          "gene_symbol": "HLA-DPA1",
+          "hgnc_id": "HGNC:4938",
+          "transcript_id": "ENST00000488565",
+          "strand": -1,
+          "gene_id": "ENSG00000168384",
+          "variant_allele": "G",
+          "biotype": "protein_coding_CDS_not_defined",
+          "gene_symbol_source": "HGNC",
+          "distance": 1470,
+          "consequence_terms": [
+            "upstream_gene_variant"
+          ],
+          "impact": "MODIFIER"
+        }
+      ],
+      "input": "rs987870",
+      "assembly_name": "GRCh38",
+      "end": 4374150,
+      "colocated_variants": [
+        {
+          "pubmed": [
+            23886662,
+            23755072,
+            27313329,
+            20018078,
+            21779181,
+            22694930,
+            26119467,
+            21814517,
+            31785132,
+            30541564,
+            29751569,
+            23792949,
+            23637549,
+            24223962,
+            24794577,
+            23740775,
+            27439200,
+            30661310,
+            26006746,
+            25119688,
+            39766875
+          ],
+          "seq_region_name": "HSCHR6_MHC_MCF_CTG1",
+          "end": 4374150,
+          "start": 4374150,
+          "strand": 1,
+          "id": "rs987870",
+          "allele_string": "A/G",
+          "phenotype_or_disease": 1
+        }
+      ],
+      "start": 4374150,
+      "seq_region_name": "HSCHR6_MHC_MCF_CTG1"
+    },
+    {
+      "transcript_consequences": [
+        {
+          "gene_symbol_source": "HGNC",
+          "impact": "MODIFIER",
+          "consequence_terms": [
+            "intron_variant"
+          ],
+          "biotype": "protein_coding",
+          "variant_allele": "G",
+          "gene_id": "ENSG00000206291",
+          "gene_symbol": "HLA-DPA1",
+          "transcript_id": "ENST00000383224",
+          "strand": -1,
+          "hgnc_id": "HGNC:4938",
+          "canonical": 1
+        },
+        {
+          "gene_symbol": "HLA-DPB1",
+          "strand": 1,
+          "transcript_id": "ENST00000399491",
+          "hgnc_id": "HGNC:4940",
+          "gene_id": "ENSG00000215048",
+          "variant_allele": "G",
+          "biotype": "protein_coding",
+          "gene_symbol_source": "HGNC",
+          "distance": 869,
+          "impact": "MODIFIER",
+          "consequence_terms": [
+            "upstream_gene_variant"
+          ]
+        },
+        {
+          "gene_id": "ENSG00000215048",
+          "variant_allele": "G",
+          "strand": 1,
+          "transcript_id": "ENST00000399500",
+          "hgnc_id": "HGNC:4940",
+          "canonical": 1,
+          "gene_symbol": "HLA-DPB1",
+          "impact": "MODIFIER",
+          "consequence_terms": [
+            "upstream_gene_variant"
+          ],
+          "gene_symbol_source": "HGNC",
+          "distance": 823,
+          "biotype": "protein_coding"
+        },
+        {
+          "variant_allele": "G",
+          "gene_id": "ENSG00000233194",
+          "strand": 1,
+          "transcript_id": "ENST00000414966",
+          "hgnc_id": "HGNC:10339",
+          "canonical": 1,
+          "gene_symbol": "RPL32P1",
+          "impact": "MODIFIER",
+          "consequence_terms": [
+            "upstream_gene_variant"
+          ],
+          "distance": 4354,
+          "gene_symbol_source": "HGNC",
+          "biotype": "processed_pseudogene"
+        },
+        {
+          "biotype": "protein_coding",
+          "distance": 1466,
+          "flags": [
+            "cds_end_NF"
+          ],
+          "gene_symbol_source": "HGNC",
+          "consequence_terms": [
+            "upstream_gene_variant"
+          ],
+          "impact": "MODIFIER",
+          "gene_symbol": "HLA-DPA1",
+          "transcript_id": "ENST00000437123",
+          "hgnc_id": "HGNC:4938",
+          "strand": -1,
+          "variant_allele": "G",
+          "gene_id": "ENSG00000206291"
+        },
+        {
+          "transcript_id": "ENST00000439867",
+          "hgnc_id": "HGNC:4938",
+          "strand": -1,
+          "gene_symbol": "HLA-DPA1",
+          "gene_id": "ENSG00000206291",
+          "variant_allele": "G",
+          "biotype": "protein_coding",
+          "impact": "MODIFIER",
+          "consequence_terms": [
+            "intron_variant"
+          ],
+          "flags": [
+            "cds_end_NF"
+          ],
+          "gene_symbol_source": "HGNC"
+        },
+        {
+          "gene_id": "ENSG00000206291",
+          "variant_allele": "G",
+          "strand": -1,
+          "transcript_id": "ENST00000441483",
+          "hgnc_id": "HGNC:4938",
+          "gene_symbol": "HLA-DPA1",
+          "impact": "MODIFIER",
+          "consequence_terms": [
+            "intron_variant"
+          ],
+          "flags": [
+            "cds_end_NF"
+          ],
+          "gene_symbol_source": "HGNC",
+          "biotype": "protein_coding"
+        },
+        {
+          "distance": 1470,
+          "gene_symbol_source": "HGNC",
+          "consequence_terms": [
+            "upstream_gene_variant"
+          ],
+          "impact": "MODIFIER",
+          "biotype": "protein_coding_CDS_not_defined",
+          "variant_allele": "G",
+          "gene_id": "ENSG00000206291",
+          "gene_symbol": "HLA-DPA1",
+          "transcript_id": "ENST00000474244",
+          "hgnc_id": "HGNC:4938",
+          "strand": -1
+        },
+        {
+          "distance": 1488,
+          "gene_symbol_source": "HGNC",
+          "consequence_terms": [
+            "upstream_gene_variant"
+          ],
+          "impact": "MODIFIER",
+          "biotype": "retained_intron",
+          "variant_allele": "G",
+          "gene_id": "ENSG00000206291",
+          "gene_symbol": "HLA-DPA1",
+          "transcript_id": "ENST00000481258",
+          "hgnc_id": "HGNC:4938",
+          "strand": -1
+        },
+        {
+          "transcript_id": "ENST00000483480",
+          "strand": -1,
+          "hgnc_id": "HGNC:4938",
+          "gene_symbol": "HLA-DPA1",
+          "variant_allele": "G",
+          "gene_id": "ENSG00000206291",
+          "biotype": "protein_coding_CDS_not_defined",
+          "consequence_terms": [
+            "intron_variant",
+            "non_coding_transcript_variant"
+          ],
+          "impact": "MODIFIER",
+          "gene_symbol_source": "HGNC"
+        },
+        {
+          "distance": 907,
+          "gene_symbol_source": "HGNC",
+          "consequence_terms": [
+            "upstream_gene_variant"
+          ],
+          "impact": "MODIFIER",
+          "biotype": "retained_intron",
+          "variant_allele": "G",
+          "gene_id": "ENSG00000215048",
+          "gene_symbol": "HLA-DPB1",
+          "transcript_id": "ENST00000486122",
+          "strand": 1,
+          "hgnc_id": "HGNC:4940"
+        }
+      ],
+      "input": "rs987870",
+      "assembly_name": "GRCh38",
+      "allele_string": "A/G",
+      "variant_class": "SNV",
+      "strand": 1,
+      "most_severe_consequence": "intron_variant",
+      "id": "rs987870",
+      "seq_region_name": "HSCHR6_MHC_QBL_CTG1",
+      "end": 4269735,
+      "colocated_variants": [
+        {
+          "pubmed": [
+            23886662,
+            23755072,
+            27313329,
+            20018078,
+            21779181,
+            22694930,
+            26119467,
+            21814517,
+            31785132,
+            30541564,
+            29751569,
+            23792949,
+            23637549,
+            24223962,
+            24794577,
+            23740775,
+            27439200,
+            30661310,
+            26006746,
+            25119688,
+            39766875
+          ],
+          "seq_region_name": "HSCHR6_MHC_QBL_CTG1",
+          "end": 4269735,
+          "start": 4269735,
+          "strand": 1,
+          "id": "rs987870",
+          "phenotype_or_disease": 1,
+          "allele_string": "A/G"
+        }
+      ],
+      "start": 4269735
+    },
+    {
+      "seq_region_name": "HSCHR6_MHC_SSTO_CTG1",
+      "end": 4524086,
+      "colocated_variants": [
+        {
+          "allele_string": "A/G",
+          "phenotype_or_disease": 1,
+          "strand": 1,
+          "id": "rs987870",
+          "end": 4524086,
+          "start": 4524086,
+          "seq_region_name": "HSCHR6_MHC_SSTO_CTG1",
+          "pubmed": [
+            23886662,
+            23755072,
+            27313329,
+            20018078,
+            21779181,
+            22694930,
+            26119467,
+            21814517,
+            31785132,
+            30541564,
+            29751569,
+            23792949,
+            23637549,
+            24223962,
+            24794577,
+            23740775,
+            27439200,
+            30661310,
+            26006746,
+            25119688,
+            39766875
+          ]
+        }
+      ],
+      "start": 4524086,
+      "input": "rs987870",
+      "transcript_consequences": [
+        {
+          "gene_id": "ENSG00000226826",
+          "variant_allele": "G",
+          "transcript_id": "ENST00000433800",
+          "hgnc_id": "HGNC:4940",
+          "strand": 1,
+          "canonical": 1,
+          "gene_symbol": "HLA-DPB1",
+          "impact": "MODIFIER",
+          "consequence_terms": [
+            "upstream_gene_variant"
+          ],
+          "gene_symbol_source": "HGNC",
+          "distance": 823,
+          "biotype": "protein_coding"
+        },
+        {
+          "gene_symbol": "HLA-DPB1",
+          "transcript_id": "ENST00000444931",
+          "hgnc_id": "HGNC:4940",
+          "strand": 1,
+          "gene_id": "ENSG00000226826",
+          "variant_allele": "G",
+          "biotype": "protein_coding",
+          "gene_symbol_source": "HGNC",
+          "distance": 869,
+          "impact": "MODIFIER",
+          "consequence_terms": [
+            "upstream_gene_variant"
+          ]
+        },
+        {
+          "hgnc_id": "HGNC:4938",
+          "transcript_id": "ENST00000448154",
+          "strand": -1,
+          "gene_symbol": "HLA-DPA1",
+          "variant_allele": "G",
+          "gene_id": "ENSG00000236177",
+          "biotype": "protein_coding",
+          "impact": "MODIFIER",
+          "consequence_terms": [
+            "intron_variant"
+          ],
+          "gene_symbol_source": "HGNC",
+          "flags": [
+            "cds_end_NF"
+          ]
+        },
+        {
+          "impact": "MODIFIER",
+          "consequence_terms": [
+            "upstream_gene_variant"
+          ],
+          "distance": 4348,
+          "gene_symbol_source": "HGNC",
+          "biotype": "processed_pseudogene",
+          "variant_allele": "G",
+          "gene_id": "ENSG00000224098",
+          "transcript_id": "ENST00000458462",
+          "hgnc_id": "HGNC:10339",
+          "canonical": 1,
+          "strand": 1,
+          "gene_symbol": "RPL32P1"
+        },
+        {
+          "gene_id": "ENSG00000226826",
+          "variant_allele": "G",
+          "transcript_id": "ENST00000492951",
+          "hgnc_id": "HGNC:4940",
+          "strand": 1,
+          "gene_symbol": "HLA-DPB1",
+          "impact": "MODIFIER",
+          "consequence_terms": [
+            "upstream_gene_variant"
+          ],
+          "gene_symbol_source": "HGNC",
+          "distance": 907,
+          "biotype": "retained_intron"
+        },
+        {
+          "variant_allele": "G",
+          "gene_id": "ENSG00000236177",
+          "gene_symbol": "HLA-DPA1",
+          "strand": -1,
+          "transcript_id": "ENST00000502285",
+          "hgnc_id": "HGNC:4938",
+          "distance": 1470,
+          "gene_symbol_source": "HGNC",
+          "consequence_terms": [
+            "upstream_gene_variant"
+          ],
+          "impact": "MODIFIER",
+          "biotype": "protein_coding_CDS_not_defined"
+        },
+        {
+          "gene_symbol_source": "HGNC",
+          "distance": 1488,
+          "consequence_terms": [
+            "upstream_gene_variant"
+          ],
+          "impact": "MODIFIER",
+          "biotype": "retained_intron",
+          "gene_id": "ENSG00000236177",
+          "variant_allele": "G",
+          "gene_symbol": "HLA-DPA1",
+          "transcript_id": "ENST00000511285",
+          "hgnc_id": "HGNC:4938",
+          "strand": -1
+        },
+        {
+          "impact": "MODIFIER",
+          "consequence_terms": [
+            "intron_variant"
+          ],
+          "gene_symbol_source": "HGNC",
+          "flags": [
+            "cds_end_NF"
+          ],
+          "biotype": "protein_coding",
+          "gene_id": "ENSG00000236177",
+          "variant_allele": "G",
+          "strand": -1,
+          "transcript_id": "ENST00000512750",
+          "hgnc_id": "HGNC:4938",
+          "gene_symbol": "HLA-DPA1"
+        },
+        {
+          "gene_symbol_source": "HGNC",
+          "impact": "MODIFIER",
+          "consequence_terms": [
+            "intron_variant",
+            "non_coding_transcript_variant"
+          ],
+          "biotype": "protein_coding_CDS_not_defined",
+          "variant_allele": "G",
+          "gene_id": "ENSG00000236177",
+          "gene_symbol": "HLA-DPA1",
+          "hgnc_id": "HGNC:4938",
+          "transcript_id": "ENST00000514979",
+          "strand": -1
+        },
+        {
+          "gene_symbol": "HLA-DPA1",
+          "transcript_id": "ENST00000515317",
+          "canonical": 1,
+          "hgnc_id": "HGNC:4938",
+          "strand": -1,
+          "gene_id": "ENSG00000236177",
+          "variant_allele": "G",
+          "biotype": "protein_coding",
+          "gene_symbol_source": "HGNC",
+          "consequence_terms": [
+            "intron_variant"
+          ],
+          "impact": "MODIFIER"
+        },
+        {
+          "variant_allele": "G",
+          "gene_id": "ENSG00000236177",
+          "gene_symbol": "HLA-DPA1",
+          "transcript_id": "ENST00000515346",
+          "hgnc_id": "HGNC:4938",
+          "strand": -1,
+          "distance": 1466,
+          "gene_symbol_source": "HGNC",
+          "flags": [
+            "cds_end_NF"
+          ],
+          "consequence_terms": [
+            "upstream_gene_variant"
+          ],
+          "impact": "MODIFIER",
+          "biotype": "protein_coding"
+        }
+      ],
+      "assembly_name": "GRCh38",
+      "allele_string": "A/G",
+      "most_severe_consequence": "intron_variant",
+      "id": "rs987870",
+      "variant_class": "SNV",
+      "strand": 1
+    }
+  ]
+}

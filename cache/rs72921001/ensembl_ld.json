@@ -1,0 +1,500 @@
+{
+  "source": "Ensembl LD",
+  "retrieved": "2026-11-08T03:48:03+00:00",
+  "request": {
+    "rsid": "rs72921001",
+    "population": "EUR"
+  },
+  "response": [
+    {
+      "variation2": "rs4758141",
+      "variation1": "rs72921001",
+      "r2": "1.000000",
+      "d_prime": "1.000000",
+      "population_name": "1000GENOMES:phase_3:EUR"
+    },
+    {
+      "variation2": "rs2741819",
+      "variation1": "rs72921001",
+      "d_prime": "0.968616",
+      "r2": "0.894847",
+      "population_name": "1000GENOMES:phase_3:EUR"
+    },
+    {
+      "population_name": "1000GENOMES:phase_3:EUR",
+      "d_prime": "1.000000",
+      "r2": "1.000000",
+      "variation2": "rs6578788",
+      "variation1": "rs72921001"
+    },
+    {
+      "variation1": "rs72921001",
+      "variation2": "rs7122066",
+      "d_prime": "1.000000",
+      "r2": "1.000000",
+      "population_name": "1000GENOMES:phase_3:EUR"
+    },
+    {
+      "population_name": "1000GENOMES:phase_3:EUR",
+      "r2": "0.995681",
+      "d_prime": "1.000000",
+      "variation1": "rs72921001",
+      "variation2": "rs11456471"
+    },
+    {
+      "population_name": "1000GENOMES:phase_3:EUR",
+      "variation1": "rs72921001",
+      "variation2": "rs4310589",
+      "d_prime": "1.000000",
+      "r2": "1.000000"
+    },
+    {
+      "variation2": "rs58992705",
+      "variation1": "rs72921001",
+      "r2": "0.889824",
+      "d_prime": "0.955596",
+      "population_name": "1000GENOMES:phase_3:EUR"
+    },
+    {
+      "population_name": "1000GENOMES:phase_3:EUR",
+      "variation1": "rs72921001",
+      "variation2": "rs7107418",
+      "r2": "0.991348",
+      "d_prime": "0.995665"
+    },
+    {
+      "population_name": "1000GENOMES:phase_3:EUR",
+      "r2": "0.903199",
+      "d_prime": "0.973126",
+      "variation1": "rs72921001",
+      "variation2": "rs1079863"
+    },
+    {
+      "variation2": "rs3963527",
+      "variation1": "rs72921001",
+      "r2": "1.000000",
+      "d_prime": "1.000000",
+      "population_name": "1000GENOMES:phase_3:EUR"
+    },
+    {
+      "population_name": "1000GENOMES:phase_3:EUR",
+      "d_prime": "0.951107",
+      "r2": "0.881483",
+      "variation1": "rs72921001",
+      "variation2": "rs2659886"
+    },
+    {
+      "variation2": "rs58144554",
+      "variation1": "rs72921001",
+      "d_prime": "1.000000",
+      "r2": "1.000000",
+      "population_name": "1000GENOMES:phase_3:EUR"
+    },
+    {
+      "variation1": "rs72921001",
+      "variation2": "rs2741822",
+      "r2": "0.859913",
+      "d_prime": "0.929326",
+      "population_name": "1000GENOMES:phase_3:EUR"
+    },
+    {
+      "population_name": "1000GENOMES:phase_3:EUR",
+      "variation1": "rs72921001",
+      "variation2": "rs72920993",
+      "d_prime": "1.000000",
+      "r2": "1.000000"
+    },
+    {
+      "r2": "0.885796",
+      "d_prime": "0.955482",
+      "variation2": "rs2262674",
+      "variation1": "rs72921001",
+      "population_name": "1000GENOMES:phase_3:EUR"
+    },
+    {
+      "population_name": "1000GENOMES:phase_3:EUR",
+      "variation1": "rs72921001",
+      "variation2": "rs72921002",
+      "d_prime": "1.000000",
+      "r2": "1.000000"
+    },
+    {
+      "r2": "1.000000",
+      "d_prime": "1.000000",
+      "variation1": "rs72921001",
+      "variation2": "rs145193655",
+      "population_name": "1000GENOMES:phase_3:EUR"
+    },
+    {
+      "variation1": "rs72921001",
+      "variation2": "rs4036310",
+      "r2": "1.000000",
+      "d_prime": "1.000000",
+      "population_name": "1000GENOMES:phase_3:EUR"
+    },
+    {
+      "variation2": "rs12361801",
+      "variation1": "rs72921001",
+      "d_prime": "1.000000",
+      "r2": "1.000000",
+      "population_name": "1000GENOMES:phase_3:EUR"
+    },
+    {
+      "r2": "1.000000",
+      "d_prime": "1.000000",
+      "variation2": "rs113221325",
+      "variation1": "rs72921001",
+      "population_name": "1000GENOMES:phase_3:EUR"
+    },
+    {
+      "variation2": "rs10839631",
+      "variation1": "rs72921001",
+      "r2": "1.000000",
+      "d_prime": "1.000000",
+      "population_name": "1000GENOMES:phase_3:EUR"
+    },
+    {
+      "population_name": "1000GENOMES:phase_3:EUR",
+      "r2": "0.885796",
+      "d_prime": "0.955482",
+      "variation2": "rs2595406",
+      "variation1": "rs72921001"
+    },
+    {
+      "population_name": "1000GENOMES:phase_3:EUR",
+      "d_prime": "1.000000",
+      "r2": "1.000000",
+      "variation1": "rs72921001",
+      "variation2": "rs59483814"
+    },
+    {
+      "r2": "0.987029",
+      "d_prime": "0.995648",
+      "variation1": "rs72921001",
+      "variation2": "rs2741766",
+      "population_name": "1000GENOMES:phase_3:EUR"
+    },
+    {
+      "population_name": "1000GENOMES:phase_3:EUR",
+      "variation2": "rs7926083",
+      "variation1": "rs72921001",
+      "r2": "1.000000",
+      "d_prime": "1.000000"
+    },
+    {
+      "population_name": "1000GENOMES:phase_3:EUR",
+      "variation1": "rs72921001",
+      "variation2": "rs11041064",
+      "r2": "0.987045",
+      "d_prime": "0.995654"
+    },
+    {
+      "population_name": "1000GENOMES:phase_3:EUR",
+      "r2": "0.885796",
+      "d_prime": "0.955482",
+      "variation2": "rs2741835",
+      "variation1": "rs72921001"
+    },
+    {
+      "population_name": "1000GENOMES:phase_3:EUR",
+      "d_prime": "0.951107",
+      "r2": "0.881483",
+      "variation1": "rs72921001",
+      "variation2": "rs2053833"
+    },
+    {
+      "r2": "0.911218",
+      "d_prime": "0.973262",
+      "variation2": "rs1857949",
+      "variation1": "rs72921001",
+      "population_name": "1000GENOMES:phase_3:EUR"
+    },
+    {
+      "d_prime": "1.000000",
+      "r2": "1.000000",
+      "variation2": "rs7130260",
+      "variation1": "rs72921001",
+      "population_name": "1000GENOMES:phase_3:EUR"
+    },
+    {
+      "variation2": "rs1463177",
+      "variation1": "rs72921001",
+      "d_prime": "1.000000",
+      "r2": "1.000000",
+      "population_name": "1000GENOMES:phase_3:EUR"
+    },
+    {
+      "variation1": "rs72921001",
+      "variation2": "rs2659856",
+      "r2": "0.885796",
+      "d_prime": "0.955482",
+      "population_name": "1000GENOMES:phase_3:EUR"
+    },
+    {
+      "variation1": "rs72921001",
+      "variation2": "rs4505048",
+      "r2": "1.000000",
+      "d_prime": "1.000000",
+      "population_name": "1000GENOMES:phase_3:EUR"
+    },
+    {
+      "variation1": "rs72921001",
+      "variation2": "rs2595426",
+      "r2": "0.894847",
+      "d_prime": "0.968616",
+      "population_name": "1000GENOMES:phase_3:EUR"
+    },
+    {
+      "d_prime": "0.955371",
+      "r2": "0.881797",
+      "variation1": "rs72921001",
+      "variation2": "rs2741821",
+      "population_name": "1000GENOMES:phase_3:EUR"
+    },
+    {
+      "population_name": "1000GENOMES:phase_3:EUR",
+      "r2": "0.903199",
+      "d_prime": "0.973126",
+      "variation2": "rs2741834",
+      "variation1": "rs72921001"
+    },
+    {
+      "d_prime": "1.000000",
+      "r2": "1.000000",
+      "variation2": "rs3930075",
+      "variation1": "rs72921001",
+      "population_name": "1000GENOMES:phase_3:EUR"
+    },
+    {
+      "population_name": "1000GENOMES:phase_3:EUR",
+      "variation2": "rs2741816",
+      "variation1": "rs72921001",
+      "d_prime": "0.968616",
+      "r2": "0.894847"
+    },
+    {
+      "population_name": "1000GENOMES:phase_3:EUR",
+      "variation2": "rs7929477",
+      "variation1": "rs72921001",
+      "r2": "1.000000",
+      "d_prime": "1.000000"
+    },
+    {
+      "population_name": "1000GENOMES:phase_3:EUR",
+      "variation2": "rs370149010",
+      "variation1": "rs72921001",
+      "d_prime": "1.000000",
+      "r2": "1.000000"
+    },
+    {
+      "population_name": "1000GENOMES:phase_3:EUR",
+      "r2": "0.953774",
+      "d_prime": "1.000000",
+      "variation1": "rs72921001",
+      "variation2": "rs7117739"
+    },
+    {
+      "population_name": "1000GENOMES:phase_3:EUR",
+      "r2": "0.903199",
+      "d_prime": "0.973126",
+      "variation1": "rs72921001",
+      "variation2": "rs2659858"
+    },
+    {
+      "d_prime": "1.000000",
+      "r2": "1.000000",
+      "variation2": "rs12363236",
+      "variation1": "rs72921001",
+      "population_name": "1000GENOMES:phase_3:EUR"
+    },
+    {
+      "population_name": "1000GENOMES:phase_3:EUR",
+      "variation1": "rs72921001",
+      "variation2": "rs2595424",
+      "d_prime": "0.968932",
+      "r2": "0.910911"
+    },
+    {
+      "variation2": "rs140816737",
+      "variation1": "rs72921001",
+      "d_prime": "1.000000",
+      "r2": "1.000000",
+      "population_name": "1000GENOMES:phase_3:EUR"
+    },
+    {
+      "r2": "1.000000",
+      "d_prime": "1.000000",
+      "variation2": "rs11041071",
+      "variation1": "rs72921001",
+      "population_name": "1000GENOMES:phase_3:EUR"
+    },
+    {
+      "population_name": "1000GENOMES:phase_3:EUR",
+      "variation2": "rs4758142",
+      "variation1": "rs72921001",
+      "r2": "1.000000",
+      "d_prime": "1.000000"
+    },
+    {
+      "population_name": "1000GENOMES:phase_3:EUR",
+      "variation1": "rs72921001",
+      "variation2": "rs2741762",
+      "r2": "0.982866",
+      "d_prime": "1.000000"
+    },
+    {
+      "r2": "0.995676",
+      "d_prime": "1.000000",
+      "variation2": "rs544671033",
+      "variation1": "rs72921001",
+      "population_name": "1000GENOMES:phase_3:EUR"
+    },
+    {
+      "d_prime": "0.955482",
+      "r2": "0.885796",
+      "variation2": "rs2262673",
+      "variation1": "rs72921001",
+      "population_name": "1000GENOMES:phase_3:EUR"
+    },
+    {
+      "population_name": "1000GENOMES:phase_3:EUR",
+      "r2": "0.894847",
+      "d_prime": "0.968616",
+      "variation1": "rs72921001",
+      "variation2": "rs3116382"
+    },
+    {
+      "population_name": "1000GENOMES:phase_3:EUR",
+      "variation2": "rs7122077",
+      "variation1": "rs72921001",
+      "r2": "1.000000",
+      "d_prime": "1.000000"
+    },
+    {
+      "population_name": "1000GENOMES:phase_3:EUR",
+      "variation2": "rs4293098",
+      "variation1": "rs72921001",
+      "r2": "1.000000",
+      "d_prime": "1.000000"
+    },
+    {
+      "population_name": "1000GENOMES:phase_3:EUR",
+      "r2": "0.948828",
+      "d_prime": "0.986771",
+      "variation2": "rs2595437",
+      "variation1": "rs72921001"
+    },
+    {
+      "variation2": "rs4444060",
+      "variation1": "rs72921001",
+      "d_prime": "1.000000",
+      "r2": "1.000000",
+      "population_name": "1000GENOMES:phase_3:EUR"
+    },
+    {
+      "r2": "0.889824",
+      "d_prime": "0.955596",
+      "variation1": "rs72921001",
+      "variation2": "rs2741828",
+      "population_name": "1000GENOMES:phase_3:EUR"
+    },
+    {
+      "population_name": "1000GENOMES:phase_3:EUR",
+      "variation1": "rs72921001",
+      "variation2": "rs4300376",
+      "d_prime": "1.000000",
+      "r2": "1.000000"
+    },
+    {
+      "variation1": "rs72921001",
+      "variation2": "rs2741843",
+      "d_prime": "0.972917",
+      "r2": "0.891325",
+      "population_name": "1000GENOMES:phase_3:EUR"
+    },
+    {
+      "population_name": "1000GENOMES:phase_3:EUR",
+      "d_prime": "1.000000",
+      "r2": "1.000000",
+      "variation2": "rs7115661",
+      "variation1": "rs72921001"
+    },
+    {
+      "d_prime": "1.000000",
+      "r2": "1.000000",
+      "variation2": "rs12361835",
+      "variation1": "rs72921001",
+      "population_name": "1000GENOMES:phase_3:EUR"
+    },
+    {
+      "population_name": "1000GENOMES:phase_3:EUR",
+      "d_prime": "1.000000",
+      "r2": "0.995676",
+      "variation1": "rs72921001",
+      "variation2": "rs532634374"
+    },
+    {
+      "population_name": "1000GENOMES:phase_3:EUR",
+      "d_prime": "1.000000",
+      "r2": "0.995676",
+      "variation1": "rs72921001",
+      "variation2": "rs560419920"
+    },
+    {
+      "population_name": "1000GENOMES:phase_3:EUR",
+      "d_prime": "1.000000",
+      "r2": "1.000000",
+      "variation1": "rs72921001",
+      "variation2": "rs72920999"
+    },
+    {
+      "variation1": "rs72921001",
+      "variation2": "rs11452256",
+      "d_prime": "1.000000",
+      "r2": "0.982828",
+      "population_name": "1000GENOMES:phase_3:EUR"
+    },
+    {
+      "population_name": "1000GENOMES:phase_3:EUR",
+      "variation1": "rs72921001",
+      "variation2": "rs2659881",
+      "r2": "0.887409",
+      "d_prime": "0.972846"
+    },
+    {
+      "population_name": "1000GENOMES:phase_3:EUR",
+      "r2": "0.881797",
+      "d_prime": "0.955371",
+      "variation2": "rs2741820",
+      "variation1": "rs72921001"
+    },
+    {
+      "population_name": "1000GENOMES:phase_3:EUR",
+      "variation2": "rs6578787",
+      "variation1": "rs72921001",
+      "d_prime": "1.000000",
+      "r2": "1.000000"
+    },
+    {
+      "population_name": "1000GENOMES:phase_3:EUR",
+      "variation1": "rs72921001",
+      "variation2": "rs2741763",
+      "r2": "0.982866",
+      "d_prime": "1.000000"
+    },
+    {
+      "r2": "1.000000",
+      "d_prime": "1.000000",
+      "variation1": "rs72921001",
+      "variation2": "rs11041067",
+      "population_name": "1000GENOMES:phase_3:EUR"
+    },
+    {
+      "population_name": "1000GENOMES:phase_3:EUR",
+      "r2": "1.000000",
+      "d_prime": "1.000000",
+      "variation1": "rs72921001",
+      "variation2": "rs11041066"
+    }
+  ]
+}

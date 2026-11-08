@@ -1,0 +1,117 @@
+{
+  "source": "Ensembl VEP",
+  "retrieved": "2026-11-08T03:48:05+00:00",
+  "request": {
+    "rsid": "rs72921001",
+    "params": {
+      "AlphaMissense": "1",
+      "CADD": "1",
+      "SpliceAI": "1",
+      "canonical": "1",
+      "variant_class": "1",
+      "domains": "1"
+    }
+  },
+  "response": [
+    {
+      "seq_region_name": "11",
+      "assembly_name": "GRCh38",
+      "colocated_variants": [
+        {
+          "allele_string": "C/A",
+          "id": "rs72921001",
+          "seq_region_name": "11",
+          "pubmed": [
+            31386148,
+            31357559,
+            36479483,
+            25660959,
+            38308303,
+            38248819,
+            40442113
+          ],
+          "strand": 1,
+          "start": 6868417,
+          "end": 6868417,
+          "frequencies": {
+            "A": {
+              "af": 0.3243,
+              "gnomadg_remaining": 0.3501,
+              "gnomadg_asj": 0.3648,
+              "gnomadg_ami": 0.4364,
+              "gnomadg_fin": 0.3793,
+              "gnomadg_nfe": 0.3803,
+              "gnomadg_amr": 0.3346,
+              "sas": 0.4254,
+              "gnomadg": 0.325,
+              "gnomadg_mid": 0.2979,
+              "gnomadg_eas": 0.2881,
+              "eur": 0.3569,
+              "gnomadg_sas": 0.4111,
+              "eas": 0.3135,
+              "gnomadg_afr": 0.2045,
+              "amr": 0.3732,
+              "afr": 0.2073
+            }
+          }
+        }
+      ],
+      "variant_class": "SNV",
+      "input": "rs72921001",
+      "transcript_consequences": [
+        {
+          "impact": "MODIFIER",
+          "transcript_id": "ENST00000637205",
+          "cadd_phred": 6.354,
+          "biotype": "lncRNA",
+          "strand": -1,
+          "gene_id": "ENSG00000283415",
+          "variant_allele": "A",
+          "consequence_terms": [
+            "intron_variant",
+            "non_coding_transcript_variant"
+          ],
+          "cadd_raw": 0.589416,
+          "canonical": 1
+        },
+        {
+          "strand": 1,
+          "gene_symbol_source": "HGNC",
+          "gene_symbol": "OR10A2",
+          "gene_id": "ENSG00000170790",
+          "variant_allele": "A",
+          "consequence_terms": [
+            "intron_variant"
+          ],
+          "cadd_raw": 0.589416,
+          "canonical": 1,
+          "impact": "MODIFIER",
+          "transcript_id": "ENST00000641461",
+          "biotype": "protein_coding",
+          "cadd_phred": 6.354,
+          "hgnc_id": "HGNC:8161"
+        },
+        {
+          "transcript_id": "ENST00000767881",
+          "impact": "MODIFIER",
+          "cadd_phred": 6.354,
+          "biotype": "lncRNA",
+          "strand": -1,
+          "gene_id": "ENSG00000283415",
+          "variant_allele": "A",
+          "cadd_raw": 0.589416,
+          "consequence_terms": [
+            "intron_variant",
+            "non_coding_transcript_variant"
+          ]
+        }
+      ],
+      "strand": 1,
+      "id": "rs72921001",
+      "end": 6868417,
+      "allele_string": "C/A",
+      "start": 6868417,
+      "most_severe_consequence": "intron_variant"
+    }
+  ]
+}
