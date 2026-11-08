@@ -1,0 +1,37 @@
+{
+  "source": "GWAS Catalog",
+  "retrieved": "2026-11-08T03:58:53+00:00",
+  "request": {
+    "rsid": "rs9807334",
+    "api": "ensembl-phenotypes"
+  },
+  "response": {
+    "ensembl_phenotypes": [
+      {
+        "risk_allele": "A",
+        "source": "NHGRI-EBI GWAS catalog",
+        "variants": "rs9807334",
+        "study": "PMID:22610502",
+        "trait": "Immune reponse to smallpox (secreted IFN-alpha)",
+        "pvalue": "2.00e-7",
+        "ontology_accessions": [
+          "EFO:0004645",
+          "EFO:0004873"
+        ],
+        "genes": "ELAC1"
+      },
+      {
+        "study": "PMID:25616667",
+        "source": "NHGRI-EBI GWAS catalog",
+        "variants": "rs9807334",
+        "trait": "Oligoclonal band status in multiple sclerosis",
+        "genes": "ELAC1,SMAD4",
+        "ontology_accessions": [
+          "EFO:0003885",
+          "EFO:0005206"
+        ],
+        "pvalue": "8.00e-7"
+      }
+    ]
+  }
+}

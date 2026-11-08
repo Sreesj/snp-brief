@@ -1,0 +1,257 @@
+{
+  "source": "GWAS Catalog",
+  "retrieved": "2026-11-08T04:02:53+00:00",
+  "request": {
+    "rsid": "rs3827760",
+    "api": "ensembl-phenotypes"
+  },
+  "response": {
+    "ensembl_phenotypes": [
+      {
+        "pvalue": "5.00e-14",
+        "source": "NHGRI-EBI GWAS catalog",
+        "trait": "Balding type 1",
+        "study": "PMID:30595370",
+        "variants": "rs3827760",
+        "genes": null
+      },
+      {
+        "study": "PMID:34265127",
+        "variants": "rs3827760",
+        "trait": "Curly vs straight hair",
+        "source": "NHGRI-EBI GWAS catalog",
+        "risk_allele": "A",
+        "pvalue": "1.00e-16",
+        "genes": null
+      },
+      {
+        "trait": "Ear morphology",
+        "risk_allele": "G",
+        "ontology_accessions": [
+          "EFO:0007664"
+        ],
+        "variants": "rs3827760",
+        "study": "PMID:26105758",
+        "pvalue": "1.00e-11",
+        "source": "NHGRI-EBI GWAS catalog",
+        "genes": "EDAR"
+      },
+      {
+        "genes": "EDAR",
+        "variants": "rs3827760",
+        "study": "PMID:26105758",
+        "beta_coefficient": "0.108 unit decrease",
+        "source": "NHGRI-EBI GWAS catalog",
+        "pvalue": "1.00e-10",
+        "ontology_accessions": [
+          "EFO:0007665"
+        ],
+        "trait": "Ear protrusion",
+        "risk_allele": "G"
+      },
+      {
+        "genes": "GCC2,LIMS1,SULT1C2,SULT1C2P1,SULT1C3,SULT1C4",
+        "ontology_accessions": [
+          "EFO:0007823",
+          "OBA:2050112"
+        ],
+        "pvalue": "1.00e-7",
+        "source": "NHGRI-EBI GWAS catalog",
+        "trait": "Eyebrow thickness",
+        "variants": "rs3827760",
+        "study": "PMID:26926045"
+      },
+      {
+        "genes": null,
+        "variants": "rs3827760",
+        "study": "PMID:35393595",
+        "trait": "Facial appearance",
+        "source": "NHGRI-EBI GWAS catalog",
+        "pvalue": "2.00e-13"
+      },
+      {
+        "trait": "Hair/balding pattern: Pattern 1 UKB data field 2395_1",
+        "risk_allele": "G",
+        "beta_coefficient": "0.41 unit increase",
+        "variants": "rs3827760",
+        "study": "PMID:34737426",
+        "pvalue": "1.00e-14",
+        "source": "NHGRI-EBI GWAS catalog",
+        "genes": null
+      },
+      {
+        "genes": "EDAR",
+        "beta_coefficient": "0.103 unit decrease",
+        "study": "PMID:26105758",
+        "variants": "rs3827760",
+        "pvalue": "1.00e-12",
+        "source": "NHGRI-EBI GWAS catalog",
+        "ontology_accessions": [
+          "EFO:0007670"
+        ],
+        "trait": "Helix rolling",
+        "risk_allele": "G"
+      },
+      {
+        "ontology_accessions": [
+          "EFO:0007667"
+        ],
+        "risk_allele": "G",
+        "trait": "Lobe attachment",
+        "genes": "EDAR",
+        "pvalue": "2.00e-9",
+        "source": "NHGRI-EBI GWAS catalog",
+        "beta_coefficient": "0.066 unit decrease",
+        "study": "PMID:26105758",
+        "variants": "rs3827760"
+      },
+      {
+        "ontology_accessions": [
+          "EFO:0007667"
+        ],
+        "genes": "EDAR",
+        "trait": "Lobe attachment (rater scored)",
+        "variants": "rs3827760",
+        "study": "PMID:29198719",
+        "pvalue": "7.00e-10",
+        "source": "NHGRI-EBI GWAS catalog"
+      },
+      {
+        "pvalue": "1.00e-12",
+        "source": "NHGRI-EBI GWAS catalog",
+        "beta_coefficient": "0.117 unit decrease",
+        "variants": "rs3827760",
+        "study": "PMID:26105758",
+        "genes": "EDAR",
+        "risk_allele": "G",
+        "trait": "Lobe size",
+        "ontology_accessions": [
+          "EFO:0007666"
+        ]
+      },
+      {
+        "risk_allele": "G",
+        "trait": "lower facial morphology traits (quantitative measurement)",
+        "ontology_accessions": [
+          "EFO:0007842",
+          "EFO:0007845",
+          "OBA:2050101",
+          "OBA:VT0003769"
+        ],
+        "source": "NHGRI-EBI GWAS catalog",
+        "pvalue": "4.00e-10",
+        "study": "PMID:27193062",
+        "variants": "rs3827760",
+        "beta_coefficient": "0.0076 NR NR decrease",
+        "genes": "EDAR"
+      },
+      {
+        "risk_allele": "G",
+        "trait": "Male-pattern baldness",
+        "ontology_accessions": [
+          "EFO:0004191",
+          "EFO:0007825",
+          "MONDO:0004907",
+          "Orphanet:79364"
+        ],
+        "source": "NHGRI-EBI GWAS catalog",
+        "pvalue": "4.00e-16",
+        "variants": "rs3827760",
+        "study": "PMID:30573740",
+        "beta_coefficient": "0.191261 unit decrease",
+        "genes": null
+      },
+      {
+        "source": "NHGRI-EBI GWAS catalog",
+        "pvalue": "1.00e-8",
+        "variants": "rs3827760",
+        "study": "PMID:27182965",
+        "trait": "Male-pattern baldness",
+        "genes": "EDAR",
+        "ontology_accessions": [
+          "EFO:0004191",
+          "EFO:0007825",
+          "MONDO:0004907",
+          "Orphanet:79364"
+        ]
+      },
+      {
+        "ontology_accessions": [
+          "EFO:0007906",
+          "HP:0000664"
+        ],
+        "trait": "Monobrow",
+        "genes": "EDAR",
+        "pvalue": "2.00e-15",
+        "source": "NHGRI-EBI GWAS catalog",
+        "beta_coefficient": "0.165 unit increase",
+        "study": "PMID:27182965",
+        "variants": "rs3827760"
+      },
+      {
+        "ontology_accessions": [
+          "EFO:0007823",
+          "OBA:2050112"
+        ],
+        "genes": "CCDC138,EDAR,LIMS1,MIR4265,RANBP2,SH3RF3,SH3RF3-AS1,ASN",
+        "variants": "rs3827760",
+        "study": "PMID:26926045",
+        "trait": "Monobrow thickness",
+        "source": "NHGRI-EBI GWAS catalog",
+        "pvalue": "1.00e-7"
+      },
+      {
+        "variants": "rs3827760",
+        "study": "PMID:26926045",
+        "trait": "Scalp hair shape",
+        "source": "NHGRI-EBI GWAS catalog",
+        "pvalue": "3.00e-119",
+        "ontology_accessions": [
+          "EFO:0007824",
+          "OBA:0003493"
+        ],
+        "genes": "CCDC138,EDAR,LIMS1,MIR4265,RANBP2,SH3RF3,SH3RF3-AS1,ASN"
+      },
+      {
+        "genes": "EDAR",
+        "source": "NHGRI-EBI GWAS catalog",
+        "risk_allele": "G",
+        "pvalue": "2.00e-12",
+        "variants": "rs3827760",
+        "study": "PMID:27487801",
+        "trait": "Straight vs curly hair"
+      },
+      {
+        "genes": "EDAR",
+        "variants": "rs3827760",
+        "study": "PMID:27487801",
+        "trait": "Straight vs curly hair",
+        "risk_allele": "G",
+        "source": "NHGRI-EBI GWAS catalog",
+        "pvalue": "5.00e-16"
+      },
+      {
+        "genes": "EDAR",
+        "pvalue": "2.00e-9",
+        "source": "NHGRI-EBI GWAS catalog",
+        "risk_allele": "G",
+        "trait": "Thick vs thin eyebrows",
+        "variants": "rs3827760",
+        "study": "PMID:29895819"
+      },
+      {
+        "genes": "EDAR",
+        "pvalue": "2.00e-7",
+        "source": "NHGRI-EBI GWAS catalog",
+        "beta_coefficient": "0.097 unit increase",
+        "variants": "rs3827760",
+        "study": "PMID:32600054",
+        "ontology_accessions": [
+          "EFO:0007778"
+        ],
+        "risk_allele": "G",
+        "trait": "Urinary albumin-to-creatinine ratio"
+      }
+    ]
+  }
+}

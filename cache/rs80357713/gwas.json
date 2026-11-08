@@ -1,0 +1,11 @@
+{
+  "source": "GWAS Catalog",
+  "retrieved": "2026-11-08T04:10:02+00:00",
+  "request": {
+    "rsid": "rs80357713",
+    "api": "ensembl-phenotypes"
+  },
+  "response": {
+    "ensembl_phenotypes": []
+  }
+}

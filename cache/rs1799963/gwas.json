@@ -1,0 +1,420 @@
+{
+  "source": "GWAS Catalog",
+  "retrieved": "2026-11-08T04:11:01+00:00",
+  "request": {
+    "rsid": "rs1799963",
+    "api": "ensembl-phenotypes"
+  },
+  "response": {
+    "ensembl_phenotypes": [
+      {
+        "beta_coefficient": "0.687 unit decrease",
+        "variants": "rs1799963",
+        "risk_allele": "G",
+        "study": "PMID:39024449",
+        "source": "NHGRI-EBI GWAS catalog",
+        "pvalue": "7.00e-59",
+        "trait": "Acute pulmonary heart disease PheCode 415.1",
+        "genes": null
+      },
+      {
+        "variants": "rs1799963",
+        "beta_coefficient": "0.6989 unit decrease",
+        "risk_allele": "G",
+        "study": "PMID:39024449",
+        "source": "NHGRI-EBI GWAS catalog",
+        "pvalue": "2.00e-50",
+        "trait": "Acute pulmonary heart disease PheCode 415.1",
+        "genes": null
+      },
+      {
+        "study": "PMID:39024449",
+        "risk_allele": "G",
+        "beta_coefficient": "0.6903 unit decrease",
+        "variants": "rs1799963",
+        "trait": "Blood clot / pulmonary embolism / deep vein thrombosis DVT",
+        "ontology_accessions": [
+          "EFO:0003907"
+        ],
+        "genes": null,
+        "source": "NHGRI-EBI GWAS catalog",
+        "pvalue": "2.00e-54"
+      },
+      {
+        "study": "PMID:39024449",
+        "risk_allele": "G",
+        "variants": "rs1799963",
+        "beta_coefficient": "0.6837 unit decrease",
+        "trait": "Blood clot / pulmonary embolism / deep vein thrombosis DVT",
+        "ontology_accessions": [
+          "EFO:0003907"
+        ],
+        "genes": null,
+        "source": "NHGRI-EBI GWAS catalog",
+        "pvalue": "4.00e-44"
+      },
+      {
+        "source": "NHGRI-EBI GWAS catalog",
+        "pvalue": "3.00e-49",
+        "trait": "Coagulation defects PheCode 286",
+        "genes": null,
+        "variants": "rs1799963",
+        "beta_coefficient": "0.6106 unit decrease",
+        "study": "PMID:39024449",
+        "risk_allele": "G"
+      },
+      {
+        "genes": null,
+        "trait": "Deep vein thrombosis [DVT] PheCode 452.2",
+        "pvalue": "2.00e-84",
+        "source": "NHGRI-EBI GWAS catalog",
+        "study": "PMID:39024449",
+        "risk_allele": "G",
+        "variants": "rs1799963",
+        "beta_coefficient": "0.7236 unit decrease"
+      },
+      {
+        "study": "PMID:39024449",
+        "risk_allele": "G",
+        "variants": "rs1799963",
+        "beta_coefficient": "0.7351 unit decrease",
+        "trait": "Deep vein thrombosis [DVT] PheCode 452.2",
+        "genes": null,
+        "source": "NHGRI-EBI GWAS catalog",
+        "pvalue": "1.00e-73"
+      },
+      {
+        "genes": null,
+        "ontology_accessions": [
+          "EFO:0003907",
+          "HP:0002625"
+        ],
+        "trait": "Deep venous thrombosis",
+        "pvalue": "3.00e-24",
+        "source": "NHGRI-EBI GWAS catalog",
+        "study": "PMID:39789286",
+        "risk_allele": "A",
+        "beta_coefficient": "0.6223112 unit increase",
+        "variants": "rs1799963"
+      },
+      {
+        "study": "PMID:39024449",
+        "risk_allele": "G",
+        "beta_coefficient": "0.2919 unit decrease",
+        "variants": "rs1799963",
+        "genes": null,
+        "trait": "Encounter for long-term current use of anticoagulants PheCode 286.2",
+        "pvalue": "1.00e-26",
+        "source": "NHGRI-EBI GWAS catalog"
+      },
+      {
+        "source": "NHGRI-EBI GWAS catalog",
+        "pvalue": "2.00e-24",
+        "trait": "Encounter for long-term current use of anticoagulants PheCode 286.2",
+        "genes": null,
+        "variants": "rs1799963",
+        "beta_coefficient": "0.3032 unit decrease",
+        "study": "PMID:39024449",
+        "risk_allele": "G"
+      },
+      {
+        "trait": "F2 protein levels",
+        "genes": null,
+        "source": "NHGRI-EBI GWAS catalog",
+        "pvalue": "4.00e-118",
+        "study": "PMID:39789286",
+        "risk_allele": "A",
+        "beta_coefficient": "0.67677927 unit increase",
+        "variants": "rs1799963"
+      },
+      {
+        "risk_allele": "G",
+        "study": "PMID:39024449",
+        "beta_coefficient": "1.326 unit decrease",
+        "variants": "rs1799963",
+        "trait": "Hypercoagulable state PheCode 286.8",
+        "genes": null,
+        "source": "NHGRI-EBI GWAS catalog",
+        "pvalue": "3.00e-96"
+      },
+      {
+        "study": "PMID:39024449",
+        "risk_allele": "G",
+        "beta_coefficient": "1.347 unit decrease",
+        "variants": "rs1799963",
+        "genes": null,
+        "trait": "Hypercoagulable state PheCode 286.8",
+        "pvalue": "5.00e-68",
+        "source": "NHGRI-EBI GWAS catalog"
+      },
+      {
+        "genes": null,
+        "trait": "Other and unspecified coagulation defects PheCode 286.7",
+        "pvalue": "2.00e-18",
+        "source": "NHGRI-EBI GWAS catalog",
+        "risk_allele": "G",
+        "study": "PMID:39024449",
+        "beta_coefficient": "0.5581 unit decrease",
+        "variants": "rs1799963"
+      },
+      {
+        "pvalue": "2.00e-109",
+        "source": "NHGRI-EBI GWAS catalog",
+        "genes": null,
+        "trait": "Other venous embolism and thrombosis PheCode 452",
+        "variants": "rs1799963",
+        "beta_coefficient": "0.6658 unit decrease",
+        "risk_allele": "G",
+        "study": "PMID:39024449"
+      },
+      {
+        "study": "PMID:39024449",
+        "risk_allele": "G",
+        "variants": "rs1799963",
+        "beta_coefficient": "0.6722 unit decrease",
+        "trait": "Other venous embolism and thrombosis PheCode 452",
+        "genes": null,
+        "source": "NHGRI-EBI GWAS catalog",
+        "pvalue": "3.00e-103"
+      },
+      {
+        "beta_coefficient": "0.5454 unit decrease",
+        "variants": "rs1799963",
+        "study": "PMID:39024449",
+        "risk_allele": "G",
+        "source": "NHGRI-EBI GWAS catalog",
+        "pvalue": "5.00e-14",
+        "trait": "Phlebitis and thrombophlebitis PheCode 451",
+        "genes": null
+      },
+      {
+        "trait": "Primary hypercoagulable state PheCode 286.81",
+        "genes": null,
+        "source": "NHGRI-EBI GWAS catalog",
+        "pvalue": "7.00e-91",
+        "study": "PMID:39024449",
+        "risk_allele": "G",
+        "beta_coefficient": "1.358 unit decrease",
+        "variants": "rs1799963"
+      },
+      {
+        "genes": null,
+        "trait": "Primary hypercoagulable state PheCode 286.81",
+        "pvalue": "2.00e-63",
+        "source": "NHGRI-EBI GWAS catalog",
+        "risk_allele": "G",
+        "study": "PMID:39024449",
+        "beta_coefficient": "1.351 unit decrease",
+        "variants": "rs1799963"
+      },
+      {
+        "beta_coefficient": "0.1265 unit decrease",
+        "variants": "rs1799963",
+        "risk_allele": "G",
+        "study": "PMID:39024449",
+        "pvalue": "4.00e-16",
+        "source": "NHGRI-EBI GWAS catalog",
+        "genes": null,
+        "trait": "PT international normalized ratio INR, maximum, inv-norm transformed"
+      },
+      {
+        "study": "PMID:39024449",
+        "risk_allele": "G",
+        "variants": "rs1799963",
+        "beta_coefficient": "0.1361 unit decrease",
+        "trait": "PT international normalized ratio INR, mean, inv-norm transformed",
+        "genes": null,
+        "source": "NHGRI-EBI GWAS catalog",
+        "pvalue": "6.00e-18"
+      },
+      {
+        "variants": "rs1799963",
+        "beta_coefficient": "0.6868 unit decrease",
+        "study": "PMID:39024449",
+        "risk_allele": "G",
+        "source": "NHGRI-EBI GWAS catalog",
+        "pvalue": "7.00e-58",
+        "trait": "Pulmonary embolism and infarction, acute PheCode 415.11",
+        "genes": null
+      },
+      {
+        "source": "NHGRI-EBI GWAS catalog",
+        "pvalue": "3.00e-49",
+        "trait": "Pulmonary embolism and infarction, acute PheCode 415.11",
+        "genes": null,
+        "variants": "rs1799963",
+        "beta_coefficient": "0.6963 unit decrease",
+        "study": "PMID:39024449",
+        "risk_allele": "G"
+      },
+      {
+        "risk_allele": "G",
+        "study": "PMID:39024449",
+        "beta_coefficient": "0.4516 unit decrease",
+        "variants": "rs1799963",
+        "trait": "Pulmonary heart disease PheCode 415",
+        "genes": null,
+        "source": "NHGRI-EBI GWAS catalog",
+        "pvalue": "3.00e-38"
+      },
+      {
+        "trait": "Pulmonary heart disease PheCode 415",
+        "genes": null,
+        "source": "NHGRI-EBI GWAS catalog",
+        "pvalue": "7.00e-38",
+        "risk_allele": "G",
+        "study": "PMID:39024449",
+        "variants": "rs1799963",
+        "beta_coefficient": "0.439 unit decrease"
+      },
+      {
+        "variants": "rs1799963",
+        "beta_coefficient": "0.6144 unit decrease",
+        "study": "PMID:39024449",
+        "risk_allele": "G",
+        "pvalue": "3.00e-27",
+        "source": "NHGRI-EBI GWAS catalog",
+        "ontology_accessions": [
+          "EFO:0003907",
+          "EFO:0007010"
+        ],
+        "genes": null,
+        "trait": "Takes medication for blood clot/ pulmonary embolism/ deep vein thrombosis DVT?"
+      },
+      {
+        "source": "NHGRI-EBI GWAS catalog",
+        "pvalue": "4.00e-33",
+        "trait": "Takes medication for blood clot/ pulmonary embolism/ deep vein thrombosis DVT?",
+        "ontology_accessions": [
+          "EFO:0003907",
+          "EFO:0007010"
+        ],
+        "genes": null,
+        "beta_coefficient": "0.6139 unit decrease",
+        "variants": "rs1799963",
+        "study": "PMID:39024449",
+        "risk_allele": "G"
+      },
+      {
+        "study": "PMID:34648354",
+        "risk_allele": "A",
+        "variants": "rs1799963",
+        "beta_coefficient": "0.782 unit increase",
+        "genes": null,
+        "trait": "Thrombin levels",
+        "pvalue": "2.00e-33",
+        "source": "NHGRI-EBI GWAS catalog"
+      },
+      {
+        "source": "NHGRI-EBI GWAS catalog",
+        "pvalue": "1.00e-24",
+        "trait": "Thrombosis",
+        "ontology_accessions": [
+          "EFO:0000712",
+          "EFO:0003827",
+          "EFO:0003907",
+          "EFO:0004286",
+          "HP:0001977",
+          "HP:0002140",
+          "MONDO:0000831"
+        ],
+        "genes": "F2",
+        "variants": "rs1799963",
+        "risk_allele": "A",
+        "study": "PMID:26908601"
+      },
+      {
+        "source": "NHGRI-EBI GWAS catalog",
+        "pvalue": "3.00e-18",
+        "trait": "triglyceride minimum, inv-norm transformed",
+        "genes": null,
+        "variants": "rs1799963",
+        "beta_coefficient": "0.1181 unit increase",
+        "risk_allele": "G",
+        "study": "PMID:39024449"
+      },
+      {
+        "pvalue": "2.00e-9",
+        "source": "NHGRI-EBI GWAS catalog",
+        "genes": "F2",
+        "ontology_accessions": [
+          "EFO:0004286",
+          "MONDO:0008559"
+        ],
+        "trait": "Venous thromboembolism",
+        "variants": "rs1799963",
+        "risk_allele": "A",
+        "study": "PMID:25772935"
+      },
+      {
+        "risk_allele": "A",
+        "study": "PMID:28373160",
+        "variants": "rs1799963",
+        "trait": "Venous thromboembolism",
+        "genes": "F2",
+        "ontology_accessions": [
+          "EFO:0004286",
+          "MONDO:0008559"
+        ],
+        "source": "NHGRI-EBI GWAS catalog",
+        "pvalue": "5.00e-13"
+      },
+      {
+        "risk_allele": "A",
+        "study": "PMID:36777996",
+        "beta_coefficient": "0.79722 unit increase",
+        "variants": "rs1799963",
+        "trait": "Venous thromboembolism",
+        "ontology_accessions": [
+          "EFO:0004286",
+          "MONDO:0008559"
+        ],
+        "genes": null,
+        "source": "NHGRI-EBI GWAS catalog",
+        "pvalue": "2.00e-58"
+      },
+      {
+        "variants": "rs1799963",
+        "beta_coefficient": "0.5587 unit increase",
+        "study": "PMID:31420334",
+        "source": "NHGRI-EBI GWAS catalog",
+        "pvalue": "3.00e-30",
+        "trait": "Venous thromboembolism",
+        "genes": null,
+        "ontology_accessions": [
+          "EFO:0004286",
+          "MONDO:0008559"
+        ]
+      },
+      {
+        "variants": "rs1799963",
+        "risk_allele": "A",
+        "study": "PMID:31676865",
+        "source": "NHGRI-EBI GWAS catalog",
+        "pvalue": "1.00e-59",
+        "trait": "Venous thromboembolism",
+        "ontology_accessions": [
+          "EFO:0004286",
+          "MONDO:0008559"
+        ],
+        "genes": "F2"
+      },
+      {
+        "trait": "Venous thromboembolism or factor VII levels pleiotropy",
+        "study": "PMID:35285134",
+        "genes": null,
+        "variants": "rs1799963",
+        "source": "NHGRI-EBI GWAS catalog",
+        "pvalue": "4.00e-31"
+      },
+      {
+        "trait": "Venous thromboembolism or von Willebrand factor levels pleiotropy",
+        "study": "PMID:35285134",
+        "genes": null,
+        "variants": "rs1799963",
+        "source": "NHGRI-EBI GWAS catalog",
+        "pvalue": "1.00e-31"
+      }
+    ]
+  }
+}

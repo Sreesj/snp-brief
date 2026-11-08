@@ -1,0 +1,376 @@
+{
+  "source": "GWAS Catalog",
+  "retrieved": "2026-11-08T04:08:49+00:00",
+  "request": {
+    "rsid": "rs6025",
+    "api": "ensembl-phenotypes"
+  },
+  "response": {
+    "ensembl_phenotypes": [
+      {
+        "beta_coefficient": "0.257 unit increase",
+        "pvalue": "4.00e-11",
+        "source": "NHGRI-EBI GWAS catalog",
+        "trait": "D-dimer levels in HIV infection",
+        "genes": "F5",
+        "ontology_accessions": [
+          "EFO:0004507"
+        ],
+        "variants": "rs6025",
+        "risk_allele": "T",
+        "study": "PMID:33095540"
+      },
+      {
+        "risk_allele": "C",
+        "study": "PMID:39789286",
+        "ontology_accessions": [
+          "EFO:0003907",
+          "HP:0002625"
+        ],
+        "variants": "rs6025",
+        "trait": "Deep venous thrombosis",
+        "genes": null,
+        "beta_coefficient": "0.99490005 unit decrease",
+        "pvalue": "7.00e-154",
+        "source": "NHGRI-EBI GWAS catalog"
+      },
+      {
+        "source": "NHGRI-EBI GWAS catalog",
+        "variants": "rs6025",
+        "pvalue": "1.00e-21",
+        "study": "PMID:40069456",
+        "genes": null,
+        "risk_allele": "T",
+        "trait": "ICD10 N92: Excessive, frequent and irregular menstruation"
+      },
+      {
+        "risk_allele": "G",
+        "study": "PMID:26192919",
+        "ontology_accessions": [
+          "EFO:0003767",
+          "HP:0002037",
+          "MONDO:0005265"
+        ],
+        "variants": "rs6025",
+        "genes": "SELP,SELE,SELL",
+        "trait": "Inflammatory bowel disease",
+        "source": "NHGRI-EBI GWAS catalog",
+        "pvalue": "3.00e-8"
+      },
+      {
+        "beta_coefficient": "0.162 unit decrease",
+        "pvalue": "9.00e-6",
+        "source": "NHGRI-EBI GWAS catalog",
+        "trait": "Inflammatory bowel disease",
+        "genes": null,
+        "ontology_accessions": [
+          "EFO:0003767",
+          "HP:0002037",
+          "MONDO:0005265"
+        ],
+        "variants": "rs6025",
+        "study": "PMID:37156999"
+      },
+      {
+        "variants": "rs6025",
+        "ontology_accessions": [
+          "HP:0001891"
+        ],
+        "study": "PMID:38018286",
+        "risk_allele": "T",
+        "pvalue": "3.00e-10",
+        "source": "NHGRI-EBI GWAS catalog",
+        "trait": "Iron deficiency anaemia",
+        "genes": null
+      },
+      {
+        "source": "NHGRI-EBI GWAS catalog",
+        "beta_coefficient": "0.15 SD increase",
+        "pvalue": "7.00e-37",
+        "genes": "F5",
+        "trait": "Iron status biomarkers (ferritin levels)",
+        "variants": "rs6025",
+        "ontology_accessions": [
+          "EFO:0004459",
+          "EFO:0004461"
+        ],
+        "study": "PMID:33536631",
+        "risk_allele": "T"
+      },
+      {
+        "genes": "F5",
+        "trait": "Iron status biomarkers (total iron binding capacity)",
+        "source": "NHGRI-EBI GWAS catalog",
+        "pvalue": "2.00e-8",
+        "beta_coefficient": "0.093 SD decrease",
+        "study": "PMID:33536631",
+        "risk_allele": "T",
+        "variants": "rs6025",
+        "ontology_accessions": [
+          "EFO:0006334"
+        ]
+      },
+      {
+        "study": "PMID:34594039",
+        "risk_allele": "C",
+        "variants": "rs6025",
+        "genes": null,
+        "trait": "Medication use antithrombotic agents",
+        "source": "NHGRI-EBI GWAS catalog",
+        "pvalue": "3.00e-11",
+        "beta_coefficient": "0.1479 unit decrease"
+      },
+      {
+        "pvalue": "3.00e-11",
+        "beta_coefficient": "0.14787269 unit increase",
+        "source": "NHGRI-EBI GWAS catalog",
+        "trait": "Medication use antithrombotic agents",
+        "genes": "F5",
+        "variants": "rs6025",
+        "risk_allele": "T",
+        "study": "PMID:31015401"
+      },
+      {
+        "pvalue": "2.00e-12",
+        "source": "NHGRI-EBI GWAS catalog",
+        "trait": "Peripheral artery disease",
+        "genes": "F5",
+        "ontology_accessions": [
+          "EFO:0004265",
+          "HP:0004950"
+        ],
+        "variants": "rs6025",
+        "risk_allele": "T",
+        "study": "PMID:31285632"
+      },
+      {
+        "ontology_accessions": [
+          "EFO:0004265",
+          "HP:0004950"
+        ],
+        "variants": "rs6025",
+        "risk_allele": "T",
+        "study": "PMID:34601942",
+        "source": "NHGRI-EBI GWAS catalog",
+        "pvalue": "7.00e-13",
+        "genes": null,
+        "trait": "Peripheral artery disease"
+      },
+      {
+        "variants": "rs6025",
+        "ontology_accessions": [
+          "EFO:0003875"
+        ],
+        "study": "PMID:33893285",
+        "risk_allele": "C",
+        "source": "NHGRI-EBI GWAS catalog",
+        "pvalue": "4.00e-12",
+        "genes": null,
+        "trait": "Peripheral vascular disease"
+      },
+      {
+        "risk_allele": "T",
+        "study": "PMID:34648354",
+        "variants": "rs6025",
+        "genes": null,
+        "trait": "Protein SEC13 homolog levels",
+        "source": "NHGRI-EBI GWAS catalog",
+        "beta_coefficient": "0.262 unit decrease",
+        "pvalue": "1.00e-9"
+      },
+      {
+        "source": "NHGRI-EBI GWAS catalog",
+        "pvalue": "4.00e-30",
+        "beta_coefficient": "0.7253895 unit decrease",
+        "genes": null,
+        "trait": "Pulmonary embolism",
+        "variants": "rs6025",
+        "ontology_accessions": [
+          "EFO:0003827"
+        ],
+        "study": "PMID:39789286",
+        "risk_allele": "C"
+      },
+      {
+        "variants": "rs6025",
+        "ontology_accessions": [
+          "EFO:0000712",
+          "EFO:0003827",
+          "EFO:0003907",
+          "EFO:0004286",
+          "HP:0001977",
+          "HP:0002140",
+          "MONDO:0000831"
+        ],
+        "study": "PMID:26908601",
+        "risk_allele": "T",
+        "source": "NHGRI-EBI GWAS catalog",
+        "pvalue": "4.00e-137",
+        "genes": "F5",
+        "trait": "Thrombosis"
+      },
+      {
+        "beta_coefficient": "0.39 unit decrease",
+        "pvalue": "2.00e-23",
+        "source": "NHGRI-EBI GWAS catalog",
+        "trait": "Tissue factor pathway inhibitor levels",
+        "genes": null,
+        "variants": "rs6025",
+        "risk_allele": "T",
+        "study": "PMID:34648354"
+      },
+      {
+        "source": "NHGRI-EBI GWAS catalog",
+        "beta_coefficient": "1.1108 unit increase",
+        "pvalue": "2.00e-245",
+        "genes": null,
+        "trait": "Venous thromboembolism",
+        "ontology_accessions": [
+          "EFO:0004286",
+          "MONDO:0008559"
+        ],
+        "variants": "rs6025",
+        "risk_allele": "T",
+        "study": "PMID:36777996"
+      },
+      {
+        "variants": "rs6025",
+        "ontology_accessions": [
+          "EFO:0004286",
+          "MONDO:0008559"
+        ],
+        "study": "PMID:33592630",
+        "risk_allele": "A",
+        "pvalue": "5.00e-27",
+        "source": "NHGRI-EBI GWAS catalog",
+        "trait": "Venous thromboembolism",
+        "genes": "F5"
+      },
+      {
+        "risk_allele": "T",
+        "study": "PMID:25772935",
+        "ontology_accessions": [
+          "EFO:0004286",
+          "MONDO:0008559"
+        ],
+        "variants": "rs6025",
+        "trait": "Venous thromboembolism",
+        "genes": "F5",
+        "pvalue": "1.00e-96",
+        "source": "NHGRI-EBI GWAS catalog"
+      },
+      {
+        "ontology_accessions": [
+          "EFO:0004286",
+          "MONDO:0008559"
+        ],
+        "variants": "rs6025",
+        "risk_allele": "T",
+        "study": "PMID:28373160",
+        "source": "NHGRI-EBI GWAS catalog",
+        "pvalue": "7.00e-50",
+        "genes": "F5",
+        "trait": "Venous thromboembolism"
+      },
+      {
+        "source": "NHGRI-EBI GWAS catalog",
+        "pvalue": "2.00e-22",
+        "genes": "F5",
+        "trait": "Venous thromboembolism",
+        "ontology_accessions": [
+          "EFO:0004286",
+          "MONDO:0008559"
+        ],
+        "variants": "rs6025",
+        "risk_allele": "T",
+        "study": "PMID:22672568"
+      },
+      {
+        "pvalue": "2.00e-202",
+        "variants": "rs6025",
+        "ontology_accessions": [
+          "EFO:0004286",
+          "MONDO:0008559"
+        ],
+        "source": "NHGRI-EBI GWAS catalog",
+        "trait": "Venous thromboembolism",
+        "study": "PMID:38561338",
+        "genes": null
+      },
+      {
+        "risk_allele": "T",
+        "study": "PMID:31420334",
+        "ontology_accessions": [
+          "EFO:0004286",
+          "MONDO:0008559"
+        ],
+        "variants": "rs6025",
+        "genes": "F5",
+        "trait": "Venous thromboembolism",
+        "source": "NHGRI-EBI GWAS catalog",
+        "pvalue": "1.00e-188"
+      },
+      {
+        "genes": "F5",
+        "trait": "Venous thromboembolism",
+        "source": "NHGRI-EBI GWAS catalog",
+        "pvalue": "1.00e-300",
+        "risk_allele": "T",
+        "study": "PMID:31676865",
+        "ontology_accessions": [
+          "EFO:0004286",
+          "MONDO:0008559"
+        ],
+        "variants": "rs6025"
+      },
+      {
+        "genes": null,
+        "study": "PMID:35285134",
+        "trait": "Venous thromboembolism or factor VII levels pleiotropy",
+        "source": "NHGRI-EBI GWAS catalog",
+        "variants": "rs6025",
+        "pvalue": "1.00e-190"
+      },
+      {
+        "source": "NHGRI-EBI GWAS catalog",
+        "variants": "rs6025",
+        "pvalue": "9.00e-193",
+        "genes": null,
+        "study": "PMID:35285134",
+        "trait": "Venous thromboembolism or factor VIII levels pleiotropy"
+      },
+      {
+        "pvalue": "1.00e-189",
+        "variants": "rs6025",
+        "source": "NHGRI-EBI GWAS catalog",
+        "trait": "Venous thromboembolism or factor XI levels pleiotropy",
+        "genes": null,
+        "study": "PMID:35285134"
+      },
+      {
+        "source": "NHGRI-EBI GWAS catalog",
+        "pvalue": "2.00e-194",
+        "variants": "rs6025",
+        "genes": null,
+        "study": "PMID:35285134",
+        "trait": "Venous thromboembolism or fibrinogen levels pleiotropy"
+      },
+      {
+        "source": "NHGRI-EBI GWAS catalog",
+        "pvalue": "3.00e-190",
+        "variants": "rs6025",
+        "study": "PMID:35285134",
+        "genes": null,
+        "trait": "Venous thromboembolism or plasminogen activator inhibitor 1 levels pleiotropy"
+      },
+      {
+        "source": "NHGRI-EBI GWAS catalog",
+        "pvalue": "1.00e-194",
+        "variants": "rs6025",
+        "study": "PMID:35285134",
+        "genes": null,
+        "trait": "Venous thromboembolism or von Willebrand factor levels pleiotropy"
+      }
+    ]
+  }
+}

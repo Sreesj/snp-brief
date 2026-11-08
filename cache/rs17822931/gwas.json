@@ -1,0 +1,33 @@
+{
+  "source": "GWAS Catalog",
+  "retrieved": "2026-11-08T04:00:28+00:00",
+  "request": {
+    "rsid": "rs17822931",
+    "api": "ensembl-phenotypes"
+  },
+  "response": {
+    "ensembl_phenotypes": [
+      {
+        "trait": "Core binding factor acute myeloid leukemia",
+        "source": "NHGRI-EBI GWAS catalog",
+        "pvalue": "4.00e-6",
+        "variants": "rs8043685,rs11076560,rs11076561,rs13330082,rs9933211,rs11076564,rs12446160,rs9932328,rs17822931,rs13336771,rs11076565,rs10521168,rs9941123,rs9926192,rs9940038,rs13335504,rs16945972,rs8055764,rs17825174,rs13336625,rs16946122",
+        "risk_allele": "rs8043685-G; rs11076560-A; rs11076561-A; rs13330082-T; rs9933211-A; rs11076564-A; rs12446160-A; rs9932328-A; rs17822931-T; rs13336771-C; rs11076565-A; rs10521168-A; rs9941123-C; rs9926192-G; rs9940038-T; rs13335504-C; rs16945972-A; rs8055764-G",
+        "genes": null,
+        "ontology_accessions": [
+          "EFO:0000222",
+          "EFO:1002001"
+        ],
+        "study": "PMID:27903959"
+      },
+      {
+        "trait": "Cystic mastopathy PheCode 610.1",
+        "genes": null,
+        "source": "NHGRI-EBI GWAS catalog",
+        "pvalue": "1.00e-16",
+        "study": "PMID:40465716",
+        "variants": "rs17822931"
+      }
+    ]
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "source": "GWAS Catalog",
+  "retrieved": "2026-11-08T04:03:29+00:00",
+  "request": {
+    "rsid": "rs113993960",
+    "api": "ensembl-phenotypes"
+  },
+  "response": {
+    "ensembl_phenotypes": [
+      {
+        "trait": "Prostate-specific antigen levels",
+        "variants": "rs199826652",
+        "study": "PMID:39930085",
+        "beta_coefficient": "0.0604 unit increase",
+        "source": "NHGRI-EBI GWAS catalog",
+        "pvalue": "4.00e-10",
+        "risk_allele": "A",
+        "genes": null,
+        "ontology_accessions": [
+          "EFO:0004624",
+          "EFO:0020660",
+          "OBA:2050200"
+        ]
+      }
+    ]
+  }
+}

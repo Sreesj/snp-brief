@@ -1,0 +1,38 @@
+{
+  "source": "GWAS Catalog",
+  "retrieved": "2026-11-08T04:01:33+00:00",
+  "request": {
+    "rsid": "rs987870",
+    "api": "ensembl-phenotypes"
+  },
+  "response": {
+    "ensembl_phenotypes": [
+      {
+        "genes": "HLA,DPB1",
+        "pvalue": "2.00e-10",
+        "source": "NHGRI-EBI GWAS catalog",
+        "ontology_accessions": [
+          "EFO:0000270",
+          "HP:0002099",
+          "MONDO:0004979"
+        ],
+        "risk_allele": "C",
+        "trait": "Asthma",
+        "variants": "rs987870",
+        "study": "PMID:21814517"
+      },
+      {
+        "pvalue": "2.00e-20",
+        "variants": "rs987870",
+        "study": "PMID:21779181",
+        "trait": "Systemic sclerosis",
+        "genes": "HLA-DPA1,HLA-DPB1",
+        "ontology_accessions": [
+          "EFO:0000717",
+          "Orphanet:90291"
+        ],
+        "source": "NHGRI-EBI GWAS catalog"
+      }
+    ]
+  }
+}

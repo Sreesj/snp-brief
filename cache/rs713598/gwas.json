@@ -1,0 +1,86 @@
+{
+  "source": "GWAS Catalog",
+  "retrieved": "2026-11-08T04:09:00+00:00",
+  "request": {
+    "rsid": "rs713598",
+    "api": "ensembl-phenotypes"
+  },
+  "response": {
+    "ensembl_phenotypes": [
+      {
+        "risk_allele": "G",
+        "genes": null,
+        "pvalue": "1.00e-9",
+        "beta_coefficient": "0.07729 unit decrease",
+        "variants": "rs713598",
+        "study": "PMID:35585065",
+        "source": "NHGRI-EBI GWAS catalog",
+        "trait": "Alcohol liking"
+      },
+      {
+        "trait": "Bitter taste response",
+        "pvalue": "2.00e-104",
+        "study": "PMID:20675712",
+        "variants": "rs713598",
+        "source": "NHGRI-EBI GWAS catalog",
+        "ontology_accessions": [
+          "GO:0050913"
+        ],
+        "genes": "TAS2R38"
+      },
+      {
+        "trait": "Drinks per week",
+        "source": "NHGRI-EBI GWAS catalog",
+        "variants": "rs713598",
+        "study": "PMID:36477530",
+        "beta_coefficient": "0.0086 unit decrease",
+        "pvalue": "1.00e-20",
+        "genes": null,
+        "risk_allele": "G"
+      },
+      {
+        "variants": "rs713598",
+        "beta_coefficient": "0.00809 unit decrease",
+        "study": "PMID:36477530",
+        "source": "NHGRI-EBI GWAS catalog",
+        "trait": "Drinks per week",
+        "risk_allele": "G",
+        "genes": null,
+        "pvalue": "5.00e-22"
+      },
+      {
+        "trait": "Horseradish liking",
+        "variants": "rs713598",
+        "study": "PMID:35585065",
+        "beta_coefficient": "0.04127 unit decrease",
+        "source": "NHGRI-EBI GWAS catalog",
+        "pvalue": "5.00e-29",
+        "risk_allele": "G",
+        "genes": null
+      },
+      {
+        "pvalue": "3.00e-10",
+        "risk_allele": "G",
+        "genes": "TAS2R38",
+        "ontology_accessions": [
+          "EFO:0010091"
+        ],
+        "trait": "Tea consumption",
+        "study": "PMID:31046077",
+        "variants": "rs713598",
+        "beta_coefficient": "0.0098 unit increase",
+        "source": "NHGRI-EBI GWAS catalog"
+      },
+      {
+        "risk_allele": "G",
+        "genes": null,
+        "pvalue": "1.00e-9",
+        "study": "PMID:35585065",
+        "variants": "rs713598",
+        "beta_coefficient": "0.02215 unit decrease",
+        "source": "NHGRI-EBI GWAS catalog",
+        "trait": "Whiskey liking"
+      }
+    ]
+  }
+}

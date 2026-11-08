@@ -1,0 +1,1641 @@
+{
+  "source": "GWAS Catalog",
+  "retrieved": "2026-11-08T04:00:58+00:00",
+  "request": {
+    "rsid": "rs334",
+    "api": "ensembl-phenotypes"
+  },
+  "response": {
+    "ensembl_phenotypes": [
+      {
+        "risk_allele": "T",
+        "trait": "Acute pulmonary heart disease PheCode 415.1",
+        "genes": null,
+        "pvalue": "2.00e-12",
+        "source": "NHGRI-EBI GWAS catalog",
+        "beta_coefficient": "0.3798 unit decrease",
+        "variants": "rs334",
+        "study": "PMID:39024449"
+      },
+      {
+        "trait": "Anemia in chronic kidney disease PheCode 285.21",
+        "risk_allele": "T",
+        "genes": null,
+        "beta_coefficient": "0.3237 unit decrease",
+        "study": "PMID:39024449",
+        "variants": "rs334",
+        "pvalue": "2.00e-11",
+        "source": "NHGRI-EBI GWAS catalog"
+      },
+      {
+        "risk_allele": "T",
+        "trait": "Anemia in chronic kidney disease PheCode 285.21",
+        "pvalue": "4.00e-13",
+        "source": "NHGRI-EBI GWAS catalog",
+        "beta_coefficient": "0.3381 unit decrease",
+        "variants": "rs334",
+        "study": "PMID:39024449",
+        "genes": null
+      },
+      {
+        "ontology_accessions": [
+          "EFO:0004305",
+          "EFO:0004308",
+          "EFO:0004309",
+          "EFO:0004526",
+          "EFO:0004528",
+          "EFO:0004584",
+          "EFO:0004833",
+          "EFO:0004842",
+          "EFO:0005090",
+          "EFO:0005091",
+          "EFO:0005192",
+          "OBA:0003277",
+          "OBA:0003460",
+          "OBA:VT0000217"
+        ],
+        "genes": "HBB",
+        "study": "PMID:31080455",
+        "variants": "rs334",
+        "trait": "Blood cell traits multivariate analysis",
+        "source": "NHGRI-EBI GWAS catalog",
+        "pvalue": "5.00e-20"
+      },
+      {
+        "trait": "Blood cell traits multivariate analysis",
+        "variants": "rs334",
+        "study": "PMID:31080455",
+        "pvalue": "1.00e-12",
+        "source": "NHGRI-EBI GWAS catalog",
+        "ontology_accessions": [
+          "EFO:0004305",
+          "EFO:0004308",
+          "EFO:0004309",
+          "EFO:0004526",
+          "EFO:0004528",
+          "EFO:0004584",
+          "EFO:0004833",
+          "EFO:0004842",
+          "EFO:0005090",
+          "EFO:0005091",
+          "EFO:0005192",
+          "OBA:0003277",
+          "OBA:0003460",
+          "OBA:VT0000217"
+        ],
+        "genes": "HBB"
+      },
+      {
+        "pvalue": "1.00e-12",
+        "source": "NHGRI-EBI GWAS catalog",
+        "beta_coefficient": "0.0794 unit increase",
+        "study": "PMID:39024449",
+        "variants": "rs334",
+        "genes": null,
+        "risk_allele": "T",
+        "trait": "Blood urea nitrogen BUN, maximum, inv-norm transformed",
+        "ontology_accessions": [
+          "EFO:0004741",
+          "OBA:VT0005265"
+        ]
+      },
+      {
+        "trait": "Blood urea nitrogen BUN, maximum, inv-norm transformed",
+        "risk_allele": "T",
+        "ontology_accessions": [
+          "EFO:0004741",
+          "OBA:VT0005265"
+        ],
+        "beta_coefficient": "0.07876 unit increase",
+        "study": "PMID:39024449",
+        "variants": "rs334",
+        "pvalue": "3.00e-13",
+        "source": "NHGRI-EBI GWAS catalog",
+        "genes": null
+      },
+      {
+        "pvalue": "1.00e-19",
+        "source": "NHGRI-EBI GWAS catalog",
+        "beta_coefficient": "0.09632 unit increase",
+        "study": "PMID:39024449",
+        "variants": "rs334",
+        "genes": null,
+        "risk_allele": "T",
+        "trait": "Blood urea nitrogen BUN, mean, inv-norm transformed",
+        "ontology_accessions": [
+          "EFO:0004741",
+          "OBA:VT0005265"
+        ]
+      },
+      {
+        "source": "NHGRI-EBI GWAS catalog",
+        "pvalue": "3.00e-18",
+        "variants": "rs334",
+        "study": "PMID:39024449",
+        "beta_coefficient": "0.09728 unit increase",
+        "genes": null,
+        "risk_allele": "T",
+        "trait": "Blood urea nitrogen BUN, mean, inv-norm transformed",
+        "ontology_accessions": [
+          "EFO:0004741",
+          "OBA:VT0005265"
+        ]
+      },
+      {
+        "genes": null,
+        "study": "PMID:39024449",
+        "variants": "rs334",
+        "beta_coefficient": "0.09315 unit increase",
+        "source": "NHGRI-EBI GWAS catalog",
+        "pvalue": "4.00e-20",
+        "ontology_accessions": [
+          "EFO:0004741",
+          "OBA:VT0005265"
+        ],
+        "trait": "Blood urea nitrogen BUN, minimum, inv-norm transformed",
+        "risk_allele": "T"
+      },
+      {
+        "trait": "Blood urea nitrogen BUN, minimum, inv-norm transformed",
+        "risk_allele": "T",
+        "ontology_accessions": [
+          "EFO:0004741",
+          "OBA:VT0005265"
+        ],
+        "beta_coefficient": "0.09313 unit increase",
+        "study": "PMID:39024449",
+        "variants": "rs334",
+        "pvalue": "2.00e-18",
+        "source": "NHGRI-EBI GWAS catalog",
+        "genes": null
+      },
+      {
+        "trait": "chloride  maximum, inv-norm transformed",
+        "risk_allele": "T",
+        "ontology_accessions": [
+          "EFO:0009284",
+          "OBA:1000959"
+        ],
+        "beta_coefficient": "0.1677 unit decrease",
+        "study": "PMID:39024449",
+        "variants": "rs334",
+        "pvalue": "1.00e-49",
+        "source": "NHGRI-EBI GWAS catalog",
+        "genes": null
+      },
+      {
+        "risk_allele": "T",
+        "trait": "chloride  maximum, inv-norm transformed",
+        "ontology_accessions": [
+          "EFO:0009284",
+          "OBA:1000959"
+        ],
+        "source": "NHGRI-EBI GWAS catalog",
+        "pvalue": "1.00e-54",
+        "study": "PMID:39024449",
+        "variants": "rs334",
+        "beta_coefficient": "0.1703 unit decrease",
+        "genes": null
+      },
+      {
+        "ontology_accessions": [
+          "EFO:0009284",
+          "OBA:1000959"
+        ],
+        "risk_allele": "T",
+        "trait": "chloride  mean, inv-norm transformed",
+        "genes": null,
+        "pvalue": "2.00e-59",
+        "source": "NHGRI-EBI GWAS catalog",
+        "beta_coefficient": "0.1785 unit decrease",
+        "study": "PMID:39024449",
+        "variants": "rs334"
+      },
+      {
+        "variants": "rs334",
+        "study": "PMID:39024449",
+        "beta_coefficient": "0.1753 unit decrease",
+        "source": "NHGRI-EBI GWAS catalog",
+        "pvalue": "1.00e-52",
+        "genes": null,
+        "trait": "chloride  mean, inv-norm transformed",
+        "risk_allele": "T",
+        "ontology_accessions": [
+          "EFO:0009284",
+          "OBA:1000959"
+        ]
+      },
+      {
+        "trait": "chloride  minimum, inv-norm transformed",
+        "risk_allele": "T",
+        "ontology_accessions": [
+          "EFO:0009284",
+          "OBA:1000959"
+        ],
+        "variants": "rs334",
+        "study": "PMID:39024449",
+        "beta_coefficient": "0.1156 unit decrease",
+        "source": "NHGRI-EBI GWAS catalog",
+        "pvalue": "3.00e-25",
+        "genes": null
+      },
+      {
+        "genes": null,
+        "pvalue": "9.00e-29",
+        "source": "NHGRI-EBI GWAS catalog",
+        "beta_coefficient": "0.1208 unit decrease",
+        "study": "PMID:39024449",
+        "variants": "rs334",
+        "ontology_accessions": [
+          "EFO:0009284",
+          "OBA:1000959"
+        ],
+        "risk_allele": "T",
+        "trait": "chloride  minimum, inv-norm transformed"
+      },
+      {
+        "ontology_accessions": [
+          "EFO:0003884"
+        ],
+        "trait": "Chronic Kidney Disease, Stage III PheCode 585.33",
+        "risk_allele": "T",
+        "genes": null,
+        "beta_coefficient": "0.3578 unit decrease",
+        "variants": "rs334",
+        "study": "PMID:39024449",
+        "pvalue": "9.00e-31",
+        "source": "NHGRI-EBI GWAS catalog"
+      },
+      {
+        "pvalue": "8.00e-26",
+        "source": "NHGRI-EBI GWAS catalog",
+        "beta_coefficient": "0.335 unit decrease",
+        "variants": "rs334",
+        "study": "PMID:39024449",
+        "genes": null,
+        "risk_allele": "T",
+        "trait": "Chronic Kidney Disease, Stage III PheCode 585.33",
+        "ontology_accessions": [
+          "EFO:0003884"
+        ]
+      },
+      {
+        "study": "PMID:39024449",
+        "variants": "rs334",
+        "beta_coefficient": "0.2656 unit decrease",
+        "source": "NHGRI-EBI GWAS catalog",
+        "pvalue": "2.00e-22",
+        "genes": null,
+        "trait": "Chronic renal failure [CKD] PheCode 585.3",
+        "risk_allele": "T"
+      },
+      {
+        "risk_allele": "T",
+        "trait": "Chronic renal failure [CKD] PheCode 585.3",
+        "source": "NHGRI-EBI GWAS catalog",
+        "pvalue": "4.00e-25",
+        "study": "PMID:39024449",
+        "variants": "rs334",
+        "beta_coefficient": "0.2806 unit decrease",
+        "genes": null
+      },
+      {
+        "ontology_accessions": [
+          "OBA:2050096"
+        ],
+        "risk_allele": "T",
+        "trait": "creatinine maximum, inv-norm transformed",
+        "genes": null,
+        "source": "NHGRI-EBI GWAS catalog",
+        "pvalue": "4.00e-28",
+        "study": "PMID:39024449",
+        "variants": "rs334",
+        "beta_coefficient": "0.1093 unit decrease"
+      },
+      {
+        "risk_allele": "T",
+        "trait": "creatinine maximum, inv-norm transformed",
+        "ontology_accessions": [
+          "OBA:2050096"
+        ],
+        "pvalue": "5.00e-28",
+        "source": "NHGRI-EBI GWAS catalog",
+        "beta_coefficient": "0.1039 unit decrease",
+        "variants": "rs334",
+        "study": "PMID:39024449",
+        "genes": null
+      },
+      {
+        "risk_allele": "T",
+        "trait": "creatinine mean, inv-norm transformed",
+        "ontology_accessions": [
+          "OBA:2050096"
+        ],
+        "pvalue": "4.00e-37",
+        "source": "NHGRI-EBI GWAS catalog",
+        "beta_coefficient": "0.1315 unit decrease",
+        "study": "PMID:39024449",
+        "variants": "rs334",
+        "genes": null
+      },
+      {
+        "pvalue": "9.00e-39",
+        "source": "NHGRI-EBI GWAS catalog",
+        "beta_coefficient": "0.1261 unit decrease",
+        "study": "PMID:39024449",
+        "variants": "rs334",
+        "genes": null,
+        "risk_allele": "T",
+        "trait": "creatinine mean, inv-norm transformed",
+        "ontology_accessions": [
+          "OBA:2050096"
+        ]
+      },
+      {
+        "risk_allele": "T",
+        "trait": "creatinine minimum, inv-norm transformed",
+        "ontology_accessions": [
+          "OBA:2050096"
+        ],
+        "source": "NHGRI-EBI GWAS catalog",
+        "pvalue": "9.00e-40",
+        "study": "PMID:39024449",
+        "variants": "rs334",
+        "beta_coefficient": "0.1352 unit decrease",
+        "genes": null
+      },
+      {
+        "genes": null,
+        "source": "NHGRI-EBI GWAS catalog",
+        "pvalue": "4.00e-39",
+        "variants": "rs334",
+        "study": "PMID:39024449",
+        "beta_coefficient": "0.142 unit decrease",
+        "ontology_accessions": [
+          "OBA:2050096"
+        ],
+        "risk_allele": "T",
+        "trait": "creatinine minimum, inv-norm transformed"
+      },
+      {
+        "ontology_accessions": [
+          "EFO:0004842"
+        ],
+        "risk_allele": "T",
+        "trait": "eosinophil fraction, maximum, inv-norm transformed",
+        "genes": null,
+        "source": "NHGRI-EBI GWAS catalog",
+        "pvalue": "6.00e-13",
+        "study": "PMID:39024449",
+        "variants": "rs334",
+        "beta_coefficient": "0.08947 unit decrease"
+      },
+      {
+        "genes": null,
+        "beta_coefficient": "0.08914 unit decrease",
+        "variants": "rs334",
+        "study": "PMID:39024449",
+        "pvalue": "1.00e-12",
+        "source": "NHGRI-EBI GWAS catalog",
+        "ontology_accessions": [
+          "EFO:0004842"
+        ],
+        "trait": "eosinophil fraction, mean, inv-norm transformed",
+        "risk_allele": "T"
+      },
+      {
+        "risk_allele": "A",
+        "trait": "Estimated glomerular filtration rate creatinine",
+        "ontology_accessions": [
+          "EFO:0005208",
+          "OBA:0003747"
+        ],
+        "source": "NHGRI-EBI GWAS catalog",
+        "pvalue": "1.00e-16",
+        "study": "PMID:35710981",
+        "variants": "rs334",
+        "beta_coefficient": "8.27 z score decrease",
+        "genes": null
+      },
+      {
+        "genes": null,
+        "source": "NHGRI-EBI GWAS catalog",
+        "pvalue": "1.00e-31",
+        "study": "PMID:39024449",
+        "variants": "rs334",
+        "beta_coefficient": "0.1376 unit increase",
+        "ontology_accessions": [
+          "OBA:0003747"
+        ],
+        "risk_allele": "T",
+        "trait": "estimated glomerular filtration rate eGFR, maximum, inv-norm transformed"
+      },
+      {
+        "genes": null,
+        "pvalue": "2.00e-31",
+        "source": "NHGRI-EBI GWAS catalog",
+        "beta_coefficient": "0.1426 unit increase",
+        "study": "PMID:39024449",
+        "variants": "rs334",
+        "ontology_accessions": [
+          "OBA:0003747"
+        ],
+        "risk_allele": "T",
+        "trait": "estimated glomerular filtration rate eGFR, maximum, inv-norm transformed"
+      },
+      {
+        "pvalue": "7.00e-31",
+        "source": "NHGRI-EBI GWAS catalog",
+        "beta_coefficient": "0.1405 unit increase",
+        "study": "PMID:39024449",
+        "variants": "rs334",
+        "genes": null,
+        "risk_allele": "T",
+        "trait": "estimated glomerular filtration rate eGFR, mean, inv-norm transformed",
+        "ontology_accessions": [
+          "OBA:0003747"
+        ]
+      },
+      {
+        "source": "NHGRI-EBI GWAS catalog",
+        "pvalue": "5.00e-23",
+        "study": "PMID:39024449",
+        "variants": "rs334",
+        "beta_coefficient": "0.1155 unit increase",
+        "genes": null,
+        "risk_allele": "T",
+        "trait": "estimated glomerular filtration rate eGFR, minimum, inv-norm transformed",
+        "ontology_accessions": [
+          "OBA:0003747"
+        ]
+      },
+      {
+        "trait": "estimated glomerular filtration rate eGFR, minimum, inv-norm transformed",
+        "risk_allele": "T",
+        "ontology_accessions": [
+          "OBA:0003747"
+        ],
+        "variants": "rs334",
+        "study": "PMID:39024449",
+        "beta_coefficient": "0.1196 unit increase",
+        "source": "NHGRI-EBI GWAS catalog",
+        "pvalue": "4.00e-23",
+        "genes": null
+      },
+      {
+        "genes": "HBB",
+        "pvalue": "7.00e-13",
+        "source": "NHGRI-EBI GWAS catalog",
+        "beta_coefficient": "3.793 unit decrease",
+        "variants": "rs334",
+        "study": "PMID:31451708",
+        "ontology_accessions": [
+          "EFO:0000400",
+          "EFO:0005208",
+          "OBA:0003747"
+        ],
+        "risk_allele": "A",
+        "trait": "Estimated glomerular filtration rate in diabetes"
+      },
+      {
+        "risk_allele": "A",
+        "trait": "Estimated glomerular filtration rate in non-diabetics",
+        "ontology_accessions": [
+          "EFO:0005208",
+          "OBA:0003747"
+        ],
+        "pvalue": "3.00e-8",
+        "source": "NHGRI-EBI GWAS catalog",
+        "beta_coefficient": "1.957 unit decrease",
+        "study": "PMID:31451708",
+        "variants": "rs334",
+        "genes": "HBB"
+      },
+      {
+        "genes": null,
+        "pvalue": "5.00e-13",
+        "source": "NHGRI-EBI GWAS catalog",
+        "beta_coefficient": "0.4658 unit decrease",
+        "study": "PMID:34951656",
+        "variants": "rs334",
+        "risk_allele": "A",
+        "trait": "Glycated haemoglobin HbA1c levels adjusted for BMI"
+      },
+      {
+        "beta_coefficient": "0.8168 unit decrease",
+        "variants": "rs334",
+        "study": "PMID:34951656",
+        "pvalue": "2.00e-24",
+        "source": "NHGRI-EBI GWAS catalog",
+        "genes": null,
+        "trait": "Glycated haemoglobin HbA1c levels adjusted for BMI",
+        "risk_allele": "A"
+      },
+      {
+        "risk_allele": "A",
+        "trait": "Glycated haemoglobin HbA1c levels adjusted for BMI",
+        "genes": null,
+        "pvalue": "2.00e-33",
+        "source": "NHGRI-EBI GWAS catalog",
+        "beta_coefficient": "0.601 unit decrease",
+        "study": "PMID:34951656",
+        "variants": "rs334"
+      },
+      {
+        "pvalue": "1.00e-9",
+        "source": "NHGRI-EBI GWAS catalog",
+        "beta_coefficient": "0.1079 unit decrease",
+        "study": "PMID:34059833",
+        "variants": "rs77121243",
+        "genes": "HBB",
+        "risk_allele": "A",
+        "trait": "Glycated hemoglobin levels",
+        "ontology_accessions": [
+          "EFO:0004509",
+          "EFO:0004541"
+        ]
+      },
+      {
+        "ontology_accessions": [
+          "EFO:0004509",
+          "EFO:0004541"
+        ],
+        "trait": "Glycated hemoglobin levels",
+        "risk_allele": "A",
+        "genes": "HBB",
+        "beta_coefficient": "0.2248 unit decrease",
+        "variants": "rs77121243",
+        "study": "PMID:34059833",
+        "pvalue": "1.00e-21",
+        "source": "NHGRI-EBI GWAS catalog"
+      },
+      {
+        "trait": "Glycated hemoglobin levels",
+        "risk_allele": "A",
+        "ontology_accessions": [
+          "EFO:0004509",
+          "EFO:0004541"
+        ],
+        "study": "PMID:31213470",
+        "variants": "rs334",
+        "beta_coefficient": "0.305 % decrease",
+        "source": "NHGRI-EBI GWAS catalog",
+        "pvalue": "3.00e-39",
+        "genes": "HBB"
+      },
+      {
+        "trait": "Gout and other crystal arthrop PheCode 274",
+        "risk_allele": "T",
+        "genes": null,
+        "beta_coefficient": "0.3479 unit decrease",
+        "variants": "rs334",
+        "study": "PMID:39024449",
+        "pvalue": "4.00e-31",
+        "source": "NHGRI-EBI GWAS catalog"
+      },
+      {
+        "risk_allele": "T",
+        "trait": "Gout and other crystal arthrop PheCode 274",
+        "genes": null,
+        "pvalue": "2.00e-27",
+        "source": "NHGRI-EBI GWAS catalog",
+        "beta_coefficient": "0.3283 unit decrease",
+        "study": "PMID:39024449",
+        "variants": "rs334"
+      },
+      {
+        "risk_allele": "T",
+        "trait": "Gout PheCode 274.1",
+        "genes": null,
+        "source": "NHGRI-EBI GWAS catalog",
+        "pvalue": "2.00e-31",
+        "variants": "rs334",
+        "study": "PMID:39024449",
+        "beta_coefficient": "0.3534 unit decrease"
+      },
+      {
+        "trait": "Gout PheCode 274.1",
+        "risk_allele": "T",
+        "genes": null,
+        "beta_coefficient": "0.3327 unit decrease",
+        "variants": "rs334",
+        "study": "PMID:39024449",
+        "pvalue": "1.00e-27",
+        "source": "NHGRI-EBI GWAS catalog"
+      },
+      {
+        "pvalue": "3.00e-22",
+        "source": "NHGRI-EBI GWAS catalog",
+        "beta_coefficient": "0.4163 unit decrease",
+        "study": "PMID:39024449",
+        "variants": "rs334",
+        "genes": null,
+        "risk_allele": "T",
+        "trait": "Gout PheCode 274.1"
+      },
+      {
+        "trait": "Gout PheCode 274.1",
+        "risk_allele": "T",
+        "genes": null,
+        "beta_coefficient": "0.3967 unit decrease",
+        "study": "PMID:39024449",
+        "variants": "rs334",
+        "pvalue": "9.00e-19",
+        "source": "NHGRI-EBI GWAS catalog"
+      },
+      {
+        "ontology_accessions": [
+          "EFO:0004348"
+        ],
+        "trait": "Hematocrit",
+        "risk_allele": "T",
+        "genes": "HBB",
+        "beta_coefficient": "1.32 % increase",
+        "study": "PMID:28453575",
+        "variants": "rs334",
+        "pvalue": "1.00e-10",
+        "source": "NHGRI-EBI GWAS catalog"
+      },
+      {
+        "trait": "hematocrit maximum, inv-norm transformed",
+        "risk_allele": "T",
+        "ontology_accessions": [
+          "EFO:0004348"
+        ],
+        "beta_coefficient": "0.2578 unit increase",
+        "variants": "rs334",
+        "study": "PMID:39024449",
+        "pvalue": "9.00e-131",
+        "source": "NHGRI-EBI GWAS catalog",
+        "genes": null
+      },
+      {
+        "risk_allele": "T",
+        "trait": "hematocrit maximum, inv-norm transformed",
+        "ontology_accessions": [
+          "EFO:0004348"
+        ],
+        "pvalue": "3.00e-118",
+        "source": "NHGRI-EBI GWAS catalog",
+        "beta_coefficient": "0.2615 unit increase",
+        "variants": "rs334",
+        "study": "PMID:39024449",
+        "genes": null
+      },
+      {
+        "beta_coefficient": "0.2308 unit increase",
+        "variants": "rs334",
+        "study": "PMID:39024449",
+        "pvalue": "2.00e-103",
+        "source": "NHGRI-EBI GWAS catalog",
+        "genes": null,
+        "trait": "hematocrit mean, inv-norm transformed",
+        "risk_allele": "T",
+        "ontology_accessions": [
+          "EFO:0004348"
+        ]
+      },
+      {
+        "risk_allele": "T",
+        "trait": "hematocrit mean, inv-norm transformed",
+        "ontology_accessions": [
+          "EFO:0004348"
+        ],
+        "source": "NHGRI-EBI GWAS catalog",
+        "pvalue": "2.00e-113",
+        "study": "PMID:39024449",
+        "variants": "rs334",
+        "beta_coefficient": "0.2276 unit increase",
+        "genes": null
+      },
+      {
+        "pvalue": "6.00e-80",
+        "source": "NHGRI-EBI GWAS catalog",
+        "beta_coefficient": "0.1853 unit increase",
+        "study": "PMID:39024449",
+        "variants": "rs334",
+        "genes": null,
+        "risk_allele": "T",
+        "trait": "hematocrit minimum, inv-norm transformed",
+        "ontology_accessions": [
+          "EFO:0004348"
+        ]
+      },
+      {
+        "source": "NHGRI-EBI GWAS catalog",
+        "pvalue": "8.00e-76",
+        "study": "PMID:39024449",
+        "variants": "rs334",
+        "beta_coefficient": "0.1883 unit increase",
+        "genes": null,
+        "risk_allele": "T",
+        "trait": "hematocrit minimum, inv-norm transformed",
+        "ontology_accessions": [
+          "EFO:0004348"
+        ]
+      },
+      {
+        "variants": "rs334",
+        "study": "PMID:31217584",
+        "beta_coefficient": "0.8169163 unit decrease",
+        "source": "NHGRI-EBI GWAS catalog",
+        "pvalue": "8.00e-27",
+        "genes": "HBB",
+        "trait": "Hemoglobin A1(C) levels",
+        "ontology_accessions": [
+          "EFO:0004541",
+          "EFO:0007629"
+        ]
+      },
+      {
+        "trait": "Hemoglobin A1c HbA1c, maximum, inv-norm transformed",
+        "risk_allele": "T",
+        "beta_coefficient": "0.1778 unit increase",
+        "variants": "rs334",
+        "study": "PMID:39024449",
+        "pvalue": "8.00e-43",
+        "source": "NHGRI-EBI GWAS catalog",
+        "genes": null
+      },
+      {
+        "genes": null,
+        "study": "PMID:39024449",
+        "variants": "rs334",
+        "beta_coefficient": "0.1813 unit increase",
+        "source": "NHGRI-EBI GWAS catalog",
+        "pvalue": "2.00e-49",
+        "trait": "Hemoglobin A1c HbA1c, maximum, inv-norm transformed",
+        "risk_allele": "T"
+      },
+      {
+        "trait": "Hemoglobin A1c HbA1c, mean, inv-norm transformed",
+        "risk_allele": "T",
+        "variants": "rs334",
+        "study": "PMID:39024449",
+        "beta_coefficient": "0.2069 unit increase",
+        "source": "NHGRI-EBI GWAS catalog",
+        "pvalue": "1.00e-55",
+        "genes": null
+      },
+      {
+        "risk_allele": "T",
+        "trait": "Hemoglobin A1c HbA1c, mean, inv-norm transformed",
+        "genes": null,
+        "pvalue": "3.00e-65",
+        "source": "NHGRI-EBI GWAS catalog",
+        "beta_coefficient": "0.2108 unit increase",
+        "study": "PMID:39024449",
+        "variants": "rs334"
+      },
+      {
+        "beta_coefficient": "0.2356 unit increase",
+        "variants": "rs334",
+        "study": "PMID:39024449",
+        "pvalue": "1.00e-73",
+        "source": "NHGRI-EBI GWAS catalog",
+        "genes": null,
+        "trait": "Hemoglobin A1c HbA1c, minimum, inv-norm transformed",
+        "risk_allele": "T"
+      },
+      {
+        "genes": null,
+        "beta_coefficient": "0.2399 unit increase",
+        "variants": "rs334",
+        "study": "PMID:39024449",
+        "pvalue": "9.00e-85",
+        "source": "NHGRI-EBI GWAS catalog",
+        "trait": "Hemoglobin A1c HbA1c, minimum, inv-norm transformed",
+        "risk_allele": "T"
+      },
+      {
+        "source": "NHGRI-EBI GWAS catalog",
+        "pvalue": "4.00e-10",
+        "variants": "rs334",
+        "study": "PMID:34014839",
+        "beta_coefficient": "8.2 unit decrease",
+        "trait": "hemolysis of donated blood osmotic",
+        "genes": "HBB"
+      },
+      {
+        "beta_coefficient": "2.241 unit decrease",
+        "study": "PMID:39024449",
+        "variants": "rs334",
+        "pvalue": "1.00e-323",
+        "source": "NHGRI-EBI GWAS catalog",
+        "genes": null,
+        "trait": "Hereditary hemolytic anemias PheCode 282",
+        "risk_allele": "T",
+        "ontology_accessions": [
+          "MONDO:0003689"
+        ]
+      },
+      {
+        "genes": null,
+        "beta_coefficient": "0.08531 unit increase",
+        "variants": "rs334",
+        "study": "PMID:39024449",
+        "pvalue": "2.00e-12",
+        "source": "NHGRI-EBI GWAS catalog",
+        "ontology_accessions": [
+          "EFO:0004612"
+        ],
+        "trait": "high density lipoprotein cholesterol HDLC, maximum, inv-norm transformed",
+        "risk_allele": "T"
+      },
+      {
+        "trait": "high density lipoprotein cholesterol HDLC, maximum, inv-norm transformed",
+        "risk_allele": "T",
+        "ontology_accessions": [
+          "EFO:0004612"
+        ],
+        "beta_coefficient": "0.08315 unit increase",
+        "study": "PMID:39024449",
+        "variants": "rs334",
+        "pvalue": "1.00e-13",
+        "source": "NHGRI-EBI GWAS catalog",
+        "genes": null
+      },
+      {
+        "ontology_accessions": [
+          "EFO:0004612"
+        ],
+        "trait": "high density lipoprotein cholesterol HDLC, mean, inv-norm transformed",
+        "risk_allele": "T",
+        "genes": null,
+        "variants": "rs334",
+        "study": "PMID:39024449",
+        "beta_coefficient": "0.09059 unit increase",
+        "source": "NHGRI-EBI GWAS catalog",
+        "pvalue": "2.00e-13"
+      },
+      {
+        "genes": null,
+        "pvalue": "3.00e-15",
+        "source": "NHGRI-EBI GWAS catalog",
+        "beta_coefficient": "0.08832 unit increase",
+        "study": "PMID:39024449",
+        "variants": "rs334",
+        "ontology_accessions": [
+          "EFO:0004612"
+        ],
+        "risk_allele": "T",
+        "trait": "high density lipoprotein cholesterol HDLC, mean, inv-norm transformed"
+      },
+      {
+        "pvalue": "2.00e-14",
+        "source": "NHGRI-EBI GWAS catalog",
+        "beta_coefficient": "0.08613 unit increase",
+        "study": "PMID:39024449",
+        "variants": "rs334",
+        "genes": null,
+        "risk_allele": "T",
+        "trait": "high density lipoprotein cholesterol HDLC, minimm, inv-norm transformed",
+        "ontology_accessions": [
+          "EFO:0004612"
+        ]
+      },
+      {
+        "genes": null,
+        "pvalue": "7.00e-13",
+        "source": "NHGRI-EBI GWAS catalog",
+        "beta_coefficient": "0.0882 unit increase",
+        "variants": "rs334",
+        "study": "PMID:39024449",
+        "ontology_accessions": [
+          "EFO:0004612"
+        ],
+        "risk_allele": "T",
+        "trait": "high density lipoprotein cholesterol HDLC, minimm, inv-norm transformed"
+      },
+      {
+        "risk_allele": "T",
+        "trait": "Hypertensive chronic kidney disease PheCode 401.22",
+        "genes": null,
+        "source": "NHGRI-EBI GWAS catalog",
+        "pvalue": "1.00e-14",
+        "study": "PMID:39024449",
+        "variants": "rs334",
+        "beta_coefficient": "0.2471 unit decrease"
+      },
+      {
+        "trait": "Hypertensive chronic kidney disease PheCode 401.22",
+        "risk_allele": "T",
+        "variants": "rs334",
+        "study": "PMID:39024449",
+        "beta_coefficient": "0.268 unit decrease",
+        "source": "NHGRI-EBI GWAS catalog",
+        "pvalue": "2.00e-17",
+        "genes": null
+      },
+      {
+        "trait": "lymphocyte absolute count, maximum, inv-norm transformed",
+        "risk_allele": "T",
+        "variants": "rs334",
+        "study": "PMID:39024449",
+        "beta_coefficient": "0.2043 unit increase",
+        "source": "NHGRI-EBI GWAS catalog",
+        "pvalue": "3.00e-49",
+        "genes": null
+      },
+      {
+        "trait": "lymphocyte absolute count, maximum, inv-norm transformed",
+        "risk_allele": "T",
+        "genes": null,
+        "variants": "rs334",
+        "study": "PMID:39024449",
+        "beta_coefficient": "0.206 unit increase",
+        "source": "NHGRI-EBI GWAS catalog",
+        "pvalue": "4.00e-53"
+      },
+      {
+        "genes": null,
+        "beta_coefficient": "0.23 unit increase",
+        "variants": "rs334",
+        "study": "PMID:39024449",
+        "pvalue": "5.00e-66",
+        "source": "NHGRI-EBI GWAS catalog",
+        "trait": "lymphocyte absolute count, mean, inv-norm transformed",
+        "risk_allele": "T"
+      },
+      {
+        "trait": "lymphocyte absolute count, mean, inv-norm transformed",
+        "risk_allele": "T",
+        "variants": "rs334",
+        "study": "PMID:39024449",
+        "beta_coefficient": "0.2302 unit increase",
+        "source": "NHGRI-EBI GWAS catalog",
+        "pvalue": "1.00e-61",
+        "genes": null
+      },
+      {
+        "study": "PMID:39024449",
+        "variants": "rs334",
+        "beta_coefficient": "0.208 unit increase",
+        "source": "NHGRI-EBI GWAS catalog",
+        "pvalue": "1.00e-51",
+        "genes": null,
+        "trait": "lymphocyte absolute count, minimum, inv-norm transformed",
+        "risk_allele": "T"
+      },
+      {
+        "trait": "lymphocyte absolute count, minimum, inv-norm transformed",
+        "risk_allele": "T",
+        "genes": null,
+        "beta_coefficient": "0.2061 unit increase",
+        "study": "PMID:39024449",
+        "variants": "rs334",
+        "pvalue": "2.00e-52",
+        "source": "NHGRI-EBI GWAS catalog"
+      },
+      {
+        "ontology_accessions": [
+          "EFO:0004587"
+        ],
+        "trait": "Lymphocyte count",
+        "risk_allele": "A",
+        "genes": null,
+        "variants": "rs334",
+        "study": "PMID:34582791",
+        "beta_coefficient": "0.1737 cell/L decrease",
+        "source": "NHGRI-EBI GWAS catalog",
+        "pvalue": "3.00e-13"
+      },
+      {
+        "genes": null,
+        "source": "NHGRI-EBI GWAS catalog",
+        "pvalue": "1.00e-19",
+        "variants": "rs334",
+        "study": "PMID:32888493",
+        "beta_coefficient": "0.244267 SD units increase",
+        "ontology_accessions": [
+          "EFO:0004587"
+        ],
+        "risk_allele": "T",
+        "trait": "Lymphocyte count"
+      },
+      {
+        "study": "PMID:32888493",
+        "variants": "rs334",
+        "source": "NHGRI-EBI GWAS catalog",
+        "pvalue": "5.00e-17",
+        "genes": null,
+        "trait": "Lymphocyte count",
+        "risk_allele": "T",
+        "ontology_accessions": [
+          "EFO:0004587"
+        ]
+      },
+      {
+        "trait": "Lymphocyte count",
+        "ontology_accessions": [
+          "EFO:0004587"
+        ],
+        "beta_coefficient": "0.244267 unit increase",
+        "study": "PMID:34925446",
+        "variants": "rs334",
+        "pvalue": "2.00e-19",
+        "source": "NHGRI-EBI GWAS catalog",
+        "genes": null
+      },
+      {
+        "risk_allele": "T",
+        "trait": "lymphocyte fraction, maximum, inv-norm transformed",
+        "genes": null,
+        "pvalue": "2.00e-68",
+        "source": "NHGRI-EBI GWAS catalog",
+        "beta_coefficient": "0.2435 unit increase",
+        "variants": "rs334",
+        "study": "PMID:39024449"
+      },
+      {
+        "variants": "rs334",
+        "study": "PMID:39024449",
+        "beta_coefficient": "0.2415 unit increase",
+        "source": "NHGRI-EBI GWAS catalog",
+        "pvalue": "5.00e-80",
+        "genes": null,
+        "trait": "lymphocyte fraction, maximum, inv-norm transformed",
+        "risk_allele": "T"
+      },
+      {
+        "genes": null,
+        "beta_coefficient": "0.2546 unit increase",
+        "variants": "rs334",
+        "study": "PMID:39024449",
+        "pvalue": "8.00e-83",
+        "source": "NHGRI-EBI GWAS catalog",
+        "trait": "lymphocyte fraction, mean, inv-norm transformed",
+        "risk_allele": "T"
+      },
+      {
+        "trait": "lymphocyte fraction, mean, inv-norm transformed",
+        "risk_allele": "T",
+        "beta_coefficient": "0.2565 unit increase",
+        "variants": "rs334",
+        "study": "PMID:39024449",
+        "pvalue": "9.00e-72",
+        "source": "NHGRI-EBI GWAS catalog",
+        "genes": null
+      },
+      {
+        "pvalue": "6.00e-46",
+        "source": "NHGRI-EBI GWAS catalog",
+        "beta_coefficient": "0.2099 unit increase",
+        "variants": "rs334",
+        "study": "PMID:39024449",
+        "genes": null,
+        "risk_allele": "T",
+        "trait": "lymphocyte fraction, minimum, inv-norm transformed"
+      },
+      {
+        "source": "NHGRI-EBI GWAS catalog",
+        "pvalue": "4.00e-49",
+        "study": "PMID:39024449",
+        "variants": "rs334",
+        "beta_coefficient": "0.2095 unit increase",
+        "genes": null,
+        "risk_allele": "T",
+        "trait": "lymphocyte fraction, minimum, inv-norm transformed"
+      },
+      {
+        "variants": "rs334",
+        "study": "PMID:31844061",
+        "beta_coefficient": "1.572 unit decrease",
+        "source": "NHGRI-EBI GWAS catalog",
+        "pvalue": "4.00e-69",
+        "genes": "HBB,HBD,HBBP1,BGLT3,HBG1,HBG2,OR51V1,HBE1,OR51B4,OR52A1,OR52A5,OR51B2,OR51B5,OR51B6,OR51M1,OR52E2,OR52J3,OR51Q1,OR51I1,OR51I2,OR51L1,MMP26,OR52D1,OR51A2,OR51A4,UBQLN3,UBQLNL,OLFM5P,OR51G1,OR51G2,OR52H1,OR51A7,OR51T1,OR52B6,TRIM6,TRIM6-TRIM34,OR51S1,TRIM34",
+        "trait": "Malaria",
+        "ontology_accessions": [
+          "EFO:0001068",
+          "Orphanet:673"
+        ]
+      },
+      {
+        "pvalue": "1.00e-55",
+        "source": "NHGRI-EBI GWAS catalog",
+        "beta_coefficient": "1.106 unit decrease",
+        "variants": "rs334",
+        "study": "PMID:31844061",
+        "genes": "HBB,HBD,HBBP1,BGLT3,HBG1,HBG2,OR51V1,HBE1,OR51B4,OR52A1,OR52A5,OR51B2,OR51B5,OR51B6,OR51M1,OR52E2,OR52J3,OR51Q1,OR51I1,OR51I2,OR51L1,MMP26,OR52D1,OR51A2,OR51A4,UBQLN3,UBQLNL,OLFM5P,OR51G1,OR51G2,OR52H1,OR51A7,OR51T1,OR52B6,TRIM6,TRIM6-TRIM34,OR51S1,TRIM34",
+        "trait": "Malaria",
+        "ontology_accessions": [
+          "EFO:0001068",
+          "Orphanet:673"
+        ]
+      },
+      {
+        "trait": "Malaria",
+        "ontology_accessions": [
+          "EFO:0001068",
+          "Orphanet:673"
+        ],
+        "beta_coefficient": "1.385 unit decrease",
+        "variants": "rs334",
+        "study": "PMID:31844061",
+        "pvalue": "2.00e-67",
+        "source": "NHGRI-EBI GWAS catalog",
+        "genes": "HBB,HBD,HBBP1,BGLT3,HBG1,HBG2,OR51V1,HBE1,OR51B4,OR52A1,OR52A5,OR51B2,OR51B5,OR51B6,OR51M1,OR52E2,OR52J3,OR51Q1,OR51I1,OR51I2,OR51L1,MMP26,OR52D1,OR51A2,OR51A4,UBQLN3,UBQLNL,OLFM5P,OR51G1,OR51G2,OR52H1,OR51A7,OR51T1,OR52B6,TRIM6,TRIM6-TRIM34,OR51S1,TRIM34"
+      },
+      {
+        "genes": null,
+        "variants": "rs334",
+        "study": "PMID:32888493",
+        "pvalue": "1.00e-18",
+        "source": "NHGRI-EBI GWAS catalog",
+        "ontology_accessions": [
+          "EFO:0004509",
+          "EFO:0004527",
+          "EFO:0004528"
+        ],
+        "trait": "Mean corpuscular hemoglobin",
+        "risk_allele": "T"
+      },
+      {
+        "ontology_accessions": [
+          "EFO:0004509",
+          "EFO:0004528"
+        ],
+        "trait": "Mean corpuscular hemoglobin concentration",
+        "genes": null,
+        "source": "NHGRI-EBI GWAS catalog",
+        "pvalue": "8.00e-26",
+        "variants": "rs334",
+        "study": "PMID:31217584",
+        "beta_coefficient": "0.4404093 unit increase"
+      },
+      {
+        "genes": "HBB",
+        "pvalue": "1.00e-22",
+        "source": "NHGRI-EBI GWAS catalog",
+        "beta_coefficient": "3.46 fL increase",
+        "study": "PMID:28453575",
+        "variants": "rs334",
+        "ontology_accessions": [
+          "EFO:0004526",
+          "OBA:0003460"
+        ],
+        "risk_allele": "T",
+        "trait": "Mean corpuscular volume"
+      },
+      {
+        "pvalue": "4.00e-11",
+        "source": "NHGRI-EBI GWAS catalog",
+        "beta_coefficient": "0.480959 unit increase",
+        "study": "PMID:35995766",
+        "variants": "rs334",
+        "genes": null,
+        "risk_allele": "A",
+        "trait": "Metabolite peak levels QI7019"
+      },
+      {
+        "beta_coefficient": "0.3517 unit increase",
+        "variants": "rs334",
+        "study": "PMID:39024449",
+        "pvalue": "1.00e-11",
+        "source": "NHGRI-EBI GWAS catalog",
+        "genes": null,
+        "trait": "Microscopic hematuria PheCode 593.2",
+        "risk_allele": "T"
+      },
+      {
+        "genes": null,
+        "source": "NHGRI-EBI GWAS catalog",
+        "pvalue": "2.00e-13",
+        "variants": "rs334",
+        "study": "PMID:39024449",
+        "beta_coefficient": "0.3762 unit increase",
+        "risk_allele": "T",
+        "trait": "Microscopic hematuria PheCode 593.2"
+      },
+      {
+        "ontology_accessions": [
+          "EFO:0004833"
+        ],
+        "risk_allele": "T",
+        "trait": "neutrophil fraction, maximum, inv-norm transformed",
+        "genes": null,
+        "pvalue": "1.00e-26",
+        "source": "NHGRI-EBI GWAS catalog",
+        "beta_coefficient": "0.1796 unit decrease",
+        "study": "PMID:39024449",
+        "variants": "rs334"
+      },
+      {
+        "source": "NHGRI-EBI GWAS catalog",
+        "pvalue": "2.00e-26",
+        "variants": "rs334",
+        "study": "PMID:39024449",
+        "beta_coefficient": "0.1738 unit decrease",
+        "genes": null,
+        "risk_allele": "T",
+        "trait": "neutrophil fraction, maximum, inv-norm transformed",
+        "ontology_accessions": [
+          "EFO:0004833"
+        ]
+      },
+      {
+        "ontology_accessions": [
+          "EFO:0004833"
+        ],
+        "trait": "neutrophil fraction, mean, inv-norm transformed",
+        "risk_allele": "T",
+        "genes": null,
+        "variants": "rs334",
+        "study": "PMID:39024449",
+        "beta_coefficient": "0.2316 unit decrease",
+        "source": "NHGRI-EBI GWAS catalog",
+        "pvalue": "1.00e-51"
+      },
+      {
+        "risk_allele": "T",
+        "trait": "neutrophil fraction, mean, inv-norm transformed",
+        "ontology_accessions": [
+          "EFO:0004833"
+        ],
+        "pvalue": "5.00e-48",
+        "source": "NHGRI-EBI GWAS catalog",
+        "beta_coefficient": "0.2403 unit decrease",
+        "study": "PMID:39024449",
+        "variants": "rs334",
+        "genes": null
+      },
+      {
+        "ontology_accessions": [
+          "EFO:0004833"
+        ],
+        "trait": "neutrophil fraction, minimum, inv-norm transformed",
+        "risk_allele": "T",
+        "genes": null,
+        "beta_coefficient": "0.2319 unit decrease",
+        "study": "PMID:39024449",
+        "variants": "rs334",
+        "pvalue": "1.00e-46",
+        "source": "NHGRI-EBI GWAS catalog"
+      },
+      {
+        "beta_coefficient": "0.2245 unit decrease",
+        "variants": "rs334",
+        "study": "PMID:39024449",
+        "pvalue": "3.00e-51",
+        "source": "NHGRI-EBI GWAS catalog",
+        "genes": null,
+        "trait": "neutrophil fraction, minimum, inv-norm transformed",
+        "risk_allele": "T",
+        "ontology_accessions": [
+          "EFO:0004833"
+        ]
+      },
+      {
+        "pvalue": "7.00e-22",
+        "source": "NHGRI-EBI GWAS catalog",
+        "beta_coefficient": "0.1158 unit increase",
+        "variants": "rs334",
+        "study": "PMID:39024449",
+        "genes": null,
+        "risk_allele": "T",
+        "trait": "platelet count maximum, inv-norm transformed"
+      },
+      {
+        "trait": "platelet count maximum, inv-norm transformed",
+        "risk_allele": "T",
+        "genes": null,
+        "variants": "rs334",
+        "study": "PMID:39024449",
+        "beta_coefficient": "0.1159 unit increase",
+        "source": "NHGRI-EBI GWAS catalog",
+        "pvalue": "4.00e-26"
+      },
+      {
+        "beta_coefficient": "0.139 unit increase",
+        "study": "PMID:39024449",
+        "variants": "rs334",
+        "pvalue": "6.00e-30",
+        "source": "NHGRI-EBI GWAS catalog",
+        "genes": null,
+        "trait": "platelet count mean, inv-norm transformed",
+        "risk_allele": "T"
+      },
+      {
+        "genes": null,
+        "source": "NHGRI-EBI GWAS catalog",
+        "pvalue": "1.00e-36",
+        "variants": "rs334",
+        "study": "PMID:39024449",
+        "beta_coefficient": "0.1376 unit increase",
+        "risk_allele": "T",
+        "trait": "platelet count mean, inv-norm transformed"
+      },
+      {
+        "genes": null,
+        "source": "NHGRI-EBI GWAS catalog",
+        "pvalue": "3.00e-31",
+        "variants": "rs334",
+        "study": "PMID:39024449",
+        "beta_coefficient": "0.1401 unit increase",
+        "risk_allele": "T",
+        "trait": "platelet count minimum, inv-norm transformed"
+      },
+      {
+        "risk_allele": "T",
+        "trait": "platelet count minimum, inv-norm transformed",
+        "genes": null,
+        "pvalue": "3.00e-36",
+        "source": "NHGRI-EBI GWAS catalog",
+        "beta_coefficient": "0.1372 unit increase",
+        "variants": "rs334",
+        "study": "PMID:39024449"
+      },
+      {
+        "variants": "rs334",
+        "study": "PMID:39444160",
+        "source": "NHGRI-EBI GWAS catalog",
+        "pvalue": "5.00e-19",
+        "genes": null,
+        "trait": "Pneumonia",
+        "risk_allele": "A",
+        "ontology_accessions": [
+          "EFO:0003106",
+          "EFO:0008410",
+          "HP:0002090"
+        ]
+      },
+      {
+        "risk_allele": "T",
+        "trait": "Pulmonary embolism and infarction, acute PheCode 415.11",
+        "source": "NHGRI-EBI GWAS catalog",
+        "pvalue": "9.00e-12",
+        "study": "PMID:39024449",
+        "variants": "rs334",
+        "beta_coefficient": "0.373 unit decrease",
+        "genes": null
+      },
+      {
+        "ontology_accessions": [
+          "EFO:0005192",
+          "EFO:0009188"
+        ],
+        "genes": "HBB",
+        "trait": "Red cell distribution width",
+        "study": "PMID:31080455",
+        "variants": "rs334",
+        "pvalue": "6.00e-17",
+        "source": "NHGRI-EBI GWAS catalog"
+      },
+      {
+        "ontology_accessions": [
+          "EFO:0005192",
+          "EFO:0009188"
+        ],
+        "trait": "Red cell distribution width",
+        "risk_allele": "T",
+        "genes": null,
+        "beta_coefficient": "0.5795535 unit decrease",
+        "study": "PMID:31675503",
+        "variants": "rs334",
+        "pvalue": "2.00e-17",
+        "source": "NHGRI-EBI GWAS catalog"
+      },
+      {
+        "genes": null,
+        "beta_coefficient": "0.2124 unit decrease",
+        "variants": "rs334",
+        "study": "PMID:39024449",
+        "pvalue": "1.00e-17",
+        "source": "NHGRI-EBI GWAS catalog",
+        "trait": "Renal failure PheCode 585",
+        "risk_allele": "T"
+      },
+      {
+        "genes": null,
+        "pvalue": "1.00e-19",
+        "source": "NHGRI-EBI GWAS catalog",
+        "beta_coefficient": "0.2237 unit decrease",
+        "study": "PMID:39024449",
+        "variants": "rs334",
+        "risk_allele": "T",
+        "trait": "Renal failure PheCode 585"
+      },
+      {
+        "source": "NHGRI-EBI GWAS catalog",
+        "pvalue": "9.00e-13",
+        "variants": "rs334",
+        "study": "PMID:29381699",
+        "trait": "Severe malaria",
+        "genes": "HBB",
+        "ontology_accessions": [
+          "EFO:0001068"
+        ]
+      },
+      {
+        "trait": "sodium maximum, inv-norm transformed",
+        "risk_allele": "T",
+        "genes": null,
+        "study": "PMID:39024449",
+        "variants": "rs334",
+        "beta_coefficient": "0.1837 unit decrease",
+        "source": "NHGRI-EBI GWAS catalog",
+        "pvalue": "1.00e-63"
+      },
+      {
+        "risk_allele": "T",
+        "trait": "sodium maximum, inv-norm transformed",
+        "genes": null,
+        "source": "NHGRI-EBI GWAS catalog",
+        "pvalue": "4.00e-68",
+        "variants": "rs334",
+        "study": "PMID:39024449",
+        "beta_coefficient": "0.1844 unit decrease"
+      },
+      {
+        "trait": "Sodium mean, inv-norm transformed",
+        "risk_allele": "T",
+        "genes": null,
+        "beta_coefficient": "0.2141 unit decrease",
+        "variants": "rs334",
+        "study": "PMID:39024449",
+        "pvalue": "8.00e-78",
+        "source": "NHGRI-EBI GWAS catalog"
+      },
+      {
+        "trait": "Sodium mean, inv-norm transformed",
+        "risk_allele": "T",
+        "genes": null,
+        "study": "PMID:39024449",
+        "variants": "rs334",
+        "beta_coefficient": "0.2169 unit decrease",
+        "source": "NHGRI-EBI GWAS catalog",
+        "pvalue": "2.00e-88"
+      },
+      {
+        "genes": null,
+        "pvalue": "2.00e-37",
+        "source": "NHGRI-EBI GWAS catalog",
+        "beta_coefficient": "0.1369 unit decrease",
+        "variants": "rs334",
+        "study": "PMID:39024449",
+        "risk_allele": "T",
+        "trait": "sodium minimum, inv-norm transformed"
+      },
+      {
+        "genes": null,
+        "beta_coefficient": "0.1333 unit decrease",
+        "variants": "rs334",
+        "study": "PMID:39024449",
+        "pvalue": "1.00e-33",
+        "source": "NHGRI-EBI GWAS catalog",
+        "trait": "sodium minimum, inv-norm transformed",
+        "risk_allele": "T"
+      },
+      {
+        "risk_allele": "T",
+        "trait": "Takes medication for gout?",
+        "genes": null,
+        "source": "NHGRI-EBI GWAS catalog",
+        "pvalue": "6.00e-20",
+        "study": "PMID:39024449",
+        "variants": "rs334",
+        "beta_coefficient": "0.4477 unit decrease"
+      },
+      {
+        "genes": null,
+        "source": "NHGRI-EBI GWAS catalog",
+        "pvalue": "2.00e-17",
+        "study": "PMID:39024449",
+        "variants": "rs334",
+        "beta_coefficient": "0.4348 unit decrease",
+        "risk_allele": "T",
+        "trait": "Takes medication for gout?"
+      },
+      {
+        "ontology_accessions": [
+          "EFO:0004997"
+        ],
+        "trait": "Type 2 diabetes with renal manifestations PheCode 250.22",
+        "risk_allele": "T",
+        "genes": null,
+        "beta_coefficient": "0.2586 unit decrease",
+        "study": "PMID:39024449",
+        "variants": "rs334",
+        "pvalue": "1.00e-12",
+        "source": "NHGRI-EBI GWAS catalog"
+      },
+      {
+        "risk_allele": "T",
+        "trait": "Type 2 diabetes with renal manifestations PheCode 250.22",
+        "ontology_accessions": [
+          "EFO:0004997"
+        ],
+        "pvalue": "6.00e-14",
+        "source": "NHGRI-EBI GWAS catalog",
+        "beta_coefficient": "0.2693 unit decrease",
+        "study": "PMID:39024449",
+        "variants": "rs334",
+        "genes": null
+      },
+      {
+        "genes": "HBB",
+        "study": "PMID:31578528",
+        "variants": "rs334",
+        "beta_coefficient": "0.2438 mg/dL increase",
+        "source": "NHGRI-EBI GWAS catalog",
+        "pvalue": "5.00e-15",
+        "ontology_accessions": [
+          "EFO:0004274",
+          "EFO:0004531"
+        ],
+        "trait": "Urate levels",
+        "risk_allele": "A"
+      },
+      {
+        "risk_allele": "A",
+        "trait": "Urinary albumin-to-creatinine ratio",
+        "ontology_accessions": [
+          "EFO:0007778"
+        ],
+        "source": "NHGRI-EBI GWAS catalog",
+        "pvalue": "8.00e-11",
+        "variants": "rs334",
+        "study": "PMID:32600054",
+        "beta_coefficient": "0.53 unit increase",
+        "genes": "HBB"
+      },
+      {
+        "genes": "HBB",
+        "study": "PMID:27650483",
+        "variants": "rs334",
+        "beta_coefficient": "0.5 unit decrease",
+        "source": "NHGRI-EBI GWAS catalog",
+        "pvalue": "3.00e-10",
+        "ontology_accessions": [
+          "EFO:0007778"
+        ],
+        "trait": "Urinary albumin-to-creatinine ratio",
+        "risk_allele": "T"
+      },
+      {
+        "genes": "HBB",
+        "source": "NHGRI-EBI GWAS catalog",
+        "pvalue": "8.00e-12",
+        "variants": "rs334",
+        "study": "PMID:27650483",
+        "beta_coefficient": "0.44 unit decrease",
+        "ontology_accessions": [
+          "EFO:0007778"
+        ],
+        "risk_allele": "T",
+        "trait": "Urinary albumin-to-creatinine ratio"
+      },
+      {
+        "study": "PMID:31511532",
+        "variants": "rs334",
+        "trait": "Urinary albumin-to-creatinine ratio",
+        "source": "NHGRI-EBI GWAS catalog",
+        "pvalue": "6.00e-8",
+        "ontology_accessions": [
+          "EFO:0007778"
+        ],
+        "genes": "HBB"
+      },
+      {
+        "trait": "Urinary calculus PheCode 594",
+        "risk_allele": "T",
+        "beta_coefficient": "0.362 unit increase",
+        "variants": "rs334",
+        "study": "PMID:39024449",
+        "pvalue": "2.00e-11",
+        "source": "NHGRI-EBI GWAS catalog",
+        "genes": null
+      },
+      {
+        "trait": "Urinary creatinine levels",
+        "risk_allele": "A",
+        "study": "PMID:34376796",
+        "variants": "rs334",
+        "beta_coefficient": "0.43 umol/L decrease",
+        "source": "NHGRI-EBI GWAS catalog",
+        "pvalue": "3.00e-38",
+        "genes": null
+      },
+      {
+        "trait": "Urinary potassium levels",
+        "risk_allele": "A",
+        "study": "PMID:34376796",
+        "variants": "rs334",
+        "beta_coefficient": "0.39 umol/L decrease",
+        "source": "NHGRI-EBI GWAS catalog",
+        "pvalue": "3.00e-32",
+        "genes": null
+      },
+      {
+        "trait": "Urinary sodium levels",
+        "risk_allele": "A",
+        "variants": "rs334",
+        "study": "PMID:34376796",
+        "beta_coefficient": "0.42 umol/L decrease",
+        "source": "NHGRI-EBI GWAS catalog",
+        "pvalue": "5.00e-36",
+        "genes": null
+      }
+    ]
+  }
+}

@@ -1,0 +1,1128 @@
+{
+  "source": "GWAS Catalog",
+  "retrieved": "2026-11-08T04:08:29+00:00",
+  "request": {
+    "rsid": "rs12913832",
+    "api": "ensembl-phenotypes"
+  },
+  "response": {
+    "ensembl_phenotypes": [
+      {
+        "source": "NHGRI-EBI GWAS catalog",
+        "variants": "rs12913832",
+        "study": "PMID:37963177",
+        "beta_coefficient": "0.018 unit decrease",
+        "trait": "25-hydroxyvitamin D levels skin colour stratified",
+        "genes": null,
+        "ontology_accessions": [
+          "EFO:0004631",
+          "OBA:1000968"
+        ],
+        "risk_allele": "A",
+        "pvalue": "3.00e-13"
+      },
+      {
+        "beta_coefficient": "0.1394 unit decrease",
+        "variants": "rs12913832",
+        "study": "PMID:39024449",
+        "source": "NHGRI-EBI GWAS catalog",
+        "trait": "Actinic keratosis PheCode 702.1",
+        "risk_allele": "A",
+        "genes": null,
+        "pvalue": "2.00e-70"
+      },
+      {
+        "genes": null,
+        "risk_allele": "A",
+        "pvalue": "3.00e-107",
+        "source": "NHGRI-EBI GWAS catalog",
+        "beta_coefficient": "0.1328 unit decrease",
+        "study": "PMID:39024449",
+        "variants": "rs12913832",
+        "trait": "Actinic keratosis PheCode 702.1"
+      },
+      {
+        "trait": "Age-related macular degeneration",
+        "source": "NHGRI-EBI GWAS catalog",
+        "study": "PMID:32741009",
+        "variants": "rs12913832",
+        "beta_coefficient": "0.22954147 unit increase",
+        "pvalue": "4.00e-16",
+        "ontology_accessions": [
+          "EFO:0001365",
+          "HP:0007868"
+        ],
+        "genes": "HERC2",
+        "risk_allele": "A"
+      },
+      {
+        "pvalue": "2.00e-24",
+        "ontology_accessions": [
+          "EFO:0004193"
+        ],
+        "genes": null,
+        "risk_allele": "A",
+        "trait": "Basal cell carcinoma PheCode 172.21",
+        "source": "NHGRI-EBI GWAS catalog",
+        "beta_coefficient": "0.1177 unit decrease",
+        "variants": "rs12913832",
+        "study": "PMID:39024449"
+      },
+      {
+        "study": "PMID:39024449",
+        "beta_coefficient": "0.1165 unit decrease",
+        "variants": "rs12913832",
+        "source": "NHGRI-EBI GWAS catalog",
+        "trait": "Basal cell carcinoma PheCode 172.21",
+        "risk_allele": "A",
+        "genes": null,
+        "ontology_accessions": [
+          "EFO:0004193"
+        ],
+        "pvalue": "2.00e-31"
+      },
+      {
+        "pvalue": "4.00e-103",
+        "risk_allele": "A",
+        "genes": "HERC2",
+        "ontology_accessions": [
+          "EFO:0003924"
+        ],
+        "trait": "Black vs. blond hair color",
+        "variants": "rs12913832",
+        "beta_coefficient": "0.44 hair color score decrease",
+        "study": "PMID:18483556",
+        "source": "NHGRI-EBI GWAS catalog"
+      },
+      {
+        "pvalue": "1.00e-77",
+        "genes": "HERC2",
+        "ontology_accessions": [
+          "EFO:0003924"
+        ],
+        "risk_allele": "A",
+        "trait": "Black vs. red hair color",
+        "source": "NHGRI-EBI GWAS catalog",
+        "variants": "rs12913832",
+        "study": "PMID:18483556",
+        "beta_coefficient": "0.44 hair color score decrease"
+      },
+      {
+        "ontology_accessions": [
+          "EFO:0003924"
+        ],
+        "source": "NHGRI-EBI GWAS catalog",
+        "genes": "HERC2",
+        "study": "PMID:30531825",
+        "variants": "rs12913832",
+        "trait": "Blond vs. brown/black hair color",
+        "pvalue": "2.00e-308"
+      },
+      {
+        "trait": "Blond vs. brown/black hair color",
+        "source": "NHGRI-EBI GWAS catalog",
+        "study": "PMID:34737440",
+        "beta_coefficient": "1.19021 decrease",
+        "variants": "rs12913832",
+        "pvalue": "5.00e-141",
+        "ontology_accessions": [
+          "EFO:0003924"
+        ],
+        "genes": null,
+        "risk_allele": "A"
+      },
+      {
+        "trait": "Blond vs. brown/black hair color",
+        "study": "PMID:36672889",
+        "variants": "rs12913832",
+        "beta_coefficient": "1.61172 unit increase",
+        "source": "NHGRI-EBI GWAS catalog",
+        "pvalue": "3.00e-51",
+        "risk_allele": "G",
+        "genes": null,
+        "ontology_accessions": [
+          "EFO:0003924"
+        ]
+      },
+      {
+        "pvalue": "2.00e-308",
+        "trait": "Brown vs. black hair color",
+        "source": "NHGRI-EBI GWAS catalog",
+        "ontology_accessions": [
+          "EFO:0003924"
+        ],
+        "genes": "HERC2",
+        "variants": "rs12913832",
+        "study": "PMID:30531825"
+      },
+      {
+        "ontology_accessions": [
+          "EFO:0003924"
+        ],
+        "genes": null,
+        "risk_allele": "G",
+        "pvalue": "8.00e-23",
+        "source": "NHGRI-EBI GWAS catalog",
+        "study": "PMID:36672889",
+        "variants": "rs12913832",
+        "beta_coefficient": "0.605471 unit increase",
+        "trait": "Brown vs. black hair color"
+      },
+      {
+        "source": "NHGRI-EBI GWAS catalog",
+        "study": "PMID:39024449",
+        "beta_coefficient": "0.124 unit decrease",
+        "variants": "rs12913832",
+        "trait": "Chorioretinal inflammations, scars, and other disorders of choroid PheCode 363",
+        "genes": null,
+        "risk_allele": "A",
+        "pvalue": "3.00e-11"
+      },
+      {
+        "ontology_accessions": [
+          "EFO:0008460"
+        ],
+        "source": "NHGRI-EBI GWAS catalog",
+        "genes": "Intergenic",
+        "study": "PMID:29228715",
+        "variants": "rs12913832",
+        "pvalue": "4.00e-6",
+        "trait": "Colonoscopy-negative controls vs population controls"
+      },
+      {
+        "pvalue": "7.00e-6",
+        "trait": "Colorectal Cancer",
+        "ontology_accessions": [
+          "DOID:9256",
+          "EFO:0005842",
+          "HP:0000677",
+          "HP:0002891",
+          "HP:0005584",
+          "HP:0006716",
+          "HP:0006740",
+          "HP:0006753",
+          "MONDO:0005575"
+        ],
+        "source": "NHGRI-EBI GWAS catalog",
+        "genes": "Intergenic",
+        "variants": "rs12913832",
+        "study": "PMID:29228715"
+      },
+      {
+        "trait": "Corneal astigmatism",
+        "study": "PMID:30306274",
+        "variants": "rs12913832",
+        "source": "NHGRI-EBI GWAS catalog",
+        "pvalue": "3.00e-8",
+        "risk_allele": "A",
+        "genes": "HERC2",
+        "ontology_accessions": [
+          "EFO:1002040",
+          "HP:0000483",
+          "HP:0025612"
+        ]
+      },
+      {
+        "pvalue": "2.00e-23",
+        "ontology_accessions": [
+          "EFO:0000389"
+        ],
+        "genes": "HERC2",
+        "risk_allele": "G",
+        "trait": "Cutaneous malignant melanoma",
+        "source": "NHGRI-EBI GWAS catalog",
+        "variants": "rs12913832",
+        "study": "PMID:32341527"
+      },
+      {
+        "source": "NHGRI-EBI GWAS catalog",
+        "genes": "HERC2",
+        "risk_allele": "A",
+        "study": "PMID:32341527",
+        "variants": "rs12913832",
+        "pvalue": "2.00e-9237",
+        "trait": "Cutaneous melanoma or hair colour"
+      },
+      {
+        "genes": null,
+        "risk_allele": "A",
+        "pvalue": "3.00e-36",
+        "source": "NHGRI-EBI GWAS catalog",
+        "variants": "rs12913832",
+        "study": "PMID:39024449",
+        "beta_coefficient": "0.08442 unit decrease",
+        "trait": "Degenerative skin conditions and other dermatoses PheCode 702"
+      },
+      {
+        "genes": null,
+        "risk_allele": "A",
+        "pvalue": "1.00e-48",
+        "source": "NHGRI-EBI GWAS catalog",
+        "variants": "rs12913832",
+        "study": "PMID:39024449",
+        "beta_coefficient": "0.08032 unit decrease",
+        "trait": "Degenerative skin conditions and other dermatoses PheCode 702"
+      },
+      {
+        "trait": "Diisocyanate-induced asthma",
+        "study": "PMID:25918132",
+        "variants": "rs12913832",
+        "source": "NHGRI-EBI GWAS catalog",
+        "pvalue": "7.00e-14",
+        "risk_allele": "A",
+        "genes": "HERC2,OCA2,RPL41P2",
+        "ontology_accessions": [
+          "EFO:0000270",
+          "EFO:0006995",
+          "MONDO:0004979"
+        ]
+      },
+      {
+        "risk_allele": "A",
+        "genes": null,
+        "pvalue": "2.00e-11",
+        "beta_coefficient": "0.04931 unit decrease",
+        "study": "PMID:39024449",
+        "variants": "rs12913832",
+        "source": "NHGRI-EBI GWAS catalog",
+        "trait": "Diseases of sebaceous glands PheCode 706"
+      },
+      {
+        "risk_allele": "A",
+        "genes": null,
+        "pvalue": "1.00e-12",
+        "study": "PMID:39024449",
+        "variants": "rs12913832",
+        "beta_coefficient": "0.06222 unit decrease",
+        "source": "NHGRI-EBI GWAS catalog",
+        "trait": "Disorder of skin and subcutaneous tissue NO PheCode 689"
+      },
+      {
+        "pvalue": "7.00e-14",
+        "genes": null,
+        "risk_allele": "A",
+        "trait": "Disorder of skin and subcutaneous tissue NO PheCode 689",
+        "source": "NHGRI-EBI GWAS catalog",
+        "study": "PMID:39024449",
+        "beta_coefficient": "0.06654 unit decrease",
+        "variants": "rs12913832"
+      },
+      {
+        "source": "NHGRI-EBI GWAS catalog",
+        "beta_coefficient": "0.109001 unit decrease",
+        "study": "PMID:36672889",
+        "variants": "rs12913832",
+        "trait": "Ease of skin tanning",
+        "genes": null,
+        "risk_allele": "G",
+        "pvalue": "9.00e-10"
+      },
+      {
+        "source": "NHGRI-EBI GWAS catalog",
+        "study": "PMID:36672889",
+        "beta_coefficient": "0.201789 unit increase",
+        "variants": "rs12913832",
+        "trait": "Ease of sunburn",
+        "genes": null,
+        "risk_allele": "G",
+        "pvalue": "4.00e-14"
+      },
+      {
+        "study": "PMID:39024449",
+        "beta_coefficient": "0.07387 unit decrease",
+        "variants": "rs12913832",
+        "source": "NHGRI-EBI GWAS catalog",
+        "trait": "Erythematosquamous dermatosis PheCode 690",
+        "risk_allele": "A",
+        "genes": null,
+        "pvalue": "3.00e-14"
+      },
+      {
+        "trait": "Erythematosquamous dermatosis PheCode 690",
+        "study": "PMID:39024449",
+        "variants": "rs12913832",
+        "beta_coefficient": "0.0698 unit decrease",
+        "source": "NHGRI-EBI GWAS catalog",
+        "pvalue": "7.00e-12",
+        "risk_allele": "A",
+        "genes": null
+      },
+      {
+        "source": "NHGRI-EBI GWAS catalog",
+        "study": "PMID:23548203",
+        "beta_coefficient": "2.82 unit increase",
+        "variants": "rs12913832",
+        "trait": "Eye color",
+        "genes": "HERC2",
+        "ontology_accessions": [
+          "EFO:0003949",
+          "EFO:0009764"
+        ],
+        "risk_allele": "A",
+        "pvalue": "1.00e-177"
+      },
+      {
+        "pvalue": "1.00e-300",
+        "genes": "OCA2",
+        "ontology_accessions": [
+          "EFO:0003949",
+          "EFO:0009764"
+        ],
+        "risk_allele": "A",
+        "trait": "Eye color",
+        "source": "NHGRI-EBI GWAS catalog",
+        "study": "PMID:20585627",
+        "variants": "rs12913832",
+        "beta_coefficient": "2.49 unit increase"
+      },
+      {
+        "beta_coefficient": "2.84 unit decrease",
+        "study": "PMID:23548203",
+        "variants": "rs12913832",
+        "source": "NHGRI-EBI GWAS catalog",
+        "trait": "Eye color",
+        "risk_allele": "G",
+        "ontology_accessions": [
+          "EFO:0003949",
+          "EFO:0009764"
+        ],
+        "genes": "HERC2",
+        "pvalue": "1.00e-158"
+      },
+      {
+        "study": "PMID:30664655",
+        "variants": "rs12913832",
+        "ontology_accessions": [
+          "EFO:0003949",
+          "EFO:0009764"
+        ],
+        "source": "NHGRI-EBI GWAS catalog",
+        "genes": "HERC2",
+        "trait": "Eye color",
+        "pvalue": "1.00e-200"
+      },
+      {
+        "trait": "Eye color",
+        "source": "NHGRI-EBI GWAS catalog",
+        "study": "PMID:20585627",
+        "variants": "rs12913832",
+        "pvalue": "3.00e-52",
+        "ontology_accessions": [
+          "EFO:0003949",
+          "EFO:0009764"
+        ],
+        "genes": "OCA2",
+        "risk_allele": "A"
+      },
+      {
+        "source": "NHGRI-EBI GWAS catalog",
+        "genes": "HERC2",
+        "study": "PMID:30664655",
+        "variants": "rs12913832",
+        "trait": "Eye color brightness",
+        "pvalue": "1.00e-200"
+      },
+      {
+        "genes": "HERC2",
+        "source": "NHGRI-EBI GWAS catalog",
+        "variants": "rs12913832",
+        "study": "PMID:30664655",
+        "trait": "Eye color hue",
+        "pvalue": "1.00e-92"
+      },
+      {
+        "trait": "Eye color saturation",
+        "pvalue": "6.00e-7",
+        "genes": "HERC2",
+        "source": "NHGRI-EBI GWAS catalog",
+        "variants": "rs12913832",
+        "study": "PMID:30664655"
+      },
+      {
+        "trait": "Eye color traits",
+        "pvalue": "1.00e-300",
+        "genes": "HERC2,OCA",
+        "ontology_accessions": [
+          "EFO:0003949"
+        ],
+        "source": "NHGRI-EBI GWAS catalog",
+        "study": "PMID:20463881",
+        "variants": "rs12913832"
+      },
+      {
+        "source": "NHGRI-EBI GWAS catalog",
+        "variants": "rs12913832",
+        "study": "PMID:30104761",
+        "trait": "Glaucoma PheCode 365",
+        "ontology_accessions": [
+          "EFO:0000516",
+          "MONDO:0005041"
+        ],
+        "genes": null,
+        "risk_allele": "G",
+        "pvalue": "4.00e-8"
+      },
+      {
+        "genes": "HERC2",
+        "ontology_accessions": [
+          "EFO:0003924",
+          "EFO:0007822",
+          "OBA:0002313"
+        ],
+        "risk_allele": "A",
+        "pvalue": "1.00e-100",
+        "source": "NHGRI-EBI GWAS catalog",
+        "beta_coefficient": "0.499 unit increase",
+        "variants": "rs12913832",
+        "study": "PMID:29662168",
+        "trait": "Hair color"
+      },
+      {
+        "pvalue": "1.00e-167",
+        "risk_allele": "G",
+        "ontology_accessions": [
+          "EFO:0003924",
+          "EFO:0007822",
+          "OBA:0002313"
+        ],
+        "genes": "HERC2",
+        "trait": "Hair color",
+        "study": "PMID:23548203",
+        "variants": "rs12913832",
+        "beta_coefficient": "0.39 unit increase",
+        "source": "NHGRI-EBI GWAS catalog"
+      },
+      {
+        "study": "PMID:26926045",
+        "variants": "rs12913832",
+        "genes": "HERC2,OCA2",
+        "ontology_accessions": [
+          "EFO:0003924",
+          "EFO:0007822",
+          "OBA:0002313"
+        ],
+        "source": "NHGRI-EBI GWAS catalog",
+        "pvalue": "5.00e-104",
+        "trait": "Hair color"
+      },
+      {
+        "pvalue": "8.00e-105",
+        "trait": "Hair color",
+        "ontology_accessions": [
+          "EFO:0003924",
+          "EFO:0007822",
+          "OBA:0002313"
+        ],
+        "source": "NHGRI-EBI GWAS catalog",
+        "genes": "HERC2",
+        "variants": "rs12913832",
+        "study": "PMID:30664655"
+      },
+      {
+        "pvalue": "9.00e-88",
+        "risk_allele": "A",
+        "ontology_accessions": [
+          "EFO:0003924",
+          "EFO:0007822",
+          "OBA:0002313"
+        ],
+        "genes": "OCA2",
+        "trait": "Hair color",
+        "variants": "rs12913832",
+        "study": "PMID:20585627",
+        "beta_coefficient": "0.97 unit increase",
+        "source": "NHGRI-EBI GWAS catalog"
+      },
+      {
+        "source": "NHGRI-EBI GWAS catalog",
+        "variants": "rs12913832",
+        "study": "PMID:30166351",
+        "beta_coefficient": "1.602 unit decrease",
+        "trait": "Hair morphology traits",
+        "ontology_accessions": [
+          "EFO:0007821",
+          "EFO:0007822",
+          "EFO:0007825",
+          "OBA:0002313",
+          "OBA:VT0000367"
+        ],
+        "genes": "HERC2",
+        "pvalue": "7.00e-79"
+      },
+      {
+        "pvalue": "3.00e-30",
+        "ontology_accessions": [
+          "EFO:0007821",
+          "EFO:0007822",
+          "EFO:0007825",
+          "OBA:0002313",
+          "OBA:VT0000367"
+        ],
+        "genes": "HERC2",
+        "trait": "Hair morphology traits",
+        "source": "NHGRI-EBI GWAS catalog",
+        "beta_coefficient": "0.682465 unit decrease",
+        "variants": "rs12913832",
+        "study": "PMID:30166351"
+      },
+      {
+        "trait": "Hair morphology traits",
+        "source": "NHGRI-EBI GWAS catalog",
+        "beta_coefficient": "1.6129291 unit increase",
+        "study": "PMID:30166351",
+        "variants": "rs12913832",
+        "pvalue": "1.00e-52",
+        "genes": "HERC2",
+        "ontology_accessions": [
+          "EFO:0007821",
+          "EFO:0007822",
+          "EFO:0007825",
+          "OBA:0002313",
+          "OBA:VT0000367"
+        ]
+      },
+      {
+        "trait": "Hair morphology traits",
+        "source": "NHGRI-EBI GWAS catalog",
+        "variants": "rs12913832",
+        "study": "PMID:30166351",
+        "beta_coefficient": "0.3482 unit increase",
+        "pvalue": "2.00e-101",
+        "ontology_accessions": [
+          "EFO:0007821",
+          "EFO:0007822",
+          "EFO:0007825",
+          "OBA:0002313",
+          "OBA:VT0000367"
+        ],
+        "genes": "HERC2"
+      },
+      {
+        "genes": null,
+        "ontology_accessions": [
+          "EFO:0004339",
+          "OBA:VT0001253"
+        ],
+        "risk_allele": "G",
+        "pvalue": "2.00e-10",
+        "source": "NHGRI-EBI GWAS catalog",
+        "study": "PMID:36224396",
+        "variants": "rs12913832",
+        "beta_coefficient": "0.0097 unit increase",
+        "trait": "Height"
+      },
+      {
+        "ontology_accessions": [
+          "EFO:0004695"
+        ],
+        "genes": "HERC2",
+        "risk_allele": "A",
+        "pvalue": "9.00e-7",
+        "source": "NHGRI-EBI GWAS catalog",
+        "variants": "rs12913832",
+        "study": "PMID:31959993",
+        "trait": "Intraocular pressure"
+      },
+      {
+        "risk_allele": "G",
+        "genes": null,
+        "pvalue": "1.00e-39",
+        "study": "PMID:40650424",
+        "variants": "rs12913832",
+        "beta_coefficient": "0.13 unit increase",
+        "source": "NHGRI-EBI GWAS catalog",
+        "trait": "Left eye overall retinal pigment epithelium thickness"
+      },
+      {
+        "risk_allele": "A",
+        "genes": "HERC2,OCA2",
+        "pvalue": "6.00e-184",
+        "beta_coefficient": "0.306 unit decrease",
+        "variants": "rs12913832",
+        "study": "PMID:29739929",
+        "source": "NHGRI-EBI GWAS catalog",
+        "trait": "Low tan response"
+      },
+      {
+        "pvalue": "7.00e-41",
+        "risk_allele": "A",
+        "genes": null,
+        "ontology_accessions": [
+          "EFO:0000389"
+        ],
+        "trait": "Melanomas of skin, dx or hx PheCode 172.1",
+        "study": "PMID:39024449",
+        "variants": "rs12913832",
+        "beta_coefficient": "0.1133 unit decrease",
+        "source": "NHGRI-EBI GWAS catalog"
+      },
+      {
+        "trait": "Melanomas of skin, dx or hx PheCode 172.1",
+        "source": "NHGRI-EBI GWAS catalog",
+        "beta_coefficient": "0.1167 unit decrease",
+        "study": "PMID:39024449",
+        "variants": "rs12913832",
+        "pvalue": "2.00e-33",
+        "ontology_accessions": [
+          "EFO:0000389"
+        ],
+        "genes": null,
+        "risk_allele": "A"
+      },
+      {
+        "risk_allele": "A",
+        "genes": null,
+        "ontology_accessions": [
+          "EFO:0004198"
+        ],
+        "pvalue": "5.00e-28",
+        "variants": "rs12913832",
+        "beta_coefficient": "0.09248 unit decrease",
+        "study": "PMID:39024449",
+        "source": "NHGRI-EBI GWAS catalog",
+        "trait": "Neoplasm of uncertain behavior of skin PheCode 173"
+      },
+      {
+        "variants": "rs12913832",
+        "study": "PMID:39024449",
+        "beta_coefficient": "0.09447 unit decrease",
+        "source": "NHGRI-EBI GWAS catalog",
+        "trait": "Neoplasm of uncertain behavior of skin PheCode 173",
+        "risk_allele": "A",
+        "genes": null,
+        "ontology_accessions": [
+          "EFO:0004198"
+        ],
+        "pvalue": "5.00e-37"
+      },
+      {
+        "trait": "Nevus count or cutaneous melanoma",
+        "pvalue": "2.00e-14",
+        "genes": "HERC2",
+        "source": "NHGRI-EBI GWAS catalog",
+        "risk_allele": "A",
+        "study": "PMID:32341527",
+        "variants": "rs12913832"
+      },
+      {
+        "study": "PMID:34290314",
+        "variants": "rs12913832",
+        "ontology_accessions": [
+          "EFO:0003784",
+          "EFO:0009259",
+          "EFO:0009260",
+          "HP:0001000"
+        ],
+        "source": "NHGRI-EBI GWAS catalog",
+        "genes": null,
+        "pvalue": "1.00e-6",
+        "trait": "Non-melanoma skin cancer"
+      },
+      {
+        "genes": null,
+        "ontology_accessions": [
+          "EFO:0004198"
+        ],
+        "risk_allele": "A",
+        "pvalue": "8.00e-44",
+        "source": "NHGRI-EBI GWAS catalog",
+        "beta_coefficient": "0.1194 unit decrease",
+        "variants": "rs12913832",
+        "study": "PMID:39024449",
+        "trait": "Other non-epithelial cancer of skin PheCode 172.2"
+      },
+      {
+        "variants": "rs12913832",
+        "beta_coefficient": "0.1177 unit decrease",
+        "study": "PMID:39024449",
+        "source": "NHGRI-EBI GWAS catalog",
+        "trait": "Other non-epithelial cancer of skin PheCode 172.2",
+        "risk_allele": "A",
+        "ontology_accessions": [
+          "EFO:0004198"
+        ],
+        "genes": null,
+        "pvalue": "4.00e-63"
+      },
+      {
+        "genes": "HERC2",
+        "ontology_accessions": [
+          "EFO:0003784",
+          "HP:0001000"
+        ],
+        "risk_allele": "A",
+        "pvalue": "4.00e-77",
+        "source": "NHGRI-EBI GWAS catalog",
+        "study": "PMID:25963972",
+        "beta_coefficient": "0.21006678 unit increase",
+        "variants": "rs12913832",
+        "trait": "Perceived skin darkness"
+      },
+      {
+        "trait": "Primary angle-closure glaucoma PheCode 365.2",
+        "beta_coefficient": "0.2814 unit increase",
+        "variants": "rs12913832",
+        "study": "PMID:39024449",
+        "source": "NHGRI-EBI GWAS catalog",
+        "pvalue": "6.00e-49",
+        "risk_allele": "A",
+        "genes": null
+      },
+      {
+        "source": "NHGRI-EBI GWAS catalog",
+        "beta_coefficient": "0.2295 unit increase",
+        "study": "PMID:39024449",
+        "variants": "rs12913832",
+        "trait": "Primary angle-closure glaucoma PheCode 365.2",
+        "genes": null,
+        "risk_allele": "A",
+        "pvalue": "6.00e-38"
+      },
+      {
+        "source": "NHGRI-EBI GWAS catalog",
+        "study": "PMID:37386247",
+        "variants": "rs12913832",
+        "beta_coefficient": "0.059673093 unit increase",
+        "trait": "Primary open angle glaucoma MTAG",
+        "genes": null,
+        "risk_allele": "A",
+        "pvalue": "3.00e-8"
+      },
+      {
+        "trait": "Retinal arteriolar tortuosity",
+        "variants": "rs12913832",
+        "study": "PMID:36757925",
+        "beta_coefficient": "0.021 unit decrease",
+        "source": "NHGRI-EBI GWAS catalog",
+        "pvalue": "4.00e-10",
+        "risk_allele": "A",
+        "ontology_accessions": [
+          "EFO:0010554",
+          "HP:0001136",
+          "MONDO:0008373",
+          "Orphanet:75326"
+        ],
+        "genes": null
+      },
+      {
+        "trait": "Retinal vascular fractal dimension",
+        "study": "PMID:34743558",
+        "beta_coefficient": "0.15454 unit decrease",
+        "variants": "rs12913832",
+        "source": "NHGRI-EBI GWAS catalog",
+        "pvalue": "6.00e-80",
+        "risk_allele": "G",
+        "genes": null
+      },
+      {
+        "genes": null,
+        "risk_allele": "A",
+        "pvalue": "4.00e-14",
+        "source": "NHGRI-EBI GWAS catalog",
+        "beta_coefficient": "0.07397 unit decrease",
+        "study": "PMID:39024449",
+        "variants": "rs12913832",
+        "trait": "Seborrheic dermatitis PheCode 690.1"
+      },
+      {
+        "genes": null,
+        "risk_allele": "A",
+        "pvalue": "5.00e-12",
+        "source": "NHGRI-EBI GWAS catalog",
+        "beta_coefficient": "0.0706 unit decrease",
+        "study": "PMID:39024449",
+        "variants": "rs12913832",
+        "trait": "Seborrheic dermatitis PheCode 690.1"
+      },
+      {
+        "pvalue": "3.00e-38",
+        "risk_allele": "A",
+        "genes": null,
+        "ontology_accessions": [
+          "DOID:4159",
+          "EFO:0004198",
+          "HP:0008069",
+          "MONDO:0002898"
+        ],
+        "trait": "Skin cancer",
+        "study": "PMID:39024449",
+        "variants": "rs12913832",
+        "beta_coefficient": "0.1192 unit decrease",
+        "source": "NHGRI-EBI GWAS catalog"
+      },
+      {
+        "ontology_accessions": [
+          "DOID:4159",
+          "EFO:0004198",
+          "HP:0008069",
+          "MONDO:0002898"
+        ],
+        "genes": null,
+        "risk_allele": "A",
+        "pvalue": "1.00e-69",
+        "source": "NHGRI-EBI GWAS catalog",
+        "study": "PMID:39024449",
+        "beta_coefficient": "0.1124 unit decrease",
+        "variants": "rs12913832",
+        "trait": "Skin cancer"
+      },
+      {
+        "study": "PMID:39024449",
+        "variants": "rs12913832",
+        "beta_coefficient": "0.1173 unit decrease",
+        "source": "NHGRI-EBI GWAS catalog",
+        "trait": "Skin cancer",
+        "risk_allele": "A",
+        "ontology_accessions": [
+          "DOID:4159",
+          "EFO:0004198",
+          "HP:0008069",
+          "MONDO:0002898"
+        ],
+        "genes": null,
+        "pvalue": "1.00e-47"
+      },
+      {
+        "pvalue": "1.00e-46",
+        "risk_allele": "A",
+        "ontology_accessions": [
+          "DOID:4159",
+          "EFO:0004198",
+          "HP:0008069",
+          "MONDO:0002898"
+        ],
+        "genes": null,
+        "trait": "Skin cancer",
+        "variants": "rs12913832",
+        "study": "PMID:39024449",
+        "beta_coefficient": "0.1146 unit decrease",
+        "source": "NHGRI-EBI GWAS catalog"
+      },
+      {
+        "source": "NHGRI-EBI GWAS catalog",
+        "beta_coefficient": "0.177703 unit increase",
+        "study": "PMID:36672889",
+        "variants": "rs12913832",
+        "trait": "Skin color",
+        "genes": null,
+        "risk_allele": "G",
+        "pvalue": "2.00e-27"
+      },
+      {
+        "variants": "rs12913832",
+        "study": "PMID:36672889",
+        "beta_coefficient": "0.330585 unit decrease",
+        "source": "NHGRI-EBI GWAS catalog",
+        "trait": "Skin color Fitzpatrick scale",
+        "risk_allele": "G",
+        "genes": null,
+        "pvalue": "6.00e-126"
+      },
+      {
+        "pvalue": "5.00e-147",
+        "risk_allele": "G",
+        "genes": null,
+        "trait": "Skin phototype score",
+        "variants": "rs12913832",
+        "beta_coefficient": "6.87674 unit decrease",
+        "study": "PMID:36672889",
+        "source": "NHGRI-EBI GWAS catalog"
+      },
+      {
+        "pvalue": "3.00e-8",
+        "risk_allele": "G",
+        "ontology_accessions": [
+          "EFO:0003784",
+          "EFO:0007009",
+          "HP:0001000",
+          "OBA:VT0002095"
+        ],
+        "genes": "HERC2,OCA2",
+        "trait": "Skin pigmentation",
+        "variants": "rs12913832",
+        "study": "PMID:31315583",
+        "beta_coefficient": "0.21 unit decrease",
+        "source": "NHGRI-EBI GWAS catalog"
+      },
+      {
+        "trait": "Skin pigmentation",
+        "pvalue": "1.00e-17",
+        "source": "NHGRI-EBI GWAS catalog",
+        "ontology_accessions": [
+          "EFO:0003784",
+          "EFO:0007009",
+          "HP:0001000",
+          "OBA:VT0002095"
+        ],
+        "genes": "HERC2",
+        "study": "PMID:30664655",
+        "variants": "rs12913832"
+      },
+      {
+        "trait": "Skin pigmentation traits",
+        "source": "NHGRI-EBI GWAS catalog",
+        "beta_coefficient": "0.1766 unit increase",
+        "variants": "rs12913832",
+        "study": "PMID:30166351",
+        "pvalue": "3.00e-27",
+        "ontology_accessions": [
+          "EFO:0003784",
+          "EFO:0003963",
+          "EFO:0004279",
+          "HP:0001000"
+        ],
+        "genes": "HERC2"
+      },
+      {
+        "ontology_accessions": [
+          "EFO:0003784",
+          "EFO:0003963",
+          "EFO:0004279",
+          "HP:0001000"
+        ],
+        "genes": "HERC2",
+        "pvalue": "1.00e-11",
+        "variants": "rs12913832",
+        "beta_coefficient": "0.32792723 unit increase",
+        "study": "PMID:30166351",
+        "source": "NHGRI-EBI GWAS catalog",
+        "trait": "Skin pigmentation traits"
+      },
+      {
+        "study": "PMID:30166351",
+        "variants": "rs12913832",
+        "beta_coefficient": "0.2014 unit decrease",
+        "source": "NHGRI-EBI GWAS catalog",
+        "trait": "Skin pigmentation traits",
+        "ontology_accessions": [
+          "EFO:0003784",
+          "EFO:0003963",
+          "EFO:0004279",
+          "HP:0001000"
+        ],
+        "genes": "HERC2",
+        "pvalue": "5.00e-14"
+      },
+      {
+        "pvalue": "1.00e-148",
+        "ontology_accessions": [
+          "EFO:0003784",
+          "EFO:0003963",
+          "EFO:0004279",
+          "HP:0001000"
+        ],
+        "genes": "HERC2",
+        "trait": "Skin pigmentation traits",
+        "variants": "rs12913832",
+        "beta_coefficient": "6.354 unit decrease",
+        "study": "PMID:30166351",
+        "source": "NHGRI-EBI GWAS catalog"
+      },
+      {
+        "trait": "Skin pigmentation traits",
+        "source": "NHGRI-EBI GWAS catalog",
+        "beta_coefficient": "0.6038 unit decrease",
+        "study": "PMID:30166351",
+        "variants": "rs12913832",
+        "pvalue": "9.00e-13",
+        "ontology_accessions": [
+          "EFO:0003784",
+          "EFO:0003963",
+          "EFO:0004279",
+          "HP:0001000"
+        ],
+        "genes": "HERC2"
+      },
+      {
+        "trait": "Skin pigmentation traits",
+        "variants": "rs12913832",
+        "study": "PMID:30166351",
+        "beta_coefficient": "0.8599 unit decrease",
+        "source": "NHGRI-EBI GWAS catalog",
+        "pvalue": "2.00e-26",
+        "genes": "HERC2",
+        "ontology_accessions": [
+          "EFO:0003784",
+          "EFO:0003963",
+          "EFO:0004279",
+          "HP:0001000"
+        ]
+      },
+      {
+        "variants": "rs12913832",
+        "study": "PMID:30166351",
+        "beta_coefficient": "0.3257 unit decrease",
+        "source": "NHGRI-EBI GWAS catalog",
+        "trait": "Skin pigmentation traits",
+        "ontology_accessions": [
+          "EFO:0003784",
+          "EFO:0003963",
+          "EFO:0004279",
+          "HP:0001000"
+        ],
+        "genes": "HERC2",
+        "pvalue": "8.00e-132"
+      },
+      {
+        "pvalue": "1.00e-200",
+        "trait": "Skin, hair and eye pigmentation multivariate analysis",
+        "source": "NHGRI-EBI GWAS catalog",
+        "genes": "HERC2",
+        "study": "PMID:30664655",
+        "variants": "rs12913832"
+      },
+      {
+        "pvalue": "2.00e-20",
+        "genes": null,
+        "ontology_accessions": [
+          "EFO:0000707"
+        ],
+        "risk_allele": "A",
+        "trait": "Squamous cell carcinoma PheCode 172.22",
+        "source": "NHGRI-EBI GWAS catalog",
+        "variants": "rs12913832",
+        "study": "PMID:39024449",
+        "beta_coefficient": "0.1281 unit decrease"
+      },
+      {
+        "beta_coefficient": "0.1246 unit decrease",
+        "study": "PMID:39024449",
+        "variants": "rs12913832",
+        "source": "NHGRI-EBI GWAS catalog",
+        "trait": "Squamous cell carcinoma PheCode 172.22",
+        "risk_allele": "A",
+        "ontology_accessions": [
+          "EFO:0000707"
+        ],
+        "genes": null,
+        "pvalue": "5.00e-22"
+      },
+      {
+        "trait": "Tanning",
+        "variants": "rs12913832",
+        "study": "PMID:23548203",
+        "beta_coefficient": "0.14 unit increase",
+        "source": "NHGRI-EBI GWAS catalog",
+        "pvalue": "1.00e-22",
+        "risk_allele": "G",
+        "ontology_accessions": [
+          "EFO:0004279"
+        ],
+        "genes": "HERC2"
+      },
+      {
+        "ontology_accessions": [
+          "EFO:1000616",
+          "HP:0007716",
+          "Orphanet:39044"
+        ],
+        "source": "NHGRI-EBI GWAS catalog",
+        "genes": null,
+        "variants": "rs12913832",
+        "study": "PMID:40495383",
+        "pvalue": "3.00e-15",
+        "trait": "Uveal melanoma"
+      }
+    ]
+  }
+}
