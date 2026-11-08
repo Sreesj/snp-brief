@@ -38,6 +38,18 @@ Serves a local page. Run the list in the sidebar, or search any rsID at the top.
 - **Molecular Ripple** (runs when you press Run): the variant context (missense, nonsense, intronic, ...), what a mechanistic analysis should examine for that context, and molecular links labelled *observed*, *predicted*, or *unknown*. Ensembl VEP scores are the next step.
 - **Hypothesis Forge** (runs when you press Run): stage 1 sorts the variant as *well characterized*, *conflicting evidence*, *uncertain mechanism*, *mechanism proposed in literature*, *trait association, mechanism unknown* (GWAS or GTEx evidence only), *exploratory* (only location, gene, or prediction context: hypotheses are labelled AI-generated and include "no functional effect"), or *insufficient evidence* (nothing at all), with the reason and next steps. For conflicting and uncertain variants, an LLM proposes two or three competing hypotheses, each with fact-checked support, missing evidence, the observation that would tell it apart, and an experiment. Experiments are ranked by feasibility and open gaps. Well-characterized and thin-evidence variants get no invented hypotheses.
 
+More on the page:
+
+- **Status badges** for each module: ready, not run, or failed (with the error).
+- **Findings from paper abstracts** (Observatory, needs an LLM): up to five abstracts are read; each finding must quote its abstract verbatim and every number in it must appear in the quote. Verified findings feed the summary and the Forge.
+- **Evidence graph** (Ripple): variant → genes → traits, solid for observed, dashed for predicted, dotted for Forge hypotheses.
+- **Protein-level details** for coding variants: amino-acid change and protein domains from Ensembl VEP.
+- **Evidence for and against** each hypothesis, both fact-checked; experiments ranked by consistency, how many hypotheses they separate, net support, feasibility, and gaps.
+- **Steer the Forge**: reject hypotheses and add constraints (for example "computational only"), then re-forge.
+- **Research notebook** per SNP (saved on this computer) and a **full report** download (.md) with every module, facts with provider ranks, and sources.
+- Optional `NCBI_API_KEY` (10 requests/s instead of 3); user-cache entries older than `SNP_BRIEF_MAX_AGE_DAYS` (default 30) are re-fetched; the checked-in `cache/` never ages.
+- `Dockerfile` for running anywhere: `docker build -t variant-atlas . && docker run -p 8501:8501 -e NEBIUS_API_KEY=... variant-atlas`.
+
 Module results stay in the session when you switch tabs or SNPs. The checked-in `cache/` is never changed by the page.
 
 ## Deploy (Streamlit Community Cloud)
@@ -55,8 +67,8 @@ The password keeps strangers from spending the Nebius credits. Live responses ar
 export NEBIUS_API_KEY=...                 # from tokenfactory.nebius.com; never commit it
 uv run snp-brief --list-models            # models your account can use
 export SNP_BRIEF_LLM_MODEL=<model id>     # optional; default openai/gpt-oss-120b
-export SNP_BRIEF_FORGE_MODEL=<model id>   # optional; a stronger model for Hypothesis Forge
-uv run snp-brief --summary llm --forge    # LLM summaries and Forge hypotheses
+export SNP_BRIEF_FORGE_MODEL=<model id>   # optional; a stronger model for Hypothesis Forge and abstract findings
+uv run snp-brief --summary llm --forge --findings   # LLM summaries, Forge hypotheses, abstract findings
 ```
 
 LLM summaries are saved to `cache/<rsid>/summary_llm.json` and Forge results to `cache/<rsid>/forge.json`, keyed by the facts they were written from. Generate them once with the key, commit them, and the demo shows them offline with no key. `--regenerate` ignores those files. Any other OpenAI-compatible server works with `SNP_BRIEF_LLM_URL`, `SNP_BRIEF_LLM_MODEL`, and `SNP_BRIEF_LLM_KEY`.
@@ -140,6 +152,10 @@ Not a pathogenicity classifier, and not a copy of the genomic-variant-classifier
 | Hypothesis Forge | `src/snp_brief/forge.py` |
 | Molecular Ripple | `src/snp_brief/ripple.py` |
 | Module result cache | `src/snp_brief/module_cache.py` |
+| Ranked providers | `src/snp_brief/providers.py` |
+| Abstract findings | `src/snp_brief/literature.py` |
+| Evidence graph | `src/snp_brief/graph.py` |
+| Notebook and report | `src/snp_brief/report.py` |
 
 The product rules are in `prd.md`.
 

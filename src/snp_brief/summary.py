@@ -106,6 +106,8 @@ class _Plan:
     l2g_text: str = ""
     litvar: str | None = None
     litvar_count: int = 0
+    findings: list[str] = field(default_factory=list)
+    finding_text: list[str] = field(default_factory=list)
     no_significance: bool = False
     paper_labels: list[str] = field(default_factory=list)
 
@@ -273,6 +275,17 @@ def _plan(item) -> _Plan:
             + ", ".join(f"PMID:{p}" for p in litvar[:3])
             + ".",
             "LitVar2",
+        )
+    for finding in (getattr(item, "findings", None) or [])[:4]:
+        detail = "; ".join(x for x in (finding.population, finding.effect) if x)
+        plan.finding_text.append(f"{finding.claim.rstrip('.')} (PMID:{finding.pmid})")
+        plan.findings.append(
+            add(
+                f"Finding from the abstract of PMID:{finding.pmid}: {finding.claim.rstrip('.')}"
+                + (f" ({detail})" if detail else "")
+                + f'. Quote: "{finding.quote}"',
+                "Paper abstract",
+            )
         )
     variant = view.variant if view is not None else (item.variants[0] if item.variants else None)
     if variant is not None:
@@ -551,6 +564,8 @@ def _template_parts(rsid: str, plan: _Plan) -> list[tuple[str, str]]:
         extra_ids.append(plan.dissent)
     if extras:
         parts.append(("disease_note", f"ClinVar note: {'; '.join(extras)} [{', '.join(extra_ids)}]."))
+    if plan.findings:
+        parts.append(("papers", f"Papers report: {'; '.join(plan.finding_text)} [{', '.join(plan.findings)}]."))
     if plan.papers:
         parts.append(("papers", f"Papers that cite this rsID: {'; '.join(plan.paper_labels)} [{', '.join(plan.papers)}]."))
     return parts

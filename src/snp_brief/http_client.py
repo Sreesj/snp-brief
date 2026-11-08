@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import os
 import threading
 import time
 import urllib.error
@@ -21,7 +22,8 @@ def _pace_ncbi(url: str) -> None:
     if not host.endswith("ncbi.nlm.nih.gov"):
         return
     with _ncbi_lock:
-        wait = 0.35 - (time.monotonic() - _last_ncbi)
+        spacing = 0.11 if os.environ.get("NCBI_API_KEY") else 0.35  # 10/s with a key, 3/s without
+        wait = spacing - (time.monotonic() - _last_ncbi)
         if wait > 0:
             time.sleep(wait)
         _last_ncbi = time.monotonic()
@@ -55,6 +57,9 @@ def _request(
     timeout: float,
     decode_json: bool,
 ):
+    host = urllib.parse.urlparse(url).netloc
+    if host == "eutils.ncbi.nlm.nih.gov" and os.environ.get("NCBI_API_KEY"):
+        params = {**(params or {}), "api_key": os.environ["NCBI_API_KEY"]}
     if params:
         joiner = "&" if "?" in url else "?"
         url = f"{url}{joiner}{urllib.parse.urlencode(params)}"

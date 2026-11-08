@@ -1,0 +1,37 @@
+{
+  "key": "ripple|0.2|rules|0e7c5af5d13fefb9",
+  "created": "2026-11-08T02:35:20+00:00",
+  "rsid": "rs1801133",
+  "context_key": "missense",
+  "context": "Missense coding variant",
+  "gene": "MTHFR",
+  "change": "p.Ala222Val",
+  "priorities": [
+    "Amino-acid change and its chemistry",
+    "Protein domain at this position",
+    "Protein structure",
+    "Functional studies of this allele"
+  ],
+  "links": [
+    {
+      "label": "observed",
+      "text": "rs1801133 → MTHFR: missense variant, p.Ala222Val",
+      "source": "ClinVar VCV000003520"
+    },
+    {
+      "label": "observed",
+      "text": "Frequency varies by ancestry: 49% in Admixed American, 11% in African/African American",
+      "source": "gnomAD"
+    },
+    {
+      "label": "predicted",
+      "text": "No prediction scores were returned (Ensembl VEP not answered, or scores not available for this variant).",
+      "source": ""
+    },
+    {
+      "label": "unknown",
+      "text": "How much the amino-acid change alters protein activity in this allele's studies.",
+      "source": ""
+    }
+  ]
+}

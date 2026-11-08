@@ -45,6 +45,7 @@ def main(argv: list[str] | None = None) -> int:
         default="complete",
         help="time budget for live providers: fast ~8 s, balanced ~20 s, thorough ~45 s, complete waits for all (default)",
     )
+    parser.add_argument("--findings", action="store_true", help="extract quote-verified findings from paper abstracts (LLM)")
     parser.add_argument("--regenerate", action="store_true", help="ignore cached LLM summaries and Forge results")
     parser.add_argument("--list-models", action="store_true", help="list the models your LLM provider offers, then exit")
     args = parser.parse_args(argv)
@@ -69,6 +70,15 @@ def main(argv: list[str] | None = None) -> int:
         )
         if item.pending:
             print(f"{rsid}: still loading after the time budget: {', '.join(item.pending)}", file=sys.stderr)
+        if args.findings:
+            from snp_brief.literature import Finding, extract_findings
+            from snp_brief.llm import LLMClient
+
+            client = LLMClient.from_env()
+            found = extract_findings(item, client.for_forge() if client else None, args.cache, refresh=args.regenerate, offline=args.offline)
+            item.findings = [Finding(**f) for f in found.get("findings", [])]
+            for r in found.get("rejected", []):
+                print(f"{rsid}: finding rejected ({r['reason']}): {r['claim']}", file=sys.stderr)
         block = format_item(item, args.summary, cache_dir=args.cache, regenerate=args.regenerate)
         if args.forge:
             block += "\n" + format_forge(item, cache_dir=args.cache, regenerate=args.regenerate)

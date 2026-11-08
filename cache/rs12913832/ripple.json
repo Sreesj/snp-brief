@@ -1,0 +1,46 @@
+{
+  "key": "ripple|0.2|rules|eac4ad0c498708f1",
+  "created": "2026-11-08T02:35:20+00:00",
+  "rsid": "rs12913832",
+  "context_key": "intron",
+  "context": "Intronic variant",
+  "gene": "HERC2",
+  "change": "c.13272+874T>C",
+  "priorities": [
+    "Splice-related predictions",
+    "Known regulatory elements (enhancers) at this position",
+    "Expression QTLs and the gene they act on"
+  ],
+  "links": [
+    {
+      "label": "observed",
+      "text": "rs12913832 → HERC2: intron variant, c.13272+874T>C",
+      "source": "ClinVar VCV000004745"
+    },
+    {
+      "label": "observed",
+      "text": "Clinical classification: association (SKIN/HAIR/EYE PIGMENTATION 1, BLUE/NONBLUE EYES)",
+      "source": "ClinVar"
+    },
+    {
+      "label": "observed",
+      "text": "Frequency varies by ancestry: 89% in European (Finnish), 0.17% in East Asian",
+      "source": "gnomAD"
+    },
+    {
+      "label": "predicted",
+      "text": "No prediction scores were returned (Ensembl VEP not answered, or scores not available for this variant).",
+      "source": ""
+    },
+    {
+      "label": "unknown",
+      "text": "Which gene this variant regulates; the gene named by ClinVar (HERC2) is the nearest annotation, not proof of the target.",
+      "source": ""
+    },
+    {
+      "label": "unknown",
+      "text": "Whether this SNP is causal or tags a nearby causal variant.",
+      "source": ""
+    }
+  ]
+}

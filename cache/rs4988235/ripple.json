@@ -1,0 +1,46 @@
+{
+  "key": "ripple|0.2|rules|e58c67bbf42598f2",
+  "created": "2026-11-08T02:35:20+00:00",
+  "rsid": "rs4988235",
+  "context_key": "intron",
+  "context": "Intronic variant",
+  "gene": "MCM6",
+  "change": "c.-13907C>T",
+  "priorities": [
+    "Splice-related predictions",
+    "Known regulatory elements (enhancers) at this position",
+    "Expression QTLs and the gene they act on"
+  ],
+  "links": [
+    {
+      "label": "observed",
+      "text": "rs4988235 → MCM6: intron variant, c.-13907C>T",
+      "source": "ClinVar VCV000007685"
+    },
+    {
+      "label": "observed",
+      "text": "Clinical classification: association (LACTASE PERSISTENCE)",
+      "source": "ClinVar"
+    },
+    {
+      "label": "observed",
+      "text": "Frequency varies by ancestry: 64% in European (non-Finnish), 0.21% in East Asian",
+      "source": "gnomAD"
+    },
+    {
+      "label": "predicted",
+      "text": "No prediction scores were returned (Ensembl VEP not answered, or scores not available for this variant).",
+      "source": ""
+    },
+    {
+      "label": "unknown",
+      "text": "Which gene this variant regulates; the gene named by ClinVar (MCM6) is the nearest annotation, not proof of the target.",
+      "source": ""
+    },
+    {
+      "label": "unknown",
+      "text": "Whether this SNP is causal or tags a nearby causal variant.",
+      "source": ""
+    }
+  ]
+}

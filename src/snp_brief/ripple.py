@@ -150,6 +150,17 @@ def ripple(item) -> RippleResult:
         result.links.append(
             Link(OBSERVED, f"Inherited together with {len(ld)} nearby variants (r² ≥ 0.8), e.g. " + ", ".join(p.rsid for p in ld[:3]), "Ensembl LD")
         )
+    if vep is not None and key in {"missense", "nonsense", "synonymous"} and (vep.amino_acids or vep.domains):
+        change = ""
+        if vep.amino_acids and "/" in vep.amino_acids:
+            ref, alt = vep.amino_acids.split("/", 1)
+            change = f"amino acid {ref} → {alt}" + (f" at protein position {vep.protein_position}" if vep.protein_position else "")
+        if change:
+            result.links.append(Link(OBSERVED, f"Protein change: {change}", "Ensembl VEP annotation"))
+        if vep.domains:
+            result.links.append(Link(OBSERVED, "Inside protein domain(s): " + "; ".join(vep.domains[:4]), "Ensembl VEP (InterPro/Pfam annotation)"))
+        elif change:
+            result.links.append(Link(UNKNOWN, "No annotated protein domain at this position."))
     scores = []
     for row in (getattr(item, "l2g", None) or [])[:2]:
         scores.append(Link(PREDICTED, f"Locus-to-gene model favours {row.gene} (score {row.score:.2f})" + (f" for {row.trait}" if row.trait else ""), "Open Targets"))
@@ -186,4 +197,23 @@ def ripple(item) -> RippleResult:
         result.links.append(Link(UNKNOWN, "How much the amino-acid change alters protein activity in this allele's studies."))
     elif key == "nonsense":
         result.links.append(Link(UNKNOWN, "Whether the truncated product is made or degraded."))
+    return result
+
+
+def ripple_cached(item, cache_dir) -> RippleResult:
+    """Ripple with its own result file, cache/<rsid>/ripple.json, keyed by the facts it used."""
+    from dataclasses import asdict
+
+    from snp_brief.module_cache import load_result, result_key, save_result
+    from snp_brief.summary import facts_block
+
+    key = result_key("ripple", "rules", facts_block(_plan(item).facts))
+    stored = load_result(cache_dir, item.rsid, "ripple", key)
+    if stored is not None:
+        return RippleResult(
+            stored["rsid"], stored["context_key"], stored["context"], stored["gene"], stored["change"],
+            stored["priorities"], [Link(**link) for link in stored["links"]],
+        )
+    result = ripple(item)
+    save_result(cache_dir, item.rsid, "ripple", key, asdict(result))
     return result

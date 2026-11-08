@@ -1,0 +1,46 @@
+{
+  "key": "ripple|0.2|rules|2d1ef9398c0f1cbd",
+  "created": "2026-11-08T02:35:20+00:00",
+  "rsid": "rs1799963",
+  "context_key": "utr",
+  "context": "UTR / near-gene variant",
+  "gene": "F2",
+  "change": "c.*97G>A",
+  "priorities": [
+    "mRNA stability and translation",
+    "Regulatory elements",
+    "Expression QTLs"
+  ],
+  "links": [
+    {
+      "label": "observed",
+      "text": "rs1799963 → F2: 3 prime UTR variant, c.*97G>A",
+      "source": "ClinVar VCV000013310"
+    },
+    {
+      "label": "observed",
+      "text": "Clinical classification: Pathogenic (THROMBOPHILIA DUE TO THROMBIN DEFECT)",
+      "source": "ClinVar"
+    },
+    {
+      "label": "observed",
+      "text": "Frequency varies by ancestry: 3.6% in Ashkenazi Jewish, 0.0051% in East Asian",
+      "source": "gnomAD"
+    },
+    {
+      "label": "predicted",
+      "text": "No prediction scores were returned (Ensembl VEP not answered, or scores not available for this variant).",
+      "source": ""
+    },
+    {
+      "label": "unknown",
+      "text": "Which gene this variant regulates; the gene named by ClinVar (F2) is the nearest annotation, not proof of the target.",
+      "source": ""
+    },
+    {
+      "label": "unknown",
+      "text": "Whether this SNP is causal or tags a nearby causal variant.",
+      "source": ""
+    }
+  ]
+}

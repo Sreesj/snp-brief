@@ -71,6 +71,8 @@ def extras_enabled() -> bool:
 
 
 def tier_label(source: str) -> str:
+    if source == "Paper abstract":
+        return "rank 7, literature finding (LLM-extracted, quote-verified)"
     for provider in PROVIDERS:
         if provider.name == source:
             return f"rank {provider.rank}, {provider.tier}"
@@ -81,7 +83,7 @@ def tier_label(source: str) -> str:
 
 VEP_URL = "https://rest.ensembl.org/vep/human/id/{rsid}"
 # Parameter names as documented at rest.ensembl.org/documentation/info/vep_id_get.
-VEP_PARAMS = {"AlphaMissense": "1", "CADD": "1", "SpliceAI": "1", "canonical": "1", "variant_class": "1"}
+VEP_PARAMS = {"AlphaMissense": "1", "CADD": "1", "SpliceAI": "1", "canonical": "1", "variant_class": "1", "domains": "1"}
 
 
 @dataclass
@@ -102,6 +104,9 @@ class VepAnnotation:
     regulatory: list[str] = field(default_factory=list)
     motifs: list[str] = field(default_factory=list)
     pubmed: list[str] = field(default_factory=list)
+    amino_acids: str = ""
+    protein_position: str = ""
+    domains: list[str] = field(default_factory=list)
 
 
 def fetch_vep(rsid: str, timeout: float = 25) -> dict:
@@ -131,6 +136,16 @@ def parse_vep(payload: dict | None) -> VepAnnotation:
         out.canonical_gene = str(chosen.get("gene_symbol") or "")
         out.canonical_terms = [str(t) for t in chosen.get("consequence_terms") or []]
         out.impact = str(chosen.get("impact") or "")
+        out.amino_acids = str(chosen.get("amino_acids") or "")
+        start = chosen.get("protein_start")
+        out.protein_position = str(start) if start is not None else ""
+        for domain in chosen.get("domains") or []:
+            if isinstance(domain, dict):
+                label = f"{domain.get('db', '')} {domain.get('name', '')}".strip()
+            else:
+                label = str(domain)
+            if label and label not in out.domains:
+                out.domains.append(label)
     for item in transcripts:
         out.sift = out.sift or str(item.get("sift_prediction") or "")
         out.polyphen = out.polyphen or str(item.get("polyphen_prediction") or "")

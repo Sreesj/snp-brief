@@ -91,6 +91,7 @@ class Gathered:
     ld_proxies: list[LdProxy] = field(default_factory=list)
     l2g: list[L2G] = field(default_factory=list)
     litvar: list[str] = field(default_factory=list)
+    findings: list = field(default_factory=list)
 
     @property
     def pending(self) -> list[str]:
@@ -234,7 +235,14 @@ def gather(
         ld_proxies=ld_proxies,
         l2g=l2g,
         litvar=litvar,
+        findings=_findings(rsid, cache_dir, extras_cache),
     )
+
+
+def _findings(rsid: str, cache_dir: Path, extras_cache: Path | None) -> list:
+    from snp_brief.literature import cached_findings
+
+    return cached_findings([extras_cache, cache_dir], rsid)
 
 
 def _collect(futures: dict, results: dict, calls: dict, deadline: float | None) -> None:
@@ -274,6 +282,8 @@ def _cached_multi(
             path = cache_path(directory, rsid, source)
             if path.is_file():
                 payload = load_cache(path)
+                if not offline and _stale(directory, payload):
+                    break  # older than SNP_BRIEF_MAX_AGE_DAYS in the user cache: fetch again
                 return payload, SourceCall("cache", _stamp(payload), seconds=time.monotonic() - started)
     if offline:
         print(f"{rsid} {source}: no cached response", file=sys.stderr)
@@ -293,6 +303,24 @@ def _cached(cache_dir: Path, rsid: str, source: str, fetcher, *, refresh: bool, 
     payload, call = _cached_multi(rsid, source, fetcher, dirs=(cache_dir,), write=cache_dir, refresh=refresh, offline=offline)
     calls[source] = call
     return payload
+
+
+def _stale(directory: Path, payload: dict | None) -> bool:
+    """Only the user cache ages out; the checked-in cache/ is a fixed demo snapshot."""
+    import os
+    from datetime import datetime, timezone
+
+    try:
+        if Path(directory).resolve() != default_user_cache().resolve():
+            return False
+        days = float(os.environ.get("SNP_BRIEF_MAX_AGE_DAYS", "30"))
+        stamp = _stamp(payload)
+        if not stamp or days <= 0:
+            return False
+        age = datetime.now(timezone.utc) - datetime.fromisoformat(stamp)
+        return age.total_seconds() > days * 86400
+    except (ValueError, OSError):
+        return False
 
 
 def _stamp(payload: dict | None) -> str | None:

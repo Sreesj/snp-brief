@@ -38,7 +38,10 @@ from snp_brief.forge import CONFLICTING, EXPLORATORY, INSUFFICIENT, REPORTED, TR
 from snp_brief.providers import SPEED_BUDGETS, tier_label
 from snp_brief.llm import LLMClient
 from snp_brief.pipeline import Gathered, default_user_cache, load_variant
-from snp_brief.ripple import OBSERVED, PREDICTED, UNKNOWN, ripple
+from snp_brief.graph import evidence_dot
+from snp_brief.literature import Finding, extract_findings
+from snp_brief.report import build_report, load_notes, save_notes
+from snp_brief.ripple import OBSERVED, PREDICTED, UNKNOWN, ripple_cached
 from snp_brief.summary import summarize
 
 USER_CACHE = default_user_cache()
@@ -101,6 +104,9 @@ def load_secrets() -> None:
         "SNP_BRIEF_USER_CACHE",
         "SNP_BRIEF_APP_PASSWORD",
         "SNP_BRIEF_FORGE_LIMIT",
+        "NCBI_API_KEY",
+        "SNP_BRIEF_EXTRAS",
+        "SNP_BRIEF_MAX_AGE_DAYS",
     ):
         if name in secrets and not os.environ.get(name):
             os.environ[name] = str(secrets[name])
@@ -359,11 +365,16 @@ def render_detail(item: Gathered) -> None:
             reload_variant(item)
             st.rerun()
     results = st.session_state.setdefault("modules", {})
+    failures = st.session_state.setdefault("module_errors", {})
     with st.container(horizontal=True):
         st.badge("Observatory: ready", color="green")
         for name, key in (("Ripple", "ripple"), ("Forge", "forge")):
-            done = (item.rsid, key) in results
-            st.badge(f"{name}: {'ready' if done else 'not run'}", color="green" if done else "gray")
+            if (item.rsid, key) in failures:
+                st.badge(f"{name}: failed", color="red")
+            elif (item.rsid, key) in results:
+                st.badge(f"{name}: ready", color="green")
+            else:
+                st.badge(f"{name}: not run", color="gray")
     observatory, ripple_tab, forge_tab = st.tabs(list(MODULES))
     with observatory:
         render_observatory(item)
@@ -371,6 +382,45 @@ def render_detail(item: Gathered) -> None:
         render_ripple(item)
     with forge_tab:
         render_forge(item)
+    render_notebook(item)
+
+
+def run_module(item: Gathered, key: str, work) -> None:
+    """Run a module, recording success or failure for the status badges."""
+    results = st.session_state.setdefault("modules", {})
+    failures = st.session_state.setdefault("module_errors", {})
+    try:
+        results[(item.rsid, key)] = work()
+        failures.pop((item.rsid, key), None)
+    except Exception as exc:  # shown as a red "failed" badge with the message
+        failures[(item.rsid, key)] = str(exc)
+
+
+def render_notebook(item: Gathered) -> None:
+    with st.expander("Research notebook and full report"):
+        notes_key = f"notes-{item.rsid}"
+        if notes_key not in st.session_state:
+            st.session_state[notes_key] = load_notes(USER_CACHE, item.rsid)
+        st.text_area("Your notes on this SNP (saved on this computer)", key=notes_key, height=150)
+        left, right = st.columns(2)
+        if left.button("Save notes", key=f"save-notes-{item.rsid}"):
+            ok = save_notes(USER_CACHE, item.rsid, st.session_state[notes_key])
+            st.toast("Notes saved." if ok else "Could not save notes here; they stay in this session.")
+        results = st.session_state.get("modules", {})
+        mode = "llm" if st.session_state.get("use_llm") else "template"
+        findings = st.session_state.get("findings", {}).get(item.rsid, {}).get("findings")
+        report = build_report(
+            item,
+            cached_summary(item, mode),
+            results.get((item.rsid, "ripple")),
+            results.get((item.rsid, "forge")),
+            findings,
+            st.session_state.get(notes_key, ""),
+        )
+        right.download_button(
+            "Download full report (.md)", report, file_name=f"{item.rsid}-variant-atlas.md", mime="text/markdown",
+            on_click="ignore", key=f"report-{item.rsid}",
+        )
 
 
 def last_retrieved(item: Gathered) -> str:
@@ -416,6 +466,7 @@ def render_observatory(item: Gathered) -> None:
             "Allele count / allele number, as gnomAD returned them. Highlighted: the groups the brief names. "
             "Grey: fewer than 1000 alleles, so not compared."
         )
+    render_findings(item)
     st.markdown("**Papers**")
     links = paper_links(item)
     if links:
@@ -446,13 +497,51 @@ def cached_summary(item: Gathered, mode: str):
     return store[key]
 
 
+def render_findings(item: Gathered) -> None:
+    store = st.session_state.setdefault("findings", {})
+    client = LLMClient.from_env()
+    st.markdown("**Findings from paper abstracts**")
+    found = store.get(item.rsid)
+    if found is None and item.findings:
+        found = {"findings": [vars(f) for f in item.findings], "rejected": [], "writer": "cached"}
+    if found is None:
+        st.caption("The LLM reads up to five abstracts and extracts findings about this SNP; each must quote the abstract verbatim.")
+        if st.button("Extract findings", key=f"findings-{item.rsid}", disabled=client is None):
+            with st.spinner("Reading abstracts…"):
+                try:
+                    found = extract_findings(
+                        item, client.for_forge(), module_cache(item), offline=bool(st.session_state.get("offline"))
+                    )
+                except Exception as exc:
+                    found = {"findings": [], "rejected": [], "writer": "", "note": f"Failed: {exc}"}
+            store[item.rsid] = found
+            item.findings = [Finding(**f) for f in found.get("findings", [])]
+            st.session_state.get("summaries", {}).clear()
+            st.session_state.get("modules", {}).pop((item.rsid, "forge"), None)
+            st.rerun()
+        if client is None:
+            st.caption("Connect an LLM (NEBIUS_API_KEY) to extract findings.")
+        return
+    if found.get("note"):
+        st.caption(found["note"])
+    for f in found.get("findings", []):
+        st.markdown(f'- {f["claim"]} (PMID:{f["pmid"]})  \n  > "{f["quote"]}"')
+    if found.get("findings"):
+        st.caption("LLM-extracted, verified: each quote appears verbatim in the abstract and every number in the claim appears in the quote. These now feed the summary and the Forge.")
+    for r in found.get("rejected", []):
+        st.caption(f"Rejected: {r['claim']} ({r['reason']})")
+
+
 def render_ripple(item: Gathered) -> None:
     results = st.session_state.setdefault("modules", {})
     key = (item.rsid, "ripple")
     if key not in results:
         st.caption("Molecular context and what a mechanistic analysis should examine for this kind of variant.")
+        error = st.session_state.get("module_errors", {}).get(key)
+        if error:
+            st.error(f"Molecular Ripple failed: {error}")
         if st.button("Run Molecular Ripple", key=f"run-ripple-{item.rsid}", type="primary"):
-            results[key] = ripple(item)
+            run_module(item, "ripple", lambda: ripple_cached(item, module_cache(item)))
             st.rerun()
         return
     found = results[key]
@@ -469,6 +558,13 @@ def render_ripple(item: Gathered) -> None:
         "observed: reported by a source. predicted: a computational score. unknown: not answered by the evidence. "
         "Predictions are never drawn as established links."
     )
+    st.markdown("**Evidence graph**")
+    forge_result = results.get((item.rsid, "forge"))
+    try:
+        st.graphviz_chart(evidence_dot(item, forge_result), width="stretch")
+    except Exception as exc:
+        st.caption(f"Graph unavailable: {exc}")
+    st.caption("Solid green: observed. Dashed violet: predicted. Dotted grey: Hypothesis Forge hypotheses (run the Forge to add them).")
 
 
 def render_forge(item: Gathered) -> None:
@@ -485,12 +581,15 @@ def render_forge(item: Gathered) -> None:
         if client is not None and forge_runs_left() == 0:
             st.caption("This session has used its AI hypothesis runs; stage 1 and cached results still work.")
             client = None
+        error = st.session_state.get("module_errors", {}).get(key)
+        if error:
+            st.error(f"Hypothesis Forge failed: {error}")
         if st.button("Run Hypothesis Forge", key=f"run-forge-{item.rsid}", type="primary"):
             with st.spinner("Forging hypotheses…" if client else "Running stage 1…"):
-                found = forge(item, client=client, cache_dir=module_cache(item))
-            if found.writer.startswith("llm:") and "(cached)" not in found.writer:
+                run_module(item, "forge", lambda: forge(item, client=client, cache_dir=module_cache(item)))
+            found = results.get(key)
+            if found is not None and found.writer.startswith("llm:") and "(cached)" not in found.writer:
                 st.session_state.forge_llm_runs = st.session_state.get("forge_llm_runs", 0) + 1
-            results[key] = found
             st.rerun()
         return
     found = results[key]
@@ -518,8 +617,10 @@ def render_forge(item: Gathered) -> None:
                 st.markdown(f"**{hyp.title}**")
                 st.caption("Hypothesis, not an established mechanism.")
                 st.markdown(hyp.mechanism)
-                st.markdown("*Supported by*")
+                st.markdown("*Evidence for*")
                 st.markdown("\n".join(f"- {claim['rendered']}" for claim in hyp.support))
+                st.markdown("*Evidence against*")
+                st.markdown("\n".join(f"- {claim['rendered']}" for claim in hyp.against) or "- none in the retrieved facts")
                 if hyp.gaps:
                     st.markdown("*Missing evidence*")
                     st.markdown("\n".join(f"- {gap}" for gap in hyp.gaps))
@@ -532,15 +633,36 @@ def render_forge(item: Gathered) -> None:
     if found.ranking:
         st.markdown("**Experiments, ranked**")
         st.dataframe(
-            pd.DataFrame(found.ranking)[["rank", "experiment", "tests", "consistency", "support", "feasibility", "open_gaps"]],
+            pd.DataFrame(found.ranking)[["rank", "experiment", "tests", "consistency", "separates", "support", "feasibility", "open_gaps"]],
             hide_index=True,
         )
         st.caption(
-            "Ranked by consistency with the facts, then number of fact-checked supporting statements, then feasibility, "
-            "then evidence gaps addressed. No model-assigned probabilities."
+            "Ranked by consistency with the facts, then how many other hypotheses the result would tell apart, then net "
+            "support (evidence for minus against), then feasibility, then evidence gaps addressed. No model-assigned probabilities."
         )
     if found.hypotheses or found.writer != "rules":
         st.caption(f"Hypotheses written by {found.writer}. Supporting statements passed the same fact check as the summary.")
+    if found.hypotheses and client is not None:
+        with st.expander("Steer the Forge: reject hypotheses or add your constraints"):
+            rejected = [
+                hyp.title for number, hyp in enumerate(found.hypotheses, 1)
+                if st.checkbox(f"Reject H{number}: {hyp.title}", key=f"reject-{item.rsid}-{number}")
+            ]
+            notes = st.text_area(
+                "Constraints or resources (e.g. 'no animal work', 'we have intestinal organoids', 'computational only')",
+                key=f"steer-{item.rsid}",
+            )
+            if st.button("Re-forge with my input", key=f"reforge-{item.rsid}") and (rejected or notes.strip()):
+                if forge_runs_left() == 0:
+                    st.warning("This session has used its AI hypothesis runs.")
+                else:
+                    with st.spinner("Re-forging…"):
+                        run_module(
+                            item, "forge",
+                            lambda: forge(item, client=client, cache_dir=module_cache(item), steer={"rejected": rejected, "notes": notes}),
+                        )
+                    st.session_state.forge_llm_runs = st.session_state.get("forge_llm_runs", 0) + 1
+                    st.rerun()
 
 
 def render_populations(table: PopulationTable) -> None:

@@ -89,7 +89,9 @@ Propose 2 or 3 COMPETING, biologically plausible hypotheses that could explain t
 Rules:
 - Every item in "support" must be a statement that is directly true from the facts, with the fact ids it uses. Copy numbers exactly from the facts you cite.
 - Mechanisms may go beyond the facts, but they are hypotheses: say "may" or "could", never state them as established.
+- "against" lists statements directly true from the facts that argue against this hypothesis, with fact ids (empty if none).
 - "gaps" lists evidence that is missing for this hypothesis.
+- "separates" names the other hypotheses (by title) that the experiment's result would distinguish this one from.
 - "discriminating_observation" is the observation that would support this hypothesis over the others.
 - "experiment" is one concrete experiment or analysis to make that observation.
 - "feasibility" is "high" (public data or a standard computational analysis), "medium" (a standard lab assay), or "low" (a new cohort, animal model, or large study).
@@ -108,9 +110,11 @@ Reply with only this JSON object:
    {"title": "short name",
     "mechanism": "one or two sentences",
     "support": [{"text": "statement from the facts", "facts": ["F1"]}],
+    "against": [{"text": "statement from the facts that argues against it", "facts": ["F2"]}],
     "gaps": ["..."],
     "discriminating_observation": "...",
     "experiment": "...",
+    "separates": ["titles of the other hypotheses this experiment can rule in or out"],
     "feasibility": "high|medium|low",
     "consistency": "consistent|partly|contradicted",
     "background": ["..."]}
@@ -144,6 +148,8 @@ class Hypothesis:
     rejected_support: list[dict] = field(default_factory=list)
     consistency: str = "consistent"
     background: list[str] = field(default_factory=list)
+    against: list[dict] = field(default_factory=list)
+    separates: list[str] = field(default_factory=list)
 
 
 @dataclass
@@ -360,7 +366,16 @@ def _well_steps(plan) -> list[str]:
 # ---------------------------------------------------------------- stages 2 and 3
 
 
-def forge(item, *, use_llm: bool = True, client=None, cache_dir=None, refresh: bool = False) -> ForgeResult:
+def forge(
+    item,
+    *,
+    use_llm: bool = True,
+    client=None,
+    cache_dir=None,
+    refresh: bool = False,
+    steer: dict | None = None,
+) -> ForgeResult:
+    """steer = {"rejected": [titles], "notes": "user constraints"} re-runs the LLM with the user's direction."""
     found, facts = triage(item)
     result = ForgeResult(item.rsid, found, facts)
     if not found.wants_hypotheses:
@@ -377,7 +392,16 @@ def forge(item, *, use_llm: bool = True, client=None, cache_dir=None, refresh: b
     forge_client = base.for_forge() if base is not None and hasattr(base, "for_forge") else base
     block = facts_block(facts)
     model = getattr(forge_client, "model", "") if forge_client is not None else ""
-    key = result_key("forge", model, block + found.open_problem)
+    steer_text = ""
+    if steer and (steer.get("rejected") or (steer.get("notes") or "").strip()):
+        rejected = [str(t) for t in steer.get("rejected") or []]
+        notes = (steer.get("notes") or "").strip()
+        steer_text = (
+            ("\nThe user rejected these hypotheses; do not propose them or close variants again: " + "; ".join(rejected) if rejected else "")
+            + (f"\nUser constraints and resources (respect them when choosing experiments): {notes}" if notes else "")
+        )
+        refresh = True
+    key = result_key("forge", model, block + found.open_problem + steer_text)
     if not refresh:
         stored = load_result(cache_dir, item.rsid, "forge", key) if forge_client is not None else _any_cached(cache_dir, item.rsid, block + found.open_problem)
         if stored is not None:
@@ -388,7 +412,7 @@ def forge(item, *, use_llm: bool = True, client=None, cache_dir=None, refresh: b
     user = (
         f"Variant: {item.rsid}\nCategory: {found.category}{' (exploratory)' if found.exploratory else ''}\n"
         f"Open problem: {found.open_problem}\n\n"
-        f"Facts:\n{block}\n\nReply with the JSON object."
+        f"Facts:\n{block}\n{steer_text}\n\nReply with the JSON object."
     )
     try:
         raw = parse_json(forge_client.chat(FORGE_PROMPT, user, json_mode=True, max_tokens=4000))
@@ -398,6 +422,7 @@ def forge(item, *, use_llm: bool = True, client=None, cache_dir=None, refresh: b
     validated = validate(raw, facts)
     validated["writer"] = f"llm:{forge_client.model}"
     validated["facts_hash"] = _hash(block + found.open_problem)
+    validated["steer"] = steer or {}
     stored = save_result(cache_dir, item.rsid, "forge", key, validated)
     return _from_stored(result, stored, cached=False)
 
@@ -424,6 +449,17 @@ def validate(raw: dict, facts: list[Fact]) -> dict:
                 dropped.append({"text": claim.get("text", ""), "reason": rejected[0][1]})
         if not kept_support:
             continue
+        kept_against = []
+        for claim in item.get("against") or []:
+            if not isinstance(claim, dict):
+                continue
+            ids = [str(x).strip() for x in claim.get("facts") or [] if str(x).strip()]
+            if not ids:
+                continue
+            sentence = f"{str(claim.get('text', '')).strip().rstrip('.')} [{', '.join(ids)}]."
+            ok, _ = check([sentence], facts)
+            if ok:
+                kept_against.append({"text": claim.get("text", ""), "facts": ids, "rendered": render(ok, facts)})
         feasibility = str(item.get("feasibility", "medium")).lower()
         if feasibility not in FEASIBILITY_SCORE:
             feasibility = "medium"
@@ -442,6 +478,8 @@ def validate(raw: dict, facts: list[Fact]) -> dict:
                 "feasibility": feasibility,
                 "rejected_support": dropped,
                 "consistency": consistency,
+                "against": kept_against,
+                "separates": [str(t) for t in item.get("separates") or []][:3],
                 "background": [
                     scrub(b) for b in (item.get("background") or [])[:3] if b and not re.search(r"\d", str(b))
                 ],
@@ -458,9 +496,10 @@ def rank(hypotheses: list[dict]) -> list[dict]:
     """Order experiments by visible rules, most important first:
 
     1. consistency of the tested hypothesis with the facts (contradicted ones go last),
-    2. how many fact-checked statements support it,
-    3. feasibility of the experiment,
-    4. how many evidence gaps it would address.
+    2. separation: how many other hypotheses the experiment's result would tell apart,
+    3. net support: fact-checked statements for, minus statements against,
+    4. feasibility of the experiment,
+    5. how many evidence gaps it would address.
 
     Plausibility comes before ease, so an easy test of a weak idea does not rank first.
     """
@@ -469,17 +508,22 @@ def rank(hypotheses: list[dict]) -> list[dict]:
         if not hyp.get("experiment"):
             continue
         consistency = hyp.get("consistency", "consistent")
+        others = {h.get("title") for h in hypotheses if h is not hyp}
+        separates = len([t for t in hyp.get("separates") or [] if t in others]) or (1 if len(hypotheses) > 1 else 0)
+        net = len(hyp.get("support") or []) - len(hyp.get("against") or [])
         rows.append(
             {
                 "experiment": hyp["experiment"],
                 "tests": hyp["title"],
                 "consistency": consistency,
-                "support": len(hyp.get("support") or []),
+                "separates": separates,
+                "support": net,
                 "feasibility": hyp["feasibility"],
                 "open_gaps": len(hyp.get("gaps") or []),
                 "_key": (
                     -CONSISTENCY_SCORE.get(consistency, 1),
-                    -len(hyp.get("support") or []),
+                    -separates,
+                    -net,
                     -FEASIBILITY_SCORE[hyp["feasibility"]],
                     -len(hyp.get("gaps") or []),
                     index,
