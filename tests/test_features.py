@@ -276,7 +276,8 @@ class MotionTests(unittest.TestCase):
 
 
 class ReliabilityTests(unittest.TestCase):
-    def test_gwas_falls_back_to_phenotype_endpoint(self) -> None:
+    @mock.patch('snp_brief.sources.gwas_local.default_root', return_value=None)  # test the API path, not the local file
+    def test_gwas_falls_back_to_phenotype_endpoint(self, _no_local) -> None:
         from snp_brief import providers
 
         calls = []
@@ -298,7 +299,9 @@ class ReliabilityTests(unittest.TestCase):
         hits = providers.parse_gwas(payload, "rs12979860").hits
         self.assertEqual([(h.trait, h.risk_allele, h.pmid) for h in hits], [("Hepatitis C clearance", "C", "19684573")])
 
-    def test_errors_are_one_line(self) -> None:
+    @mock.patch('snp_brief.sources.gwas_local.default_root', return_value=None)  # test the API path, not the local file
+
+    def test_errors_are_one_line(self, _no_local) -> None:
         from snp_brief import providers
 
         with mock.patch.object(providers, "request_json", side_effect=RuntimeError("HTTP 500 for u: <!doctype html>\n<html>")):

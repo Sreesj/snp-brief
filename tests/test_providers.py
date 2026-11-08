@@ -125,7 +125,9 @@ class ParserTests(unittest.TestCase):
         hits = parse_gwas(paged).hits
         self.assertEqual([h.trait for h in hits], ["LDL cholesterol", "asthma"])
 
-    def test_fetch_gwas_uses_v2_only_and_stops_on_short_page(self) -> None:
+    @mock.patch('snp_brief.sources.gwas_local.default_root', return_value=None)  # test the API path, not the local file
+
+    def test_fetch_gwas_uses_v2_only_and_stops_on_short_page(self, _no_local) -> None:
         from snp_brief import providers
 
         calls = []
@@ -158,7 +160,9 @@ class ParserTests(unittest.TestCase):
         self.assertNotIn("CADD", seen[1])
         self.assertEqual(parse_vep(out).canonical_gene, "DEFB125")
 
-    def test_gwas_falls_back_to_ensembl_when_ebi_fails(self) -> None:
+    @mock.patch('snp_brief.sources.gwas_local.default_root', return_value=None)  # test the API path, not the local file
+
+    def test_gwas_falls_back_to_ensembl_when_ebi_fails(self, _no_local) -> None:
         from snp_brief import providers
 
         def fake(url, params=None, timeout=0, attempts=3):

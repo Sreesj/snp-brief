@@ -1,0 +1,43 @@
+name: keep-awake
+
+# Streamlit Community Cloud puts apps to sleep after a period without visitors.
+# Every 6 hours this opens the demo in a headless browser and presses the wake button if it is asleep.
+on:
+  schedule:
+    - cron: "17 */6 * * *"
+  workflow_dispatch:
+
+jobs:
+  wake:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Open the app and wake it if needed
+        env:
+          APP_URL: ${{ vars.APP_URL || 'https://variant-atlas.streamlit.app' }}
+        run: |
+          npm init -y >/dev/null
+          npm install playwright@1.48.2 >/dev/null
+          npx playwright install --with-deps chromium >/dev/null
+          cat > wake.js <<'JS'
+          const { chromium } = require('playwright');
+          (async () => {
+            const browser = await chromium.launch();
+            const page = await browser.newPage();
+            await page.goto(process.env.APP_URL, { waitUntil: 'domcontentloaded', timeout: 120000 });
+            await page.waitForTimeout(15000);
+            const wake = page.getByRole('button', { name: /get this app back up/i });
+            if (await wake.count()) {
+              await wake.first().click();
+              console.log('App was asleep: wake button pressed');
+              await page.waitForTimeout(90000);
+            } else {
+              console.log('App is awake');
+            }
+            await browser.close();
+          })();
+          JS
+          node wake.js
