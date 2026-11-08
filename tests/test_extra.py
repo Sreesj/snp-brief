@@ -175,3 +175,50 @@ class AcmgConflictTests(unittest.TestCase):
         self.assertIn("BS1", codes)
         self.assertEqual(codes["ClinVar"].strength, "Check first")
         self.assertIn("Pathogenic", codes["ClinVar"].evidence)
+
+
+class IntegrityTests(unittest.TestCase):
+    def test_cached_variants_pass_and_bad_values_fail(self) -> None:
+        import contextlib, io, os
+        from unittest import mock
+
+        from snp_brief.integrity import check
+        from snp_brief.pipeline import gather
+        from snp_brief.summary import summarize
+
+        cache = Path(__file__).resolve().parents[1] / "tests" / "cache"
+        with mock.patch.dict(os.environ, {"SNP_BRIEF_EXTRAS": "on"}), contextlib.redirect_stderr(io.StringIO()):
+            for rsid in ("rs6025", "rs1801133", "rs334"):
+                item = gather(rsid, cache_dir=cache, refresh=False, offline=True)
+                report = check(item, summarize(item))
+                self.assertEqual(report.failures, [], rsid)
+                self.assertIn("gnomAD counts match the source", report.passed)
+            item = gather("rs6025", cache_dir=cache, refresh=False, offline=True)
+        item.variants[0].callsets[0].ac += 1  # a parser bug
+        item.scores = extra.PredictionScores(True, revel=1.7)
+        item.regulome = extra.RegulomeResult(True, ranking="9z")
+        failures = " ".join(check(item).failures)
+        self.assertIn("but gnomAD returned", failures)
+        self.assertIn("REVEL 1.7 is outside 0 to 1", failures)
+        self.assertIn("RegulomeDB rank '9z'", failures)
+
+
+class PValueUnderflowTests(unittest.TestCase):
+    def test_tiny_p_value_text_is_valid(self) -> None:
+        from snp_brief.integrity import check
+        from snp_brief.providers import GwasHit, GwasResult
+
+        item = item_with([("nfe", 1, 100000)])
+        item.rsid, item.db, item.records = "rs1", None, []
+        item.gwas = GwasResult(True, [GwasHit("C-reactive protein", 0.0, "1.00e-1420"), GwasHit("x", 2.0, "2")])
+        warnings = check(item).warnings
+        self.assertEqual(len(warnings), 1)
+        self.assertIn("p-value 2", warnings[0])
+
+
+class PValueOrderTests(unittest.TestCase):
+    def test_underflowed_p_values_sort_by_their_text(self) -> None:
+        from snp_brief.providers import GwasHit, _p_order
+
+        hits = [GwasHit("a", 0.0, "1.00e-1420"), GwasHit("b", 0.0, "2.00e-9237"), GwasHit("c", 1e-8, "1e-8")]
+        self.assertEqual([h.trait for h in sorted(hits, key=_p_order)], ["b", "a", "c"])

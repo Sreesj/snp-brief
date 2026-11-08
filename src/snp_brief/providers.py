@@ -287,6 +287,19 @@ def _short_error(exc: Exception) -> str:
     return (text[:cut].rstrip(": ") if cut > 0 else text)[:160]
 
 
+def _p_order(hit) -> float:
+    """log10 of the p-value, read from the text when the float underflows (e.g. 2e-9237 -> -9236.7)."""
+    import math
+    import re
+
+    match = re.fullmatch(r"\s*(\d+(?:\.\d+)?)[eE]([-+]?\d+)\s*", hit.p_text or "")
+    if match and float(match.group(1)) > 0:
+        return math.log10(float(match.group(1))) + int(match.group(2))
+    if hit.p_value is not None and hit.p_value > 0:
+        return math.log10(hit.p_value)
+    return 0.0
+
+
 def _is_gwas(row) -> bool:
     return isinstance(row, dict) and "gwas" in str(row.get("source") or "").lower()
 
@@ -304,7 +317,7 @@ def parse_gwas(payload: dict | None, rsid: str = "") -> GwasResult:
             hit = _ensembl_gwas_hit(row)
             if hit is not None:
                 hits.append(hit)
-        hits.sort(key=lambda h: (h.p_value if h.p_value is not None else 1.0))
+        hits.sort(key=_p_order)
         return GwasResult(True, _dedupe(hits))
     bodies = body.get("pages") if isinstance(body, dict) and "pages" in body else [body]
     for page in bodies:
@@ -312,7 +325,7 @@ def parse_gwas(payload: dict | None, rsid: str = "") -> GwasResult:
             hit = _gwas_hit(row)
             if hit is not None:
                 hits.append(hit)
-    hits.sort(key=lambda h: (h.p_value if h.p_value is not None else 1.0))
+    hits.sort(key=_p_order)
     return GwasResult(True, hits)
 
 

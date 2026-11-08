@@ -49,12 +49,15 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--regenerate", action="store_true", help="ignore cached LLM summaries and Forge results")
     parser.add_argument("--probe", metavar="RSID", help="call every provider live for one rsID and print status, time and response shape")
     parser.add_argument("--list-models", action="store_true", help="list the models your LLM provider offers, then exit")
+    parser.add_argument("--check", nargs="+", metavar="RSID", help="load these rsIDs (cache first, live for the rest) and run the data checks")
     parser.add_argument("--build-gwas", type=Path, metavar="FILE", help="slim the GWAS Catalog download (.tsv or .zip) into data/gwas_catalog.tsv.gz")
     args = parser.parse_args(argv)
     if args.list_models:
         return list_models()
     if args.probe:
         return probe(args.probe)
+    if args.check:
+        return run_checks(args.check, args.offline)
     if args.build_gwas:
         from snp_brief.sources import gwas_local
 
@@ -156,6 +159,27 @@ def list_models() -> int:
     for model in models:
         print(model)
     return 0
+
+
+def run_checks(ids: list[str], offline: bool) -> int:
+    """Data checks on each variant as the app would load it. Exit code 1 if any value fails."""
+    from snp_brief.integrity import check
+    from snp_brief.pipeline import default_user_cache, load_variant
+    from snp_brief.summary import summarize
+
+    failed = 0
+    for rsid in ids:
+        item = load_variant(rsid, repo_cache=Path("cache"), user_cache=default_user_cache(), offline=offline, budget=None)
+        report = check(item, summarize(item))
+        live = sorted(k for k, c in item.calls.items() if c.origin == "live")
+        print(f"{item.rsid}: {len(report.passed)} passed, {len(report.warnings)} warnings, {len(report.failures)} failures"
+              + (f" (live: {', '.join(live)})" if live else " (all from cache)"))
+        for line in report.failures:
+            print(f"   FAIL  {line}")
+        for line in report.warnings:
+            print(f"   WARN  {line}")
+        failed += bool(report.failures)
+    return 1 if failed else 0
 
 
 def probe(rsid: str) -> int:

@@ -11,6 +11,7 @@ import hmac
 import html
 import os
 import re
+import sys
 from dataclasses import dataclass
 from pathlib import Path
 
@@ -20,6 +21,7 @@ import streamlit.components.v1 as components
 
 from snp_brief.demo import motion, theme
 from snp_brief.interpret import NOT_COMPUTED, acmg_draft, genotype_rates
+from snp_brief.integrity import check as integrity_check
 from snp_brief.demo.view import (
     PopulationTable,
     briefs_text,
@@ -111,7 +113,7 @@ def forge_runs_left() -> int:
 
 def main() -> None:
     st.set_page_config(page_title="Variant Atlas", page_icon=":material/genetics:", layout="wide")
-    st.html(theme.FONTS + theme.CSS + theme.EXTRA_CSS + theme.METHOD_CSS)
+    st.html(theme.FONTS + theme.CSS + theme.EXTRA_CSS + theme.METHOD_CSS + theme.CHECKS_CSS)
     load_secrets()
     if not password_ok():
         return
@@ -408,6 +410,10 @@ def render_observatory(item: Gathered, plan=None) -> None:
     mode = "llm" if st.session_state.get("use_llm") else "template"
     summary = cached_summary(item, mode)
     st.html(theme.section("Summary") + theme.summary_html(summary.sentences, summary.facts))
+    try:
+        st.html(theme.checks_html(integrity_check(item, summary)))
+    except Exception as exc:  # a broken check must never hide the data
+        print(f"{item.rsid} integrity check crashed: {exc}", file=sys.stderr)
     st.html(theme.method("summary") + theme.method("frequency") + theme.method("reconcile"))
     tables = unresolved_populations(item)
     if tables:

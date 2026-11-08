@@ -624,3 +624,40 @@ METHOD_CSS = """
 .va-method li { margin: .25rem 0; }
 </style>
 """
+
+
+def checks_html(report) -> str:
+    """Result of the integrity checks run on this variant's data (cached or live)."""
+    n = len(report.passed)
+    if report.failures:
+        state, label = "fail", f"{len(report.failures)} value{'s' if len(report.failures) != 1 else ''} failed a data check"
+    elif report.warnings:
+        state, label = "warn", f"{n} data checks passed · {len(report.warnings)} to look at"
+    else:
+        state, label = "pass", f"All {n} data checks passed"
+    rows = "".join(f'<li class="f">{e(x)}</li>' for x in report.failures)
+    rows += "".join(f'<li class="w">{e(x)}</li>' for x in report.warnings)
+    rows += "".join(f'<li class="p">{e(x)}</li>' for x in report.passed)
+    return (
+        f'<details class="va-checks {state}"><summary><i></i>{e(label)}</summary>'
+        f'<ul>{rows}</ul><div class="va-acmg-note">Every value is re-derived from the raw source responses or tested '
+        "against the range it can take, each time the variant loads.</div></details>"
+    )
+
+
+CHECKS_CSS = """
+<style>
+.va-checks { margin: .2rem 0 1rem 0; border: 1px solid var(--va-border); border-radius: 10px; background: rgba(16,17,19,.9); }
+.va-checks summary { cursor: pointer; list-style: none; padding: .55rem .85rem; font-size: .82rem; color: #d0d3d8; display: flex; align-items: center; gap: .55rem; }
+.va-checks summary::-webkit-details-marker { display: none; }
+.va-checks summary i { width: 8px; height: 8px; border-radius: 50%; background: #4cc38a; }
+.va-checks.warn summary i { background: #f0b73c; } .va-checks.fail summary i { background: #f2555a; }
+.va-checks.fail { border-color: rgba(242,85,90,.45); }
+.va-checks ul { margin: .2rem 1rem .4rem 1rem; padding: 0; list-style: none; font-size: .84rem; line-height: 1.5; }
+.va-checks li { padding: .2rem 0 .2rem 1.3rem; position: relative; color: #c9cdd3; }
+.va-checks li::before { position: absolute; left: 0; font-family: "JetBrains Mono", monospace; }
+.va-checks li.p::before { content: "✓"; color: #4cc38a; } .va-checks li.w::before { content: "!"; color: #f0b73c; }
+.va-checks li.f::before { content: "×"; color: #f2555a; } .va-checks li.f { color: #ffb3b5; }
+.va-checks .va-acmg-note { margin: 0 1rem .7rem 1rem; }
+</style>
+"""
