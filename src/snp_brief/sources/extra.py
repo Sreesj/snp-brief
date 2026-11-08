@@ -588,6 +588,9 @@ def _tokens(text: str) -> set[str]:
     return {w for w in _re.findall(r"[a-z]+", text.lower()) if len(w) > 2 and w not in _STOP}
 
 
+CLEAR_LFC = 0.005  # |log2| below this (about 0.35%) is treated as no clear predicted change
+
+
 @dataclass
 class Concordance:
     gene: str
@@ -596,6 +599,10 @@ class Concordance:
     predicted: float
     matched_track: str  # the Borzoi tissue used, or "all tissues"
     agrees: bool
+
+    @property
+    def clear(self) -> bool:
+        return abs(self.predicted) >= CLEAR_LFC
 
 
 def concordance(eqtls, borzoi: BorzoiResult) -> list[Concordance]:
@@ -618,7 +625,5 @@ def concordance(eqtls, borzoi: BorzoiResult) -> list[Concordance]:
             if overlap > score:
                 best, score = (track, value), overlap
         track, value = best if best else ("all tissues", gene.mean_lfc)
-        if abs(value) < 1e-4:
-            continue  # no predicted change: neither agrees nor disagrees
         out.append(Concordance(eq.gene, eq.tissue, eq.nes, value, track, (value > 0) == (eq.nes > 0)))
     return out

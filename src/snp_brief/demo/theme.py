@@ -681,11 +681,12 @@ def borzoi_html(item) -> str:
         for g in allele.genes[:6]:
             direction = "higher" if g.mean_lfc > 0 else "lower"
             pct = (2 ** abs(g.mean_lfc) - 1) * 100
+            change_text = (f"{pct:.2g}% {direction} expression (log2 {g.mean_lfc:+.3f})" if abs(g.mean_lfc) >= 0.005
+                           else f"no clear change (log2 {g.mean_lfc:+.4f})")
             top_tissue = max(g.tissues.items(), key=lambda kv: abs(kv[1]))[0] if g.tissues else ""
             rows.append(
                 f'<div class="va-bz-row"><b>{e(g.gene)}</b><span class="va-bz-bar {"up" if g.mean_lfc > 0 else "down"}" '
-                f'style="width:{min(100, abs(g.mean_lfc) * 400):.0f}%"></span><span>{pct:.2g}% {direction} expression '
-                f'(log2 {g.mean_lfc:+.3f})</span><span class="va-fact-sub">strongest in {e(top_tissue)}; {g.distance / 1000:.0f} kb away</span></div>'
+                f'style="width:{min(100, abs(g.mean_lfc) * 400):.0f}%"></span><span>{change_text}</span><span class="va-fact-sub">strongest in {e(top_tissue)}; {g.distance / 1000:.0f} kb away</span></div>'
             )
         local = ", ".join(f'{e(c["assay"])} {e(c["label"])} ({c["lfc"]:+.2f})' for c in allele.chromatin[:4])
         parts.append(
@@ -696,16 +697,24 @@ def borzoi_html(item) -> str:
         )
     conc = concordance(getattr(item, "eqtls", None), bz)
     if conc:
-        agree = sum(c.agrees for c in conc)
+        clear = [c for c in conc if c.clear]
+        faint = len(conc) - len(clear)
+        agree = sum(c.agrees for c in clear)
         rows = "".join(
             f'<div class="va-bz-conc"><span class="{"ok" if c.agrees else "no"}">{"agrees" if c.agrees else "disagrees"}</span>'
             f'<span><b>{e(c.gene)}</b> in {e(c.tissue)}: GTEx measured {"higher" if c.gtex_nes > 0 else "lower"} expression '
             f'(NES {c.gtex_nes:+.2f}); Borzoi predicts {"higher" if c.predicted > 0 else "lower"} (log2 {c.predicted:+.3f}, {e(c.matched_track)})</span></div>'
-            for c in conc[:8]
+            for c in clear[:8]
         )
-        parts.append(
-            f'<div class="va-card"><div class="va-fact-label">Prediction vs measurement · {agree} of {len(conc)} GTEx eQTLs agree in direction</div>{rows}</div>'
+        head = (f"{agree} of {len(clear)} clear predictions agree with GTEx in direction" if clear
+                else "No clear Borzoi prediction for this variant's GTEx genes")
+        tail = (
+            f'<div class="va-pgx-sum" style="margin-top:.5rem">For {faint} other GTEx eQTL{"s" if faint != 1 else ""}, Borzoi predicts '
+            "no clear change (under 0.35%). That usually means this SNP is inherited together with the variant that changes "
+            "expression rather than causing it; those cases are not counted as agreeing or disagreeing.</div>"
+            if faint else ""
         )
+        parts.append(f'<div class="va-card"><div class="va-fact-label">Prediction vs measurement · {e(head)}</div>{rows}{tail}</div>')
     return "".join(parts)
 
 
@@ -718,5 +727,59 @@ BORZOI_CSS = """
 .va-bz-conc { display: grid; grid-template-columns: 82px 1fr; gap: .8rem; padding: .45rem 0; font-size: .86rem; color: #c9cdd3; border-bottom: 1px solid var(--va-border); }
 .va-bz-conc span.ok { color: #6fdca5; } .va-bz-conc span.no { color: #ff8a8e; }
 .va-bz-conc b { color: var(--va-text); }
+</style>
+"""
+
+
+def zygosity_html(rows, inheritance_loaded: bool) -> str:
+    """First thing on the page: each allele, its own classification, and what one vs two copies mean."""
+    if not rows:
+        return ""
+    cards = []
+    for z in rows:
+        label = f"{e(z.allele)}" + (f" · {e(z.change)}" if z.change else "")
+        cls = z.classification or "No ClinVar classification for this allele"
+        kind = classification_kind(z.classification) if z.classification else "neutral"
+        cond_rows = []
+        for c in z.conditions[:4]:
+            mode = " / ".join(c.modes) if c.modes else "inheritance not stated"
+            src = f'<span class="va-src">{e(c.mode_source)}</span>' if c.mode_source else ""
+            copies = (
+                f'<div class="va-zy-copies"><span><i>1 copy</i>{e(c.one_copy)}</span><span><i>2 copies</i>{e(c.two_copies)}</span></div>'
+                if c.modes else ""
+            )
+            cond_rows.append(f'<div class="va-zy-cond"><b>{e(c.name)}</b><span class="va-zy-mode">{e(mode)}</span>{src}{copies}</div>')
+        counts = ""
+        if z.carriers is not None:
+            hom = f"{z.homozygotes:,}" if z.homozygotes is not None else "not in saved data"
+            counts = (f'<div class="va-zy-counts">gnomAD ({e(z.callset)}): {z.carriers:,} copies observed · '
+                      f'people with two copies: {e(hom)}' + (f" · hemizygous: {z.hemizygotes:,}" if z.hemizygotes else "") + "</div>")
+        flags = "".join(f'<div class="va-zy-flag">{e(f)}</div>' for f in z.flags)
+        cards.append(
+            f'<div class="va-zy-card"><div class="va-zy-head"><span class="va-zy-allele">{label}</span>'
+            f'<span class="va-chip {kind}">{e(cls[:80])}</span></div>{"".join(cond_rows)}{counts}{flags}</div>'
+        )
+    note = "" if inheritance_loaded else (
+        '<div class="va-acmg-note">Inheritance data (HPO) is not loaded, so modes come only from condition names.</div>'
+    )
+    return f'<div class="va-zy">{"".join(cards)}{note}</div>'
+
+
+ZYGOSITY_CSS = """
+<style>
+.va-zy { display: grid; gap: .6rem; margin: 0 0 1rem 0; }
+.va-zy-card { background: var(--va-surface); border: 1px solid var(--va-border); border-radius: 12px; padding: .8rem 1rem; }
+.va-zy-head { display: flex; align-items: center; gap: .7rem; flex-wrap: wrap; margin-bottom: .3rem; }
+.va-zy-allele { font-family: "JetBrains Mono", monospace; font-weight: 600; color: var(--va-text); font-size: .95rem; }
+.va-zy-cond { padding: .5rem 0; border-top: 1px solid var(--va-border); color: #e6e8eb; font-size: .88rem; }
+.va-zy-cond b { font-weight: 600; margin-right: .6rem; }
+.va-zy-mode { color: var(--va-accent-2); font-size: .82rem; margin-right: .5rem; }
+.va-zy-copies { display: grid; grid-template-columns: 1fr 1fr; gap: .6rem; margin-top: .35rem; }
+.va-zy-copies span { background: rgba(255,255,255,.03); border: 1px solid var(--va-border); border-radius: 8px; padding: .35rem .55rem; color: #c9cdd3; font-size: .83rem; }
+.va-zy-copies i { display: block; font-style: normal; font-size: .7rem; text-transform: uppercase; letter-spacing: .06em; color: var(--va-muted); }
+.va-zy-counts { color: var(--va-muted); font-size: .82rem; margin-top: .45rem; }
+.va-zy-flag { margin-top: .45rem; color: #f5c96a; font-size: .84rem; padding-left: 1.1rem; position: relative; }
+.va-zy-flag::before { content: "!"; position: absolute; left: .2rem; font-family: "JetBrains Mono", monospace; }
+@media (max-width: 700px) { .va-zy-copies { grid-template-columns: 1fr; } }
 </style>
 """

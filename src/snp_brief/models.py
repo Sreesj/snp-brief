@@ -79,6 +79,7 @@ class PopCount:
     id: str
     ac: int
     an: int
+    hom: int | None = None  # people with two copies (homozygotes); absent in older cached responses
 
 
 @dataclass
@@ -90,6 +91,8 @@ class CallSet:
     an: int | None
     af: float | None
     populations: list[PopCount] = field(default_factory=list)
+    hom: int | None = None  # homozygote count from gnomAD; None when not in the response
+    hemi: int | None = None  # hemizygote count (X/Y in males)
 
 
 @dataclass

@@ -48,8 +48,8 @@ query ($rsid: String!, $dataset: DatasetId!) {
     pos
     ref
     alt
-    exome { ac an af }
-    genome { ac an af }
+    exome { ac an af homozygote_count hemizygote_count }
+    genome { ac an af homozygote_count hemizygote_count }
   }
 }
 """
@@ -63,8 +63,8 @@ query ($variantId: String!, $dataset: DatasetId!) {
     pos
     ref
     alt
-    exome { ac an af }
-    genome { ac an af }
+    exome { ac an af homozygote_count hemizygote_count }
+    genome { ac an af homozygote_count hemizygote_count }
   }
 }
 """
@@ -74,7 +74,7 @@ _POPS = {
 query ($variantId: String!, $dataset: DatasetId!) {
   variant(variantId: $variantId, dataset: $dataset) {
     variantId
-    exome { populations { id ac an } }
+    exome { populations { id ac an homozygote_count } }
   }
 }
 """,
@@ -82,7 +82,7 @@ query ($variantId: String!, $dataset: DatasetId!) {
 query ($variantId: String!, $dataset: DatasetId!) {
   variant(variantId: $variantId, dataset: $dataset) {
     variantId
-    genome { populations { id ac an } }
+    genome { populations { id ac an homozygote_count } }
   }
 }
 """,
@@ -290,6 +290,8 @@ def _callset(block: dict | None, name: str) -> CallSet | None:
         an=block.get("an"),
         af=block.get("af"),
         populations=[],
+        hom=block.get("homozygote_count"),
+        hemi=block.get("hemizygote_count"),
     )
 
 
@@ -339,7 +341,7 @@ def _attach_populations(callsets: list[CallSet], populations: dict | None) -> No
             continue
         raw_pops = (((body.get("data") or {}).get("variant") or {}).get(side) or {}).get("populations") or []
         pops = [
-            PopCount(str(pop["id"]), int(pop["ac"]), int(pop["an"]))
+            PopCount(str(pop["id"]), int(pop["ac"]), int(pop["an"]), pop.get("homozygote_count"))
             for pop in raw_pops
             if pop.get("ac") is not None and pop.get("an") is not None
         ]

@@ -260,5 +260,58 @@ class BorzoiTests(unittest.TestCase):
                  Eqtl("IFNL4", "Whole Blood", 1e-5, -0.4, "chr19_39248147_C_T_b38"),
                  Eqtl("NOTHERE", "Liver", 1e-5, 0.4, "")]
         conc = extra.concordance(eqtls, bz)
-        self.assertEqual([(c.tissue, c.matched_track, c.agrees) for c in conc],
-                         [("Liver", "liver", True), ("Whole Blood", "Whole Blood", False)])
+        self.assertEqual([(c.tissue, c.matched_track, c.agrees, c.clear) for c in conc],
+                         [("Liver", "liver", True, True), ("Whole Blood", "Whole Blood", False, True)])
+        faint = extra.parse_borzoi(wrap({"alleles": [{"ref": "C", "alt": "T", "genes": [
+            {"gene": "IFNL4", "mean_lfc": 0.001, "tissues": {"liver": 0.002}}]}]}))
+        self.assertFalse(extra.concordance(eqtls[:1], faint)[0].clear)
+
+
+class ZygosityTests(unittest.TestCase):
+    def test_build_modes_and_copy_meaning(self) -> None:
+        import contextlib, io, os
+        from unittest import mock
+
+        from snp_brief import zygosity
+        from snp_brief.pipeline import gather
+        from snp_brief.summary import summarize
+
+        tmp = Path(tempfile.mkdtemp())
+        self.addCleanup(shutil.rmtree, tmp)
+        hpoa = tmp / "phenotype.hpoa"
+        hpoa.write_text(
+            "#description: test\n"
+            "database_id\tdisease_name\tqualifier\thpo_id\treference\tevidence\tonset\tfrequency\tsex\tmodifier\taspect\tbiocuration\n"
+            "OMIM:603903\tSickle cell anemia\t\tHP:0000007\tOMIM:603903\tIEA\t\t\t\t\tI\tx\n"
+            "OMIM:603903\tSickle cell anemia\t\tHP:0001903\tOMIM:603903\tIEA\t\t\t\t\tP\tx\n"
+            "OMIM:188050\tThrombophilia due to thrombin defect\t\tHP:0000006\tOMIM:188050\tIEA\t\t\t\t\tI\tx\n",
+            encoding="utf-8",
+        )
+        out, rows = zygosity.build(hpoa, tmp)
+        self.assertEqual(rows, 2)
+        cache = Path(__file__).resolve().parents[1] / "tests" / "cache"
+        zygosity._modes.cache_clear()
+        self.addCleanup(zygosity._modes.cache_clear)
+        with mock.patch.dict(os.environ, {"SNP_BRIEF_ROOT": str(tmp), "SNP_BRIEF_EXTRAS": "on"}), contextlib.redirect_stderr(io.StringIO()):
+            item = gather("rs334", cache_dir=cache, refresh=False, offline=True)
+            rows = zygosity.check(item)
+            main = next(z for z in rows if z.allele == "T>A")
+            sickle = next(c for c in main.conditions if c.modes)
+            self.assertEqual(sickle.modes, ["autosomal recessive"])
+            self.assertIn("carrier", sickle.one_copy)
+            self.assertIn("causes disease", sickle.two_copies)
+            self.assertEqual(main.change, "p.Glu7Val")
+            text = summarize(item).text
+        self.assertIn("For the T>A (p.Glu7Val) allele", text)
+        self.assertIn("one copy means carrier", text)
+        self.assertIn("T>G (p.Glu7Ala): Likely benign", text)
+
+    def test_flags(self) -> None:
+        from snp_brief.zygosity import AlleleZygosity, Condition, _flags
+
+        rec = AlleleZygosity("T>A", "", "Pathogenic", "", "", [Condition("x", [], ["autosomal recessive"], "HPO")], 100, 3)
+        self.assertIn("3 people with two copies", _flags(rec)[0])
+        dom = AlleleZygosity("C>T", "", "Pathogenic", "", "", [Condition("y", [], ["autosomal dominant"], "HPO")], 900, 40)
+        self.assertIn("dominant condition", _flags(dom)[0])
+        unknown = AlleleZygosity("C>T", "", "Pathogenic", "", "", [Condition("z", [], [], "")], 10, 0)
+        self.assertIn("not stated", _flags(unknown)[0])

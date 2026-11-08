@@ -76,6 +76,11 @@ class _Plan:
     low: tuple[str, str] | None = None
     conflict_pair: tuple[str, str] | None = None
     headline: str = ""
+    disease_allele: str = ""  # "T>A (p.Glu7Val)": the allele the ClinVar call belongs to
+    zygosity: str | None = None
+    zygosity_text: str = ""
+    other_alleles: str | None = None
+    other_alleles_text: str = ""
     conditions: list[str] = field(default_factory=list)
     unresolved_groups: list[str] = field(default_factory=list)
     other_labels: list[str] = field(default_factory=list)
@@ -322,6 +327,7 @@ def _plan(item) -> _Plan:
         _frequency_facts(plan, variant, add)
     if view is not None and view.records:
         _disease_facts(plan, view, add)
+        _zygosity_facts(plan, item, view, add)
     elif item.clinvar_retrieved:
         plan.no_significance = True
         plan.disease = add(f"ClinVar reports no clinical significance for {item.rsid}.", "ClinVar")
@@ -472,6 +478,9 @@ def _frequency_facts(plan: _Plan, variant: GnomadVariant, add) -> None:
 
 
 def _disease_facts(plan: _Plan, view: AlleleView, add) -> None:
+    change = next((c for c in (_change(r) for r in view.records) if c), "")
+    plan.disease_allele = f"{view.ref}>{view.alt}" + (f" ({change})" if change else "")
+    allele = f"For the {view.alt} allele ({plan.disease_allele}): "
     verdict = reconcile(view.records, _kept_traits)
     if verdict is None:
         # Aggregate only, e.g. "association" with LACTASE PERSISTENCE.
@@ -485,7 +494,7 @@ def _disease_facts(plan: _Plan, view: AlleleView, add) -> None:
         plan.headline = top.description
         plan.conditions = [_readable(t) for t in _kept_traits(top.traits)[:3]]
         plan.disease = add(
-            f"ClinVar classification: {top.description}"
+            allele + f"ClinVar classification: {top.description}"
             + (f", conditions {'; '.join(plan.conditions)}" if plan.conditions else "")
             + f" (ClinVar {record.accession}, {top.review_status}).",
             "ClinVar",
@@ -495,7 +504,7 @@ def _disease_facts(plan: _Plan, view: AlleleView, add) -> None:
         for label, group in verdict.tallies:
             plan.unresolved_groups.append(f"{len(group)} {label}")
         plan.disease = add(
-            f"ClinVar submissions at the highest review level present ({verdict.tier_review}) disagree: "
+            allele + f"ClinVar submissions at the highest review level present ({verdict.tier_review}) disagree: "
             + "; ".join(plan.unresolved_groups)
             + ".",
             "ClinVar",
@@ -504,7 +513,7 @@ def _disease_facts(plan: _Plan, view: AlleleView, add) -> None:
         plan.headline = verdict.headline
         plan.conditions = [_readable(t) for t in verdict.traits[:3]]
         plan.disease = add(
-            f"Best-reviewed ClinVar classification: {verdict.headline}"
+            allele + f"Best-reviewed ClinVar classification: {verdict.headline}"
             + (f", conditions {'; '.join(plan.conditions)}" if plan.conditions else "")
             + f" ({'; '.join(verdict.headline_cites)}"
             + (f"; {verdict.support}" if verdict.support else "")
@@ -525,6 +534,40 @@ def _disease_facts(plan: _Plan, view: AlleleView, add) -> None:
             f"{plan.dissent_count} lower-review ClinVar submissions disagree ({', '.join(labels)}).",
             "ClinVar",
         )
+
+
+def _zygosity_facts(plan: _Plan, item, view: AlleleView, add) -> None:
+    """Which copy number matters, for the allele ClinVar classifies; and what the other alleles are."""
+    from snp_brief.zygosity import check
+
+    try:
+        rows = check(item)
+    except Exception:
+        return
+    main = next((z for z in rows if z.allele == f"{view.ref}>{view.alt}"), None)
+    if main is not None:
+        stated = [c for c in main.conditions if c.modes]
+        bits = []
+        for c in stated[:2]:
+            bits.append(f"{_readable(c.name)} is {' / '.join(c.modes)} ({c.mode_source}): one copy: {c.one_copy}; two copies: {c.two_copies}")
+        if main.homozygotes is not None and main.carriers is not None:
+            bits.append(f"gnomAD {main.callset} has {main.carriers} copies of {main.allele}, including {main.homozygotes} people with two copies")
+        if bits:
+            plan.zygosity = add(f"Zygosity for {plan.disease_allele}: " + "; ".join(bits) + ".", "HPO / gnomAD")
+            short = []
+            for c in stated[:1]:
+                short.append(f"{_readable(c.name)} is {' / '.join(c.modes)}, so one copy means {c.one_copy.split(' (')[0]} and two copies {c.two_copies.split(' (')[0]}")
+            if main.homozygotes is not None:
+                short.append(f"gnomAD includes {main.homozygotes} people with two copies")
+            plan.zygosity_text = "; ".join(short)
+    others = [z for z in rows if z.allele != f"{view.ref}>{view.alt}"]
+    if others:
+        described = []
+        for z in others:
+            label = z.allele + (f" ({z.change})" if z.change else "")
+            described.append(f"{label}: {z.classification or 'no ClinVar classification'}")
+        plan.other_alleles_text = "; ".join(described)
+        plan.other_alleles = add(f"Other alternate alleles at this position: {plan.other_alleles_text}.", "ClinVar")
 
 
 # ---------------------------------------------------------------- template writer
@@ -602,7 +645,12 @@ def _template_parts(rsid: str, plan: _Plan) -> list[tuple[str, str]]:
             parts.append(("disease", f"ClinVar records it as {_article(plan.headline.lower())} {plan.headline.lower()}{cond}, not as a pathogenicity call [{plan.disease}]."))
         else:
             cond = f" for {', '.join(plan.conditions)}" if plan.conditions else ""
-            parts.append(("disease", f"ClinVar's best-supported classification is {plan.headline}{cond} [{plan.disease}]."))
+            who = f"For the {plan.disease_allele} allele, " if plan.disease_allele else ""
+            parts.append(("disease", f"{who}ClinVar's best-supported classification is {plan.headline}{cond} [{plan.disease}]."))
+    if plan.zygosity and plan.zygosity_text:
+        parts.append(("disease", f"Zygosity: {plan.zygosity_text} [{plan.zygosity}]."))
+    if plan.other_alleles:
+        parts.append(("disease", f"The other alleles at this position are classified separately: {plan.other_alleles_text} [{plan.other_alleles}]."))
     elif plan.no_significance and plan.disease:
         parts.append(("disease", f"ClinVar reports no clinical significance for this variant [{plan.disease}]."))
     if plan.gwas:

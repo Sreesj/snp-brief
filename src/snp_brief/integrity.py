@@ -136,6 +136,15 @@ def check(item, summary=None) -> CheckReport:
     if getattr(item, "variants", None):
         report.add("Carrier rates recomputed", problems)
 
+    # homozygote counts are possible: at most half the copies observed
+    problems = []
+    for variant in getattr(item, "variants", None) or []:
+        for cs in variant.callsets:
+            if cs.hom is not None and cs.ac is not None and (cs.hom < 0 or 2 * cs.hom > cs.ac):
+                problems.append(f"{cs.name}: {cs.hom} homozygotes is impossible with {cs.ac} copies observed")
+    if any(cs.hom is not None for v in (getattr(item, "variants", None) or []) for cs in v.callsets):
+        report.add("Homozygote counts are consistent with allele counts", problems)
+
     # position and alleles agree between dbSNP and gnomAD
     db = getattr(item, "db", None)
     if db is not None and db.pos and getattr(item, "variants", None):

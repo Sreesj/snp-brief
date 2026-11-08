@@ -52,12 +52,38 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--check", nargs="+", metavar="RSID", help="load these rsIDs (cache first, live for the rest) and run the data checks")
     parser.add_argument("--export-variants", type=Path, metavar="FILE", help="write chrom/pos/ref/alt for the rsIDs (default: the demo list) for brev/score_borzoi.py")
     parser.add_argument("--import-borzoi", type=Path, metavar="DIR", help="copy <rsid>/borzoi.json files from a Borzoi run into cache/")
+    parser.add_argument("--build-inheritance", type=Path, metavar="FILE", help="build data/inheritance.tsv.gz from HPO's phenotype.hpoa")
+    parser.add_argument("--refresh-gnomad", action="store_true", help="re-fetch only gnomAD (with homozygote counts) for the --input rsIDs into --cache")
     parser.add_argument("--build-gwas", type=Path, metavar="FILE", help="slim the GWAS Catalog download (.tsv or .zip) into data/gwas_catalog.tsv.gz")
     args = parser.parse_args(argv)
     if args.list_models:
         return list_models()
     if args.probe:
         return probe(args.probe)
+    if args.build_inheritance:
+        from snp_brief import zygosity
+
+        out, rows = zygosity.build(args.build_inheritance, Path.cwd())
+        print(f"wrote {out} ({rows:,} disease-inheritance rows, {out.stat().st_size / 1e3:.0f} kB)")
+        return 0
+    if args.refresh_gnomad:
+        from snp_brief.cache_store import cache_path, load_cache, save_cache
+        from snp_brief.sources.dbsnp import parse_dbsnp
+        from snp_brief.sources.gnomad import fetch_gnomad
+
+        for rsid in [line.strip() for line in args.input.read_text().splitlines() if line.strip()]:
+            folder = rsid
+            db_payload = load_cache(cache_path(args.cache, rsid, "dbsnp"))
+            db = parse_dbsnp(db_payload, rsid)
+            if db.current_rsid:
+                folder = db.current_rsid
+                db = parse_dbsnp(load_cache(cache_path(args.cache, folder, "dbsnp")), folder)
+            try:
+                save_cache(cache_path(args.cache, folder, "gnomad"), fetch_gnomad(folder, db))
+                print(f"{folder}: gnomAD refreshed")
+            except Exception as exc:
+                print(f"{folder}: gnomAD failed ({str(exc)[:120]}); kept the saved copy")
+        return 0
     if args.export_variants:
         ids = [line.strip() for line in args.input.read_text().splitlines() if line.strip()]
         return export_variants(args.export_variants, ids, args.offline)

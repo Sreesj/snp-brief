@@ -8,6 +8,22 @@ only what we compute from it.
 from __future__ import annotations
 
 METHODS: dict[str, tuple[str, list[str]]] = {
+    "zygosity": (
+        "Alleles and zygosity",
+        [
+            "Each alternate allele at the rsID is listed separately (ref>alt and protein change), with ClinVar's classification for "
+            "that allele only. ClinVar records are matched to alleles by their cDNA change.",
+            "Each condition's mode of inheritance comes from the Human Phenotype Ontology disease annotations, looked up through the "
+            "OMIM and Orphanet identifiers ClinVar attaches to the condition; if none matches, from the condition name when it "
+            "states the mode (for example 'autosomal recessive …'). Otherwise it is shown as not stated.",
+            "One copy / two copies follow from the mode: recessive → one copy is a carrier, two copies cause disease; dominant → "
+            "one copy is enough; X-linked → males with one copy are affected, females usually carriers; semidominant → one copy "
+            "milder, two more severe; multifactorial → contributes to risk.",
+            "Copies observed and people with two copies come from gnomAD (the call set with the most alleles).",
+            "Flags: a pathogenic allele whose inheritance is not stated; people with two copies in gnomAD for a recessive call "
+            "(gnomAD excludes severe paediatric disease, so check penetrance); 10 or more homozygotes for a dominant call.",
+        ],
+    ),
     "summary": (
         "Summary",
         [
@@ -105,7 +121,9 @@ METHODS: dict[str, tuple[str, list[str]]] = {
             "'x% higher' = 2^|log2| − 1.",
             "Local effect: the same ratio for DNase/ATAC, ChIP and CAGE tracks over the 512 bases around the variant.",
             "Prediction vs measurement: for each GTEx eQTL of this variant, the sign of GTEx's normalized effect size is compared "
-            "with Borzoi's predicted change for the same gene, in the closest-named tissue when one matches, else across all tissues.",
+            "with Borzoi's predicted change for the same gene and the same alternate allele, in the closest-named tissue when one "
+            "matches, else across all tissues. Only clear predictions (|log2| ≥ 0.005, about 0.35%) are counted; smaller "
+            "ones are reported separately as 'no clear change', since a near-zero prediction cannot agree or disagree.",
             "Predictions are hypotheses about mechanism, not measurements; agreement with GTEx raises confidence, disagreement is a flag.",
         ],
     ),

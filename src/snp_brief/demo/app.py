@@ -113,7 +113,7 @@ def forge_runs_left() -> int:
 
 def main() -> None:
     st.set_page_config(page_title="Variant Atlas", page_icon=":material/genetics:", layout="wide")
-    st.html(theme.FONTS + theme.CSS + theme.EXTRA_CSS + theme.METHOD_CSS + theme.CHECKS_CSS + theme.BORZOI_CSS)
+    st.html(theme.FONTS + theme.CSS + theme.EXTRA_CSS + theme.METHOD_CSS + theme.CHECKS_CSS + theme.BORZOI_CSS + theme.ZYGOSITY_CSS)
     load_secrets()
     if not password_ok():
         return
@@ -344,6 +344,12 @@ def render_detail(item: Gathered) -> None:
     if item.pending and actions[1].button("Check again", key=f"again-{item.rsid}", help="Add sources that were still loading"):
         reload_variant(item)
         st.rerun()
+    try:
+        from snp_brief.zygosity import check as zygosity_check, inheritance_available
+
+        st.html(theme.section("Alleles and zygosity · check this first") + theme.zygosity_html(zygosity_check(item), inheritance_available()) + theme.method("zygosity"))
+    except Exception as exc:  # never hide the rest of the page
+        print(f"{item.rsid} zygosity check failed: {exc}", file=sys.stderr)
     if item.pending:
         pick_up_late_sources(item.rsid)
     observatory, interpretation_tab, ripple_tab, forge_tab = st.tabs(list(MODULES))
