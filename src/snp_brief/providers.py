@@ -217,7 +217,7 @@ ENSEMBL_VARIATION = "https://rest.ensembl.org/variation/human/{rsid}"
 
 
 def fetch_gwas(rsid: str, timeout: float = 60) -> dict:
-    """GWAS Catalog associations: EBI's v2 API first, then the same catalogue via Ensembl.
+    """GWAS Catalog associations: EBI's v2 API first (10 s), then the same catalogue via Ensembl.
 
     EBI's v2 rs_id query often fails server-side (HTTP 500 after ~30 s). Ensembl imports the
     NHGRI-EBI GWAS Catalog into its variation phenotypes, so it is a dependable fallback.
@@ -228,7 +228,7 @@ def fetch_gwas(rsid: str, timeout: float = 60) -> dict:
         try:
             body = request_json(
                 GWAS_V2, params={"rs_id": rsid, "page": str(page), "size": str(GWAS_PAGE_SIZE)},
-                timeout=min(timeout, 25), attempts=1,
+                timeout=min(timeout, 10), attempts=1,
             )
         except RuntimeError as exc:
             if "HTTP 404" in str(exc):
@@ -262,13 +262,16 @@ def _is_gwas(row) -> bool:
     return isinstance(row, dict) and "gwas" in str(row.get("source") or "").lower()
 
 
-def parse_gwas(payload: dict | None) -> GwasResult:
+def parse_gwas(payload: dict | None, rsid: str = "") -> GwasResult:
     if not payload:
         return GwasResult(False)
+    rsid = rsid or str((payload.get("request") or {}).get("rsid") or "")
     body = payload.get("response") or {}
     hits: list[GwasHit] = []
     if isinstance(body, dict) and "ensembl_phenotypes" in body:
         for row in body.get("ensembl_phenotypes") or []:
+            if _haplotype_row(row, rsid):
+                continue  # an association for a multi-SNP haplotype is not this SNP alone
             hit = _ensembl_gwas_hit(row)
             if hit is not None:
                 hits.append(hit)
@@ -310,6 +313,21 @@ def _rows(body) -> list[dict]:
     return []
 
 
+def _haplotype_row(row, rsid: str) -> bool:
+    variants = [v.strip() for v in str((row or {}).get("variants") or "").split(",") if v.strip()]
+    return len(variants) > 1 or (bool(variants) and bool(rsid) and variants[0] != rsid)
+
+
+def _effect_text(odds_raw, beta_raw) -> str:
+    """Effect size as written: numeric values tidied, text such as '0.3284 unit decrease' kept."""
+    for label, raw in (("odds ratio", odds_raw), ("beta", beta_raw)):
+        if raw in (None, ""):
+            continue
+        number = _num(raw)
+        return f"{label} {number:g}" if number is not None else f"{label} {str(raw).strip()}"
+    return ""
+
+
 def _ensembl_gwas_hit(row: dict) -> GwasHit | None:
     """One Ensembl phenotype row sourced from the GWAS Catalog."""
     if not isinstance(row, dict):
@@ -329,18 +347,14 @@ def _ensembl_gwas_hit(row: dict) -> GwasHit | None:
 
     p_raw = get("pvalue", "p_value", "p-value")
     p_value = _num(p_raw)
-    effect = ""
-    odds = _num(get("odds_ratio"))
-    beta = _num(get("beta_coefficient", "beta"))
-    if odds:
-        effect = f"odds ratio {odds:g}"
-    elif beta:
-        effect = f"beta {beta:g}"
+    effect = _effect_text(get("odds_ratio"), get("beta_coefficient", "beta"))
     genes_raw = get("genes", "associated_gene", "reported_genes") or ""
     genes = [g.strip() for g in str(genes_raw).replace(";", ",").split(",") if g.strip() and g.strip() != "NR"]
     study = str(get("study", "external_reference", "pubmed_id") or "")
     pmid = study.split("PMID:")[-1].strip() if "PMID:" in study else (study if study.isdigit() else "")
     risk = str(get("risk_allele") or "")
+    if "-" in risk and risk.startswith("rs"):
+        risk = risk.split("-", 1)[1]
     return GwasHit(trait, p_value, str(p_raw) if p_raw is not None else "", risk, effect, genes[:4], pmid)
 
 

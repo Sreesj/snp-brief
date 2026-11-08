@@ -193,7 +193,7 @@ def gather(
     _gnomad_retrieved, variants = parse_gnomad(results.get("gnomad"))
     _papers_retrieved, papers = parse_europepmc(results.get("europepmc"))
     vep = parse_vep(results.get("ensembl_vep")) if "ensembl_vep" in results else VepAnnotation(False)
-    gwas = parse_gwas(results.get("gwas")) if "gwas" in results else GwasResult(False)
+    gwas = parse_gwas(results.get("gwas"), rsid) if "gwas" in results else GwasResult(False)
     citations = parse_citations(results.get("dbsnp_citations"))
     eqtls = parse_gtex(results.get("gtex"))
     ld_proxies = parse_ld(results.get("ensembl_ld"), rsid)

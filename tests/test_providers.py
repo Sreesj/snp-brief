@@ -175,6 +175,18 @@ class ParserTests(unittest.TestCase):
         hits = parse_gwas(out).hits
         self.assertEqual([(h.trait, h.pmid, h.risk_allele) for h in hits], [("Type 2 diabetes", "17463249", "T")])
 
+    def test_ensembl_gwas_skips_haplotypes_and_keeps_text_effects(self) -> None:
+        payload = {"request": {"rsid": "rs1"}, "response": {"ensembl_phenotypes": [
+            {"trait": "Haplotype trait", "source": "NHGRI-EBI GWAS catalog", "variants": "rs9,rs1,rs8", "pvalue": "1e-20"},
+            {"trait": "Protein levels", "source": "NHGRI-EBI GWAS catalog", "variants": "rs1", "pvalue": "2.00e-27",
+             "beta_coefficient": "0.3284 unit decrease", "risk_allele": "C", "study": "PMID:39528825"},
+            {"trait": "Height", "source": "NHGRI-EBI GWAS catalog", "pvalue": "3e-8", "odds_ratio": "1.1"},
+        ]}}
+        hits = parse_gwas(payload).hits
+        self.assertEqual([h.trait for h in hits], ["Protein levels", "Height"])
+        self.assertEqual(hits[0].effect, "beta 0.3284 unit decrease")
+        self.assertEqual(hits[1].effect, "odds ratio 1.1")
+
     def test_open_targets_traits_stand_in_when_gwas_is_missing(self) -> None:
         tmp = Path(tempfile.mkdtemp())
         self.addCleanup(shutil.rmtree, tmp)

@@ -8,3 +8,4 @@ build/
 .env
 .streamlit/secrets.toml
 cache/*/ripple.json
+tests/cache/*/ripple.json
