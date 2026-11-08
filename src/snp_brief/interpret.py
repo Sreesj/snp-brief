@@ -137,6 +137,31 @@ def acmg_draft(item) -> list[Criterion]:
                 out.append(Criterion("BP7", "Supporting", "benign", f"synonymous; SpliceAI {splice_delta:.2f}, <= 0.1", "SpliceAI"))
             else:
                 out.append(Criterion("BP4", "Supporting", "benign", f"SpliceAI {splice_delta:.2f}, <= 0.1", "SpliceAI"))
+    headline = _clinvar_headline(item)
+    frequency_benign = [c.code for c in out if c.code in {"BA1", "BS1"}]
+    if frequency_benign and "pathogenic" in headline.lower() and "conflict" not in headline.lower():
+        out.append(
+            Criterion(
+                "ClinVar",
+                "Check first",
+                "review",
+                f"ClinVar's best-reviewed classification is {headline}, which outweighs {' and '.join(frequency_benign)}. "
+                "Common pathogenic alleles (founder effects, heterozygote advantage, reduced penetrance, as with HbS or "
+                "Factor V Leiden) are known exceptions to the frequency rules; do not use these codes to downgrade it.",
+                "ClinVar",
+            )
+        )
+    elif frequency_benign and _trait_links(item):
+        out.append(
+            Criterion(
+                "Context",
+                "Check first",
+                "review",
+                f"{' and '.join(frequency_benign)} means it is too common to cause a rare inherited disease on its own. "
+                f"It is still linked to {_trait_links(item)}, so it is not necessarily harmless.",
+                "GWAS Catalog / ClinVar",
+            )
+        )
     constraint = getattr(item, "constraint", None)
     if any(term in consequence for term in NULL_TERMS):
         if constraint is not None and constraint.loeuf is not None and constraint.loeuf < 0.35:
@@ -144,6 +169,37 @@ def acmg_draft(item) -> list[Criterion]:
         else:
             out.append(Criterion("PVS1", "To review", "review", f"{consequence}; loss-of-function mechanism not established from constraint data", "VEP / MyVariant.info"))
     return out
+
+
+def _trait_links(item) -> str:
+    """What else the variant is linked to: GWAS traits, or ClinVar risk-factor/association/drug-response assertions."""
+    kinds = []
+    for record in getattr(item, "records", None) or []:
+        for c in list(record.classifications) + list(record.submissions):
+            text = (c.description or "").lower()
+            for word in ("risk factor", "association", "drug response", "protective"):
+                if word in text and word not in kinds:
+                    kinds.append(word)
+    gwas = getattr(item, "gwas", None)
+    parts = []
+    if kinds:
+        parts.append("ClinVar " + ", ".join(kinds) + " assertions")
+    if gwas is not None and getattr(gwas, "hits", None):
+        traits = list(dict.fromkeys(h.trait for h in gwas.hits))[:2]
+        parts.append("GWAS traits such as " + " and ".join(traits))
+    return "; ".join(parts)
+
+
+def _clinvar_headline(item) -> str:
+    """ClinVar's best-reviewed classification, as the summary reports it."""
+    if not getattr(item, "records", None):
+        return ""
+    try:
+        from snp_brief.summary import _plan
+
+        return _plan(item).headline or ""
+    except Exception:
+        return ""
 
 
 def _consequence(item) -> str:

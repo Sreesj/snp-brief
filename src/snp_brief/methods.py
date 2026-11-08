@@ -62,6 +62,10 @@ METHODS: dict[str, tuple[str, list[str]]] = {
             "For non-missense changes, SpliceAI ≥ 0.2 supports PP3 and ≤ 0.1 supports BP4; a synonymous change with SpliceAI ≤ 0.1 gets BP7.",
             "PVS1 is only flagged for review on nonsense, frameshift, start-loss or canonical splice changes; LOEUF below 0.35 "
             "suggests loss of function may be the mechanism, which a reviewer must confirm.",
+            "If BA1 or BS1 applies but ClinVar's best-reviewed classification is Pathogenic or Likely pathogenic, a 'Check first' "
+            "line says the expert classification outweighs the frequency codes (common pathogenic alleles are known exceptions).",
+            "If BA1 or BS1 applies and the variant has GWAS traits or ClinVar risk-factor, association, drug-response or protective "
+            "assertions, a 'Context' line says that being common rules out a rare inherited disease, not every effect.",
             "Criteria needing case data or literature review (PS1, PM5, PS3, BS3, PS4, PP1, BS4, PS2, PM6, PM3) are not computed.",
         ],
     ),

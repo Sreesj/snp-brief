@@ -159,3 +159,19 @@ class CachedPlusLiveTests(unittest.TestCase):
         self.assertEqual(item.calls["clinvar"].origin, "cache", "cached sources are not fetched again")
         self.assertTrue((user / "rs6025" / "myvariant.json").is_file(), "the new source is saved to the user cache")
         self.assertFalse((repo / "rs6025" / "myvariant.json").exists(), "the checked-in cache is left alone")
+
+
+class AcmgConflictTests(unittest.TestCase):
+    def test_common_pathogenic_allele_is_flagged(self) -> None:
+        import contextlib, io, os
+        from unittest import mock
+
+        from snp_brief.pipeline import gather
+
+        cache = Path(__file__).resolve().parents[1] / "tests" / "cache"
+        with mock.patch.dict(os.environ, {"SNP_BRIEF_EXTRAS": "on"}), contextlib.redirect_stderr(io.StringIO()):
+            item = gather("rs6025", cache_dir=cache, refresh=False, offline=True)
+        codes = {c.code: c for c in acmg_draft(item)}
+        self.assertIn("BS1", codes)
+        self.assertEqual(codes["ClinVar"].strength, "Check first")
+        self.assertIn("Pathogenic", codes["ClinVar"].evidence)

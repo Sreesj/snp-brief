@@ -528,7 +528,7 @@ def score_grid(item) -> str:
     return f'<div class="va-facts">{"".join(tiles)}</div>'
 
 
-_STRENGTH_ORDER = {"Stand-alone": 0, "Strong": 1, "Moderate": 2, "Supporting": 3, "To review": 4}
+_STRENGTH_ORDER = {"Check first": -1, "Stand-alone": 0, "Strong": 1, "Moderate": 2, "Supporting": 3, "To review": 4}
 
 
 def acmg_html(criteria, not_computed: str) -> str:
