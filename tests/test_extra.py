@@ -303,7 +303,8 @@ class ZygosityTests(unittest.TestCase):
             self.assertEqual(main.change, "p.Glu7Val")
             text = summarize(item).text
         self.assertIn("For the T>A (p.Glu7Val) allele", text)
-        self.assertIn("one copy means carrier", text)
+        self.assertIn("Hb SS disease is autosomal recessive (one copy: carrier, usually unaffected; two copies: causes disease)", text)
+        self.assertIn("inheritance is not stated for", text)
         self.assertIn("T>G (p.Glu7Ala): Likely benign", text)
 
     def test_flags(self) -> None:

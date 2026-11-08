@@ -282,6 +282,12 @@ def _flags(z: AlleleZygosity) -> list[str]:
     flags = []
     pathogenic = "pathogenic" in z.classification.lower() and "conflict" not in z.classification.lower()
     modes = {m for c in z.conditions for m in c.modes}
+    stated = [c for c in z.conditions if c.modes]
+    unstated = [c for c in z.conditions if not c.modes]
+    if pathogenic and stated and (len(modes) > 1 or unstated):
+        parts = [f"{c.name}: {' / '.join(c.modes)}" for c in stated[:3]] + [f"{c.name}: not stated" for c in unstated[:2]]
+        flags.append("The conditions on this record differ in inheritance (" + "; ".join(parts) + "). Decide which condition "
+                     "your assay targets before reading the one-copy / two-copy lines.")
     if pathogenic and not modes:
         flags.append("Inheritance of the condition is not stated by the sources: confirm whether one or two copies cause disease before designing an assay.")
     if pathogenic and z.homozygotes:

@@ -15,6 +15,22 @@ _last_ncbi = 0.0
 _ncbi_lock = threading.Lock()
 
 
+_gnomad_lock = threading.Lock()
+_last_gnomad = 0.0
+
+
+def _pace_gnomad(url: str) -> None:
+    """gnomAD's API rate-limits bursts; keep calls at least 1 s apart across threads."""
+    global _last_gnomad
+    if "gnomad.broadinstitute.org" not in url:
+        return
+    with _gnomad_lock:
+        wait = 1.0 - (time.monotonic() - _last_gnomad)
+        if wait > 0:
+            time.sleep(wait)
+        _last_gnomad = time.monotonic()
+
+
 def _pace_ncbi(url: str) -> None:
     """Space NCBI calls 0.35 s apart, across threads (public limit is 3 per second)."""
     global _last_ncbi
@@ -75,6 +91,7 @@ def _request(
     last_error: Exception | None = None
     for attempt in range(attempts):
         _pace_ncbi(url)
+        _pace_gnomad(url)
         req = urllib.request.Request(url, data=data, headers=headers)
         try:
             with urllib.request.urlopen(req, timeout=timeout) as resp:
@@ -85,8 +102,12 @@ def _request(
         except urllib.error.HTTPError as exc:
             body = exc.read().decode(errors="replace")
             last_error = exc
-            if exc.code not in {429, 500, 502, 503, 504} or attempt == attempts - 1:
+            rate_limited = exc.code == 429 or "rate limit" in body.lower()
+            if (exc.code not in {429, 500, 502, 503, 504} and not rate_limited) or attempt == attempts - 1:
                 raise RuntimeError(f"HTTP {exc.code} for {url}: {body[:400]}") from exc
+            if rate_limited:
+                time.sleep(20 * (attempt + 1))  # the server asked us to slow down
+                continue
         except (urllib.error.URLError, TimeoutError, json.JSONDecodeError) as exc:
             last_error = exc
             if attempt == attempts - 1:

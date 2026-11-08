@@ -545,21 +545,27 @@ def _zygosity_facts(plan: _Plan, item, view: AlleleView, add) -> None:
     except Exception:
         return
     main = next((z for z in rows if z.allele == f"{view.ref}>{view.alt}"), None)
-    if main is not None:
-        stated = [c for c in main.conditions if c.modes]
-        bits = []
-        for c in stated[:2]:
-            bits.append(f"{_readable(c.name)} is {' / '.join(c.modes)} ({c.mode_source}): one copy: {c.one_copy}; two copies: {c.two_copies}")
+    if main is not None and main.conditions:
+        # Zygosity is stated per condition, never merged: one record can list a recessive and a dominant
+        # condition (rs6025: Factor V deficiency vs Factor V Leiden thrombophilia).
+        fact_bits, text_bits = [], []
+        for c in main.conditions[:3]:
+            name = _readable(c.name)
+            if c.modes:
+                mode = " / ".join(c.modes)
+                fact_bits.append(f"{name}: {mode} ({c.mode_source}); one copy: {c.one_copy}; two copies: {c.two_copies}")
+                text_bits.append(f"{name} is {mode} (one copy: {c.one_copy.split(' (')[0]}; two copies: {c.two_copies.split(' (')[0]})")
+            else:
+                fact_bits.append(f"{name}: inheritance not stated by HPO or the condition name")
+                text_bits.append(f"inheritance is not stated for {name}")
         if main.homozygotes is not None and main.carriers is not None:
-            bits.append(f"gnomAD {main.callset} has {main.carriers} copies of {main.allele}, including {main.homozygotes} people with two copies")
-        if bits:
-            plan.zygosity = add(f"Zygosity for {plan.disease_allele}: " + "; ".join(bits) + ".", "HPO / gnomAD")
-            short = []
-            for c in stated[:1]:
-                short.append(f"{_readable(c.name)} is {' / '.join(c.modes)}, so one copy means {c.one_copy.split(' (')[0]} and two copies {c.two_copies.split(' (')[0]}")
-            if main.homozygotes is not None:
-                short.append(f"gnomAD includes {main.homozygotes} people with two copies")
-            plan.zygosity_text = "; ".join(short)
+            fact_bits.append(f"gnomAD {main.callset}: {main.carriers} copies of {main.allele}, {main.homozygotes} people with two copies")
+            text_bits.append(f"gnomAD includes {main.homozygotes} people with two copies")
+        if any(c.modes for c in main.conditions[:3]):
+            plan.zygosity = add(f"Zygosity for {plan.disease_allele}, by condition: " + "; ".join(fact_bits) + ".", "HPO / gnomAD")
+            modes = {m for c in main.conditions[:3] for m in c.modes}
+            lead = "depends on the condition" if len(modes) > 1 or not all(c.modes for c in main.conditions[:3]) else "by condition"
+            plan.zygosity_text = f"{lead}: " + "; ".join(text_bits)
     others = [z for z in rows if z.allele != f"{view.ref}>{view.alt}"]
     if others:
         described = []
@@ -648,7 +654,7 @@ def _template_parts(rsid: str, plan: _Plan) -> list[tuple[str, str]]:
             who = f"For the {plan.disease_allele} allele, " if plan.disease_allele else ""
             parts.append(("disease", f"{who}ClinVar's best-supported classification is {plan.headline}{cond} [{plan.disease}]."))
     if plan.zygosity and plan.zygosity_text:
-        parts.append(("disease", f"Zygosity: {plan.zygosity_text} [{plan.zygosity}]."))
+        parts.append(("disease", f"Zygosity {plan.zygosity_text} [{plan.zygosity}]."))
     if plan.other_alleles:
         parts.append(("disease", f"The other alleles at this position are classified separately: {plan.other_alleles_text} [{plan.other_alleles}]."))
     elif plan.no_significance and plan.disease:

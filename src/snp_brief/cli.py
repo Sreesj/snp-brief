@@ -67,6 +67,9 @@ def main(argv: list[str] | None = None) -> int:
         print(f"wrote {out} ({rows:,} disease-inheritance rows, {out.stat().st_size / 1e3:.0f} kB)")
         return 0
     if args.refresh_gnomad:
+        import json
+        import time
+
         from snp_brief.cache_store import cache_path, load_cache, save_cache
         from snp_brief.sources.dbsnp import parse_dbsnp
         from snp_brief.sources.gnomad import fetch_gnomad
@@ -78,11 +81,23 @@ def main(argv: list[str] | None = None) -> int:
             if db.current_rsid:
                 folder = db.current_rsid
                 db = parse_dbsnp(load_cache(cache_path(args.cache, folder, "dbsnp")), folder)
-            try:
-                save_cache(cache_path(args.cache, folder, "gnomad"), fetch_gnomad(folder, db))
-                print(f"{folder}: gnomAD refreshed")
-            except Exception as exc:
-                print(f"{folder}: gnomAD failed ({str(exc)[:120]}); kept the saved copy")
+            saved = load_cache(cache_path(args.cache, folder, "gnomad")) or {}
+            if "homozygote_count" in json.dumps(saved):
+                print(f"{folder}: already has homozygote counts; skipped")
+                continue
+            for attempt in range(3):
+                try:
+                    save_cache(cache_path(args.cache, folder, "gnomad"), fetch_gnomad(folder, db))
+                    print(f"{folder}: gnomAD refreshed")
+                    break
+                except Exception as exc:
+                    if "rate limit" in str(exc).lower() and attempt < 2:
+                        print(f"{folder}: gnomAD rate limit; waiting 60 s")
+                        time.sleep(60)
+                        continue
+                    print(f"{folder}: gnomAD failed ({str(exc)[:120]}); kept the saved copy")
+                    break
+            time.sleep(5)  # stay under gnomAD's rate limit
         return 0
     if args.export_variants:
         ids = [line.strip() for line in args.input.read_text().splitlines() if line.strip()]
