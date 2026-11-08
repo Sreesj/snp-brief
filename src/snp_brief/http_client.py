@@ -35,8 +35,9 @@ def request_text(
     params: dict[str, str] | None = None,
     payload: dict | None = None,
     timeout: float = 60,
+    attempts: int = 3,
 ) -> str:
-    return _request(url, params=params, payload=payload, timeout=timeout, decode_json=False)
+    return _request(url, params=params, payload=payload, timeout=timeout, decode_json=False, attempts=attempts)
 
 
 def request_json(
@@ -45,8 +46,10 @@ def request_json(
     params: dict[str, str] | None = None,
     payload: dict | None = None,
     timeout: float = 60,
+    attempts: int = 3,
 ) -> dict:
-    return _request(url, params=params, payload=payload, timeout=timeout, decode_json=True)
+    """attempts=1 for optional providers: a timeout should not triple the wait."""
+    return _request(url, params=params, payload=payload, timeout=timeout, decode_json=True, attempts=attempts)
 
 
 def _request(
@@ -56,6 +59,7 @@ def _request(
     payload: dict | None,
     timeout: float,
     decode_json: bool,
+    attempts: int = 3,
 ):
     host = urllib.parse.urlparse(url).netloc
     if host == "eutils.ncbi.nlm.nih.gov" and os.environ.get("NCBI_API_KEY"):
@@ -69,7 +73,7 @@ def _request(
         data = json.dumps(payload).encode()
         headers["Content-Type"] = "application/json"
     last_error: Exception | None = None
-    for attempt in range(3):
+    for attempt in range(attempts):
         _pace_ncbi(url)
         req = urllib.request.Request(url, data=data, headers=headers)
         try:
@@ -81,11 +85,11 @@ def _request(
         except urllib.error.HTTPError as exc:
             body = exc.read().decode(errors="replace")
             last_error = exc
-            if exc.code not in {429, 500, 502, 503, 504} or attempt == 2:
+            if exc.code not in {429, 500, 502, 503, 504} or attempt == attempts - 1:
                 raise RuntimeError(f"HTTP {exc.code} for {url}: {body[:400]}") from exc
         except (urllib.error.URLError, TimeoutError, json.JSONDecodeError) as exc:
             last_error = exc
-            if attempt == 2:
+            if attempt == attempts - 1:
                 raise RuntimeError(f"request failed for {url}: {exc}") from exc
         time.sleep(2**attempt)
     raise RuntimeError(f"request failed for {url}: {last_error}")

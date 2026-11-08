@@ -47,11 +47,11 @@ class Provider:
 PROVIDERS = (
     Provider("clinvar", "ClinVar", 1, "curated clinical", ("function", "disease"), 30),
     Provider("gnomad", "gnomAD", 2, "population data", ("frequency",), 30),
-    Provider("gwas", "GWAS Catalog", 3, "statistical association", ("disease",), 20),
+    Provider("gwas", "GWAS Catalog", 3, "statistical association", ("disease",), 30),
     Provider("gtex", "GTEx", 3, "expression association (eQTL)", ("function",), 20),
     Provider("ensembl_ld", "Ensembl LD", 4, "population linkage", ("context",), 20),
     Provider("dbsnp", "dbSNP", 4, "reference annotation", ("identity", "function"), 20),
-    Provider("ensembl_vep", "Ensembl VEP", 5, "computed annotation and predictions", ("function", "prediction"), 25),
+    Provider("ensembl_vep", "Ensembl VEP", 5, "computed annotation and predictions", ("function", "prediction"), 20),
     Provider("open_targets", "Open Targets", 5, "computed locus-to-gene score", ("function",), 20),
     Provider("uniprot", "UniProt", 6, "gene-level function", ("function",), 20),
     Provider("ncbi_gene", "NCBI Gene", 6, "gene-level function", ("function",), 20),
@@ -84,6 +84,7 @@ def tier_label(source: str) -> str:
 VEP_URL = "https://rest.ensembl.org/vep/human/id/{rsid}"
 # Parameter names as documented at rest.ensembl.org/documentation/info/vep_id_get.
 VEP_PARAMS = {"AlphaMissense": "1", "CADD": "1", "SpliceAI": "1", "canonical": "1", "variant_class": "1", "domains": "1"}
+VEP_BASIC = {"canonical": "1", "variant_class": "1", "domains": "1"}
 
 
 @dataclass
@@ -110,9 +111,17 @@ class VepAnnotation:
 
 
 def fetch_vep(rsid: str, timeout: float = 25) -> dict:
+    """With prediction plugins first; they make Ensembl slow, so on failure retry once without them."""
     url = VEP_URL.format(rsid=urllib.parse.quote(rsid))
-    body = request_json(url, params={**VEP_PARAMS, "content-type": "application/json"}, timeout=timeout)
-    return {"source": "Ensembl VEP", "retrieved": _now(), "request": {"rsid": rsid, "params": VEP_PARAMS}, "response": body}
+    try:
+        body = request_json(url, params={**VEP_PARAMS, "content-type": "application/json"}, timeout=timeout, attempts=1)
+        used = VEP_PARAMS
+    except RuntimeError as first:
+        if "HTTP 400" in str(first):  # unknown rsID: no point retrying
+            raise
+        used = VEP_BASIC
+        body = request_json(url, params={**VEP_BASIC, "content-type": "application/json"}, timeout=timeout, attempts=1)
+    return {"source": "Ensembl VEP", "retrieved": _now(), "request": {"rsid": rsid, "params": used}, "response": body}
 
 
 def parse_vep(payload: dict | None) -> VepAnnotation:
@@ -181,7 +190,9 @@ def parse_vep(payload: dict | None) -> VepAnnotation:
 # ---------------------------------------------------------------- GWAS Catalog
 
 GWAS_V2 = "https://www.ebi.ac.uk/gwas/rest/api/v2/associations"
-GWAS_V1 = "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/{rsid}/associations"
+# The v1 API was retired (HTTP 410). v2 per the migration guide: /v2/associations?rs_id=..., page/size, default 20.
+GWAS_PAGE_SIZE = 20
+GWAS_MAX_PAGES = 3
 
 
 @dataclass
@@ -201,63 +212,88 @@ class GwasResult:
     hits: list[GwasHit] = field(default_factory=list)
 
 
-def fetch_gwas(rsid: str, timeout: float = 20) -> dict:
-    """Try the v2 API first, then v1. The response shape differs; parse_gwas reads both."""
-    errors = []
-    for version, url, params in (
-        ("v2", GWAS_V2, {"rs_id": rsid, "size": "200"}),
-        ("v1", GWAS_V1.format(rsid=urllib.parse.quote(rsid)), {"projection": "associationBySnp"}),
-    ):
+def fetch_gwas(rsid: str, timeout: float = 30) -> dict:
+    """v2 associations for one rsID, up to three pages of 20. A 404 means no associations."""
+    pages: list = []
+    for page in range(GWAS_MAX_PAGES):
         try:
-            body = request_json(url, params=params, timeout=timeout)
+            body = request_json(
+                GWAS_V2, params={"rs_id": rsid, "page": str(page), "size": str(GWAS_PAGE_SIZE)}, timeout=timeout, attempts=1
+            )
         except RuntimeError as exc:
             if "HTTP 404" in str(exc):
-                return {"source": "GWAS Catalog", "retrieved": _now(), "request": {"rsid": rsid, "api": version}, "response": {}}
-            errors.append(f"{version}: {exc}")
-            continue
-        return {"source": "GWAS Catalog", "retrieved": _now(), "request": {"rsid": rsid, "api": version}, "response": body}
-    raise RuntimeError("; ".join(errors))
+                break
+            if pages:  # keep what already arrived
+                break
+            raise
+        pages.append(body)
+        if len(_rows(body)) < GWAS_PAGE_SIZE:
+            break
+    return {"source": "GWAS Catalog", "retrieved": _now(), "request": {"rsid": rsid, "api": "v2"}, "response": {"pages": pages}}
 
 
 def parse_gwas(payload: dict | None) -> GwasResult:
     if not payload:
         return GwasResult(False)
     body = payload.get("response") or {}
-    rows = ((body.get("_embedded") or {}).get("associations")) if isinstance(body, dict) else None
-    if rows is None and isinstance(body, list):
-        rows = body
+    bodies = body.get("pages") if isinstance(body, dict) and "pages" in body else [body]
     hits: list[GwasHit] = []
-    for row in rows or []:
-        if not isinstance(row, dict):
-            continue
-        hit = _gwas_hit(row)
-        if hit is not None:
-            hits.append(hit)
+    for page in bodies:
+        for row in _rows(page):
+            hit = _gwas_hit(row)
+            if hit is not None:
+                hits.append(hit)
     hits.sort(key=lambda h: (h.p_value if h.p_value is not None else 1.0))
     return GwasResult(True, hits)
+
+
+_ASSOCIATION_KEYS = {
+    "p_value", "pValue", "pvalue", "pvalue_mantissa", "pvalueMantissa", "efo_traits", "efoTraits",
+    "reported_trait", "reportedTrait", "association_id", "associationId",
+}
+
+
+def _rows(body) -> list[dict]:
+    """The association list, wherever the response wraps it (_embedded, content, data, results, or a bare list)."""
+    if isinstance(body, list):
+        return [r for r in body if isinstance(r, dict)]
+    if not isinstance(body, dict):
+        return []
+    for key in ("_embedded", "content", "data", "results", "associations"):
+        inner = body.get(key)
+        if isinstance(inner, dict):
+            found = _rows(inner)
+            if found:
+                return found
+        if isinstance(inner, list) and inner and isinstance(inner[0], dict) and _ASSOCIATION_KEYS & set(inner[0]):
+            return inner
+    for value in body.values():
+        if isinstance(value, list) and value and isinstance(value[0], dict) and _ASSOCIATION_KEYS & set(value[0]):
+            return value
+    return []
 
 
 def _gwas_hit(row: dict) -> GwasHit | None:
     traits: list[str] = []
     for item in row.get("efo_traits") or row.get("efoTraits") or []:
-        name = item.get("efo_trait") or item.get("trait") if isinstance(item, dict) else item
+        name = (item.get("efo_trait") or item.get("efoTrait") or item.get("trait") or item.get("label")) if isinstance(item, dict) else item
         if name and str(name) not in traits:
             traits.append(str(name))
-    reported = row.get("reported_trait") or ((row.get("study") or {}).get("diseaseTrait") or {}).get("trait")
+    reported = row.get("reported_trait") or row.get("reportedTrait") or ((row.get("study") or {}).get("diseaseTrait") or {}).get("trait")
     if not traits and reported:
         traits = [str(reported[0] if isinstance(reported, list) else reported)]
     if not traits:
         return None
     mantissa = row.get("pvalue_mantissa", row.get("pvalueMantissa"))
     exponent = row.get("pvalue_exponent", row.get("pvalueExponent"))
-    p_value = _num(row.get("p_value", row.get("pvalue")))
+    p_value = _num(row.get("p_value", row.get("pValue", row.get("pvalue"))))
     if p_value is None and mantissa is not None and exponent is not None:
         try:
             p_value = float(mantissa) * 10 ** int(exponent)
         except (TypeError, ValueError):
             p_value = None
     p_text = f"{mantissa}e{exponent}" if mantissa is not None and exponent is not None else (f"{p_value:.1e}" if p_value else "")
-    risk = row.get("snp_effect_allele") or row.get("risk_allele")
+    risk = row.get("snp_effect_allele") or row.get("snpEffectAllele") or row.get("risk_allele") or row.get("riskAllele")
     if isinstance(risk, list):
         risk = risk[0] if risk else ""
     if not risk:
@@ -265,14 +301,14 @@ def _gwas_hit(row: dict) -> GwasHit | None:
             for allele in (locus or {}).get("strongestRiskAlleles") or []:
                 risk = risk or (allele or {}).get("riskAlleleName")
     effect = ""
-    odds = _num(row.get("or_value", row.get("orPerCopyNum")))
+    odds = _num(row.get("or_value", row.get("orValue", row.get("orPerCopyNum"))))
     beta = _num(row.get("beta", row.get("betaNum")))
     if odds:
         effect = f"odds ratio {odds:g}"
     elif beta:
         effect = f"beta {beta:g}"
     genes: list[str] = []
-    for gene in row.get("mapped_genes") or row.get("reported_genes") or []:
+    for gene in row.get("mapped_genes") or row.get("mappedGenes") or row.get("reported_genes") or row.get("reportedGenes") or []:
         name = gene.get("geneName") if isinstance(gene, dict) else gene
         if name and str(name) not in genes:
             genes.append(str(name))
@@ -281,7 +317,7 @@ def _gwas_hit(row: dict) -> GwasHit | None:
             name = (gene or {}).get("geneName")
             if name and name not in genes:
                 genes.append(name)
-    pmid = row.get("pubmed_id") or (((row.get("study") or {}).get("publicationInfo") or {}).get("pubmedId")) or ""
+    pmid = row.get("pubmed_id") or row.get("pubmedId") or (((row.get("study") or {}).get("publicationInfo") or {}).get("pubmedId")) or ""
     return GwasHit(", ".join(traits), p_value, p_text, str(risk or ""), effect, genes[:4], str(pmid))
 
 
@@ -303,7 +339,7 @@ EUTILS = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils"
 
 
 def fetch_citations(rsid: str, timeout: float = 20) -> dict:
-    body = request_json(REFSNP_URL.format(number=rsid.removeprefix("rs")), timeout=timeout)
+    body = request_json(REFSNP_URL.format(number=rsid.removeprefix("rs")), timeout=timeout, attempts=1)
     pmids = [str(p) for p in (body.get("citations") or [])]
     # Keep only what is used; the full RefSNP record is large.
     return {"source": "dbSNP citations", "retrieved": _now(), "request": {"rsid": rsid}, "response": {"citations": pmids}}
@@ -336,6 +372,7 @@ def fetch_gene_summary(symbol: str, timeout: float = 20) -> dict:
             f"{EUTILS}/esummary.fcgi",
             params={"db": "gene", "id": ids[0], "retmode": "json", "tool": "snp_brief"},
             timeout=timeout,
+            attempts=1,
         )
     return {"source": "NCBI Gene", "retrieved": _now(), "request": {"gene": symbol}, "response": body}
 
@@ -375,7 +412,7 @@ def fetch_gtex(rsid: str, fallback_ids: list[str], timeout: float = 20) -> dict:
     """Resolve the rsID to GTEx variant ids, then fetch significant single-tissue eQTLs."""
     ids: list[str] = []
     try:
-        lookup = request_json(f"{GTEX}/dataset/variant", params={"snpId": rsid, "datasetId": "gtex_v8"}, timeout=timeout)
+        lookup = request_json(f"{GTEX}/dataset/variant", params={"snpId": rsid, "datasetId": "gtex_v8"}, timeout=timeout, attempts=1)
         for row in lookup.get("data") or []:
             vid = (row or {}).get("variantId")
             if vid and vid not in ids:
@@ -389,6 +426,7 @@ def fetch_gtex(rsid: str, fallback_ids: list[str], timeout: float = 20) -> dict:
             f"{GTEX}/association/singleTissueEqtl",
             params={"variantId": vid, "datasetId": "gtex_v8", "itemsPerPage": "250"},
             timeout=timeout,
+            attempts=1,
         )
         rows.extend(r for r in body.get("data") or [] if isinstance(r, dict))
     return {"source": "GTEx", "retrieved": _now(), "request": {"rsid": rsid, "variant_ids": ids[:3]}, "response": {"data": rows}}
@@ -423,6 +461,7 @@ def fetch_ld(rsid: str, timeout: float = 20, population: str = "EUR") -> dict:
         LD_URL.format(rsid=urllib.parse.quote(rsid), pop=population),
         params={"r2": "0.8", "window_size": "250", "content-type": "application/json"},
         timeout=timeout,
+        attempts=1,
     )
     return {"source": "Ensembl LD", "retrieved": _now(), "request": {"rsid": rsid, "population": population}, "response": body}
 
@@ -473,7 +512,7 @@ def ot_variant_id(chrom: str | None, pos: int | None, ref: str, alt: str) -> str
 def fetch_open_targets(variant_ids: list[str], timeout: float = 20) -> dict:
     rows = []
     for vid in [v for v in variant_ids if v][:3]:
-        body = request_json(OPEN_TARGETS, payload={"query": OT_QUERY, "variables": {"id": vid}}, timeout=timeout)
+        body = request_json(OPEN_TARGETS, payload={"query": OT_QUERY, "variables": {"id": vid}}, timeout=timeout, attempts=1)
         rows.append({"variant_id": vid, "body": body})
     return {"source": "Open Targets", "retrieved": _now(), "request": {"variant_ids": variant_ids[:3]}, "response": rows}
 
@@ -504,7 +543,7 @@ LITVAR = "https://www.ncbi.nlm.nih.gov/research/litvar2-api/variant/get/{vid}/pu
 
 def fetch_litvar(rsid: str, timeout: float = 20) -> dict:
     vid = urllib.parse.quote(f"litvar@{rsid}##", safe="")
-    body = request_json(LITVAR.format(vid=vid), timeout=timeout)
+    body = request_json(LITVAR.format(vid=vid), timeout=timeout, attempts=1)
     return {"source": "LitVar2", "retrieved": _now(), "request": {"rsid": rsid}, "response": body}
 
 

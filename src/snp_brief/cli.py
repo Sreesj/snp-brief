@@ -47,10 +47,13 @@ def main(argv: list[str] | None = None) -> int:
     )
     parser.add_argument("--findings", action="store_true", help="extract quote-verified findings from paper abstracts (LLM)")
     parser.add_argument("--regenerate", action="store_true", help="ignore cached LLM summaries and Forge results")
+    parser.add_argument("--probe", metavar="RSID", help="call every provider live for one rsID and print status, time and response shape")
     parser.add_argument("--list-models", action="store_true", help="list the models your LLM provider offers, then exit")
     args = parser.parse_args(argv)
     if args.list_models:
         return list_models()
+    if args.probe:
+        return probe(args.probe)
     if args.refresh and args.offline:
         print("Choose either --refresh or --offline.", file=sys.stderr)
         return 2
@@ -146,3 +149,50 @@ def list_models() -> int:
     for model in models:
         print(model)
     return 0
+
+
+def probe(rsid: str) -> int:
+    """Live check of every provider: status, seconds, and the shape of what came back (for fixing parsers)."""
+    import json
+    import time
+
+    from snp_brief import providers as p
+    from snp_brief.sources.dbsnp import fetch_dbsnp, parse_dbsnp
+
+    try:
+        db = parse_dbsnp(fetch_dbsnp(rsid), rsid)
+        print(f"dbsnp: OK; {db.assembly} chr{db.chrom}:{db.pos}, genes {db.genes}")
+    except Exception as exc:
+        print(f"dbsnp: FAILED: {str(exc)[:300]}")
+        db = parse_dbsnp(None, rsid)
+    coords = [(db.chrom, db.pos, ref, alt) for ref, alt in db.alleles] if db.assembly == "GRCh38" else []
+    checks = {
+        "gwas": lambda: p.fetch_gwas(rsid),
+        "ensembl_vep": lambda: p.fetch_vep(rsid),
+        "gtex": lambda: p.fetch_gtex(rsid, [p.gtex_variant_id(*c) for c in coords]),
+        "ensembl_ld": lambda: p.fetch_ld(rsid),
+        "open_targets": lambda: p.fetch_open_targets([p.ot_variant_id(*c) for c in coords]),
+        "litvar": lambda: p.fetch_litvar(rsid),
+        "dbsnp_citations": lambda: p.fetch_citations(rsid),
+        "ncbi_gene": lambda: p.fetch_gene_summary(db.genes[0]) if db.genes else {"response": "no gene in dbSNP"},
+    }
+    for name, call in checks.items():
+        started = time.monotonic()
+        try:
+            payload = call()
+            shape = _shape(payload.get("response"))
+            print(f"{name}: OK in {time.monotonic() - started:.1f} s; shape {shape}")
+            print("   sample: " + json.dumps(payload.get("response"), default=str)[:600])
+        except Exception as exc:
+            print(f"{name}: FAILED in {time.monotonic() - started:.1f} s: {str(exc)[:300]}")
+    return 0
+
+
+def _shape(value, depth: int = 0) -> str:
+    if depth > 3:
+        return "..."
+    if isinstance(value, dict):
+        return "{" + ", ".join(f"{k}: {_shape(v, depth + 1)}" for k, v in list(value.items())[:12]) + "}"
+    if isinstance(value, list):
+        return f"[{len(value)} x {_shape(value[0], depth + 1)}]" if value else "[]"
+    return type(value).__name__

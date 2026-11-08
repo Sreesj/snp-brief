@@ -120,6 +120,44 @@ class ParserTests(unittest.TestCase):
         v2 = parse_gwas(GWAS_V2).hits
         self.assertEqual((v2[0].trait, v2[0].pmid, v2[0].effect), ("asthma", "31000001", "beta 0.05"))
 
+    def test_gwas_v2_pages_and_other_wrappers(self) -> None:
+        paged = {"response": {"pages": [GWAS_V2["response"], {"content": [{"pValue": 1e-20, "efoTraits": [{"efoTrait": "LDL cholesterol"}], "pubmedId": "1"}]}]}}
+        hits = parse_gwas(paged).hits
+        self.assertEqual([h.trait for h in hits], ["LDL cholesterol", "asthma"])
+
+    def test_fetch_gwas_uses_v2_only_and_stops_on_short_page(self) -> None:
+        from snp_brief import providers
+
+        calls = []
+
+        def fake(url, params=None, timeout=0, attempts=3):
+            calls.append((url, params))
+            return GWAS_V2["response"]
+
+        with mock.patch.object(providers, "request_json", side_effect=fake):
+            out = providers.fetch_gwas(RSID)
+        self.assertEqual(len(calls), 1)
+        self.assertIn("/v2/associations", calls[0][0])
+        self.assertEqual(calls[0][1]["rs_id"], RSID)
+        self.assertEqual(len(parse_gwas(out).hits), 1)
+
+    def test_vep_retries_without_plugins_after_timeout(self) -> None:
+        from snp_brief import providers
+
+        seen = []
+
+        def fake(url, params=None, timeout=0, attempts=3):
+            seen.append(params)
+            if "CADD" in params:
+                raise RuntimeError("request failed: The read operation timed out")
+            return VEP["response"]
+
+        with mock.patch.object(providers, "request_json", side_effect=fake):
+            out = providers.fetch_vep(RSID)
+        self.assertEqual(len(seen), 2)
+        self.assertNotIn("CADD", seen[1])
+        self.assertEqual(parse_vep(out).canonical_gene, "DEFB125")
+
     def test_gwas_unexpected_shape_is_empty_not_an_error(self) -> None:
         self.assertEqual(parse_gwas({"response": {"weird": 1}}).hits, [])
 
