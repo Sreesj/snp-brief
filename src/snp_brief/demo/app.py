@@ -145,7 +145,7 @@ def repo_root() -> Path:
 
 def sidebar() -> tuple[bool, bool]:
     with st.sidebar:
-        st.html(theme.section("Batch analysis"))
+        st.html(theme.top_bar() + theme.section("What's inside") + theme.sidebar_guide() + theme.section("Batch analysis"))
         st.text_area("rsIDs, one per line", key="rsid_text", height=220, placeholder="rs6025\nrs429358\n…")
         st.file_uploader("Or upload a .txt file", type=["txt"], key="upload", on_change=take_upload)
         clicked = st.button("Analyze list", key="run_briefs", type="primary", width="stretch")

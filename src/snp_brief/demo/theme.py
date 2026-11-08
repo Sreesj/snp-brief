@@ -156,6 +156,15 @@ a:hover { text-decoration: underline; }
 [data-testid="stSidebar"] { background: #0b0c0d; border-right: 1px solid var(--va-border); }
 [data-testid="stTable"] table, [data-testid="stTable"] th, [data-testid="stTable"] td { color: #d0d3d8 !important; border-color: var(--va-border) !important; background: transparent !important; font-size: .84rem; }
 [data-testid="stTable"] th { color: var(--va-muted) !important; font-weight: 500; }
+/* sidebar guide */
+.va-guide { margin: .2rem 0 1.2rem 0; }
+.va-guide-item { display: flex; gap: .7rem; padding: .55rem 0; border-bottom: 1px solid var(--va-border); }
+.va-guide-item:last-child { border-bottom: none; }
+.va-guide-icon { width: 22px; height: 22px; border-radius: 6px; flex: none; display: grid; place-items: center;
+  border: 1px solid var(--va-border-strong); background: rgba(255,255,255,.02); }
+.va-guide-icon i { width: 7px; height: 7px; border-radius: 2px; display: block; }
+.va-guide-name { font-size: .86rem; font-weight: 600; color: var(--va-text); }
+.va-guide-text { font-size: .78rem; color: var(--va-muted); line-height: 1.45; margin-top: .1rem; }
 .va-list-title { font-size: .74rem; font-weight: 500; color: var(--va-muted); margin: .2rem 0 .5rem 0; }
 div[class*="st-key-pick-"] button { justify-content: flex-start; text-align: left; font-weight: 500; background: transparent;
   border-color: transparent; color: var(--va-muted); font-family: "JetBrains Mono", ui-monospace, monospace !important; font-size: .84rem; padding: .42rem .65rem; }
@@ -188,6 +197,26 @@ def hero() -> str:
         "for any SNP, with every claim traced to its source.</p>"
         "</div>"
     )
+
+
+GUIDE = (
+    ("#7c86ff", "Variant Observatory", "What is known: clinical classification, population frequency, function and papers, "
+     "reconciled across 13 databases with every claim sourced."),
+    ("#4cc9b0", "Molecular Ripple", "What the variant touches: gene and protein effects, expression links, regulatory "
+     "overlap and prediction scores, labelled observed, predicted or unknown."),
+    ("#f0b73c", "Hypothesis Forge", "What is not yet understood: competing explanations, evidence for and against, and "
+     "the experiments that would tell them apart."),
+    ("#5aa2ff", "Findings from papers", "Key results pulled from abstracts, each quoted word for word."),
+    ("#4cc38a", "Batch analysis and export", "Analyse a list of rsIDs at once, keep notes, and download a full report."),
+)
+
+
+def sidebar_guide() -> str:
+    return '<div class="va-guide">' + "".join(
+        f'<div class="va-guide-item"><div class="va-guide-icon"><i style="background:{color}"></i></div>'
+        f'<div><div class="va-guide-name">{e(name)}</div><div class="va-guide-text">{e(text)}</div></div></div>'
+        for color, name, text in GUIDE
+    ) + "</div>"
 
 
 def features() -> str:
