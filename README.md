@@ -32,13 +32,13 @@ uv run snp-brief --input fixture/held-out.txt --save briefs/held-out.txt
 uv run snp-brief-demo
 ```
 
-Serves a local page. Offline by default: it reads `cache/` and makes no network call. Run the list in the sidebar, or search one rsID at the top. The selected SNP opens in three modules:
+Serves a local page. Run the list in the sidebar, or search any rsID at the top. Loading is cache first: SNPs in the checked-in `cache/` load instantly with no network call; any other rsID is fetched live from dbSNP, ClinVar, gnomAD, Europe PMC, and UniProt (10-30 s the first time) and saved to `~/.cache/snp-brief` (or `SNP_BRIEF_USER_CACHE`), so the next lookup is instant. **Refresh evidence** on a SNP re-fetches it live and keeps the old record if any source fails. **Offline only** in the sidebar turns off all network calls. The selected SNP opens in three modules:
 
 - **Variant Observatory** (default): the checked plain-English summary, the evidence brief, gnomAD populations, papers, and which sources answered.
 - **Molecular Ripple** (runs when you press Run): the variant context (missense, nonsense, intronic, ...), what a mechanistic analysis should examine for that context, and molecular links labelled *observed*, *predicted*, or *unknown*. Ensembl VEP scores are the next step.
 - **Hypothesis Forge** (runs when you press Run): stage 1 sorts the variant as *well characterized*, *conflicting evidence*, *uncertain mechanism*, or *insufficient evidence*, with the reason and next steps. For conflicting and uncertain variants, an LLM proposes two or three competing hypotheses, each with fact-checked support, missing evidence, the observation that would tell it apart, and an experiment. Experiments are ranked by feasibility and open gaps. Well-characterized and thin-evidence variants get no invented hypotheses.
 
-Module results stay in the session when you switch tabs or SNPs. **Live fetching** calls the sources and writes a separate temp cache, leaving `cache/` unchanged.
+Module results stay in the session when you switch tabs or SNPs. The checked-in `cache/` is never changed by the page.
 
 ## LLM: Nebius Token Factory
 

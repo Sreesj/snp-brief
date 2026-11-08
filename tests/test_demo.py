@@ -197,7 +197,7 @@ class PageTests(unittest.TestCase):
         page = AppTest.from_file(str(APP), default_timeout=30).run()
         self.assertFalse(page.exception)
         self.assertEqual(page.text_area(key="rsid_text").value.split(), FIXTURE_IDS)
-        self.assertFalse(page.toggle(key="live").value)
+        self.assertFalse(page.toggle(key="offline").value)
         page.button(key="run_briefs").click().run()
         self.assertFalse(page.exception)
         table = page.dataframe[0].value

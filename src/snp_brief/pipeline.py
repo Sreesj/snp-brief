@@ -41,6 +41,7 @@ class Gathered:
     calls: dict[str, SourceCall]
     sentences: list[str]
     text: str
+    cache_dir: Path | None = None
 
 
 def build_brief(rsid: str, *, cache_dir: Path, refresh: bool, offline: bool) -> str:
@@ -108,6 +109,7 @@ def gather(rsid: str, *, cache_dir: Path, refresh: bool, offline: bool) -> Gathe
         calls=calls,
         sentences=brief_sentences(db, records, variants, papers, uniprot, clinvar_retrieved=clinvar_retrieved),
         text=assemble_brief(db, records, variants, papers, uniprot, clinvar_retrieved=clinvar_retrieved),
+        cache_dir=cache_dir,
     )
 
 
@@ -143,3 +145,38 @@ def _cached(
 
 def _stamp(payload: dict | None) -> str | None:
     return (payload or {}).get("retrieved")
+
+
+def default_user_cache() -> Path:
+    """Where live responses for SNPs outside the checked-in cache are saved."""
+    import os
+
+    configured = os.environ.get("SNP_BRIEF_USER_CACHE")
+    return Path(configured) if configured else Path.home() / ".cache" / "snp-brief"
+
+
+def load_variant(
+    rsid: str,
+    *,
+    repo_cache: Path,
+    user_cache: Path,
+    offline: bool = False,
+    refresh: bool = False,
+) -> Gathered:
+    """Cache first, live only for what is missing.
+
+    - A SNP in the checked-in cache (repo_cache) is read from there.
+    - Any other SNP is read from user_cache; sources missing there are fetched
+      live and saved, so the next lookup is instant.
+    - refresh re-fetches every source into user_cache and leaves the checked-in
+      cache unchanged.
+    - offline never calls the network; missing sources are reported as missing.
+    """
+    if refresh and not offline:
+        return gather(rsid, cache_dir=user_cache, refresh=True, offline=False)
+    # A SNP fetched or refreshed into user_cache is newer than the checked-in copy.
+    if any((user_cache / rsid).glob("*.json")):
+        return gather(rsid, cache_dir=user_cache, refresh=False, offline=offline)
+    if (repo_cache / rsid).is_dir():
+        return gather(rsid, cache_dir=repo_cache, refresh=False, offline=offline)
+    return gather(rsid, cache_dir=user_cache, refresh=False, offline=offline)
