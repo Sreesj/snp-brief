@@ -32,7 +32,7 @@ from snp_brief.forge import CONFLICTING, EXPLORATORY, INSUFFICIENT, REPORTED, TR
 from snp_brief.graph import evidence_dot
 from snp_brief.literature import Finding, extract_findings
 from snp_brief.llm import LLMClient
-from snp_brief.pipeline import Gathered, default_user_cache, in_flight, load_variant
+from snp_brief.pipeline import Gathered, SourceCall, default_user_cache, in_flight, load_variant
 from snp_brief.providers import BY_KEY, SPEED_BUDGETS
 from snp_brief.report import build_report, load_notes, save_notes
 from snp_brief.ripple import ripple_cached
@@ -368,7 +368,10 @@ def pick_up_late_sources(rsid: str) -> None:
         return
     tries[rsid] = tries.get(rsid, 0) + 1
     if tries[rsid] > 3:
-        return
+        # Never leave a row on "Loading": whatever has not answered by now is unavailable.
+        for key in item.pending:
+            item.calls[key] = SourceCall("failed", error="no answer after several checks")
+        st.rerun(scope="app")
     reload_variant(item)
     st.rerun(scope="app")
 

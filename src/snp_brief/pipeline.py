@@ -57,6 +57,10 @@ _LOCK = threading.Lock()
 # Fetches in flight, keyed by (rsid, source). A second request for the same source waits for the
 # first instead of starting another one, so "Check again" picks up a slow answer when it lands.
 _INFLIGHT: dict[tuple[str, str], "_Flight"] = {}
+# Sources that just failed, keyed by (rsid, source) -> (monotonic time, SourceCall). Picking up
+# late answers reads this instead of trying the same broken server again; Refresh data ignores it.
+_RECENT_FAIL: dict[tuple[str, str], tuple[float, "SourceCall"]] = {}
+FAIL_MEMORY_SECONDS = 600
 
 
 class _Flight:
@@ -317,6 +321,9 @@ def _cached_multi(
         return None, SourceCall("no cache")
     key = (rsid, source)
     with _LOCK:
+        failed = _RECENT_FAIL.get(key)
+        if failed and not refresh and time.monotonic() - failed[0] < FAIL_MEMORY_SECONDS:
+            return None, failed[1]
         flight = _INFLIGHT.get(key)
         mine = flight is None
         if mine:
@@ -326,6 +333,11 @@ def _cached_multi(
         return flight.result or (None, SourceCall("failed", error="no answer"))
     try:
         flight.result = _fetch_and_save(rsid, source, fetcher, write, started)
+        with _LOCK:
+            if flight.result[1].origin == "failed":
+                _RECENT_FAIL[key] = (time.monotonic(), flight.result[1])
+            else:
+                _RECENT_FAIL.pop(key, None)
         return flight.result
     finally:
         with _LOCK:

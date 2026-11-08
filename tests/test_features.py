@@ -333,3 +333,26 @@ class ReliabilityTests(unittest.TestCase):
         self.assertEqual(len(count), 1)
         self.assertEqual({payload["x"] for payload, _ in out}, {1})
         self.assertFalse(pipeline.in_flight("rs1", ["gwas"]))
+
+
+class FailureMemoryTests(unittest.TestCase):
+    def test_failed_source_is_not_retried_until_refresh(self) -> None:
+        from snp_brief import pipeline
+
+        tmp = Path(tempfile.mkdtemp())
+        self.addCleanup(shutil.rmtree, tmp)
+        self.addCleanup(pipeline._RECENT_FAIL.clear)
+        count = []
+
+        def broken():
+            count.append(1)
+            raise RuntimeError("HTTP 500")
+
+        args = dict(dirs=(tmp,), write=tmp, offline=False)
+        import contextlib, io
+        with contextlib.redirect_stderr(io.StringIO()):
+            first = pipeline._cached_multi("rs9", "gwas", broken, refresh=False, **args)
+            second = pipeline._cached_multi("rs9", "gwas", broken, refresh=False, **args)
+            pipeline._cached_multi("rs9", "gwas", broken, refresh=True, **args)
+        self.assertEqual((first[1].origin, second[1].origin), ("failed", "failed"))
+        self.assertEqual(len(count), 2, "the second call reuses the failure; refresh tries again")
