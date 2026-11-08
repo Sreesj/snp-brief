@@ -23,16 +23,26 @@ from snp_brief.sources.gnomad import disagrees, frequency_phrase
 
 ROOT = Path(__file__).resolve().parents[1]
 FIXTURE_IDS = [
-    "rs6025",
+    "rs9807334",
+    "rs121913529",
+    "rs72921001",
+    "rs17822931",
     "rs334",
-    "rs1800562",
-    "rs1799963",
+    "rs987870",
+    "rs429358",
+    "rs3827760",
+    "rs113993960",
     "rs4988235",
-    "rs1815739",
-    "rs1801133",
-    "rs1426654",
+    "rs28934578",
+    "rs17004038",
     "rs12913832",
-    "rs6054257",
+    "rs6025",
+    "rs713598",
+    "rs7412",
+    "rs80357713",
+    "rs1426654",
+    "rs1799963",
+    "rs1801133",
 ]
 
 
@@ -564,7 +574,7 @@ class ConflictTests(unittest.TestCase):
         self.assertIn("chr1:999", text)
 
     def test_rs6025_headline_is_pathogenic(self) -> None:
-        text = build_brief("rs6025", cache_dir=ROOT / "cache", refresh=False, offline=True)
+        text = build_brief("rs6025", cache_dir=ROOT / "tests" / "cache", refresh=False, offline=True)
         disease = text.split("Disease relevance:", 1)[1].split("Papers:", 1)[0]
         self.assertTrue(disease.startswith(" Pathogenic, conditions"))
         self.assertIn("thrombophilia", disease.lower())
@@ -586,7 +596,7 @@ class ConflictTests(unittest.TestCase):
             "rs1801133": "Disease relevance: unresolved.",
         }
         for rsid, start in expected.items():
-            text = build_brief(rsid, cache_dir=ROOT / "cache", refresh=False, offline=True)
+            text = build_brief(rsid, cache_dir=ROOT / "tests" / "cache", refresh=False, offline=True)
             self.assertIn(start, text, rsid)
 
 

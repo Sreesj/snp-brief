@@ -10,8 +10,19 @@ from snp_brief.pipeline import gather
 from snp_brief.summary import Fact, check, render, summarize
 
 ROOT = Path(__file__).resolve().parents[1]
-CACHE = ROOT / "cache"
-FIXTURE_IDS = (ROOT / "fixture" / "snps.txt").read_text(encoding="utf-8").split()
+CACHE = ROOT / "tests" / "cache"  # frozen test snapshot, independent of the demo list
+TEST_IDS = [  # SNPs in the frozen tests/cache snapshot
+    "rs6025",
+    "rs334",
+    "rs1800562",
+    "rs1799963",
+    "rs4988235",
+    "rs1815739",
+    "rs1801133",
+    "rs1426654",
+    "rs12913832",
+    "rs6054257",
+]
 
 FACTS = [
     Fact("F1", "rs6025 is a missense variant in F5; NM_000130.4(F5):c.1601G>A (p.Arg534Gln) (ClinVar VCV000000642).", "ClinVar"),
@@ -73,7 +84,7 @@ class CheckerTests(unittest.TestCase):
 
 class TemplateTests(unittest.TestCase):
     def test_every_fixture_template_passes_its_own_check(self) -> None:
-        for rsid in FIXTURE_IDS:
+        for rsid in TEST_IDS:
             summary = summarize(cached(rsid))
             self.assertEqual(summary.rejected, [], rsid)
             self.assertGreaterEqual(len(summary.sentences), 2, rsid)

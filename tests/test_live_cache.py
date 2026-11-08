@@ -17,7 +17,7 @@ from snp_brief import pipeline  # noqa: E402
 from snp_brief.pipeline import load_variant  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[1]
-CACHE = ROOT / "cache"
+CACHE = ROOT / "tests" / "cache"  # frozen test snapshot, independent of the demo list
 
 
 class LoadVariantTests(unittest.TestCase):

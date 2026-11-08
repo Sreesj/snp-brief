@@ -1,0 +1,629 @@
+{
+  "source": "europepmc",
+  "retrieved": "2026-11-07T02:08:29+00:00",
+  "request": {
+    "query": "(TITLE:rs334 OR ABSTRACT:rs334) AND PUB_TYPE:\"research-article\" NOT PUB_TYPE:review"
+  },
+  "response": {
+    "version": "6.9",
+    "hitCount": 17,
+    "nextCursorMark": "AoJEKDQ5NjE3MTQ5",
+    "nextPageUrl": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=%28TITLE%3Ars334+OR+ABSTRACT%3Ars334%29+AND+PUB_TYPE%3A%22research-article%22+NOT+PUB_TYPE%3Areview&cursorMark=AoJEKDQ5NjE3MTQ5&resultType=lite&pageSize=15&sort=CITED+desc&format=json",
+    "request": {
+      "queryString": "(TITLE:rs334 OR ABSTRACT:rs334) AND PUB_TYPE:\"research-article\" NOT PUB_TYPE:review",
+      "resultType": "lite",
+      "cursorMark": "*",
+      "pageSize": 15,
+      "sort": "CITED desc",
+      "synonym": false
+    },
+    "resultList": {
+      "result": [
+        {
+          "id": "29526279",
+          "source": "MED",
+          "pmid": "29526279",
+          "pmcid": "PMC5985360",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC5985360"
+            ]
+          },
+          "doi": "10.1016/j.ajhg.2018.02.003",
+          "title": "Whole-Genome-Sequence-Based Haplotypes Reveal Single Origin of the Sickle Allele during the Holocene Wet Phase.",
+          "authorString": "Shriner D, Rotimi CN.",
+          "journalTitle": "Am J Hum Genet",
+          "issue": "4",
+          "journalVolume": "102",
+          "pubYear": "2018",
+          "journalIssn": "0002-9297; 1537-6605; ",
+          "pageInfo": "547-556",
+          "pubType": "research support, n.i.h., intramural; research-article; journal article; research support, n.i.h., extramural",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 79,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp",
+              "omim",
+              "doi"
+            ]
+          },
+          "firstPublicationDate": "2018-03-08",
+          "firstIndexDate": "2018-03-12"
+        },
+        {
+          "id": "33619371",
+          "source": "MED",
+          "pmid": "33619371",
+          "pmcid": "PMC7610676",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC7610676"
+            ]
+          },
+          "doi": "10.1038/s41591-021-01238-4",
+          "title": "Malaria is a cause of iron deficiency in African children.",
+          "authorString": "Muriuki JM, Mentzer AJ, Mitchell R, Webb EL, Etyang AO, Kyobutungi C, Morovat A, Kimita W, Ndungu FM, Macharia AW, Ngetsa CJ, Makale J, Lule SA, Musani SK, Raffield LM, Cutland CL, Sirima SB, Diarra A, Tiono AB, Fried M, Gwamaka M, Adu-Afarwuah S, Wirth JP, Wegm\u00fcller R, Madhi SA, Snow RW, Hill AVS, Rockett KA, Sandhu MS, Kwiatkowski DP, Prentice AM, Byrd KA, Ndjebayi A, Stewart CP, Engle-Stone R, Green TJ, Karakochuk CD, Suchdev PS, Bejon P, Duffy PE, Davey Smith G, Elliott AM, Williams TN, Atkinson SH.",
+          "journalTitle": "Nat Med",
+          "issue": "4",
+          "journalVolume": "27",
+          "pubYear": "2021",
+          "journalIssn": "1078-8956; 1546-170x; ",
+          "pageInfo": "653-658",
+          "pubType": "research support, n.i.h., intramural; research support, non-u.s. gov't; research-article; research support, u.s. gov't, non-p.h.s.; journal article; research support, n.i.h., extramural",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 54,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp"
+            ]
+          },
+          "firstPublicationDate": "2021-02-22",
+          "firstIndexDate": "2021-02-24"
+        },
+        {
+          "id": "28912365",
+          "source": "MED",
+          "pmid": "28912365",
+          "pmcid": "PMC5658238",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC5658238"
+            ]
+          },
+          "doi": "10.1161/atvbaha.117.310073",
+          "title": "D-Dimer in African Americans: Whole Genome Sequence Analysis and Relationship to Cardiovascular Disease Risk in the Jackson Heart Study.",
+          "authorString": "Raffield LM, Zakai NA, Duan Q, Laurie C, Smith JD, Irvin MR, Doyle MF, Naik RP, Song C, Manichaikul AW, Liu Y, Durda P, Rotter JI, Jenny NS, Rich SS, Wilson JG, Johnson AD, Correa A, Li Y, Nickerson DA, Rice K, Lange EM, Cushman M, Lange LA, Reiner AP, NHLBI Trans-Omics for Precision Medicine (TOPMed) Consortium, Hematology & Hemostasis TOPMed Working Group*.",
+          "journalTitle": "Arterioscler Thromb Vasc Biol",
+          "issue": "11",
+          "journalVolume": "37",
+          "pubYear": "2017",
+          "journalIssn": "1079-5642; 1524-4636; ",
+          "pageInfo": "2220-2227",
+          "pubType": "research support, n.i.h., intramural; comparative study; research-article; multicenter study; journal article; research support, n.i.h., extramural; observational study",
+          "isOpenAccess": "N",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 48,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp"
+            ]
+          },
+          "firstPublicationDate": "2017-09-14",
+          "firstIndexDate": "2017-09-16"
+        },
+        {
+          "id": "24312262",
+          "source": "MED",
+          "pmid": "24312262",
+          "pmcid": "PMC3842328",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC3842328"
+            ]
+          },
+          "doi": "10.1371/journal.pone.0081071",
+          "title": "Association of cytokine and Toll-like receptor gene polymorphisms with severe malaria in three regions of Cameroon.",
+          "authorString": "Apinjoh TO, Anchang-Kimbi JK, Njua-Yafi C, Mugri RN, Ngwai AN, Rockett KA, Mbunwe E, Besingi RN, Clark TG, Kwiatkowski DP, Achidi EA, MalariaGEN Consortium.",
+          "journalTitle": "PLoS One",
+          "issue": "11",
+          "journalVolume": "8",
+          "pubYear": "2013",
+          "journalIssn": "1932-6203",
+          "pageInfo": "e81071",
+          "pubType": "research support, non-u.s. gov't; research-article; journal article",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 29,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp"
+            ]
+          },
+          "firstPublicationDate": "2013-11-27",
+          "firstIndexDate": "2013-12-07"
+        },
+        {
+          "id": "35785794",
+          "source": "MED",
+          "pmid": "35785794",
+          "pmcid": "PMC7613576",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC7613576"
+            ]
+          },
+          "doi": "10.1016/s2352-4642(22)00153-5",
+          "title": "Sickle cell anaemia and severe Plasmodium falciparum malaria: a secondary analysis of the Transfusion and Treatment of African Children Trial (TRACT).",
+          "authorString": "Uyoga S, Olupot-Olupot P, Connon R, Kiguli S, Opoka RO, Alaroker F, Muhindo R, Macharia AW, Dondorp AM, Gibb DM, Walker AS, George EC, Maitland K, Williams TN.",
+          "journalTitle": "Lancet Child Adolesc Health",
+          "issue": "9",
+          "journalVolume": "6",
+          "pubYear": "2022",
+          "journalIssn": "2352-4642; 2352-4650; ",
+          "pageInfo": "606-613",
+          "pubType": "research-article; multicenter study; randomized controlled trial; journal article",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 24,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp"
+            ]
+          },
+          "firstPublicationDate": "2022-07-02",
+          "firstIndexDate": "2022-07-07"
+        },
+        {
+          "id": "35759254",
+          "source": "MED",
+          "pmid": "35759254",
+          "pmcid": "PMC9237798",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC9237798"
+            ]
+          },
+          "doi": "10.1001/jamainternmed.2022.2141",
+          "title": "Association of Kidney Comorbidities and Acute Kidney Failure With Unfavorable Outcomes After COVID-19 in Individuals With the Sickle Cell Trait.",
+          "authorString": "Verma A, Huffman JE, Gao L, Minnier J, Wu WC, Cho K, Ho YL, Gorman BR, Pyarajan S, Rajeevan N, Garcon H, Joseph J, McGeary JE, Suzuki A, Reaven PD, Wan ES, Lynch JA, Petersen JM, Meigs JB, Freiberg MS, Gatsby E, Lynch KE, Zekavat SM, Natarajan P, Dalal S, Jhala DN, Arjomandi M, Bonomo RA, Thompson TK, Pathak GA, Zhou JJ, Donskey CJ, Madduri RK, Wells QS, Gelernter J, Huang RDL, Polimanti R, Chang KM, Liao KP, Tsao PS, Sun YV, Wilson PWF, O'Donnell CJ, Hung AM, Gaziano JM, Hauger RL, Iyengar SK, Luoh SW, VA Million Veteran Program COVID-19 Science Initiative.",
+          "journalTitle": "JAMA Intern Med",
+          "issue": "8",
+          "journalVolume": "182",
+          "pubYear": "2022",
+          "journalIssn": "2168-6106; 2168-6114; ",
+          "pageInfo": "796-804",
+          "pubType": "research-article; research support, u.s. gov't, non-p.h.s.; journal article; research support, n.i.h., extramural",
+          "isOpenAccess": "N",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 20,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "N",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp",
+              "doi"
+            ]
+          },
+          "firstPublicationDate": "2022-08-01",
+          "firstIndexDate": "2022-06-28"
+        },
+        {
+          "id": "24934404",
+          "source": "MED",
+          "pmid": "24934404",
+          "pmcid": "PMC4077225",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC4077225"
+            ]
+          },
+          "doi": "10.1186/1475-2875-13-236",
+          "title": "Association of candidate gene polymorphisms and TGF-beta/IL-10 levels with malaria in three regions of Cameroon: a case-control study.",
+          "authorString": "Apinjoh TO, Anchang-Kimbi JK, Njua-Yafi C, Ngwai AN, Mugri RN, Clark TG, Rockett KA, Kwiatkowski DP, Achidi EA, MalariaGEN Consortium.",
+          "journalTitle": "Malar J",
+          "journalVolume": "13",
+          "pubYear": "2014",
+          "journalIssn": "1475-2875",
+          "pageInfo": "236",
+          "pubType": "research support, non-u.s. gov't; research-article; journal article",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 20,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp"
+            ]
+          },
+          "firstPublicationDate": "2014-06-16",
+          "firstIndexDate": "2014-06-18"
+        },
+        {
+          "id": "31213470",
+          "source": "MED",
+          "pmid": "31213470",
+          "pmcid": "PMC6702612",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC6702612"
+            ]
+          },
+          "doi": "10.2337/dc19-0168",
+          "title": "A Genome-Wide Association Study Identifies Blood Disorder-Related Variants Influencing Hemoglobin A<sub>1c</sub> With Implications for Glycemic Status in U.S. Hispanics/Latinos.",
+          "authorString": "Moon JY, Louie TL, Jain D, Sofer T, Schurmann C, Below JE, Lai CQ, Aviles-Santa ML, Talavera GA, Smith CE, Petty LE, Bottinger EP, Chen YI, Taylor KD, Daviglus ML, Cai J, Wang T, Tucker KL, Ordov\u00e1s JM, Hanis CL, Loos RJF, Schneiderman N, Rotter JI, Kaplan RC, Qi Q.",
+          "journalTitle": "Diabetes Care",
+          "issue": "9",
+          "journalVolume": "42",
+          "pubYear": "2019",
+          "journalIssn": "0149-5992; 1935-5548; ",
+          "pageInfo": "1784-1791",
+          "pubType": "research support, n.i.h., intramural; research-article; journal article; research support, n.i.h., extramural",
+          "isOpenAccess": "N",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 18,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp"
+            ]
+          },
+          "firstPublicationDate": "2019-06-18",
+          "firstIndexDate": "2019-06-24"
+        },
+        {
+          "id": "33399855",
+          "source": "MED",
+          "pmid": "33399855",
+          "pmcid": "PMC7786247",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC7786247"
+            ]
+          },
+          "doi": "10.1001/jamanetworkopen.2020.30435",
+          "title": "Association of Sickle Cell Trait With Incidence of Coronary Heart Disease Among African American Individuals.",
+          "authorString": "Hyacinth HI, Franceschini N, Seals SR, Irvin MR, Chaudhary N, Naik RP, Alonso A, Carty CL, Burke GL, Zakai NA, Winkler CA, David VA, Kopp JB, Judd SE, Adams RJ, Gee BE, Longstreth WT, Egede L, Lackland DT, Greenberg CS, Taylor H, Manson JE, Key NS, Derebail VK, Kshirsagar AV, Folsom AR, Konety SH, Howard V, Allison M, Wilson JG, Correa A, Zhi D, Arnett DK, Howard G, Reiner AP, Cushman M, Safford MM.",
+          "journalTitle": "JAMA Netw Open",
+          "issue": "1",
+          "journalVolume": "4",
+          "pubYear": "2021",
+          "journalIssn": "2574-3805",
+          "pageInfo": "e2030435",
+          "pubType": "research support, non-u.s. gov't; research-article; journal article; research support, n.i.h., extramural",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 13,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "N",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp",
+              "refseq"
+            ]
+          },
+          "firstPublicationDate": "2021-01-04",
+          "firstIndexDate": "2021-01-07"
+        },
+        {
+          "id": "31941490",
+          "source": "MED",
+          "pmid": "31941490",
+          "pmcid": "PMC6964006",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC6964006"
+            ]
+          },
+          "doi": "10.1186/s12936-020-3105-3",
+          "title": "Associations between red blood cell variants and malaria among children and adults from three areas of Uganda: a prospective cohort study.",
+          "authorString": "Kakande E, Greenhouse B, Bajunirwe F, Drakeley C, Nankabirwa JI, Walakira A, Nsobya SL, Katureebe A, Rek J, Arinaitwe E, Rosenthal PJ, Kamya MR, Dorsey G, Rodriguez-Barraquer I.",
+          "journalTitle": "Malar J",
+          "issue": "1",
+          "journalVolume": "19",
+          "pubYear": "2020",
+          "journalIssn": "1475-2875",
+          "pageInfo": "21",
+          "pubType": "research-article; multicenter study; journal article",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 11,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp"
+            ]
+          },
+          "firstPublicationDate": "2020-01-15",
+          "firstIndexDate": "2020-01-17"
+        },
+        {
+          "id": "28115816",
+          "source": "MED",
+          "pmid": "28115816",
+          "pmcid": "PMC5245602",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC5245602"
+            ]
+          },
+          "doi": "10.18865/ed.27.1.11",
+          "title": "Sickle Cell Trait and Renal Function in Hispanics in the United States: The Northern Manhattan Study.",
+          "authorString": "Dueker ND, Della-Morte D, Rundek T, Sacco RL, Blanton SH.",
+          "journalTitle": "Ethn Dis",
+          "issue": "1",
+          "journalVolume": "27",
+          "pubYear": "2017",
+          "journalIssn": "1049-510x; 1945-0826; ",
+          "pageInfo": "11-14",
+          "pubType": "research support, non-u.s. gov't; research-article; journal article; research support, n.i.h., extramural",
+          "isOpenAccess": "N",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 10,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "N",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp"
+            ]
+          },
+          "firstPublicationDate": "2017-01-19",
+          "firstIndexDate": "2017-01-25"
+        },
+        {
+          "id": "20128890",
+          "source": "MED",
+          "pmid": "20128890",
+          "pmcid": "PMC2829010",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC2829010"
+            ]
+          },
+          "doi": "10.1186/1471-2350-11-21",
+          "title": "Loss of balancing selection in the betaS globin locus.",
+          "authorString": "Salih NA, Hussain AA, Almugtaba IA, Elzein AM, Elhassan IM, Khalil EA, Ishag HB, Mohammed HS, Kwiatkowski D, Ibrahim ME.",
+          "journalTitle": "BMC Med Genet",
+          "journalVolume": "11",
+          "pubYear": "2010",
+          "journalIssn": "1471-2350",
+          "pageInfo": "21",
+          "pubType": "research support, non-u.s. gov't; research-article; journal article",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 10,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "N",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp"
+            ]
+          },
+          "firstPublicationDate": "2010-02-03",
+          "firstIndexDate": "2010-09-29"
+        },
+        {
+          "id": "35811813",
+          "source": "MED",
+          "pmid": "35811813",
+          "pmcid": "PMC9266585",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC9266585"
+            ]
+          },
+          "doi": "10.7717/peerj.13487",
+          "title": "<i>G6PD</i> and <i>HBB</i> polymorphisms in the Senegalese population: prevalence, correlation with clinical malaria.",
+          "authorString": "Thiam F, Diop G, Coulonges C, Derbois C, Mbengue B, Thiam A, Nguer CM, Zagury JF, Deleuze JF, Dieye A.",
+          "journalTitle": "PeerJ",
+          "journalVolume": "10",
+          "pubYear": "2022",
+          "journalIssn": "2167-8359",
+          "pageInfo": "e13487",
+          "pubType": "research support, non-u.s. gov't; research-article; journal article",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 8,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp",
+              "refseq",
+              "doi"
+            ]
+          },
+          "firstPublicationDate": "2022-07-05",
+          "firstIndexDate": "2022-07-12"
+        },
+        {
+          "id": "20552021",
+          "source": "MED",
+          "pmid": "20552021",
+          "pmcid": "PMC2884021",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC2884021"
+            ]
+          },
+          "doi": "10.1371/journal.pone.0011075",
+          "title": "Haptoglobin and sickle cell polymorphisms and risk of active trachoma in Gambian children.",
+          "authorString": "Savy M, Hennig BJ, Doherty CP, Fulford AJ, Bailey R, Holland MJ, Sirugo G, Rockett KA, Kwiatkowski DP, Prentice AM, Cox SE.",
+          "journalTitle": "PLoS One",
+          "issue": "6",
+          "journalVolume": "5",
+          "pubYear": "2010",
+          "journalIssn": "1932-6203",
+          "pageInfo": "e11075",
+          "pubType": "research support, non-u.s. gov't; research-article; journal article",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 7,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp"
+            ]
+          },
+          "firstPublicationDate": "2010-06-11",
+          "firstIndexDate": "2010-09-29"
+        },
+        {
+          "id": "38009642",
+          "source": "MED",
+          "pmid": "38009642",
+          "pmcid": "PMC10872868",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC10872868"
+            ]
+          },
+          "doi": "10.1002/ajh.27149",
+          "title": "Sickle cell allele HBB-rs334(T) is associated with decreased risk of childhood Burkitt lymphoma in East Africa.",
+          "authorString": "Hong HG, Gouveia MH, Ogwang MD, Kerchan P, Reynolds SJ, Tenge CN, Were PA, Kuremu RT, Wekesa WN, Masalu N, Kawira E, Kinyera T, Wang X, Zhou J, Leal TP, Otim I, Legason ID, Nabalende H, Dhudha H, Mumia M, Baker FS, Okusolubo T, Ayers LW, Bhatia K, Goedert JJ, Woo J, Manning M, Cole N, Luo W, Hicks B, Chagaluka G, Johnston WT, Mutalima N, Borgstein E, Liomba GN, Kamiza S, Mkandawire N, Mitambo C, Molyneux EM, Newton R, Hutchinson A, Yeager M, Adeyemo AA, Thein SL, Rotimi CN, Chanock SJ, Prokunina-Olsson L, Mbulaiteye SM.",
+          "journalTitle": "Am J Hematol",
+          "issue": "1",
+          "journalVolume": "99",
+          "pubYear": "2024",
+          "journalIssn": "0361-8609; 1096-8652; ",
+          "pageInfo": "113-123",
+          "pubType": "research support, n.i.h., intramural; research support, u.s. gov't, p.h.s.; research-article; journal article",
+          "isOpenAccess": "N",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 4,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp",
+              "doi"
+            ]
+          },
+          "firstPublicationDate": "2023-11-27",
+          "firstIndexDate": "2023-11-28"
+        }
+      ]
+    }
+  }
+}

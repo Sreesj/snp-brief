@@ -28,7 +28,7 @@ from snp_brief.ripple import OBSERVED, PREDICTED, UNKNOWN, context_key, ripple
 from snp_brief.summary import summarize
 
 ROOT = Path(__file__).resolve().parents[1]
-CACHE = ROOT / "cache"
+CACHE = ROOT / "tests" / "cache"  # frozen test snapshot, independent of the demo list
 
 
 def cached(rsid: str):

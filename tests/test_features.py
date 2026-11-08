@@ -21,7 +21,7 @@ from snp_brief.ripple import ripple, ripple_cached
 from snp_brief.summary import summarize
 
 ROOT = Path(__file__).resolve().parents[1]
-CACHE = ROOT / "cache"
+CACHE = ROOT / "tests" / "cache"  # frozen test snapshot, independent of the demo list
 ABSTRACT = Abstract(
     "21193851",
     "Association of the LCT-13910C>T polymorphism with obesity",

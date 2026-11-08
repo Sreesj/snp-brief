@@ -16,7 +16,7 @@ uv run snp-brief
 
 On the first run uv creates `.venv/` and installs the package from `uv.lock`. It uses Python 3.12 from `.python-version` and downloads it if it is not installed.
 
-The command prints, for each rsID in `fixture/snps.txt`, a short plain-English summary and the full evidence brief. Cached responses live in `cache/`. When a cache file is present the command does not call that source, so the pitch still runs if a source is down. `--offline` refuses every network call. `--refresh` replaces the cache from the live sources.
+The command prints, for each rsID in `fixture/snps.txt` (the 20-SNP demo list, described in `fixture/notes.md`), a short plain-English summary and the full evidence brief. Cached responses live in `cache/`. When a cache file is present the command does not call that source, so the pitch still runs if a source is down. `--offline` refuses every network call. `--refresh` replaces the cache from the live sources.
 
 The same command runs any list:
 
@@ -170,6 +170,18 @@ Evidence: rs1815739 is GRCh38 chr11:66560624, alleles C>A, C>T (dbSNP). Function
 ```
 
 The stop-gained consequence is not treated as a disease claim, and the unreviewed "Pathogenic" submissions are kept as dissent rather than overturning the reviewed Benign call.
+
+## Demo data
+
+`cache/` holds saved source responses for the demo SNPs so the pitch runs offline. After changing the demo list, fill it once with the live sources and commit it:
+
+```bash
+uv run snp-brief --input fixture/snps.txt --speed complete > /dev/null
+uv run snp-brief --input fixture/held-out.txt > /dev/null
+git add cache && git commit -m "cache demo SNPs"
+```
+
+Tests do not depend on the demo list: they use a frozen snapshot in `tests/cache/`.
 
 ## Tests
 

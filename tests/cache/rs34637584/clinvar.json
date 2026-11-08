@@ -1,0 +1,543 @@
+{
+  "source": "clinvar",
+  "retrieved": "2026-11-07T02:19:14+00:00",
+  "request": {
+    "term": "rs34637584"
+  },
+  "response": {
+    "esearch": {
+      "header": {
+        "type": "esearch",
+        "version": "0.3"
+      },
+      "esearchresult": {
+        "count": "1",
+        "retmax": "1",
+        "retstart": "0",
+        "idlist": [
+          "1940"
+        ],
+        "translationset": [],
+        "translationstack": [
+          {
+            "term": "rs34637584[All Fields]",
+            "field": "All Fields",
+            "count": "1",
+            "explode": "N"
+          },
+          "GROUP"
+        ],
+        "querytranslation": "rs34637584[All Fields]"
+      }
+    },
+    "esummary": {
+      "header": {
+        "type": "esummary",
+        "version": "0.3"
+      },
+      "result": {
+        "uids": [
+          "1940"
+        ],
+        "1940": {
+          "uid": "1940",
+          "obj_type": "single nucleotide variant",
+          "accession": "VCV000001940",
+          "accession_version": "VCV000001940.94",
+          "title": "NM_198578.4(LRRK2):c.6055G>A (p.Gly2019Ser)",
+          "variation_set": [
+            {
+              "measure_id": "16979",
+              "variation_xrefs": [
+                {
+                  "db_source": "ClinGen",
+                  "db_id": "CA339926"
+                },
+                {
+                  "db_source": "UniProtKB",
+                  "db_id": "Q5S007#VAR_024958"
+                },
+                {
+                  "db_source": "OMIM",
+                  "db_id": "609007.0006"
+                },
+                {
+                  "db_source": "dbSNP",
+                  "db_id": "34637584"
+                }
+              ],
+              "variation_name": "NM_198578.4(LRRK2):c.6055G>A (p.Gly2019Ser)",
+              "cdna_change": "c.6055G>A",
+              "aliases": [],
+              "variation_loc": [
+                {
+                  "status": "current",
+                  "assembly_name": "GRCh38",
+                  "chr": "12",
+                  "band": "12q12",
+                  "start": "40340400",
+                  "stop": "40340400",
+                  "inner_start": "",
+                  "inner_stop": "",
+                  "outer_start": "",
+                  "outer_stop": "",
+                  "display_start": "40340400",
+                  "display_stop": "40340400",
+                  "assembly_acc_ver": "GCF_000001405.38",
+                  "annotation_release": "",
+                  "alt": "",
+                  "ref": ""
+                },
+                {
+                  "status": "previous",
+                  "assembly_name": "GRCh37",
+                  "chr": "12",
+                  "band": "12q12",
+                  "start": "40734202",
+                  "stop": "40734202",
+                  "inner_start": "",
+                  "inner_stop": "",
+                  "outer_start": "",
+                  "outer_stop": "",
+                  "display_start": "40734202",
+                  "display_stop": "40734202",
+                  "assembly_acc_ver": "GCF_000001405.25",
+                  "annotation_release": "",
+                  "alt": "",
+                  "ref": ""
+                }
+              ],
+              "allele_freq_set": [
+                {
+                  "source": "The Genome Aggregation Database (gnomAD)",
+                  "value": "0.00036",
+                  "minor_allele": ""
+                },
+                {
+                  "source": "Exome Aggregation Consortium (ExAC)",
+                  "value": "0.00039",
+                  "minor_allele": ""
+                },
+                {
+                  "source": "The Genome Aggregation Database (gnomAD), exomes",
+                  "value": "0.00039",
+                  "minor_allele": ""
+                },
+                {
+                  "source": "The Genome Aggregation Database (gnomAD), exomes",
+                  "value": "0.00053",
+                  "minor_allele": ""
+                },
+                {
+                  "source": "Trans-Omics for Precision Medicine (TOPMed)",
+                  "value": "0.00059",
+                  "minor_allele": ""
+                },
+                {
+                  "source": "1000 Genomes Project",
+                  "value": "0.00020",
+                  "minor_allele": "A"
+                }
+              ],
+              "variant_type": "single nucleotide variant",
+              "canonical_spdi": "NC_000012.12:40340399:G:A",
+              "common_name": ""
+            }
+          ],
+          "supporting_submissions": {
+            "scv": [
+              "SCV001138694",
+              "SCV000680283",
+              "SCV000742130",
+              "SCV000236518",
+              "SCV001365523",
+              "SCV001652801",
+              "SCV002034786",
+              "SCV000056154",
+              "SCV005045124",
+              "SCV000893982",
+              "SCV002556835",
+              "SCV001522345",
+              "SCV001808299",
+              "SCV000329408",
+              "SCV001964680",
+              "SCV001984701",
+              "SCV002050743",
+              "SCV004812567",
+              "SCV005374405",
+              "SCV000842686",
+              "SCV001446474",
+              "SCV006058795",
+              "SCV006278470",
+              "SCV000022175",
+              "SCV007097224",
+              "SCV005414073",
+              "SCV000640135",
+              "SCV002521485",
+              "SCV001250090",
+              "SCV004112443"
+            ],
+            "rcv": [
+              "RCV000002017",
+              "RCV000325492",
+              "RCV000622347",
+              "RCV001195216",
+              "RCV001836691",
+              "RCV003407254",
+              "RCV003993728"
+            ]
+          },
+          "germline_classification": {
+            "description": "Pathogenic/Likely pathogenic; risk factor",
+            "last_evaluated": "2026/04/24 00:00",
+            "review_status": "criteria provided, multiple submitters, no conflicts",
+            "fda_recognized_database": "",
+            "trait_set": [
+              {
+                "trait_xrefs": [],
+                "trait_name": "LRRK2-related disorder"
+              },
+              {
+                "trait_xrefs": [
+                  {
+                    "db_source": "Orphanet",
+                    "db_id": "2828"
+                  },
+                  {
+                    "db_source": "MedGen",
+                    "db_id": "C4275179"
+                  },
+                  {
+                    "db_source": "MONDO",
+                    "db_id": "MONDO:0017279"
+                  }
+                ],
+                "trait_name": "Young-onset Parkinson disease"
+              },
+              {
+                "trait_xrefs": [
+                  {
+                    "db_source": "MedGen",
+                    "db_id": "C0950123"
+                  },
+                  {
+                    "db_source": "MeSH",
+                    "db_id": "D030342"
+                  }
+                ],
+                "trait_name": "Inborn genetic diseases"
+              },
+              {
+                "trait_xrefs": [
+                  {
+                    "db_source": "MedGen",
+                    "db_id": "C3661900"
+                  }
+                ],
+                "trait_name": "not provided"
+              },
+              {
+                "trait_xrefs": [
+                  {
+                    "db_source": "Orphanet",
+                    "db_id": "411602"
+                  },
+                  {
+                    "db_source": "MedGen",
+                    "db_id": "C1846862"
+                  },
+                  {
+                    "db_source": "MONDO",
+                    "db_id": "MONDO:0011764"
+                  },
+                  {
+                    "db_source": "OMIM",
+                    "db_id": "607060"
+                  }
+                ],
+                "trait_name": "Autosomal dominant Parkinson disease 8"
+              },
+              {
+                "trait_xrefs": [
+                  {
+                    "db_source": "MedGen",
+                    "db_id": "C0030567"
+                  },
+                  {
+                    "db_source": "MeSH",
+                    "db_id": "D010300"
+                  },
+                  {
+                    "db_source": "MONDO",
+                    "db_id": "MONDO:0005180"
+                  },
+                  {
+                    "db_source": "OMIM",
+                    "db_id": "PS168600"
+                  }
+                ],
+                "trait_name": "Parkinson disease"
+              },
+              {
+                "trait_xrefs": [
+                  {
+                    "db_source": "Orphanet",
+                    "db_id": "411602"
+                  },
+                  {
+                    "db_source": "MedGen",
+                    "db_id": "C3160718"
+                  },
+                  {
+                    "db_source": "MONDO",
+                    "db_id": "MONDO:0008199"
+                  },
+                  {
+                    "db_source": "OMIM",
+                    "db_id": "168600"
+                  }
+                ],
+                "trait_name": "Parkinson disease, late-onset"
+              }
+            ]
+          },
+          "clinical_impact_classification": {
+            "description": "",
+            "last_evaluated": "1/01/01 00:00",
+            "review_status": "",
+            "fda_recognized_database": "",
+            "trait_set": []
+          },
+          "oncogenicity_classification": {
+            "description": "",
+            "last_evaluated": "1/01/01 00:00",
+            "review_status": "",
+            "fda_recognized_database": "",
+            "trait_set": []
+          },
+          "record_status": "",
+          "gene_sort": "LRRK2",
+          "chr_sort": "12",
+          "location_sort": "00000000000040340400",
+          "variation_set_name": "",
+          "variation_set_id": "",
+          "genes": [
+            {
+              "symbol": "LRRK2",
+              "geneid": "120892",
+              "strand": "+",
+              "source": "submitted"
+            }
+          ],
+          "molecular_consequence_list": [
+            "missense variant"
+          ],
+          "protein_change": "G2019S",
+          "fda_recognized_database": ""
+        }
+      }
+    },
+    "submissions": {
+      "1940": [
+        {
+          "accession": "SCV001138694",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        },
+        {
+          "accession": "SCV000680283",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        },
+        {
+          "accession": "SCV000742130",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        },
+        {
+          "accession": "SCV000236518",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": [
+            "Parkinson disease 8"
+          ]
+        },
+        {
+          "accession": "SCV001365523",
+          "description": "risk factor",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        },
+        {
+          "accession": "SCV001652801",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        },
+        {
+          "accession": "SCV002034786",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        },
+        {
+          "accession": "SCV000056154",
+          "description": "not provided",
+          "review_status": "no classification provided",
+          "traits": []
+        },
+        {
+          "accession": "SCV005045124",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        },
+        {
+          "accession": "SCV000893982",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        },
+        {
+          "accession": "SCV002556835",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        },
+        {
+          "accession": "SCV001522345",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        },
+        {
+          "accession": "SCV001808299",
+          "description": "Pathogenic",
+          "review_status": "no assertion criteria provided",
+          "traits": [
+            "not provided"
+          ]
+        },
+        {
+          "accession": "SCV000329408",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": [
+            "Not Provided"
+          ]
+        },
+        {
+          "accession": "SCV001964680",
+          "description": "Pathogenic",
+          "review_status": "no assertion criteria provided",
+          "traits": [
+            "not provided"
+          ]
+        },
+        {
+          "accession": "SCV001984701",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        },
+        {
+          "accession": "SCV002050743",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        },
+        {
+          "accession": "SCV004812567",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        },
+        {
+          "accession": "SCV005374405",
+          "description": "Likely pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        },
+        {
+          "accession": "SCV000842686",
+          "description": "pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": [
+            "not provided"
+          ]
+        },
+        {
+          "accession": "SCV001446474",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": [
+            "not provided"
+          ]
+        },
+        {
+          "accession": "SCV006058795",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        },
+        {
+          "accession": "SCV006278470",
+          "description": "Likely pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        },
+        {
+          "accession": "SCV000022175",
+          "description": "Pathogenic",
+          "review_status": "no assertion criteria provided",
+          "traits": [
+            "PARKINSON DISEASE 8, AUTOSOMAL DOMINANT"
+          ]
+        },
+        {
+          "accession": "SCV007097224",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        },
+        {
+          "accession": "SCV005414073",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": [
+            "Not provided"
+          ]
+        },
+        {
+          "accession": "SCV000640135",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        },
+        {
+          "accession": "SCV002521485",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        },
+        {
+          "accession": "SCV001250090",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        },
+        {
+          "accession": "SCV004112443",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": [
+            "LRRK2-related condition"
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -33,7 +33,7 @@ Not a pathogenicity classifier, and not the genomic-variant-classifier repo. Tha
 
 ## Demo
 
-One pinned fixture of about 10 SNPs, checked in, plus one held-out SNP run once at the end. Cache fixture responses under `cache/` so the pitch still runs if a source is down. One command produces the briefs:
+One pinned demo list of 20 SNPs (`fixture/snps.txt`), cached under `cache/`, plus one held-out SNP run once at the end. Tests use a frozen snapshot in `tests/cache/`. Cache fixture responses under `cache/` so the pitch still runs if a source is down. One command produces the briefs:
 
 ```bash
 uv run snp-brief

@@ -7,3 +7,4 @@ dist/
 build/
 .env
 .streamlit/secrets.toml
+cache/*/ripple.json

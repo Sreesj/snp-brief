@@ -34,7 +34,7 @@ from snp_brief.ripple import PREDICTED, ripple
 from snp_brief.summary import summarize
 
 ROOT = Path(__file__).resolve().parents[1]
-CACHE = ROOT / "cache"
+CACHE = ROOT / "tests" / "cache"  # frozen test snapshot, independent of the demo list
 RSID = "rs6054257"  # checked-in SNP with no ClinVar significance; extras are added in a temp copy
 
 VEP = {

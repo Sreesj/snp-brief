@@ -7,6 +7,7 @@ import io
 import logging
 import os
 import re
+import tempfile
 import unittest
 from pathlib import Path
 from unittest import mock
@@ -27,9 +28,21 @@ from snp_brief.demo.view import (
 from snp_brief.pipeline import gather
 
 ROOT = Path(__file__).resolve().parents[1]
-CACHE = ROOT / "cache"
+CACHE = ROOT / "tests" / "cache"  # frozen test snapshot, independent of the demo list
 APP = ROOT / "src" / "snp_brief" / "demo" / "app.py"
 FIXTURE_IDS = (ROOT / "fixture" / "snps.txt").read_text(encoding="utf-8").split()
+TEST_IDS = [  # SNPs in the frozen tests/cache snapshot
+    "rs6025",
+    "rs334",
+    "rs1800562",
+    "rs1799963",
+    "rs4988235",
+    "rs1815739",
+    "rs1801133",
+    "rs1426654",
+    "rs12913832",
+    "rs6054257",
+]
 
 
 def cached(rsid: str):
@@ -115,7 +128,7 @@ class StatusTests(unittest.TestCase):
         )
 
     def test_every_fixture_row_agrees_with_its_paragraph(self) -> None:
-        for rsid in FIXTURE_IDS:
+        for rsid in TEST_IDS:
             item = cached(rsid)
             self.assertEqual(" ".join(item.sentences), item.text)
             row = summary_row(item)
@@ -185,9 +198,11 @@ class DetailTests(unittest.TestCase):
     def test_download_is_what_the_cli_prints(self) -> None:
         printed = io.StringIO()
         with contextlib.redirect_stdout(printed):
-            code = cli.main(["--offline", "--input", str(ROOT / "fixture" / "snps.txt"), "--cache", str(CACHE)])
+            listing = Path(tempfile.mkdtemp()) / "ids.txt"
+            listing.write_text("\n".join(TEST_IDS) + "\n", encoding="utf-8")
+            code = cli.main(["--offline", "--input", str(listing), "--cache", str(CACHE)])
         self.assertEqual(code, 0)
-        self.assertEqual(briefs_text([cached(rsid) for rsid in FIXTURE_IDS]), printed.getvalue())
+        self.assertEqual(briefs_text([cached(rsid) for rsid in TEST_IDS]), printed.getvalue())
 
 
 def _detail_page(cache_dir: str, rsid: str) -> None:
@@ -212,6 +227,7 @@ class PageTests(unittest.TestCase):
         self.assertFalse(page.exception)
         self.assertEqual(page.text_area(key="rsid_text").value.split(), FIXTURE_IDS)
         self.assertFalse(page.toggle(key="offline").value)
+        page.toggle(key="offline").set_value(True).run()  # demo SNPs not in cache/ would otherwise be fetched live
         page.button(key="run_briefs").click().run()
         self.assertFalse(page.exception)
         table = page.dataframe[0].value
@@ -221,10 +237,11 @@ class PageTests(unittest.TestCase):
 
     def test_uploaded_list_replaces_the_pasted_one(self) -> None:
         page = AppTest.from_file(str(APP), default_timeout=30).run()
-        page.file_uploader(key="upload").upload("two.txt", b"rs6054257\nrs1815739\n", "text/plain").run()
-        self.assertEqual(page.text_area(key="rsid_text").value, "rs6054257\nrs1815739\n")
+        page.toggle(key="offline").set_value(True).run()
+        page.file_uploader(key="upload").upload("two.txt", b"rs6025\nrs334\n", "text/plain").run()
+        self.assertEqual(page.text_area(key="rsid_text").value, "rs6025\nrs334\n")
         page.button(key="run_briefs").click().run()
-        self.assertEqual(list(page.dataframe[0].value["rsID"]), ["rs6054257", "rs1815739"])
+        self.assertEqual(list(page.dataframe[0].value["rsID"]), ["rs6025", "rs334"])
 
     def test_detail_shows_brief_populations_and_fallback_source(self) -> None:
         page = AppTest.from_function(_detail_page, args=(str(CACHE), "rs6054257"), default_timeout=30).run()
