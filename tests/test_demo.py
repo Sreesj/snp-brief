@@ -267,7 +267,7 @@ class PageTests(unittest.TestCase):
         with mock.patch.dict(os.environ, {}, clear=True):
             page = AppTest.from_function(_detail_page, args=(str(CACHE), "rs1801133"), default_timeout=30).run()
             self.assertFalse(page.exception)
-            self.assertEqual([tab.label for tab in page.tabs], ["Variant Observatory", "Interpretation", "Molecular Ripple", "Hypothesis Forge"])
+            self.assertEqual([tab.label.split(": ", 1)[-1] for tab in page.tabs], ["Variant Observatory", "Interpretation", "Molecular Ripple", "Hypothesis Forge"])
             page.button(key="run-forge-rs1801133").click().run()
             self.assertFalse(page.exception)
             self.assertTrue(any("Open problem" in block.value for block in page.markdown))

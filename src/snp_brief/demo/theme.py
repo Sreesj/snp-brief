@@ -179,6 +179,16 @@ div[class*="st-key-pick-"] button * { color: inherit !important; }
 .va-waiting { display: flex; align-items: center; gap: .55rem; color: var(--va-muted); font-size: .82rem; margin: .2rem 0 .6rem 0; }
 .va-waiting i { width: 7px; height: 7px; border-radius: 50%; background: var(--va-accent-2); animation: va-pulse 1.4s ease-in-out infinite; }
 @keyframes va-pulse { 0%,100% { opacity: .35; transform: scale(.8); } 50% { opacity: 1; transform: scale(1.1); } }
+
+/* module icons (match the deck): database stack, concentric rings, flask */
+.va-ico { display: inline-block; flex: none; background: center / contain no-repeat; }
+.va-ico-observatory { background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%238b7cff%22%20stroke-width%3D%221.8%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cellipse%20cx%3D%2212%22%20cy%3D%225%22%20rx%3D%227.5%22%20ry%3D%222.6%22/%3E%3Cpath%20d%3D%22M4.5%205v14c0%201.4%203.4%202.6%207.5%202.6s7.5-1.2%207.5-2.6V5%22/%3E%3Cpath%20d%3D%22M4.5%209.7c0%201.4%203.4%202.6%207.5%202.6s7.5-1.2%207.5-2.6%22/%3E%3Cpath%20d%3D%22M4.5%2014.4c0%201.4%203.4%202.6%207.5%202.6s7.5-1.2%207.5-2.6%22/%3E%3C/svg%3E"); }
+.va-ico-ripple { background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%236aa8ff%22%20stroke-width%3D%221.8%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Ccircle%20cx%3D%2212%22%20cy%3D%2212%22%20r%3D%229.5%22/%3E%3Ccircle%20cx%3D%2212%22%20cy%3D%2212%22%20r%3D%225%22/%3E%3C/svg%3E"); }
+.va-ico-forge { background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%239be39b%22%20stroke-width%3D%221.8%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M9%202.5h6%22/%3E%3Cpath%20d%3D%22M10%202.5v6.8L4.3%2019.2a1.6%201.6%200%200%200%201.4%202.3h12.6a1.6%201.6%200%200%200%201.4-2.3L14%209.3V2.5%22/%3E%3Cpath%20d%3D%22M6.6%2015h10.8%22/%3E%3C/svg%3E"); }
+.va-guide-icon .va-ico { width: 16px; height: 16px; }
+.va-tile b .va-ico { width: 20px; height: 20px; }
+.va-feature .va-ico { width: 16px; height: 16px; }
+.va-feature b.observatory { color: #8b7cff; } .va-feature b.ripple { color: #6aa8ff; } .va-feature b.forge { color: #9be39b; }
 /* about section and scroll reveal */
 .va-reveal { opacity: 0; transform: translateY(26px); transition: opacity .9s cubic-bezier(.2,.7,.2,1), transform .9s cubic-bezier(.2,.7,.2,1); }
 .va-reveal.va-in { opacity: 1; transform: none; }
@@ -231,14 +241,23 @@ def hero() -> str:
     )
 
 
+MODULE_ICONS = {"Variant Observatory": "observatory", "Molecular Ripple": "ripple", "Hypothesis Forge": "forge",
+                "Observatory": "observatory", "Ripple": "ripple", "Forge": "forge"}
+
+
+def module_icon(name: str) -> str:
+    key = MODULE_ICONS.get(name)
+    return f'<span class="va-ico va-ico-{key}" role="img" aria-label="{e(name)} icon"></span>' if key else ""
+
+
 GUIDE = (
-    ("#7c86ff", "Variant Observatory", "What is known: clinical classification, population frequency, function and papers, "
+    ("#8b7cff", "Variant Observatory", "What is known: clinical classification, population frequency, function and papers, "
      "reconciled across 18 sources with every claim sourced."),
     ("#f2555a", "Interpretation", "A draft of the ACMG evidence codes, how many people carry the variant, "
      "drug response from ClinPGx and cancer evidence from CIViC."),
-    ("#4cc9b0", "Molecular Ripple", "What the variant touches: gene and protein effects, expression links, regulatory "
+    ("#6aa8ff", "Molecular Ripple", "What the variant touches: gene and protein effects, expression links, regulatory "
      "overlap and prediction scores, labelled observed, predicted or unknown."),
-    ("#f0b73c", "Hypothesis Forge", "What is not yet understood: competing explanations, evidence for and against, and "
+    ("#9be39b", "Hypothesis Forge", "What is not yet understood: competing explanations, evidence for and against, and "
      "the experiments that would tell them apart."),
     ("#5aa2ff", "Findings from papers", "Key results pulled from abstracts, each quoted word for word."),
     ("#4cc38a", "Several at once", "Search one rsID or many: separate them with commas or spaces. Keep notes and "
@@ -248,7 +267,7 @@ GUIDE = (
 
 def sidebar_guide() -> str:
     return '<div class="va-guide">' + "".join(
-        f'<div class="va-guide-item"><div class="va-guide-icon"><i style="background:{color}"></i></div>'
+        f'<div class="va-guide-item"><div class="va-guide-icon">{module_icon(name) or f"<i style=background:{color}></i>"}</div>'
         f'<div><div class="va-guide-name">{e(name)}</div><div class="va-guide-text">{e(text)}</div></div></div>'
         for color, name, text in GUIDE
     ) + "</div>"
@@ -257,17 +276,18 @@ def sidebar_guide() -> str:
 def features() -> str:
     items = (("Observatory", "evidence and summary"), ("Interpretation", "ACMG draft, carriers, drugs"), ("Ripple", "molecular context"), ("Forge", "competing hypotheses"))
     return '<div class="va-features">' + "".join(
-        f'<div class="va-feature"><b>{e(name)}</b>{e(text)}</div>' for name, text in items
+        f'<div class="va-feature">{module_icon(name)}<b class="{MODULE_ICONS.get(name, "")}">{e(name)}</b>{e(text)}</div>'
+        for name, text in items
     ) + "</div>"
 
 
 ABOUT_WHAT = (
-    ("#7c86ff", "Variant Observatory", "The evidence, reconciled. Clinical classification from ClinVar, allele frequencies "
+    ("#8b7cff", "Variant Observatory", "The evidence, reconciled. Clinical classification from ClinVar, allele frequencies "
      "across gnomAD populations, GWAS associations, gene function and the literature, merged into one plain-language "
      "summary where every sentence names its source."),
-    ("#4cc9b0", "Molecular Ripple", "What the variant touches. Protein changes, expression effects in GTEx tissues, "
+    ("#6aa8ff", "Molecular Ripple", "What the variant touches. Protein changes, expression effects in GTEx tissues, "
      "regulatory overlap, linked variants and gene prioritisation, each labelled observed, predicted or unknown."),
-    ("#f0b73c", "Hypothesis Forge", "Where the knowledge runs out. Competing explanations for what the variant does, "
+    ("#9be39b", "Hypothesis Forge", "Where the knowledge runs out. Competing explanations for what the variant does, "
      "the evidence for and against each, and the experiments that would tell them apart."),
 )
 
@@ -292,7 +312,7 @@ def about() -> str:
         for row in rows:
             if dots:
                 color, name, text = row
-                head = f'<i style="background:{color}"></i>{e(name)}'
+                head = (module_icon(name) or f'<i style="background:{color}"></i>') + e(name)
             else:
                 name, text = row
                 head = e(name)

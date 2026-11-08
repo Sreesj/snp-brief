@@ -352,7 +352,10 @@ def render_detail(item: Gathered) -> None:
         print(f"{item.rsid} zygosity check failed: {exc}", file=sys.stderr)
     if item.pending:
         pick_up_late_sources(item.rsid)
-    observatory, interpretation_tab, ripple_tab, forge_tab = st.tabs(list(MODULES))
+    observatory, interpretation_tab, ripple_tab, forge_tab = st.tabs(
+        [":material/database: Variant Observatory", ":material/assignment: Interpretation",
+         ":material/radio_button_checked: Molecular Ripple", ":material/science: Hypothesis Forge"]
+    )
     with observatory:
         render_observatory(item, plan)
     with interpretation_tab:
