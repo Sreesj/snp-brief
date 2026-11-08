@@ -348,14 +348,16 @@ class ConflictTests(unittest.TestCase):
         self.assertIn("European (non-Finnish) 400/1000 alleles", text)
         self.assertNotIn("20/2000", text)
 
-    def test_call_sets_that_disagree_are_unresolved(self) -> None:
+    def test_call_sets_that_differ_are_both_reported_not_unresolved(self) -> None:
         unresolved, text = frequency_phrase(
             [
                 CallSet("gnomAD v4 exomes", ac=16, an=10000, af=0.0016, populations=[]),
                 CallSet("gnomAD v4 genomes", ac=127, an=10000, af=0.0127, populations=[]),
             ]
         )
-        self.assertTrue(unresolved)
+        # Exomes and genomes sample different populations; that is not a source conflict.
+        self.assertFalse(unresolved)
+        self.assertIn("sample different populations", text)
         self.assertIn("exomes allele frequency 0.0016", text)
         self.assertIn("genomes allele frequency 0.0127", text)
 

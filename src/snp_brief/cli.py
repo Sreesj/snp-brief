@@ -74,7 +74,9 @@ def format_item(item, mode: str, cache_dir: Path | None = None, regenerate: bool
     if mode == "off":
         return item.text
     summary = summarize(item, mode, cache_dir=cache_dir, refresh=regenerate)
-    lines = [f"{item.rsid}", f"Summary ({summary.writer}): {summary.text}", f"Evidence: {item.text}"]
+    lines = [f"{item.rsid}", f"Summary ({summary.writer}): {summary.text}"]
+    lines += [f"  Rejected by checker: {sentence} ({reason})" for sentence, reason in summary.rejected]
+    lines.append(f"Evidence: {item.text}")
     return "\n".join(lines)
 
 
@@ -86,13 +88,16 @@ def format_forge(item, cache_dir: Path | None = None, regenerate: bool = False) 
     lines = [f"Forge: {tri.category}. {tri.reason}", f"Open problem: {tri.open_problem}"]
     lines += [f"  Next: {step}" for step in tri.next_steps]
     for number, hyp in enumerate(result.hypotheses, 1):
-        lines.append(f"  Hypothesis {number} ({hyp.feasibility} feasibility): {hyp.title}. {hyp.mechanism}")
+        lines.append(f"  Hypothesis {number} ({hyp.feasibility} feasibility, {hyp.consistency}): {hyp.title}. {hyp.mechanism}")
         lines += [f"    Support: {claim['rendered']}" for claim in hyp.support]
         lines += [f"    Gap: {gap}" for gap in hyp.gaps]
         lines.append(f"    Distinguish by: {hyp.discriminating_observation}")
         lines.append(f"    Experiment: {hyp.experiment}")
     for row in result.ranking:
-        lines.append(f"  Rank {row['rank']}: {row['experiment']} (tests {row['tests']}; {row['feasibility']} feasibility)")
+        lines.append(
+            f"  Rank {row['rank']}: {row['experiment']} (tests {row['tests']}; {row['consistency']}, "
+            f"{row['support']} supporting facts, {row['feasibility']} feasibility)"
+        )
     if result.note:
         lines.append(f"  Note: {result.note}")
     if result.hypotheses:

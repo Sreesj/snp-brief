@@ -17,6 +17,8 @@ class DbSnpRecord:
     genes: list[str] = field(default_factory=list)
     # Genomic alt base -> coding change such as c.20A>T, from the dbSNP HGVS list.
     coding_by_alt: dict[str, str] = field(default_factory=dict)
+    # dbSNP function class, e.g. ["2KB_upstream_variant", "upstream_transcript_variant"].
+    fxn_class: list[str] = field(default_factory=list)
 
 
 @dataclass
@@ -39,6 +41,8 @@ class ClinVarRecord:
     no_change: bool
     # Submitted interpretations (SCVs). Empty when the cache only has the aggregate.
     submissions: list[Classification] = field(default_factory=list)
+    # Other names ClinVar lists for this variant, e.g. "-13910C*T".
+    aliases: list[str] = field(default_factory=list)
 
     @property
     def has_significance(self) -> bool:

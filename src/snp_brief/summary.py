@@ -25,7 +25,7 @@ from dataclasses import dataclass, field
 from snp_brief.brief import _kept_traits, _views
 from snp_brief.models import AlleleView, ClinVarRecord, GnomadVariant
 from snp_brief.reconcile import OTHER, reconcile, side
-from snp_brief.sources.gnomad import ANCESTRY, _freq, frequency_phrase, percent, population_spread
+from snp_brief.sources.gnomad import ANCESTRY, _freq, disagrees, percent, population_spread
 
 
 @dataclass
@@ -81,6 +81,11 @@ class _Plan:
     other_labels: list[str] = field(default_factory=list)
     dissent_count: int = 0
     uniprot_text: str = ""
+    aliases: str | None = None
+    alias_names: str = ""
+    location: str = ""
+    location_fact: str | None = None
+    ref_minor: tuple[str, str] | None = None
     no_significance: bool = False
     paper_labels: list[str] = field(default_factory=list)
 
@@ -106,17 +111,35 @@ def _plan(item) -> _Plan:
         record = view.records[0]
         plan.gene = ", ".join(record.genes) or ", ".join(db.genes)
         plan.consequence = ", ".join(record.consequences)
+        inferred = ""
+        if not plan.consequence:
+            plan.consequence = _consequence_from_hgvs(record.cdna or record.title)
+            inferred = " (consequence inferred from the HGVS name; ClinVar states none)" if plan.consequence else ""
         plan.change = _change(record)
         plan.function = add(
-            f"{item.rsid} is a {plan.consequence or 'variant with no stated consequence'} in {plan.gene or 'an unnamed gene'}"
+            f"{item.rsid} is {_phrase_consequence(plan.consequence)} in {plan.gene or 'an unnamed gene'}{inferred}"
             f"; {record.title or record.cdna} (ClinVar {record.accession}).",
             "ClinVar",
+        )
+        if record.aliases:
+            plan.alias_names = record.aliases[0]
+            plan.aliases = add(
+                f"ClinVar lists other names for this same variant: {', '.join(record.aliases)}.", "ClinVar"
+            )
+    elif db.fxn_class and db.genes:
+        plan.gene = ", ".join(db.genes)
+        plan.location = _location_from_fxn(db.fxn_class)
+        plan.location_fact = add(
+            f"dbSNP classifies {item.rsid} as {', '.join(c.replace('_', ' ') for c in db.fxn_class)} "
+            f"relative to {plan.gene}: {plan.location}.",
+            "dbSNP",
         )
     if item.uniprot and item.fallback_gene:
         plan.gene = plan.gene or item.fallback_gene
         plan.uniprot_text = _first_sentence(item.uniprot.text)
         plan.uniprot = add(
-            f"Reviewed {item.fallback_gene} protein function: {item.uniprot.text} (UniProt {item.uniprot.accession}).",
+            f"Reviewed {item.fallback_gene} protein function (describes the protein, not this variant): "
+            f"{item.uniprot.text} (UniProt {item.uniprot.accession}).",
             "UniProt",
         )
     variant = view.variant if view is not None else (item.variants[0] if item.variants else None)
@@ -159,6 +182,27 @@ def _change(record: ClinVarRecord) -> str:
     return record.cdna
 
 
+def _consequence_from_hgvs(text: str) -> str:
+    """A coding-DNA name such as c.*97G>A is in the 3' UTR. Only that unambiguous case is inferred."""
+    match = re.search(r"c\.\*\d+[ACGT]>[ACGT]", text or "")
+    return "3 prime UTR variant" if match else ""
+
+
+def _location_from_fxn(classes: list[str]) -> str:
+    joined = " ".join(classes).lower()
+    if "upstream" in joined:
+        return "upstream of the gene, not inside it"
+    if "downstream" in joined:
+        return "downstream of the gene, not inside it"
+    if "intron" in joined:
+        return "inside an intron of the gene"
+    if "utr" in joined:
+        return "in an untranslated region of the gene"
+    if "missense" in joined or "coding" in joined or "synonymous" in joined:
+        return "inside the coding sequence of the gene"
+    return "near the gene"
+
+
 def _first_sentence(text: str) -> str:
     head = re.split(r"(?<=[.;])\s", text.strip(), maxsplit=1)[0]
     return head.rstrip(".;")
@@ -169,33 +213,38 @@ def _frequency_facts(plan: _Plan, variant: GnomadVariant, add) -> None:
     usable = [call for call in variant.callsets if _freq(call) is not None]
     if not usable:
         return
-    unresolved, _ = frequency_phrase(variant.callsets)
     spread = population_spread(variant.callsets)
-    if unresolved and len(usable) >= 2:
+    if len(usable) >= 2:
         first, second = usable[0], usable[1]
-        a = percent(first.ac or 0, first.an or 0) if first.an else f"{first.af}"
-        b = percent(second.ac or 0, second.an or 0) if second.an else f"{second.af}"
-        plan.conflict_pair = (f"{a} in {first.name}", f"{b} in {second.name}")
-        plan.callset_conflict = add(
-            f"{variant.ref}>{variant.alt} allele frequency disagrees between gnomAD call sets: "
-            f"{first.name} {a} ({first.ac}/{first.an} alleles) and {second.name} {b} ({second.ac}/{second.an} alleles).",
-            "gnomAD",
-        )
+        left, right = _freq(first), _freq(second)
+        if left is not None and right is not None and disagrees(left, right):
+            a = percent(first.ac or 0, first.an or 0) if first.an else f"{first.af}"
+            b = percent(second.ac or 0, second.an or 0) if second.an else f"{second.af}"
+            plan.conflict_pair = (f"{a} in {first.name}", f"{b} in {second.name}")
+            plan.callset_conflict = add(
+                f"The alternate allele {variant.alt} ({variant.ref}>{variant.alt}) has different frequencies in the two gnomAD call sets: "
+                f"{first.name} {a} ({first.ac}/{first.an} alleles) and {second.name} {b} ({second.ac}/{second.an} alleles). "
+                "The call sets sample different populations (exomes are mostly European ancestry), so this is not a disagreement between sources.",
+                "gnomAD",
+            )
     chosen = spread[0] if spread else max(usable, key=lambda call: call.an or 0)
     if chosen.an:
         plan.overall_pct = percent(chosen.ac or 0, chosen.an)
         plan.overall_set = chosen.name
-        plan.frequency = add(
-            f"{variant.ref}>{variant.alt} allele frequency in {chosen.name} is {plan.overall_pct} "
-            f"({chosen.ac}/{chosen.an} alleles; reported af {format(chosen.af, '.6g') if chosen.af is not None else 'n/a'}).",
-            "gnomAD",
+        text = (
+            f"The alternate allele {variant.alt} ({variant.ref}>{variant.alt}) is carried on {plan.overall_pct} of alleles in {chosen.name} "
+            f"({chosen.ac}/{chosen.an} alleles; reported af {format(chosen.af, '.6g') if chosen.af is not None else 'n/a'})."
         )
+        if (chosen.ac or 0) * 2 > chosen.an:
+            plan.ref_minor = (variant.ref, percent(chosen.an - (chosen.ac or 0), chosen.an))
+            text += f" So the reference allele {variant.ref} is the less common allele ({plan.ref_minor[1]})."
+        plan.frequency = add(text, "gnomAD")
     if spread:
         pop_set, low, high = spread
         plan.high = (ANCESTRY[high.id], percent(high.ac, high.an))
         plan.low = (ANCESTRY[low.id], percent(low.ac, low.an))
         plan.spread = add(
-            f"In {pop_set.name} the frequency varies by ancestry: highest in {plan.high[0]} {plan.high[1]} "
+            f"In {pop_set.name} the {variant.alt} allele frequency varies by ancestry: highest in {plan.high[0]} {plan.high[1]} "
             f"({high.ac}/{high.an} alleles), lowest in {plan.low[0]} {plan.low[1]} ({low.ac}/{low.an} alleles).",
             "gnomAD",
         )
@@ -262,43 +311,64 @@ def _disease_facts(plan: _Plan, view: AlleleView, add) -> None:
 
 def template_summary(item) -> Summary:
     plan = _plan(item)
-    sentences: list[str] = []
+    return Summary(item.rsid, [sentence for _, sentence in _template_parts(item.rsid, plan)], plan.facts, "template")
+
+
+def _template_parts(rsid: str, plan: _Plan) -> list[tuple[str, str]]:
+    """Template sentences, each tagged with the field it covers (function, frequency, disease, papers)."""
+    parts: list[tuple[str, str]] = []
     if plan.function:
-        lead = f"{item.rsid} is {_phrase_consequence(plan.consequence)} in {plan.gene}"
+        lead = f"{rsid} is {_phrase_consequence(plan.consequence)} in {plan.gene}"
         if plan.change:
             lead += f" ({plan.change})"
-        sentences.append(f"{lead} [{plan.function}].")
+        ids = [plan.function] + ([plan.aliases] if plan.aliases else [])
+        alias = f", also known as {plan.alias_names}" if plan.aliases and plan.alias_names else ""
+        parts.append(("function", f"{lead}{alias} [{', '.join(ids)}]."))
+    if plan.location_fact:
+        parts.append(("function", f"dbSNP places {rsid} {plan.location.replace('the gene', plan.gene)} [{plan.location_fact}]."))
     if plan.uniprot:
-        sentences.append(
-            f"ClinVar gives no clinical significance; UniProt describes the {plan.gene or 'encoded'} protein: "
-            f"{plan.uniprot_text[:1].lower() + plan.uniprot_text[1:]} [{plan.uniprot}]."
-        )
-    if plan.callset_conflict and plan.conflict_pair:
-        sentences.append(
-            f"gnomAD's exome and genome call sets disagree on its frequency ({plan.conflict_pair[0]} vs {plan.conflict_pair[1]}) [{plan.callset_conflict}]."
+        parts.append(
+            (
+                "function",
+                f"UniProt describes the {plan.gene or 'encoded'} protein, not this variant: "
+                f"{plan.uniprot_text[:1].lower() + plan.uniprot_text[1:]} [{plan.uniprot}].",
+            )
         )
     if plan.frequency:
-        text = f"The {plan.alt} allele is carried on {plan.overall_pct} of alleles in {plan.overall_set}"
+        text = f"The alternate {plan.alt.split('>')[-1]} allele ({plan.alt}) is carried on {plan.overall_pct} of alleles in {plan.overall_set}"
         ids = [plan.frequency]
         if plan.spread and plan.high and plan.low:
             text += f", from {plan.high[1]} in {plan.high[0]} to {plan.low[1]} in {plan.low[0]}"
             ids.append(plan.spread)
-        sentences.append(f"{text} [{', '.join(ids)}].")
+        if plan.ref_minor:
+            text += f"; the reference {plan.ref_minor[0]} allele is the less common one ({plan.ref_minor[1]})"
+        parts.append(("frequency", f"{text} [{', '.join(ids)}]."))
+    if plan.callset_conflict and plan.conflict_pair:
+        parts.append(
+            (
+                "frequency",
+                f"gnomAD exomes and genomes give different frequencies ({plan.conflict_pair[0]} vs {plan.conflict_pair[1]}) "
+                f"because they sample different populations [{plan.callset_conflict}].",
+            )
+        )
     if plan.unresolved_groups and plan.disease:
-        sentences.append(
-            "Disease relevance is unresolved: ClinVar submissions at the same review level disagree ("
-            + ", ".join(plan.unresolved_groups)
-            + f") [{plan.disease}]."
+        parts.append(
+            (
+                "disease",
+                "Disease relevance is unresolved: ClinVar submissions at the same review level disagree ("
+                + ", ".join(plan.unresolved_groups)
+                + f") [{plan.disease}].",
+            )
         )
     elif plan.headline and plan.disease:
         if side(plan.headline) == OTHER:
             cond = f" with {', '.join(plan.conditions)}" if plan.conditions else ""
-            sentences.append(f"ClinVar records it as {_article(plan.headline.lower())} {plan.headline.lower()}{cond}, not as a pathogenicity call [{plan.disease}].")
+            parts.append(("disease", f"ClinVar records it as {_article(plan.headline.lower())} {plan.headline.lower()}{cond}, not as a pathogenicity call [{plan.disease}]."))
         else:
             cond = f" for {', '.join(plan.conditions)}" if plan.conditions else ""
-            sentences.append(f"ClinVar's best-supported classification is {plan.headline}{cond} [{plan.disease}].")
+            parts.append(("disease", f"ClinVar's best-supported classification is {plan.headline}{cond} [{plan.disease}]."))
     elif plan.no_significance and plan.disease:
-        sentences.append(f"ClinVar reports no clinical significance for this variant [{plan.disease}].")
+        parts.append(("disease", f"ClinVar reports no clinical significance for this variant [{plan.disease}]."))
     extras = []
     extra_ids = []
     if plan.disease_other:
@@ -308,10 +378,19 @@ def template_summary(item) -> Summary:
         extras.append(f"{plan.dissent_count} lower-review submissions disagree")
         extra_ids.append(plan.dissent)
     if extras:
-        sentences.append(f"ClinVar note: {'; '.join(extras)} [{', '.join(extra_ids)}].")
+        parts.append(("disease_note", f"ClinVar note: {'; '.join(extras)} [{', '.join(extra_ids)}]."))
     if plan.papers:
-        sentences.append(f"Primary literature: {'; '.join(plan.paper_labels)} [{', '.join(plan.papers)}].")
-    return Summary(item.rsid, sentences, plan.facts, "template")
+        parts.append(("papers", f"Papers that name this rsID: {'; '.join(plan.paper_labels)} [{', '.join(plan.papers)}]."))
+    return parts
+
+
+def field_ids(plan: _Plan) -> dict[str, set[str]]:
+    """Fact ids that count as covering each required summary field."""
+    return {
+        "function": {i for i in (plan.function, plan.uniprot, plan.location_fact) if i},
+        "frequency": {i for i in (plan.frequency, plan.spread, plan.callset_conflict) if i},
+        "disease": {i for i in (plan.disease,) if i},
+    }
 
 
 def _article(word: str) -> str:
@@ -444,14 +523,48 @@ def summarize(item, mode: str = "template", client=None, cache_dir=None, refresh
     if not kept or len(rejected) > len(kept):
         fallback.rejected.extend(rejected)
         return fallback
+    kept, filled = fill_missing_fields(item, kept)
+    writer = f"llm:{client.model}" + (f" + template for {', '.join(filled)}" if filled else "")
     save_result(
         cache_dir,
         item.rsid,
         "summary_llm",
         result_key("summary_llm", client.model, block),
-        {"model": client.model, "facts_hash": _hash(block), "sentences": kept},
+        {"model": client.model, "facts_hash": _hash(block), "sentences": kept, "filled": filled},
     )
-    return Summary(item.rsid, kept, fallback.facts, f"llm:{client.model}", rejected)
+    return Summary(item.rsid, kept, fallback.facts, writer, rejected)
+
+
+def fill_missing_fields(item, sentences: list[str]) -> tuple[list[str], list[str]]:
+    """Every summary must cover function, frequency, and disease relevance when facts exist.
+
+    An LLM summary that dropped a field (or had that sentence rejected by the
+    checker) gets the template sentence for that field, in reading order.
+    """
+    plan = _plan(item)
+    required = field_ids(plan)
+    parts = _template_parts(item.rsid, plan)
+    cited = [set(_ids(sentence)) for sentence in sentences]
+    covered = {name for name, ids in required.items() if ids and any(c & ids for c in cited)}
+    missing = [name for name, ids in required.items() if ids and name not in covered]
+    if not missing:
+        return sentences, []
+    order = {"function": 0, "frequency": 1, "disease": 2}
+    rank_of = []
+    for ids in cited:
+        positions = [order[name] for name, req in required.items() if ids & req]
+        rank_of.append(min(positions) if positions else 3)
+    out = list(sentences)
+    for name in sorted(missing, key=order.get):
+        extra = [sentence for field, sentence in parts if field == name or (name == "disease" and field == "disease_note")]
+        where = next((i for i, r in enumerate(rank_of) if r > order[name]), len(out))
+        out[where:where] = extra
+        rank_of[where:where] = [order[name]] * len(extra)
+    return out, missing
+
+
+def _ids(sentence: str) -> list[str]:
+    return [part.strip() for tag in _TAGS.findall(sentence) for part in tag.split(",")]
 
 
 def _hash(text: str) -> str:

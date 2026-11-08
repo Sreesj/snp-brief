@@ -9,7 +9,7 @@ import unittest
 from pathlib import Path
 from unittest import mock
 
-from snp_brief.forge import CONFLICTING, INSUFFICIENT, UNCERTAIN, WELL, forge, rank, triage, validate
+from snp_brief.forge import CONFLICTING, INSUFFICIENT, REPORTED, UNCERTAIN, WELL, forge, rank, triage, validate
 from snp_brief.llm import NEBIUS_DEFAULT_MODEL, NEBIUS_URL, LLMClient, parse_json
 from snp_brief.pipeline import gather
 from snp_brief.ripple import OBSERVED, PREDICTED, UNKNOWN, context_key, ripple
@@ -85,7 +85,7 @@ class TriageTests(unittest.TestCase):
             "rs1426654": WELL,
             "rs1801133": CONFLICTING,
             "rs4988235": UNCERTAIN,
-            "rs12913832": UNCERTAIN,
+            "rs12913832": REPORTED,
             "rs6054257": INSUFFICIENT,
         }
         for rsid, category in expected.items():
@@ -139,15 +139,37 @@ class HypothesisTests(unittest.TestCase):
         self.assertEqual(result.hypotheses, [])
         self.assertIn("failed", result.note)
 
-    def test_rank_prefers_feasible_then_more_gaps(self) -> None:
+    def test_rank_prefers_consistent_and_supported_before_easy(self) -> None:
         rows = rank(
             [
-                {"title": "A", "experiment": "x", "feasibility": "low", "gaps": ["1", "2", "3"]},
-                {"title": "B", "experiment": "y", "feasibility": "high", "gaps": ["1"]},
-                {"title": "C", "experiment": "z", "feasibility": "high", "gaps": ["1", "2"]},
+                {"title": "Easy tag idea", "experiment": "x", "feasibility": "high", "gaps": ["1"], "support": [{}], "consistency": "contradicted"},
+                {"title": "Supported", "experiment": "y", "feasibility": "medium", "gaps": ["1"], "support": [{}, {}], "consistency": "consistent"},
+                {"title": "Less support", "experiment": "z", "feasibility": "high", "gaps": ["1", "2"], "support": [{}], "consistency": "consistent"},
             ]
         )
-        self.assertEqual([row["tests"] for row in rows], ["C", "B", "A"])
+        self.assertEqual([row["tests"] for row in rows], ["Supported", "Less support", "Easy tag idea"])
+
+    def test_invented_rsid_is_scrubbed(self) -> None:
+        item = cached("rs1801133")
+        _, facts = triage(item)
+        fact = next(f.id for f in facts if "missense" in f.text)
+        out = validate(
+            {"hypotheses": [{"title": "LD", "mechanism": "Linked to rs17367504.", "support": [{"text": "rs1801133 is a missense variant in MTHFR", "facts": [fact]}],
+                             "experiment": "Condition on rs17367504", "feasibility": "high", "consistency": "partly"}]},
+            facts,
+        )
+        self.assertNotIn("rs17367504", out["hypotheses"][0]["mechanism"])
+        self.assertIn("not named in the retrieved evidence", out["hypotheses"][0]["experiment"])
+
+    def test_literature_mechanism_category(self) -> None:
+        found, _ = triage(cached("rs12913832"))
+        self.assertEqual(found.category, REPORTED)
+        self.assertIn("PMID:22234890", found.reason)
+
+    def test_well_characterized_steps_name_dissent(self) -> None:
+        found, _ = triage(cached("rs1815739"))
+        self.assertIn("lower-review submissions disagree", found.next_steps[0])
+        self.assertNotIn("pathogenicity call is reviewed and agreed", " ".join(found.next_steps))
 
     def test_validate_drops_hypothesis_without_support(self) -> None:
         out = validate({"hypotheses": [{"title": "X", "support": [{"text": "made up", "facts": []}]}]}, [])
@@ -205,10 +227,10 @@ class SummaryCacheTests(unittest.TestCase):
         client = FakeClient(f"rs6025 is a missense variant in F5 [{fn}].")
         with tempfile.TemporaryDirectory() as tmp:
             first = summarize(item, "llm", client=client, cache_dir=Path(tmp))
-            self.assertEqual(first.writer, "llm:fake-model")
+            self.assertTrue(first.writer.startswith("llm:fake-model"))
             with mock.patch.dict(os.environ, {}, clear=True):
                 offline = summarize(item, "llm", cache_dir=Path(tmp))
-            self.assertEqual(offline.writer, "llm:fake-model (cached)")
+            self.assertTrue(offline.writer.endswith("(cached)"))
             self.assertEqual(client.calls, 1)
 
 

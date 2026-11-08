@@ -81,8 +81,8 @@ class TemplateTests(unittest.TestCase):
 
     def test_factor_v_leiden_reads_plainly(self) -> None:
         text = summarize(cached("rs6025")).text
-        self.assertIn("rs6025 is a missense variant in F5 (p.Arg534Gln) (ClinVar).", text)
-        self.assertIn("2.2% of alleles in gnomAD v4 exomes", text)
+        self.assertTrue(text.startswith("rs6025 is a missense variant in F5 (p.Arg534Gln)"))
+        self.assertIn("The alternate T allele (C>T) is carried on 2.2% of alleles in gnomAD v4 exomes", text)
         self.assertIn("ClinVar's best-supported classification is Pathogenic", text)
         self.assertNotIn("unresolved", text)
 
@@ -92,6 +92,18 @@ class TemplateTests(unittest.TestCase):
     def test_association_is_not_called_pathogenic(self) -> None:
         text = summarize(cached("rs4988235")).text
         self.assertIn("association with LACTASE PERSISTENCE, not as a pathogenicity call", text)
+
+    def test_upstream_variant_is_not_called_in_the_gene(self) -> None:
+        text = summarize(cached("rs6054257")).text
+        self.assertIn("upstream of DEFB125, not inside it (dbSNP)", text)
+        self.assertIn("The alternate A allele (G>A) is carried on 80%", text)
+        self.assertIn("reference G allele is the less common one (20%)", text)
+
+    def test_utr_consequence_is_inferred_from_hgvs(self) -> None:
+        self.assertIn("rs1799963 is a 3 prime UTR variant in F2", summarize(cached("rs1799963")).text)
+
+    def test_alias_is_listed(self) -> None:
+        self.assertIn("also known as -13910C*T", summarize(cached("rs4988235")).text)
 
     def test_uniprot_fallback_is_function_only(self) -> None:
         text = summarize(cached("rs6054257")).text
@@ -106,8 +118,9 @@ class LLMTests(unittest.TestCase):
         fn = next(f.id for f in summary_facts if f.text.startswith("rs6025 is a missense"))
         client = FakeClient(f"rs6025 is a missense variant in F5 [{fn}]. It changes p.Arg534Gln [{fn}].")
         summary = summarize(item, "llm", client=client)
-        self.assertEqual(summary.writer, "llm:fake-model")
-        self.assertEqual(len(summary.sentences), 2)
+        self.assertTrue(summary.writer.startswith("llm:fake-model + template for frequency, disease"))
+        self.assertEqual(summary.sentences[:2], [f"rs6025 is a missense variant in F5 [{fn}].", f"It changes p.Arg534Gln [{fn}]."])
+        self.assertTrue(any("best-supported classification is Pathogenic" in s for s in summary.sentences))
         self.assertIn("[F1]", client.prompts[0])
         self.assertIn("Facts:", client.prompts[0])
 

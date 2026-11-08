@@ -245,8 +245,10 @@ def _function(view: AlleleView, db: DbSnpRecord, prefix: str) -> str:
 
 
 def _function_detail(record: ClinVarRecord) -> str:
+    # Cite the record only: its aggregate review status can belong to a different
+    # assertion (e.g. an expert-panel drug-response call), not to the consequence.
     label = record.title or record.cdna or record.accession
-    return f"{label} ({_cite(record)})"
+    return f"{label} (ClinVar {record.accession})"
 
 
 def _consequence_key(record: ClinVarRecord) -> str:

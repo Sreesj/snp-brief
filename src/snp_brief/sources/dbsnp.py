@@ -81,6 +81,7 @@ def parse_dbsnp(payload: dict | None, rsid: str) -> DbSnpRecord:
         alleles=alleles,
         genes=genes,
         coding_by_alt=coding_by_alt(doc.get("docsum") or "", accession, [alt for _, alt in alleles]),
+        fxn_class=[part.strip() for part in str(doc.get("fxn_class") or "").split(",") if part.strip()],
     )
 
 

@@ -33,7 +33,7 @@ from snp_brief.demo.view import (
     summary_row,
     unresolved_populations,
 )
-from snp_brief.forge import CONFLICTING, INSUFFICIENT, UNCERTAIN, WELL, forge
+from snp_brief.forge import CONFLICTING, INSUFFICIENT, REPORTED, UNCERTAIN, WELL, forge
 from snp_brief.llm import LLMClient
 from snp_brief.pipeline import Gathered, gather
 from snp_brief.ripple import OBSERVED, PREDICTED, UNKNOWN, ripple
@@ -50,7 +50,7 @@ NAMED_CSS = STATUS_CSS[UNRESOLVED]
 SMALL_CSS = "color: #9aa0a6"
 FALLBACK_CSS = "background-color: #f3eefc; color: #5b3a99; font-weight: 600"
 MODULES = ("Variant Observatory", "Molecular Ripple", "Hypothesis Forge")
-CATEGORY_COLOR = {WELL: "green", CONFLICTING: "orange", UNCERTAIN: "blue", INSUFFICIENT: "gray"}
+CATEGORY_COLOR = {WELL: "green", CONFLICTING: "orange", UNCERTAIN: "blue", REPORTED: "violet", INSUFFICIENT: "gray"}
 LINK_COLOR = {OBSERVED: "green", PREDICTED: "violet", UNKNOWN: "gray"}
 PAGE_CSS = """
 <style>
@@ -372,13 +372,17 @@ def render_forge(item: Gathered) -> None:
                     st.markdown("\n".join(f"- {gap}" for gap in hyp.gaps))
                 st.markdown(f"*Would be supported by:* {hyp.discriminating_observation}")
                 st.markdown(f"*Experiment:* {hyp.experiment} ({hyp.feasibility} feasibility)")
+                st.caption(f"Consistency with the facts: {hyp.consistency}")
     if found.ranking:
         st.markdown("**Experiments, ranked**")
         st.dataframe(
-            pd.DataFrame(found.ranking)[["rank", "experiment", "tests", "feasibility", "open_gaps"]],
+            pd.DataFrame(found.ranking)[["rank", "experiment", "tests", "consistency", "support", "feasibility", "open_gaps"]],
             hide_index=True,
         )
-        st.caption("Ranked by feasibility, then by how many evidence gaps the tested hypothesis has. No model-assigned probabilities.")
+        st.caption(
+            "Ranked by consistency with the facts, then number of fact-checked supporting statements, then feasibility, "
+            "then evidence gaps addressed. No model-assigned probabilities."
+        )
     if found.hypotheses or found.writer != "rules":
         st.caption(f"Hypotheses written by {found.writer}. Supporting statements passed the same fact check as the summary.")
 

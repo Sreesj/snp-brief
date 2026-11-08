@@ -143,10 +143,11 @@ def parse_gnomad(payload: dict | None) -> tuple[bool, list[GnomadVariant]]:
 def frequency_phrase(callsets: list[CallSet]) -> tuple[bool, str]:
     """Return whether the frequency field is unresolved, and the sourced text.
 
-    Unresolved means two gnomAD call sets (exomes and genomes) report frequencies
-    that disagree. A spread between ancestry groups is not a disagreement between
-    sources: it is the finding, so it is reported as how frequency varies by
-    ancestry and the field stays resolved.
+    Neither an ancestry spread nor an exome/genome difference is a disagreement
+    between sources. Exomes and genomes sample different populations (exomes are
+    mostly European ancestry), so both numbers are reported, each labelled with
+    its call set, and the field stays resolved. The flag is kept for callers and
+    is always False today.
     """
     usable = [call for call in callsets if _freq(call) is not None]
     if not usable:
@@ -158,7 +159,7 @@ def frequency_phrase(callsets: list[CallSet]) -> tuple[bool, str]:
         left, right = _freq(first), _freq(second)
         if left is not None and right is not None and disagrees(left, right):
             pieces.extend((_overall(first), _overall(second)))
-            unresolved = True
+            pieces.append("the two call sets sample different populations")
     spread = population_spread(usable)
     if not pieces:
         chosen = spread[0] if spread else max(

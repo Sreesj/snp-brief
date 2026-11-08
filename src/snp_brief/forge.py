@@ -36,12 +36,22 @@ WELL = "well characterized"
 CONFLICTING = "conflicting evidence"
 UNCERTAIN = "uncertain mechanism"
 INSUFFICIENT = "insufficient evidence"
+REPORTED = "mechanism proposed in literature"
+
+MECHANISM_WORDS = (
+    "enhancer", "promoter", "chromatin", "splic", "transcription factor", "binding site",
+    "expression", "regulat", "loop", "methylation", "eqtl",
+)
 
 NEXT_STEPS = {
     WELL: [
-        "No competing mechanism to test: the pathogenicity call is reviewed and agreed.",
         "Open questions, if any, are context-specific: penetrance, modifiers, or effect size in under-studied ancestry groups.",
         "Re-check when ClinVar or gnomAD release new data.",
+    ],
+    REPORTED: [
+        "Read the cited paper to confirm the proposed mechanism and the cell type it was tested in.",
+        "Check whether independent data (expression QTLs, reporter or editing assays) replicate it.",
+        "Ask what remains open: tissue specificity, effect size, or other variants on the same haplotype.",
     ],
     CONFLICTING: [
         "Compare the assertion criteria and conditions behind the disagreeing ClinVar submissions; they may describe different phenotypes.",
@@ -71,6 +81,11 @@ Rules:
 - "discriminating_observation" is the observation that would support this hypothesis over the others.
 - "experiment" is one concrete experiment or analysis to make that observation.
 - "feasibility" is "high" (public data or a standard computational analysis), "medium" (a standard lab assay), or "low" (a new cohort, animal model, or large study).
+- Paper facts contain only the paper's title. A support statement that cites a paper may only say what the title says; do not describe the study design or findings beyond it.
+- ClinVar may list other names for the same variant. Never propose that the variant is linked to, or tags, a variant that is one of its own other names.
+- If a fact (for example a paper title) says this variant itself has a mechanism, do not propose that it is only a tag for another variant unless you mark that hypothesis "contradicted".
+- Do not name any rsID or gene that is not in the facts; say "a nearby variant" instead.
+- "consistency" is "consistent" (no fact argues against it), "partly" (some facts fit poorly), or "contradicted" (a fact argues against it).
 - Do not diagnose, give medical advice, or address patients.
 
 Reply with only this JSON object:
@@ -82,8 +97,11 @@ Reply with only this JSON object:
     "gaps": ["..."],
     "discriminating_observation": "...",
     "experiment": "...",
-    "feasibility": "high|medium|low"}
+    "feasibility": "high|medium|low",
+    "consistency": "consistent|partly|contradicted"}
  ]}"""
+
+CONSISTENCY_SCORE = {"consistent": 2, "partly": 1, "contradicted": 0}
 
 FEASIBILITY_SCORE = {"high": 3, "medium": 2, "low": 1}
 
@@ -108,6 +126,7 @@ class Hypothesis:
     experiment: str
     feasibility: str
     rejected_support: list[dict] = field(default_factory=list)
+    consistency: str = "consistent"
 
 
 @dataclass
@@ -176,6 +195,26 @@ def triage(item) -> tuple[Triage, list[Fact]]:
     if side(plan.headline) == OTHER:
         trait = ", ".join(plan.conditions) or "a trait"
         consequence = _phrase_consequence(plan.consequence)
+        mechanism_papers = [
+            (fact_id, paper)
+            for fact_id, paper in zip(plan.papers, item.papers)
+            if any(word in paper.title.lower() for word in MECHANISM_WORDS)
+        ]
+        if mechanism_papers:
+            fact_id, paper = mechanism_papers[0]
+            return (
+                Triage(
+                    REPORTED,
+                    f"ClinVar records {plan.headline.lower()} with {trait}, and a paper title proposes how the variant acts "
+                    f'("{paper.title.rstrip(".")}", PMID:{paper.pmid}). Databases here do not record the mechanism itself.',
+                    function_ids + disease_ids + [fact_id],
+                    NEXT_STEPS[REPORTED],
+                    f"A mechanism for {item.rsid} is proposed in the literature (PMID:{paper.pmid}). What would confirm it, "
+                    "in which tissue, and what does it leave unexplained?",
+                    True,
+                ),
+                facts,
+            )
         return (
             Triage(
                 UNCERTAIN,
@@ -202,7 +241,7 @@ def triage(item) -> tuple[Triage, list[Fact]]:
                 + (f" ({verdict.support})" if verdict and verdict.support else "")
                 + f", and {len(plan.papers)} primary papers name this rsID.",
                 disease_ids + plan.papers[:1],
-                NEXT_STEPS[WELL],
+                _well_steps(plan),
                 f"{item.rsid} is well characterized; no competing mechanism is needed.",
                 False,
             ),
@@ -220,6 +259,15 @@ def triage(item) -> tuple[Triage, list[Fact]]:
         ),
         facts,
     )
+
+
+def _well_steps(plan) -> list[str]:
+    first = f"No competing mechanism to test: the ClinVar classification ({plan.headline}) comes from the highest review tier present"
+    if plan.dissent_count:
+        first += f"; {plan.dissent_count} lower-review submissions disagree and are listed in the evidence."
+    else:
+        first += " and those submissions agree."
+    return [first, *NEXT_STEPS[WELL]]
 
 
 # ---------------------------------------------------------------- stages 2 and 3
@@ -269,6 +317,7 @@ def forge(item, *, use_llm: bool = True, client=None, cache_dir=None, refresh: b
 def validate(raw: dict, facts: list[Fact]) -> dict:
     """Keep hypotheses whose support passes the fact checker, then rank their experiments."""
     hypotheses: list[dict] = []
+    corpus = " ".join(fact.text for fact in facts)
     for item in (raw.get("hypotheses") or [])[:3]:
         if not isinstance(item, dict):
             continue
@@ -288,16 +337,21 @@ def validate(raw: dict, facts: list[Fact]) -> dict:
         feasibility = str(item.get("feasibility", "medium")).lower()
         if feasibility not in FEASIBILITY_SCORE:
             feasibility = "medium"
+        consistency = str(item.get("consistency", "consistent")).lower()
+        if consistency not in CONSISTENCY_SCORE:
+            consistency = "partly"
+        scrub = lambda text: _scrub_rsids(str(text or "").strip(), corpus)  # noqa: E731
         hypotheses.append(
             {
-                "title": str(item.get("title", "Hypothesis")).strip(),
-                "mechanism": str(item.get("mechanism", "")).strip(),
+                "title": scrub(item.get("title", "Hypothesis")),
+                "mechanism": scrub(item.get("mechanism", "")),
                 "support": kept_support,
-                "gaps": [str(g) for g in item.get("gaps") or []][:4],
-                "discriminating_observation": str(item.get("discriminating_observation", "")).strip(),
-                "experiment": str(item.get("experiment", "")).strip(),
+                "gaps": [scrub(g) for g in item.get("gaps") or []][:4],
+                "discriminating_observation": scrub(item.get("discriminating_observation", "")),
+                "experiment": scrub(item.get("experiment", "")),
                 "feasibility": feasibility,
                 "rejected_support": dropped,
+                "consistency": consistency,
             }
         )
     return {
@@ -308,37 +362,58 @@ def validate(raw: dict, facts: list[Fact]) -> dict:
 
 
 def rank(hypotheses: list[dict]) -> list[dict]:
-    """Order experiments by visible rules: feasibility first, then how much evidence is missing.
+    """Order experiments by visible rules, most important first:
 
-    A feasible experiment that targets the hypothesis with the most open gaps
-    resolves the most uncertainty for the least effort. Ties keep model order.
+    1. consistency of the tested hypothesis with the facts (contradicted ones go last),
+    2. how many fact-checked statements support it,
+    3. feasibility of the experiment,
+    4. how many evidence gaps it would address.
+
+    Plausibility comes before ease, so an easy test of a weak idea does not rank first.
     """
     rows = []
     for index, hyp in enumerate(hypotheses):
         if not hyp.get("experiment"):
             continue
-        feas = FEASIBILITY_SCORE[hyp["feasibility"]]
-        gaps = len(hyp.get("gaps") or [])
+        consistency = hyp.get("consistency", "consistent")
         rows.append(
             {
                 "experiment": hyp["experiment"],
                 "tests": hyp["title"],
+                "consistency": consistency,
+                "support": len(hyp.get("support") or []),
                 "feasibility": hyp["feasibility"],
-                "open_gaps": gaps,
-                "score": feas * 10 + min(gaps, 5),
-                "_order": index,
+                "open_gaps": len(hyp.get("gaps") or []),
+                "_key": (
+                    -CONSISTENCY_SCORE.get(consistency, 1),
+                    -len(hyp.get("support") or []),
+                    -FEASIBILITY_SCORE[hyp["feasibility"]],
+                    -len(hyp.get("gaps") or []),
+                    index,
+                ),
             }
         )
-    rows.sort(key=lambda row: (-row["score"], row["_order"]))
+    rows.sort(key=lambda row: row["_key"])
     for position, row in enumerate(rows, 1):
         row["rank"] = position
-        row.pop("_order")
+        row.pop("_key")
     return rows
+
+
+def _scrub_rsids(text: str, corpus: str) -> str:
+    """Replace rsIDs the facts do not contain: the model must not introduce variants."""
+    import re
+
+    return re.sub(
+        r"\brs\d+\b",
+        lambda m: m.group(0) if m.group(0) in corpus else "a nearby variant (not named in the retrieved evidence)",
+        text,
+    )
 
 
 def _from_stored(result: ForgeResult, stored: dict, *, cached: bool) -> ForgeResult:
     result.open_questions = stored.get("open_questions", [])
-    result.hypotheses = [Hypothesis(**h) for h in stored.get("hypotheses", [])]
+    result.hypotheses = [Hypothesis(**{k: v for k, v in h.items() if k in Hypothesis.__dataclass_fields__}) for h in stored.get("hypotheses", [])]
     result.ranking = stored.get("ranking", [])
     result.writer = stored.get("writer", "llm") + (" (cached)" if cached else "")
     result.created = stored.get("created", "")

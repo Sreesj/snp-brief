@@ -79,7 +79,7 @@ After the fields are filled, sources are compared on each field.
 
 So Factor V Leiden (rs6025) reads Pathogenic with its drug-response and risk-factor assertions alongside, and ACTN3 (rs1815739) reads Benign with two unreviewed "Pathogenic" submissions noted as dissent.
 
-**Frequency.** A spread between ancestry groups is the finding, not a disagreement between sources: the brief reports the overall frequency and the highest and lowest ancestry groups. Ancestry groups with fewer than 1000 alleles are not compared. Two frequencies differ when the higher is at least twice the lower, or the gap is at least 0.1, or one is 0 and the other is at least 0.001. Frequency is unresolved only when gnomAD's exome and genome call sets disagree by that rule. Counts are the ones the API returned; percentages are computed from those counts.
+**Frequency.** A spread between ancestry groups is the finding, not a disagreement between sources: the brief reports the overall frequency and the highest and lowest ancestry groups. Ancestry groups with fewer than 1000 alleles are not compared. Two frequencies differ when the higher is at least twice the lower, or the gap is at least 0.1, or one is 0 and the other is at least 0.001. When gnomAD's exome and genome call sets differ by that rule, both are reported with a note that they sample different populations (exomes are mostly European ancestry); this is not treated as a conflict. Counts are the ones the API returned; percentages are computed from those counts.
 
 ## Plain-English summary
 

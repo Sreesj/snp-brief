@@ -105,9 +105,20 @@ def parse_clinvar(payload: dict | None, rsid: str) -> tuple[bool, list[ClinVarRe
                 classifications=classifications,
                 no_change=no_change,
                 submissions=_classifications_from_submissions(submission_map.get(str(uid)) or []),
+                aliases=_aliases(doc),
             )
         )
     return True, records
+
+
+def _aliases(doc: dict) -> list[str]:
+    found: list[str] = []
+    for item in doc.get("variation_set") or []:
+        for alias in item.get("aliases") or []:
+            text = str(alias).strip()
+            if text and text not in found:
+                found.append(text)
+    return found[:5]
 
 
 def fetch_submission_map(esummary: dict | None, rsid: str) -> dict[str, list[dict]]:

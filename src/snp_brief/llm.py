@@ -36,6 +36,11 @@ Rules:
 - End every sentence with the ids of the facts it uses, in square brackets, e.g. [F2] or [F3, F4].
 - Copy numbers exactly as they appear in the facts you cite, including the % sign. Do not compute, round, or convert numbers.
 - Copy gene symbols and rsIDs exactly as written in the facts.
+- Say which allele a frequency belongs to exactly as the fact does (the alternate allele unless the fact says otherwise).
+- Do not say a variant is "in" a gene unless a fact says so; if a fact says it is upstream or downstream, say that.
+- UniProt text describes the protein, never the variant. Do not imply the variant changes that function.
+- Paper facts contain only the title. Do not describe a paper's design (meta-analysis, cohort, GWAS) or findings unless the title states it.
+- Name the gnomAD call set (exomes or genomes) for every frequency you give.
 - If a fact says sources disagree or a field is unresolved, say so plainly. Do not pick a side.
 - Do not diagnose, give medical advice, or address a patient.
 - Output only the sentences, no heading, no list."""
@@ -118,13 +123,17 @@ def split_sentences(text: str) -> list[str]:
     """Split after a closing citation tag (and its period), which ends each sentence."""
     text = re.sub(r"<think>.*?</think>", "", text, flags=re.S).strip()
     parts = re.split(r"(?<=\])\.?\s+|(?<=\]\.)\s*", text)
-    out = []
+    out: list[str] = []
     for part in parts:
         part = part.strip()
         if not part:
             continue
         if not part.endswith("."):
             part += "."
+        if out and part[:1].islower() and not part.startswith(("rs", "c.", "p.")):
+            # "... [F1]. and is recorded ..." continues the previous sentence.
+            out[-1] = out[-1].rstrip(".") + " " + part
+            continue
         out.append(part)
     return out
 
