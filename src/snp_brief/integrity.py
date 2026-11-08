@@ -181,7 +181,7 @@ def check(item, summary=None) -> CheckReport:
             if hit.p_value is not None and not underflow and not 0 < hit.p_value <= 1:
                 problems.append(f"p-value {hit.p_text} for {hit.trait} is not between 0 and 1")
             if hit.risk_allele and letters and len(hit.risk_allele) == 1 and hit.risk_allele not in letters and hit.risk_allele in "ACGT":
-                problems.append(f"risk allele {hit.risk_allele} for {hit.trait} is not an allele of this variant (possibly reported on the other strand)")
+                problems.append(f"risk allele {hit.risk_allele} for {hit.trait} is not an allele of this variant on either strand")
             if hit.pmid and not hit.pmid.isdigit():
                 problems.append(f"PMID '{hit.pmid}' for {hit.trait} is not a number")
         report.add("GWAS values are valid", problems, warn=True)
@@ -198,8 +198,9 @@ def check(item, summary=None) -> CheckReport:
     t = getattr(item, "timeline", None)
     if t is not None and t.by_year:
         year = datetime.now(timezone.utc).year
-        if max(t.by_year) > year or min(t.by_year.values()) < 0:
-            problems.append("papers-per-year has a future year or a negative count")
+        # Journals date issues ahead, so next year's papers appear before it starts; two years ahead is an error.
+        if max(t.by_year) > year + 1 or min(t.by_year.values()) < 0:
+            problems.append("papers-per-year has a year more than one ahead, or a negative count")
     if (pgx is not None and pgx.annotations) or (sc is not None and sc.civic) or (t is not None and t.by_year):
         report.add("Evidence levels and paper counts are valid", problems)
 
@@ -231,9 +232,9 @@ def check(item, summary=None) -> CheckReport:
         problems = []
         if not common:
             problems.append(
-                "sources name different genes ("
+                "sources name different genes, usually because the variant sits between or inside overlapping genes ("
                 + "; ".join(f"{k}: {', '.join(sorted(v))}" for k, v in names.items())
-                + "); overlapping genes or a mapping error"
+                + ")"
             )
         report.add("Sources agree on the gene", problems, warn=True)
     return report

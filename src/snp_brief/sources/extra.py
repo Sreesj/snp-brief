@@ -45,7 +45,7 @@ MYVARIANT_FIELDS = ",".join(
 )
 CLINPGX_HOSTS = ("https://api.clinpgx.org/v1", "https://api.pharmgkb.org/v1")
 SPLICEAI = "https://spliceailookup-api.broadinstitute.org/spliceai/"
-REGULOMEDB = "https://regulomedb.org/regulome-search/"
+REGULOMEDB_HOSTS = ("https://regulomedb.org/regulome-search/", "https://www.regulomedb.org/regulome-search/")
 GNOMAD_API = "https://gnomad.broadinstitute.org/api"
 EUROPEPMC_SEARCH = "https://www.ebi.ac.uk/europepmc/webservices/rest/search"
 
@@ -337,11 +337,12 @@ class SpliceResult:
     allele: str = ""
 
 
-def fetch_spliceai(variants: list[str], timeout: float = 30) -> dict:
+def fetch_spliceai(variants: list[str], timeout: float = 60) -> dict:
     """variants: chrom-pos-ref-alt strings on GRCh38, one per alternate allele."""
     answers = []
     for variant in variants[:3]:
-        body = request_json(SPLICEAI, params={"hg": "38", "variant": variant, "distance": "500", "mask": "1"}, timeout=timeout, attempts=2)
+        # The public server computes scores on demand and is often slow; one long try, in the background.
+        body = request_json(SPLICEAI, params={"hg": "38", "variant": variant, "distance": "500", "mask": "1"}, timeout=timeout, attempts=1)
         answers.append({"variant": variant, "body": body})
     return _payload("SpliceAI", {"variants": variants[:3]}, {"answers": answers})
 
@@ -396,10 +397,15 @@ class RegulomeResult:
 
 
 def fetch_regulome(rsid: str, timeout: float = 20) -> dict:
-    body = request_json(
-        REGULOMEDB, params={"regions": rsid, "genome": "GRCh38", "format": "json", "limit": "100"}, timeout=timeout, attempts=2
-    )
-    return _payload("RegulomeDB", {"rsid": rsid, "genome": "GRCh38"}, body)
+    errors = []
+    for url in REGULOMEDB_HOSTS:
+        try:
+            body = request_json(url, params={"regions": rsid, "genome": "GRCh38", "format": "json"}, timeout=timeout, attempts=1)
+            return _payload("RegulomeDB", {"rsid": rsid, "genome": "GRCh38", "url": url}, body)
+        except RuntimeError as exc:
+            text = str(exc)
+            errors.append(text[: text.find("<")].rstrip(": ") if "<" in text else text[:160])
+    raise RuntimeError("; ".join(errors))
 
 
 def parse_regulome(payload: dict | None) -> RegulomeResult:
@@ -410,7 +416,10 @@ def parse_regulome(payload: dict | None) -> RegulomeResult:
     if isinstance(score, list):
         score = score[0] if score else {}
     features = body.get("features") or []
-    count = len(features) if isinstance(features, list) else sum(len(v) for v in features.values() if isinstance(v, list))
+    if isinstance(features, dict):  # current API: {"ChIP": true, "QTL": false, ...}; older: lists per type
+        count = sum(1 if v is True else len(v) if isinstance(v, list) else 0 for v in features.values())
+    else:
+        count = len(features)
     return RegulomeResult(
         True,
         ranking=str(score.get("ranking") or "").strip(),

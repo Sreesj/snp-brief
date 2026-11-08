@@ -414,7 +414,7 @@ def render_observatory(item: Gathered, plan=None) -> None:
         st.html(theme.checks_html(integrity_check(item, summary)))
     except Exception as exc:  # a broken check must never hide the data
         print(f"{item.rsid} integrity check crashed: {exc}", file=sys.stderr)
-    st.html(theme.method("summary") + theme.method("frequency") + theme.method("reconcile"))
+    st.html(theme.method("summary") + theme.method("frequency") + theme.method("gwas") + theme.method("reconcile"))
     tables = unresolved_populations(item)
     if tables:
         with st.expander("Population frequencies"):

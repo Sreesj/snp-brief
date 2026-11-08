@@ -234,7 +234,10 @@ def _plan(item) -> _Plan:
         for hit in gwas.hits[:3]:
             extra = [f"p = {hit.p_text}"] if hit.p_text else []
             if hit.risk_allele:
-                extra.append(f"risk allele {hit.risk_allele}")
+                extra.append(
+                    f"risk allele {hit.risk_allele}"
+                    + (f" (reported as {hit.reported_allele} on the opposite strand)" if hit.reported_allele else "")
+                )
             if hit.effect:
                 extra.append(hit.effect)
             if hit.genes:

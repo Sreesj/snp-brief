@@ -213,6 +213,23 @@ class GwasHit:
     effect: str = ""
     genes: list[str] = field(default_factory=list)
     pmid: str = ""
+    reported_allele: str = ""  # set when the study reported the risk allele on the opposite strand
+
+
+_COMPLEMENT = {"A": "T", "T": "A", "C": "G", "G": "C"}
+
+
+def orient_risk_alleles(hits: list[GwasHit], alleles: list[tuple[str, str]]) -> None:
+    """Studies sometimes report the risk allele on the reverse strand (A for a C>T variant).
+    When only the complement is an allele of this variant, report it on the forward strand.
+    Palindromic variants (A/T, C/G) are ambiguous and left as reported."""
+    letters = {a for pair in alleles for a in pair if len(a) == 1}
+    if not letters or any(_COMPLEMENT.get(a) in letters for a in letters):
+        return
+    for hit in hits:
+        risk = hit.risk_allele
+        if len(risk) == 1 and risk not in letters and _COMPLEMENT.get(risk) in letters:
+            hit.reported_allele, hit.risk_allele = risk, _COMPLEMENT[risk]
 
 
 @dataclass

@@ -83,6 +83,15 @@ METHODS: dict[str, tuple[str, list[str]]] = {
             "When several alleles or transcripts are scored, the most damaging value is shown.",
         ],
     ),
+    "gwas": (
+        "GWAS associations",
+        [
+            "Associations come from the GWAS Catalog download (single-SNP associations only; haplotypes and interactions are left out).",
+            "When a study reports the risk allele on the opposite DNA strand (for example A for a C>T variant), it is shown on the "
+            "forward strand (T) with a note. Palindromic variants (A/T, C/G) are left as reported because the strand is ambiguous.",
+            "Associations are ordered by p-value, read from the exact text so values smaller than 1e-308 still sort correctly.",
+        ],
+    ),
     "timeline": (
         "Papers per year",
         [

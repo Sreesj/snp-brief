@@ -222,3 +222,23 @@ class PValueOrderTests(unittest.TestCase):
 
         hits = [GwasHit("a", 0.0, "1.00e-1420"), GwasHit("b", 0.0, "2.00e-9237"), GwasHit("c", 1e-8, "1e-8")]
         self.assertEqual([h.trait for h in sorted(hits, key=_p_order)], ["b", "a", "c"])
+
+
+class StrandTests(unittest.TestCase):
+    def test_reverse_strand_risk_allele_is_flipped_but_palindromes_are_not(self) -> None:
+        from snp_brief.providers import GwasHit, orient_risk_alleles
+
+        hits = [GwasHit("Type 2 diabetes", 1e-50, "1e-50", "A"), GwasHit("BMI", 1e-9, "1e-9", "T")]
+        orient_risk_alleles(hits, [("C", "T")])
+        self.assertEqual([(h.risk_allele, h.reported_allele) for h in hits], [("T", "A"), ("T", "")])
+        pal = [GwasHit("x", 1e-9, "1e-9", "T")]
+        orient_risk_alleles(pal, [("A", "T")])
+        self.assertEqual(pal[0].risk_allele, "T")
+        pal = [GwasHit("x", 1e-9, "1e-9", "G")]
+        orient_risk_alleles(pal, [("C", "G"), ("C", "T")])
+        self.assertEqual((pal[0].risk_allele, pal[0].reported_allele), ("G", ""))
+
+    def test_regulome_boolean_features(self) -> None:
+        rg = extra.parse_regulome(wrap({"regulome_score": {"ranking": "1f", "probability": "0.55"},
+                                        "features": {"ChIP": True, "QTL": True, "Footprint": False}}))
+        self.assertEqual(rg.feature_count, 2)

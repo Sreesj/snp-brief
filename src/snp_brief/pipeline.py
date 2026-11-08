@@ -29,6 +29,7 @@ from snp_brief.providers import (
     fetch_gene_summary,
     fetch_gwas,
     fetch_vep,
+    orient_risk_alleles,
     parse_citations,
     parse_gene_summary,
     parse_gwas,
@@ -237,6 +238,7 @@ def gather(
     _papers_retrieved, papers = parse_europepmc(results.get("europepmc"))
     vep = parse_vep(results.get("ensembl_vep")) if "ensembl_vep" in results else VepAnnotation(False)
     gwas = parse_gwas(results.get("gwas"), rsid) if "gwas" in results else GwasResult(False)
+    orient_risk_alleles(gwas.hits, db.alleles)
     citations = parse_citations(results.get("dbsnp_citations"))
     eqtls = parse_gtex(results.get("gtex"))
     ld_proxies = parse_ld(results.get("ensembl_ld"), rsid)
