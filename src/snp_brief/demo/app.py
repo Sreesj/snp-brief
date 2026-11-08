@@ -255,14 +255,18 @@ def search_bar(root: Path, offline: bool) -> None:
         st.session_state.run_count = st.session_state.get("run_count", 0) + 1
         current = Run(st.session_state.run_count, not offline, [], [], [])
         st.session_state.last_run = current
-    if all(item.rsid != rsid for item in current.results):
+    existing = next((item for item in current.results if rsid in {item.rsid, item.merged_from}), None)
+    if existing is None:
         try:
             with st.spinner(f"Loading {rsid}; a SNP that was never fetched takes 10-30 s…"):
-                current.results.append(fetch(root, rsid, offline=offline))
+                existing = fetch(root, rsid, offline=offline)
+                current.results.append(existing)
         except Exception as exc:
             st.error(f"{rsid} failed: {exc}")
             return
-    st.session_state.active = rsid
+    if existing.merged_from:
+        st.info(f"{existing.merged_from} has been merged into {existing.rsid} in dbSNP; showing {existing.rsid}.")
+    st.session_state.active = existing.rsid
 
 
 def refresh_variant(item: Gathered) -> list[str]:

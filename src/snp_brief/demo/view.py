@@ -131,7 +131,8 @@ def gene_label(item: Gathered) -> str:
 
 def summary_row(item: Gathered) -> dict[str, str]:
     found = statements(item.sentences)
-    row = {"rsID": item.rsid, "Gene": gene_label(item)}
+    label = f"{item.merged_from} → {item.rsid}" if getattr(item, "merged_from", "") else item.rsid
+    row = {"rsID": label, "Gene": gene_label(item)}
     for name in FIELDS:
         row[name] = field_status(found, name)
     return row

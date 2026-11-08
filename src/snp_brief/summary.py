@@ -95,6 +95,9 @@ class _Plan:
     gwas_best_p: str = ""
     gwas_count: int = 0
     function_source: str = ""
+    uniprot_gene: str = ""
+    merged: str | None = None
+    merged_text: str = ""
     gene_summary: str | None = None
     gene_summary_text: str = ""
     eqtl: str | None = None
@@ -125,6 +128,13 @@ def _plan(item) -> _Plan:
         return fact_id
 
     db = item.db
+    merged_from = getattr(item, "merged_from", "")
+    if merged_from:
+        plan.merged = add(
+            f"dbSNP has merged {merged_from} into {item.rsid}; ClinVar, gnomAD and the other sources list it under {item.rsid}.",
+            "dbSNP",
+        )
+        plan.merged_text = f"{merged_from} is now {item.rsid} in dbSNP (the IDs were merged); results are for {item.rsid}"
     if db.retrieved and db.chrom and db.pos:
         alleles = ", ".join(f"{ref}>{alt}" for ref, alt in db.alleles)
         add(f"{item.rsid} is at {db.assembly or ''} chr{db.chrom}:{db.pos}, alleles {alleles}.".replace("  ", " "), "dbSNP")
@@ -168,10 +178,11 @@ def _plan(item) -> _Plan:
         )
     if item.uniprot and item.fallback_gene:
         plan.gene = plan.gene or item.fallback_gene
-        plan.uniprot_text = _first_sentence(item.uniprot.text)
+        plan.uniprot_text = _first_sentence(_strip_refs(item.uniprot.text))
+        plan.uniprot_gene = item.fallback_gene
         plan.uniprot = add(
             f"Reviewed {item.fallback_gene} protein function (describes the protein, not this variant): "
-            f"{item.uniprot.text} (UniProt {item.uniprot.accession}).",
+            f"{_strip_refs(item.uniprot.text)} (UniProt {item.uniprot.accession}).",
             "UniProt",
         )
     gene_summary = getattr(item, "gene_summary", None)
@@ -364,6 +375,12 @@ def _location_from_fxn(classes: list[str]) -> str:
     return "near the gene"
 
 
+def _strip_refs(text: str) -> str:
+    """Drop UniProt's inline evidence lists such as "(PubMed:10500182, PubMed:12887909)"."""
+    text = re.sub(r"\s*\((?:PubMed|ECO|By similarity)[^)]*\)", "", text)
+    return re.sub(r"\s+", " ", text).strip()
+
+
 def _first_sentence(text: str) -> str:
     head = re.split(r"(?<=[.;])\s", text.strip(), maxsplit=1)[0]
     return head.rstrip(".;")
@@ -478,6 +495,8 @@ def template_summary(item) -> Summary:
 def _template_parts(rsid: str, plan: _Plan) -> list[tuple[str, str]]:
     """Template sentences, each tagged with the field it covers (function, frequency, disease, papers)."""
     parts: list[tuple[str, str]] = []
+    if plan.merged:
+        parts.append(("identity", f"{plan.merged_text} [{plan.merged}]."))
     if plan.function:
         lead = f"{rsid} is {_phrase_consequence(plan.consequence)}" + (f" in {plan.gene}" if plan.gene else "")
         if plan.change:
@@ -491,7 +510,7 @@ def _template_parts(rsid: str, plan: _Plan) -> list[tuple[str, str]]:
         parts.append(
             (
                 "function",
-                f"UniProt describes the {plan.gene or 'encoded'} protein, not this variant: "
+                f"UniProt describes the {plan.uniprot_gene or plan.gene or 'encoded'} protein, not this variant: "
                 f"{plan.uniprot_text[:1].lower() + plan.uniprot_text[1:]} [{plan.uniprot}].",
             )
         )
@@ -639,8 +658,10 @@ def _problem(sentence: str, by_id: dict[str, Fact], corpus: str) -> str | None:
         if name not in corpus:
             return f"{name} is not in any fact"
     lowered = body.lower()
+    cited_lower = cited.lower()
     for word in _FORBIDDEN:
-        if word in lowered:
+        # A word copied from a source (e.g. a ClinVar condition "Cystic fibrosis diagnostic test") is not advice.
+        if word in lowered and word not in cited_lower:
             return f"reads like clinical advice ({word.strip()})"
     return None
 

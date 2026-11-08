@@ -82,7 +82,15 @@ def parse_dbsnp(payload: dict | None, rsid: str) -> DbSnpRecord:
         genes=genes,
         coding_by_alt=coding_by_alt(doc.get("docsum") or "", accession, [alt for _, alt in alleles]),
         fxn_class=[part.strip() for part in str(doc.get("fxn_class") or "").split(",") if part.strip()],
+        current_rsid=_current(doc, rsid),
     )
+
+
+def _current(doc: dict, rsid: str) -> str:
+    """dbSNP answers a merged rsID with the surviving record; its snp_id is the current rsID."""
+    snp_id = str(doc.get("snp_id") or "").strip()
+    current = f"rs{snp_id}" if snp_id.isdigit() else ""
+    return current if current and current != rsid else ""
 
 
 def coding_by_alt(docsum: str, accession: str | None, alts: list[str]) -> dict[str, str]:
@@ -149,9 +157,12 @@ def _alleles(spdi: str, accession: str | None, pos: int | None) -> list[tuple[st
             one_based = int(parts[1]) + 1
         except ValueError:
             continue
-        if one_based != pos:
-            continue
+        # SNVs sit exactly at chrpos. Insertions, duplications and deletions in repeats are often
+        # placed a few bases away by SPDI normalisation, so allow a small window for those.
         deleted, inserted = parts[2], parts[3]
+        is_snv = len(deleted) == 1 and len(inserted) == 1
+        if (is_snv and one_based != pos) or (not is_snv and abs(one_based - pos) > 50):
+            continue
         pair = (deleted, inserted)
         if deleted and inserted and deleted != inserted and pair not in found:
             found.append(pair)

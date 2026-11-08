@@ -87,6 +87,7 @@ class Gathered:
     gwas: GwasResult = field(default_factory=lambda: GwasResult(False))
     citations: list[str] = field(default_factory=list)
     gene_summary: GeneSummary | None = None
+    merged_from: str = ""  # the rsID that was asked for, when dbSNP merged it into rsid
     eqtls: list[Eqtl] = field(default_factory=list)
     ld_proxies: list[LdProxy] = field(default_factory=list)
     l2g: list[L2G] = field(default_factory=list)
@@ -110,8 +111,13 @@ def gather(
     offline: bool,
     extras_cache: Path | None = None,
     budget: float | None = None,
+    merged_from: str = "",
 ) -> Gathered:
-    """All providers at once. budget (seconds) caps the wait; None waits for every provider."""
+    """All providers at once. budget (seconds) caps the wait; None waits for every provider.
+
+    If dbSNP reports that the rsID was merged into another, everything is gathered again for the
+    current rsID (once), and the result records the original ID in merged_from.
+    """
     start = time.monotonic()
     deadline = None if budget is None else start + budget
     calls: dict[str, SourceCall] = {}
@@ -172,6 +178,17 @@ def gather(
     _collect(futures, results, calls, deadline)
 
     db = parse_dbsnp(results.get("dbsnp"), rsid)
+    if db.current_rsid and not merged_from:
+        remaining = None if deadline is None else max(1.0, deadline - time.monotonic())
+        return gather(
+            db.current_rsid,
+            cache_dir=cache_dir,
+            refresh=refresh,
+            offline=offline,
+            extras_cache=extras_cache,
+            budget=remaining,
+            merged_from=rsid,
+        )
     clinvar_retrieved, records = parse_clinvar(results.get("clinvar"), rsid)
     _gnomad_retrieved, variants = parse_gnomad(results.get("gnomad"))
     _papers_retrieved, papers = parse_europepmc(results.get("europepmc"))
@@ -236,6 +253,7 @@ def gather(
         l2g=l2g,
         litvar=litvar,
         findings=_findings(rsid, cache_dir, extras_cache),
+        merged_from=merged_from,
     )
 
 

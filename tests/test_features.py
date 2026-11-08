@@ -179,3 +179,54 @@ class NcbiKeyAndFreshnessTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class MergedAndIndelTests(unittest.TestCase):
+    def setUp(self) -> None:
+        self.tmp = Path(tempfile.mkdtemp())
+        self.addCleanup(shutil.rmtree, self.tmp)
+        payload = (ROOT / "tests" / "data" / "rs80357713_dbsnp.json").read_text(encoding="utf-8")
+        for rsid in ("rs80357713", "rs80357783"):
+            (self.tmp / rsid).mkdir()
+            (self.tmp / rsid / "dbsnp.json").write_text(payload, encoding="utf-8")
+
+    def test_merged_rsid_is_followed_and_reported(self) -> None:
+        import contextlib
+        import io
+
+        with mock.patch.dict(os.environ, {"SNP_BRIEF_EXTRAS": "off"}), contextlib.redirect_stderr(io.StringIO()):
+            item = gather("rs80357713", cache_dir=self.tmp, refresh=False, offline=True)
+        self.assertEqual(item.rsid, "rs80357783")
+        self.assertEqual(item.merged_from, "rs80357713")
+        text = summarize(item).text
+        self.assertTrue(text.startswith("rs80357713 is now rs80357783 in dbSNP (the IDs were merged)"))
+        from snp_brief.demo.view import summary_row
+
+        self.assertEqual(summary_row(item)["rsID"], "rs80357713 → rs80357783")
+
+    def test_insertion_alleles_are_parsed(self) -> None:
+        from snp_brief.sources.dbsnp import parse_dbsnp
+
+        db = parse_dbsnp(json.loads((ROOT / "tests" / "data" / "rs80357713_dbsnp.json").read_text(encoding="utf-8")), "rs80357713")
+        self.assertEqual(db.alleles, [("T", "TT")])
+        self.assertEqual(db.current_rsid, "rs80357783")
+
+    def test_tiny_frequency_is_readable(self) -> None:
+        from snp_brief.sources.gnomad import percent
+
+        self.assertEqual(percent(1, 1460000), "under 0.001%")
+        self.assertEqual(percent(3, 39666), "0.0076%")
+
+    def test_condition_name_with_diagnostic_is_not_advice(self) -> None:
+        from snp_brief.summary import Fact, check
+
+        facts = [Fact("F1", "Best-reviewed ClinVar classification: Pathogenic, conditions Cystic fibrosis diagnostic test.", "ClinVar")]
+        kept, rejected = check(["ClinVar calls it Pathogenic for Cystic fibrosis diagnostic test [F1]."], facts)
+        self.assertEqual(rejected, [])
+        _, rejected = check(["Carriers should get a diagnosis [F1]."], [Fact("F1", "Pathogenic.", "ClinVar")])
+        self.assertTrue(rejected)
+
+    def test_uniprot_evidence_lists_are_stripped(self) -> None:
+        from snp_brief.summary import _strip_refs
+
+        self.assertEqual(_strip_refs("Plays a role in DNA repair (PubMed:10500182, PubMed:12887909)."), "Plays a role in DNA repair.")

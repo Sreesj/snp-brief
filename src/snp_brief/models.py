@@ -19,6 +19,8 @@ class DbSnpRecord:
     coding_by_alt: dict[str, str] = field(default_factory=dict)
     # dbSNP function class, e.g. ["2KB_upstream_variant", "upstream_transcript_variant"].
     fxn_class: list[str] = field(default_factory=list)
+    # Set when dbSNP has merged the requested rsID into another one (e.g. rs80357713 -> rs80357783).
+    current_rsid: str = ""
 
 
 @dataclass

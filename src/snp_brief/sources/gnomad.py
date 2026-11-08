@@ -200,7 +200,9 @@ def percent(ac: int, an: int) -> str:
         return f"{value:.0f}%"
     if value >= 1:
         return f"{value:.1f}%"
-    return f"{float(f'{value:.2g}'):g}%"
+    if value >= 0.001:
+        return f"{float(f'{value:.2g}'):g}%"
+    return "under 0.001%"
 
 
 def disagrees(low: float, high: float) -> bool:
