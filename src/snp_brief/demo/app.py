@@ -39,7 +39,6 @@ from snp_brief.summary import _plan, summarize
 
 USER_CACHE = default_user_cache()
 MODULES = ("Variant Observatory", "Molecular Ripple", "Hypothesis Forge")
-EXAMPLES = ("rs6025", "rs429358", "rs7903146", "rs334")
 CATEGORY_KIND = {
     WELL: "benign",
     CONFLICTING: "uncertain",
@@ -49,8 +48,8 @@ CATEGORY_KIND = {
     EXPLORATORY: "neutral",
     INSUFFICIENT: "neutral",
 }
-NAMED_CSS = "background-color: #eef3ff; color: #1d3fa8; font-weight: 600"
-SMALL_CSS = "color: #9aa0a6"
+NAMED_CSS = "color: #b9beff; font-weight: 600"
+SMALL_CSS = "color: #62666d"
 
 
 @dataclass
@@ -115,26 +114,25 @@ def main() -> None:
     if not password_ok():
         return
     root = repo_root()
-    if "rsid_text" not in st.session_state:
-        fixture = root / "fixture" / "snps.txt"
-        st.session_state.rsid_text = fixture.read_text(encoding="utf-8") if fixture.is_file() else ""
+    st.session_state.setdefault("rsid_text", "")
     offline, clicked = sidebar()
-    st.html(theme.top_bar())
     if clicked:
         run_briefs(root, offline)
-    elif not st.session_state.get("autoloaded"):
-        # First visit: open the demo list from saved data (no network), so the page is never empty.
-        st.session_state.autoloaded = True
-        run_briefs(root, True)
-    search_bar(root, offline)
     current: Run | None = st.session_state.get("last_run")
-    if current is None:
-        st.html(
-            theme.callout(
-                "Search an rsID above, or open the sidebar to analyse the demo list of 20 SNPs.", "info"
-            )
-        )
+    if current is None or not current.results:
+        # Landing: a centred hero and one search box. Cached SNPs still load instantly when searched.
+        st.html(theme.top_bar() + theme.hero())
+        _, middle, _ = st.columns([1, 3, 1])
+        with middle:
+            search_bar(root, offline)
+            st.html(theme.features())
+        if st.session_state.get("last_run") is not None and st.session_state.last_run.results:
+            st.rerun()
+        if current is not None:
+            show_results(current)
         return
+    st.html(theme.top_bar())
+    search_bar(root, offline)
     show_results(current)
 
 
@@ -148,7 +146,7 @@ def repo_root() -> Path:
 def sidebar() -> tuple[bool, bool]:
     with st.sidebar:
         st.html(theme.section("Batch analysis"))
-        st.text_area("rsIDs, one per line", key="rsid_text", height=260)
+        st.text_area("rsIDs, one per line", key="rsid_text", height=220, placeholder="rs6025\nrs429358\n…")
         st.file_uploader("Or upload a .txt file", type=["txt"], key="upload", on_change=take_upload)
         clicked = st.button("Analyze list", key="run_briefs", type="primary", width="stretch")
         with st.expander("Settings"):
@@ -219,17 +217,12 @@ def search_bar(root: Path, offline: bool) -> None:
     with st.form("search", border=False):
         left, right = st.columns([6, 1], vertical_alignment="bottom")
         query = left.text_input(
-            "Search a variant", placeholder="Search an rsID, e.g. rs6025", key="search_text", label_visibility="collapsed"
+            "Search a variant", placeholder="Search by rsID", key="search_text", label_visibility="collapsed"
         )
         submitted = right.form_submit_button("Search", type="primary", width="stretch")
-    tries = st.columns([1, 1, 1, 1, 6])
-    picked = None
-    for column, example in zip(tries, EXAMPLES):
-        if column.button(example, key=f"try-{example}"):
-            picked = example
-    if not submitted and picked is None:
+    if not submitted:
         return
-    ids, _ = parse_rsid_text(picked or query or "")
+    ids, _ = parse_rsid_text(query or "")
     if not ids:
         st.error("Enter an rsID, such as rs6025.")
         return

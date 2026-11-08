@@ -225,9 +225,11 @@ class PageTests(unittest.TestCase):
     def test_run_is_offline_by_default_and_fills_one_row_per_snp(self) -> None:
         page = AppTest.from_file(str(APP), default_timeout=30).run()
         self.assertFalse(page.exception)
-        self.assertEqual(page.text_area(key="rsid_text").value.split(), FIXTURE_IDS)
+        self.assertEqual(page.text_area(key="rsid_text").value, "", "the demo list is not prefilled")
+        self.assertFalse([b for b in page.button if (b.key or "").startswith("pick-")], "nothing is loaded on first visit")
         self.assertFalse(page.toggle(key="offline").value)
         page.toggle(key="offline").set_value(True).run()  # demo SNPs not in cache/ would otherwise be fetched live
+        page.text_area(key="rsid_text").input("\n".join(FIXTURE_IDS)).run()
         page.button(key="run_briefs").click().run()
         self.assertFalse(page.exception)
         picks = [button.key for button in page.button if (button.key or "").startswith("pick-")]

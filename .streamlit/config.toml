@@ -1,10 +1,10 @@
 [theme]
-base = "light"
-primaryColor = "#1f4fd8"
-backgroundColor = "#f6f7f9"
-secondaryBackgroundColor = "#ffffff"
-textColor = "#0e1726"
-borderColor = "#e6e8ec"
+base = "dark"
+primaryColor = "#7c86ff"
+backgroundColor = "#08090a"
+secondaryBackgroundColor = "#101113"
+textColor = "#f7f8f8"
+borderColor = "#24262b"
 baseRadius = "10px"
 
 [client]

@@ -10,9 +10,9 @@ from __future__ import annotations
 
 from snp_brief.summary import _plan
 
-OBSERVED = 'color="#137333", fontcolor="#137333", style=solid'
-PREDICTED = 'color="#6b3fa0", fontcolor="#6b3fa0", style=dashed'
-HYPOTHESIS = 'color="#80868b", fontcolor="#80868b", style=dotted'
+OBSERVED = 'color="#4cc38a", fontcolor="#8a8f98", style=solid'
+PREDICTED = 'color="#a99cff", fontcolor="#8a8f98", style=dashed'
+HYPOTHESIS = 'color="#62666d", fontcolor="#62666d", style=dotted'
 
 
 def evidence_dot(item, forge_result=None) -> str:
@@ -49,7 +49,12 @@ def evidence_dot(item, forge_result=None) -> str:
     if forge_result is not None:
         for number, hyp in enumerate(getattr(forge_result, "hypotheses", [])[:3], 1):
             edges.append((variant, node(f"H{number}: {hyp.title[:40]}", "hyp"), "hypothesis", HYPOTHESIS))
-    lines = ["digraph evidence {", '  rankdir=LR; bgcolor="transparent"; node [fontsize=11]; edge [fontsize=9];']
+    lines = [
+        "digraph evidence {",
+        '  rankdir=LR; bgcolor="transparent"; pad=0.2;',
+        '  node [fontsize=11, fontname="Inter", color="#2a2c31", fontcolor="#e6e8eb", style=filled, fillcolor="#16171a", penwidth=1];',
+        '  edge [fontsize=9, fontname="Inter", arrowsize=0.6];',
+    ]
     lines += [f"  {line}" for line in nodes.values()]
     seen = set()
     for a, b, label, style in edges:
