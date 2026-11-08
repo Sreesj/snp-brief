@@ -51,6 +51,12 @@ SOURCES = (
     Source("europepmc", "Europe PMC", "rank 7 · papers naming the rsID"),
     Source("dbsnp_citations", "dbSNP citations", "rank 7 · PubMed records linked to the rsID"),
     Source("litvar", "LitVar2", "rank 7 · publications mentioning the rsID in full text"),
+    Source("pharmgkb", "ClinPGx (PharmGKB)", "rank 2 · drug response, curated clinical annotations"),
+    Source("constraint", "gnomAD constraint", "rank 2 · how much the gene tolerates damaging changes"),
+    Source("myvariant", "MyVariant.info", "rank 5 · REVEL, AlphaMissense, CADD, SIFT, PolyPhen-2, CIViC cancer evidence"),
+    Source("spliceai", "SpliceAI", "rank 5 · predicted splice-site gain or loss"),
+    Source("regulome", "RegulomeDB", "rank 5 · regulatory evidence at this position"),
+    Source("timeline", "Literature timeline", "rank 7 · papers per year naming the rsID"),
 )
 NOT_CONSULTED = "not consulted"
 
@@ -310,6 +316,36 @@ def _gave(key: str, item: Gathered) -> str:
         if not vep.retrieved or not (vep.most_severe or vep.genes):
             return "no annotation returned"
         return f"{vep.most_severe.replace('_', ' ')}" + (f" in {vep.canonical_gene}" if vep.canonical_gene else "")
+    if key == "myvariant":
+        sc = item.scores
+        parts = []
+        if sc.revel is not None:
+            parts.append(f"REVEL {sc.revel:.2f}")
+        if sc.alphamissense is not None:
+            parts.append(f"AlphaMissense {sc.alphamissense:.2f}")
+        if sc.cadd_phred is not None:
+            parts.append(f"CADD {sc.cadd_phred:.1f}")
+        if sc.civic:
+            parts.append(f"{len(sc.civic)} CIViC evidence items")
+        return ", ".join(parts) or (sc.consequence or "no scores for this variant")
+    if key == "pharmgkb":
+        n = len(item.pgx.annotations)
+        if not n:
+            return "no drug-response annotation"
+        drugs = list(dict.fromkeys(d for a in item.pgx.annotations for d in a.drugs))
+        return f"{n} annotation{'s' if n != 1 else ''}: " + ", ".join(drugs[:3])
+    if key == "spliceai":
+        sp = item.splice
+        return f"max delta {sp.max_delta:.2f} ({sp.kind})" if sp.max_delta is not None else "no splice score"
+    if key == "regulome":
+        rg = item.regulome
+        return f"rank {rg.ranking}" + (f", probability {rg.probability:.2f}" if rg.probability is not None else "") if rg.ranking else "no regulatory score"
+    if key == "constraint":
+        c = item.constraint
+        return f"{c.gene} LOEUF {c.loeuf:.2f}" if c.loeuf is not None else "no constraint data"
+    if key == "timeline":
+        t = item.timeline
+        return f"{t.total} papers" + (f", {t.trend}" if t.trend else "") if t.total else "no papers"
     if key == "ncbi_gene":
         gs = item.gene_summary
         return f"{gs.symbol}: {gs.name}" if gs is not None else "no gene description"

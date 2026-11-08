@@ -158,6 +158,12 @@ class StatusTests(unittest.TestCase):
                 "Europe PMC": "no",
                 "dbSNP citations": "no",
                 "LitVar2": "no",
+                "ClinPGx (PharmGKB)": "no",
+                "gnomAD constraint": "no",
+                "MyVariant.info": "no",
+                "SpliceAI": "no",
+                "RegulomeDB": "no",
+                "Literature timeline": "no",
             },
         )
 
@@ -232,7 +238,7 @@ class PageTests(unittest.TestCase):
         self.assertFalse(page.exception)
         picks = [button.key for button in page.button if (button.key or "").startswith("pick-")]
         self.assertEqual(len(picks), len(FIXTURE_IDS))  # one entry per SNP (a merged rsID shows its current ID)
-        self.assertEqual(len(page.tabs), 3, "the first SNP opens automatically")
+        self.assertEqual(len(page.tabs), 4, "the first SNP opens automatically")
         page.button(key=picks[1]).click().run()
         self.assertFalse(page.exception)
 
@@ -242,7 +248,7 @@ class PageTests(unittest.TestCase):
         page.text_input(key="search_text").set_value("rs6025")
         page.button(key="search_go_btn").click().run()
         self.assertFalse(page.exception)
-        self.assertEqual(len(page.tabs), 3)
+        self.assertEqual(len(page.tabs), 4)
         self.assertTrue(any("rs6025" in block.value for block in page.get("html")))
 
     def test_detail_shows_brief_populations_and_fallback_source(self) -> None:
@@ -262,7 +268,7 @@ class PageTests(unittest.TestCase):
         with mock.patch.dict(os.environ, {}, clear=True):
             page = AppTest.from_function(_detail_page, args=(str(CACHE), "rs1801133"), default_timeout=30).run()
             self.assertFalse(page.exception)
-            self.assertEqual([tab.label for tab in page.tabs], ["Variant Observatory", "Molecular Ripple", "Hypothesis Forge"])
+            self.assertEqual([tab.label for tab in page.tabs], ["Variant Observatory", "Interpretation", "Molecular Ripple", "Hypothesis Forge"])
             page.button(key="run-forge-rs1801133").click().run()
             self.assertFalse(page.exception)
             self.assertTrue(any("Open problem" in block.value for block in page.markdown))

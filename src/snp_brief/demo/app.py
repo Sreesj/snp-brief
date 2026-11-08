@@ -19,6 +19,7 @@ import streamlit as st
 import streamlit.components.v1 as components
 
 from snp_brief.demo import motion, theme
+from snp_brief.interpret import NOT_COMPUTED, acmg_draft, genotype_rates
 from snp_brief.demo.view import (
     PopulationTable,
     briefs_text,
@@ -39,7 +40,7 @@ from snp_brief.ripple import ripple_cached
 from snp_brief.summary import _plan, summarize
 
 USER_CACHE = default_user_cache()
-MODULES = ("Variant Observatory", "Molecular Ripple", "Hypothesis Forge")
+MODULES = ("Variant Observatory", "Interpretation", "Molecular Ripple", "Hypothesis Forge")
 CATEGORY_KIND = {
     WELL: "benign",
     CONFLICTING: "uncertain",
@@ -110,7 +111,7 @@ def forge_runs_left() -> int:
 
 def main() -> None:
     st.set_page_config(page_title="Variant Atlas", page_icon=":material/genetics:", layout="wide")
-    st.html(theme.FONTS + theme.CSS)
+    st.html(theme.FONTS + theme.CSS + theme.EXTRA_CSS)
     load_secrets()
     if not password_ok():
         return
@@ -232,7 +233,7 @@ def search(root: Path, ids: list[str], rejected: list[str], offline: bool) -> No
             if len(ids) > 1:
                 placeholder.html(theme.loader(f"Analyzing {rsid}", f"{index + 1} of {len(ids)} variants", index, len(ids), skeleton=False))
             else:
-                placeholder.html(theme.loader(f"Analyzing {rsid}", "Querying 13 databases in parallel"))
+                placeholder.html(theme.loader(f"Analyzing {rsid}", "Querying 19 sources in parallel"))
             try:
                 existing = fetch(root, rsid, offline=offline)
             except Exception as exc:
@@ -343,9 +344,11 @@ def render_detail(item: Gathered) -> None:
         st.rerun()
     if item.pending:
         pick_up_late_sources(item.rsid)
-    observatory, ripple_tab, forge_tab = st.tabs(list(MODULES))
+    observatory, interpretation_tab, ripple_tab, forge_tab = st.tabs(list(MODULES))
     with observatory:
         render_observatory(item, plan)
+    with interpretation_tab:
+        render_interpretation(item)
     with ripple_tab:
         render_ripple(item)
     with forge_tab:
@@ -411,6 +414,7 @@ def render_observatory(item: Gathered, plan=None) -> None:
             for table in tables:
                 render_populations(table)
     with st.expander("Literature"):
+        render_timeline(item)
         render_findings(item)
         links = paper_links(item)
         if links:
@@ -507,7 +511,49 @@ def render_populations(table: PopulationTable) -> None:
 # ---------------------------------------------------------------- Molecular Ripple
 
 
+def render_timeline(item: Gathered) -> None:
+    t = item.timeline
+    if not t.by_year:
+        return
+    years = range(min(t.by_year), max(t.by_year) + 1)
+    frame = pd.DataFrame({"Papers": [t.by_year.get(y, 0) for y in years]}, index=[str(y) for y in years])
+    trend = {"growing": "interest is growing", "declining": "interest is declining", "steady": "interest is steady"}.get(t.trend, "")
+    st.html(theme.section(f"Papers per year · {t.total} in Europe PMC" + (f" · {trend}" if trend else "")))
+    st.bar_chart(frame, color="#7c86ff", height=180, x_label="", y_label="")
+
+
+def render_interpretation(item: Gathered) -> None:
+    """Computed aids for the people who act on a variant: ACMG draft, genotype rates, drugs, cancer."""
+    st.html(theme.section("ACMG/AMP evidence draft") + theme.acmg_html(acmg_draft(item), NOT_COMPUTED))
+    rates = genotype_rates(item)
+    st.html(theme.section("How common is it in people"))
+    if rates:
+        frame = pd.DataFrame(
+            [
+                {
+                    "Group": r.group,
+                    "Allele": r.allele,
+                    "Allele frequency": f"{r.af * 100:.3g}%",
+                    "Carry at least one copy": r.carriers_text,
+                    "Carry two copies": r.homozygous_text,
+                }
+                for r in rates
+            ]
+        )
+        st.table(frame, hide_index=True, border="horizontal")
+        st.caption("Estimated from gnomAD allele frequencies assuming Hardy-Weinberg equilibrium; groups with fewer than 2,000 alleles are left out.")
+    else:
+        st.caption("gnomAD has no frequency for this variant.")
+    pgx = theme.pgx_html(item.pgx)
+    st.html(theme.section("Drug response (ClinPGx)") + (pgx or '<div class="va-acmg-empty">No curated drug-response annotation for this variant.</div>'))
+    civic = theme.civic_html(item.scores.civic)
+    st.html(theme.section("Cancer evidence (CIViC)") + (civic or '<div class="va-acmg-empty">No CIViC evidence for this variant.</div>'))
+
+
 def render_ripple(item: Gathered) -> None:
+    grid = theme.score_grid(item)
+    if grid:
+        st.html(theme.section("Prediction and constraint scores") + grid)
     results = st.session_state.setdefault("modules", {})
     key = (item.rsid, "ripple")
     if key not in results:

@@ -27,6 +27,7 @@ Rank (1 = most dependable):
 from __future__ import annotations
 
 import os
+import sys
 import urllib.parse
 from dataclasses import dataclass, field
 from datetime import datetime, timezone
@@ -58,7 +59,14 @@ PROVIDERS = (
     Provider("europepmc", "Europe PMC", 7, "literature mention", ("papers",), 20),
     Provider("dbsnp_citations", "dbSNP citations", 7, "literature mention", ("papers",), 20),
     Provider("litvar", "LitVar2", 7, "literature mention", ("papers",), 20),
+    Provider("myvariant", "MyVariant.info", 5, "computed prediction scores (dbNSFP, CADD) and CIViC", ("prediction",), 20),
+    Provider("pharmgkb", "ClinPGx (PharmGKB)", 2, "curated drug-response annotation", ("drug",), 20),
+    Provider("spliceai", "SpliceAI", 5, "computed splice prediction", ("prediction",), 30),
+    Provider("regulome", "RegulomeDB", 5, "regulatory evidence score", ("prediction",), 20),
+    Provider("constraint", "gnomAD constraint", 2, "gene-level population constraint", ("context",), 20),
+    Provider("timeline", "Literature timeline", 7, "papers per year (Europe PMC)", ("papers",), 20),
 )
+PROVIDERS = tuple(sorted(PROVIDERS, key=lambda p: p.rank))  # stable: keeps the listed order within a rank
 BY_KEY = {provider.key: provider for provider in PROVIDERS}
 AI_TIER = "AI background knowledge (unverified)"
 
@@ -223,6 +231,16 @@ def fetch_gwas(rsid: str, timeout: float = 60) -> dict:
     EBI's v2 rs_id query often fails server-side (HTTP 500 after ~30 s). Ensembl imports the
     NHGRI-EBI GWAS Catalog into its variation phenotypes, so it is a dependable fallback.
     """
+    from snp_brief.sources import gwas_local
+
+    root = gwas_local.default_root()
+    if root is not None:
+        try:
+            local = gwas_local.lookup(rsid, root)
+            if local is not None:
+                return local  # the full catalogue on disk: instant, and an empty answer is a real "none"
+        except Exception as exc:  # a broken local file falls back to the APIs
+            print(f"{rsid} gwas: local catalogue unreadable ({exc}); using the API", file=sys.stderr)
     errors: list[str] = []
     pages: list = []
     for page in range(GWAS_MAX_PAGES):
@@ -358,7 +376,7 @@ def _ensembl_gwas_hit(row: dict) -> GwasHit | None:
 
     p_raw = get("pvalue", "p_value", "p-value")
     p_value = _num(p_raw)
-    effect = _effect_text(get("odds_ratio"), get("beta_coefficient", "beta"))
+    effect = _effect_text(get("odds_ratio"), get("beta_coefficient", "beta")) or str(get("effect_text") or "")
     genes_raw = get("genes", "associated_gene", "reported_genes") or ""
     genes = [g.strip() for g in str(genes_raw).replace(";", ",").split(",") if g.strip() and g.strip() != "NR"]
     study = str(get("study", "external_reference", "pubmed_id") or "")

@@ -17,6 +17,8 @@ from pathlib import Path
 from snp_brief.brief import assemble_brief, brief_sentences
 from snp_brief.cache_store import cache_path, load_cache, save_cache
 from snp_brief.models import ClinVarRecord, DbSnpRecord, GnomadVariant, Paper, UniProtHit
+from snp_brief.sources import extra
+from snp_brief.sources.extra import Constraint, PgxResult, PredictionScores, RegulomeResult, SpliceResult, Timeline
 from snp_brief.providers import (
     BY_KEY,
     GeneSummary,
@@ -106,6 +108,12 @@ class Gathered:
     l2g: list[L2G] = field(default_factory=list)
     litvar: list[str] = field(default_factory=list)
     findings: list = field(default_factory=list)
+    scores: PredictionScores = field(default_factory=lambda: PredictionScores(False))
+    pgx: PgxResult = field(default_factory=lambda: PgxResult(False))
+    splice: SpliceResult = field(default_factory=lambda: SpliceResult(False))
+    regulome: RegulomeResult = field(default_factory=lambda: RegulomeResult(False))
+    constraint: Constraint = field(default_factory=lambda: Constraint(False))
+    timeline: Timeline = field(default_factory=lambda: Timeline(False))
 
     @property
     def pending(self) -> list[str]:
@@ -181,6 +189,28 @@ def gather(
 
         futures["gtex"] = _POOL.submit(gtex_task)
         futures["open_targets"] = _POOL.submit(ot_task)
+        for key, fetcher in (
+            ("myvariant", lambda: extra.fetch_myvariant(rsid)),
+            ("pharmgkb", lambda: extra.fetch_pharmgkb(rsid)),
+            ("regulome", lambda: extra.fetch_regulome(rsid)),
+            ("timeline", lambda: extra.fetch_timeline(rsid)),
+        ):
+            futures[key] = _POOL.submit(run, key, fetcher, dirs=extra_dirs, write=extra_write)
+
+        def splice_task():
+            return run(
+                "spliceai", lambda: extra.fetch_spliceai(coordinate_ids(extra.splice_variant_ids)), dirs=extra_dirs, write=extra_write
+            )
+
+        def constraint_task():
+            db_payload, _ = db_future.result()
+            genes = parse_dbsnp(db_payload, rsid).genes
+            if not genes:
+                return None, SourceCall("no data", error="no gene at this position")
+            return run("constraint", lambda: extra.fetch_constraint(genes[0]), dirs=extra_dirs, write=extra_write)
+
+        futures["spliceai"] = _POOL.submit(splice_task)
+        futures["constraint"] = _POOL.submit(constraint_task)
     def gnomad_task():
         db_payload, _ = db_future.result()
         return run("gnomad", lambda: fetch_gnomad(rsid, parse_dbsnp(db_payload, rsid)))
@@ -266,6 +296,12 @@ def gather(
         l2g=l2g,
         litvar=litvar,
         findings=_findings(rsid, cache_dir, extras_cache),
+        scores=extra.parse_myvariant(results.get("myvariant")) if "myvariant" in results else PredictionScores(False),
+        pgx=extra.parse_pharmgkb(results.get("pharmgkb")) if "pharmgkb" in results else PgxResult(False),
+        splice=extra.parse_spliceai(results.get("spliceai")) if "spliceai" in results else SpliceResult(False),
+        regulome=extra.parse_regulome(results.get("regulome")) if "regulome" in results else RegulomeResult(False),
+        constraint=extra.parse_constraint(results.get("constraint")) if "constraint" in results else Constraint(False),
+        timeline=extra.parse_timeline(results.get("timeline")) if "timeline" in results else Timeline(False),
         merged_from=merged_from,
     )
 

@@ -223,7 +223,7 @@ def top_bar() -> str:
 def hero() -> str:
     return (
         '<div class="va-hero">'
-        '<div class="va-pill"><i></i>13 genomic databases, reconciled</div>'
+        '<div class="va-pill"><i></i>19 genomic sources, reconciled</div>'
         "<h1>Understand any variant.</h1>"
         "<p>Clinical significance, population frequency, molecular context and the open questions worth testing, "
         "for any SNP, with every claim traced to its source.</p>"
@@ -233,7 +233,9 @@ def hero() -> str:
 
 GUIDE = (
     ("#7c86ff", "Variant Observatory", "What is known: clinical classification, population frequency, function and papers, "
-     "reconciled across 13 databases with every claim sourced."),
+     "reconciled across 19 sources with every claim sourced."),
+    ("#f2555a", "Interpretation", "A draft of the ACMG evidence codes, how many people carry the variant, "
+     "drug response from ClinPGx and cancer evidence from CIViC."),
     ("#4cc9b0", "Molecular Ripple", "What the variant touches: gene and protein effects, expression links, regulatory "
      "overlap and prediction scores, labelled observed, predicted or unknown."),
     ("#f0b73c", "Hypothesis Forge", "What is not yet understood: competing explanations, evidence for and against, and "
@@ -253,7 +255,7 @@ def sidebar_guide() -> str:
 
 
 def features() -> str:
-    items = (("Observatory", "evidence and summary"), ("Ripple", "molecular context"), ("Forge", "competing hypotheses"))
+    items = (("Observatory", "evidence and summary"), ("Interpretation", "ACMG draft, carriers, drugs"), ("Ripple", "molecular context"), ("Forge", "competing hypotheses"))
     return '<div class="va-features">' + "".join(
         f'<div class="va-feature"><b>{e(name)}</b>{e(text)}</div>' for name, text in items
     ) + "</div>"
@@ -278,7 +280,7 @@ ABOUT_WHO = (
 
 ABOUT_HOW = (
     ("Ask", "Enter one rsID or a whole list, separated by commas or spaces."),
-    ("Gather", "Thirteen public databases are queried in parallel, from ClinVar and gnomAD to GTEx, Open Targets and Europe PMC."),
+    ("Gather", "Nineteen public sources are queried in parallel, from ClinVar, gnomAD and ClinPGx to GTEx, SpliceAI and Europe PMC."),
     ("Reconcile", "Sources are ranked by reliability, so when they disagree the conflict is shown rather than hidden."),
     ("Explain", "A plain-text summary is written from the collected facts and checked so it says nothing the data does not."),
 )
@@ -478,3 +480,125 @@ def callout(text: str, kind: str = "") -> str:
 
 def section(title: str) -> str:
     return f'<div class="va-section">{e(title)}</div>'
+
+
+# ---------------------------------------------------------------- interpretation and scores
+
+def _score_tile(label: str, value: str, note: str, kind: str = "neutral") -> str:
+    css = {"pathogenic": "pathogenic", "benign": "benign", "uncertain": "uncertain"}.get(kind, "brand")
+    return (
+        f'<div class="va-fact {css}"><div class="va-fact-label">{e(label)}</div>'
+        f'<div class="va-fact-value">{e(value)}</div><div class="va-fact-sub">{e(note)}</div></div>'
+    )
+
+
+def score_grid(item) -> str:
+    """Prediction and context scores; each tile says what the number means."""
+    tiles = []
+    sc = getattr(item, "scores", None)
+    if sc is not None and sc.revel is not None:
+        kind = "pathogenic" if sc.revel >= 0.644 else "benign" if sc.revel <= 0.29 else "uncertain"
+        tiles.append(_score_tile("REVEL", f"{sc.revel:.3f}", "missense pathogenicity, 0 to 1 (ClinGen-calibrated)", kind))
+    if sc is not None and sc.alphamissense is not None:
+        kind = {"likely pathogenic": "pathogenic", "likely benign": "benign"}.get(sc.alphamissense_class, "uncertain")
+        tiles.append(_score_tile("AlphaMissense", f"{sc.alphamissense:.3f}", sc.alphamissense_class or "missense effect, 0 to 1", kind))
+    if sc is not None and sc.cadd_phred is not None:
+        kind = "pathogenic" if sc.cadd_phred >= 20 else "neutral"
+        tiles.append(_score_tile("CADD", f"{sc.cadd_phred:.1f}", "deleteriousness, phred scale; 20 = top 1% of changes", kind))
+    if sc is not None and sc.sift is not None:
+        tiles.append(_score_tile("SIFT", f"{sc.sift:.2f}", sc.sift_pred or "below 0.05 is deleterious", "pathogenic" if sc.sift < 0.05 else "benign"))
+    if sc is not None and sc.polyphen is not None:
+        tiles.append(_score_tile("PolyPhen-2", f"{sc.polyphen:.2f}", sc.polyphen_pred or "HumDiv score", "pathogenic" if sc.polyphen > 0.85 else "benign" if sc.polyphen < 0.15 else "uncertain"))
+    sp = getattr(item, "splice", None)
+    if sp is not None and sp.max_delta is not None:
+        kind = "pathogenic" if sp.max_delta >= 0.5 else "uncertain" if sp.max_delta >= 0.2 else "benign"
+        tiles.append(_score_tile("SpliceAI", f"{sp.max_delta:.2f}", f"largest change: {sp.kind}" if sp.kind else "splice change, 0 to 1", kind))
+    rg = getattr(item, "regulome", None)
+    if rg is not None and rg.ranking:
+        kind = "pathogenic" if rg.ranking[:1] in {"1", "2"} else "neutral"
+        prob = f", probability {rg.probability:.2f}" if rg.probability is not None else ""
+        tiles.append(_score_tile("RegulomeDB", rg.ranking, f"{rg.meaning}{prob}", kind))
+    c = getattr(item, "constraint", None)
+    if c is not None and c.loeuf is not None:
+        kind = "pathogenic" if c.loeuf < 0.35 else "uncertain" if c.loeuf < 0.6 else "benign"
+        pli = f"; pLI {c.pli:.2f}" if c.pli is not None else ""
+        tiles.append(_score_tile(f"{c.gene} constraint", f"LOEUF {c.loeuf:.2f}", f"{c.verdict}{pli}", kind))
+    if not tiles:
+        return ""
+    return f'<div class="va-facts">{"".join(tiles)}</div>'
+
+
+_STRENGTH_ORDER = {"Stand-alone": 0, "Strong": 1, "Moderate": 2, "Supporting": 3, "To review": 4}
+
+
+def acmg_html(criteria, not_computed: str) -> str:
+    if not criteria:
+        rows = '<div class="va-acmg-empty">No criterion can be computed from the public data for this variant.</div>'
+    else:
+        rows = "".join(
+            f'<div class="va-acmg-row"><span class="va-acmg-code {e(c.direction)}">{e(c.code)}</span>'
+            f'<span class="va-acmg-strength">{e(c.strength)}</span><span class="va-acmg-ev">{e(c.evidence)}</span>'
+            f'<span class="va-src">{e(c.source)}</span></div>'
+            for c in sorted(criteria, key=lambda c: _STRENGTH_ORDER.get(c.strength, 9))
+        )
+    return (
+        f'<div class="va-card va-acmg">{rows}'
+        f'<div class="va-acmg-note">Draft for a qualified reviewer, not a classification. {e(not_computed)}</div></div>'
+    )
+
+
+def pgx_html(pgx) -> str:
+    if not pgx.annotations:
+        return ""
+    rows = []
+    for a in pgx.annotations[:8]:
+        drugs = ", ".join(a.drugs) or "drug not named"
+        cats = " · ".join(a.categories)
+        link = f' <a href="{e(a.url)}" target="_blank">ClinPGx</a>' if a.url else ""
+        rows.append(
+            f'<div class="va-pgx-row"><span class="va-level l{e(a.level[:1])}">Level {e(a.level or "?")}</span>'
+            f'<div><b>{e(drugs)}</b>{" · " + e(", ".join(a.genes)) if a.genes else ""}'
+            f'<div class="va-fact-sub">{e(cats)}{" · " if cats and a.phenotypes else ""}{e(", ".join(a.phenotypes[:3]))}</div>'
+            f'<div class="va-pgx-sum">{e(a.summary)}{link}</div></div></div>'
+        )
+    return f'<div class="va-card">{"".join(rows)}<div class="va-acmg-note">Evidence levels 1A (strongest, guideline-backed) to 4 (case reports).</div></div>'
+
+
+def civic_html(items) -> str:
+    if not items:
+        return ""
+    rows = []
+    for it in items[:8]:
+        therapy = ", ".join(it.therapies)
+        pmid = f' <a href="https://pubmed.ncbi.nlm.nih.gov/{e(it.pmid)}/" target="_blank">PMID:{e(it.pmid)}</a>' if it.pmid.isdigit() else ""
+        rows.append(
+            f'<div class="va-pgx-row"><span class="va-level civic">Level {e(it.level or "?")}</span>'
+            f'<div><b>{e(it.disease or "Cancer")}</b>{" · " + e(therapy) if therapy else ""}'
+            f'<div class="va-fact-sub">{e(it.evidence_type)} · {e(it.significance)}{" · " + e(it.direction) if it.direction else ""}</div>'
+            f'<div class="va-pgx-sum">{e(it.statement)}{pmid}</div></div></div>'
+        )
+    return f'<div class="va-card">{"".join(rows)}<div class="va-acmg-note">CIViC levels A (validated) to E (inferential).</div></div>'
+
+
+EXTRA_CSS = """
+<style>
+.va-acmg-row { display: grid; grid-template-columns: 64px 96px 1fr auto; gap: .8rem; align-items: center; padding: .6rem 0; border-bottom: 1px solid var(--va-border); }
+.va-acmg-row:last-of-type { border-bottom: none; }
+.va-acmg-code { font-family: "JetBrains Mono", monospace; font-weight: 600; font-size: .85rem; text-align: center; border-radius: 6px; padding: .2rem 0; }
+.va-acmg-code.pathogenic { color: #ff8a8e; background: rgba(242,85,90,.12); }
+.va-acmg-code.benign { color: #6fdca5; background: rgba(76,195,138,.12); }
+.va-acmg-code.review { color: #f5c96a; background: rgba(240,183,60,.12); }
+.va-acmg-strength { color: var(--va-muted); font-size: .82rem; }
+.va-acmg-ev { color: #e6e8eb; font-size: .88rem; }
+.va-acmg-note, .va-acmg-empty { color: var(--va-muted); font-size: .8rem; line-height: 1.5; margin-top: .7rem; }
+.va-pgx-row { display: grid; grid-template-columns: 82px 1fr; gap: .9rem; padding: .7rem 0; border-bottom: 1px solid var(--va-border); color: #e6e8eb; font-size: .9rem; }
+.va-pgx-row b { color: var(--va-text); font-weight: 600; }
+.va-pgx-sum { color: #c9cdd3; font-size: .85rem; line-height: 1.5; margin-top: .3rem; }
+.va-level { font-family: "JetBrains Mono", monospace; font-size: .74rem; border-radius: 6px; padding: .25rem .4rem; text-align: center; height: fit-content;
+  color: #c7ccff; background: rgba(124,134,255,.14); }
+.va-level.l1 { color: #6fdca5; background: rgba(76,195,138,.14); }
+.va-level.l2 { color: #9ad8ff; background: rgba(90,162,255,.14); }
+.va-level.civic { color: #f5c96a; background: rgba(240,183,60,.12); }
+@media (max-width: 700px) { .va-acmg-row { grid-template-columns: 56px 1fr; } .va-acmg-ev, .va-acmg-row .va-src { grid-column: 1 / -1; } }
+</style>
+"""

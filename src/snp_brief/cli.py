@@ -49,11 +49,18 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--regenerate", action="store_true", help="ignore cached LLM summaries and Forge results")
     parser.add_argument("--probe", metavar="RSID", help="call every provider live for one rsID and print status, time and response shape")
     parser.add_argument("--list-models", action="store_true", help="list the models your LLM provider offers, then exit")
+    parser.add_argument("--build-gwas", type=Path, metavar="FILE", help="slim the GWAS Catalog download (.tsv or .zip) into data/gwas_catalog.tsv.gz")
     args = parser.parse_args(argv)
     if args.list_models:
         return list_models()
     if args.probe:
         return probe(args.probe)
+    if args.build_gwas:
+        from snp_brief.sources import gwas_local
+
+        out, rows = gwas_local.build(args.build_gwas, Path.cwd())
+        print(f"wrote {out} ({rows:,} single-SNP associations, {out.stat().st_size / 1e6:.1f} MB)")
+        return 0
     if args.refresh and args.offline:
         print("Choose either --refresh or --offline.", file=sys.stderr)
         return 2
@@ -157,6 +164,7 @@ def probe(rsid: str) -> int:
     import time
 
     from snp_brief import providers as p
+    from snp_brief.sources import extra as x
     from snp_brief.sources.dbsnp import fetch_dbsnp, parse_dbsnp
 
     try:
@@ -175,6 +183,12 @@ def probe(rsid: str) -> int:
         "litvar": lambda: p.fetch_litvar(rsid),
         "dbsnp_citations": lambda: p.fetch_citations(rsid),
         "ncbi_gene": lambda: p.fetch_gene_summary(db.genes[0]) if db.genes else {"response": "no gene in dbSNP"},
+        "myvariant": lambda: x.fetch_myvariant(rsid),
+        "pharmgkb": lambda: x.fetch_pharmgkb(rsid),
+        "spliceai": lambda: x.fetch_spliceai([x.splice_variant_ids(*c) for c in coords]),
+        "regulome": lambda: x.fetch_regulome(rsid),
+        "constraint": lambda: x.fetch_constraint(db.genes[0]) if db.genes else {"response": "no gene in dbSNP"},
+        "timeline": lambda: x.fetch_timeline(rsid),
     }
     for name, call in checks.items():
         started = time.monotonic()
