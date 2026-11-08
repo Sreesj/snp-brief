@@ -1,0 +1,106 @@
+{
+  "source": "europepmc",
+  "retrieved": "2026-11-08T03:32:21+00:00",
+  "request": {
+    "query": "(TITLE:rs17004038 OR ABSTRACT:rs17004038) AND PUB_TYPE:\"research-article\" NOT PUB_TYPE:review"
+  },
+  "response": {
+    "version": "6.9",
+    "hitCount": 2,
+    "request": {
+      "queryString": "(TITLE:rs17004038 OR ABSTRACT:rs17004038) AND PUB_TYPE:\"research-article\" NOT PUB_TYPE:review",
+      "resultType": "lite",
+      "cursorMark": "*",
+      "pageSize": 15,
+      "sort": "CITED desc",
+      "synonym": false
+    },
+    "resultList": {
+      "result": [
+        {
+          "id": "20061373",
+          "source": "MED",
+          "pmid": "20061373",
+          "pmcid": "PMC2853119",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC2853119"
+            ]
+          },
+          "doi": "10.1093/nar/gkp1205",
+          "title": "Genome-wide identification of hypoxia-inducible factor binding sites and target genes by a probabilistic model integrating transcription-profiling data and in silico binding site prediction.",
+          "authorString": "Ortiz-Barahona A, Villar D, Pescador N, Amigo J, del Peso L.",
+          "journalTitle": "Nucleic Acids Res",
+          "issue": "7",
+          "journalVolume": "38",
+          "pubYear": "2010",
+          "journalIssn": "0305-1048; 1362-4962; ",
+          "pageInfo": "2332-2345",
+          "pubType": "meta-analysis; research support, non-u.s. gov't; research-article; validation study; journal article",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 174,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "geo",
+              "refsnp"
+            ]
+          },
+          "firstPublicationDate": "2010-01-08",
+          "firstIndexDate": "2010-09-29"
+        },
+        {
+          "id": "35324982",
+          "source": "MED",
+          "pmid": "35324982",
+          "pmcid": "PMC8946738",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC8946738"
+            ]
+          },
+          "doi": "10.1371/journal.pone.0265738",
+          "title": "Polymorphisms in the hypoxia inducible factor binding site of the macrophage migration inhibitory factor gene promoter in schizophrenia.",
+          "authorString": "Okazaki S, Boku S, Watanabe Y, Otsuka I, Horai T, Morikawa R, Kimura A, Shimmyo N, Tanifuji T, Someya T, Hishimoto A.",
+          "journalTitle": "PLoS One",
+          "issue": "3",
+          "journalVolume": "17",
+          "pubYear": "2022",
+          "journalIssn": "1932-6203",
+          "pageInfo": "e0265738",
+          "pubType": "research support, non-u.s. gov't; research-article; journal article",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 7,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp",
+              "refseq",
+              "doi"
+            ]
+          },
+          "firstPublicationDate": "2022-03-24",
+          "firstIndexDate": "2022-03-25"
+        }
+      ]
+    }
+  }
+}

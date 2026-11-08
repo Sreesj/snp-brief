@@ -1,0 +1,145 @@
+{
+  "source": "europepmc",
+  "retrieved": "2026-11-08T03:19:29+00:00",
+  "request": {
+    "query": "(TITLE:rs987870 OR ABSTRACT:rs987870) AND PUB_TYPE:\"research-article\" NOT PUB_TYPE:review"
+  },
+  "response": {
+    "version": "6.9",
+    "hitCount": 3,
+    "request": {
+      "queryString": "(TITLE:rs987870 OR ABSTRACT:rs987870) AND PUB_TYPE:\"research-article\" NOT PUB_TYPE:review",
+      "resultType": "lite",
+      "cursorMark": "*",
+      "pageSize": 15,
+      "sort": "CITED desc",
+      "synonym": false
+    },
+    "resultList": {
+      "result": [
+        {
+          "id": "21814517",
+          "source": "MED",
+          "pmid": "21814517",
+          "pmcid": "PMC3140987",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC3140987"
+            ]
+          },
+          "doi": "10.1371/journal.pgen.1002170",
+          "title": "Genome-wide association study identifies HLA-DP as a susceptibility gene for pediatric asthma in Asian populations.",
+          "authorString": "Noguchi E, Sakamoto H, Hirota T, Ochiai K, Imoto Y, Sakashita M, Kurosaka F, Akasawa A, Yoshihara S, Kanno N, Yamada Y, Shimojo N, Kohno Y, Suzuki Y, Kang MJ, Kwon JW, Hong SJ, Inoue K, Goto Y, Yamashita F, Asada T, Hirose H, Saito I, Fujieda S, Hizawa N, Sakamoto T, Masuko H, Nakamura Y, Nomura I, Tamari M, Arinami T, Yoshida T, Saito H, Matsumoto K.",
+          "journalTitle": "PLoS Genet",
+          "issue": "7",
+          "journalVolume": "7",
+          "pubYear": "2011",
+          "journalIssn": "1553-7390; 1553-7404; ",
+          "pageInfo": "e1002170",
+          "pubType": "research support, non-u.s. gov't; research-article; journal article; research support, n.i.h., extramural",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 99,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp",
+              "omim"
+            ]
+          },
+          "firstPublicationDate": "2011-07-21",
+          "firstIndexDate": "2011-08-05"
+        },
+        {
+          "id": "27313329",
+          "source": "MED",
+          "pmid": "27313329",
+          "pmcid": "PMC5025901",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC5025901"
+            ]
+          },
+          "doi": "10.1182/blood-2016-05-715342",
+          "title": "Genetic risk factors for sclerotic graft-versus-host disease.",
+          "authorString": "Inamoto Y, Martin PJ, Flowers ME, Lee SJ, Carpenter PA, Warren EH, Geraghty DE, Lee N, Boeckh MJ, Storer BE, Levine DM, Fan W, Zhao LP, Hansen JA.",
+          "journalTitle": "Blood",
+          "issue": "11",
+          "journalVolume": "128",
+          "pubYear": "2016",
+          "journalIssn": "0006-4971; 1528-0020; ",
+          "pageInfo": "1516-1524",
+          "pubType": "research support, non-u.s. gov't; research-article; journal article; research support, n.i.h., extramural",
+          "isOpenAccess": "N",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 14,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "N",
+          "hasBook": "N",
+          "hasSuppl": "N",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp"
+            ]
+          },
+          "firstPublicationDate": "2016-06-16",
+          "firstIndexDate": "2016-06-18"
+        },
+        {
+          "id": "39766875",
+          "source": "MED",
+          "pmid": "39766875",
+          "pmcid": "PMC11675446",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC11675446"
+            ]
+          },
+          "doi": "10.3390/genes15121608",
+          "title": "Genetic Variations on Chromosome 6p21 Are Associated with Asthma Risk and Disease Severity: A Case-Control Study from Pakistan.",
+          "authorString": "Aslam A, Vijverberg SJH, Zee AM, Sabar MF.",
+          "journalTitle": "Genes (Basel)",
+          "issue": "12",
+          "journalVolume": "15",
+          "pubYear": "2024",
+          "journalIssn": "2073-4425",
+          "pageInfo": "1608",
+          "pubType": "research support, non-u.s. gov't; research-article; journal article",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 1,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp",
+              "doi"
+            ]
+          },
+          "firstPublicationDate": "2024-12-17",
+          "firstIndexDate": "2025-01-11"
+        }
+      ]
+    }
+  }
+}

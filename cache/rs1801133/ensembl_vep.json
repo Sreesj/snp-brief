@@ -1,0 +1,3507 @@
+{
+  "source": "Ensembl VEP",
+  "retrieved": "2026-11-08T03:38:21+00:00",
+  "request": {
+    "rsid": "rs1801133",
+    "params": {
+      "AlphaMissense": "1",
+      "CADD": "1",
+      "SpliceAI": "1",
+      "canonical": "1",
+      "variant_class": "1",
+      "domains": "1"
+    }
+  },
+  "response": [
+    {
+      "end": 11796321,
+      "allele_string": "G/A/C",
+      "seq_region_name": "1",
+      "input": "rs1801133",
+      "colocated_variants": [
+        {
+          "allele_string": "HGMD_MUTATION",
+          "phenotype_or_disease": 1,
+          "start": 11796321,
+          "id": "CM950819",
+          "end": 11796321,
+          "seq_region_name": "1",
+          "strand": 1
+        },
+        {
+          "start": 11796321,
+          "phenotype_or_disease": 1,
+          "id": "COSV64876755",
+          "allele_string": "COSMIC_MUTATION",
+          "somatic": 1,
+          "strand": 1,
+          "end": 11796321,
+          "seq_region_name": "1",
+          "var_synonyms": {
+            "COSMIC": [
+              "COSM146404"
+            ]
+          }
+        },
+        {
+          "clin_sig": [
+            "uncertain_significance",
+            "benign",
+            "likely_benign",
+            "drug_response",
+            "other",
+            "association"
+          ],
+          "id": "rs1801133",
+          "phenotype_or_disease": 1,
+          "start": 11796321,
+          "clin_sig_allele": "A:conflicting_classifications_of_pathogenicity;A:uncertain_significance;A:benign;A:likely_benign;A:drug_response",
+          "frequencies": {
+            "A": {
+              "gnomadg": 0.2752,
+              "gnomade": 0.3227,
+              "af": 0.2454,
+              "gnomade_sas": 0.1489,
+              "gnomadg_afr": 0.1118,
+              "afr": 0.09,
+              "eur": 0.3648,
+              "gnomadg_nfe": 0.3373,
+              "gnomadg_ami": 0.4835,
+              "gnomade_amr": 0.4893,
+              "gnomade_afr": 0.1063,
+              "eas": 0.2956,
+              "gnomadg_eas": 0.3017,
+              "gnomadg_fin": 0.2355,
+              "gnomade_asj": 0.46,
+              "gnomadg_mid": 0.2891,
+              "gnomade_eas": 0.3545,
+              "amr": 0.4741,
+              "gnomade_nfe": 0.3371,
+              "gnomadg_sas": 0.1477,
+              "gnomadg_asj": 0.4605,
+              "gnomade_fin": 0.2327,
+              "gnomadg_amr": 0.4438,
+              "gnomade_remaining": 0.3076,
+              "gnomade_mid": 0.2599,
+              "gnomadg_remaining": 0.2979,
+              "sas": 0.1186
+            }
+          },
+          "allele_string": "G/A/C",
+          "pubmed": [
+            21467728,
+            18513389,
+            18603647,
+            19131662,
+            19263529,
+            19330901,
+            19559392,
+            20981351,
+            21146954,
+            21533139,
+            21894447,
+            21919968,
+            23333443,
+            23497168,
+            25361584,
+            27348238,
+            27616475,
+            29972410,
+            30182779,
+            30295198,
+            30409984,
+            30571812,
+            31090375,
+            33917487,
+            34131278,
+            34137427,
+            34276231,
+            35387194,
+            20078877,
+            26446360,
+            26451011,
+            31818908,
+            34308116,
+            20357209,
+            22281051,
+            33128086,
+            18992148,
+            19587357,
+            30112393,
+            31231424,
+            26791477,
+            20031578,
+            21273288,
+            24944790,
+            19430483,
+            33170161,
+            33763108,
+            21738487,
+            22911757,
+            26985771,
+            21708280,
+            21514219,
+            23946381,
+            24901479,
+            25928231,
+            28652652,
+            34540891,
+            27015811,
+            19619703,
+            27386434,
+            23274712,
+            27233255,
+            9372726,
+            15534175,
+            17107626,
+            18936436,
+            19538716,
+            19591822,
+            20417488,
+            20556870,
+            21291465,
+            21422408,
+            21857382,
+            21935354,
+            22403240,
+            22540831,
+            22707612,
+            22879966,
+            22992668,
+            23776350,
+            25266489,
+            26091847,
+            26261166,
+            26592644,
+            27018927,
+            27233804,
+            27277665,
+            27636225,
+            28086795,
+            28317214,
+            28889200,
+            29190926,
+            29624150,
+            31646966,
+            33519226,
+            34356593,
+            34958284,
+            35346283,
+            27730450,
+            32398726,
+            25214541,
+            21072184,
+            22649665,
+            21819567,
+            34862210,
+            35351696,
+            26872812,
+            30337837,
+            30793520,
+            31361092,
+            32728337,
+            26690118,
+            33195260,
+            34453125
+          ],
+          "strand": 1,
+          "clin_sig_ref_allele": "G",
+          "var_synonyms": {
+            "ClinVar": [
+              "RCV004584309",
+              "RCV000428048",
+              "RCV000427078",
+              "RCV000003697",
+              "VCV000003520",
+              "RCV000259890",
+              "RCV000153516",
+              "RCV000144921",
+              "RCV001030751",
+              "RCV000761447",
+              "RCV002227012",
+              "RCV001787367",
+              "RCV001847567",
+              "RCV001276670",
+              "RCV005419857"
+            ],
+            "UniProt": [
+              "VAR_009528"
+            ],
+            "OMIM": [
+              607093.0003
+            ],
+            "PharmGKB": [
+              "PA166153644"
+            ]
+          },
+          "seq_region_name": "1",
+          "end": 11796321
+        }
+      ],
+      "start": 11796321,
+      "strand": 1,
+      "transcript_consequences": [
+        {
+          "polyphen_prediction": "probably_damaging",
+          "codons": "gCc/gTc",
+          "cadd_phred": 28.3,
+          "alphamissense": {
+            "am_class": "likely_pathogenic",
+            "am_pathogenicity": 0.6324
+          },
+          "biotype": "protein_coding",
+          "variant_allele": "A",
+          "hgnc_id": "HGNC:7436",
+          "cds_end": 665,
+          "polyphen_score": 0.943,
+          "transcript_id": "ENST00000376486",
+          "gene_symbol_source": "HGNC",
+          "flags": [
+            "cds_end_NF"
+          ],
+          "sift_score": 0,
+          "strand": -1,
+          "impact": "MODERATE",
+          "protein_start": 222,
+          "consequence_terms": [
+            "missense_variant"
+          ],
+          "sift_prediction": "deleterious",
+          "spliceai": {
+            "DP_DG": 14,
+            "SYMBOL": "MTHFR",
+            "DP_AG": -20,
+            "DS_AL": 0,
+            "DP_AL": 19,
+            "DP_DL": -5,
+            "DS_DG": 0,
+            "DS_DL": 0,
+            "DS_AG": 0
+          },
+          "gene_symbol": "MTHFR",
+          "cds_start": 665,
+          "protein_end": 222,
+          "domains": [
+            {
+              "name": 3,
+              "db": "Gene3D"
+            },
+            {
+              "db": "ENSP_mappings",
+              "name": "AF"
+            },
+            {
+              "db": "Pfam",
+              "name": "PF02219"
+            },
+            {
+              "name": "PTHR45754",
+              "db": "PANTHER"
+            },
+            {
+              "name": "SSF51730",
+              "db": "Superfamily"
+            },
+            {
+              "db": "CDD",
+              "name": "cd00537"
+            }
+          ],
+          "gene_id": "ENSG00000177000",
+          "cadd_raw": 5.0668,
+          "cdna_end": 851,
+          "cdna_start": 851,
+          "amino_acids": "A/V"
+        },
+        {
+          "polyphen_prediction": "possibly_damaging",
+          "codons": "gCc/gGc",
+          "cadd_phred": 26.5,
+          "alphamissense": {
+            "am_pathogenicity": 0.1266,
+            "am_class": "likely_benign"
+          },
+          "biotype": "protein_coding",
+          "hgnc_id": "HGNC:7436",
+          "variant_allele": "C",
+          "cds_end": 665,
+          "polyphen_score": 0.453,
+          "transcript_id": "ENST00000376486",
+          "gene_symbol_source": "HGNC",
+          "flags": [
+            "cds_end_NF"
+          ],
+          "sift_score": 0.02,
+          "impact": "MODERATE",
+          "strand": -1,
+          "protein_start": 222,
+          "consequence_terms": [
+            "missense_variant"
+          ],
+          "sift_prediction": "deleterious",
+          "spliceai": {
+            "DP_AL": -20,
+            "DS_DL": 0,
+            "DS_AG": 0,
+            "DP_DL": -5,
+            "DS_DG": 0,
+            "SYMBOL": "MTHFR",
+            "DP_AG": -32,
+            "DP_DG": 14,
+            "DS_AL": 0
+          },
+          "gene_symbol": "MTHFR",
+          "cds_start": 665,
+          "protein_end": 222,
+          "domains": [
+            {
+              "name": 3,
+              "db": "Gene3D"
+            },
+            {
+              "name": "AF",
+              "db": "ENSP_mappings"
+            },
+            {
+              "db": "Pfam",
+              "name": "PF02219"
+            },
+            {
+              "db": "PANTHER",
+              "name": "PTHR45754"
+            },
+            {
+              "db": "Superfamily",
+              "name": "SSF51730"
+            },
+            {
+              "name": "cd00537",
+              "db": "CDD"
+            }
+          ],
+          "cadd_raw": 4.742511,
+          "gene_id": "ENSG00000177000",
+          "cdna_end": 851,
+          "amino_acids": "A/G",
+          "cdna_start": 851
+        },
+        {
+          "alphamissense": {
+            "am_pathogenicity": 0.6324,
+            "am_class": "likely_pathogenic"
+          },
+          "biotype": "protein_coding",
+          "cadd_phred": 28.3,
+          "polyphen_prediction": "probably_damaging",
+          "codons": "gCc/gTc",
+          "transcript_id": "ENST00000376583",
+          "gene_symbol_source": "HGNC",
+          "polyphen_score": 0.987,
+          "cds_end": 788,
+          "hgnc_id": "HGNC:7436",
+          "variant_allele": "A",
+          "sift_prediction": "deleterious",
+          "impact": "MODERATE",
+          "protein_start": 263,
+          "strand": -1,
+          "consequence_terms": [
+            "missense_variant"
+          ],
+          "sift_score": 0,
+          "cdna_end": 788,
+          "cdna_start": 788,
+          "amino_acids": "A/V",
+          "domains": [
+            {
+              "db": "Gene3D",
+              "name": 3
+            },
+            {
+              "name": "AF",
+              "db": "ENSP_mappings"
+            },
+            {
+              "db": "Pfam",
+              "name": "PF02219"
+            },
+            {
+              "name": "PTHR45754",
+              "db": "PANTHER"
+            },
+            {
+              "db": "Superfamily",
+              "name": "SSF51730"
+            },
+            {
+              "db": "NCBIFAM",
+              "name": "TIGR00677"
+            },
+            {
+              "name": "cd00537",
+              "db": "CDD"
+            }
+          ],
+          "gene_id": "ENSG00000177000",
+          "cadd_raw": 5.0668,
+          "protein_end": 263,
+          "gene_symbol": "MTHFR",
+          "spliceai": {
+            "DS_AL": 0,
+            "DP_AG": -20,
+            "SYMBOL": "MTHFR",
+            "DP_DG": 14,
+            "DS_DL": 0,
+            "DS_AG": 0,
+            "DP_DL": -5,
+            "DS_DG": 0,
+            "DP_AL": 19
+          },
+          "cds_start": 788
+        },
+        {
+          "protein_end": 263,
+          "gene_symbol": "MTHFR",
+          "cds_start": 788,
+          "spliceai": {
+            "DS_AL": 0,
+            "DP_DG": 14,
+            "DP_AG": -32,
+            "SYMBOL": "MTHFR",
+            "DS_DG": 0,
+            "DP_DL": -5,
+            "DS_DL": 0,
+            "DS_AG": 0,
+            "DP_AL": -20
+          },
+          "cdna_end": 788,
+          "amino_acids": "A/G",
+          "cdna_start": 788,
+          "domains": [
+            {
+              "name": 3,
+              "db": "Gene3D"
+            },
+            {
+              "name": "AF",
+              "db": "ENSP_mappings"
+            },
+            {
+              "db": "Pfam",
+              "name": "PF02219"
+            },
+            {
+              "db": "PANTHER",
+              "name": "PTHR45754"
+            },
+            {
+              "name": "SSF51730",
+              "db": "Superfamily"
+            },
+            {
+              "name": "TIGR00677",
+              "db": "NCBIFAM"
+            },
+            {
+              "name": "cd00537",
+              "db": "CDD"
+            }
+          ],
+          "gene_id": "ENSG00000177000",
+          "cadd_raw": 4.742511,
+          "sift_score": 0.05,
+          "sift_prediction": "tolerated",
+          "strand": -1,
+          "protein_start": 263,
+          "impact": "MODERATE",
+          "consequence_terms": [
+            "missense_variant"
+          ],
+          "cds_end": 788,
+          "hgnc_id": "HGNC:7436",
+          "variant_allele": "C",
+          "gene_symbol_source": "HGNC",
+          "transcript_id": "ENST00000376583",
+          "polyphen_score": 0.382,
+          "polyphen_prediction": "benign",
+          "codons": "gCc/gGc",
+          "biotype": "protein_coding",
+          "alphamissense": {
+            "am_class": "likely_benign",
+            "am_pathogenicity": 0.1266
+          },
+          "cadd_phred": 26.5
+        },
+        {
+          "polyphen_prediction": "probably_damaging",
+          "codons": "gCc/gTc",
+          "biotype": "protein_coding",
+          "alphamissense": {
+            "am_pathogenicity": 0.6324,
+            "am_class": "likely_pathogenic"
+          },
+          "cadd_phred": 28.3,
+          "cds_end": 788,
+          "variant_allele": "A",
+          "hgnc_id": "HGNC:7436",
+          "transcript_id": "ENST00000376585",
+          "gene_symbol_source": "HGNC",
+          "polyphen_score": 0.987,
+          "sift_score": 0,
+          "sift_prediction": "deleterious",
+          "strand": -1,
+          "impact": "MODERATE",
+          "protein_start": 263,
+          "consequence_terms": [
+            "missense_variant"
+          ],
+          "protein_end": 263,
+          "gene_symbol": "MTHFR",
+          "cds_start": 788,
+          "spliceai": {
+            "DS_AL": 0,
+            "DP_DG": 14,
+            "SYMBOL": "MTHFR",
+            "DP_AG": -20,
+            "DS_DG": 0,
+            "DP_DL": -5,
+            "DS_AG": 0,
+            "DS_DL": 0,
+            "DP_AL": 19
+          },
+          "cdna_end": 1840,
+          "cdna_start": 1840,
+          "amino_acids": "A/V",
+          "domains": [
+            {
+              "db": "Gene3D",
+              "name": 3
+            },
+            {
+              "name": "AF",
+              "db": "ENSP_mappings"
+            },
+            {
+              "db": "Pfam",
+              "name": "PF02219"
+            },
+            {
+              "name": "PTHR45754",
+              "db": "PANTHER"
+            },
+            {
+              "db": "Superfamily",
+              "name": "SSF51730"
+            },
+            {
+              "db": "NCBIFAM",
+              "name": "TIGR00677"
+            },
+            {
+              "name": "cd00537",
+              "db": "CDD"
+            }
+          ],
+          "gene_id": "ENSG00000177000",
+          "cadd_raw": 5.0668
+        },
+        {
+          "sift_score": 0.05,
+          "consequence_terms": [
+            "missense_variant"
+          ],
+          "strand": -1,
+          "protein_start": 263,
+          "impact": "MODERATE",
+          "sift_prediction": "tolerated",
+          "cds_start": 788,
+          "gene_symbol": "MTHFR",
+          "spliceai": {
+            "DP_DG": 14,
+            "DP_AG": -32,
+            "SYMBOL": "MTHFR",
+            "DS_AL": 0,
+            "DP_AL": -20,
+            "DS_DG": 0,
+            "DP_DL": -5,
+            "DS_DL": 0,
+            "DS_AG": 0
+          },
+          "protein_end": 263,
+          "gene_id": "ENSG00000177000",
+          "cadd_raw": 4.742511,
+          "domains": [
+            {
+              "name": 3,
+              "db": "Gene3D"
+            },
+            {
+              "db": "ENSP_mappings",
+              "name": "AF"
+            },
+            {
+              "db": "Pfam",
+              "name": "PF02219"
+            },
+            {
+              "name": "PTHR45754",
+              "db": "PANTHER"
+            },
+            {
+              "name": "SSF51730",
+              "db": "Superfamily"
+            },
+            {
+              "name": "TIGR00677",
+              "db": "NCBIFAM"
+            },
+            {
+              "db": "CDD",
+              "name": "cd00537"
+            }
+          ],
+          "cdna_start": 1840,
+          "amino_acids": "A/G",
+          "cdna_end": 1840,
+          "codons": "gCc/gGc",
+          "polyphen_prediction": "benign",
+          "cadd_phred": 26.5,
+          "biotype": "protein_coding",
+          "alphamissense": {
+            "am_class": "likely_benign",
+            "am_pathogenicity": 0.1266
+          },
+          "variant_allele": "C",
+          "hgnc_id": "HGNC:7436",
+          "cds_end": 788,
+          "polyphen_score": 0.382,
+          "transcript_id": "ENST00000376585",
+          "gene_symbol_source": "HGNC"
+        },
+        {
+          "polyphen_prediction": "probably_damaging",
+          "codons": "gCc/gTc",
+          "cadd_phred": 28.3,
+          "alphamissense": {
+            "am_class": "likely_pathogenic",
+            "am_pathogenicity": 0.6324
+          },
+          "biotype": "protein_coding",
+          "variant_allele": "A",
+          "hgnc_id": "HGNC:7436",
+          "cds_end": 665,
+          "polyphen_score": 0.943,
+          "transcript_id": "ENST00000376590",
+          "gene_symbol_source": "HGNC",
+          "sift_score": 0,
+          "protein_start": 222,
+          "impact": "MODERATE",
+          "strand": -1,
+          "consequence_terms": [
+            "missense_variant"
+          ],
+          "sift_prediction": "deleterious",
+          "spliceai": {
+            "DS_AL": 0,
+            "DP_DG": 14,
+            "SYMBOL": "MTHFR",
+            "DP_AG": -20,
+            "DS_DG": 0,
+            "DP_DL": -5,
+            "DS_AG": 0,
+            "DS_DL": 0,
+            "DP_AL": 19
+          },
+          "gene_symbol": "MTHFR",
+          "protein_end": 222,
+          "cds_start": 665,
+          "domains": [
+            {
+              "db": "ENSP_mappings",
+              "name": "6fcx"
+            },
+            {
+              "name": "6fcx",
+              "db": "ENSP_mappings"
+            },
+            {
+              "db": "ENSP_mappings",
+              "name": "8qa4"
+            },
+            {
+              "db": "ENSP_mappings",
+              "name": "8qa4"
+            },
+            {
+              "name": "8qa5",
+              "db": "ENSP_mappings"
+            },
+            {
+              "name": "8qa5",
+              "db": "ENSP_mappings"
+            },
+            {
+              "name": "8qa6",
+              "db": "ENSP_mappings"
+            },
+            {
+              "db": "ENSP_mappings",
+              "name": "8qa6"
+            },
+            {
+              "db": "CDD",
+              "name": "cd00537"
+            },
+            {
+              "db": "Gene3D",
+              "name": 3
+            },
+            {
+              "db": "Pfam",
+              "name": "PF02219"
+            },
+            {
+              "name": "TIGR00677",
+              "db": "NCBIFAM"
+            },
+            {
+              "name": "SSF51730",
+              "db": "Superfamily"
+            },
+            {
+              "db": "PANTHER",
+              "name": "PTHR45754"
+            },
+            {
+              "db": "ENSP_mappings",
+              "name": "AF"
+            }
+          ],
+          "gene_id": "ENSG00000177000",
+          "cadd_raw": 5.0668,
+          "cdna_end": 755,
+          "canonical": 1,
+          "cdna_start": 755,
+          "amino_acids": "A/V"
+        },
+        {
+          "spliceai": {
+            "DP_DG": 14,
+            "SYMBOL": "MTHFR",
+            "DP_AG": -32,
+            "DS_AL": 0,
+            "DP_AL": -20,
+            "DP_DL": -5,
+            "DS_DG": 0,
+            "DS_DL": 0,
+            "DS_AG": 0
+          },
+          "gene_symbol": "MTHFR",
+          "cds_start": 665,
+          "protein_end": 222,
+          "gene_id": "ENSG00000177000",
+          "cadd_raw": 4.742511,
+          "domains": [
+            {
+              "db": "ENSP_mappings",
+              "name": "6fcx"
+            },
+            {
+              "name": "6fcx",
+              "db": "ENSP_mappings"
+            },
+            {
+              "db": "ENSP_mappings",
+              "name": "8qa4"
+            },
+            {
+              "db": "ENSP_mappings",
+              "name": "8qa4"
+            },
+            {
+              "name": "8qa5",
+              "db": "ENSP_mappings"
+            },
+            {
+              "db": "ENSP_mappings",
+              "name": "8qa5"
+            },
+            {
+              "name": "8qa6",
+              "db": "ENSP_mappings"
+            },
+            {
+              "name": "8qa6",
+              "db": "ENSP_mappings"
+            },
+            {
+              "db": "CDD",
+              "name": "cd00537"
+            },
+            {
+              "name": 3,
+              "db": "Gene3D"
+            },
+            {
+              "db": "Pfam",
+              "name": "PF02219"
+            },
+            {
+              "db": "NCBIFAM",
+              "name": "TIGR00677"
+            },
+            {
+              "name": "SSF51730",
+              "db": "Superfamily"
+            },
+            {
+              "db": "PANTHER",
+              "name": "PTHR45754"
+            },
+            {
+              "name": "AF",
+              "db": "ENSP_mappings"
+            }
+          ],
+          "cdna_start": 755,
+          "amino_acids": "A/G",
+          "canonical": 1,
+          "cdna_end": 755,
+          "sift_score": 0.03,
+          "consequence_terms": [
+            "missense_variant"
+          ],
+          "protein_start": 222,
+          "strand": -1,
+          "impact": "MODERATE",
+          "sift_prediction": "deleterious",
+          "variant_allele": "C",
+          "hgnc_id": "HGNC:7436",
+          "cds_end": 665,
+          "polyphen_score": 0.453,
+          "transcript_id": "ENST00000376590",
+          "gene_symbol_source": "HGNC",
+          "codons": "gCc/gGc",
+          "polyphen_prediction": "possibly_damaging",
+          "cadd_phred": 26.5,
+          "biotype": "protein_coding",
+          "alphamissense": {
+            "am_class": "likely_benign",
+            "am_pathogenicity": 0.1266
+          }
+        },
+        {
+          "sift_prediction": "deleterious",
+          "protein_start": 222,
+          "impact": "MODERATE",
+          "strand": -1,
+          "consequence_terms": [
+            "missense_variant"
+          ],
+          "sift_score": 0,
+          "cdna_end": 2115,
+          "amino_acids": "A/V",
+          "cdna_start": 2115,
+          "domains": [
+            {
+              "db": "Gene3D",
+              "name": 3
+            },
+            {
+              "db": "ENSP_mappings",
+              "name": "6fcx"
+            },
+            {
+              "db": "ENSP_mappings",
+              "name": "6fcx"
+            },
+            {
+              "name": "8qa4",
+              "db": "ENSP_mappings"
+            },
+            {
+              "name": "8qa4",
+              "db": "ENSP_mappings"
+            },
+            {
+              "name": "8qa5",
+              "db": "ENSP_mappings"
+            },
+            {
+              "name": "8qa5",
+              "db": "ENSP_mappings"
+            },
+            {
+              "name": "8qa6",
+              "db": "ENSP_mappings"
+            },
+            {
+              "db": "ENSP_mappings",
+              "name": "8qa6"
+            },
+            {
+              "name": "AF",
+              "db": "ENSP_mappings"
+            },
+            {
+              "name": "PF02219",
+              "db": "Pfam"
+            },
+            {
+              "name": "PTHR45754",
+              "db": "PANTHER"
+            },
+            {
+              "name": "SSF51730",
+              "db": "Superfamily"
+            },
+            {
+              "db": "NCBIFAM",
+              "name": "TIGR00677"
+            },
+            {
+              "db": "CDD",
+              "name": "cd00537"
+            }
+          ],
+          "cadd_raw": 5.0668,
+          "gene_id": "ENSG00000177000",
+          "gene_symbol": "MTHFR",
+          "spliceai": {
+            "DP_DG": 14,
+            "DP_AG": -20,
+            "SYMBOL": "MTHFR",
+            "DS_AL": 0,
+            "DP_AL": 19,
+            "DS_DG": 0,
+            "DP_DL": -5,
+            "DS_DL": 0,
+            "DS_AG": 0
+          },
+          "protein_end": 222,
+          "cds_start": 665,
+          "biotype": "protein_coding",
+          "alphamissense": {
+            "am_class": "likely_pathogenic",
+            "am_pathogenicity": 0.6324
+          },
+          "cadd_phred": 28.3,
+          "polyphen_prediction": "probably_damaging",
+          "codons": "gCc/gTc",
+          "gene_symbol_source": "HGNC",
+          "transcript_id": "ENST00000376592",
+          "polyphen_score": 0.943,
+          "cds_end": 665,
+          "hgnc_id": "HGNC:7436",
+          "variant_allele": "A"
+        },
+        {
+          "cadd_phred": 26.5,
+          "biotype": "protein_coding",
+          "alphamissense": {
+            "am_pathogenicity": 0.1266,
+            "am_class": "likely_benign"
+          },
+          "polyphen_prediction": "possibly_damaging",
+          "codons": "gCc/gGc",
+          "polyphen_score": 0.453,
+          "gene_symbol_source": "HGNC",
+          "transcript_id": "ENST00000376592",
+          "hgnc_id": "HGNC:7436",
+          "variant_allele": "C",
+          "cds_end": 665,
+          "impact": "MODERATE",
+          "strand": -1,
+          "protein_start": 222,
+          "consequence_terms": [
+            "missense_variant"
+          ],
+          "sift_prediction": "deleterious",
+          "sift_score": 0.03,
+          "domains": [
+            {
+              "name": 3,
+              "db": "Gene3D"
+            },
+            {
+              "name": "6fcx",
+              "db": "ENSP_mappings"
+            },
+            {
+              "db": "ENSP_mappings",
+              "name": "6fcx"
+            },
+            {
+              "name": "8qa4",
+              "db": "ENSP_mappings"
+            },
+            {
+              "db": "ENSP_mappings",
+              "name": "8qa4"
+            },
+            {
+              "name": "8qa5",
+              "db": "ENSP_mappings"
+            },
+            {
+              "name": "8qa5",
+              "db": "ENSP_mappings"
+            },
+            {
+              "name": "8qa6",
+              "db": "ENSP_mappings"
+            },
+            {
+              "db": "ENSP_mappings",
+              "name": "8qa6"
+            },
+            {
+              "db": "ENSP_mappings",
+              "name": "AF"
+            },
+            {
+              "name": "PF02219",
+              "db": "Pfam"
+            },
+            {
+              "name": "PTHR45754",
+              "db": "PANTHER"
+            },
+            {
+              "name": "SSF51730",
+              "db": "Superfamily"
+            },
+            {
+              "db": "NCBIFAM",
+              "name": "TIGR00677"
+            },
+            {
+              "db": "CDD",
+              "name": "cd00537"
+            }
+          ],
+          "gene_id": "ENSG00000177000",
+          "cadd_raw": 4.742511,
+          "cdna_end": 2115,
+          "amino_acids": "A/G",
+          "cdna_start": 2115,
+          "gene_symbol": "MTHFR",
+          "spliceai": {
+            "DP_AL": -20,
+            "DS_DG": 0,
+            "DP_DL": -5,
+            "DS_DL": 0,
+            "DS_AG": 0,
+            "DP_DG": 14,
+            "DP_AG": -32,
+            "SYMBOL": "MTHFR",
+            "DS_AL": 0
+          },
+          "protein_end": 222,
+          "cds_start": 665
+        },
+        {
+          "spliceai": {
+            "SYMBOL": "MTHFR",
+            "DP_AG": -20,
+            "DP_DG": 14,
+            "DS_AL": 0,
+            "DP_AL": 19,
+            "DS_AG": 0,
+            "DS_DL": 0,
+            "DS_DG": 0,
+            "DP_DL": -5
+          },
+          "gene_symbol": "MTHFR",
+          "cadd_raw": 5.0668,
+          "gene_id": "ENSG00000177000",
+          "distance": 4884,
+          "flags": [
+            "cds_end_NF"
+          ],
+          "consequence_terms": [
+            "downstream_gene_variant"
+          ],
+          "impact": "MODIFIER",
+          "strand": -1,
+          "hgnc_id": "HGNC:7436",
+          "variant_allele": "A",
+          "gene_symbol_source": "HGNC",
+          "transcript_id": "ENST00000418034",
+          "biotype": "protein_coding",
+          "cadd_phred": 28.3
+        },
+        {
+          "cadd_phred": 26.5,
+          "biotype": "protein_coding",
+          "transcript_id": "ENST00000418034",
+          "gene_symbol_source": "HGNC",
+          "variant_allele": "C",
+          "hgnc_id": "HGNC:7436",
+          "strand": -1,
+          "impact": "MODIFIER",
+          "consequence_terms": [
+            "downstream_gene_variant"
+          ],
+          "flags": [
+            "cds_end_NF"
+          ],
+          "distance": 4884,
+          "gene_id": "ENSG00000177000",
+          "cadd_raw": 4.742511,
+          "gene_symbol": "MTHFR",
+          "spliceai": {
+            "DP_DG": 14,
+            "SYMBOL": "MTHFR",
+            "DP_AG": -32,
+            "DS_AL": 0,
+            "DP_AL": -20,
+            "DS_DG": 0,
+            "DP_DL": -5,
+            "DS_DL": 0,
+            "DS_AG": 0
+          }
+        },
+        {
+          "cadd_phred": 28.3,
+          "alphamissense": {
+            "am_class": "likely_pathogenic",
+            "am_pathogenicity": 0.6324
+          },
+          "biotype": "protein_coding",
+          "codons": "gCc/gTc",
+          "polyphen_prediction": "benign",
+          "polyphen_score": 0.084,
+          "gene_symbol_source": "HGNC",
+          "transcript_id": "ENST00000423400",
+          "variant_allele": "A",
+          "hgnc_id": "HGNC:7436",
+          "cds_end": 785,
+          "consequence_terms": [
+            "missense_variant"
+          ],
+          "impact": "MODERATE",
+          "strand": -1,
+          "protein_start": 262,
+          "sift_prediction": "deleterious",
+          "sift_score": 0,
+          "gene_id": "ENSG00000177000",
+          "cadd_raw": 5.0668,
+          "domains": [
+            {
+              "db": "Gene3D",
+              "name": 3
+            },
+            {
+              "name": "AF",
+              "db": "ENSP_mappings"
+            },
+            {
+              "db": "Pfam",
+              "name": "PF02219"
+            },
+            {
+              "name": "PTHR45754",
+              "db": "PANTHER"
+            },
+            {
+              "db": "Superfamily",
+              "name": "SSF51730"
+            },
+            {
+              "name": "TIGR00677",
+              "db": "NCBIFAM"
+            },
+            {
+              "db": "CDD",
+              "name": "cd00537"
+            }
+          ],
+          "cdna_start": 841,
+          "amino_acids": "A/V",
+          "cdna_end": 841,
+          "spliceai": {
+            "DP_DG": 14,
+            "DP_AG": -20,
+            "SYMBOL": "MTHFR",
+            "DS_AL": 0,
+            "DP_AL": 19,
+            "DP_DL": -5,
+            "DS_DG": 0,
+            "DS_AG": 0,
+            "DS_DL": 0
+          },
+          "gene_symbol": "MTHFR",
+          "protein_end": 262,
+          "cds_start": 785
+        },
+        {
+          "sift_prediction": "deleterious",
+          "consequence_terms": [
+            "missense_variant"
+          ],
+          "impact": "MODERATE",
+          "strand": -1,
+          "protein_start": 262,
+          "sift_score": 0.04,
+          "cdna_start": 841,
+          "amino_acids": "A/G",
+          "cdna_end": 841,
+          "gene_id": "ENSG00000177000",
+          "cadd_raw": 4.742511,
+          "domains": [
+            {
+              "db": "Gene3D",
+              "name": 3
+            },
+            {
+              "db": "ENSP_mappings",
+              "name": "AF"
+            },
+            {
+              "db": "Pfam",
+              "name": "PF02219"
+            },
+            {
+              "name": "PTHR45754",
+              "db": "PANTHER"
+            },
+            {
+              "name": "SSF51730",
+              "db": "Superfamily"
+            },
+            {
+              "name": "TIGR00677",
+              "db": "NCBIFAM"
+            },
+            {
+              "db": "CDD",
+              "name": "cd00537"
+            }
+          ],
+          "cds_start": 785,
+          "gene_symbol": "MTHFR",
+          "spliceai": {
+            "SYMBOL": "MTHFR",
+            "DP_AG": -32,
+            "DP_DG": 14,
+            "DS_AL": 0,
+            "DP_AL": -20,
+            "DS_DL": 0,
+            "DS_AG": 0,
+            "DP_DL": -5,
+            "DS_DG": 0
+          },
+          "protein_end": 262,
+          "biotype": "protein_coding",
+          "alphamissense": {
+            "am_class": "likely_benign",
+            "am_pathogenicity": 0.1266
+          },
+          "cadd_phred": 26.5,
+          "codons": "gCc/gGc",
+          "polyphen_prediction": "benign",
+          "transcript_id": "ENST00000423400",
+          "gene_symbol_source": "HGNC",
+          "polyphen_score": 0.027,
+          "cds_end": 785,
+          "hgnc_id": "HGNC:7436",
+          "variant_allele": "C"
+        },
+        {
+          "variant_allele": "A",
+          "gene_symbol": "MTHFR",
+          "spliceai": {
+            "DP_AL": 19,
+            "DS_DL": 0,
+            "DS_AG": 0,
+            "DP_DL": -5,
+            "DS_DG": 0,
+            "SYMBOL": "MTHFR",
+            "DP_AG": -20,
+            "DP_DG": 14,
+            "DS_AL": 0
+          },
+          "hgnc_id": "HGNC:7436",
+          "cadd_raw": 5.0668,
+          "gene_id": "ENSG00000177000",
+          "transcript_id": "ENST00000431243",
+          "gene_symbol_source": "HGNC",
+          "distance": 4997,
+          "impact": "MODIFIER",
+          "strand": -1,
+          "consequence_terms": [
+            "downstream_gene_variant"
+          ],
+          "cadd_phred": 28.3,
+          "biotype": "protein_coding_CDS_not_defined"
+        },
+        {
+          "biotype": "protein_coding_CDS_not_defined",
+          "consequence_terms": [
+            "downstream_gene_variant"
+          ],
+          "cadd_phred": 26.5,
+          "strand": -1,
+          "impact": "MODIFIER",
+          "distance": 4997,
+          "transcript_id": "ENST00000431243",
+          "gene_symbol_source": "HGNC",
+          "gene_id": "ENSG00000177000",
+          "cadd_raw": 4.742511,
+          "spliceai": {
+            "SYMBOL": "MTHFR",
+            "DP_AG": -32,
+            "DP_DG": 14,
+            "DS_AL": 0,
+            "DP_AL": -20,
+            "DS_AG": 0,
+            "DS_DL": 0,
+            "DS_DG": 0,
+            "DP_DL": -5
+          },
+          "variant_allele": "C",
+          "gene_symbol": "MTHFR",
+          "hgnc_id": "HGNC:7436"
+        },
+        {
+          "alphamissense": {
+            "am_pathogenicity": 0.6324,
+            "am_class": "likely_pathogenic"
+          },
+          "biotype": "protein_coding",
+          "cadd_phred": 28.3,
+          "polyphen_prediction": "benign",
+          "codons": "gCc/gTc",
+          "transcript_id": "ENST00000641407",
+          "gene_symbol_source": "HGNC",
+          "polyphen_score": 0.084,
+          "cds_end": 665,
+          "hgnc_id": "HGNC:7436",
+          "variant_allele": "A",
+          "sift_prediction": "deleterious",
+          "impact": "MODERATE",
+          "strand": -1,
+          "protein_start": 222,
+          "consequence_terms": [
+            "missense_variant"
+          ],
+          "sift_score": 0.01,
+          "cdna_end": 932,
+          "amino_acids": "A/V",
+          "cdna_start": 932,
+          "domains": [
+            {
+              "db": "Gene3D",
+              "name": 3
+            },
+            {
+              "db": "ENSP_mappings",
+              "name": "AF"
+            },
+            {
+              "db": "Pfam",
+              "name": "PF02219"
+            },
+            {
+              "name": "PTHR45754",
+              "db": "PANTHER"
+            },
+            {
+              "db": "Superfamily",
+              "name": "SSF51730"
+            },
+            {
+              "name": "TIGR00677",
+              "db": "NCBIFAM"
+            },
+            {
+              "db": "CDD",
+              "name": "cd00537"
+            }
+          ],
+          "gene_id": "ENSG00000177000",
+          "cadd_raw": 5.0668,
+          "gene_symbol": "MTHFR",
+          "cds_start": 665,
+          "spliceai": {
+            "DP_DG": 14,
+            "DP_AG": -20,
+            "SYMBOL": "MTHFR",
+            "DS_AL": 0,
+            "DP_AL": 19,
+            "DP_DL": -5,
+            "DS_DG": 0,
+            "DS_AG": 0,
+            "DS_DL": 0
+          },
+          "protein_end": 222
+        },
+        {
+          "cdna_start": 932,
+          "amino_acids": "A/G",
+          "cdna_end": 932,
+          "cadd_raw": 4.742511,
+          "gene_id": "ENSG00000177000",
+          "domains": [
+            {
+              "name": 3,
+              "db": "Gene3D"
+            },
+            {
+              "db": "ENSP_mappings",
+              "name": "AF"
+            },
+            {
+              "db": "Pfam",
+              "name": "PF02219"
+            },
+            {
+              "name": "PTHR45754",
+              "db": "PANTHER"
+            },
+            {
+              "name": "SSF51730",
+              "db": "Superfamily"
+            },
+            {
+              "db": "NCBIFAM",
+              "name": "TIGR00677"
+            },
+            {
+              "db": "CDD",
+              "name": "cd00537"
+            }
+          ],
+          "cds_start": 665,
+          "gene_symbol": "MTHFR",
+          "spliceai": {
+            "DP_AL": -20,
+            "DS_DL": 0,
+            "DS_AG": 0,
+            "DS_DG": 0,
+            "DP_DL": -5,
+            "SYMBOL": "MTHFR",
+            "DP_AG": -32,
+            "DP_DG": 14,
+            "DS_AL": 0
+          },
+          "protein_end": 222,
+          "sift_prediction": "tolerated",
+          "consequence_terms": [
+            "missense_variant"
+          ],
+          "impact": "MODERATE",
+          "protein_start": 222,
+          "strand": -1,
+          "sift_score": 0.07,
+          "gene_symbol_source": "HGNC",
+          "transcript_id": "ENST00000641407",
+          "polyphen_score": 0.027,
+          "cds_end": 665,
+          "variant_allele": "C",
+          "hgnc_id": "HGNC:7436",
+          "biotype": "protein_coding",
+          "alphamissense": {
+            "am_class": "likely_benign",
+            "am_pathogenicity": 0.1266
+          },
+          "cadd_phred": 26.5,
+          "codons": "gCc/gGc",
+          "polyphen_prediction": "benign"
+        },
+        {
+          "gene_id": "ENSG00000177000",
+          "cadd_raw": 5.0668,
+          "gene_symbol_source": "HGNC",
+          "transcript_id": "ENST00000641437",
+          "gene_symbol": "MTHFR",
+          "hgnc_id": "HGNC:7436",
+          "variant_allele": "A",
+          "spliceai": {
+            "DP_DG": 14,
+            "DP_AG": -20,
+            "SYMBOL": "MTHFR",
+            "DS_AL": 0,
+            "DP_AL": 19,
+            "DS_DG": 0,
+            "DP_DL": -5,
+            "DS_DL": 0,
+            "DS_AG": 0
+          },
+          "strand": -1,
+          "impact": "MODIFIER",
+          "consequence_terms": [
+            "downstream_gene_variant"
+          ],
+          "cadd_phred": 28.3,
+          "biotype": "retained_intron",
+          "distance": 3536
+        },
+        {
+          "gene_symbol": "MTHFR",
+          "hgnc_id": "HGNC:7436",
+          "variant_allele": "C",
+          "spliceai": {
+            "DP_AL": -20,
+            "DS_DG": 0,
+            "DP_DL": -5,
+            "DS_DL": 0,
+            "DS_AG": 0,
+            "DP_DG": 14,
+            "DP_AG": -32,
+            "SYMBOL": "MTHFR",
+            "DS_AL": 0
+          },
+          "gene_id": "ENSG00000177000",
+          "cadd_raw": 4.742511,
+          "transcript_id": "ENST00000641437",
+          "gene_symbol_source": "HGNC",
+          "distance": 3536,
+          "cadd_phred": 26.5,
+          "consequence_terms": [
+            "downstream_gene_variant"
+          ],
+          "strand": -1,
+          "impact": "MODIFIER",
+          "biotype": "retained_intron"
+        },
+        {
+          "cds_end": 665,
+          "hgnc_id": "HGNC:7436",
+          "variant_allele": "A",
+          "transcript_id": "ENST00000641446",
+          "gene_symbol_source": "HGNC",
+          "polyphen_score": 0.084,
+          "codons": "gCc/gTc",
+          "polyphen_prediction": "benign",
+          "biotype": "nonsense_mediated_decay",
+          "alphamissense": {
+            "am_pathogenicity": 0.6324,
+            "am_class": "likely_pathogenic"
+          },
+          "cadd_phred": 28.3,
+          "gene_symbol": "MTHFR",
+          "spliceai": {
+            "DS_AG": 0,
+            "DS_DL": 0,
+            "DS_DG": 0,
+            "DP_DL": -5,
+            "DP_AL": 19,
+            "DS_AL": 0,
+            "DP_AG": -20,
+            "SYMBOL": "MTHFR",
+            "DP_DG": 14
+          },
+          "cds_start": 665,
+          "protein_end": 222,
+          "cdna_start": 793,
+          "amino_acids": "A/V",
+          "cdna_end": 793,
+          "cadd_raw": 5.0668,
+          "gene_id": "ENSG00000177000",
+          "domains": [
+            {
+              "db": "ENSP_mappings",
+              "name": "AF"
+            }
+          ],
+          "sift_score": 0,
+          "sift_prediction": "deleterious",
+          "consequence_terms": [
+            "missense_variant",
+            "NMD_transcript_variant"
+          ],
+          "protein_start": 222,
+          "impact": "MODERATE",
+          "strand": -1
+        },
+        {
+          "alphamissense": {
+            "am_pathogenicity": 0.1266,
+            "am_class": "likely_benign"
+          },
+          "biotype": "nonsense_mediated_decay",
+          "cadd_phred": 26.5,
+          "codons": "gCc/gGc",
+          "polyphen_prediction": "benign",
+          "transcript_id": "ENST00000641446",
+          "gene_symbol_source": "HGNC",
+          "polyphen_score": 0.027,
+          "cds_end": 665,
+          "hgnc_id": "HGNC:7436",
+          "variant_allele": "C",
+          "sift_prediction": "deleterious",
+          "consequence_terms": [
+            "missense_variant",
+            "NMD_transcript_variant"
+          ],
+          "protein_start": 222,
+          "strand": -1,
+          "impact": "MODERATE",
+          "sift_score": 0.03,
+          "amino_acids": "A/G",
+          "cdna_start": 793,
+          "cdna_end": 793,
+          "gene_id": "ENSG00000177000",
+          "cadd_raw": 4.742511,
+          "domains": [
+            {
+              "db": "ENSP_mappings",
+              "name": "AF"
+            }
+          ],
+          "protein_end": 222,
+          "gene_symbol": "MTHFR",
+          "spliceai": {
+            "DP_DG": 14,
+            "SYMBOL": "MTHFR",
+            "DP_AG": -32,
+            "DS_AL": 0,
+            "DP_AL": -20,
+            "DS_DG": 0,
+            "DP_DL": -5,
+            "DS_AG": 0,
+            "DS_DL": 0
+          },
+          "cds_start": 665
+        },
+        {
+          "gene_id": "ENSG00000177000",
+          "cadd_raw": 5.0668,
+          "gene_symbol_source": "HGNC",
+          "transcript_id": "ENST00000641721",
+          "variant_allele": "A",
+          "gene_symbol": "MTHFR",
+          "hgnc_id": "HGNC:7436",
+          "spliceai": {
+            "DS_AL": 0,
+            "DP_DG": 14,
+            "SYMBOL": "MTHFR",
+            "DP_AG": -20,
+            "DP_DL": -5,
+            "DS_DG": 0,
+            "DS_DL": 0,
+            "DS_AG": 0,
+            "DP_AL": 19
+          },
+          "strand": -1,
+          "impact": "MODIFIER",
+          "cadd_phred": 28.3,
+          "consequence_terms": [
+            "intron_variant",
+            "non_coding_transcript_variant"
+          ],
+          "biotype": "protein_coding_CDS_not_defined"
+        },
+        {
+          "transcript_id": "ENST00000641721",
+          "gene_symbol_source": "HGNC",
+          "cadd_raw": 4.742511,
+          "gene_id": "ENSG00000177000",
+          "variant_allele": "C",
+          "gene_symbol": "MTHFR",
+          "hgnc_id": "HGNC:7436",
+          "spliceai": {
+            "DS_AL": 0,
+            "DP_DG": 14,
+            "SYMBOL": "MTHFR",
+            "DP_AG": -32,
+            "DS_DG": 0,
+            "DP_DL": -5,
+            "DS_AG": 0,
+            "DS_DL": 0,
+            "DP_AL": -20
+          },
+          "biotype": "protein_coding_CDS_not_defined",
+          "cadd_phred": 26.5,
+          "consequence_terms": [
+            "intron_variant",
+            "non_coding_transcript_variant"
+          ],
+          "impact": "MODIFIER",
+          "strand": -1
+        },
+        {
+          "transcript_id": "ENST00000641747",
+          "gene_symbol_source": "HGNC",
+          "hgnc_id": "HGNC:7436",
+          "variant_allele": "A",
+          "biotype": "nonsense_mediated_decay",
+          "cadd_phred": 28.3,
+          "cdna_start": 1007,
+          "cdna_end": 1007,
+          "cadd_raw": 5.0668,
+          "gene_id": "ENSG00000177000",
+          "spliceai": {
+            "DP_AL": 19,
+            "DP_DL": -5,
+            "DS_DG": 0,
+            "DS_AG": 0,
+            "DS_DL": 0,
+            "DP_DG": 14,
+            "SYMBOL": "MTHFR",
+            "DP_AG": -20,
+            "DS_AL": 0
+          },
+          "gene_symbol": "MTHFR",
+          "consequence_terms": [
+            "3_prime_UTR_variant",
+            "NMD_transcript_variant"
+          ],
+          "impact": "MODIFIER",
+          "strand": -1
+        },
+        {
+          "consequence_terms": [
+            "3_prime_UTR_variant",
+            "NMD_transcript_variant"
+          ],
+          "strand": -1,
+          "impact": "MODIFIER",
+          "gene_symbol": "MTHFR",
+          "spliceai": {
+            "DP_DL": -5,
+            "DS_DG": 0,
+            "DS_DL": 0,
+            "DS_AG": 0,
+            "DP_AL": -20,
+            "DS_AL": 0,
+            "DP_DG": 14,
+            "SYMBOL": "MTHFR",
+            "DP_AG": -32
+          },
+          "cdna_start": 1007,
+          "cdna_end": 1007,
+          "gene_id": "ENSG00000177000",
+          "cadd_raw": 4.742511,
+          "biotype": "nonsense_mediated_decay",
+          "cadd_phred": 26.5,
+          "hgnc_id": "HGNC:7436",
+          "variant_allele": "C",
+          "gene_symbol_source": "HGNC",
+          "transcript_id": "ENST00000641747"
+        },
+        {
+          "strand": -1,
+          "impact": "MODIFIER",
+          "consequence_terms": [
+            "non_coding_transcript_exon_variant"
+          ],
+          "spliceai": {
+            "DS_DG": 0,
+            "DP_DL": -5,
+            "DS_DL": 0,
+            "DS_AG": 0,
+            "DP_AL": 19,
+            "DS_AL": 0,
+            "DP_DG": 14,
+            "DP_AG": -20,
+            "SYMBOL": "MTHFR"
+          },
+          "gene_symbol": "MTHFR",
+          "cdna_end": 800,
+          "cdna_start": 800,
+          "gene_id": "ENSG00000177000",
+          "cadd_raw": 5.0668,
+          "biotype": "retained_intron",
+          "cadd_phred": 28.3,
+          "variant_allele": "A",
+          "hgnc_id": "HGNC:7436",
+          "transcript_id": "ENST00000641759",
+          "gene_symbol_source": "HGNC"
+        },
+        {
+          "cadd_raw": 4.742511,
+          "gene_id": "ENSG00000177000",
+          "cdna_end": 800,
+          "cdna_start": 800,
+          "spliceai": {
+            "SYMBOL": "MTHFR",
+            "DP_AG": -32,
+            "DP_DG": 14,
+            "DS_AL": 0,
+            "DP_AL": -20,
+            "DS_DL": 0,
+            "DS_AG": 0,
+            "DS_DG": 0,
+            "DP_DL": -5
+          },
+          "gene_symbol": "MTHFR",
+          "impact": "MODIFIER",
+          "strand": -1,
+          "consequence_terms": [
+            "non_coding_transcript_exon_variant"
+          ],
+          "gene_symbol_source": "HGNC",
+          "transcript_id": "ENST00000641759",
+          "hgnc_id": "HGNC:7436",
+          "variant_allele": "C",
+          "cadd_phred": 26.5,
+          "biotype": "retained_intron"
+        },
+        {
+          "hgnc_id": "HGNC:7436",
+          "variant_allele": "A",
+          "gene_symbol_source": "HGNC",
+          "transcript_id": "ENST00000641805",
+          "cadd_phred": 28.3,
+          "biotype": "retained_intron",
+          "spliceai": {
+            "DP_DG": 14,
+            "SYMBOL": "MTHFR",
+            "DP_AG": -20,
+            "DS_AL": 0,
+            "DP_AL": 19,
+            "DP_DL": -5,
+            "DS_DG": 0,
+            "DS_AG": 0,
+            "DS_DL": 0
+          },
+          "gene_symbol": "MTHFR",
+          "gene_id": "ENSG00000177000",
+          "cadd_raw": 5.0668,
+          "cdna_start": 948,
+          "cdna_end": 948,
+          "consequence_terms": [
+            "non_coding_transcript_exon_variant"
+          ],
+          "strand": -1,
+          "impact": "MODIFIER"
+        },
+        {
+          "cadd_phred": 26.5,
+          "biotype": "retained_intron",
+          "variant_allele": "C",
+          "hgnc_id": "HGNC:7436",
+          "transcript_id": "ENST00000641805",
+          "gene_symbol_source": "HGNC",
+          "consequence_terms": [
+            "non_coding_transcript_exon_variant"
+          ],
+          "impact": "MODIFIER",
+          "strand": -1,
+          "spliceai": {
+            "DS_AL": 0,
+            "SYMBOL": "MTHFR",
+            "DP_AG": -32,
+            "DP_DG": 14,
+            "DS_DL": 0,
+            "DS_AG": 0,
+            "DP_DL": -5,
+            "DS_DG": 0,
+            "DP_AL": -20
+          },
+          "gene_symbol": "MTHFR",
+          "gene_id": "ENSG00000177000",
+          "cadd_raw": 4.742511,
+          "cdna_start": 948,
+          "cdna_end": 948
+        },
+        {
+          "consequence_terms": [
+            "5_prime_UTR_variant"
+          ],
+          "strand": -1,
+          "impact": "MODIFIER",
+          "gene_symbol": "MTHFR",
+          "spliceai": {
+            "DP_AL": 19,
+            "DS_DG": 0,
+            "DP_DL": -5,
+            "DS_DL": 0,
+            "DS_AG": 0,
+            "DP_DG": 14,
+            "SYMBOL": "MTHFR",
+            "DP_AG": -20,
+            "DS_AL": 0
+          },
+          "gene_id": "ENSG00000177000",
+          "cadd_raw": 5.0668,
+          "cdna_start": 225,
+          "cdna_end": 225,
+          "cadd_phred": 28.3,
+          "biotype": "protein_coding",
+          "variant_allele": "A",
+          "hgnc_id": "HGNC:7436",
+          "transcript_id": "ENST00000641820",
+          "gene_symbol_source": "HGNC"
+        },
+        {
+          "consequence_terms": [
+            "5_prime_UTR_variant"
+          ],
+          "impact": "MODIFIER",
+          "strand": -1,
+          "cdna_start": 225,
+          "cdna_end": 225,
+          "gene_id": "ENSG00000177000",
+          "cadd_raw": 4.742511,
+          "spliceai": {
+            "DS_DG": 0,
+            "DP_DL": -5,
+            "DS_DL": 0,
+            "DS_AG": 0,
+            "DP_AL": -20,
+            "DS_AL": 0,
+            "DP_DG": 14,
+            "SYMBOL": "MTHFR",
+            "DP_AG": -32
+          },
+          "gene_symbol": "MTHFR",
+          "biotype": "protein_coding",
+          "cadd_phred": 26.5,
+          "gene_symbol_source": "HGNC",
+          "transcript_id": "ENST00000641820",
+          "hgnc_id": "HGNC:7436",
+          "variant_allele": "C"
+        },
+        {
+          "gene_symbol_source": "HGNC",
+          "transcript_id": "ENST00000641909",
+          "cadd_raw": 5.0668,
+          "gene_id": "ENSG00000177000",
+          "spliceai": {
+            "DP_DG": 14,
+            "SYMBOL": "MTHFR",
+            "DP_AG": -20,
+            "DS_AL": 0,
+            "DP_AL": 19,
+            "DP_DL": -5,
+            "DS_DG": 0,
+            "DS_DL": 0,
+            "DS_AG": 0
+          },
+          "gene_symbol": "MTHFR",
+          "variant_allele": "A",
+          "hgnc_id": "HGNC:7436",
+          "biotype": "retained_intron",
+          "impact": "MODIFIER",
+          "strand": -1,
+          "consequence_terms": [
+            "downstream_gene_variant"
+          ],
+          "cadd_phred": 28.3,
+          "distance": 3471
+        },
+        {
+          "gene_id": "ENSG00000177000",
+          "cadd_raw": 4.742511,
+          "gene_symbol_source": "HGNC",
+          "transcript_id": "ENST00000641909",
+          "variant_allele": "C",
+          "gene_symbol": "MTHFR",
+          "spliceai": {
+            "DP_DG": 14,
+            "SYMBOL": "MTHFR",
+            "DP_AG": -32,
+            "DS_AL": 0,
+            "DP_AL": -20,
+            "DP_DL": -5,
+            "DS_DG": 0,
+            "DS_DL": 0,
+            "DS_AG": 0
+          },
+          "hgnc_id": "HGNC:7436",
+          "consequence_terms": [
+            "downstream_gene_variant"
+          ],
+          "cadd_phred": 26.5,
+          "impact": "MODIFIER",
+          "strand": -1,
+          "biotype": "retained_intron",
+          "distance": 3471
+        },
+        {
+          "variant_allele": "A",
+          "hgnc_id": "HGNC:7436",
+          "cds_end": 665,
+          "transcript_id": "ENST00000911084",
+          "gene_symbol_source": "HGNC",
+          "codons": "gCc/gTc",
+          "cadd_phred": 28.3,
+          "biotype": "protein_coding",
+          "alphamissense": {
+            "am_class": "likely_pathogenic",
+            "am_pathogenicity": 0.6324
+          },
+          "gene_symbol": "MTHFR",
+          "cds_start": 665,
+          "spliceai": {
+            "DS_DG": 0,
+            "DP_DL": -5,
+            "DS_DL": 0,
+            "DS_AG": 0,
+            "DP_AL": 19,
+            "DS_AL": 0,
+            "DP_DG": 14,
+            "SYMBOL": "MTHFR",
+            "DP_AG": -20
+          },
+          "protein_end": 222,
+          "gene_id": "ENSG00000177000",
+          "cadd_raw": 5.0668,
+          "domains": [
+            {
+              "db": "Superfamily",
+              "name": "SSF51730"
+            },
+            {
+              "db": "Gene3D",
+              "name": 3
+            },
+            {
+              "name": "TIGR00677",
+              "db": "NCBIFAM"
+            },
+            {
+              "name": "PF02219",
+              "db": "Pfam"
+            },
+            {
+              "name": "cd00537",
+              "db": "CDD"
+            },
+            {
+              "name": "PTHR45754",
+              "db": "PANTHER"
+            }
+          ],
+          "cdna_start": 752,
+          "amino_acids": "A/V",
+          "cdna_end": 752,
+          "sift_score": 0,
+          "consequence_terms": [
+            "missense_variant"
+          ],
+          "impact": "MODERATE",
+          "strand": -1,
+          "protein_start": 222,
+          "sift_prediction": "deleterious"
+        },
+        {
+          "codons": "gCc/gGc",
+          "cadd_phred": 26.5,
+          "alphamissense": {
+            "am_pathogenicity": 0.1266,
+            "am_class": "likely_benign"
+          },
+          "biotype": "protein_coding",
+          "hgnc_id": "HGNC:7436",
+          "variant_allele": "C",
+          "cds_end": 665,
+          "gene_symbol_source": "HGNC",
+          "transcript_id": "ENST00000911084",
+          "sift_score": 0.03,
+          "consequence_terms": [
+            "missense_variant"
+          ],
+          "protein_start": 222,
+          "impact": "MODERATE",
+          "strand": -1,
+          "sift_prediction": "deleterious",
+          "gene_symbol": "MTHFR",
+          "spliceai": {
+            "DP_DL": -5,
+            "DS_DG": 0,
+            "DS_AG": 0,
+            "DS_DL": 0,
+            "DP_AL": -20,
+            "DS_AL": 0,
+            "DP_DG": 14,
+            "SYMBOL": "MTHFR",
+            "DP_AG": -32
+          },
+          "protein_end": 222,
+          "cds_start": 665,
+          "gene_id": "ENSG00000177000",
+          "cadd_raw": 4.742511,
+          "domains": [
+            {
+              "name": "SSF51730",
+              "db": "Superfamily"
+            },
+            {
+              "name": 3,
+              "db": "Gene3D"
+            },
+            {
+              "name": "TIGR00677",
+              "db": "NCBIFAM"
+            },
+            {
+              "db": "Pfam",
+              "name": "PF02219"
+            },
+            {
+              "db": "CDD",
+              "name": "cd00537"
+            },
+            {
+              "db": "PANTHER",
+              "name": "PTHR45754"
+            }
+          ],
+          "cdna_start": 752,
+          "amino_acids": "A/G",
+          "cdna_end": 752
+        },
+        {
+          "variant_allele": "A",
+          "hgnc_id": "HGNC:7436",
+          "cds_end": 665,
+          "polyphen_score": 0.943,
+          "gene_symbol_source": "HGNC",
+          "transcript_id": "ENST00000911085",
+          "polyphen_prediction": "probably_damaging",
+          "codons": "gCc/gTc",
+          "cadd_phred": 28.3,
+          "alphamissense": {
+            "am_class": "likely_pathogenic",
+            "am_pathogenicity": 0.6324
+          },
+          "biotype": "protein_coding",
+          "spliceai": {
+            "DP_DG": 14,
+            "DP_AG": -20,
+            "SYMBOL": "MTHFR",
+            "DS_AL": 0,
+            "DP_AL": 19,
+            "DP_DL": -5,
+            "DS_DG": 0,
+            "DS_AG": 0,
+            "DS_DL": 0
+          },
+          "gene_symbol": "MTHFR",
+          "protein_end": 222,
+          "cds_start": 665,
+          "domains": [
+            {
+              "name": "SSF51730",
+              "db": "Superfamily"
+            },
+            {
+              "name": 3,
+              "db": "Gene3D"
+            },
+            {
+              "db": "Pfam",
+              "name": "PF02219"
+            },
+            {
+              "name": "TIGR00677",
+              "db": "NCBIFAM"
+            },
+            {
+              "name": "cd00537",
+              "db": "CDD"
+            },
+            {
+              "db": "PANTHER",
+              "name": "PTHR45754"
+            }
+          ],
+          "gene_id": "ENSG00000177000",
+          "cadd_raw": 5.0668,
+          "cdna_end": 1697,
+          "amino_acids": "A/V",
+          "cdna_start": 1697,
+          "sift_score": 0,
+          "strand": -1,
+          "impact": "MODERATE",
+          "protein_start": 222,
+          "consequence_terms": [
+            "missense_variant"
+          ],
+          "sift_prediction": "deleterious"
+        },
+        {
+          "cds_end": 665,
+          "variant_allele": "C",
+          "hgnc_id": "HGNC:7436",
+          "transcript_id": "ENST00000911085",
+          "gene_symbol_source": "HGNC",
+          "polyphen_score": 0.453,
+          "polyphen_prediction": "possibly_damaging",
+          "codons": "gCc/gGc",
+          "biotype": "protein_coding",
+          "alphamissense": {
+            "am_pathogenicity": 0.1266,
+            "am_class": "likely_benign"
+          },
+          "cadd_phred": 26.5,
+          "gene_symbol": "MTHFR",
+          "protein_end": 222,
+          "cds_start": 665,
+          "spliceai": {
+            "DP_DG": 14,
+            "SYMBOL": "MTHFR",
+            "DP_AG": -32,
+            "DS_AL": 0,
+            "DP_AL": -20,
+            "DP_DL": -5,
+            "DS_DG": 0,
+            "DS_AG": 0,
+            "DS_DL": 0
+          },
+          "cdna_end": 1697,
+          "amino_acids": "A/G",
+          "cdna_start": 1697,
+          "domains": [
+            {
+              "name": "SSF51730",
+              "db": "Superfamily"
+            },
+            {
+              "db": "Gene3D",
+              "name": 3
+            },
+            {
+              "db": "Pfam",
+              "name": "PF02219"
+            },
+            {
+              "db": "NCBIFAM",
+              "name": "TIGR00677"
+            },
+            {
+              "name": "cd00537",
+              "db": "CDD"
+            },
+            {
+              "db": "PANTHER",
+              "name": "PTHR45754"
+            }
+          ],
+          "gene_id": "ENSG00000177000",
+          "cadd_raw": 4.742511,
+          "sift_score": 0.03,
+          "sift_prediction": "deleterious",
+          "strand": -1,
+          "protein_start": 222,
+          "impact": "MODERATE",
+          "consequence_terms": [
+            "missense_variant"
+          ]
+        },
+        {
+          "gene_symbol_source": "HGNC",
+          "transcript_id": "ENST00000911086",
+          "cds_end": 665,
+          "hgnc_id": "HGNC:7436",
+          "variant_allele": "A",
+          "biotype": "protein_coding",
+          "alphamissense": {
+            "am_class": "likely_pathogenic",
+            "am_pathogenicity": 0.6324
+          },
+          "cadd_phred": 28.3,
+          "codons": "gCc/gTc",
+          "cdna_end": 841,
+          "amino_acids": "A/V",
+          "cdna_start": 841,
+          "domains": [
+            {
+              "db": "Gene3D",
+              "name": 3
+            },
+            {
+              "name": "PF02219",
+              "db": "Pfam"
+            },
+            {
+              "name": "PTHR45754",
+              "db": "PANTHER"
+            },
+            {
+              "db": "Superfamily",
+              "name": "SSF51730"
+            },
+            {
+              "db": "NCBIFAM",
+              "name": "TIGR00677"
+            },
+            {
+              "name": "cd00537",
+              "db": "CDD"
+            }
+          ],
+          "cadd_raw": 5.0668,
+          "gene_id": "ENSG00000177000",
+          "spliceai": {
+            "SYMBOL": "MTHFR",
+            "DP_AG": -20,
+            "DP_DG": 14,
+            "DS_AL": 0,
+            "DP_AL": 19,
+            "DS_AG": 0,
+            "DS_DL": 0,
+            "DS_DG": 0,
+            "DP_DL": -5
+          },
+          "gene_symbol": "MTHFR",
+          "cds_start": 665,
+          "protein_end": 222,
+          "sift_prediction": "deleterious",
+          "impact": "MODERATE",
+          "strand": -1,
+          "protein_start": 222,
+          "consequence_terms": [
+            "missense_variant"
+          ],
+          "sift_score": 0
+        },
+        {
+          "hgnc_id": "HGNC:7436",
+          "variant_allele": "C",
+          "cds_end": 665,
+          "transcript_id": "ENST00000911086",
+          "gene_symbol_source": "HGNC",
+          "codons": "gCc/gGc",
+          "cadd_phred": 26.5,
+          "biotype": "protein_coding",
+          "alphamissense": {
+            "am_pathogenicity": 0.1266,
+            "am_class": "likely_benign"
+          },
+          "spliceai": {
+            "DS_AG": 0,
+            "DS_DL": 0,
+            "DS_DG": 0,
+            "DP_DL": -5,
+            "DP_AL": -20,
+            "DS_AL": 0,
+            "DP_AG": -32,
+            "SYMBOL": "MTHFR",
+            "DP_DG": 14
+          },
+          "gene_symbol": "MTHFR",
+          "cds_start": 665,
+          "protein_end": 222,
+          "domains": [
+            {
+              "db": "Gene3D",
+              "name": 3
+            },
+            {
+              "db": "Pfam",
+              "name": "PF02219"
+            },
+            {
+              "db": "PANTHER",
+              "name": "PTHR45754"
+            },
+            {
+              "name": "SSF51730",
+              "db": "Superfamily"
+            },
+            {
+              "name": "TIGR00677",
+              "db": "NCBIFAM"
+            },
+            {
+              "name": "cd00537",
+              "db": "CDD"
+            }
+          ],
+          "gene_id": "ENSG00000177000",
+          "cadd_raw": 4.742511,
+          "cdna_end": 841,
+          "cdna_start": 841,
+          "amino_acids": "A/G",
+          "sift_score": 0.03,
+          "impact": "MODERATE",
+          "strand": -1,
+          "protein_start": 222,
+          "consequence_terms": [
+            "missense_variant"
+          ],
+          "sift_prediction": "deleterious"
+        },
+        {
+          "cds_start": 665,
+          "gene_symbol": "MTHFR",
+          "protein_end": 222,
+          "spliceai": {
+            "DP_AL": 19,
+            "DS_DG": 0,
+            "DP_DL": -5,
+            "DS_DL": 0,
+            "DS_AG": 0,
+            "DP_DG": 14,
+            "DP_AG": -20,
+            "SYMBOL": "MTHFR",
+            "DS_AL": 0
+          },
+          "cdna_end": 811,
+          "amino_acids": "A/V",
+          "cdna_start": 811,
+          "domains": [
+            {
+              "name": "SSF51730",
+              "db": "Superfamily"
+            },
+            {
+              "db": "Gene3D",
+              "name": 3
+            },
+            {
+              "db": "NCBIFAM",
+              "name": "TIGR00677"
+            },
+            {
+              "name": "PF02219",
+              "db": "Pfam"
+            },
+            {
+              "db": "CDD",
+              "name": "cd00537"
+            },
+            {
+              "name": "PTHR45754",
+              "db": "PANTHER"
+            }
+          ],
+          "gene_id": "ENSG00000177000",
+          "cadd_raw": 5.0668,
+          "sift_score": 0,
+          "sift_prediction": "deleterious",
+          "protein_start": 222,
+          "strand": -1,
+          "impact": "MODERATE",
+          "consequence_terms": [
+            "missense_variant"
+          ],
+          "cds_end": 665,
+          "variant_allele": "A",
+          "hgnc_id": "HGNC:7436",
+          "gene_symbol_source": "HGNC",
+          "transcript_id": "ENST00000911087",
+          "codons": "gCc/gTc",
+          "biotype": "protein_coding",
+          "alphamissense": {
+            "am_pathogenicity": 0.6324,
+            "am_class": "likely_pathogenic"
+          },
+          "cadd_phred": 28.3
+        },
+        {
+          "variant_allele": "C",
+          "hgnc_id": "HGNC:7436",
+          "cds_end": 665,
+          "gene_symbol_source": "HGNC",
+          "transcript_id": "ENST00000911087",
+          "codons": "gCc/gGc",
+          "cadd_phred": 26.5,
+          "biotype": "protein_coding",
+          "alphamissense": {
+            "am_class": "likely_benign",
+            "am_pathogenicity": 0.1266
+          },
+          "cds_start": 665,
+          "gene_symbol": "MTHFR",
+          "protein_end": 222,
+          "spliceai": {
+            "DP_AL": -20,
+            "DP_DL": -5,
+            "DS_DG": 0,
+            "DS_AG": 0,
+            "DS_DL": 0,
+            "DP_DG": 14,
+            "DP_AG": -32,
+            "SYMBOL": "MTHFR",
+            "DS_AL": 0
+          },
+          "cadd_raw": 4.742511,
+          "gene_id": "ENSG00000177000",
+          "domains": [
+            {
+              "db": "Superfamily",
+              "name": "SSF51730"
+            },
+            {
+              "name": 3,
+              "db": "Gene3D"
+            },
+            {
+              "db": "NCBIFAM",
+              "name": "TIGR00677"
+            },
+            {
+              "db": "Pfam",
+              "name": "PF02219"
+            },
+            {
+              "db": "CDD",
+              "name": "cd00537"
+            },
+            {
+              "name": "PTHR45754",
+              "db": "PANTHER"
+            }
+          ],
+          "cdna_start": 811,
+          "amino_acids": "A/G",
+          "cdna_end": 811,
+          "sift_score": 0.03,
+          "consequence_terms": [
+            "missense_variant"
+          ],
+          "impact": "MODERATE",
+          "strand": -1,
+          "protein_start": 222,
+          "sift_prediction": "deleterious"
+        },
+        {
+          "spliceai": {
+            "DS_AL": 0,
+            "DP_DG": 14,
+            "SYMBOL": "MTHFR",
+            "DP_AG": -20,
+            "DP_DL": -5,
+            "DS_DG": 0,
+            "DS_DL": 0,
+            "DS_AG": 0,
+            "DP_AL": 19
+          },
+          "gene_symbol": "MTHFR",
+          "cds_start": 665,
+          "protein_end": 222,
+          "amino_acids": "A/V",
+          "cdna_start": 1105,
+          "cdna_end": 1105,
+          "gene_id": "ENSG00000177000",
+          "cadd_raw": 5.0668,
+          "domains": [
+            {
+              "db": "PANTHER",
+              "name": "PTHR45754"
+            },
+            {
+              "db": "CDD",
+              "name": "cd00537"
+            },
+            {
+              "name": 3,
+              "db": "Gene3D"
+            },
+            {
+              "db": "NCBIFAM",
+              "name": "TIGR00677"
+            },
+            {
+              "name": "PF02219",
+              "db": "Pfam"
+            },
+            {
+              "name": "SSF51730",
+              "db": "Superfamily"
+            }
+          ],
+          "sift_score": 0,
+          "sift_prediction": "deleterious",
+          "consequence_terms": [
+            "missense_variant"
+          ],
+          "impact": "MODERATE",
+          "protein_start": 222,
+          "strand": -1,
+          "cds_end": 665,
+          "hgnc_id": "HGNC:7436",
+          "variant_allele": "A",
+          "gene_symbol_source": "HGNC",
+          "transcript_id": "ENST00000970341",
+          "codons": "gCc/gTc",
+          "biotype": "protein_coding",
+          "alphamissense": {
+            "am_pathogenicity": 0.6324,
+            "am_class": "likely_pathogenic"
+          },
+          "cadd_phred": 28.3
+        },
+        {
+          "gene_symbol_source": "HGNC",
+          "transcript_id": "ENST00000970341",
+          "cds_end": 665,
+          "variant_allele": "C",
+          "hgnc_id": "HGNC:7436",
+          "biotype": "protein_coding",
+          "alphamissense": {
+            "am_pathogenicity": 0.1266,
+            "am_class": "likely_benign"
+          },
+          "cadd_phred": 26.5,
+          "codons": "gCc/gGc",
+          "amino_acids": "A/G",
+          "cdna_start": 1105,
+          "cdna_end": 1105,
+          "gene_id": "ENSG00000177000",
+          "cadd_raw": 4.742511,
+          "domains": [
+            {
+              "name": "PTHR45754",
+              "db": "PANTHER"
+            },
+            {
+              "db": "CDD",
+              "name": "cd00537"
+            },
+            {
+              "name": 3,
+              "db": "Gene3D"
+            },
+            {
+              "name": "TIGR00677",
+              "db": "NCBIFAM"
+            },
+            {
+              "name": "PF02219",
+              "db": "Pfam"
+            },
+            {
+              "name": "SSF51730",
+              "db": "Superfamily"
+            }
+          ],
+          "gene_symbol": "MTHFR",
+          "protein_end": 222,
+          "spliceai": {
+            "DS_AL": 0,
+            "DP_AG": -32,
+            "SYMBOL": "MTHFR",
+            "DP_DG": 14,
+            "DS_AG": 0,
+            "DS_DL": 0,
+            "DS_DG": 0,
+            "DP_DL": -5,
+            "DP_AL": -20
+          },
+          "cds_start": 665,
+          "sift_prediction": "deleterious",
+          "consequence_terms": [
+            "missense_variant"
+          ],
+          "impact": "MODERATE",
+          "strand": -1,
+          "protein_start": 222,
+          "sift_score": 0.03
+        },
+        {
+          "gene_symbol_source": "HGNC",
+          "transcript_id": "ENST00000970342",
+          "cds_end": 665,
+          "variant_allele": "A",
+          "hgnc_id": "HGNC:7436",
+          "alphamissense": {
+            "am_class": "likely_pathogenic",
+            "am_pathogenicity": 0.6324
+          },
+          "biotype": "protein_coding",
+          "cadd_phred": 28.3,
+          "codons": "gCc/gTc",
+          "amino_acids": "A/V",
+          "cdna_start": 815,
+          "cdna_end": 815,
+          "gene_id": "ENSG00000177000",
+          "cadd_raw": 5.0668,
+          "domains": [
+            {
+              "name": 3,
+              "db": "Gene3D"
+            },
+            {
+              "db": "Pfam",
+              "name": "PF02219"
+            },
+            {
+              "name": "PTHR45754",
+              "db": "PANTHER"
+            },
+            {
+              "db": "Superfamily",
+              "name": "SSF51730"
+            },
+            {
+              "name": "TIGR00677",
+              "db": "NCBIFAM"
+            },
+            {
+              "db": "CDD",
+              "name": "cd00537"
+            }
+          ],
+          "gene_symbol": "MTHFR",
+          "spliceai": {
+            "DS_DL": 0,
+            "DS_AG": 0,
+            "DS_DG": 0,
+            "DP_DL": -5,
+            "DP_AL": 19,
+            "DS_AL": 0,
+            "DP_AG": -20,
+            "SYMBOL": "MTHFR",
+            "DP_DG": 14
+          },
+          "cds_start": 665,
+          "protein_end": 222,
+          "sift_prediction": "deleterious",
+          "consequence_terms": [
+            "missense_variant"
+          ],
+          "impact": "MODERATE",
+          "strand": -1,
+          "protein_start": 222,
+          "sift_score": 0
+        },
+        {
+          "codons": "gCc/gGc",
+          "alphamissense": {
+            "am_class": "likely_benign",
+            "am_pathogenicity": 0.1266
+          },
+          "biotype": "protein_coding",
+          "cadd_phred": 26.5,
+          "cds_end": 665,
+          "hgnc_id": "HGNC:7436",
+          "variant_allele": "C",
+          "transcript_id": "ENST00000970342",
+          "gene_symbol_source": "HGNC",
+          "sift_score": 0.03,
+          "sift_prediction": "deleterious",
+          "consequence_terms": [
+            "missense_variant"
+          ],
+          "protein_start": 222,
+          "strand": -1,
+          "impact": "MODERATE",
+          "gene_symbol": "MTHFR",
+          "spliceai": {
+            "SYMBOL": "MTHFR",
+            "DP_AG": -32,
+            "DP_DG": 14,
+            "DS_AL": 0,
+            "DP_AL": -20,
+            "DS_DL": 0,
+            "DS_AG": 0,
+            "DS_DG": 0,
+            "DP_DL": -5
+          },
+          "cds_start": 665,
+          "protein_end": 222,
+          "cdna_start": 815,
+          "amino_acids": "A/G",
+          "cdna_end": 815,
+          "cadd_raw": 4.742511,
+          "gene_id": "ENSG00000177000",
+          "domains": [
+            {
+              "db": "Gene3D",
+              "name": 3
+            },
+            {
+              "name": "PF02219",
+              "db": "Pfam"
+            },
+            {
+              "db": "PANTHER",
+              "name": "PTHR45754"
+            },
+            {
+              "name": "SSF51730",
+              "db": "Superfamily"
+            },
+            {
+              "name": "TIGR00677",
+              "db": "NCBIFAM"
+            },
+            {
+              "name": "cd00537",
+              "db": "CDD"
+            }
+          ]
+        },
+        {
+          "cadd_phred": 28.3,
+          "biotype": "protein_coding",
+          "alphamissense": {
+            "am_pathogenicity": 0.6324,
+            "am_class": "likely_pathogenic"
+          },
+          "codons": "gCc/gTc",
+          "transcript_id": "ENST00000970343",
+          "gene_symbol_source": "HGNC",
+          "hgnc_id": "HGNC:7436",
+          "variant_allele": "A",
+          "cds_end": 665,
+          "consequence_terms": [
+            "missense_variant"
+          ],
+          "impact": "MODERATE",
+          "protein_start": 222,
+          "strand": -1,
+          "sift_prediction": "deleterious",
+          "sift_score": 0,
+          "gene_id": "ENSG00000177000",
+          "cadd_raw": 5.0668,
+          "domains": [
+            {
+              "db": "Gene3D",
+              "name": 3
+            },
+            {
+              "name": "PF02219",
+              "db": "Pfam"
+            },
+            {
+              "name": "PTHR45754",
+              "db": "PANTHER"
+            },
+            {
+              "name": "SSF51730",
+              "db": "Superfamily"
+            },
+            {
+              "db": "NCBIFAM",
+              "name": "TIGR00677"
+            },
+            {
+              "name": "cd00537",
+              "db": "CDD"
+            }
+          ],
+          "cdna_start": 796,
+          "amino_acids": "A/V",
+          "cdna_end": 796,
+          "gene_symbol": "MTHFR",
+          "spliceai": {
+            "DP_AL": 19,
+            "DP_DL": -5,
+            "DS_DG": 0,
+            "DS_DL": 0,
+            "DS_AG": 0,
+            "DP_DG": 14,
+            "SYMBOL": "MTHFR",
+            "DP_AG": -20,
+            "DS_AL": 0
+          },
+          "cds_start": 665,
+          "protein_end": 222
+        },
+        {
+          "codons": "gCc/gGc",
+          "cadd_phred": 26.5,
+          "biotype": "protein_coding",
+          "alphamissense": {
+            "am_class": "likely_benign",
+            "am_pathogenicity": 0.1266
+          },
+          "hgnc_id": "HGNC:7436",
+          "variant_allele": "C",
+          "cds_end": 665,
+          "transcript_id": "ENST00000970343",
+          "gene_symbol_source": "HGNC",
+          "sift_score": 0.03,
+          "strand": -1,
+          "impact": "MODERATE",
+          "protein_start": 222,
+          "consequence_terms": [
+            "missense_variant"
+          ],
+          "sift_prediction": "deleterious",
+          "spliceai": {
+            "DS_AL": 0,
+            "DP_DG": 14,
+            "DP_AG": -32,
+            "SYMBOL": "MTHFR",
+            "DS_DG": 0,
+            "DP_DL": -5,
+            "DS_DL": 0,
+            "DS_AG": 0,
+            "DP_AL": -20
+          },
+          "gene_symbol": "MTHFR",
+          "protein_end": 222,
+          "cds_start": 665,
+          "domains": [
+            {
+              "db": "Gene3D",
+              "name": 3
+            },
+            {
+              "db": "Pfam",
+              "name": "PF02219"
+            },
+            {
+              "db": "PANTHER",
+              "name": "PTHR45754"
+            },
+            {
+              "db": "Superfamily",
+              "name": "SSF51730"
+            },
+            {
+              "name": "TIGR00677",
+              "db": "NCBIFAM"
+            },
+            {
+              "name": "cd00537",
+              "db": "CDD"
+            }
+          ],
+          "cadd_raw": 4.742511,
+          "gene_id": "ENSG00000177000",
+          "cdna_end": 796,
+          "cdna_start": 796,
+          "amino_acids": "A/G"
+        },
+        {
+          "codons": "gCc/gTc",
+          "polyphen_prediction": "benign",
+          "alphamissense": {
+            "am_pathogenicity": 0.6324,
+            "am_class": "likely_pathogenic"
+          },
+          "biotype": "protein_coding",
+          "cadd_phred": 28.3,
+          "cds_end": 665,
+          "variant_allele": "A",
+          "hgnc_id": "HGNC:7436",
+          "gene_symbol_source": "HGNC",
+          "transcript_id": "ENST00000977129",
+          "polyphen_score": 0.084,
+          "sift_score": 0.01,
+          "sift_prediction": "deleterious",
+          "consequence_terms": [
+            "missense_variant"
+          ],
+          "strand": -1,
+          "protein_start": 222,
+          "impact": "MODERATE",
+          "gene_symbol": "MTHFR",
+          "cds_start": 665,
+          "spliceai": {
+            "DP_DL": -5,
+            "DS_DG": 0,
+            "DS_DL": 0,
+            "DS_AG": 0,
+            "DP_AL": 19,
+            "DS_AL": 0,
+            "DP_DG": 14,
+            "SYMBOL": "MTHFR",
+            "DP_AG": -20
+          },
+          "protein_end": 222,
+          "cdna_start": 838,
+          "amino_acids": "A/V",
+          "cdna_end": 838,
+          "cadd_raw": 5.0668,
+          "gene_id": "ENSG00000177000",
+          "domains": [
+            {
+              "name": 3,
+              "db": "Gene3D"
+            },
+            {
+              "name": "PF02219",
+              "db": "Pfam"
+            },
+            {
+              "db": "PANTHER",
+              "name": "PTHR45754"
+            },
+            {
+              "db": "Superfamily",
+              "name": "SSF51730"
+            },
+            {
+              "name": "TIGR00677",
+              "db": "NCBIFAM"
+            },
+            {
+              "name": "cd00537",
+              "db": "CDD"
+            }
+          ]
+        },
+        {
+          "gene_symbol": "MTHFR",
+          "cds_start": 665,
+          "protein_end": 222,
+          "spliceai": {
+            "DS_DL": 0,
+            "DS_AG": 0,
+            "DS_DG": 0,
+            "DP_DL": -5,
+            "DP_AL": -20,
+            "DS_AL": 0,
+            "SYMBOL": "MTHFR",
+            "DP_AG": -32,
+            "DP_DG": 14
+          },
+          "amino_acids": "A/G",
+          "cdna_start": 838,
+          "cdna_end": 838,
+          "gene_id": "ENSG00000177000",
+          "cadd_raw": 4.742511,
+          "domains": [
+            {
+              "db": "Gene3D",
+              "name": 3
+            },
+            {
+              "name": "PF02219",
+              "db": "Pfam"
+            },
+            {
+              "name": "PTHR45754",
+              "db": "PANTHER"
+            },
+            {
+              "name": "SSF51730",
+              "db": "Superfamily"
+            },
+            {
+              "name": "TIGR00677",
+              "db": "NCBIFAM"
+            },
+            {
+              "name": "cd00537",
+              "db": "CDD"
+            }
+          ],
+          "sift_score": 0.07,
+          "sift_prediction": "tolerated",
+          "consequence_terms": [
+            "missense_variant"
+          ],
+          "protein_start": 222,
+          "strand": -1,
+          "impact": "MODERATE",
+          "cds_end": 665,
+          "hgnc_id": "HGNC:7436",
+          "variant_allele": "C",
+          "gene_symbol_source": "HGNC",
+          "transcript_id": "ENST00000977129",
+          "polyphen_score": 0.027,
+          "codons": "gCc/gGc",
+          "polyphen_prediction": "benign",
+          "alphamissense": {
+            "am_pathogenicity": 0.1266,
+            "am_class": "likely_benign"
+          },
+          "biotype": "protein_coding",
+          "cadd_phred": 26.5
+        },
+        {
+          "codons": "gCc/gTc",
+          "polyphen_prediction": "benign",
+          "cadd_phred": 28.3,
+          "alphamissense": {
+            "am_pathogenicity": 0.6324,
+            "am_class": "likely_pathogenic"
+          },
+          "biotype": "protein_coding",
+          "variant_allele": "A",
+          "hgnc_id": "HGNC:7436",
+          "cds_end": 665,
+          "polyphen_score": 0.084,
+          "transcript_id": "ENST00001029232",
+          "gene_symbol_source": "HGNC",
+          "sift_score": 0.01,
+          "consequence_terms": [
+            "missense_variant"
+          ],
+          "protein_start": 222,
+          "strand": -1,
+          "impact": "MODERATE",
+          "sift_prediction": "deleterious",
+          "spliceai": {
+            "DS_DL": 0,
+            "DS_AG": 0,
+            "DS_DG": 0,
+            "DP_DL": -5,
+            "DP_AL": 19,
+            "DS_AL": 0,
+            "SYMBOL": "MTHFR",
+            "DP_AG": -20,
+            "DP_DG": 14
+          },
+          "gene_symbol": "MTHFR",
+          "cds_start": 665,
+          "protein_end": 222,
+          "gene_id": "ENSG00000177000",
+          "cadd_raw": 5.0668,
+          "domains": [
+            {
+              "db": "Gene3D",
+              "name": 3
+            },
+            {
+              "db": "Pfam",
+              "name": "PF02219"
+            },
+            {
+              "db": "PANTHER",
+              "name": "PTHR45754"
+            },
+            {
+              "db": "Superfamily",
+              "name": "SSF51730"
+            },
+            {
+              "db": "NCBIFAM",
+              "name": "TIGR00677"
+            },
+            {
+              "db": "CDD",
+              "name": "cd00537"
+            }
+          ],
+          "amino_acids": "A/V",
+          "cdna_start": 800,
+          "cdna_end": 800
+        },
+        {
+          "polyphen_score": 0.027,
+          "transcript_id": "ENST00001029232",
+          "gene_symbol_source": "HGNC",
+          "variant_allele": "C",
+          "hgnc_id": "HGNC:7436",
+          "cds_end": 665,
+          "cadd_phred": 26.5,
+          "alphamissense": {
+            "am_class": "likely_benign",
+            "am_pathogenicity": 0.1266
+          },
+          "biotype": "protein_coding",
+          "polyphen_prediction": "benign",
+          "codons": "gCc/gGc",
+          "domains": [
+            {
+              "db": "Gene3D",
+              "name": 3
+            },
+            {
+              "db": "Pfam",
+              "name": "PF02219"
+            },
+            {
+              "db": "PANTHER",
+              "name": "PTHR45754"
+            },
+            {
+              "name": "SSF51730",
+              "db": "Superfamily"
+            },
+            {
+              "name": "TIGR00677",
+              "db": "NCBIFAM"
+            },
+            {
+              "name": "cd00537",
+              "db": "CDD"
+            }
+          ],
+          "cadd_raw": 4.742511,
+          "gene_id": "ENSG00000177000",
+          "cdna_end": 800,
+          "amino_acids": "A/G",
+          "cdna_start": 800,
+          "gene_symbol": "MTHFR",
+          "spliceai": {
+            "DP_AL": -20,
+            "DP_DL": -5,
+            "DS_DG": 0,
+            "DS_AG": 0,
+            "DS_DL": 0,
+            "DP_DG": 14,
+            "DP_AG": -32,
+            "SYMBOL": "MTHFR",
+            "DS_AL": 0
+          },
+          "cds_start": 665,
+          "protein_end": 222,
+          "protein_start": 222,
+          "impact": "MODERATE",
+          "strand": -1,
+          "consequence_terms": [
+            "missense_variant"
+          ],
+          "sift_prediction": "tolerated",
+          "sift_score": 0.07
+        },
+        {
+          "cadd_phred": 28.3,
+          "biotype": "protein_coding",
+          "alphamissense": {
+            "am_pathogenicity": 0.6324,
+            "am_class": "likely_pathogenic"
+          },
+          "codons": "gCc/gTc",
+          "transcript_id": "ENST00001113752",
+          "gene_symbol_source": "HGNC",
+          "hgnc_id": "HGNC:7436",
+          "variant_allele": "A",
+          "cds_end": 665,
+          "consequence_terms": [
+            "missense_variant"
+          ],
+          "impact": "MODERATE",
+          "strand": -1,
+          "protein_start": 222,
+          "sift_prediction": "deleterious",
+          "sift_score": 0,
+          "gene_id": "ENSG00000177000",
+          "cadd_raw": 5.0668,
+          "domains": [
+            {
+              "name": 3,
+              "db": "Gene3D"
+            },
+            {
+              "db": "Pfam",
+              "name": "PF02219"
+            },
+            {
+              "name": "PTHR45754",
+              "db": "PANTHER"
+            },
+            {
+              "db": "Superfamily",
+              "name": "SSF51730"
+            },
+            {
+              "db": "NCBIFAM",
+              "name": "TIGR00677"
+            },
+            {
+              "db": "CDD",
+              "name": "cd00537"
+            }
+          ],
+          "amino_acids": "A/V",
+          "cdna_start": 858,
+          "cdna_end": 858,
+          "spliceai": {
+            "DP_AL": 19,
+            "DP_DL": -5,
+            "DS_DG": 0,
+            "DS_AG": 0,
+            "DS_DL": 0,
+            "DP_DG": 14,
+            "DP_AG": -20,
+            "SYMBOL": "MTHFR",
+            "DS_AL": 0
+          },
+          "gene_symbol": "MTHFR",
+          "cds_start": 665,
+          "protein_end": 222
+        },
+        {
+          "codons": "gCc/gGc",
+          "biotype": "protein_coding",
+          "alphamissense": {
+            "am_pathogenicity": 0.1266,
+            "am_class": "likely_benign"
+          },
+          "cadd_phred": 26.5,
+          "cds_end": 665,
+          "hgnc_id": "HGNC:7436",
+          "variant_allele": "C",
+          "transcript_id": "ENST00001113752",
+          "gene_symbol_source": "HGNC",
+          "sift_score": 0.03,
+          "sift_prediction": "deleterious",
+          "protein_start": 222,
+          "impact": "MODERATE",
+          "strand": -1,
+          "consequence_terms": [
+            "missense_variant"
+          ],
+          "gene_symbol": "MTHFR",
+          "cds_start": 665,
+          "spliceai": {
+            "DS_AL": 0,
+            "DP_AG": -32,
+            "SYMBOL": "MTHFR",
+            "DP_DG": 14,
+            "DS_AG": 0,
+            "DS_DL": 0,
+            "DP_DL": -5,
+            "DS_DG": 0,
+            "DP_AL": -20
+          },
+          "protein_end": 222,
+          "cdna_end": 858,
+          "cdna_start": 858,
+          "amino_acids": "A/G",
+          "domains": [
+            {
+              "db": "Gene3D",
+              "name": 3
+            },
+            {
+              "db": "Pfam",
+              "name": "PF02219"
+            },
+            {
+              "name": "PTHR45754",
+              "db": "PANTHER"
+            },
+            {
+              "db": "Superfamily",
+              "name": "SSF51730"
+            },
+            {
+              "name": "TIGR00677",
+              "db": "NCBIFAM"
+            },
+            {
+              "name": "cd00537",
+              "db": "CDD"
+            }
+          ],
+          "cadd_raw": 4.742511,
+          "gene_id": "ENSG00000177000"
+        },
+        {
+          "hgnc_id": "HGNC:7436",
+          "variant_allele": "A",
+          "cds_end": 665,
+          "transcript_id": "ENST00001113753",
+          "gene_symbol_source": "HGNC",
+          "codons": "gCc/gTc",
+          "cadd_phred": 28.3,
+          "alphamissense": {
+            "am_pathogenicity": 0.6324,
+            "am_class": "likely_pathogenic"
+          },
+          "biotype": "protein_coding",
+          "gene_symbol": "MTHFR",
+          "spliceai": {
+            "DS_AL": 0,
+            "DP_DG": 14,
+            "DP_AG": -20,
+            "SYMBOL": "MTHFR",
+            "DP_DL": -5,
+            "DS_DG": 0,
+            "DS_DL": 0,
+            "DS_AG": 0,
+            "DP_AL": 19
+          },
+          "protein_end": 222,
+          "cds_start": 665,
+          "domains": [
+            {
+              "name": 3,
+              "db": "Gene3D"
+            },
+            {
+              "db": "Pfam",
+              "name": "PF02219"
+            },
+            {
+              "db": "PANTHER",
+              "name": "PTHR45754"
+            },
+            {
+              "name": "SSF51730",
+              "db": "Superfamily"
+            },
+            {
+              "name": "TIGR00677",
+              "db": "NCBIFAM"
+            },
+            {
+              "name": "cd00537",
+              "db": "CDD"
+            }
+          ],
+          "gene_id": "ENSG00000177000",
+          "cadd_raw": 5.0668,
+          "cdna_end": 816,
+          "amino_acids": "A/V",
+          "cdna_start": 816,
+          "sift_score": 0,
+          "impact": "MODERATE",
+          "strand": -1,
+          "protein_start": 222,
+          "consequence_terms": [
+            "missense_variant"
+          ],
+          "sift_prediction": "deleterious"
+        },
+        {
+          "cadd_phred": 26.5,
+          "alphamissense": {
+            "am_class": "likely_benign",
+            "am_pathogenicity": 0.1266
+          },
+          "biotype": "protein_coding",
+          "codons": "gCc/gGc",
+          "gene_symbol_source": "HGNC",
+          "transcript_id": "ENST00001113753",
+          "variant_allele": "C",
+          "hgnc_id": "HGNC:7436",
+          "cds_end": 665,
+          "consequence_terms": [
+            "missense_variant"
+          ],
+          "protein_start": 222,
+          "impact": "MODERATE",
+          "strand": -1,
+          "sift_prediction": "deleterious",
+          "sift_score": 0.03,
+          "cadd_raw": 4.742511,
+          "gene_id": "ENSG00000177000",
+          "domains": [
+            {
+              "name": 3,
+              "db": "Gene3D"
+            },
+            {
+              "db": "Pfam",
+              "name": "PF02219"
+            },
+            {
+              "db": "PANTHER",
+              "name": "PTHR45754"
+            },
+            {
+              "name": "SSF51730",
+              "db": "Superfamily"
+            },
+            {
+              "db": "NCBIFAM",
+              "name": "TIGR00677"
+            },
+            {
+              "db": "CDD",
+              "name": "cd00537"
+            }
+          ],
+          "amino_acids": "A/G",
+          "cdna_start": 816,
+          "cdna_end": 816,
+          "protein_end": 222,
+          "gene_symbol": "MTHFR",
+          "spliceai": {
+            "DP_DG": 14,
+            "SYMBOL": "MTHFR",
+            "DP_AG": -32,
+            "DS_AL": 0,
+            "DP_AL": -20,
+            "DS_DG": 0,
+            "DP_DL": -5,
+            "DS_AG": 0,
+            "DS_DL": 0
+          },
+          "cds_start": 665
+        }
+      ],
+      "assembly_name": "GRCh38",
+      "most_severe_consequence": "missense_variant",
+      "variant_class": "SNV",
+      "id": "rs1801133"
+    }
+  ]
+}

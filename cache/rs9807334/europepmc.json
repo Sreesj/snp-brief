@@ -1,0 +1,63 @@
+{
+  "source": "europepmc",
+  "retrieved": "2026-11-08T03:15:45+00:00",
+  "request": {
+    "query": "(TITLE:rs9807334 OR ABSTRACT:rs9807334) AND PUB_TYPE:\"research-article\" NOT PUB_TYPE:review"
+  },
+  "response": {
+    "version": "6.9",
+    "hitCount": 1,
+    "request": {
+      "queryString": "(TITLE:rs9807334 OR ABSTRACT:rs9807334) AND PUB_TYPE:\"research-article\" NOT PUB_TYPE:review",
+      "resultType": "lite",
+      "cursorMark": "*",
+      "pageSize": 15,
+      "sort": "CITED desc",
+      "synonym": false
+    },
+    "resultList": {
+      "result": [
+        {
+          "id": "25616667",
+          "source": "MED",
+          "pmid": "25616667",
+          "pmcid": "PMC4408440",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC4408440"
+            ]
+          },
+          "doi": "10.1093/brain/awu405",
+          "title": "Genetic variants are major determinants of CSF antibody levels in multiple sclerosis.",
+          "authorString": "Goris A, Pauwels I, Gustavsen MW, van Son B, Hilven K, Bos SD, Celius EG, Berg-Hansen P, Aarseth J, Myhr KM, D'Alfonso S, Barizzone N, Leone MA, Martinelli Boneschi F, Sorosina M, Liberatore G, Kockum I, Olsson T, Hillert J, Alfredsson L, Bedri SK, Hemmer B, Buck D, Berthele A, Knier B, Biberacher V, van Pesch V, Sindic C, Bang Oturai A, S\u00f8ndergaard HB, Sellebjerg F, Jensen PE, Comabella M, Montalban X, P\u00e9rez-Boza J, Malhotra S, Lechner-Scott J, Broadley S, Slee M, Taylor B, Kermode AG, Gourraud PA, International Multiple Sclerosis Genetics Consortium, Sawcer SJ, Andreassen BK, Dubois B, Harbo HF.",
+          "journalTitle": "Brain",
+          "issue": "pt 3",
+          "journalVolume": "138",
+          "pubYear": "2015",
+          "journalIssn": "0006-8950; 1460-2156; ",
+          "pageInfo": "632-643",
+          "pubType": "research support, non-u.s. gov't; research-article; journal article",
+          "isOpenAccess": "N",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 51,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "N",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp"
+            ]
+          },
+          "firstPublicationDate": "2015-01-22",
+          "firstIndexDate": "2015-01-25"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "source": "europepmc",
+  "retrieved": "2026-11-08T03:16:47+00:00",
+  "request": {
+    "query": "(TITLE:rs72921001 OR ABSTRACT:rs72921001) AND PUB_TYPE:\"research-article\" NOT PUB_TYPE:review"
+  },
+  "response": {
+    "version": "6.9",
+    "hitCount": 0,
+    "request": {
+      "queryString": "(TITLE:rs72921001 OR ABSTRACT:rs72921001) AND PUB_TYPE:\"research-article\" NOT PUB_TYPE:review",
+      "resultType": "lite",
+      "cursorMark": "*",
+      "pageSize": 15,
+      "sort": "CITED desc",
+      "synonym": false
+    },
+    "resultList": {
+      "result": []
+    }
+  }
+}

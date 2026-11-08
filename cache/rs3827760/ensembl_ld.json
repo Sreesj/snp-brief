@@ -1,0 +1,31 @@
+{
+  "source": "Ensembl LD",
+  "retrieved": "2026-11-08T03:20:32+00:00",
+  "request": {
+    "rsid": "rs3827760",
+    "population": "EUR"
+  },
+  "response": [
+    {
+      "population_name": "1000GENOMES:phase_3:EUR",
+      "d_prime": "1.000000",
+      "r2": "1.000000",
+      "variation2": "rs72627476",
+      "variation1": "rs3827760"
+    },
+    {
+      "population_name": "1000GENOMES:phase_3:EUR",
+      "d_prime": "1.000000",
+      "r2": "1.000000",
+      "variation2": "rs4676213",
+      "variation1": "rs3827760"
+    },
+    {
+      "variation1": "rs3827760",
+      "r2": "0.915745",
+      "variation2": "rs922452",
+      "d_prime": "1.000000",
+      "population_name": "1000GENOMES:phase_3:EUR"
+    }
+  ]
+}

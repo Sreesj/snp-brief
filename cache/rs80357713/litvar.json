@@ -1,0 +1,20 @@
+{
+  "source": "LitVar2",
+  "retrieved": "2026-11-08T03:36:43+00:00",
+  "request": {
+    "rsid": "rs80357713"
+  },
+  "response": {
+    "pmids": [
+      26564481,
+      21533266,
+      26147798
+    ],
+    "pmcids": [
+      "PMC4661195",
+      "PMC3075259",
+      "PMC4492948"
+    ],
+    "pmids_count": 3
+  }
+}

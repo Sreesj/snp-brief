@@ -1,0 +1,219 @@
+{
+  "source": "Open Targets",
+  "retrieved": "2026-11-08T03:20:32+00:00",
+  "request": {
+    "variant_ids": [
+      "2_108897145_A_C",
+      "2_108897145_A_G"
+    ]
+  },
+  "response": [
+    {
+      "variant_id": "2_108897145_A_C",
+      "body": {
+        "data": {
+          "variant": null
+        }
+      }
+    },
+    {
+      "variant_id": "2_108897145_A_G",
+      "body": {
+        "data": {
+          "variant": {
+            "id": "2_108897145_A_G",
+            "credibleSets": {
+              "rows": [
+                {
+                  "study": {
+                    "traitFromSource": "Allergic conjunctivitis"
+                  },
+                  "l2GPredictions": {
+                    "rows": [
+                      {
+                        "score": 0.1482238471508026,
+                        "target": {
+                          "approvedSymbol": "CCDC138"
+                        }
+                      },
+                      {
+                        "score": 0.08838143199682236,
+                        "target": {
+                          "approvedSymbol": "RANBP2"
+                        }
+                      },
+                      {
+                        "score": 0.0604301355779171,
+                        "target": {
+                          "approvedSymbol": "EDAR"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "study": {
+                    "traitFromSource": "Facial morphology (lower face flatness)"
+                  },
+                  "l2GPredictions": {
+                    "rows": []
+                  }
+                },
+                {
+                  "study": {
+                    "traitFromSource": "Thick vs thin eyebrows"
+                  },
+                  "l2GPredictions": {
+                    "rows": [
+                      {
+                        "score": 0.21200363337993622,
+                        "target": {
+                          "approvedSymbol": "EDAR"
+                        }
+                      },
+                      {
+                        "score": 0.11847035586833954,
+                        "target": {
+                          "approvedSymbol": "RANBP2"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "study": {
+                    "traitFromSource": "Lobe attachment (rater scored)"
+                  },
+                  "l2GPredictions": {
+                    "rows": [
+                      {
+                        "score": 0.27867841720581055,
+                        "target": {
+                          "approvedSymbol": "EDAR"
+                        }
+                      },
+                      {
+                        "score": 0.06624265015125275,
+                        "target": {
+                          "approvedSymbol": "RANBP2"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "study": {
+                    "traitFromSource": "Helix rolling"
+                  },
+                  "l2GPredictions": {
+                    "rows": [
+                      {
+                        "score": 0.2670373320579529,
+                        "target": {
+                          "approvedSymbol": "EDAR"
+                        }
+                      },
+                      {
+                        "score": 0.0779297798871994,
+                        "target": {
+                          "approvedSymbol": "RANBP2"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "study": {
+                    "traitFromSource": "Ear protrusion"
+                  },
+                  "l2GPredictions": {
+                    "rows": [
+                      {
+                        "score": 0.34535735845565796,
+                        "target": {
+                          "approvedSymbol": "EDAR"
+                        }
+                      },
+                      {
+                        "score": 0.0713176280260086,
+                        "target": {
+                          "approvedSymbol": "RANBP2"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "study": {
+                    "traitFromSource": "Straight vs curly hair"
+                  },
+                  "l2GPredictions": {
+                    "rows": [
+                      {
+                        "score": 0.7876693606376648,
+                        "target": {
+                          "approvedSymbol": "EDAR"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "study": {
+                    "traitFromSource": "lower facial morphology traits (quantitative measurement)"
+                  },
+                  "l2GPredictions": {
+                    "rows": [
+                      {
+                        "score": 0.2743014991283417,
+                        "target": {
+                          "approvedSymbol": "EDAR"
+                        }
+                      },
+                      {
+                        "score": 0.06900160759687424,
+                        "target": {
+                          "approvedSymbol": "RANBP2"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "study": {
+                    "traitFromSource": "Curly vs straight hair"
+                  },
+                  "l2GPredictions": {
+                    "rows": [
+                      {
+                        "score": 0.8495893478393555,
+                        "target": {
+                          "approvedSymbol": "EDAR"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "study": {
+                    "traitFromSource": "Monobrow"
+                  },
+                  "l2GPredictions": {
+                    "rows": [
+                      {
+                        "score": 0.834899365901947,
+                        "target": {
+                          "approvedSymbol": "EDAR"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  ]
+}

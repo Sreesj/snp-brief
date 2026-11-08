@@ -1,0 +1,74 @@
+{
+  "source": "GTEx",
+  "retrieved": "2026-11-08T03:33:23+00:00",
+  "request": {
+    "rsid": "rs6025",
+    "variant_ids": [
+      "chr1_169549811_C_T_b38"
+    ]
+  },
+  "response": {
+    "data": [
+      {
+        "snpId": "rs6025",
+        "pos": 169549811,
+        "snpIdUpper": "RS6025",
+        "variantId": "chr1_169549811_C_T_b38",
+        "geneSymbol": "NME7",
+        "pValue": 7.05371e-05,
+        "geneSymbolUpper": "NME7",
+        "datasetId": "gtex_v8",
+        "tissueSiteDetailId": "Thyroid",
+        "ontologyId": "UBERON:0002046",
+        "chromosome": "chr1",
+        "gencodeId": "ENSG00000143156.13",
+        "nes": -0.4366
+      },
+      {
+        "snpId": "rs6025",
+        "pos": 169549811,
+        "snpIdUpper": "RS6025",
+        "variantId": "chr1_169549811_C_T_b38",
+        "geneSymbol": "SLC19A2",
+        "pValue": 1.41407e-05,
+        "geneSymbolUpper": "SLC19A2",
+        "datasetId": "gtex_v8",
+        "tissueSiteDetailId": "Whole_Blood",
+        "ontologyId": "UBERON:0013756",
+        "chromosome": "chr1",
+        "gencodeId": "ENSG00000117479.12",
+        "nes": 0.332435
+      },
+      {
+        "snpId": "rs6025",
+        "pos": 169549811,
+        "snpIdUpper": "RS6025",
+        "variantId": "chr1_169549811_C_T_b38",
+        "geneSymbol": "KIFAP3",
+        "pValue": 0.000291705,
+        "geneSymbolUpper": "KIFAP3",
+        "datasetId": "gtex_v8",
+        "tissueSiteDetailId": "Cells_Cultured_fibroblasts",
+        "ontologyId": "EFO:0002009",
+        "chromosome": "chr1",
+        "gencodeId": "ENSG00000075945.12",
+        "nes": 0.328173
+      },
+      {
+        "snpId": "rs6025",
+        "pos": 169549811,
+        "snpIdUpper": "RS6025",
+        "variantId": "chr1_169549811_C_T_b38",
+        "geneSymbol": "SCYL3",
+        "pValue": 2.9164e-05,
+        "geneSymbolUpper": "SCYL3",
+        "datasetId": "gtex_v8",
+        "tissueSiteDetailId": "Spleen",
+        "ontologyId": "UBERON:0002106",
+        "chromosome": "chr1",
+        "gencodeId": "ENSG00000000457.13",
+        "nes": -0.803734
+      }
+    ]
+  }
+}

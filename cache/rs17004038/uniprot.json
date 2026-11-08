@@ -1,0 +1,163 @@
+{
+  "source": "uniprot",
+  "retrieved": "2026-11-08T03:32:52+00:00",
+  "request": {
+    "gene": "MIF",
+    "query": "(gene_exact:MIF) AND (organism_id:9606) AND (reviewed:true)"
+  },
+  "response": {
+    "results": [
+      {
+        "entryType": "UniProtKB reviewed (Swiss-Prot)",
+        "primaryAccession": "P14174",
+        "genes": [
+          {
+            "geneName": {
+              "evidences": [
+                {
+                  "evidenceCode": "ECO:0000303",
+                  "source": "PubMed",
+                  "id": "2552447"
+                },
+                {
+                  "evidenceCode": "ECO:0000312",
+                  "source": "HGNC",
+                  "id": "HGNC:7097"
+                }
+              ],
+              "value": "MIF"
+            },
+            "synonyms": [
+              {
+                "value": "GLIF"
+              },
+              {
+                "value": "MMIF"
+              }
+            ]
+          }
+        ],
+        "comments": [
+          {
+            "texts": [
+              {
+                "evidences": [
+                  {
+                    "evidenceCode": "ECO:0000269",
+                    "source": "PubMed",
+                    "id": "11439086"
+                  },
+                  {
+                    "evidenceCode": "ECO:0000269",
+                    "source": "PubMed",
+                    "id": "15908412"
+                  },
+                  {
+                    "evidenceCode": "ECO:0000269",
+                    "source": "PubMed",
+                    "id": "17443469"
+                  },
+                  {
+                    "evidenceCode": "ECO:0000269",
+                    "source": "PubMed",
+                    "id": "17526494"
+                  },
+                  {
+                    "evidenceCode": "ECO:0000269",
+                    "source": "PubMed",
+                    "id": "23776208"
+                  }
+                ],
+                "value": "Pro-inflammatory cytokine involved in the innate immune response to bacterial pathogens (PubMed:15908412, PubMed:17443469, PubMed:23776208). The expression of MIF at sites of inflammation suggests a role as mediator in regulating the function of macrophages in host defense (PubMed:15908412, PubMed:17443469, PubMed:23776208). Counteracts the anti-inflammatory activity of glucocorticoids (PubMed:15908412, PubMed:17443469, PubMed:23776208). Has phenylpyruvate tautomerase and dopachrome tautomerase activity (in vitro), but the physiological substrate is not known (PubMed:11439086, PubMed:17526494). It is not clear whether the tautomerase activity has any physiological relevance, and whether it is important for cytokine activity (PubMed:11439086, PubMed:17526494)"
+              }
+            ],
+            "commentType": "FUNCTION"
+          }
+        ],
+        "extraAttributes": {
+          "uniParcId": "UPI000005273C"
+        }
+      },
+      {
+        "entryType": "UniProtKB reviewed (Swiss-Prot)",
+        "primaryAccession": "P03971",
+        "genes": [
+          {
+            "geneName": {
+              "evidences": [
+                {
+                  "evidenceCode": "ECO:0000312",
+                  "source": "HGNC",
+                  "id": "HGNC:464"
+                }
+              ],
+              "value": "AMH"
+            },
+            "synonyms": [
+              {
+                "evidences": [
+                  {
+                    "evidenceCode": "ECO:0000303",
+                    "source": "PubMed",
+                    "id": "8162013"
+                  },
+                  {
+                    "evidenceCode": "ECO:0000303",
+                    "source": "PubMed",
+                    "id": "8872466"
+                  }
+                ],
+                "value": "MIF"
+              }
+            ]
+          }
+        ],
+        "comments": [
+          {
+            "texts": [
+              {
+                "evidences": [
+                  {
+                    "evidenceCode": "ECO:0000250",
+                    "source": "UniProtKB",
+                    "id": "P27106"
+                  },
+                  {
+                    "evidenceCode": "ECO:0000269",
+                    "source": "PubMed",
+                    "id": "14742691"
+                  },
+                  {
+                    "evidenceCode": "ECO:0000269",
+                    "source": "PubMed",
+                    "id": "20861221"
+                  },
+                  {
+                    "evidenceCode": "ECO:0000269",
+                    "source": "PubMed",
+                    "id": "34155118"
+                  },
+                  {
+                    "evidenceCode": "ECO:0000269",
+                    "source": "PubMed",
+                    "id": "3754790"
+                  },
+                  {
+                    "evidenceCode": "ECO:0000269",
+                    "source": "PubMed",
+                    "id": "8469238"
+                  }
+                ],
+                "value": "The anti-Muellerian hormone (AMH) plays an important role in several reproductive functions (PubMed:14742691, PubMed:34155118, PubMed:3754790, PubMed:8469238). Anti-Muellerian hormone binds and activates AMHR2, its specific type-II receptor, that heterodimerizes with type-I receptors (ACVR1 and BMPR1A) to regulate target gene expression through downstream SMAD protein signal transduction (PubMed:20861221, PubMed:34155118). Produced and secreted by Sertoli cells of the male fetus, anti-Muellerian hormone induces Muellerian duct regression during male fetal sexual differentiation (PubMed:34155118, PubMed:3754790, PubMed:8469238). In female, it is produced by granulosa cells of the preantral and small antral follicles and acts as a negative regulator of the primordial to primary follicle transition and decreases FSH sensitivity of growing follicles (PubMed:14742691). Also plays a role in Leydig cell differentiation and function (By similarity)"
+              }
+            ],
+            "commentType": "FUNCTION"
+          }
+        ],
+        "extraAttributes": {
+          "uniParcId": "UPI000013C7D0"
+        }
+      }
+    ]
+  }
+}

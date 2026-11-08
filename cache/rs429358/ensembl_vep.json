@@ -1,0 +1,2155 @@
+{
+  "source": "Ensembl VEP",
+  "retrieved": "2026-11-08T03:20:27+00:00",
+  "request": {
+    "rsid": "rs429358",
+    "params": {
+      "canonical": "1",
+      "variant_class": "1",
+      "domains": "1"
+    }
+  },
+  "response": [
+    {
+      "allele_string": "T/C",
+      "id": "rs429358",
+      "most_severe_consequence": "missense_variant",
+      "strand": 1,
+      "variant_class": "SNV",
+      "transcript_consequences": [
+        {
+          "variant_allele": "C",
+          "canonical": 1,
+          "cdna_end": 457,
+          "consequence_terms": [
+            "missense_variant"
+          ],
+          "impact": "MODERATE",
+          "cdna_start": 457,
+          "cds_start": 388,
+          "biotype": "protein_coding",
+          "protein_end": 130,
+          "sift_prediction": "tolerated",
+          "cds_end": 388,
+          "codons": "Tgc/Cgc",
+          "gene_id": "ENSG00000130203",
+          "sift_score": 1,
+          "transcript_id": "ENST00000252486",
+          "hgnc_id": "HGNC:613",
+          "strand": 1,
+          "gene_symbol": "APOE",
+          "gene_symbol_source": "HGNC",
+          "domains": [
+            {
+              "db": "Gene3D",
+              "name": 1
+            },
+            {
+              "name": "1b68",
+              "db": "ENSP_mappings"
+            },
+            {
+              "db": "ENSP_mappings",
+              "name": "1bz4"
+            },
+            {
+              "name": "1ea8",
+              "db": "ENSP_mappings"
+            },
+            {
+              "name": "1gs9",
+              "db": "ENSP_mappings"
+            },
+            {
+              "name": "1h7i",
+              "db": "ENSP_mappings"
+            },
+            {
+              "name": "1le2",
+              "db": "ENSP_mappings"
+            },
+            {
+              "db": "ENSP_mappings",
+              "name": "1le4"
+            },
+            {
+              "name": "1lpe",
+              "db": "ENSP_mappings"
+            },
+            {
+              "db": "ENSP_mappings",
+              "name": "1nfn"
+            },
+            {
+              "name": "1nfo",
+              "db": "ENSP_mappings"
+            },
+            {
+              "db": "ENSP_mappings",
+              "name": "1or2"
+            },
+            {
+              "db": "ENSP_mappings",
+              "name": "1or3"
+            },
+            {
+              "db": "ENSP_mappings",
+              "name": "2kc3"
+            },
+            {
+              "db": "ENSP_mappings",
+              "name": "2l7b"
+            },
+            {
+              "db": "ENSP_mappings",
+              "name": "6iwb"
+            },
+            {
+              "name": "6iwb",
+              "db": "ENSP_mappings"
+            },
+            {
+              "name": "6ncn",
+              "db": "ENSP_mappings"
+            },
+            {
+              "db": "ENSP_mappings",
+              "name": "6nco"
+            },
+            {
+              "name": "6v7m",
+              "db": "ENSP_mappings"
+            },
+            {
+              "db": "ENSP_mappings",
+              "name": "7fcr"
+            },
+            {
+              "db": "ENSP_mappings",
+              "name": "7fcs"
+            },
+            {
+              "db": "ENSP_mappings",
+              "name": "7uvj"
+            },
+            {
+              "name": "7uvj",
+              "db": "ENSP_mappings"
+            },
+            {
+              "db": "ENSP_mappings",
+              "name": "8ax8"
+            },
+            {
+              "db": "ENSP_mappings",
+              "name": "8ax9"
+            },
+            {
+              "name": "8cdy",
+              "db": "ENSP_mappings"
+            },
+            {
+              "db": "ENSP_mappings",
+              "name": "8ce0"
+            },
+            {
+              "name": "8grx",
+              "db": "ENSP_mappings"
+            },
+            {
+              "db": "ENSP_mappings",
+              "name": "8grx"
+            },
+            {
+              "db": "ENSP_mappings",
+              "name": "AF"
+            },
+            {
+              "db": "Phobius",
+              "name": "NON_CYTOPLASMIC_DOMAIN"
+            },
+            {
+              "db": "Pfam",
+              "name": "PF01442"
+            },
+            {
+              "name": "PTHR18976",
+              "db": "PANTHER"
+            },
+            {
+              "db": "Superfamily",
+              "name": "SSF58113"
+            }
+          ],
+          "protein_start": 130,
+          "amino_acids": "C/R"
+        },
+        {
+          "biotype": "protein_coding",
+          "impact": "MODIFIER",
+          "consequence_terms": [
+            "downstream_gene_variant"
+          ],
+          "distance": 4989,
+          "gene_symbol_source": "HGNC",
+          "strand": 1,
+          "transcript_id": "ENST00000252487",
+          "hgnc_id": "HGNC:18001",
+          "gene_symbol": "TOMM40",
+          "variant_allele": "C",
+          "gene_id": "ENSG00000130204"
+        },
+        {
+          "biotype": "protein_coding",
+          "distance": 4989,
+          "gene_symbol_source": "HGNC",
+          "consequence_terms": [
+            "downstream_gene_variant"
+          ],
+          "impact": "MODIFIER",
+          "gene_symbol": "TOMM40",
+          "transcript_id": "ENST00000405636",
+          "strand": 1,
+          "hgnc_id": "HGNC:18001",
+          "variant_allele": "C",
+          "gene_id": "ENSG00000130204"
+        },
+        {
+          "variant_allele": "C",
+          "flags": [
+            "cds_end_NF"
+          ],
+          "consequence_terms": [
+            "missense_variant"
+          ],
+          "impact": "MODERATE",
+          "cdna_end": 653,
+          "cdna_start": 653,
+          "protein_end": 130,
+          "biotype": "protein_coding",
+          "cds_start": 388,
+          "gene_id": "ENSG00000130203",
+          "sift_score": 1,
+          "sift_prediction": "tolerated",
+          "cds_end": 388,
+          "codons": "Tgc/Cgc",
+          "gene_symbol": "APOE",
+          "hgnc_id": "HGNC:613",
+          "transcript_id": "ENST00000425718",
+          "strand": 1,
+          "gene_symbol_source": "HGNC",
+          "domains": [
+            {
+              "name": 1,
+              "db": "Gene3D"
+            },
+            {
+              "db": "ENSP_mappings",
+              "name": "AF"
+            },
+            {
+              "name": "NON_CYTOPLASMIC_DOMAIN",
+              "db": "Phobius"
+            },
+            {
+              "name": "PF01442",
+              "db": "Pfam"
+            },
+            {
+              "name": "PTHR18976",
+              "db": "PANTHER"
+            },
+            {
+              "name": "SSF47162",
+              "db": "Superfamily"
+            }
+          ],
+          "protein_start": 130,
+          "amino_acids": "C/R"
+        },
+        {
+          "gene_id": "ENSG00000130204",
+          "variant_allele": "C",
+          "gene_symbol": "TOMM40",
+          "transcript_id": "ENST00000426677",
+          "canonical": 1,
+          "hgnc_id": "HGNC:18001",
+          "strand": 1,
+          "gene_symbol_source": "HGNC",
+          "distance": 4995,
+          "impact": "MODIFIER",
+          "consequence_terms": [
+            "downstream_gene_variant"
+          ],
+          "biotype": "protein_coding"
+        },
+        {
+          "variant_allele": "C",
+          "polyphen_prediction": "benign",
+          "protein_end": 156,
+          "biotype": "protein_coding",
+          "cds_start": 466,
+          "flags": [
+            "cds_end_NF"
+          ],
+          "cdna_end": 523,
+          "consequence_terms": [
+            "missense_variant"
+          ],
+          "impact": "MODERATE",
+          "cdna_start": 523,
+          "gene_symbol": "APOE",
+          "hgnc_id": "HGNC:613",
+          "transcript_id": "ENST00000434152",
+          "strand": 1,
+          "polyphen_score": 0,
+          "gene_id": "ENSG00000130203",
+          "sift_score": 1,
+          "sift_prediction": "tolerated",
+          "cds_end": 466,
+          "codons": "Tgc/Cgc",
+          "amino_acids": "C/R",
+          "protein_start": 156,
+          "domains": [
+            {
+              "db": "Gene3D",
+              "name": 1
+            },
+            {
+              "name": "AF",
+              "db": "ENSP_mappings"
+            },
+            {
+              "db": "Phobius",
+              "name": "NON_CYTOPLASMIC_DOMAIN"
+            },
+            {
+              "name": "PF01442",
+              "db": "Pfam"
+            },
+            {
+              "db": "PANTHER",
+              "name": "PTHR18976"
+            },
+            {
+              "name": "SSF47162",
+              "db": "Superfamily"
+            }
+          ],
+          "gene_symbol_source": "HGNC"
+        },
+        {
+          "gene_symbol_source": "HGNC",
+          "amino_acids": "C/R",
+          "protein_start": 130,
+          "domains": [
+            {
+              "name": 1,
+              "db": "Gene3D"
+            },
+            {
+              "db": "ENSP_mappings",
+              "name": "AF"
+            },
+            {
+              "name": "NON_CYTOPLASMIC_DOMAIN",
+              "db": "Phobius"
+            },
+            {
+              "name": "PF01442",
+              "db": "Pfam"
+            },
+            {
+              "name": "PTHR18976",
+              "db": "PANTHER"
+            },
+            {
+              "db": "Superfamily",
+              "name": "SSF47162"
+            }
+          ],
+          "gene_id": "ENSG00000130203",
+          "sift_score": 1,
+          "cds_end": 388,
+          "codons": "Tgc/Cgc",
+          "sift_prediction": "tolerated",
+          "gene_symbol": "APOE",
+          "hgnc_id": "HGNC:613",
+          "transcript_id": "ENST00000446996",
+          "strand": 1,
+          "flags": [
+            "cds_end_NF"
+          ],
+          "cdna_start": 477,
+          "cdna_end": 477,
+          "consequence_terms": [
+            "missense_variant"
+          ],
+          "impact": "MODERATE",
+          "protein_end": 130,
+          "biotype": "protein_coding",
+          "cds_start": 388,
+          "variant_allele": "C"
+        },
+        {
+          "impact": "MODIFIER",
+          "consequence_terms": [
+            "downstream_gene_variant"
+          ],
+          "gene_symbol_source": "HGNC",
+          "distance": 1358,
+          "biotype": "retained_intron",
+          "gene_id": "ENSG00000130203",
+          "variant_allele": "C",
+          "strand": 1,
+          "transcript_id": "ENST00000485628",
+          "hgnc_id": "HGNC:613",
+          "gene_symbol": "APOE"
+        },
+        {
+          "biotype": "protein_coding",
+          "impact": "MODIFIER",
+          "consequence_terms": [
+            "downstream_gene_variant"
+          ],
+          "gene_symbol_source": "HGNC",
+          "distance": 4998,
+          "transcript_id": "ENST00000592434",
+          "strand": 1,
+          "hgnc_id": "HGNC:18001",
+          "gene_symbol": "TOMM40",
+          "gene_id": "ENSG00000130204",
+          "variant_allele": "C"
+        },
+        {
+          "protein_start": 130,
+          "domains": [
+            {
+              "db": "Gene3D",
+              "name": 1
+            },
+            {
+              "name": "NON_CYTOPLASMIC_DOMAIN",
+              "db": "Phobius"
+            },
+            {
+              "name": "PF01442",
+              "db": "Pfam"
+            },
+            {
+              "db": "PANTHER",
+              "name": "PTHR18976"
+            },
+            {
+              "name": "SSF58113",
+              "db": "Superfamily"
+            }
+          ],
+          "amino_acids": "C/R",
+          "gene_symbol_source": "HGNC",
+          "gene_symbol": "APOE",
+          "transcript_id": "ENST00000864817",
+          "strand": 1,
+          "hgnc_id": "HGNC:613",
+          "sift_score": 1,
+          "gene_id": "ENSG00000130203",
+          "sift_prediction": "tolerated",
+          "codons": "Tgc/Cgc",
+          "cds_end": 388,
+          "biotype": "protein_coding",
+          "protein_end": 130,
+          "cds_start": 388,
+          "consequence_terms": [
+            "missense_variant"
+          ],
+          "impact": "MODERATE",
+          "cdna_end": 559,
+          "cdna_start": 559,
+          "variant_allele": "C"
+        },
+        {
+          "gene_symbol_source": "HGNC",
+          "protein_start": 130,
+          "amino_acids": "C/R",
+          "domains": [
+            {
+              "db": "Gene3D",
+              "name": 1
+            },
+            {
+              "name": "NON_CYTOPLASMIC_DOMAIN",
+              "db": "Phobius"
+            },
+            {
+              "db": "Pfam",
+              "name": "PF01442"
+            },
+            {
+              "name": "PTHR18976",
+              "db": "PANTHER"
+            },
+            {
+              "db": "Superfamily",
+              "name": "SSF58113"
+            }
+          ],
+          "sift_score": 1,
+          "gene_id": "ENSG00000130203",
+          "sift_prediction": "tolerated",
+          "cds_end": 388,
+          "codons": "Tgc/Cgc",
+          "gene_symbol": "APOE",
+          "strand": 1,
+          "transcript_id": "ENST00000864820",
+          "hgnc_id": "HGNC:613",
+          "consequence_terms": [
+            "missense_variant"
+          ],
+          "cdna_end": 490,
+          "impact": "MODERATE",
+          "cdna_start": 490,
+          "protein_end": 130,
+          "biotype": "protein_coding",
+          "cds_start": 388,
+          "variant_allele": "C"
+        },
+        {
+          "gene_symbol_source": "HGNC",
+          "protein_start": 130,
+          "domains": [
+            {
+              "db": "Gene3D",
+              "name": 1
+            },
+            {
+              "name": "NON_CYTOPLASMIC_DOMAIN",
+              "db": "Phobius"
+            },
+            {
+              "name": "PF01442",
+              "db": "Pfam"
+            },
+            {
+              "db": "PANTHER",
+              "name": "PTHR18976"
+            },
+            {
+              "name": "SSF58113",
+              "db": "Superfamily"
+            }
+          ],
+          "amino_acids": "C/R",
+          "sift_score": 1,
+          "gene_id": "ENSG00000130203",
+          "sift_prediction": "tolerated",
+          "codons": "Tgc/Cgc",
+          "cds_end": 388,
+          "gene_symbol": "APOE",
+          "transcript_id": "ENST00000864822",
+          "hgnc_id": "HGNC:613",
+          "strand": 1,
+          "impact": "MODERATE",
+          "consequence_terms": [
+            "missense_variant"
+          ],
+          "cdna_end": 904,
+          "cdna_start": 904,
+          "protein_end": 130,
+          "biotype": "protein_coding",
+          "cds_start": 388,
+          "variant_allele": "C"
+        },
+        {
+          "variant_allele": "C",
+          "gene_id": "ENSG00000130203",
+          "hgnc_id": "HGNC:613",
+          "transcript_id": "ENST00000864824",
+          "strand": 1,
+          "gene_symbol": "APOE",
+          "impact": "MODIFIER",
+          "consequence_terms": [
+            "intron_variant"
+          ],
+          "gene_symbol_source": "HGNC",
+          "biotype": "protein_coding"
+        },
+        {
+          "cds_start": 388,
+          "biotype": "protein_coding",
+          "protein_end": 130,
+          "cdna_end": 440,
+          "consequence_terms": [
+            "missense_variant"
+          ],
+          "impact": "MODERATE",
+          "cdna_start": 440,
+          "variant_allele": "C",
+          "protein_start": 130,
+          "domains": [
+            {
+              "name": 1,
+              "db": "Gene3D"
+            },
+            {
+              "name": "NON_CYTOPLASMIC_DOMAIN",
+              "db": "Phobius"
+            },
+            {
+              "name": "PF01442",
+              "db": "Pfam"
+            },
+            {
+              "name": "PTHR18976",
+              "db": "PANTHER"
+            },
+            {
+              "db": "Superfamily",
+              "name": "SSF58113"
+            }
+          ],
+          "amino_acids": "C/R",
+          "gene_symbol_source": "HGNC",
+          "transcript_id": "ENST00000864826",
+          "strand": 1,
+          "hgnc_id": "HGNC:613",
+          "gene_symbol": "APOE",
+          "sift_prediction": "tolerated",
+          "codons": "Tgc/Cgc",
+          "cds_end": 388,
+          "sift_score": 1,
+          "gene_id": "ENSG00000130203"
+        },
+        {
+          "variant_allele": "C",
+          "cdna_start": 564,
+          "impact": "MODERATE",
+          "consequence_terms": [
+            "missense_variant"
+          ],
+          "cdna_end": 564,
+          "cds_start": 388,
+          "protein_end": 130,
+          "biotype": "protein_coding",
+          "codons": "Tgc/Cgc",
+          "cds_end": 388,
+          "sift_prediction": "tolerated",
+          "gene_id": "ENSG00000130203",
+          "sift_score": 1,
+          "hgnc_id": "HGNC:613",
+          "transcript_id": "ENST00000864828",
+          "strand": 1,
+          "gene_symbol": "APOE",
+          "gene_symbol_source": "HGNC",
+          "protein_start": 130,
+          "domains": [
+            {
+              "name": 1,
+              "db": "Gene3D"
+            },
+            {
+              "name": "NON_CYTOPLASMIC_DOMAIN",
+              "db": "Phobius"
+            },
+            {
+              "db": "Pfam",
+              "name": "PF01442"
+            },
+            {
+              "db": "PANTHER",
+              "name": "PTHR18976"
+            },
+            {
+              "name": "SSF58113",
+              "db": "Superfamily"
+            }
+          ],
+          "amino_acids": "C/R"
+        },
+        {
+          "strand": 1,
+          "transcript_id": "ENST00000864829",
+          "hgnc_id": "HGNC:613",
+          "gene_symbol": "APOE",
+          "sift_prediction": "tolerated",
+          "codons": "Tgc/Cgc",
+          "cds_end": 388,
+          "gene_id": "ENSG00000130203",
+          "sift_score": 1,
+          "protein_start": 130,
+          "domains": [
+            {
+              "name": 1,
+              "db": "Gene3D"
+            },
+            {
+              "db": "Phobius",
+              "name": "NON_CYTOPLASMIC_DOMAIN"
+            },
+            {
+              "name": "PF01442",
+              "db": "Pfam"
+            },
+            {
+              "name": "PTHR18976",
+              "db": "PANTHER"
+            },
+            {
+              "db": "Superfamily",
+              "name": "SSF58113"
+            }
+          ],
+          "amino_acids": "C/R",
+          "gene_symbol_source": "HGNC",
+          "variant_allele": "C",
+          "cds_start": 388,
+          "protein_end": 130,
+          "biotype": "protein_coding",
+          "cdna_end": 763,
+          "consequence_terms": [
+            "missense_variant"
+          ],
+          "impact": "MODERATE",
+          "cdna_start": 763
+        },
+        {
+          "biotype": "protein_coding",
+          "gene_symbol_source": "HGNC",
+          "consequence_terms": [
+            "intron_variant"
+          ],
+          "impact": "MODIFIER",
+          "gene_symbol": "APOE",
+          "transcript_id": "ENST00000864830",
+          "strand": 1,
+          "hgnc_id": "HGNC:613",
+          "gene_id": "ENSG00000130203",
+          "variant_allele": "C"
+        },
+        {
+          "strand": 1,
+          "transcript_id": "ENST00000864831",
+          "hgnc_id": "HGNC:613",
+          "gene_symbol": "APOE",
+          "sift_prediction": "tolerated",
+          "codons": "Tgc/Cgc",
+          "cds_end": 442,
+          "sift_score": 1,
+          "gene_id": "ENSG00000130203",
+          "amino_acids": "C/R",
+          "protein_start": 148,
+          "domains": [
+            {
+              "db": "Superfamily",
+              "name": "SSF58113"
+            },
+            {
+              "name": "PF01442",
+              "db": "Pfam"
+            },
+            {
+              "name": 1,
+              "db": "Gene3D"
+            },
+            {
+              "db": "Phobius",
+              "name": "NON_CYTOPLASMIC_DOMAIN"
+            },
+            {
+              "name": "PTHR18976",
+              "db": "PANTHER"
+            }
+          ],
+          "gene_symbol_source": "HGNC",
+          "variant_allele": "C",
+          "cds_start": 442,
+          "protein_end": 148,
+          "biotype": "protein_coding",
+          "consequence_terms": [
+            "missense_variant"
+          ],
+          "impact": "MODERATE",
+          "cdna_end": 836,
+          "cdna_start": 836
+        },
+        {
+          "cdna_start": 833,
+          "consequence_terms": [
+            "missense_variant"
+          ],
+          "cdna_end": 833,
+          "impact": "MODERATE",
+          "cds_start": 439,
+          "biotype": "protein_coding",
+          "protein_end": 147,
+          "variant_allele": "C",
+          "gene_symbol_source": "HGNC",
+          "amino_acids": "C/R",
+          "protein_start": 147,
+          "domains": [
+            {
+              "db": "Gene3D",
+              "name": 1
+            },
+            {
+              "name": "NON_CYTOPLASMIC_DOMAIN",
+              "db": "Phobius"
+            },
+            {
+              "db": "Pfam",
+              "name": "PF01442"
+            },
+            {
+              "name": "PTHR18976",
+              "db": "PANTHER"
+            },
+            {
+              "name": "SSF58113",
+              "db": "Superfamily"
+            }
+          ],
+          "cds_end": 439,
+          "codons": "Tgc/Cgc",
+          "sift_prediction": "tolerated",
+          "gene_id": "ENSG00000130203",
+          "sift_score": 1,
+          "hgnc_id": "HGNC:613",
+          "transcript_id": "ENST00000864832",
+          "strand": 1,
+          "gene_symbol": "APOE"
+        },
+        {
+          "gene_symbol_source": "HGNC",
+          "impact": "MODIFIER",
+          "consequence_terms": [
+            "intron_variant"
+          ],
+          "biotype": "protein_coding",
+          "gene_id": "ENSG00000130203",
+          "variant_allele": "C",
+          "gene_symbol": "APOE",
+          "transcript_id": "ENST00000864833",
+          "hgnc_id": "HGNC:613",
+          "strand": 1
+        },
+        {
+          "protein_start": 130,
+          "domains": [
+            {
+              "db": "Pfam",
+              "name": "PF01442"
+            },
+            {
+              "name": 1,
+              "db": "Gene3D"
+            },
+            {
+              "db": "Phobius",
+              "name": "NON_CYTOPLASMIC_DOMAIN"
+            },
+            {
+              "db": "Superfamily",
+              "name": "SSF58113"
+            },
+            {
+              "name": "PTHR18976",
+              "db": "PANTHER"
+            }
+          ],
+          "amino_acids": "C/R",
+          "gene_symbol_source": "HGNC",
+          "transcript_id": "ENST00000864834",
+          "hgnc_id": "HGNC:613",
+          "strand": 1,
+          "gene_symbol": "APOE",
+          "sift_prediction": "tolerated",
+          "codons": "Tgc/Cgc",
+          "cds_end": 388,
+          "sift_score": 1,
+          "gene_id": "ENSG00000130203",
+          "cds_start": 388,
+          "protein_end": 130,
+          "biotype": "protein_coding",
+          "cdna_end": 767,
+          "consequence_terms": [
+            "missense_variant"
+          ],
+          "impact": "MODERATE",
+          "cdna_start": 767,
+          "variant_allele": "C"
+        },
+        {
+          "gene_symbol_source": "HGNC",
+          "protein_start": 130,
+          "amino_acids": "C/R",
+          "domains": [
+            {
+              "name": 1,
+              "db": "Gene3D"
+            },
+            {
+              "name": "NON_CYTOPLASMIC_DOMAIN",
+              "db": "Phobius"
+            },
+            {
+              "name": "PF01442",
+              "db": "Pfam"
+            },
+            {
+              "name": "PTHR18976",
+              "db": "PANTHER"
+            },
+            {
+              "name": "SSF58113",
+              "db": "Superfamily"
+            }
+          ],
+          "gene_id": "ENSG00000130203",
+          "sift_score": 1,
+          "cds_end": 388,
+          "codons": "Tgc/Cgc",
+          "sift_prediction": "tolerated",
+          "gene_symbol": "APOE",
+          "transcript_id": "ENST00000864835",
+          "hgnc_id": "HGNC:613",
+          "strand": 1,
+          "cdna_start": 899,
+          "impact": "MODERATE",
+          "consequence_terms": [
+            "missense_variant"
+          ],
+          "cdna_end": 899,
+          "biotype": "protein_coding",
+          "protein_end": 130,
+          "cds_start": 388,
+          "variant_allele": "C"
+        },
+        {
+          "cdna_start": 612,
+          "impact": "MODERATE",
+          "consequence_terms": [
+            "missense_variant"
+          ],
+          "cdna_end": 612,
+          "protein_end": 130,
+          "biotype": "protein_coding",
+          "cds_start": 388,
+          "variant_allele": "C",
+          "gene_symbol_source": "HGNC",
+          "amino_acids": "C/R",
+          "protein_start": 130,
+          "domains": [
+            {
+              "db": "Gene3D",
+              "name": 1
+            },
+            {
+              "db": "Phobius",
+              "name": "NON_CYTOPLASMIC_DOMAIN"
+            },
+            {
+              "name": "PF01442",
+              "db": "Pfam"
+            },
+            {
+              "db": "PANTHER",
+              "name": "PTHR18976"
+            },
+            {
+              "name": "SSF58113",
+              "db": "Superfamily"
+            }
+          ],
+          "sift_score": 1,
+          "gene_id": "ENSG00000130203",
+          "codons": "Tgc/Cgc",
+          "cds_end": 388,
+          "sift_prediction": "tolerated",
+          "gene_symbol": "APOE",
+          "strand": 1,
+          "transcript_id": "ENST00000864836",
+          "hgnc_id": "HGNC:613"
+        },
+        {
+          "sift_score": 1,
+          "gene_id": "ENSG00000130203",
+          "sift_prediction": "tolerated",
+          "cds_end": 388,
+          "codons": "Tgc/Cgc",
+          "gene_symbol": "APOE",
+          "transcript_id": "ENST00000864837",
+          "hgnc_id": "HGNC:613",
+          "strand": 1,
+          "gene_symbol_source": "HGNC",
+          "amino_acids": "C/R",
+          "domains": [
+            {
+              "name": 1,
+              "db": "Gene3D"
+            },
+            {
+              "db": "Phobius",
+              "name": "NON_CYTOPLASMIC_DOMAIN"
+            },
+            {
+              "db": "Pfam",
+              "name": "PF01442"
+            },
+            {
+              "db": "PANTHER",
+              "name": "PTHR18976"
+            },
+            {
+              "name": "SSF58113",
+              "db": "Superfamily"
+            }
+          ],
+          "protein_start": 130,
+          "variant_allele": "C",
+          "consequence_terms": [
+            "missense_variant"
+          ],
+          "cdna_end": 571,
+          "impact": "MODERATE",
+          "cdna_start": 571,
+          "protein_end": 130,
+          "biotype": "protein_coding",
+          "cds_start": 388
+        },
+        {
+          "variant_allele": "C",
+          "cdna_start": 474,
+          "impact": "MODERATE",
+          "consequence_terms": [
+            "missense_variant"
+          ],
+          "cdna_end": 474,
+          "cds_start": 388,
+          "biotype": "protein_coding",
+          "protein_end": 130,
+          "cds_end": 388,
+          "codons": "Tgc/Cgc",
+          "sift_prediction": "tolerated",
+          "sift_score": 1,
+          "gene_id": "ENSG00000130203",
+          "transcript_id": "ENST00000864838",
+          "hgnc_id": "HGNC:613",
+          "strand": 1,
+          "gene_symbol": "APOE",
+          "gene_symbol_source": "HGNC",
+          "protein_start": 130,
+          "amino_acids": "C/R",
+          "domains": [
+            {
+              "db": "Gene3D",
+              "name": 1
+            },
+            {
+              "name": "NON_CYTOPLASMIC_DOMAIN",
+              "db": "Phobius"
+            },
+            {
+              "name": "PF01442",
+              "db": "Pfam"
+            },
+            {
+              "db": "PANTHER",
+              "name": "PTHR18976"
+            },
+            {
+              "name": "SSF58113",
+              "db": "Superfamily"
+            }
+          ]
+        },
+        {
+          "gene_symbol_source": "HGNC",
+          "amino_acids": "C/R",
+          "protein_start": 130,
+          "domains": [
+            {
+              "name": 1,
+              "db": "Gene3D"
+            },
+            {
+              "db": "Phobius",
+              "name": "NON_CYTOPLASMIC_DOMAIN"
+            },
+            {
+              "name": "PF01442",
+              "db": "Pfam"
+            },
+            {
+              "name": "PTHR18976",
+              "db": "PANTHER"
+            },
+            {
+              "db": "Superfamily",
+              "name": "SSF58113"
+            }
+          ],
+          "gene_id": "ENSG00000130203",
+          "sift_score": 1,
+          "cds_end": 388,
+          "codons": "Tgc/Cgc",
+          "sift_prediction": "tolerated",
+          "gene_symbol": "APOE",
+          "transcript_id": "ENST00000864839",
+          "hgnc_id": "HGNC:613",
+          "strand": 1,
+          "cdna_start": 627,
+          "cdna_end": 627,
+          "consequence_terms": [
+            "missense_variant"
+          ],
+          "impact": "MODERATE",
+          "biotype": "protein_coding",
+          "protein_end": 130,
+          "cds_start": 388,
+          "variant_allele": "C"
+        },
+        {
+          "transcript_id": "ENST00000864840",
+          "hgnc_id": "HGNC:613",
+          "strand": 1,
+          "gene_symbol": "APOE",
+          "sift_prediction": "tolerated",
+          "codons": "Tgc/Cgc",
+          "cds_end": 388,
+          "sift_score": 1,
+          "gene_id": "ENSG00000130203",
+          "domains": [
+            {
+              "name": 1,
+              "db": "Gene3D"
+            },
+            {
+              "name": "NON_CYTOPLASMIC_DOMAIN",
+              "db": "Phobius"
+            },
+            {
+              "name": "PF01442",
+              "db": "Pfam"
+            },
+            {
+              "name": "PTHR18976",
+              "db": "PANTHER"
+            },
+            {
+              "name": "SSF58113",
+              "db": "Superfamily"
+            }
+          ],
+          "protein_start": 130,
+          "amino_acids": "C/R",
+          "gene_symbol_source": "HGNC",
+          "variant_allele": "C",
+          "cds_start": 388,
+          "protein_end": 130,
+          "biotype": "protein_coding",
+          "impact": "MODERATE",
+          "consequence_terms": [
+            "missense_variant"
+          ],
+          "cdna_end": 444,
+          "cdna_start": 444
+        },
+        {
+          "gene_symbol_source": "HGNC",
+          "domains": [
+            {
+              "name": 1,
+              "db": "Gene3D"
+            },
+            {
+              "name": "NON_CYTOPLASMIC_DOMAIN",
+              "db": "Phobius"
+            },
+            {
+              "name": "PF01442",
+              "db": "Pfam"
+            },
+            {
+              "db": "PANTHER",
+              "name": "PTHR18976"
+            },
+            {
+              "name": "SSF58113",
+              "db": "Superfamily"
+            }
+          ],
+          "protein_start": 130,
+          "amino_acids": "C/R",
+          "gene_id": "ENSG00000130203",
+          "sift_score": 1,
+          "codons": "Tgc/Cgc",
+          "cds_end": 388,
+          "sift_prediction": "tolerated",
+          "gene_symbol": "APOE",
+          "strand": 1,
+          "transcript_id": "ENST00000864841",
+          "hgnc_id": "HGNC:613",
+          "cdna_start": 653,
+          "consequence_terms": [
+            "missense_variant"
+          ],
+          "cdna_end": 653,
+          "impact": "MODERATE",
+          "biotype": "protein_coding",
+          "protein_end": 130,
+          "cds_start": 388,
+          "variant_allele": "C"
+        },
+        {
+          "cds_start": 388,
+          "protein_end": 130,
+          "biotype": "protein_coding",
+          "cdna_start": 622,
+          "consequence_terms": [
+            "missense_variant"
+          ],
+          "impact": "MODERATE",
+          "cdna_end": 622,
+          "variant_allele": "C",
+          "amino_acids": "C/R",
+          "domains": [
+            {
+              "name": 1,
+              "db": "Gene3D"
+            },
+            {
+              "db": "Phobius",
+              "name": "NON_CYTOPLASMIC_DOMAIN"
+            },
+            {
+              "db": "Pfam",
+              "name": "PF01442"
+            },
+            {
+              "db": "PANTHER",
+              "name": "PTHR18976"
+            },
+            {
+              "name": "SSF58113",
+              "db": "Superfamily"
+            }
+          ],
+          "protein_start": 130,
+          "gene_symbol_source": "HGNC",
+          "hgnc_id": "HGNC:613",
+          "transcript_id": "ENST00000864842",
+          "strand": 1,
+          "gene_symbol": "APOE",
+          "codons": "Tgc/Cgc",
+          "cds_end": 388,
+          "sift_prediction": "tolerated",
+          "sift_score": 1,
+          "gene_id": "ENSG00000130203"
+        },
+        {
+          "gene_id": "ENSG00000130203",
+          "sift_score": 1,
+          "sift_prediction": "tolerated",
+          "codons": "Tgc/Cgc",
+          "cds_end": 388,
+          "gene_symbol": "APOE",
+          "transcript_id": "ENST00000864843",
+          "hgnc_id": "HGNC:613",
+          "strand": 1,
+          "gene_symbol_source": "HGNC",
+          "amino_acids": "C/R",
+          "protein_start": 130,
+          "domains": [
+            {
+              "name": 1,
+              "db": "Gene3D"
+            },
+            {
+              "name": "NON_CYTOPLASMIC_DOMAIN",
+              "db": "Phobius"
+            },
+            {
+              "name": "PF01442",
+              "db": "Pfam"
+            },
+            {
+              "db": "PANTHER",
+              "name": "PTHR18976"
+            },
+            {
+              "db": "Superfamily",
+              "name": "SSF58113"
+            }
+          ],
+          "variant_allele": "C",
+          "consequence_terms": [
+            "missense_variant"
+          ],
+          "impact": "MODERATE",
+          "cdna_end": 544,
+          "cdna_start": 544,
+          "protein_end": 130,
+          "biotype": "protein_coding",
+          "cds_start": 388
+        },
+        {
+          "cds_end": 388,
+          "codons": "Tgc/Cgc",
+          "sift_prediction": "tolerated",
+          "sift_score": 1,
+          "gene_id": "ENSG00000130203",
+          "hgnc_id": "HGNC:613",
+          "transcript_id": "ENST00000864844",
+          "strand": 1,
+          "gene_symbol": "APOE",
+          "gene_symbol_source": "HGNC",
+          "protein_start": 130,
+          "amino_acids": "C/R",
+          "domains": [
+            {
+              "name": 1,
+              "db": "Gene3D"
+            },
+            {
+              "name": "NON_CYTOPLASMIC_DOMAIN",
+              "db": "Phobius"
+            },
+            {
+              "db": "Pfam",
+              "name": "PF01442"
+            },
+            {
+              "db": "PANTHER",
+              "name": "PTHR18976"
+            },
+            {
+              "db": "Superfamily",
+              "name": "SSF58113"
+            }
+          ],
+          "variant_allele": "C",
+          "cdna_start": 668,
+          "cdna_end": 668,
+          "consequence_terms": [
+            "missense_variant"
+          ],
+          "impact": "MODERATE",
+          "cds_start": 388,
+          "protein_end": 130,
+          "biotype": "protein_coding"
+        },
+        {
+          "gene_symbol": "APOE",
+          "transcript_id": "ENST00000864845",
+          "strand": 1,
+          "hgnc_id": "HGNC:613",
+          "sift_score": 1,
+          "gene_id": "ENSG00000130203",
+          "sift_prediction": "tolerated",
+          "codons": "Tgc/Cgc",
+          "cds_end": 388,
+          "domains": [
+            {
+              "db": "Pfam",
+              "name": "PF01442"
+            },
+            {
+              "name": 1,
+              "db": "Gene3D"
+            },
+            {
+              "db": "Phobius",
+              "name": "NON_CYTOPLASMIC_DOMAIN"
+            },
+            {
+              "name": "SSF58113",
+              "db": "Superfamily"
+            },
+            {
+              "name": "PTHR18976",
+              "db": "PANTHER"
+            }
+          ],
+          "protein_start": 130,
+          "amino_acids": "C/R",
+          "gene_symbol_source": "HGNC",
+          "variant_allele": "C",
+          "biotype": "protein_coding",
+          "protein_end": 130,
+          "cds_start": 388,
+          "cdna_end": 451,
+          "consequence_terms": [
+            "missense_variant"
+          ],
+          "impact": "MODERATE",
+          "cdna_start": 451
+        },
+        {
+          "hgnc_id": "HGNC:613",
+          "transcript_id": "ENST00000864846",
+          "strand": 1,
+          "gene_symbol": "APOE",
+          "cds_end": 388,
+          "codons": "Tgc/Cgc",
+          "sift_prediction": "tolerated",
+          "sift_score": 1,
+          "gene_id": "ENSG00000130203",
+          "protein_start": 130,
+          "amino_acids": "C/R",
+          "domains": [
+            {
+              "db": "Gene3D",
+              "name": 1
+            },
+            {
+              "db": "Phobius",
+              "name": "NON_CYTOPLASMIC_DOMAIN"
+            },
+            {
+              "name": "PF01442",
+              "db": "Pfam"
+            },
+            {
+              "name": "PTHR18976",
+              "db": "PANTHER"
+            },
+            {
+              "name": "SSF58113",
+              "db": "Superfamily"
+            }
+          ],
+          "gene_symbol_source": "HGNC",
+          "variant_allele": "C",
+          "cds_start": 388,
+          "biotype": "protein_coding",
+          "protein_end": 130,
+          "cdna_start": 503,
+          "impact": "MODERATE",
+          "consequence_terms": [
+            "missense_variant"
+          ],
+          "cdna_end": 503
+        },
+        {
+          "sift_prediction": "tolerated",
+          "codons": "Tgc/Cgc",
+          "cds_end": 388,
+          "sift_score": 1,
+          "gene_id": "ENSG00000130203",
+          "hgnc_id": "HGNC:613",
+          "transcript_id": "ENST00000864847",
+          "strand": 1,
+          "gene_symbol": "APOE",
+          "gene_symbol_source": "HGNC",
+          "amino_acids": "C/R",
+          "domains": [
+            {
+              "name": "PTHR18976",
+              "db": "PANTHER"
+            },
+            {
+              "db": "Phobius",
+              "name": "NON_CYTOPLASMIC_DOMAIN"
+            },
+            {
+              "db": "Superfamily",
+              "name": "SSF58113"
+            },
+            {
+              "name": "PF01442",
+              "db": "Pfam"
+            },
+            {
+              "db": "Gene3D",
+              "name": 1
+            }
+          ],
+          "protein_start": 130,
+          "variant_allele": "C",
+          "impact": "MODERATE",
+          "consequence_terms": [
+            "missense_variant"
+          ],
+          "cdna_end": 512,
+          "cdna_start": 512,
+          "cds_start": 388,
+          "biotype": "protein_coding",
+          "protein_end": 130
+        },
+        {
+          "gene_id": "ENSG00000130203",
+          "sift_score": 1,
+          "sift_prediction": "tolerated",
+          "codons": "Tgc/Cgc",
+          "cds_end": 388,
+          "gene_symbol": "APOE",
+          "transcript_id": "ENST00000864848",
+          "hgnc_id": "HGNC:613",
+          "strand": 1,
+          "gene_symbol_source": "HGNC",
+          "amino_acids": "C/R",
+          "domains": [
+            {
+              "db": "Gene3D",
+              "name": 1
+            },
+            {
+              "db": "Phobius",
+              "name": "NON_CYTOPLASMIC_DOMAIN"
+            },
+            {
+              "name": "PF01442",
+              "db": "Pfam"
+            },
+            {
+              "db": "PANTHER",
+              "name": "PTHR18976"
+            },
+            {
+              "db": "Superfamily",
+              "name": "SSF58113"
+            }
+          ],
+          "protein_start": 130,
+          "variant_allele": "C",
+          "consequence_terms": [
+            "missense_variant"
+          ],
+          "cdna_end": 560,
+          "impact": "MODERATE",
+          "cdna_start": 560,
+          "protein_end": 130,
+          "biotype": "protein_coding",
+          "cds_start": 388
+        },
+        {
+          "gene_symbol": "APOE",
+          "hgnc_id": "HGNC:613",
+          "transcript_id": "ENST00000864849",
+          "strand": 1,
+          "gene_id": "ENSG00000130203",
+          "sift_score": 1,
+          "sift_prediction": "tolerated",
+          "codons": "Tgc/Cgc",
+          "cds_end": 388,
+          "domains": [
+            {
+              "name": 1,
+              "db": "Gene3D"
+            },
+            {
+              "name": "NON_CYTOPLASMIC_DOMAIN",
+              "db": "Phobius"
+            },
+            {
+              "db": "Pfam",
+              "name": "PF01442"
+            },
+            {
+              "db": "PANTHER",
+              "name": "PTHR18976"
+            },
+            {
+              "db": "Superfamily",
+              "name": "SSF58113"
+            }
+          ],
+          "amino_acids": "C/R",
+          "protein_start": 130,
+          "gene_symbol_source": "HGNC",
+          "variant_allele": "C",
+          "protein_end": 130,
+          "biotype": "protein_coding",
+          "cds_start": 388,
+          "impact": "MODERATE",
+          "consequence_terms": [
+            "missense_variant"
+          ],
+          "cdna_end": 575,
+          "cdna_start": 575
+        },
+        {
+          "biotype": "protein_coding",
+          "consequence_terms": [
+            "upstream_gene_variant"
+          ],
+          "impact": "MODIFIER",
+          "distance": 4449,
+          "gene_symbol_source": "HGNC",
+          "transcript_id": "ENST00000876409",
+          "hgnc_id": "HGNC:607",
+          "strand": 1,
+          "gene_symbol": "APOC1",
+          "variant_allele": "C",
+          "gene_id": "ENSG00000130208"
+        },
+        {
+          "gene_symbol": "TOMM40",
+          "strand": 1,
+          "transcript_id": "ENST00000927372",
+          "hgnc_id": "HGNC:18001",
+          "variant_allele": "C",
+          "gene_id": "ENSG00000130204",
+          "biotype": "protein_coding",
+          "distance": 4989,
+          "gene_symbol_source": "HGNC",
+          "consequence_terms": [
+            "downstream_gene_variant"
+          ],
+          "impact": "MODIFIER"
+        },
+        {
+          "biotype": "protein_coding",
+          "distance": 4989,
+          "gene_symbol_source": "HGNC",
+          "consequence_terms": [
+            "downstream_gene_variant"
+          ],
+          "impact": "MODIFIER",
+          "gene_symbol": "TOMM40",
+          "transcript_id": "ENST00000927373",
+          "strand": 1,
+          "hgnc_id": "HGNC:18001",
+          "variant_allele": "C",
+          "gene_id": "ENSG00000130204"
+        },
+        {
+          "biotype": "protein_coding",
+          "distance": 4989,
+          "gene_symbol_source": "HGNC",
+          "impact": "MODIFIER",
+          "consequence_terms": [
+            "downstream_gene_variant"
+          ],
+          "gene_symbol": "TOMM40",
+          "transcript_id": "ENST00000927374",
+          "strand": 1,
+          "hgnc_id": "HGNC:18001",
+          "variant_allele": "C",
+          "gene_id": "ENSG00000130204"
+        },
+        {
+          "strand": 1,
+          "transcript_id": "ENST00000927375",
+          "hgnc_id": "HGNC:18001",
+          "gene_symbol": "TOMM40",
+          "gene_id": "ENSG00000130204",
+          "variant_allele": "C",
+          "biotype": "protein_coding",
+          "impact": "MODIFIER",
+          "consequence_terms": [
+            "downstream_gene_variant"
+          ],
+          "gene_symbol_source": "HGNC",
+          "distance": 4989
+        },
+        {
+          "hgnc_id": "HGNC:18001",
+          "transcript_id": "ENST00000947713",
+          "strand": 1,
+          "gene_symbol": "TOMM40",
+          "variant_allele": "C",
+          "gene_id": "ENSG00000130204",
+          "biotype": "protein_coding",
+          "impact": "MODIFIER",
+          "consequence_terms": [
+            "downstream_gene_variant"
+          ],
+          "distance": 4989,
+          "gene_symbol_source": "HGNC"
+        },
+        {
+          "biotype": "protein_coding",
+          "consequence_terms": [
+            "downstream_gene_variant"
+          ],
+          "impact": "MODIFIER",
+          "distance": 4989,
+          "gene_symbol_source": "HGNC",
+          "strand": 1,
+          "transcript_id": "ENST00000947714",
+          "hgnc_id": "HGNC:18001",
+          "gene_symbol": "TOMM40",
+          "variant_allele": "C",
+          "gene_id": "ENSG00000130204"
+        },
+        {
+          "gene_symbol_source": "HGNC",
+          "distance": 4989,
+          "impact": "MODIFIER",
+          "consequence_terms": [
+            "downstream_gene_variant"
+          ],
+          "biotype": "protein_coding",
+          "gene_id": "ENSG00000130204",
+          "variant_allele": "C",
+          "gene_symbol": "TOMM40",
+          "transcript_id": "ENST00000947715",
+          "strand": 1,
+          "hgnc_id": "HGNC:18001"
+        },
+        {
+          "gene_id": "ENSG00000130204",
+          "variant_allele": "C",
+          "gene_symbol": "TOMM40",
+          "hgnc_id": "HGNC:18001",
+          "transcript_id": "ENST00001005462",
+          "strand": 1,
+          "gene_symbol_source": "HGNC",
+          "distance": 4998,
+          "consequence_terms": [
+            "downstream_gene_variant"
+          ],
+          "impact": "MODIFIER",
+          "biotype": "protein_coding"
+        },
+        {
+          "gene_symbol_source": "HGNC",
+          "cdna_end": 774,
+          "consequence_terms": [
+            "3_prime_UTR_variant"
+          ],
+          "impact": "MODIFIER",
+          "cdna_start": 774,
+          "biotype": "protein_coding",
+          "variant_allele": "C",
+          "gene_id": "ENSG00000130203",
+          "gene_symbol": "APOE",
+          "transcript_id": "ENST00001005584",
+          "strand": 1,
+          "hgnc_id": "HGNC:613"
+        },
+        {
+          "biotype": "nonsense_mediated_decay",
+          "consequence_terms": [
+            "downstream_gene_variant"
+          ],
+          "impact": "MODIFIER",
+          "gene_symbol_source": "HGNC",
+          "distance": 4995,
+          "transcript_id": "ENST00001085948",
+          "hgnc_id": "HGNC:18001",
+          "strand": 1,
+          "gene_symbol": "TOMM40",
+          "gene_id": "ENSG00000130204",
+          "variant_allele": "C"
+        },
+        {
+          "biotype": "nonsense_mediated_decay",
+          "consequence_terms": [
+            "downstream_gene_variant"
+          ],
+          "impact": "MODIFIER",
+          "gene_symbol_source": "HGNC",
+          "distance": 4997,
+          "hgnc_id": "HGNC:18001",
+          "transcript_id": "ENST00001085949",
+          "strand": 1,
+          "gene_symbol": "TOMM40",
+          "gene_id": "ENSG00000130204",
+          "variant_allele": "C"
+        },
+        {
+          "variant_allele": "C",
+          "gene_id": "ENSG00000130203",
+          "strand": 1,
+          "transcript_id": "ENST00001101301",
+          "hgnc_id": "HGNC:613",
+          "gene_symbol": "APOE",
+          "impact": "MODIFIER",
+          "consequence_terms": [
+            "intron_variant"
+          ],
+          "gene_symbol_source": "HGNC",
+          "biotype": "protein_coding"
+        },
+        {
+          "variant_allele": "C",
+          "gene_id": "ENSG00000130203",
+          "strand": 1,
+          "transcript_id": "ENST00001101302",
+          "hgnc_id": "HGNC:613",
+          "gene_symbol": "APOE",
+          "impact": "MODIFIER",
+          "consequence_terms": [
+            "intron_variant"
+          ],
+          "gene_symbol_source": "HGNC",
+          "biotype": "protein_coding"
+        },
+        {
+          "gene_id": "ENSG00000130203",
+          "variant_allele": "C",
+          "gene_symbol": "APOE",
+          "transcript_id": "ENST00001121352",
+          "hgnc_id": "HGNC:613",
+          "strand": 1,
+          "gene_symbol_source": "HGNC",
+          "cdna_start": 589,
+          "impact": "MODIFIER",
+          "consequence_terms": [
+            "3_prime_UTR_variant"
+          ],
+          "cdna_end": 589,
+          "biotype": "protein_coding"
+        },
+        {
+          "variant_allele": "C",
+          "cdna_start": 834,
+          "consequence_terms": [
+            "missense_variant"
+          ],
+          "cdna_end": 834,
+          "impact": "MODERATE",
+          "biotype": "protein_coding",
+          "protein_end": 147,
+          "cds_start": 440,
+          "gene_id": "ENSG00000130203",
+          "sift_score": 0.46,
+          "cds_end": 440,
+          "codons": "gTg/gCg",
+          "sift_prediction": "tolerated_low_confidence",
+          "gene_symbol": "APOE",
+          "strand": 1,
+          "transcript_id": "ENST00001121353",
+          "hgnc_id": "HGNC:613",
+          "gene_symbol_source": "HGNC",
+          "amino_acids": "V/A",
+          "protein_start": 147,
+          "domains": [
+            {
+              "name": "NON_CYTOPLASMIC_DOMAIN",
+              "db": "Phobius"
+            },
+            {
+              "name": "mobidb",
+              "db": "MobiDB_lite"
+            },
+            {
+              "name": "mobidb",
+              "db": "MobiDB_lite"
+            },
+            {
+              "name": "mobidb",
+              "db": "MobiDB_lite"
+            }
+          ]
+        },
+        {
+          "biotype": "protein_coding",
+          "gene_symbol_source": "HGNC",
+          "consequence_terms": [
+            "3_prime_UTR_variant"
+          ],
+          "cdna_end": 786,
+          "impact": "MODIFIER",
+          "cdna_start": 786,
+          "gene_symbol": "APOE",
+          "transcript_id": "ENST00001126687",
+          "strand": 1,
+          "hgnc_id": "HGNC:613",
+          "variant_allele": "C",
+          "gene_id": "ENSG00000130203"
+        },
+        {
+          "biotype": "protein_coding",
+          "consequence_terms": [
+            "downstream_gene_variant"
+          ],
+          "impact": "MODIFIER",
+          "distance": 4989,
+          "gene_symbol_source": "HGNC",
+          "transcript_id": "ENST00001135435",
+          "hgnc_id": "HGNC:18001",
+          "strand": 1,
+          "gene_symbol": "TOMM40",
+          "variant_allele": "C",
+          "gene_id": "ENSG00000130204"
+        },
+        {
+          "cds_end": 388,
+          "codons": "Tgc/Cgc",
+          "sift_prediction": "tolerated",
+          "sift_score": 1,
+          "gene_id": "ENSG00000130203",
+          "hgnc_id": "HGNC:613",
+          "transcript_id": "ENST00001139730",
+          "strand": 1,
+          "gene_symbol": "APOE",
+          "gene_symbol_source": "HGNC",
+          "domains": [
+            {
+              "db": "Gene3D",
+              "name": 1
+            },
+            {
+              "name": "NON_CYTOPLASMIC_DOMAIN",
+              "db": "Phobius"
+            },
+            {
+              "name": "PF01442",
+              "db": "Pfam"
+            },
+            {
+              "db": "PANTHER",
+              "name": "PTHR18976"
+            },
+            {
+              "name": "SSF58113",
+              "db": "Superfamily"
+            }
+          ],
+          "amino_acids": "C/R",
+          "protein_start": 130,
+          "variant_allele": "C",
+          "cdna_start": 782,
+          "consequence_terms": [
+            "missense_variant"
+          ],
+          "cdna_end": 782,
+          "impact": "MODERATE",
+          "cds_start": 388,
+          "biotype": "protein_coding",
+          "protein_end": 130
+        }
+      ],
+      "input": "rs429358",
+      "assembly_name": "GRCh38",
+      "end": 44908684,
+      "colocated_variants": [
+        {
+          "seq_region_name": "19",
+          "end": 44908684,
+          "start": 44908684,
+          "id": "CM900020",
+          "strand": 1,
+          "allele_string": "HGMD_MUTATION",
+          "phenotype_or_disease": 1
+        },
+        {
+          "id": "COSV52985231",
+          "strand": 1,
+          "allele_string": "COSMIC_MUTATION",
+          "phenotype_or_disease": 1,
+          "somatic": 1,
+          "var_synonyms": {
+            "COSMIC": [
+              "COSM3749517"
+            ]
+          },
+          "seq_region_name": "19",
+          "end": 44908684,
+          "start": 44908684
+        },
+        {
+          "strand": 1,
+          "id": "rs429358",
+          "clin_sig_allele": "C:pathogenic;C:drug_response;C:not_provided;C:risk_factor;C:uncertain_significance;C:conflicting_classifications_of_pathogenicity;C:likely_pathogenic;C:benign;C:pathogenic/established_risk_allele;C:association",
+          "frequencies": {
+            "C": {
+              "afr": 0.2678,
+              "gnomadg_afr": 0.2157,
+              "gnomade_asj": 0.1205,
+              "gnomade": 0.1476,
+              "af": 0.1506,
+              "gnomade_eas": 0.09785,
+              "gnomadg_nfe": 0.1379,
+              "gnomadg": 0.1574,
+              "amr": 0.1037,
+              "eas": 0.0863,
+              "gnomade_remaining": 0.1393,
+              "gnomade_sas": 0.1004,
+              "eur": 0.1551,
+              "sas": 0.0869,
+              "gnomadg_sas": 0.1046,
+              "gnomadg_remaining": 0.1148,
+              "gnomadg_eas": 0.09771,
+              "gnomadg_fin": 0.1952,
+              "gnomadg_amr": 0.1133,
+              "gnomadg_mid": 0.06849,
+              "gnomadg_ami": 0.1363,
+              "gnomade_fin": 0.1912,
+              "gnomade_amr": 0.1043,
+              "gnomade_mid": 0.06806,
+              "gnomadg_asj": 0.1191,
+              "gnomade_afr": 0.2266,
+              "gnomade_nfe": 0.1514
+            }
+          },
+          "allele_string": "T/C",
+          "phenotype_or_disease": 1,
+          "pubmed": [
+            21467728,
+            18513389,
+            18603647,
+            19131662,
+            19263529,
+            21146954,
+            21894447,
+            23497168,
+            25361584,
+            26621708,
+            26627480,
+            27584680,
+            28605058,
+            29972410,
+            30182779,
+            30571812,
+            31396257,
+            34137427,
+            34276231,
+            35124268,
+            35387194,
+            18216863,
+            21054877,
+            21094359,
+            21647738,
+            21845926,
+            21937998,
+            27589735,
+            28659664,
+            28750115,
+            20549395,
+            22303384,
+            24244950,
+            26365620,
+            24842701,
+            18196181,
+            23894628,
+            30112393,
+            21773006,
+            22328972,
+            28464262,
+            30584432,
+            33763108,
+            22911757,
+            26985771,
+            16595073,
+            21708280,
+            21767357,
+            23533563,
+            17048007,
+            20556870,
+            21857382,
+            23820649,
+            25333069,
+            28086795,
+            34087973,
+            34958284,
+            18974842,
+            32398726,
+            35088019,
+            21901424,
+            18254975,
+            19001172,
+            35351696,
+            21297263,
+            26690118,
+            26680604,
+            17903299,
+            23073467,
+            18976728,
+            15146461,
+            21547229,
+            22694956,
+            28253266,
+            20565774,
+            22024213,
+            26252872,
+            21862702,
+            29340220,
+            32100327,
+            33210016,
+            33320170,
+            35149155,
+            21829380,
+            19913121,
+            19951432,
+            21738485,
+            22042884,
+            26971241,
+            27112212,
+            28686695,
+            23050023,
+            25073452,
+            25682026,
+            29374275,
+            21418511,
+            19299407,
+            20832063,
+            23100282,
+            24771538,
+            27716211,
+            28167353,
+            28705542,
+            29932521,
+            30202567,
+            25649863,
+            22022476,
+            22666427,
+            24675670,
+            25558172,
+            26243271,
+            30507998,
+            21045241,
+            2301879
+          ],
+          "clin_sig": [
+            "uncertain_significance",
+            "not_provided",
+            "benign",
+            "likely_pathogenic",
+            "pathogenic",
+            "drug_response",
+            "other",
+            "risk_factor",
+            "association",
+            "protective",
+            "established_risk_allele"
+          ],
+          "var_synonyms": {
+            "PharmGKB": [
+              "PA166155351"
+            ],
+            "ClinVar": [
+              "RCV000856604",
+              "VCV000694585",
+              "RCV000019447",
+              "VCV000017863",
+              "RCV000019458",
+              "VCV000441269",
+              "RCV000019456",
+              "VCV000441268",
+              "RCV000019455",
+              "VCV000441267",
+              "RCV000019448",
+              "VCV000017864",
+              "RCV000019438",
+              "VCV000440870",
+              "RCV000292119",
+              "RCV001195807",
+              "RCV001175124",
+              "RCV001262791",
+              "RCV000845581",
+              "RCV000826089",
+              "RCV000991302",
+              "RCV005434607"
+            ],
+            "UniProt": [
+              "VAR_000652"
+            ],
+            "OMIM": [
+              107741.0015,
+              107741.0016
+            ]
+          },
+          "start": 44908684,
+          "end": 44908684,
+          "clin_sig_ref_allele": "T",
+          "seq_region_name": "19"
+        }
+      ],
+      "start": 44908684,
+      "seq_region_name": "19"
+    }
+  ]
+}

@@ -1,0 +1,181 @@
+{
+  "source": "europepmc",
+  "retrieved": "2026-11-08T03:21:02+00:00",
+  "request": {
+    "query": "(TITLE:rs113993960 OR ABSTRACT:rs113993960) AND PUB_TYPE:\"research-article\" NOT PUB_TYPE:review"
+  },
+  "response": {
+    "version": "6.9",
+    "hitCount": 4,
+    "request": {
+      "queryString": "(TITLE:rs113993960 OR ABSTRACT:rs113993960) AND PUB_TYPE:\"research-article\" NOT PUB_TYPE:review",
+      "resultType": "lite",
+      "cursorMark": "*",
+      "pageSize": 15,
+      "sort": "CITED desc",
+      "synonym": false
+    },
+    "resultList": {
+      "result": [
+        {
+          "id": "33623413",
+          "source": "MED",
+          "pmid": "33623413",
+          "pmcid": "PMC7894124",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC7894124"
+            ]
+          },
+          "doi": "10.2147/pgpm.s278806",
+          "title": "Cystic Fibrosis Polymorphic Variants in a Russian Population.",
+          "authorString": "Kiseleva A, Klimushina M, Sotnikova E, Skirko O, Divashuk M, Kurilova O, Ershova A, Khlebus E, Zharikova A, Efimova I, Pokrovskaya M, Slominsky PA, Shalnova S, Meshkov A, Drapkina O.",
+          "journalTitle": "Pharmgenomics Pers Med",
+          "journalVolume": "13",
+          "pubYear": "2020",
+          "journalIssn": "1178-7066",
+          "pageInfo": "679-686",
+          "pubType": "research-article; journal article",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 10,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "N",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp"
+            ]
+          },
+          "firstPublicationDate": "2020-12-01",
+          "firstIndexDate": "2021-02-25"
+        },
+        {
+          "id": "42824283",
+          "source": "MED",
+          "pmid": "42824283",
+          "pmcid": "PMC13627150",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC13627150"
+            ]
+          },
+          "doi": "10.18699/vjgb-26-78",
+          "title": "Analysis of CFTR mutation spectrum in Yugra region (Russian Federation).",
+          "authorString": "Donnikov MY, Morozkina AV, Kovalenko LV, Donnikova NA, Mescheryakov VV.",
+          "journalTitle": "Vavilovskii Zhurnal Genet Selektsii",
+          "issue": "5",
+          "journalVolume": "30",
+          "pubYear": "2026",
+          "journalIssn": "2500-0462; 2500-3259; ",
+          "pageInfo": "775-781",
+          "pubType": "research-article; journal article",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 0,
+          "hasReferences": "N",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "N",
+          "hasLabsLinks": "N",
+          "hasTMAccessionNumbers": "N",
+          "firstPublicationDate": "2026-09-01",
+          "firstIndexDate": "2026-10-03"
+        },
+        {
+          "id": "39881831",
+          "source": "MED",
+          "pmid": "39881831",
+          "pmcid": "PMC11773142",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC11773142"
+            ]
+          },
+          "doi": "10.17691/stm2024.16.4.04",
+          "title": "Detection of Major Mutations in &lt;i&gt;CFTR, SERPINA1, HFE&lt;/i&gt; Genes in Benign Unconjugated Hyperbilirubinemia Phenotype.",
+          "authorString": "Ivanova AA, Apartseva NE, Kashirina AP, Nemtsova EG, Ivanova YV, Kruchinina MV, Kurilovich SA, Maksimov VN.",
+          "journalTitle": "Sovrem Tekhnologii Med",
+          "issue": "4",
+          "journalVolume": "16",
+          "pubYear": "2024",
+          "journalIssn": "2076-4243; 2309-995x; ",
+          "pageInfo": "38-44",
+          "pubType": "research support, non-u.s. gov't; research-article; journal article",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 0,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "N",
+          "hasLabsLinks": "N",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp",
+              "omim",
+              "doi"
+            ]
+          },
+          "firstPublicationDate": "2024-08-30",
+          "firstIndexDate": "2025-01-31"
+        },
+        {
+          "id": "37389024",
+          "source": "MED",
+          "pmid": "37389024",
+          "pmcid": "PMC10306969",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC10306969"
+            ]
+          },
+          "doi": "10.17691/stm2023.15.2.06",
+          "title": "Spectrum of <i>PRSS1</i>, <i>SPINK1</i>, <i>CTRC</i>, <i>CFTR</i>, and <i>CPA1</i> Gene Variants in Chronic Pancreatitis Patients in Russia.",
+          "authorString": "Litvinova MM, Khafizov KF, Speranskaya AS, Matsvay AD, Asanov AY, Nikolskaya KA, Vinokurova LV, Dubtsova EA, Ipatova MG, Mukhina TF, Karnaushkina MA, Bordin DS.",
+          "journalTitle": "Sovrem Tekhnologii Med",
+          "issue": "2",
+          "journalVolume": "15",
+          "pubYear": "2023",
+          "journalIssn": "2076-4243; 2309-995x; ",
+          "pageInfo": "60-70",
+          "pubType": "research-article; journal article",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 0,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "N",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp",
+              "omim",
+              "doi"
+            ]
+          },
+          "firstPublicationDate": "2023-03-29",
+          "firstIndexDate": "2023-07-01"
+        }
+      ]
+    }
+  }
+}

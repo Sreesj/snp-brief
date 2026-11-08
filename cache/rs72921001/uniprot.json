@@ -1,0 +1,46 @@
+{
+  "source": "uniprot",
+  "retrieved": "2026-11-08T03:17:37+00:00",
+  "request": {
+    "gene": "OR10A2",
+    "query": "(gene_exact:OR10A2) AND (organism_id:9606) AND (reviewed:true)"
+  },
+  "response": {
+    "results": [
+      {
+        "entryType": "UniProtKB reviewed (Swiss-Prot)",
+        "primaryAccession": "Q9H208",
+        "genes": [
+          {
+            "geneName": {
+              "value": "OR10A2"
+            },
+            "synonyms": [
+              {
+                "value": "OR10A2P"
+              }
+            ]
+          }
+        ],
+        "comments": [
+          {
+            "texts": [
+              {
+                "evidences": [
+                  {
+                    "evidenceCode": "ECO:0000305"
+                  }
+                ],
+                "value": "Odorant receptor"
+              }
+            ],
+            "commentType": "FUNCTION"
+          }
+        ],
+        "extraAttributes": {
+          "uniParcId": "UPI000015F21C"
+        }
+      }
+    ]
+  }
+}

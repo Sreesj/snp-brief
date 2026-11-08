@@ -1,0 +1,44 @@
+{
+  "source": "GTEx",
+  "retrieved": "2026-11-08T03:16:47+00:00",
+  "request": {
+    "rsid": "rs72921001",
+    "variant_ids": [
+      "chr11_6868417_C_A_b38"
+    ]
+  },
+  "response": {
+    "data": [
+      {
+        "snpId": "rs72921001",
+        "pos": 6868417,
+        "snpIdUpper": "RS72921001",
+        "variantId": "chr11_6868417_C_A_b38",
+        "geneSymbol": "GVINP1",
+        "pValue": 4.91003e-07,
+        "geneSymbolUpper": "GVINP1",
+        "datasetId": "gtex_v8",
+        "tissueSiteDetailId": "Thyroid",
+        "ontologyId": "UBERON:0002046",
+        "chromosome": "chr11",
+        "gencodeId": "ENSG00000254838.5",
+        "nes": 0.137582
+      },
+      {
+        "snpId": "rs72921001",
+        "pos": 6868417,
+        "snpIdUpper": "RS72921001",
+        "variantId": "chr11_6868417_C_A_b38",
+        "geneSymbol": "GVINP1",
+        "pValue": 4.32713e-08,
+        "geneSymbolUpper": "GVINP1",
+        "datasetId": "gtex_v8",
+        "tissueSiteDetailId": "Adipose_Subcutaneous",
+        "ontologyId": "UBERON:0002190",
+        "chromosome": "chr11",
+        "gencodeId": "ENSG00000254838.5",
+        "nes": 0.136837
+      }
+    ]
+  }
+}

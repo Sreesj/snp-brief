@@ -1,0 +1,131 @@
+{
+  "source": "NCBI Gene",
+  "retrieved": "2026-11-08T03:16:16+00:00",
+  "request": {
+    "gene": "LOC107985152"
+  },
+  "response": {
+    "header": {
+      "type": "esummary",
+      "version": "0.3"
+    },
+    "result": {
+      "uids": [
+        "107985152"
+      ],
+      "107985152": {
+        "uid": "107985152",
+        "name": "LOC107985152",
+        "description": "uncharacterized LOC107985152",
+        "status": "",
+        "currentid": "",
+        "chromosome": "18",
+        "geneticsource": "genomic",
+        "maplocation": "18q21.2",
+        "otheraliases": "",
+        "otherdesignations": "",
+        "nomenclaturesymbol": "",
+        "nomenclaturename": "",
+        "nomenclaturestatus": "",
+        "mim": [],
+        "genomicinfo": [
+          {
+            "chrloc": "18",
+            "chraccver": "NC_000018.10",
+            "chrstart": 51030093,
+            "chrstop": 50974787,
+            "exoncount": 6
+          }
+        ],
+        "geneweight": "",
+        "summary": "",
+        "chrsort": "18",
+        "chrstart": 50974787,
+        "organism": {
+          "scientificname": "Homo sapiens",
+          "commonname": "human",
+          "taxid": 9606
+        },
+        "locationhist": [
+          {
+            "annotationrelease": "RS_2025_08",
+            "assemblyaccver": "GCF_000001405.40",
+            "chraccver": "NC_000018.10",
+            "chrstart": 51030093,
+            "chrstop": 50974787
+          },
+          {
+            "annotationrelease": "RS_2025_08",
+            "assemblyaccver": "GCF_009914755.1",
+            "chraccver": "NC_060942.1",
+            "chrstart": 51200908,
+            "chrstop": 51176498
+          },
+          {
+            "annotationrelease": "RS_2024_08",
+            "assemblyaccver": "GCF_000001405.40",
+            "chraccver": "NC_000018.10",
+            "chrstart": 51030093,
+            "chrstop": 50974787
+          },
+          {
+            "annotationrelease": "RS_2024_08",
+            "assemblyaccver": "GCF_009914755.1",
+            "chraccver": "NC_060942.1",
+            "chrstart": 51200908,
+            "chrstop": 51176498
+          },
+          {
+            "annotationrelease": "RS_2023_10",
+            "assemblyaccver": "GCF_000001405.40",
+            "chraccver": "NC_000018.10",
+            "chrstart": 51030093,
+            "chrstop": 50974787
+          },
+          {
+            "annotationrelease": "RS_2023_10",
+            "assemblyaccver": "GCF_009914755.1",
+            "chraccver": "NC_060942.1",
+            "chrstart": 51200908,
+            "chrstop": 51176498
+          },
+          {
+            "annotationrelease": "RS_2023_03",
+            "assemblyaccver": "GCF_000001405.40",
+            "chraccver": "NC_000018.10",
+            "chrstart": 51030093,
+            "chrstop": 50974787
+          },
+          {
+            "annotationrelease": "RS_2023_03",
+            "assemblyaccver": "GCF_009914755.1",
+            "chraccver": "NC_060942.1",
+            "chrstart": 51200908,
+            "chrstop": 51176498
+          },
+          {
+            "annotationrelease": "110",
+            "assemblyaccver": "GCF_000001405.40",
+            "chraccver": "NC_000018.10",
+            "chrstart": 51030093,
+            "chrstop": 50974787
+          },
+          {
+            "annotationrelease": "110",
+            "assemblyaccver": "GCF_009914755.1",
+            "chraccver": "NC_060942.1",
+            "chrstart": 51200908,
+            "chrstop": 51176498
+          },
+          {
+            "annotationrelease": "109.20211119",
+            "assemblyaccver": "GCF_000001405.39",
+            "chraccver": "NC_000018.10",
+            "chrstart": 50988798,
+            "chrstop": 50978409
+          }
+        ]
+      }
+    }
+  }
+}

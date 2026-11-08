@@ -1,0 +1,210 @@
+{
+  "source": "NCBI Gene",
+  "retrieved": "2026-11-08T03:32:52+00:00",
+  "request": {
+    "gene": "MIF"
+  },
+  "response": {
+    "header": {
+      "type": "esummary",
+      "version": "0.3"
+    },
+    "result": {
+      "uids": [
+        "4282"
+      ],
+      "4282": {
+        "uid": "4282",
+        "name": "MIF",
+        "description": "macrophage migration inhibitory factor",
+        "status": "",
+        "currentid": "",
+        "chromosome": "22",
+        "geneticsource": "genomic",
+        "maplocation": "22q11.23",
+        "otheraliases": "GIF, GLIF, MMIF",
+        "otherdesignations": "macrophage migration inhibitory factor|L-dopachrome isomerase|L-dopachrome tautomerase|epididymis secretory sperm binding protein|macrophage migration inhibitory factor (glycosylation-inhibiting factor)|phenylpyruvate tautomerase",
+        "nomenclaturesymbol": "MIF",
+        "nomenclaturename": "macrophage migration inhibitory factor",
+        "nomenclaturestatus": "Official",
+        "mim": [
+          "153620"
+        ],
+        "genomicinfo": [
+          {
+            "chrloc": "22",
+            "chraccver": "NC_000022.11",
+            "chrstart": 23894382,
+            "chrstop": 23895222,
+            "exoncount": 3
+          }
+        ],
+        "geneweight": 64709,
+        "summary": "This gene encodes a lymphokine involved in cell-mediated immunity, immunoregulation, and inflammation. It plays a role in the regulation of macrophage function in host defense through the suppression of anti-inflammatory effects of glucocorticoids. This lymphokine and the JAB1 protein form a complex in the cytosol near the peripheral plasma membrane, which may indicate an additional role in integrin signaling pathways. [provided by RefSeq, Jul 2008]",
+        "chrsort": "22",
+        "chrstart": 23894382,
+        "organism": {
+          "scientificname": "Homo sapiens",
+          "commonname": "human",
+          "taxid": 9606
+        },
+        "locationhist": [
+          {
+            "annotationrelease": "RS_2025_08",
+            "assemblyaccver": "GCF_000001405.40",
+            "chraccver": "NC_000022.11",
+            "chrstart": 23894382,
+            "chrstop": 23895222
+          },
+          {
+            "annotationrelease": "RS_2025_08",
+            "assemblyaccver": "GCF_000001405.40",
+            "chraccver": "NT_187633.1",
+            "chrstart": 130744,
+            "chrstop": 131584
+          },
+          {
+            "annotationrelease": "RS_2025_08",
+            "assemblyaccver": "GCF_009914755.1",
+            "chraccver": "NC_060946.1",
+            "chrstart": 24338981,
+            "chrstop": 24339821
+          },
+          {
+            "annotationrelease": "RS_2024_08",
+            "assemblyaccver": "GCF_000001405.40",
+            "chraccver": "NC_000022.11",
+            "chrstart": 23894382,
+            "chrstop": 23895222
+          },
+          {
+            "annotationrelease": "RS_2024_08",
+            "assemblyaccver": "GCF_000001405.40",
+            "chraccver": "NT_187633.1",
+            "chrstart": 130744,
+            "chrstop": 131584
+          },
+          {
+            "annotationrelease": "RS_2024_08",
+            "assemblyaccver": "GCF_009914755.1",
+            "chraccver": "NC_060946.1",
+            "chrstart": 24338981,
+            "chrstop": 24339821
+          },
+          {
+            "annotationrelease": "RS_2023_10",
+            "assemblyaccver": "GCF_000001405.40",
+            "chraccver": "NC_000022.11",
+            "chrstart": 23894382,
+            "chrstop": 23895222
+          },
+          {
+            "annotationrelease": "RS_2023_10",
+            "assemblyaccver": "GCF_000001405.40",
+            "chraccver": "NT_187633.1",
+            "chrstart": 130744,
+            "chrstop": 131584
+          },
+          {
+            "annotationrelease": "RS_2023_10",
+            "assemblyaccver": "GCF_009914755.1",
+            "chraccver": "NC_060946.1",
+            "chrstart": 24338981,
+            "chrstop": 24339821
+          },
+          {
+            "annotationrelease": "RS_2023_03",
+            "assemblyaccver": "GCF_000001405.40",
+            "chraccver": "NC_000022.11",
+            "chrstart": 23894382,
+            "chrstop": 23895222
+          },
+          {
+            "annotationrelease": "RS_2023_03",
+            "assemblyaccver": "GCF_000001405.40",
+            "chraccver": "NT_187633.1",
+            "chrstart": 130744,
+            "chrstop": 131584
+          },
+          {
+            "annotationrelease": "RS_2023_03",
+            "assemblyaccver": "GCF_009914755.1",
+            "chraccver": "NC_060946.1",
+            "chrstart": 24338981,
+            "chrstop": 24339821
+          },
+          {
+            "annotationrelease": "110",
+            "assemblyaccver": "GCF_000001405.40",
+            "chraccver": "NC_000022.11",
+            "chrstart": 23894382,
+            "chrstop": 23895222
+          },
+          {
+            "annotationrelease": "110",
+            "assemblyaccver": "GCF_000001405.40",
+            "chraccver": "NT_187633.1",
+            "chrstart": 130744,
+            "chrstop": 131584
+          },
+          {
+            "annotationrelease": "110",
+            "assemblyaccver": "GCF_009914755.1",
+            "chraccver": "NC_060946.1",
+            "chrstart": 24338981,
+            "chrstop": 24339821
+          },
+          {
+            "annotationrelease": "109.20211119",
+            "assemblyaccver": "GCF_000001405.39",
+            "chraccver": "NC_000022.11",
+            "chrstart": 23894382,
+            "chrstop": 23895222
+          },
+          {
+            "annotationrelease": "109.20211119",
+            "assemblyaccver": "GCF_000001405.39",
+            "chraccver": "NT_187633.1",
+            "chrstart": 130744,
+            "chrstop": 131584
+          },
+          {
+            "annotationrelease": "RS_2024_09",
+            "assemblyaccver": "GCF_000001405.25",
+            "chraccver": "NC_000022.10",
+            "chrstart": 24236569,
+            "chrstop": 24237409
+          },
+          {
+            "annotationrelease": "105.20220307",
+            "assemblyaccver": "GCF_000001405.25",
+            "chraccver": "NC_000022.10",
+            "chrstart": 24236569,
+            "chrstop": 24237409
+          },
+          {
+            "annotationrelease": "105",
+            "assemblyaccver": "GCF_000001405.25",
+            "chraccver": "NC_000022.10",
+            "chrstart": 24236564,
+            "chrstop": 24237408
+          },
+          {
+            "annotationrelease": "105",
+            "assemblyaccver": "GCF_000002125.1",
+            "chraccver": "AC_000154.1",
+            "chrstart": 7221903,
+            "chrstop": 7222747
+          },
+          {
+            "annotationrelease": "105",
+            "assemblyaccver": "GCF_000306695.2",
+            "chraccver": "NC_018933.2",
+            "chrstart": 24248956,
+            "chrstop": 24249800
+          }
+        ]
+      }
+    }
+  }
+}

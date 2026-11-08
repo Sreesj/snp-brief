@@ -1,0 +1,627 @@
+{
+  "source": "europepmc",
+  "retrieved": "2026-11-08T03:34:25+00:00",
+  "request": {
+    "query": "(TITLE:rs7412 OR ABSTRACT:rs7412) AND PUB_TYPE:\"research-article\" NOT PUB_TYPE:review"
+  },
+  "response": {
+    "version": "6.9",
+    "hitCount": 196,
+    "nextCursorMark": "AoJfAigzMzAyMzI0OQ==",
+    "nextPageUrl": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=%28TITLE%3Ars7412+OR+ABSTRACT%3Ars7412%29+AND+PUB_TYPE%3A%22research-article%22+NOT+PUB_TYPE%3Areview&cursorMark=AoJfAigzMzAyMzI0OQ%3D%3D&resultType=lite&pageSize=15&sort=CITED+desc&format=json",
+    "request": {
+      "queryString": "(TITLE:rs7412 OR ABSTRACT:rs7412) AND PUB_TYPE:\"research-article\" NOT PUB_TYPE:review",
+      "resultType": "lite",
+      "cursorMark": "*",
+      "pageSize": 15,
+      "sort": "CITED desc",
+      "synonym": false
+    },
+    "resultList": {
+      "result": [
+        {
+          "id": "31413261",
+          "source": "MED",
+          "pmid": "31413261",
+          "pmcid": "PMC6694136",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC6694136"
+            ]
+          },
+          "doi": "10.1038/s41467-019-11558-2",
+          "title": "A meta-analysis of genome-wide association studies identifies multiple longevity genes.",
+          "authorString": "Deelen J, Evans DS, Arking DE, Tesi N, Nygaard M, Liu X, Wojczynski MK, Biggs ML, van der Spek A, Atzmon G, Ware EB, Sarnowski C, Smith AV, Sepp\u00e4l\u00e4 I, Cordell HJ, Dose J, Amin N, Arnold AM, Ayers KL, Barzilai N, Becker EJ, Beekman M, Blanch\u00e9 H, Christensen K, Christiansen L, Collerton JC, Cubaynes S, Cummings SR, Davies K, Debrabant B, Deleuze JF, Duncan R, Faul JD, Franceschi C, Galan P, Gudnason V, Harris TB, Huisman M, Hurme MA, Jagger C, Jansen I, Jylh\u00e4 M, K\u00e4h\u00f6nen M, Karasik D, Kardia SLR, Kingston A, Kirkwood TBL, Launer LJ, Lehtim\u00e4ki T, Lieb W, Lyytik\u00e4inen LP, Martin-Ruiz C, Min J, Nebel A, Newman AB, Nie C, Nohr EA, Orwoll ES, Perls TT, Province MA, Psaty BM, Raitakari OT, Reinders MJT, Robine JM, Rotter JI, Sebastiani P, Smith J, S\u00f8rensen TIA, Taylor KD, Uitterlinden AG, van der Flier W, van der Lee SJ, van Duijn CM, van Heemst D, Vaupel JW, Weir D, Ye K, Zeng Y, Zheng W, Holstege H, Kiel DP, Lunetta KL, Slagboom PE, Murabito JM.",
+          "journalTitle": "Nat Commun",
+          "issue": "1",
+          "journalVolume": "10",
+          "pubYear": "2019",
+          "journalIssn": "2041-1723",
+          "pageInfo": "3669",
+          "pubType": "meta-analysis; research-article; journal article",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 332,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp",
+              "doi"
+            ]
+          },
+          "firstPublicationDate": "2019-08-14",
+          "firstIndexDate": "2019-08-16"
+        },
+        {
+          "id": "34038024",
+          "source": "MED",
+          "pmid": "34038024",
+          "pmcid": "PMC8208797",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC8208797"
+            ]
+          },
+          "doi": "10.1111/acel.13376",
+          "title": "Genetic associations for two biological age measures point to distinct aging phenotypes.",
+          "authorString": "Kuo CL, Pilling LC, Liu Z, Atkins JL, Levine ME.",
+          "journalTitle": "Aging Cell",
+          "issue": "6",
+          "journalVolume": "20",
+          "pubYear": "2021",
+          "journalIssn": "1474-9718; 1474-9726; ",
+          "pageInfo": "e13376",
+          "pubType": "research support, non-u.s. gov't; research-article; journal article; research support, n.i.h., extramural",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 155,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "gen",
+              "refsnp",
+              "doi"
+            ]
+          },
+          "firstPublicationDate": "2021-05-26",
+          "firstIndexDate": "2021-05-28"
+        },
+        {
+          "id": "28512139",
+          "source": "MED",
+          "pmid": "28512139",
+          "pmcid": "PMC5580897",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC5580897"
+            ]
+          },
+          "doi": "10.1194/jlr.m076232",
+          "title": "A genome-wide association meta-analysis on lipoprotein (a) concentrations adjusted for apolipoprotein (a) isoforms.",
+          "authorString": "Mack S, Coassin S, Rueedi R, Yousri NA, Sepp\u00e4l\u00e4 I, Gieger C, Sch\u00f6nherr S, Forer L, Erhart G, Marques-Vidal P, Ried JS, Waeber G, Bergmann S, D\u00e4hnhardt D, St\u00f6ckl A, Raitakari OT, K\u00e4h\u00f6nen M, Peters A, Meitinger T, Strauch K, Kedenko L, Paulweber B, Lehtim\u00e4ki T, Hunt SC, Vollenweider P, Lamina C, Kronenberg F.",
+          "journalTitle": "J Lipid Res",
+          "issue": "9",
+          "journalVolume": "58",
+          "pubYear": "2017",
+          "journalIssn": "0022-2275; 1539-7262; ",
+          "pageInfo": "1834-1844",
+          "pubType": "meta-analysis; research support, non-u.s. gov't; research-article; journal article; research support, n.i.h., extramural",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 155,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp"
+            ]
+          },
+          "firstPublicationDate": "2017-05-16",
+          "firstIndexDate": "2017-05-17"
+        },
+        {
+          "id": "29976289",
+          "source": "MED",
+          "pmid": "29976289",
+          "pmcid": "PMC6051722",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC6051722"
+            ]
+          },
+          "doi": "10.1016/j.jacc.2018.04.050",
+          "title": "Remnant-Like Particle Cholesterol, Low-Density Lipoprotein Triglycerides, and Incident Cardiovascular Disease.",
+          "authorString": "Saeed A, Feofanova EV, Yu B, Sun W, Virani SS, Nambi V, Coresh J, Guild CS, Boerwinkle E, Ballantyne CM, Hoogeveen RC.",
+          "journalTitle": "J Am Coll Cardiol",
+          "issue": "2",
+          "journalVolume": "72",
+          "pubYear": "2018",
+          "journalIssn": "0735-1097; 1558-3597; ",
+          "pageInfo": "156-169",
+          "pubType": "research-article; journal article; research support, n.i.h., extramural",
+          "isOpenAccess": "N",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 149,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp"
+            ]
+          },
+          "firstPublicationDate": "2018-07-01",
+          "firstIndexDate": "2018-07-07"
+        },
+        {
+          "id": "34814699",
+          "source": "MED",
+          "pmid": "34814699",
+          "pmcid": "PMC9158509",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC9158509"
+            ]
+          },
+          "doi": "10.1161/circulationaha.121.055117",
+          "title": "Whole Genome Sequence Analysis of the Plasma Proteome in Black Adults Provides Novel Insights Into Cardiovascular Disease.",
+          "authorString": "Katz DH, Tahir UA, Bick AG, Pampana A, Ngo D, Benson MD, Yu Z, Robbins JM, Chen ZZ, Cruz DE, Deng S, Farrell L, Sinha S, Schmaier AA, Shen D, Gao Y, Hall ME, Correa A, Tracy RP, Durda P, Taylor KD, Liu Y, Johnson WC, Guo X, Yao J, Ida Chen YD, Manichaikul AW, Jain D, Bouchard C, Sarzynski MA, Rich SS, Rotter JI, Wang TJ, Wilson JG, Natarajan P, Gerszten RE, National Heart, Lung, and Blood Institute TOPMed (Trans-Omics for Precision Medicine) Consortium\u2020.",
+          "journalTitle": "Circulation",
+          "issue": "5",
+          "journalVolume": "145",
+          "pubYear": "2022",
+          "journalIssn": "0009-7322; 1524-4539; ",
+          "pageInfo": "357-370",
+          "pubType": "research support, non-u.s. gov't; research-article; journal article; research support, n.i.h., extramural",
+          "isOpenAccess": "N",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 99,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp",
+              "dbgap",
+              "doi"
+            ]
+          },
+          "firstPublicationDate": "2021-11-24",
+          "firstIndexDate": "2021-12-01"
+        },
+        {
+          "id": "26619808",
+          "source": "MED",
+          "pmid": "26619808",
+          "pmcid": "PMC5414071",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC5414071"
+            ]
+          },
+          "doi": "10.1038/mp.2015.177",
+          "title": "APOE*E2 allele delays age of onset in PSEN1 E280A Alzheimer's disease.",
+          "authorString": "V\u00e9lez JI, Lopera F, Sepulveda-Falla D, Patel HR, Johar AS, Chuah A, Tob\u00f3n C, Rivera D, Villegas A, Cai Y, Peng K, Arkell R, Castellanos FX, Andrews SJ, Silva Lara MF, Creagh PK, Easteal S, de Leon J, Wong ML, Licinio J, Mastronardi CA, Arcos-Burgos M.",
+          "journalTitle": "Mol Psychiatry",
+          "issue": "7",
+          "journalVolume": "21",
+          "pubYear": "2016",
+          "journalIssn": "1359-4184; 1476-5578; ",
+          "pageInfo": "916-924",
+          "pubType": "research support, non-u.s. gov't; research-article; journal article",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 98,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp"
+            ]
+          },
+          "firstPublicationDate": "2015-12-01",
+          "firstIndexDate": "2015-12-02"
+        },
+        {
+          "id": "31127079",
+          "source": "MED",
+          "pmid": "31127079",
+          "pmcid": "PMC6534556",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC6534556"
+            ]
+          },
+          "doi": "10.1038/s41398-019-0485-7",
+          "title": "Alzheimer's disease polygenic risk score as a predictor of conversion from mild-cognitive impairment.",
+          "authorString": "Chaudhury S, Brookes KJ, Patel T, Fallows A, Guetta-Baranes T, Turton JC, Guerreiro R, Bras J, Hardy J, Francis PT, Croucher R, Holmes C, Morgan K, Thomas AJ.",
+          "journalTitle": "Transl Psychiatry",
+          "issue": "1",
+          "journalVolume": "9",
+          "pubYear": "2019",
+          "journalIssn": "2158-3188",
+          "pageInfo": "154",
+          "pubType": "research support, non-u.s. gov't; research-article; journal article; research support, n.i.h., extramural",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 78,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp",
+              "doi"
+            ]
+          },
+          "firstPublicationDate": "2019-05-24",
+          "firstIndexDate": "2019-05-26"
+        },
+        {
+          "id": "26754117",
+          "source": "MED",
+          "pmid": "26754117",
+          "pmcid": "PMC4710020",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC4710020"
+            ]
+          },
+          "doi": "10.1186/s13024-016-0069-4",
+          "title": "A rapid and cost-effective method for genotyping apolipoprotein E gene polymorphism.",
+          "authorString": "Zhong L, Xie YZ, Cao TT, Wang Z, Wang T, Li X, Shen RC, Xu H, Bu G, Chen XF.",
+          "journalTitle": "Mol Neurodegener",
+          "journalVolume": "11",
+          "pubYear": "2016",
+          "journalIssn": "1750-1326",
+          "pageInfo": "2",
+          "pubType": "research support, non-u.s. gov't; research-article; journal article; research support, n.i.h., extramural",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 75,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "N",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp"
+            ]
+          },
+          "firstPublicationDate": "2016-01-12",
+          "firstIndexDate": "2016-01-13"
+        },
+        {
+          "id": "21228733",
+          "source": "MED",
+          "pmid": "21228733",
+          "pmcid": "PMC3038469",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC3038469"
+            ]
+          },
+          "doi": "10.1097/fpc.0b013e3283436b86",
+          "title": "Genetic and nongenetic factors associated with warfarin dose requirements in Egyptian patients.",
+          "authorString": "Shahin MH, Khalifa SI, Gong Y, Hammad LN, Sallam MT, El Shafey M, Ali SS, Mohamed ME, Langaee T, Johnson JA.",
+          "journalTitle": "Pharmacogenet Genomics",
+          "issue": "3",
+          "journalVolume": "21",
+          "pubYear": "2011",
+          "journalIssn": "1744-6872; 1744-6880; ",
+          "pageInfo": "130-135",
+          "pubType": "research support, non-u.s. gov't; research-article; journal article; research support, n.i.h., extramural",
+          "isOpenAccess": "N",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 75,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "N",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp"
+            ]
+          },
+          "firstPublicationDate": "2011-03-01",
+          "firstIndexDate": "2011-01-14"
+        },
+        {
+          "id": "26175754",
+          "source": "MED",
+          "pmid": "26175754",
+          "pmcid": "PMC4485183",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC4485183"
+            ]
+          },
+          "doi": "10.3389/fgene.2015.00230",
+          "title": "DNA methylation and single nucleotide variants in the brain-derived neurotrophic factor (BDNF) and oxytocin receptor (OXTR) genes are associated with anxiety/depression in older women.",
+          "authorString": "Chagnon YC, Potvin O, Hudon C, Pr\u00e9ville M.",
+          "journalTitle": "Front Genet",
+          "journalVolume": "6",
+          "pubYear": "2015",
+          "journalIssn": "1664-8021",
+          "pageInfo": "230",
+          "pubType": "research-article; journal article",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 73,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp"
+            ]
+          },
+          "firstPublicationDate": "2015-06-30",
+          "firstIndexDate": "2015-07-16"
+        },
+        {
+          "id": "37101235",
+          "source": "MED",
+          "pmid": "37101235",
+          "pmcid": "PMC10134547",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC10134547"
+            ]
+          },
+          "doi": "10.1186/s40478-023-01563-4",
+          "title": "Large multi-ethnic genetic analyses of amyloid imaging identify new genes for Alzheimer disease.",
+          "authorString": "Ali M, Archer DB, Gorijala P, Western D, Timsina J, Fern\u00e1ndez MV, Wang TC, Satizabal CL, Yang Q, Beiser AS, Wang R, Chen G, Gordon B, Benzinger TLS, Xiong C, Morris JC, Bateman RJ, Karch CM, McDade E, Goate A, Seshadri S, Mayeux RP, Sperling RA, Buckley RF, Johnson KA, Won HH, Jung SH, Kim HR, Seo SW, Kim HJ, Mormino E, Laws SM, Fan KH, Kamboh MI, Vemuri P, Ramanan VK, Yang HS, Wenzel A, Rajula HSR, Mishra A, Dufouil C, Debette S, Lopez OL, DeKosky ST, Tao F, Nagle MW, Knight Alzheimer Disease Research Center (Knight ADRC), Dominantly Inherited Alzheimer Network (DIAN), Alzheimer\u2019s Disease Neuroimaging Initiative (ADNI), ADNI-DOD, A4 Study Team, Australian Imaging Biomarkers, Lifestyle (AIBL) Study, Hohman TJ, Sung YJ, Dumitrescu L, Cruchaga C.",
+          "journalTitle": "Acta Neuropathol Commun",
+          "issue": "1",
+          "journalVolume": "11",
+          "pubYear": "2023",
+          "journalIssn": "2051-5960",
+          "pageInfo": "68",
+          "pubType": "research support, non-u.s. gov't; research-article; multicenter study; research support, u.s. gov't, non-p.h.s.; journal article; research support, n.i.h., extramural",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 62,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp"
+            ]
+          },
+          "firstPublicationDate": "2023-04-26",
+          "firstIndexDate": "2023-04-27"
+        },
+        {
+          "id": "27904710",
+          "source": "MED",
+          "pmid": "27904710",
+          "pmcid": "PMC5126352",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC5126352"
+            ]
+          },
+          "title": "The COMT (rs165599) gene polymorphism contributes to chemotherapy-induced cognitive impairment in breast cancer patients.",
+          "authorString": "Cheng H, Li W, Gan C, Zhang B, Jia Q, Wang K.",
+          "journalTitle": "Am J Transl Res",
+          "issue": "11",
+          "journalVolume": "8",
+          "pubYear": "2016",
+          "journalIssn": "1943-8141",
+          "pageInfo": "5087-5097",
+          "pubType": "research-article; journal article",
+          "isOpenAccess": "N",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 55,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "N",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp"
+            ]
+          },
+          "firstPublicationDate": "2016-11-15",
+          "firstIndexDate": "2016-12-02"
+        },
+        {
+          "id": "20429872",
+          "source": "MED",
+          "pmid": "20429872",
+          "pmcid": "PMC2877669",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC2877669"
+            ]
+          },
+          "doi": "10.1186/1471-2350-11-66",
+          "title": "Additive effects of LPL, APOA5 and APOE variant combinations on triglyceride levels and hypertriglyceridemia: results of the ICARIA genetic sub-study.",
+          "authorString": "Ariza MJ, S\u00e1nchez-Chaparro MA, Bar\u00f3n FJ, Hornos AM, Calvo-Bonacho E, Rioja J, Valdivielso P, Gelpi JA, Gonz\u00e1lez-Santos P.",
+          "journalTitle": "BMC Med Genet",
+          "journalVolume": "11",
+          "pubYear": "2010",
+          "journalIssn": "1471-2350",
+          "pageInfo": "66",
+          "pubType": "research support, non-u.s. gov't; research-article; journal article",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 52,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp"
+            ]
+          },
+          "firstPublicationDate": "2010-04-29",
+          "firstIndexDate": "2010-09-29"
+        },
+        {
+          "id": "28672022",
+          "source": "MED",
+          "pmid": "28672022",
+          "pmcid": "PMC5495438",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC5495438"
+            ]
+          },
+          "doi": "10.1371/journal.pone.0180356",
+          "title": "APOE \u03b54-TOMM40 '523 haplotypes and the risk of Alzheimer's disease in older Caucasian and African Americans.",
+          "authorString": "Yu L, Lutz MW, Wilson RS, Burns DK, Roses AD, Saunders AM, Yang J, Gaiteri C, De Jager PL, Barnes LL, Bennett DA.",
+          "journalTitle": "PLoS One",
+          "issue": "7",
+          "journalVolume": "12",
+          "pubYear": "2017",
+          "journalIssn": "1932-6203",
+          "pageInfo": "e0180356",
+          "pubType": "research-article; journal article",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 50,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp"
+            ]
+          },
+          "firstPublicationDate": "2017-07-03",
+          "firstIndexDate": "2017-07-04"
+        },
+        {
+          "id": "25268647",
+          "source": "MED",
+          "pmid": "25268647",
+          "pmcid": "PMC4182517",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC4182517"
+            ]
+          },
+          "doi": "10.1371/journal.pone.0108605",
+          "title": "The apolipoprotein E polymorphism rs7412 associates with body fatness independently of plasma lipids in middle aged men.",
+          "authorString": "Tejedor MT, Garcia-Sobreviela MP, Ledesma M, Arbones-Mainar JM.",
+          "journalTitle": "PLoS One",
+          "issue": "9",
+          "journalVolume": "9",
+          "pubYear": "2014",
+          "journalIssn": "1932-6203",
+          "pageInfo": "e108605",
+          "pubType": "research support, non-u.s. gov't; research-article; journal article",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 47,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "N",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp"
+            ]
+          },
+          "firstPublicationDate": "2014-09-30",
+          "firstIndexDate": "2014-10-01"
+        }
+      ]
+    }
+  }
+}

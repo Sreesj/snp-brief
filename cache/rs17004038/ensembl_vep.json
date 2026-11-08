@@ -1,0 +1,466 @@
+{
+  "source": "Ensembl VEP",
+  "retrieved": "2026-11-08T03:32:36+00:00",
+  "request": {
+    "rsid": "rs17004038",
+    "params": {
+      "AlphaMissense": "1",
+      "CADD": "1",
+      "SpliceAI": "1",
+      "canonical": "1",
+      "variant_class": "1",
+      "domains": "1"
+    }
+  },
+  "response": [
+    {
+      "seq_region_name": "22",
+      "end": 23894404,
+      "colocated_variants": [
+        {
+          "somatic": 1,
+          "start": 23894404,
+          "end": 23894404,
+          "seq_region_name": "22",
+          "allele_string": "COSMIC_MUTATION",
+          "phenotype_or_disease": 1,
+          "id": "COSV53159253",
+          "strand": 1
+        },
+        {
+          "frequencies": {
+            "A": {
+              "af": 0.0044,
+              "gnomade_asj": 0,
+              "gnomade": 0.0007842,
+              "afr": 0,
+              "gnomadg_afr": 0.0001203,
+              "gnomade_remaining": 0.001244,
+              "eas": 0.0218,
+              "amr": 0,
+              "gnomadg_nfe": 2.94e-05,
+              "gnomade_eas": 0.02126,
+              "gnomadg": 0.0008271,
+              "gnomade_amr": 0,
+              "gnomadg_fin": 0,
+              "gnomadg_sas": 0.0008278,
+              "gnomadg_remaining": 0,
+              "gnomadg_amr": 0.0001307,
+              "gnomadg_eas": 0.02181,
+              "gnomadg_mid": 0,
+              "gnomadg_ami": 0,
+              "gnomade_fin": 0,
+              "eur": 0,
+              "sas": 0,
+              "gnomade_sas": 0.0001785,
+              "gnomade_nfe": 6.168e-06,
+              "gnomade_afr": 3.723e-05,
+              "gnomadg_asj": 0,
+              "gnomade_mid": 0
+            }
+          },
+          "strand": 1,
+          "id": "rs17004038",
+          "allele_string": "C/A",
+          "pubmed": [
+            20061373,
+            27625398,
+            22451332,
+            35324982,
+            38267013
+          ],
+          "seq_region_name": "22",
+          "end": 23894404,
+          "start": 23894404
+        }
+      ],
+      "start": 23894404,
+      "transcript_consequences": [
+        {
+          "cadd_raw": 2.112171,
+          "variant_allele": "A",
+          "canonical": 1,
+          "cdna_start": 22,
+          "impact": "MODIFIER",
+          "consequence_terms": [
+            "5_prime_UTR_variant"
+          ],
+          "cdna_end": 22,
+          "biotype": "protein_coding",
+          "gene_id": "ENSG00000240972",
+          "strand": 1,
+          "transcript_id": "ENST00000215754",
+          "hgnc_id": "HGNC:7097",
+          "gene_symbol": "MIF",
+          "spliceai": {
+            "DS_DL": 0,
+            "DP_DG": 26,
+            "SYMBOL": "MIF",
+            "DS_DG": 0,
+            "DS_AL": 0,
+            "DP_AG": -19,
+            "DP_DL": -2,
+            "DP_AL": 12,
+            "DS_AG": 0
+          },
+          "cadd_phred": 17.27,
+          "gene_symbol_source": "HGNC"
+        },
+        {
+          "cadd_phred": 17.27,
+          "consequence_terms": [
+            "downstream_gene_variant"
+          ],
+          "impact": "MODIFIER",
+          "gene_symbol_source": "HGNC",
+          "distance": 22,
+          "biotype": "lncRNA",
+          "cadd_raw": 2.112171,
+          "gene_id": "ENSG00000218537",
+          "variant_allele": "A",
+          "canonical": 1,
+          "transcript_id": "ENST00000406213",
+          "strand": -1,
+          "hgnc_id": "HGNC:27669",
+          "gene_symbol": "MIF-AS1"
+        },
+        {
+          "biotype": "retained_intron",
+          "cadd_phred": 17.27,
+          "spliceai": {
+            "DS_DG": 0,
+            "DS_DL": 0,
+            "DP_DG": 26,
+            "SYMBOL": "MIF",
+            "DS_AG": 0,
+            "DP_AL": 12,
+            "DP_AG": -19,
+            "DP_DL": -2,
+            "DS_AL": 0
+          },
+          "impact": "MODIFIER",
+          "consequence_terms": [
+            "upstream_gene_variant"
+          ],
+          "gene_symbol_source": "HGNC",
+          "distance": 46,
+          "hgnc_id": "HGNC:7097",
+          "transcript_id": "ENST00000465752",
+          "strand": 1,
+          "gene_symbol": "MIF",
+          "cadd_raw": 2.112171,
+          "gene_id": "ENSG00000240972",
+          "variant_allele": "A"
+        },
+        {
+          "biotype": "retained_intron",
+          "consequence_terms": [
+            "upstream_gene_variant"
+          ],
+          "impact": "MODIFIER",
+          "spliceai": {
+            "DS_AG": 0,
+            "DP_AL": 12,
+            "DP_DL": -2,
+            "DP_AG": -19,
+            "DS_AL": 0,
+            "DS_DG": 0,
+            "SYMBOL": "MIF",
+            "DS_DL": 0,
+            "DP_DG": 26
+          },
+          "cadd_phred": 17.27,
+          "distance": 294,
+          "gene_symbol_source": "HGNC",
+          "strand": 1,
+          "transcript_id": "ENST00000498385",
+          "hgnc_id": "HGNC:7097",
+          "gene_symbol": "MIF",
+          "cadd_raw": 2.112171,
+          "variant_allele": "A",
+          "gene_id": "ENSG00000240972"
+        },
+        {
+          "cadd_phred": 17.27,
+          "consequence_terms": [
+            "intron_variant",
+            "non_coding_transcript_variant"
+          ],
+          "impact": "MODIFIER",
+          "biotype": "lncRNA",
+          "gene_id": "ENSG00000290199",
+          "variant_allele": "A",
+          "cadd_raw": 2.112171,
+          "transcript_id": "ENST00000717616",
+          "canonical": 1,
+          "strand": -1
+        },
+        {
+          "variant_allele": "A",
+          "cadd_raw": 2.112171,
+          "cdna_start": 29,
+          "consequence_terms": [
+            "5_prime_UTR_variant"
+          ],
+          "cdna_end": 29,
+          "impact": "MODIFIER",
+          "biotype": "protein_coding",
+          "gene_id": "ENSG00000240972",
+          "gene_symbol": "MIF",
+          "hgnc_id": "HGNC:7097",
+          "transcript_id": "ENST00000857232",
+          "strand": 1,
+          "gene_symbol_source": "HGNC",
+          "spliceai": {
+            "DP_AG": -19,
+            "DP_DL": -2,
+            "DS_AL": 0,
+            "DS_AG": 0,
+            "DP_AL": 12,
+            "DP_DG": 26,
+            "DS_DL": 0,
+            "SYMBOL": "MIF",
+            "DS_DG": 0
+          },
+          "cadd_phred": 17.27
+        },
+        {
+          "spliceai": {
+            "DS_AG": 0,
+            "DP_AL": 12,
+            "DP_AG": -19,
+            "DP_DL": -2,
+            "DS_AL": 0,
+            "DS_DG": 0,
+            "SYMBOL": "MIF",
+            "DS_DL": 0,
+            "DP_DG": 26
+          },
+          "cadd_phred": 17.27,
+          "gene_symbol_source": "HGNC",
+          "gene_id": "ENSG00000240972",
+          "hgnc_id": "HGNC:7097",
+          "transcript_id": "ENST00000921386",
+          "strand": 1,
+          "gene_symbol": "MIF",
+          "cdna_start": 33,
+          "consequence_terms": [
+            "5_prime_UTR_variant"
+          ],
+          "cdna_end": 33,
+          "impact": "MODIFIER",
+          "biotype": "protein_coding",
+          "cadd_raw": 2.112171,
+          "variant_allele": "A"
+        },
+        {
+          "hgnc_id": "HGNC:7097",
+          "transcript_id": "ENST00000921387",
+          "strand": 1,
+          "gene_symbol": "MIF",
+          "gene_id": "ENSG00000240972",
+          "spliceai": {
+            "DP_AL": 12,
+            "DS_AG": 0,
+            "DS_AL": 0,
+            "DP_AG": -19,
+            "DP_DL": -2,
+            "DS_DG": 0,
+            "DP_DG": 26,
+            "SYMBOL": "MIF",
+            "DS_DL": 0
+          },
+          "cadd_phred": 17.27,
+          "gene_symbol_source": "HGNC",
+          "cadd_raw": 2.112171,
+          "variant_allele": "A",
+          "biotype": "protein_coding",
+          "cdna_start": 30,
+          "cdna_end": 30,
+          "consequence_terms": [
+            "5_prime_UTR_variant"
+          ],
+          "impact": "MODIFIER"
+        },
+        {
+          "gene_symbol_source": "HGNC",
+          "cadd_phred": 17.27,
+          "consequence_terms": [
+            "intron_variant"
+          ],
+          "impact": "MODIFIER",
+          "biotype": "protein_coding",
+          "gene_id": "ENSG00000099977",
+          "variant_allele": "A",
+          "cadd_raw": 2.112171,
+          "gene_symbol": "DDT",
+          "transcript_id": "ENST00001095302",
+          "strand": -1,
+          "hgnc_id": "HGNC:2732"
+        },
+        {
+          "biotype": "protein_coding",
+          "consequence_terms": [
+            "intron_variant"
+          ],
+          "impact": "MODIFIER",
+          "cadd_phred": 17.27,
+          "gene_symbol_source": "HGNC",
+          "hgnc_id": "HGNC:2732",
+          "transcript_id": "ENST00001095303",
+          "strand": -1,
+          "gene_symbol": "DDT",
+          "cadd_raw": 2.112171,
+          "variant_allele": "A",
+          "gene_id": "ENSG00000099977"
+        },
+        {
+          "strand": -1,
+          "transcript_id": "ENST00001095304",
+          "hgnc_id": "HGNC:2732",
+          "gene_symbol": "DDT",
+          "cadd_raw": 2.112171,
+          "gene_id": "ENSG00000099977",
+          "variant_allele": "A",
+          "biotype": "protein_coding",
+          "cadd_phred": 17.27,
+          "impact": "MODIFIER",
+          "consequence_terms": [
+            "intron_variant"
+          ],
+          "gene_symbol_source": "HGNC"
+        },
+        {
+          "gene_symbol_source": "HGNC",
+          "cadd_phred": 17.27,
+          "spliceai": {
+            "DS_AL": 0,
+            "DP_DL": -2,
+            "DP_AG": -19,
+            "DP_AL": 12,
+            "DS_AG": 0,
+            "DP_DG": 26,
+            "SYMBOL": "MIF",
+            "DS_DL": 0,
+            "DS_DG": 0
+          },
+          "gene_id": "ENSG00000240972",
+          "gene_symbol": "MIF",
+          "transcript_id": "ENST00001131902",
+          "hgnc_id": "HGNC:7097",
+          "strand": 1,
+          "consequence_terms": [
+            "5_prime_UTR_variant"
+          ],
+          "impact": "MODIFIER",
+          "cdna_end": 33,
+          "cdna_start": 33,
+          "biotype": "protein_coding",
+          "variant_allele": "A",
+          "cadd_raw": 2.112171
+        }
+      ],
+      "input": "rs17004038",
+      "assembly_name": "GRCh38",
+      "allele_string": "C/A",
+      "id": "rs17004038",
+      "most_severe_consequence": "5_prime_UTR_variant",
+      "variant_class": "SNV",
+      "strand": 1
+    },
+    {
+      "seq_region_name": "HSCHR22_1_CTG7",
+      "colocated_variants": [
+        {
+          "allele_string": "C/A",
+          "id": "rs17004038",
+          "strand": 1,
+          "seq_region_name": "HSCHR22_1_CTG7",
+          "end": 130766,
+          "start": 130766,
+          "pubmed": [
+            20061373,
+            27625398,
+            22451332,
+            35324982,
+            38267013
+          ]
+        }
+      ],
+      "start": 130766,
+      "end": 130766,
+      "assembly_name": "GRCh38",
+      "transcript_consequences": [
+        {
+          "gene_symbol_source": "HGNC",
+          "cdna_start": 401,
+          "consequence_terms": [
+            "5_prime_UTR_variant"
+          ],
+          "impact": "MODIFIER",
+          "cdna_end": 401,
+          "biotype": "protein_coding",
+          "gene_id": "ENSG00000276701",
+          "variant_allele": "A",
+          "gene_symbol": "MIF",
+          "hgnc_id": "HGNC:7097",
+          "transcript_id": "ENST00000613839",
+          "canonical": 1,
+          "strand": 1
+        },
+        {
+          "gene_id": "ENSG00000281335",
+          "variant_allele": "A",
+          "hgnc_id": "HGNC:27669",
+          "transcript_id": "ENST00000625226",
+          "strand": -1,
+          "canonical": 1,
+          "gene_symbol": "MIF-AS1",
+          "impact": "MODIFIER",
+          "consequence_terms": [
+            "downstream_gene_variant"
+          ],
+          "gene_symbol_source": "HGNC",
+          "distance": 22,
+          "biotype": "lncRNA"
+        },
+        {
+          "distance": 294,
+          "gene_symbol_source": "HGNC",
+          "impact": "MODIFIER",
+          "consequence_terms": [
+            "upstream_gene_variant"
+          ],
+          "biotype": "retained_intron",
+          "variant_allele": "A",
+          "gene_id": "ENSG00000276701",
+          "gene_symbol": "MIF",
+          "transcript_id": "ENST00000625385",
+          "strand": 1,
+          "hgnc_id": "HGNC:7097"
+        },
+        {
+          "hgnc_id": "HGNC:7097",
+          "transcript_id": "ENST00000626906",
+          "strand": 1,
+          "gene_symbol": "MIF",
+          "gene_id": "ENSG00000276701",
+          "variant_allele": "A",
+          "biotype": "retained_intron",
+          "impact": "MODIFIER",
+          "consequence_terms": [
+            "upstream_gene_variant"
+          ],
+          "gene_symbol_source": "HGNC",
+          "distance": 46
+        }
+      ],
+      "input": "rs17004038",
+      "id": "rs17004038",
+      "most_severe_consequence": "5_prime_UTR_variant",
+      "strand": 1,
+      "variant_class": "SNV",
+      "allele_string": "C/A"
+    }
+  ]
+}

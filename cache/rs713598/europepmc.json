@@ -1,0 +1,631 @@
+{
+  "source": "europepmc",
+  "retrieved": "2026-11-08T03:33:54+00:00",
+  "request": {
+    "query": "(TITLE:rs713598 OR ABSTRACT:rs713598) AND PUB_TYPE:\"research-article\" NOT PUB_TYPE:review"
+  },
+  "response": {
+    "version": "6.9",
+    "hitCount": 24,
+    "nextCursorMark": "AoJKKDQzNjIwMjMw",
+    "nextPageUrl": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=%28TITLE%3Ars713598+OR+ABSTRACT%3Ars713598%29+AND+PUB_TYPE%3A%22research-article%22+NOT+PUB_TYPE%3Areview&cursorMark=AoJKKDQzNjIwMjMw&resultType=lite&pageSize=15&sort=CITED+desc&format=json",
+    "request": {
+      "queryString": "(TITLE:rs713598 OR ABSTRACT:rs713598) AND PUB_TYPE:\"research-article\" NOT PUB_TYPE:review",
+      "resultType": "lite",
+      "cursorMark": "*",
+      "pageSize": 15,
+      "sort": "CITED desc",
+      "synonym": false
+    },
+    "resultList": {
+      "result": [
+        {
+          "id": "30340375",
+          "source": "MED",
+          "pmid": "30340375",
+          "pmcid": "PMC6213100",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC6213100"
+            ]
+          },
+          "doi": "10.3390/nu10101539",
+          "title": "Bitter, Sweet, Salty, Sour and Umami Taste Perception Decreases with Age: Sex-Specific Analysis, Modulation by Genetic Variants and Taste-Preference Associations in 18 to 80 Year-Old Subjects.",
+          "authorString": "Barrag\u00e1n R, Coltell O, Portol\u00e9s O, Asensio EM, Sorl\u00ed JV, Ortega-Azor\u00edn C, Gonz\u00e1lez JI, S\u00e1iz C, Fern\u00e1ndez-Carri\u00f3n R, Ordovas JM, Corella D.",
+          "journalTitle": "Nutrients",
+          "issue": "10",
+          "journalVolume": "10",
+          "pubYear": "2018",
+          "journalIssn": "2072-6643",
+          "pageInfo": "E1539",
+          "pubType": "research-article; journal article",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 150,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp",
+              "doi"
+            ]
+          },
+          "firstPublicationDate": "2018-10-18",
+          "firstIndexDate": "2018-10-20"
+        },
+        {
+          "id": "20675712",
+          "source": "MED",
+          "pmid": "20675712",
+          "pmcid": "PMC2951861",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC2951861"
+            ]
+          },
+          "doi": "10.1093/hmg/ddq324",
+          "title": "The perception of quinine taste intensity is associated with common genetic variants in a bitter receptor cluster on chromosome 12.",
+          "authorString": "Reed DR, Zhu G, Breslin PA, Duke FF, Henders AK, Campbell MJ, Montgomery GW, Medland SE, Martin NG, Wright MJ.",
+          "journalTitle": "Hum Mol Genet",
+          "issue": "21",
+          "journalVolume": "19",
+          "pubYear": "2010",
+          "journalIssn": "0964-6906; 1460-2083; ",
+          "pageInfo": "4278-4285",
+          "pubType": "research support, non-u.s. gov't; research-article; journal article; research support, n.i.h., extramural",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 98,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp"
+            ]
+          },
+          "firstPublicationDate": "2010-07-30",
+          "firstIndexDate": "2010-10-16"
+        },
+        {
+          "id": "24312479",
+          "source": "MED",
+          "pmid": "24312479",
+          "pmcid": "PMC3846558",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC3846558"
+            ]
+          },
+          "doi": "10.1371/journal.pone.0080512",
+          "title": "TAS2R38 and its influence on smoking behavior and glucose homeostasis in the German Sorbs.",
+          "authorString": "Keller M, Liu X, Wohland T, Rohde K, Gast MT, Stumvoll M, Kovacs P, T\u00f6njes A, B\u00f6ttcher Y.",
+          "journalTitle": "PLoS One",
+          "issue": "12",
+          "journalVolume": "8",
+          "pubYear": "2013",
+          "journalIssn": "1932-6203",
+          "pageInfo": "e80512",
+          "pubType": "clinical trial; research support, non-u.s. gov't; research-article; journal article",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 52,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp"
+            ]
+          },
+          "firstPublicationDate": "2013-12-02",
+          "firstIndexDate": "2013-12-07"
+        },
+        {
+          "id": "25257701",
+          "source": "MED",
+          "pmid": "25257701",
+          "pmcid": "PMC4211991",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC4211991"
+            ]
+          },
+          "doi": "10.1111/acer.12527",
+          "title": "Polymorphisms in TRPV1 and TAS2Rs associate with sensations from sampled ethanol.",
+          "authorString": "Allen AL, McGeary JE, Hayes JE.",
+          "journalTitle": "Alcohol Clin Exp Res",
+          "issue": "10",
+          "journalVolume": "38",
+          "pubYear": "2014",
+          "journalIssn": "0145-6008; 1530-0277; ",
+          "pageInfo": "2550-2560",
+          "pubType": "comparative study; research-article; research support, u.s. gov't, non-p.h.s.; journal article; research support, n.i.h., extramural",
+          "isOpenAccess": "N",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 51,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp"
+            ]
+          },
+          "firstPublicationDate": "2014-09-25",
+          "firstIndexDate": "2014-09-27"
+        },
+        {
+          "id": "25303850",
+          "source": "MED",
+          "pmid": "25303850",
+          "pmcid": "PMC4235829",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC4235829"
+            ]
+          },
+          "doi": "10.1007/s12263-014-0433-3",
+          "title": "Genetic variation in the hTAS2R38 taste receptor and food consumption among Finnish adults.",
+          "authorString": "Sandell M, Hoppu U, Mikkil\u00e4 V, Mononen N, K\u00e4h\u00f6nen M, M\u00e4nnist\u00f6 S, R\u00f6nnemaa T, Viikari J, Lehtim\u00e4ki T, Raitakari OT.",
+          "journalTitle": "Genes Nutr",
+          "issue": "6",
+          "journalVolume": "9",
+          "pubYear": "2014",
+          "journalIssn": "1555-8932; 1865-3499; ",
+          "pageInfo": "433",
+          "pubType": "research-article; journal article",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 47,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "N",
+          "hasLabsLinks": "N",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp"
+            ]
+          },
+          "firstPublicationDate": "2014-10-11",
+          "firstIndexDate": "2014-10-12"
+        },
+        {
+          "id": "30060620",
+          "source": "MED",
+          "pmid": "30060620",
+          "pmcid": "PMC6115723",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC6115723"
+            ]
+          },
+          "doi": "10.3390/nu10080990",
+          "title": "The Relationship between Single Nucleotide Polymorphisms in Taste Receptor Genes, Taste Function and Dietary Intake in Preschool-Aged Children and Adults in the Guelph Family Health Study.",
+          "authorString": "Chamoun E, Carroll NA, Duizer LM, Qi W, Feng Z, Darlington G, Duncan AM, Haines J, Ma DWL, Guelph Family Health Study.",
+          "journalTitle": "Nutrients",
+          "issue": "8",
+          "journalVolume": "10",
+          "pubYear": "2018",
+          "journalIssn": "2072-6643",
+          "pageInfo": "E990",
+          "pubType": "research-article; journal article",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 42,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "N",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp"
+            ]
+          },
+          "firstPublicationDate": "2018-07-29",
+          "firstIndexDate": "2018-07-31"
+        },
+        {
+          "id": "24083639",
+          "source": "MED",
+          "pmid": "24083639",
+          "pmcid": "PMC3836614",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC3836614"
+            ]
+          },
+          "doi": "10.1080/01635581.2013.807934",
+          "title": "Variations in bitter-taste receptor genes, dietary intake, and colorectal adenoma risk.",
+          "authorString": "Schembre SM, Cheng I, Wilkens LR, Albright CL, Marchand le L.",
+          "journalTitle": "Nutr Cancer",
+          "issue": "7",
+          "journalVolume": "65",
+          "pubYear": "2013",
+          "journalIssn": "0163-5581; 1532-7914; ",
+          "pageInfo": "982-990",
+          "pubType": "research-article; journal article; research support, n.i.h., extramural",
+          "isOpenAccess": "N",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 34,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp"
+            ]
+          },
+          "firstPublicationDate": "2013-10-01",
+          "firstIndexDate": "2013-10-03"
+        },
+        {
+          "id": "25832883",
+          "source": "MED",
+          "pmid": "25832883",
+          "pmcid": "PMC5013875",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC5013875"
+            ]
+          },
+          "doi": "10.1093/ntr/ntv042",
+          "title": "Genetic Vulnerability to Menthol Cigarette Preference in Women.",
+          "authorString": "Oncken C, Feinn R, Covault J, Duffy V, Dornelas E, Kranzler HR, Sankey HZ.",
+          "journalTitle": "Nicotine Tob Res",
+          "issue": "12",
+          "journalVolume": "17",
+          "pubYear": "2015",
+          "journalIssn": "1462-2203; 1469-994x; ",
+          "pageInfo": "1416-1420",
+          "pubType": "research support, non-u.s. gov't; research-article; journal article",
+          "isOpenAccess": "N",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 31,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "N",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp"
+            ]
+          },
+          "firstPublicationDate": "2015-04-01",
+          "firstIndexDate": "2015-04-03"
+        },
+        {
+          "id": "29385734",
+          "source": "MED",
+          "pmid": "29385734",
+          "pmcid": "PMC5852729",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC5852729"
+            ]
+          },
+          "doi": "10.3390/nu10020153",
+          "title": "Single Nucleotide Polymorphisms in Taste Receptor Genes Are Associated with Snacking Patterns of Preschool-Aged Children in the Guelph Family Health Study: A Pilot Study.",
+          "authorString": "Chamoun E, Hutchinson JM, Krystia O, Mirotta JA, Mutch DM, Buchholz AC, Duncan AM, Darlington G, Haines J, Ma DWL, Guelph Family Health Study.",
+          "journalTitle": "Nutrients",
+          "issue": "2",
+          "journalVolume": "10",
+          "pubYear": "2018",
+          "journalIssn": "2072-6643",
+          "pageInfo": "E153",
+          "pubType": "research-article; journal article",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 28,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "N",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp"
+            ]
+          },
+          "firstPublicationDate": "2018-01-30",
+          "firstIndexDate": "2018-02-01"
+        },
+        {
+          "id": "31137020",
+          "source": "MED",
+          "pmid": "31137020",
+          "pmcid": "PMC6715503",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC6715503"
+            ]
+          },
+          "doi": "10.1159/000499875",
+          "title": "Single Nucleotide Polymorphisms in Chemosensory Pathway Genes GNB3, TAS2R19, and TAS2R38 Are Associated with Chronic Rhinosinusitis.",
+          "authorString": "Purnell PR, Addicks BL, Zalzal HG, Shapiro S, Wen S, Ramadan HH, Setola V, Siderovski DP.",
+          "journalTitle": "Int Arch Allergy Immunol",
+          "issue": "1",
+          "journalVolume": "180",
+          "pubYear": "2019",
+          "journalIssn": "1018-2438; 1423-0097; ",
+          "pageInfo": "72-78",
+          "pubType": "research-article; journal article",
+          "isOpenAccess": "N",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 25,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "N",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp",
+              "doi"
+            ]
+          },
+          "firstPublicationDate": "2019-05-28",
+          "firstIndexDate": "2019-05-30"
+        },
+        {
+          "id": "38308303",
+          "source": "MED",
+          "pmid": "38308303",
+          "pmcid": "PMC10835975",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC10835975"
+            ]
+          },
+          "doi": "10.1186/s40795-024-00828-y",
+          "title": "Genetic determinants of food preferences: a systematic review of observational studies.",
+          "authorString": "Hejazi J, Amiri R, Nozarian S, Tavasolian R, Rahimlou M.",
+          "journalTitle": "BMC Nutr",
+          "issue": "1",
+          "journalVolume": "10",
+          "pubYear": "2024",
+          "journalIssn": "2055-0928",
+          "pageInfo": "24",
+          "pubType": "research-article; journal article",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 15,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp",
+              "doi"
+            ]
+          },
+          "firstPublicationDate": "2024-02-02",
+          "firstIndexDate": "2024-02-03"
+        },
+        {
+          "id": "35513681",
+          "source": "MED",
+          "pmid": "35513681",
+          "pmcid": "PMC9070615",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC9070615"
+            ]
+          },
+          "doi": "10.1038/s41598-022-10747-2",
+          "title": "Distribution of TAS2R38 bitter taste receptor phenotype and haplotypes among COVID-19 patients.",
+          "authorString": "Risso D, Carmagnola D, Morini G, Pellegrini G, Canciani E, Antinucci M, Henin D, Dellavia C.",
+          "journalTitle": "Sci Rep",
+          "issue": "1",
+          "journalVolume": "12",
+          "pubYear": "2022",
+          "journalIssn": "2045-2322",
+          "pageInfo": "7381",
+          "pubType": "research-article; journal article",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 15,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "N",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp"
+            ]
+          },
+          "firstPublicationDate": "2022-05-05",
+          "firstIndexDate": "2022-05-07"
+        },
+        {
+          "id": "34117880",
+          "source": "MED",
+          "pmid": "34117880",
+          "pmcid": "PMC8306723",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC8306723"
+            ]
+          },
+          "doi": "10.1093/chemse/bjab029",
+          "title": "The Associations Between Bitter and Fat Taste Sensitivity, and Dietary Fat Intake: Are They Impacted by Genetic Predisposition?",
+          "authorString": "Graham CA, Pilic L, Mcgrigor E, Brown M, Easton IJ, Kean JN, Sarel V, Wehliye Y, Davis N, Hares N, Barac D, King A, Mavrommatis Y.",
+          "journalTitle": "Chem Senses",
+          "journalVolume": "46",
+          "pubYear": "2021",
+          "journalIssn": "0379-864x; 1464-3553; ",
+          "pageInfo": "bjab029",
+          "pubType": "research support, non-u.s. gov't; research-article; journal article",
+          "isOpenAccess": "N",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 14,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp",
+              "nct",
+              "doi"
+            ]
+          },
+          "firstPublicationDate": "2021-01-01",
+          "firstIndexDate": "2021-06-13"
+        },
+        {
+          "id": "36771415",
+          "source": "MED",
+          "pmid": "36771415",
+          "pmcid": "PMC9921798",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC9921798"
+            ]
+          },
+          "doi": "10.3390/nu15030708",
+          "title": "Timing of Meals and Sleep in the Mediterranean Population: The Effect of Taste, Genetics, Environmental Determinants, and Interactions on Obesity Phenotypes.",
+          "authorString": "Barrag\u00e1n R, Fern\u00e1ndez-Carri\u00f3n R, Asensio-M\u00e1rquez EM, Ortega-Azor\u00edn C, \u00c1lvarez-Sala A, P\u00e9rez-Fidalgo A, Sorl\u00ed JV, Portol\u00e9s O, Gonz\u00e1lez-Monje I, St-Onge MP, Corella D.",
+          "journalTitle": "Nutrients",
+          "issue": "3",
+          "journalVolume": "15",
+          "pubYear": "2023",
+          "journalIssn": "2072-6643",
+          "pageInfo": "708",
+          "pubType": "research-article; journal article",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 12,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp",
+              "doi"
+            ]
+          },
+          "firstPublicationDate": "2023-01-30",
+          "firstIndexDate": "2023-02-12"
+        },
+        {
+          "id": "33911954",
+          "source": "MED",
+          "pmid": "33911954",
+          "pmcid": "PMC8071886",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC8071886"
+            ]
+          },
+          "doi": "10.1016/j.sjbs.2021.01.036",
+          "title": "Association of polymorphisms in genes involved in enamel formation, taste preference and immune response with early childhood caries in Saudi pre-school children.",
+          "authorString": "AlMarshad LK, AlJobair AM, Al-Anazi MR, Bohol MFF, Wyne AH, Al-Qahtani AA.",
+          "journalTitle": "Saudi J Biol Sci",
+          "issue": "4",
+          "journalVolume": "28",
+          "pubYear": "2021",
+          "journalIssn": "1319-562x; 2213-7106; ",
+          "pageInfo": "2388-2395",
+          "pubType": "research-article; journal article",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 10,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp",
+              "doi"
+            ]
+          },
+          "firstPublicationDate": "2021-01-29",
+          "firstIndexDate": "2021-04-30"
+        }
+      ]
+    }
+  }
+}

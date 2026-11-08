@@ -1,0 +1,13 @@
+{
+  "source": "dbSNP citations",
+  "retrieved": "2026-11-08T03:15:46+00:00",
+  "request": {
+    "rsid": "rs9807334"
+  },
+  "response": {
+    "citations": [
+      "22610502",
+      "25616667"
+    ]
+  }
+}

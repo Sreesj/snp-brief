@@ -1,0 +1,193 @@
+{
+  "source": "Open Targets",
+  "retrieved": "2026-11-08T03:33:23+00:00",
+  "request": {
+    "variant_ids": [
+      "1_169549811_C_A",
+      "1_169549811_C_G",
+      "1_169549811_C_T"
+    ]
+  },
+  "response": [
+    {
+      "variant_id": "1_169549811_C_A",
+      "body": {
+        "data": {
+          "variant": null
+        }
+      }
+    },
+    {
+      "variant_id": "1_169549811_C_G",
+      "body": {
+        "data": {
+          "variant": null
+        }
+      }
+    },
+    {
+      "variant_id": "1_169549811_C_T",
+      "body": {
+        "data": {
+          "variant": {
+            "id": "1_169549811_C_T",
+            "credibleSets": {
+              "rows": [
+                {
+                  "study": {
+                    "traitFromSource": "Swelling of limb (PheCode 771.1)"
+                  },
+                  "l2GPredictions": {
+                    "rows": [
+                      {
+                        "score": 0.9667820334434509,
+                        "target": {
+                          "approvedSymbol": "F5"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "study": {
+                    "traitFromSource": "Venous thromboembolism"
+                  },
+                  "l2GPredictions": {
+                    "rows": [
+                      {
+                        "score": 0.9621571898460388,
+                        "target": {
+                          "approvedSymbol": "F5"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "study": {
+                    "traitFromSource": "Venous thromboembolism"
+                  },
+                  "l2GPredictions": {
+                    "rows": [
+                      {
+                        "score": 0.9621571898460388,
+                        "target": {
+                          "approvedSymbol": "F5"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "study": {
+                    "traitFromSource": "Medication use (antithrombotic agents)"
+                  },
+                  "l2GPredictions": {
+                    "rows": [
+                      {
+                        "score": 0.9627858996391296,
+                        "target": {
+                          "approvedSymbol": "F5"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "study": {
+                    "traitFromSource": "Thrombosis"
+                  },
+                  "l2GPredictions": {
+                    "rows": [
+                      {
+                        "score": 0.9621571898460388,
+                        "target": {
+                          "approvedSymbol": "F5"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "study": {
+                    "traitFromSource": "Other disorders of circulatory system (PheCode 459)"
+                  },
+                  "l2GPredictions": {
+                    "rows": [
+                      {
+                        "score": 0.9667820334434509,
+                        "target": {
+                          "approvedSymbol": "F5"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "study": {
+                    "traitFromSource": "ICD10 N92: Excessive, frequent and irregular menstruation"
+                  },
+                  "l2GPredictions": {
+                    "rows": [
+                      {
+                        "score": 0.9667820334434509,
+                        "target": {
+                          "approvedSymbol": "F5"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "study": {
+                    "traitFromSource": "Venous thromboembolism or von Willebrand factor levels (pleiotropy)"
+                  },
+                  "l2GPredictions": {
+                    "rows": [
+                      {
+                        "score": 0.9621571898460388,
+                        "target": {
+                          "approvedSymbol": "F5"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "study": {
+                    "traitFromSource": "ICD10 D50: iron deficiency anaemia"
+                  },
+                  "l2GPredictions": {
+                    "rows": [
+                      {
+                        "score": 0.9627858996391296,
+                        "target": {
+                          "approvedSymbol": "F5"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "study": {
+                    "traitFromSource": "Phlebitis and thrombophlebitis of lower extremities (PheCode 451.2)"
+                  },
+                  "l2GPredictions": {
+                    "rows": [
+                      {
+                        "score": 0.9667820334434509,
+                        "target": {
+                          "approvedSymbol": "F5"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  ]
+}

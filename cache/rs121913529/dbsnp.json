@@ -1,0 +1,83 @@
+{
+  "source": "dbsnp",
+  "retrieved": "2026-11-08T03:16:17+00:00",
+  "request": {
+    "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi",
+    "id": "121913529"
+  },
+  "response": {
+    "header": {
+      "type": "esummary",
+      "version": "0.3"
+    },
+    "result": {
+      "uids": [
+        "121913529"
+      ],
+      "121913529": {
+        "uid": "121913529",
+        "snp_id": 121913529,
+        "allele_origin": "",
+        "global_mafs": [
+          {
+            "study": "ExAC",
+            "freq": "T=0.00002/2"
+          },
+          {
+            "study": "GnomAD_genomes",
+            "freq": "T=0.000013/2"
+          },
+          {
+            "study": "PAGE_STUDY",
+            "freq": "T=0.000013/1"
+          },
+          {
+            "study": "PRJEB37766",
+            "freq": "T=0.002443/8"
+          },
+          {
+            "study": "Qatari",
+            "freq": "A=0.00463/1"
+          },
+          {
+            "study": "ALFA",
+            "freq": "T=0.00001/1"
+          }
+        ],
+        "global_population": "",
+        "global_samplesize": "",
+        "suspected": "",
+        "clinical_significance": "pathogenic,association,likely-pathogenic,pathogenic-likely-pathogenic,not-provided",
+        "genes": [
+          {
+            "name": "KRAS",
+            "gene_id": "3845"
+          }
+        ],
+        "acc": "NC_000012.12",
+        "chr": "12",
+        "handle": "PJP,LTPD,PAGE_CC,DF-BWCC,NCBI-CURATED-RECORDS,EVA_EXAC,EVA,HUMAN_LONGEVITY,GNOMAD,CSS-BFX,ILLUMINA,AFFY,WEILL_CORNELL_DGM,OMIM-CURATED-RECORDS",
+        "spdi": "NC_000012.12:25245349:C:A,NC_000012.12:25245349:C:G,NC_000012.12:25245349:C:T",
+        "fxn_class": "missense_variant,coding_sequence_variant",
+        "validated": "by-frequency,by-alfa,by-cluster",
+        "docsum": "HGVS=NC_000012.12:g.25245350C>A,NC_000012.12:g.25245350C>G,NC_000012.12:g.25245350C>T,NC_000012.11:g.25398284C>A,NC_000012.11:g.25398284C>G,NC_000012.11:g.25398284C>T,NG_007524.2:g.10654G>T,NG_007524.2:g.10654G>C,NG_007524.2:g.10654G>A,NM_004985.5:c.35G>T,NM_004985.5:c.35G>C,NM_004985.5:c.35G>A,NM_004985.4:c.35G>T,NM_004985.4:c.35G>C,NM_004985.4:c.35G>A,NM_004985.3:c.35G>T,NM_004985.3:c.35G>C,NM_004985.3:c.35G>A,NM_033360.4:c.35G>T,NM_033360.4:c.35G>C,NM_033360.4:c.35G>A,NM_033360.3:c.35G>T,NM_033360.3:c.35G>C,NM_033360.3:c.35G>A,NM_033360.2:c.35G>T,NM_033360.2:c.35G>C,NM_033360.2:c.35G>A,NM_001369786.1:c.35G>T,NM_001369786.1:c.35G>C,NM_001369786.1:c.35G>A,NM_001369787.1:c.35G>T,NM_001369787.1:c.35G>C,NM_001369787.1:c.35G>A,XM_047428826.1:c.35G>T,XM_047428826.1:c.35G>C,XM_047428826.1:c.35G>A,NP_004976.2:p.Gly12Val,NP_004976.2:p.Gly12Ala,NP_004976.2:p.Gly12Asp,NP_203524.1:p.Gly12Val,NP_203524.1:p.Gly12Ala,NP_203524.1:p.Gly12Asp,NP_001356715.1:p.Gly12Val,NP_001356715.1:p.Gly12Ala,NP_001356715.1:p.Gly12Asp,NP_001356716.1:p.Gly12Val,NP_001356716.1:p.Gly12Ala,NP_001356716.1:p.Gly12Asp,XP_047284782.1:p.Gly12Val,XP_047284782.1:p.Gly12Ala,XP_047284782.1:p.Gly12Asp|SEQ=[C/A/G/T]|LEN=1|GENE=KRAS:3845",
+        "tax_id": 9606,
+        "orig_build": 133,
+        "upd_build": 157,
+        "createdate": "2010/11/22 16:44",
+        "updatedate": "2024/11/04 05:21",
+        "ss": "275515413,275515415,275515418,291403678,475875727,475875728,537713814,537713815,1690828969,1932710888,1946334382,1959422055,2188613449,2739690345,2984970755,3021415884,3625618444,3644587339,3651790253,3653743381,3725311942,3744096888,3771681230,3984449811,6446343758,6446343759,6446343760,6904380661,8141967502,8314391662,8316117401,8316117402,8442109698,8442109699,8442109700,8512446344,8623898441,8623898442,8623898443,8799446777,8847663989,8936100292,8944149327,8981398226,8981470287,8981625463,8981755493,8981755494,8981755495,8981755496,8981755497",
+        "allele": "N",
+        "snp_class": "snv",
+        "chrpos": "12:25245350",
+        "chrpos_prev_assm": "12:25398284",
+        "text": "",
+        "snp_id_sort": "0121913529",
+        "clinical_sort": "1",
+        "cited_sort": "",
+        "chrpos_sort": "0025245350",
+        "merged_sort": "0"
+      }
+    }
+  }
+}

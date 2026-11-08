@@ -1,0 +1,143 @@
+{
+  "source": "dbsnp",
+  "retrieved": "2026-11-08T03:34:25+00:00",
+  "request": {
+    "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi",
+    "id": "7412"
+  },
+  "response": {
+    "header": {
+      "type": "esummary",
+      "version": "0.3"
+    },
+    "result": {
+      "uids": [
+        "7412"
+      ],
+      "7412": {
+        "uid": "7412",
+        "snp_id": 7412,
+        "allele_origin": "",
+        "global_mafs": [
+          {
+            "study": "1000Genomes",
+            "freq": "T=0.0750799/376"
+          },
+          {
+            "study": "1000Genomes_30X",
+            "freq": "T=0.0771393/494"
+          },
+          {
+            "study": "ALSPAC",
+            "freq": "T=0.0923716/356"
+          },
+          {
+            "study": "Estonian",
+            "freq": "T=0.1008929/452"
+          },
+          {
+            "study": "ExAC",
+            "freq": "T=0.0718191/972"
+          },
+          {
+            "study": "GENOME_DK",
+            "freq": "T=0.2/8"
+          },
+          {
+            "study": "GnomAD_exomes",
+            "freq": "T=0.0740017/98492"
+          },
+          {
+            "study": "GnomAD_genomes",
+            "freq": "T=0.0782491/11666"
+          },
+          {
+            "study": "HapMap",
+            "freq": "T=0.0719585/97"
+          },
+          {
+            "study": "KOREAN",
+            "freq": "T=0.0692521/200"
+          },
+          {
+            "study": "Korea4K",
+            "freq": "T=0.0623431/447"
+          },
+          {
+            "study": "NorthernSweden",
+            "freq": "T=0.0816667/49"
+          },
+          {
+            "study": "PRJEB36033",
+            "freq": "T=0.0526316/2"
+          },
+          {
+            "study": "PRJEB37584",
+            "freq": "T=0.0782828/62"
+          },
+          {
+            "study": "Qatari",
+            "freq": "T=0.0138889/3"
+          },
+          {
+            "study": "SGDP_PRJ",
+            "freq": "C=0.453125/29"
+          },
+          {
+            "study": "Siberian",
+            "freq": "C=0.5/4"
+          },
+          {
+            "study": "TOMMO",
+            "freq": "T=0.0438708/3397"
+          },
+          {
+            "study": "TOPMED",
+            "freq": "T=0.0781216/20678"
+          },
+          {
+            "study": "TWINSUK",
+            "freq": "T=0.0916936/340"
+          },
+          {
+            "study": "ALFA",
+            "freq": "T=0.0830989/15476"
+          }
+        ],
+        "global_population": "",
+        "global_samplesize": "",
+        "suspected": "",
+        "clinical_significance": "drug-response,risk-factor,benign,likely-benign,uncertain-significance,pathogenic,other",
+        "genes": [
+          {
+            "name": "APOE",
+            "gene_id": "348"
+          }
+        ],
+        "acc": "NC_000019.10",
+        "chr": "19",
+        "handle": "OMUKHERJEE_ADBS,NHLBI-ESP,EVA,HUGCELL_USP,TOPMED,ACPOP,CGAP-GAI,NCBI-CURATED-RECORDS,FSA-LAB,KRIBB_YJKIM,1000G_HIGH_COVERAGE,HUMAN_LONGEVITY,BUSHMAN,RSG_UW,JMKIDD_LAB,SWEGEN,TOMMO_GENOMICS,AFFY,WEILL_CORNELL_DGM,CUORCGL,OMICIA,EVA_UK10K_ALSPAC,EVA_EXAC,USC_VALOUEV,SANFORD_IMAGENETICS,COMPLETE_GENOMICS,SC_SNP,EGCUT_WGS,TRAN_CS_UWATERLOO,LEE,EVA-GONL,OMIM-CURATED-RECORDS,KOGIC,PACBIO,SSMP,EVA_GENOME_DK,CSHL,1000GENOMES,GNOMAD,KHV_HUMAN_GENOMES,SGDP_PRJ,ILLUMINA,EVA_DECODE,YY_MCH,YEGNASUBRAMANIAN_LAB,LNCC-LABINFO,EVA_SVP,JJLAB,DEBNICK,EXOME_CHIP,KRGDB,GMI,EVA_UK10K_TWINSUK,PAGE_STUDY",
+        "spdi": "NC_000019.10:44908821:C:T",
+        "fxn_class": "missense_variant,coding_sequence_variant",
+        "validated": "by-frequency,by-alfa,by-cluster",
+        "docsum": "HGVS=NC_000019.10:g.44908822C>T,NC_000019.9:g.45412079C>T,NG_007084.2:g.8041C>T,NM_000041.4:c.526C>T,NM_000041.3:c.526C>T,NM_000041.2:c.526C>T,NM_001302688.2:c.604C>T,NM_001302688.1:c.604C>T,NM_001302690.2:c.526C>T,NM_001302690.1:c.526C>T,NM_001302691.2:c.526C>T,NM_001302691.1:c.526C>T,NM_001302689.2:c.526C>T,NM_001302689.1:c.526C>T,NP_000032.1:p.Arg176Cys,NP_001289617.1:p.Arg202Cys,NP_001289619.1:p.Arg176Cys,NP_001289620.1:p.Arg176Cys,NP_001289618.1:p.Arg176Cys|SEQ=[C/T]|LEN=1|GENE=APOE:348",
+        "tax_id": 9606,
+        "orig_build": 52,
+        "upd_build": 157,
+        "createdate": "2000/09/19 17:02",
+        "updatedate": "2024/11/02 06:19",
+        "ss": "9266,870165,1542565,4429119,12568612,15840556,16231140,75234864,107936539,119338070,160878071,168244006,174365507,181341927,203765855,228156555,237689597,243892432,244239675,244309427,275517959,283224141,410828265,469414606,481561588,481591097,482563225,485575806,491161753,491549550,537712917,661874597,713519653,783233469,783424859,832493923,974506673,994339188,1363326191,1578653636,1638043658,1681037691,1693665421,1698394132,1713664899,1752288225,1752288226,1917938922,1937835823,1946537659,1959869693,2029695319,2094804140,2095085224,2158238083,2226012259,2633544201,2633544202,2635083902,2710884165,2744090577,2750218836,2963330131,2985144683,2985775661,3017540730,3021911610,3021911611,3021911612,3021911613,3352320694,3625742846,3625742847,3625742848,3625742849,3633892015,3634738107,3634738108,3635578762,3636425137,3637330512,3638229877,3640445415,3640445416,3641098341,3643202423,3644726174,3646538370,3652337714,3652337715,3652337716,3652337717,3652337718,3653917429,3684286600,3702845772,3743072612,3744466131,3744466132,3744466133,3744466134,3744466135,3745038116,3745038117,3756111787,3772535200,3772535201,3788541393,3793449661,3798336543,3821359905,3825301411,3825938286,3835481189,3888305366,3938432692,3984156828,3984742820,3985856233,3986802274,4017826839,6183925590,6278432007,6319690441,6322044079,6322639259,6333516942,6347979439,6349964262,6398740345,6404214975,6466746596,8076165870,8227950598,8236962740,8237597849,8237672910,8307395588,8314453657,8435087071,8499891501,8613191139,8624429771,8662475604,8786644800,8799404798,8800009699,8800073523,8817637095,8840606772,8847497727,8847846244,8848495369,8852304031,8928256284,8953885391,8979547886,8981313115,8981353184,8981353185,8981520957,8981654278,8981843973,8981843974,8982101824,8982310329,10052526988",
+        "allele": "Y",
+        "snp_class": "snv",
+        "chrpos": "19:44908822",
+        "chrpos_prev_assm": "19:45412079",
+        "text": "",
+        "snp_id_sort": "0000007412",
+        "clinical_sort": "1",
+        "cited_sort": "",
+        "chrpos_sort": "0044908822",
+        "merged_sort": "0"
+      }
+    }
+  }
+}

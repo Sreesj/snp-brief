@@ -1,0 +1,17 @@
+{
+  "source": "Ensembl LD",
+  "retrieved": "2026-11-08T03:34:44+00:00",
+  "request": {
+    "rsid": "rs7412",
+    "population": "EUR"
+  },
+  "response": [
+    {
+      "d_prime": "1.000000",
+      "population_name": "1000GENOMES:phase_3:EUR",
+      "variation2": "rs1065853",
+      "r2": "1.000000",
+      "variation1": "rs7412"
+    }
+  ]
+}

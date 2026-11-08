@@ -1,0 +1,11 @@
+{
+  "source": "gnomad",
+  "retrieved": "2026-11-08T03:36:43+00:00",
+  "request": {
+    "rsid": "rs80357713"
+  },
+  "response": {
+    "dataset": null,
+    "variants": []
+  }
+}

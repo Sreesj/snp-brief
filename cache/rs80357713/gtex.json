@@ -1,0 +1,11 @@
+{
+  "source": "GTEx",
+  "retrieved": "2026-11-08T03:36:42+00:00",
+  "request": {
+    "rsid": "rs80357713",
+    "variant_ids": []
+  },
+  "response": {
+    "data": []
+  }
+}

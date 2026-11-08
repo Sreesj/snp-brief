@@ -1,0 +1,29 @@
+{
+  "source": "GTEx",
+  "retrieved": "2026-11-08T03:20:31+00:00",
+  "request": {
+    "rsid": "rs3827760",
+    "variant_ids": [
+      "chr2_108897145_A_G_b38"
+    ]
+  },
+  "response": {
+    "data": [
+      {
+        "snpId": "rs3827760",
+        "pos": 108897145,
+        "snpIdUpper": "RS3827760",
+        "variantId": "chr2_108897145_A_G_b38",
+        "geneSymbol": "EDAR",
+        "pValue": 1.75029e-05,
+        "geneSymbolUpper": "EDAR",
+        "datasetId": "gtex_v8",
+        "tissueSiteDetailId": "Small_Intestine_Terminal_Ileum",
+        "ontologyId": "UBERON:0001211",
+        "chromosome": "chr2",
+        "gencodeId": "ENSG00000135960.9",
+        "nes": 1.2897
+      }
+    ]
+  }
+}

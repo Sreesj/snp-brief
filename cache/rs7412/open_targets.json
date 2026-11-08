@@ -1,0 +1,295 @@
+{
+  "source": "Open Targets",
+  "retrieved": "2026-11-08T03:34:25+00:00",
+  "request": {
+    "variant_ids": [
+      "19_44908822_C_T"
+    ]
+  },
+  "response": [
+    {
+      "variant_id": "19_44908822_C_T",
+      "body": {
+        "data": {
+          "variant": {
+            "id": "19_44908822_C_T",
+            "credibleSets": {
+              "rows": [
+                {
+                  "study": {
+                    "traitFromSource": "Ceramide (d17:1/18:0) levels"
+                  },
+                  "l2GPredictions": {
+                    "rows": [
+                      {
+                        "score": 0.9718477725982666,
+                        "target": {
+                          "approvedSymbol": "APOE"
+                        }
+                      },
+                      {
+                        "score": 0.17374053597450256,
+                        "target": {
+                          "approvedSymbol": "APOC2"
+                        }
+                      },
+                      {
+                        "score": 0.17302082479000092,
+                        "target": {
+                          "approvedSymbol": "APOC1"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "study": {
+                    "traitFromSource": "Coronary atherosclerosis (PheCode 411.4)"
+                  },
+                  "l2GPredictions": {
+                    "rows": [
+                      {
+                        "score": 0.9718427062034607,
+                        "target": {
+                          "approvedSymbol": "APOE"
+                        }
+                      },
+                      {
+                        "score": 0.1690295785665512,
+                        "target": {
+                          "approvedSymbol": "APOC1"
+                        }
+                      },
+                      {
+                        "score": 0.1608603596687317,
+                        "target": {
+                          "approvedSymbol": "APOC2"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "study": {
+                    "traitFromSource": "Sphingomyelins (FA20:1) (Model 1)"
+                  },
+                  "l2GPredictions": {
+                    "rows": [
+                      {
+                        "score": 0.9700161814689636,
+                        "target": {
+                          "approvedSymbol": "APOE"
+                        }
+                      },
+                      {
+                        "score": 0.1844153106212616,
+                        "target": {
+                          "approvedSymbol": "APOC1"
+                        }
+                      },
+                      {
+                        "score": 0.1756577342748642,
+                        "target": {
+                          "approvedSymbol": "APOC2"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "study": {
+                    "traitFromSource": "Phosphatidylcholine (36:0) levels"
+                  },
+                  "l2GPredictions": {
+                    "rows": [
+                      {
+                        "score": 0.9718477725982666,
+                        "target": {
+                          "approvedSymbol": "APOE"
+                        }
+                      },
+                      {
+                        "score": 0.17374053597450256,
+                        "target": {
+                          "approvedSymbol": "APOC2"
+                        }
+                      },
+                      {
+                        "score": 0.17302082479000092,
+                        "target": {
+                          "approvedSymbol": "APOC1"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "study": {
+                    "traitFromSource": "Cholesterol in Small VLDL"
+                  },
+                  "l2GPredictions": {
+                    "rows": [
+                      {
+                        "score": 0.96965092420578,
+                        "target": {
+                          "approvedSymbol": "APOE"
+                        }
+                      },
+                      {
+                        "score": 0.1616991013288498,
+                        "target": {
+                          "approvedSymbol": "APOC1"
+                        }
+                      },
+                      {
+                        "score": 0.14975477755069733,
+                        "target": {
+                          "approvedSymbol": "APOC2"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "study": {
+                    "traitFromSource": "Cholesteryl Esters in Medium HDL"
+                  },
+                  "l2GPredictions": {
+                    "rows": [
+                      {
+                        "score": 0.9647761583328247,
+                        "target": {
+                          "approvedSymbol": "APOE"
+                        }
+                      },
+                      {
+                        "score": 0.22979924082756042,
+                        "target": {
+                          "approvedSymbol": "APOC1"
+                        }
+                      },
+                      {
+                        "score": 0.1940782070159912,
+                        "target": {
+                          "approvedSymbol": "APOC2"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "study": {
+                    "traitFromSource": "Total lipids in medium HDL (UKB data field 23566)"
+                  },
+                  "l2GPredictions": {
+                    "rows": [
+                      {
+                        "score": 0.9723036289215088,
+                        "target": {
+                          "approvedSymbol": "APOE"
+                        }
+                      },
+                      {
+                        "score": 0.23194129765033722,
+                        "target": {
+                          "approvedSymbol": "APOC1"
+                        }
+                      },
+                      {
+                        "score": 0.16614849865436554,
+                        "target": {
+                          "approvedSymbol": "APOC2"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "study": {
+                    "traitFromSource": "Cholesterol to Total Lipids in Small VLDL percentage x sex interaction"
+                  },
+                  "l2GPredictions": {
+                    "rows": [
+                      {
+                        "score": 0.969660758972168,
+                        "target": {
+                          "approvedSymbol": "APOE"
+                        }
+                      },
+                      {
+                        "score": 0.2265615016222,
+                        "target": {
+                          "approvedSymbol": "APOC1"
+                        }
+                      },
+                      {
+                        "score": 0.17690163850784302,
+                        "target": {
+                          "approvedSymbol": "APOC2"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "study": {
+                    "traitFromSource": "Concentration of very large VLDL particles"
+                  },
+                  "l2GPredictions": {
+                    "rows": [
+                      {
+                        "score": 0.9579241871833801,
+                        "target": {
+                          "approvedSymbol": "APOE"
+                        }
+                      },
+                      {
+                        "score": 0.15899264812469482,
+                        "target": {
+                          "approvedSymbol": "APOC1"
+                        }
+                      },
+                      {
+                        "score": 0.13977552950382233,
+                        "target": {
+                          "approvedSymbol": "APOC2"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "study": {
+                    "traitFromSource": "Free Cholesterol to Total Lipids in Medium HDL percentage"
+                  },
+                  "l2GPredictions": {
+                    "rows": [
+                      {
+                        "score": 0.9602522253990173,
+                        "target": {
+                          "approvedSymbol": "APOE"
+                        }
+                      },
+                      {
+                        "score": 0.26117247343063354,
+                        "target": {
+                          "approvedSymbol": "APOC1"
+                        }
+                      },
+                      {
+                        "score": 0.19899685680866241,
+                        "target": {
+                          "approvedSymbol": "APOC2"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  ]
+}

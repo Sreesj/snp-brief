@@ -1,0 +1,248 @@
+{
+  "source": "clinvar",
+  "retrieved": "2026-11-08T03:17:40+00:00",
+  "request": {
+    "term": "rs17822931"
+  },
+  "response": {
+    "esearch": {
+      "header": {
+        "type": "esearch",
+        "version": "0.3"
+      },
+      "esearchresult": {
+        "count": "1",
+        "retmax": "1",
+        "retstart": "0",
+        "idlist": [
+          "3558"
+        ],
+        "translationset": [],
+        "translationstack": [
+          {
+            "term": "rs17822931[All Fields]",
+            "field": "All Fields",
+            "count": "1",
+            "explode": "N"
+          },
+          "GROUP"
+        ],
+        "querytranslation": "rs17822931[All Fields]"
+      }
+    },
+    "esummary": {
+      "header": {
+        "type": "esummary",
+        "version": "0.3"
+      },
+      "result": {
+        "uids": [
+          "3558"
+        ],
+        "3558": {
+          "uid": "3558",
+          "obj_type": "single nucleotide variant",
+          "accession": "VCV000003558",
+          "accession_version": "VCV000003558.2",
+          "title": "NM_001370497.1(ABCC11):c.538G>A (p.Gly180Arg)",
+          "variation_set": [
+            {
+              "measure_id": "18597",
+              "variation_xrefs": [
+                {
+                  "db_source": "ClinGen",
+                  "db_id": "CA116353"
+                },
+                {
+                  "db_source": "UniProtKB",
+                  "db_id": "Q96J66#VAR_025438"
+                },
+                {
+                  "db_source": "OMIM",
+                  "db_id": "607040.0001"
+                },
+                {
+                  "db_source": "dbSNP",
+                  "db_id": "17822931"
+                }
+              ],
+              "variation_name": "NM_001370497.1(ABCC11):c.538G>A (p.Gly180Arg)",
+              "cdna_change": "c.538G>A",
+              "aliases": [
+                "ABCC11, GLY180ARG (rs17822931)"
+              ],
+              "variation_loc": [
+                {
+                  "status": "current",
+                  "assembly_name": "GRCh38",
+                  "chr": "16",
+                  "band": "16q12.1",
+                  "start": "48224287",
+                  "stop": "48224287",
+                  "inner_start": "",
+                  "inner_stop": "",
+                  "outer_start": "",
+                  "outer_stop": "",
+                  "display_start": "48224287",
+                  "display_stop": "48224287",
+                  "assembly_acc_ver": "GCF_000001405.38",
+                  "annotation_release": "",
+                  "alt": "",
+                  "ref": ""
+                },
+                {
+                  "status": "previous",
+                  "assembly_name": "GRCh37",
+                  "chr": "16",
+                  "band": "16q12.1",
+                  "start": "48258198",
+                  "stop": "48258198",
+                  "inner_start": "",
+                  "inner_stop": "",
+                  "outer_start": "",
+                  "outer_stop": "",
+                  "display_start": "48258198",
+                  "display_stop": "48258198",
+                  "assembly_acc_ver": "GCF_000001405.25",
+                  "annotation_release": "",
+                  "alt": "",
+                  "ref": ""
+                }
+              ],
+              "allele_freq_set": [
+                {
+                  "source": "The Genome Aggregation Database (gnomAD)",
+                  "value": "0.12273",
+                  "minor_allele": ""
+                },
+                {
+                  "source": "Trans-Omics for Precision Medicine (TOPMed)",
+                  "value": "0.12976",
+                  "minor_allele": ""
+                },
+                {
+                  "source": "The Genome Aggregation Database (gnomAD)",
+                  "value": "0.14076",
+                  "minor_allele": ""
+                },
+                {
+                  "source": "Exome Aggregation Consortium (ExAC)",
+                  "value": "0.22511",
+                  "minor_allele": ""
+                },
+                {
+                  "source": "1000 Genomes Project",
+                  "value": "0.30092",
+                  "minor_allele": "T"
+                }
+              ],
+              "variant_type": "single nucleotide variant",
+              "canonical_spdi": "NC_000016.10:48224286:C:T",
+              "common_name": ""
+            }
+          ],
+          "supporting_submissions": {
+            "scv": [
+              "SCV000023900",
+              "SCV000023902",
+              "SCV000023903",
+              "SCV005289731"
+            ],
+            "rcv": [
+              "RCV000003737",
+              "RCV000003738",
+              "RCV000003739",
+              "RCV004714398"
+            ]
+          },
+          "germline_classification": {
+            "description": "Benign",
+            "last_evaluated": "1/01/01 00:00",
+            "review_status": "criteria provided, single submitter",
+            "fda_recognized_database": "",
+            "trait_set": [
+              {
+                "trait_xrefs": [
+                  {
+                    "db_source": "MedGen",
+                    "db_id": "C3661900"
+                  }
+                ],
+                "trait_name": "not provided"
+              }
+            ]
+          },
+          "clinical_impact_classification": {
+            "description": "",
+            "last_evaluated": "1/01/01 00:00",
+            "review_status": "",
+            "fda_recognized_database": "",
+            "trait_set": []
+          },
+          "oncogenicity_classification": {
+            "description": "",
+            "last_evaluated": "1/01/01 00:00",
+            "review_status": "",
+            "fda_recognized_database": "",
+            "trait_set": []
+          },
+          "record_status": "",
+          "gene_sort": "ABCC11",
+          "chr_sort": "16",
+          "location_sort": "00000000000048224287",
+          "variation_set_name": "",
+          "variation_set_id": "",
+          "genes": [
+            {
+              "symbol": "ABCC11",
+              "geneid": "85320",
+              "strand": "-",
+              "source": "submitted"
+            }
+          ],
+          "molecular_consequence_list": [
+            "missense variant"
+          ],
+          "protein_change": "G180R",
+          "fda_recognized_database": ""
+        }
+      }
+    },
+    "submissions": {
+      "3558": [
+        {
+          "accession": "SCV000023900",
+          "description": "Benign",
+          "review_status": "no assertion criteria provided",
+          "traits": [
+            "APOCRINE GLAND SECRETION, VARIATION IN"
+          ]
+        },
+        {
+          "accession": "SCV000023902",
+          "description": "Benign",
+          "review_status": "no assertion criteria provided",
+          "traits": [
+            "AXILLARY ODOR"
+          ]
+        },
+        {
+          "accession": "SCV000023903",
+          "description": "Benign",
+          "review_status": "no assertion criteria provided",
+          "traits": [
+            "COLOSTRUM SECRETION"
+          ]
+        },
+        {
+          "accession": "SCV005289731",
+          "description": "Benign",
+          "review_status": "criteria provided, single submitter",
+          "traits": [
+            "not provided"
+          ]
+        }
+      ]
+    }
+  }
+}

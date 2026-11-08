@@ -1,0 +1,107 @@
+{
+  "source": "dbsnp",
+  "retrieved": "2026-11-08T03:32:21+00:00",
+  "request": {
+    "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi",
+    "id": "17004038"
+  },
+  "response": {
+    "header": {
+      "type": "esummary",
+      "version": "0.3"
+    },
+    "result": {
+      "uids": [
+        "17004038"
+      ],
+      "17004038": {
+        "uid": "17004038",
+        "snp_id": 17004038,
+        "allele_origin": "",
+        "global_mafs": [
+          {
+            "study": "1000Genomes",
+            "freq": "A=0.004393/22"
+          },
+          {
+            "study": "1000Genomes_30X",
+            "freq": "A=0.003904/25"
+          },
+          {
+            "study": "GnomAD_genomes",
+            "freq": "A=0.000844/126"
+          },
+          {
+            "study": "HapMap",
+            "freq": "A=0.018868/8"
+          },
+          {
+            "study": "KOREAN",
+            "freq": "A=0.019521/57"
+          },
+          {
+            "study": "Korea4K",
+            "freq": "A=0.024513/176"
+          },
+          {
+            "study": "SGDP_PRJ",
+            "freq": "C=0.5/2"
+          },
+          {
+            "study": "TOMMO",
+            "freq": "A=0.019433/1505"
+          },
+          {
+            "study": "TOPMED",
+            "freq": "A=0.000835/221"
+          },
+          {
+            "study": "Vietnamese",
+            "freq": "A=0.023148/5"
+          },
+          {
+            "study": "ALFA",
+            "freq": "A=0.000122/2"
+          }
+        ],
+        "global_population": "",
+        "global_samplesize": "",
+        "suspected": "",
+        "clinical_significance": "",
+        "genes": [
+          {
+            "name": "MIF",
+            "gene_id": "4282"
+          },
+          {
+            "name": "MIF-AS1",
+            "gene_id": "284889"
+          }
+        ],
+        "acc": "NC_000022.11",
+        "chr": "22",
+        "handle": "KRGDB,HUMAN_LONGEVITY,KOGIC,KRIBB_YJKIM,ILLUMINA,EGP_SNPS,CGM_KYOTO,1000G_HIGH_COVERAGE,SANFORD_IMAGENETICS,TOMMO_GENOMICS,TOPMED,KHV_HUMAN_GENOMES,KYUGEN,SGDP_PRJ,YY_MCH,1000GENOMES,GSK-GENETICS,EVA,SSMP,HUGCELL_USP,GNOMAD,EVA_SVP",
+        "spdi": "NC_000022.11:23894403:C:A,NC_000022.11:23894403:C:T",
+        "fxn_class": "5_prime_UTR_variant,non_coding_transcript_variant",
+        "validated": "by-frequency,by-alfa,by-cluster",
+        "docsum": "HGVS=NC_000022.11:g.23894404C>A,NC_000022.11:g.23894404C>T,NC_000022.10:g.24236591C>A,NC_000022.10:g.24236591C>T,NG_012099.1:g.5027C>A,NG_012099.1:g.5027C>T,NM_002415.2:c.-71C>A,NM_002415.2:c.-71C>T,NM_002415.1:c.-71C>A,NM_002415.1:c.-71C>T,NG_145154.1:g.447C>A,NG_145154.1:g.447C>T,NT_187633.1:g.130766C>A,NT_187633.1:g.130766C>T,NR_038911.1:n.1498G>T,NR_038911.1:n.1498G>A|SEQ=[C/A/T]|LEN=1|GENE=MIF:4282,MIF-AS1:284889",
+        "tax_id": 9606,
+        "orig_build": 123,
+        "upd_build": 157,
+        "createdate": "2004/09/20 20:02",
+        "updatedate": "2024/11/02 11:22",
+        "ss": "28458870,49853577,75078632,76867467,119863638,172701213,244281801,491264789,536931723,662508176,1366804857,1713733417,2246626475,2973362024,3022175672,3628511827,3638376516,3643336729,3652637474,3725959729,3759268634,3822435854,3890349497,3940740778,3986856710,4017875230,6194929472,6281883540,6321427554,6333710088,6349990994,6401168368,6470952904,6470952905,8106066382,8232203366,8310777647,8440724505,8502655319,8618186555,8664312676,8793191344,8818629188,8853359276,8881460831,10079909519",
+        "allele": "H",
+        "snp_class": "snv",
+        "chrpos": "22:23894404",
+        "chrpos_prev_assm": "22:24236591",
+        "text": "",
+        "snp_id_sort": "0017004038",
+        "clinical_sort": "0",
+        "cited_sort": "",
+        "chrpos_sort": "0023894404",
+        "merged_sort": "0"
+      }
+    }
+  }
+}

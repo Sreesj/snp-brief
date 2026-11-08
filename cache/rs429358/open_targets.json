@@ -1,0 +1,295 @@
+{
+  "source": "Open Targets",
+  "retrieved": "2026-11-08T03:20:01+00:00",
+  "request": {
+    "variant_ids": [
+      "19_44908684_T_C"
+    ]
+  },
+  "response": [
+    {
+      "variant_id": "19_44908684_T_C",
+      "body": {
+        "data": {
+          "variant": {
+            "id": "19_44908684_T_C",
+            "credibleSets": {
+              "rows": [
+                {
+                  "study": {
+                    "traitFromSource": "Sphingomyelin (d18:0/22:0) levels"
+                  },
+                  "l2GPredictions": {
+                    "rows": [
+                      {
+                        "score": 0.9616200923919678,
+                        "target": {
+                          "approvedSymbol": "APOE"
+                        }
+                      },
+                      {
+                        "score": 0.27914056181907654,
+                        "target": {
+                          "approvedSymbol": "APOC1"
+                        }
+                      },
+                      {
+                        "score": 0.2565731406211853,
+                        "target": {
+                          "approvedSymbol": "APOC4"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "study": {
+                    "traitFromSource": "Monounsaturated fatty acid levels"
+                  },
+                  "l2GPredictions": {
+                    "rows": [
+                      {
+                        "score": 0.9757179021835327,
+                        "target": {
+                          "approvedSymbol": "APOE"
+                        }
+                      },
+                      {
+                        "score": 0.16265179216861725,
+                        "target": {
+                          "approvedSymbol": "APOC1"
+                        }
+                      },
+                      {
+                        "score": 0.15957839787006378,
+                        "target": {
+                          "approvedSymbol": "APOC2"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "study": {
+                    "traitFromSource": "Lewy body disease"
+                  },
+                  "l2GPredictions": {
+                    "rows": [
+                      {
+                        "score": 0.9711930155754089,
+                        "target": {
+                          "approvedSymbol": "APOE"
+                        }
+                      },
+                      {
+                        "score": 0.2002994418144226,
+                        "target": {
+                          "approvedSymbol": "APOC1"
+                        }
+                      },
+                      {
+                        "score": 0.1694679707288742,
+                        "target": {
+                          "approvedSymbol": "APOC2"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "study": {
+                    "traitFromSource": "Body mass index (aged 64-69 years)"
+                  },
+                  "l2GPredictions": {
+                    "rows": [
+                      {
+                        "score": 0.9727481007575989,
+                        "target": {
+                          "approvedSymbol": "APOE"
+                        }
+                      },
+                      {
+                        "score": 0.17154964804649353,
+                        "target": {
+                          "approvedSymbol": "APOC1"
+                        }
+                      },
+                      {
+                        "score": 0.1665104180574417,
+                        "target": {
+                          "approvedSymbol": "APOC2"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "study": {
+                    "traitFromSource": "Cerebrospinal fluid p-tau levels"
+                  },
+                  "l2GPredictions": {
+                    "rows": [
+                      {
+                        "score": 0.9717624187469482,
+                        "target": {
+                          "approvedSymbol": "APOE"
+                        }
+                      },
+                      {
+                        "score": 0.16896304488182068,
+                        "target": {
+                          "approvedSymbol": "APOC2"
+                        }
+                      },
+                      {
+                        "score": 0.16817787289619446,
+                        "target": {
+                          "approvedSymbol": "APOC1"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "study": {
+                    "traitFromSource": "Non-HDL cholesterol levels"
+                  },
+                  "l2GPredictions": {
+                    "rows": [
+                      {
+                        "score": 0.9734014272689819,
+                        "target": {
+                          "approvedSymbol": "APOE"
+                        }
+                      },
+                      {
+                        "score": 0.17374053597450256,
+                        "target": {
+                          "approvedSymbol": "APOC2"
+                        }
+                      },
+                      {
+                        "score": 0.17302082479000092,
+                        "target": {
+                          "approvedSymbol": "APOC1"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "study": {
+                    "traitFromSource": "Circulating CES1 levels"
+                  },
+                  "l2GPredictions": {
+                    "rows": [
+                      {
+                        "score": 0.978270947933197,
+                        "target": {
+                          "approvedSymbol": "APOE"
+                        }
+                      },
+                      {
+                        "score": 0.15920589864253998,
+                        "target": {
+                          "approvedSymbol": "APOC2"
+                        }
+                      },
+                      {
+                        "score": 0.15703128278255463,
+                        "target": {
+                          "approvedSymbol": "APOC1"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "study": {
+                    "traitFromSource": "Pulse pressure, combined automated + manual reading, adjusted by medication - raw"
+                  },
+                  "l2GPredictions": {
+                    "rows": [
+                      {
+                        "score": 0.9741554260253906,
+                        "target": {
+                          "approvedSymbol": "APOE"
+                        }
+                      },
+                      {
+                        "score": 0.15196028351783752,
+                        "target": {
+                          "approvedSymbol": "APOC1"
+                        }
+                      },
+                      {
+                        "score": 0.14372771978378296,
+                        "target": {
+                          "approvedSymbol": "APOC2"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "study": {
+                    "traitFromSource": "High density lipoprotein cholesterol levels"
+                  },
+                  "l2GPredictions": {
+                    "rows": [
+                      {
+                        "score": 0.9734014272689819,
+                        "target": {
+                          "approvedSymbol": "APOE"
+                        }
+                      },
+                      {
+                        "score": 0.16265179216861725,
+                        "target": {
+                          "approvedSymbol": "APOC1"
+                        }
+                      },
+                      {
+                        "score": 0.15957839787006378,
+                        "target": {
+                          "approvedSymbol": "APOC2"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "study": {
+                    "traitFromSource": "Delirium due to conditions classified elsewhere (PheCode 290.2)"
+                  },
+                  "l2GPredictions": {
+                    "rows": [
+                      {
+                        "score": 0.9722641110420227,
+                        "target": {
+                          "approvedSymbol": "APOE"
+                        }
+                      },
+                      {
+                        "score": 0.16600656509399414,
+                        "target": {
+                          "approvedSymbol": "APOC1"
+                        }
+                      },
+                      {
+                        "score": 0.1597573161125183,
+                        "target": {
+                          "approvedSymbol": "APOC2"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  ]
+}

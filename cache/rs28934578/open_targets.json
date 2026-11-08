@@ -1,0 +1,47 @@
+{
+  "source": "Open Targets",
+  "retrieved": "2026-11-08T03:31:29+00:00",
+  "request": {
+    "variant_ids": [
+      "17_7675088_C_A",
+      "17_7675088_C_G",
+      "17_7675088_C_T"
+    ]
+  },
+  "response": [
+    {
+      "variant_id": "17_7675088_C_A",
+      "body": {
+        "data": {
+          "variant": {
+            "id": "17_7675088_C_A",
+            "credibleSets": {
+              "rows": []
+            }
+          }
+        }
+      }
+    },
+    {
+      "variant_id": "17_7675088_C_G",
+      "body": {
+        "data": {
+          "variant": null
+        }
+      }
+    },
+    {
+      "variant_id": "17_7675088_C_T",
+      "body": {
+        "data": {
+          "variant": {
+            "id": "17_7675088_C_T",
+            "credibleSets": {
+              "rows": []
+            }
+          }
+        }
+      }
+    }
+  ]
+}

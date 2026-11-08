@@ -1,0 +1,2143 @@
+{
+  "source": "clinvar",
+  "retrieved": "2026-11-08T03:16:23+00:00",
+  "request": {
+    "term": "rs121913529"
+  },
+  "response": {
+    "esearch": {
+      "header": {
+        "type": "esearch",
+        "version": "0.3"
+      },
+      "esearchresult": {
+        "count": "3",
+        "retmax": "3",
+        "retstart": "0",
+        "idlist": [
+          "45122",
+          "12583",
+          "12582"
+        ],
+        "translationset": [],
+        "translationstack": [
+          {
+            "term": "rs121913529[All Fields]",
+            "field": "All Fields",
+            "count": "3",
+            "explode": "N"
+          },
+          "GROUP"
+        ],
+        "querytranslation": "rs121913529[All Fields]"
+      }
+    },
+    "esummary": {
+      "header": {
+        "type": "esummary",
+        "version": "0.3"
+      },
+      "result": {
+        "uids": [
+          "45122",
+          "12583",
+          "12582"
+        ],
+        "45122": {
+          "uid": "45122",
+          "obj_type": "single nucleotide variant",
+          "accession": "VCV000045122",
+          "accession_version": "VCV000045122.20",
+          "title": "NM_004985.5(KRAS):c.35G>C (p.Gly12Ala)",
+          "variation_set": [
+            {
+              "measure_id": "54289",
+              "variation_xrefs": [
+                {
+                  "db_source": "ClinGen",
+                  "db_id": "CA135567"
+                },
+                {
+                  "db_source": "UniProtKB",
+                  "db_id": "P01116#VAR_036305"
+                },
+                {
+                  "db_source": "dbSNP",
+                  "db_id": "121913529"
+                }
+              ],
+              "variation_name": "NM_004985.5(KRAS):c.35G>C (p.Gly12Ala)",
+              "cdna_change": "c.35G>C",
+              "aliases": [],
+              "variation_loc": [
+                {
+                  "status": "current",
+                  "assembly_name": "GRCh38",
+                  "chr": "12",
+                  "band": "12p12.1",
+                  "start": "25245350",
+                  "stop": "25245350",
+                  "inner_start": "",
+                  "inner_stop": "",
+                  "outer_start": "",
+                  "outer_stop": "",
+                  "display_start": "25245350",
+                  "display_stop": "25245350",
+                  "assembly_acc_ver": "GCF_000001405.38",
+                  "annotation_release": "",
+                  "alt": "",
+                  "ref": ""
+                },
+                {
+                  "status": "previous",
+                  "assembly_name": "GRCh37",
+                  "chr": "12",
+                  "band": "12p12.1",
+                  "start": "25398284",
+                  "stop": "25398284",
+                  "inner_start": "",
+                  "inner_stop": "",
+                  "outer_start": "",
+                  "outer_stop": "",
+                  "display_start": "25398284",
+                  "display_stop": "25398284",
+                  "assembly_acc_ver": "GCF_000001405.25",
+                  "annotation_release": "",
+                  "alt": "",
+                  "ref": ""
+                }
+              ],
+              "allele_freq_set": [],
+              "variant_type": "single nucleotide variant",
+              "canonical_spdi": "NC_000012.12:25245349:C:G",
+              "common_name": ""
+            }
+          ],
+          "supporting_submissions": {
+            "scv": [
+              "SCV000061935",
+              "SCV001132087",
+              "SCV001571410",
+              "SCV005094258",
+              "SCV007105397",
+              "SCV007105424",
+              "SCV007980208",
+              "SCV004105185",
+              "SCV001550889",
+              "SCV004042812",
+              "SCV005416700",
+              "SCV007771140"
+            ],
+            "rcv": [
+              "RCV000038266",
+              "RCV000984117",
+              "RCV001355876",
+              "RCV001374446",
+              "RCV003996396",
+              "RCV004549454",
+              "RCV004795958",
+              "RCV004668758",
+              "RCV006253743",
+              "RCV006253744"
+            ]
+          },
+          "germline_classification": {
+            "description": "Pathogenic/Likely pathogenic",
+            "last_evaluated": "2025/10/26 00:00",
+            "review_status": "criteria provided, multiple submitters, no conflicts",
+            "fda_recognized_database": "",
+            "trait_set": [
+              {
+                "trait_xrefs": [],
+                "trait_name": "KRAS-related disorder"
+              },
+              {
+                "trait_xrefs": [
+                  {
+                    "db_source": "MedGen",
+                    "db_id": "C0024623"
+                  },
+                  {
+                    "db_source": "MeSH",
+                    "db_id": "D013274"
+                  },
+                  {
+                    "db_source": "MONDO",
+                    "db_id": "MONDO:0001056"
+                  },
+                  {
+                    "db_source": "OMIM",
+                    "db_id": "613659"
+                  },
+                  {
+                    "db_source": "Human Phenotype Ontology",
+                    "db_id": "HP:0012126"
+                  }
+                ],
+                "trait_name": "Gastric cancer"
+              },
+              {
+                "trait_xrefs": [
+                  {
+                    "db_source": "Orphanet",
+                    "db_id": "227535"
+                  },
+                  {
+                    "db_source": "MedGen",
+                    "db_id": "C0346153"
+                  },
+                  {
+                    "db_source": "MONDO",
+                    "db_id": "MONDO:0016419"
+                  },
+                  {
+                    "db_source": "OMIM",
+                    "db_id": "114480"
+                  }
+                ],
+                "trait_name": "Familial cancer of breast"
+              },
+              {
+                "trait_xrefs": [
+                  {
+                    "db_source": "Orphanet",
+                    "db_id": "2612"
+                  },
+                  {
+                    "db_source": "MedGen",
+                    "db_id": "C4552097"
+                  },
+                  {
+                    "db_source": "MONDO",
+                    "db_id": "MONDO:0008097"
+                  },
+                  {
+                    "db_source": "OMIM",
+                    "db_id": "163200"
+                  },
+                  {
+                    "db_source": "Human Phenotype Ontology",
+                    "db_id": "HP:0010817"
+                  }
+                ],
+                "trait_name": "Linear nevus sebaceous syndrome"
+              },
+              {
+                "trait_xrefs": [
+                  {
+                    "db_source": "Orphanet",
+                    "db_id": "268114"
+                  },
+                  {
+                    "db_source": "MedGen",
+                    "db_id": "C2674723"
+                  },
+                  {
+                    "db_source": "MONDO",
+                    "db_id": "MONDO:0013767"
+                  },
+                  {
+                    "db_source": "OMIM",
+                    "db_id": "614470"
+                  }
+                ],
+                "trait_name": "Autoimmune lymphoproliferative syndrome type 4"
+              },
+              {
+                "trait_xrefs": [
+                  {
+                    "db_source": "Orphanet",
+                    "db_id": "519"
+                  },
+                  {
+                    "db_source": "MedGen",
+                    "db_id": "C0023467"
+                  },
+                  {
+                    "db_source": "MeSH",
+                    "db_id": "D015470"
+                  },
+                  {
+                    "db_source": "MONDO",
+                    "db_id": "MONDO:0018874"
+                  },
+                  {
+                    "db_source": "OMIM",
+                    "db_id": "601626"
+                  },
+                  {
+                    "db_source": "Human Phenotype Ontology",
+                    "db_id": "HP:0004808"
+                  },
+                  {
+                    "db_source": "Human Phenotype Ontology",
+                    "db_id": "HP:0001914"
+                  },
+                  {
+                    "db_source": "Human Phenotype Ontology",
+                    "db_id": "HP:0004843"
+                  },
+                  {
+                    "db_source": "Human Phenotype Ontology",
+                    "db_id": "HP:0005516"
+                  },
+                  {
+                    "db_source": "Human Phenotype Ontology",
+                    "db_id": "HP:0006724"
+                  },
+                  {
+                    "db_source": "Human Phenotype Ontology",
+                    "db_id": "HP:0006728"
+                  }
+                ],
+                "trait_name": "Acute myeloid leukemia"
+              },
+              {
+                "trait_xrefs": [
+                  {
+                    "db_source": "Orphanet",
+                    "db_id": "648"
+                  },
+                  {
+                    "db_source": "MedGen",
+                    "db_id": "C1860991"
+                  },
+                  {
+                    "db_source": "MONDO",
+                    "db_id": "MONDO:0012371"
+                  },
+                  {
+                    "db_source": "OMIM",
+                    "db_id": "609942"
+                  }
+                ],
+                "trait_name": "Noonan syndrome 3"
+              },
+              {
+                "trait_xrefs": [
+                  {
+                    "db_source": "Orphanet",
+                    "db_id": "3339"
+                  },
+                  {
+                    "db_source": "MedGen",
+                    "db_id": "C1838329"
+                  },
+                  {
+                    "db_source": "MONDO",
+                    "db_id": "MONDO:0010854"
+                  },
+                  {
+                    "db_source": "OMIM",
+                    "db_id": "600268"
+                  }
+                ],
+                "trait_name": "Toriello-Lacassie-Droste syndrome"
+              },
+              {
+                "trait_xrefs": [
+                  {
+                    "db_source": "Orphanet",
+                    "db_id": "46724"
+                  },
+                  {
+                    "db_source": "MedGen",
+                    "db_id": "C0917804"
+                  },
+                  {
+                    "db_source": "MONDO",
+                    "db_id": "MONDO:0007154"
+                  },
+                  {
+                    "db_source": "OMIM",
+                    "db_id": "108010"
+                  },
+                  {
+                    "db_source": "Human Phenotype Ontology",
+                    "db_id": "HP:0002408"
+                  }
+                ],
+                "trait_name": "Cerebral arteriovenous malformation"
+              },
+              {
+                "trait_xrefs": [
+                  {
+                    "db_source": "MedGen",
+                    "db_id": "C0005684"
+                  },
+                  {
+                    "db_source": "MONDO",
+                    "db_id": "MONDO:0001187"
+                  },
+                  {
+                    "db_source": "OMIM",
+                    "db_id": "109800"
+                  }
+                ],
+                "trait_name": "Malignant tumor of urinary bladder"
+              },
+              {
+                "trait_xrefs": [
+                  {
+                    "db_source": "Orphanet",
+                    "db_id": "1340"
+                  },
+                  {
+                    "db_source": "MedGen",
+                    "db_id": "C3809005"
+                  },
+                  {
+                    "db_source": "MONDO",
+                    "db_id": "MONDO:0014112"
+                  },
+                  {
+                    "db_source": "OMIM",
+                    "db_id": "615278"
+                  }
+                ],
+                "trait_name": "Cardiofaciocutaneous syndrome 2"
+              },
+              {
+                "trait_xrefs": [
+                  {
+                    "db_source": "MedGen",
+                    "db_id": "C0242379"
+                  },
+                  {
+                    "db_source": "MONDO",
+                    "db_id": "MONDO:0008903"
+                  },
+                  {
+                    "db_source": "OMIM",
+                    "db_id": "211980"
+                  }
+                ],
+                "trait_name": "Lung cancer"
+              },
+              {
+                "trait_xrefs": [
+                  {
+                    "db_source": "Orphanet",
+                    "db_id": "1333"
+                  },
+                  {
+                    "db_source": "MedGen",
+                    "db_id": "C2931038"
+                  },
+                  {
+                    "db_source": "MONDO",
+                    "db_id": "MONDO:0015278"
+                  },
+                  {
+                    "db_source": "OMIM",
+                    "db_id": "260350"
+                  }
+                ],
+                "trait_name": "Familial pancreatic carcinoma"
+              },
+              {
+                "trait_xrefs": [
+                  {
+                    "db_source": "MedGen",
+                    "db_id": "C3661900"
+                  }
+                ],
+                "trait_name": "not provided"
+              }
+            ]
+          },
+          "clinical_impact_classification": {
+            "description": "Tier I - Strong",
+            "last_evaluated": "2025/01/16 00:00",
+            "review_status": "criteria provided, single submitter",
+            "fda_recognized_database": "",
+            "trait_set": [
+              {
+                "trait_xrefs": [
+                  {
+                    "db_source": "MedGen",
+                    "db_id": "C5670122"
+                  },
+                  {
+                    "db_source": "MONDO",
+                    "db_id": "MONDO:0858958"
+                  }
+                ],
+                "trait_name": "High-grade astrocytoma with piloid features"
+              },
+              {
+                "trait_xrefs": [
+                  {
+                    "db_source": "Orphanet",
+                    "db_id": "251612"
+                  },
+                  {
+                    "db_source": "MedGen",
+                    "db_id": "C0334583"
+                  },
+                  {
+                    "db_source": "MONDO",
+                    "db_id": "MONDO:0016691"
+                  },
+                  {
+                    "db_source": "Human Phenotype Ontology",
+                    "db_id": "HP:0033680"
+                  }
+                ],
+                "trait_name": "Pilocytic astrocytoma"
+              }
+            ]
+          },
+          "oncogenicity_classification": {
+            "description": "Oncogenic",
+            "last_evaluated": "2025/03/04 00:00",
+            "review_status": "criteria provided, single submitter",
+            "fda_recognized_database": "",
+            "trait_set": [
+              {
+                "trait_xrefs": [
+                  {
+                    "db_source": "MedGen",
+                    "db_id": "C0027651"
+                  },
+                  {
+                    "db_source": "MeSH",
+                    "db_id": "D009369"
+                  },
+                  {
+                    "db_source": "MONDO",
+                    "db_id": "MONDO:0005070"
+                  },
+                  {
+                    "db_source": "Human Phenotype Ontology",
+                    "db_id": "HP:0002664"
+                  },
+                  {
+                    "db_source": "Human Phenotype Ontology",
+                    "db_id": "HP:0003008"
+                  },
+                  {
+                    "db_source": "Human Phenotype Ontology",
+                    "db_id": "HP:0006741"
+                  }
+                ],
+                "trait_name": "Neoplasm"
+              }
+            ]
+          },
+          "record_status": "",
+          "gene_sort": "KRAS",
+          "chr_sort": "12",
+          "location_sort": "00000000000025245350",
+          "variation_set_name": "",
+          "variation_set_id": "",
+          "genes": [
+            {
+              "symbol": "KRAS",
+              "geneid": "3845",
+              "strand": "-",
+              "source": "submitted"
+            }
+          ],
+          "molecular_consequence_list": [
+            "missense variant"
+          ],
+          "protein_change": "G12A",
+          "fda_recognized_database": ""
+        },
+        "12583": {
+          "uid": "12583",
+          "obj_type": "single nucleotide variant",
+          "accession": "VCV000012583",
+          "accession_version": "VCV000012583.79",
+          "title": "NM_004985.5(KRAS):c.35G>T (p.Gly12Val)",
+          "variation_set": [
+            {
+              "measure_id": "27622",
+              "variation_xrefs": [
+                {
+                  "db_source": "COSMIC",
+                  "db_id": "520"
+                },
+                {
+                  "db_source": "ClinGen",
+                  "db_id": "CA122540"
+                },
+                {
+                  "db_source": "UniProtKB",
+                  "db_id": "P01116#VAR_006840"
+                },
+                {
+                  "db_source": "OMIM",
+                  "db_id": "190070.0006"
+                },
+                {
+                  "db_source": "OMIM",
+                  "db_id": "190070.0026"
+                },
+                {
+                  "db_source": "dbSNP",
+                  "db_id": "121913529"
+                }
+              ],
+              "variation_name": "NM_004985.5(KRAS):c.35G>T (p.Gly12Val)",
+              "cdna_change": "c.35G>T",
+              "aliases": [
+                "p.G12V:GGT>GTT",
+                "NP_004976.2:p.Gly12Val"
+              ],
+              "variation_loc": [
+                {
+                  "status": "current",
+                  "assembly_name": "GRCh38",
+                  "chr": "12",
+                  "band": "12p12.1",
+                  "start": "25245350",
+                  "stop": "25245350",
+                  "inner_start": "",
+                  "inner_stop": "",
+                  "outer_start": "",
+                  "outer_stop": "",
+                  "display_start": "25245350",
+                  "display_stop": "25245350",
+                  "assembly_acc_ver": "GCF_000001405.38",
+                  "annotation_release": "",
+                  "alt": "",
+                  "ref": ""
+                },
+                {
+                  "status": "previous",
+                  "assembly_name": "GRCh37",
+                  "chr": "12",
+                  "band": "12p12.1",
+                  "start": "25398284",
+                  "stop": "25398284",
+                  "inner_start": "",
+                  "inner_stop": "",
+                  "outer_start": "",
+                  "outer_stop": "",
+                  "display_start": "25398284",
+                  "display_stop": "25398284",
+                  "assembly_acc_ver": "GCF_000001405.25",
+                  "annotation_release": "",
+                  "alt": "",
+                  "ref": ""
+                }
+              ],
+              "allele_freq_set": [],
+              "variant_type": "single nucleotide variant",
+              "canonical_spdi": "NC_000012.12:25245349:C:A",
+              "common_name": ""
+            }
+          ],
+          "supporting_submissions": {
+            "scv": [
+              "SCV005094259",
+              "SCV004295856",
+              "SCV000693724",
+              "SCV000033660",
+              "SCV000051862",
+              "SCV000203917",
+              "SCV000198477",
+              "SCV004176921",
+              "SCV005902168",
+              "SCV003804201",
+              "SCV007105407",
+              "SCV007105419",
+              "SCV007105438",
+              "SCV008060441",
+              "SCV000611561",
+              "SCV002583834",
+              "SCV001553731",
+              "SCV000992586",
+              "SCV000207879",
+              "SCV006076877",
+              "SCV001746133"
+            ],
+            "rcv": [
+              "RCV000013413",
+              "RCV000029216",
+              "RCV000157944",
+              "RCV000150895",
+              "RCV000154262",
+              "RCV000585801",
+              "RCV002291496",
+              "RCV003322589",
+              "RCV003455987",
+              "RCV003539760",
+              "RCV004668725",
+              "RCV006250159",
+              "RCV006253530",
+              "RCV006253529",
+              "RCV006253528",
+              "RCV007056238"
+            ]
+          },
+          "germline_classification": {
+            "description": "Pathogenic",
+            "last_evaluated": "2025/06/24 00:00",
+            "review_status": "criteria provided, multiple submitters, no conflicts",
+            "fda_recognized_database": "",
+            "trait_set": [
+              {
+                "trait_xrefs": [],
+                "trait_name": "KRAS-related disorder"
+              },
+              {
+                "trait_xrefs": [
+                  {
+                    "db_source": "MedGen",
+                    "db_id": "C3661900"
+                  }
+                ],
+                "trait_name": "not provided"
+              },
+              {
+                "trait_xrefs": [
+                  {
+                    "db_source": "Orphanet",
+                    "db_id": "2612"
+                  },
+                  {
+                    "db_source": "MedGen",
+                    "db_id": "C4552097"
+                  },
+                  {
+                    "db_source": "MONDO",
+                    "db_id": "MONDO:0008097"
+                  },
+                  {
+                    "db_source": "OMIM",
+                    "db_id": "163200"
+                  },
+                  {
+                    "db_source": "Human Phenotype Ontology",
+                    "db_id": "HP:0010817"
+                  }
+                ],
+                "trait_name": "Linear nevus sebaceous syndrome"
+              },
+              {
+                "trait_xrefs": [
+                  {
+                    "db_source": "Orphanet",
+                    "db_id": "46724"
+                  },
+                  {
+                    "db_source": "MedGen",
+                    "db_id": "C0917804"
+                  },
+                  {
+                    "db_source": "MONDO",
+                    "db_id": "MONDO:0007154"
+                  },
+                  {
+                    "db_source": "OMIM",
+                    "db_id": "108010"
+                  },
+                  {
+                    "db_source": "Human Phenotype Ontology",
+                    "db_id": "HP:0002408"
+                  }
+                ],
+                "trait_name": "Cerebral arteriovenous malformation"
+              },
+              {
+                "trait_xrefs": [
+                  {
+                    "db_source": "Orphanet",
+                    "db_id": "536391"
+                  },
+                  {
+                    "db_source": "MedGen",
+                    "db_id": "C5555857"
+                  },
+                  {
+                    "db_source": "MONDO",
+                    "db_id": "MONDO:0021060"
+                  }
+                ],
+                "trait_name": "RASopathy"
+              },
+              {
+                "trait_xrefs": [
+                  {
+                    "db_source": "MedGen",
+                    "db_id": "C0007131"
+                  },
+                  {
+                    "db_source": "MeSH",
+                    "db_id": "D002289"
+                  },
+                  {
+                    "db_source": "MONDO",
+                    "db_id": "MONDO:0005233"
+                  },
+                  {
+                    "db_source": "Human Phenotype Ontology",
+                    "db_id": "HP:0030358"
+                  }
+                ],
+                "trait_name": "Non-small cell lung carcinoma"
+              },
+              {
+                "trait_xrefs": [
+                  {
+                    "db_source": "Orphanet",
+                    "db_id": "86834"
+                  },
+                  {
+                    "db_source": "MedGen",
+                    "db_id": "C0349639"
+                  },
+                  {
+                    "db_source": "MONDO",
+                    "db_id": "MONDO:0011908"
+                  },
+                  {
+                    "db_source": "OMIM",
+                    "db_id": "607785"
+                  },
+                  {
+                    "db_source": "Human Phenotype Ontology",
+                    "db_id": "HP:0012209"
+                  }
+                ],
+                "trait_name": "Juvenile myelomonocytic leukemia"
+              }
+            ]
+          },
+          "clinical_impact_classification": {
+            "description": "Tier I - Strong",
+            "last_evaluated": "2025/07/14 00:00",
+            "review_status": "criteria provided, single submitter",
+            "fda_recognized_database": "",
+            "trait_set": [
+              {
+                "trait_xrefs": [
+                  {
+                    "db_source": "Orphanet",
+                    "db_id": "398961"
+                  },
+                  {
+                    "db_source": "MedGen",
+                    "db_id": "C1335167"
+                  },
+                  {
+                    "db_source": "MONDO",
+                    "db_id": "MONDO:0005601"
+                  }
+                ],
+                "trait_name": "Ovarian mucinous adenocarcinoma"
+              },
+              {
+                "trait_xrefs": [
+                  {
+                    "db_source": "MedGen",
+                    "db_id": "C1319315"
+                  },
+                  {
+                    "db_source": "MONDO",
+                    "db_id": "MONDO:0005008"
+                  },
+                  {
+                    "db_source": "Human Phenotype Ontology",
+                    "db_id": "HP:0040275"
+                  }
+                ],
+                "trait_name": "Adenocarcinoma of the large intestine"
+              },
+              {
+                "trait_xrefs": [
+                  {
+                    "db_source": "MedGen",
+                    "db_id": "C0206660"
+                  },
+                  {
+                    "db_source": "MONDO",
+                    "db_id": "MONDO:0002598"
+                  },
+                  {
+                    "db_source": "Human Phenotype Ontology",
+                    "db_id": "HP:0100620"
+                  }
+                ],
+                "trait_name": "Germinoma"
+              }
+            ]
+          },
+          "oncogenicity_classification": {
+            "description": "Oncogenic",
+            "last_evaluated": "2025/03/04 00:00",
+            "review_status": "criteria provided, single submitter",
+            "fda_recognized_database": "",
+            "trait_set": [
+              {
+                "trait_xrefs": [
+                  {
+                    "db_source": "MedGen",
+                    "db_id": "C0027651"
+                  },
+                  {
+                    "db_source": "MeSH",
+                    "db_id": "D009369"
+                  },
+                  {
+                    "db_source": "MONDO",
+                    "db_id": "MONDO:0005070"
+                  },
+                  {
+                    "db_source": "Human Phenotype Ontology",
+                    "db_id": "HP:0002664"
+                  },
+                  {
+                    "db_source": "Human Phenotype Ontology",
+                    "db_id": "HP:0003008"
+                  },
+                  {
+                    "db_source": "Human Phenotype Ontology",
+                    "db_id": "HP:0006741"
+                  }
+                ],
+                "trait_name": "Neoplasm"
+              }
+            ]
+          },
+          "record_status": "",
+          "gene_sort": "KRAS",
+          "chr_sort": "12",
+          "location_sort": "00000000000025245350",
+          "variation_set_name": "",
+          "variation_set_id": "",
+          "genes": [
+            {
+              "symbol": "KRAS",
+              "geneid": "3845",
+              "strand": "-",
+              "source": "submitted"
+            }
+          ],
+          "molecular_consequence_list": [
+            "missense variant"
+          ],
+          "protein_change": "G12V",
+          "fda_recognized_database": ""
+        },
+        "12582": {
+          "uid": "12582",
+          "obj_type": "single nucleotide variant",
+          "accession": "VCV000012582",
+          "accession_version": "VCV000012582.69",
+          "title": "NM_004985.5(KRAS):c.35G>A (p.Gly12Asp)",
+          "variation_set": [
+            {
+              "measure_id": "27621",
+              "variation_xrefs": [
+                {
+                  "db_source": "ClinGen",
+                  "db_id": "CA122538"
+                },
+                {
+                  "db_source": "UniProtKB",
+                  "db_id": "P01116#VAR_016026"
+                },
+                {
+                  "db_source": "OMIM",
+                  "db_id": "190070.0005"
+                },
+                {
+                  "db_source": "OMIM",
+                  "db_id": "190070.0025"
+                },
+                {
+                  "db_source": "dbSNP",
+                  "db_id": "121913529"
+                }
+              ],
+              "variation_name": "NM_004985.5(KRAS):c.35G>A (p.Gly12Asp)",
+              "cdna_change": "c.35G>A",
+              "aliases": [],
+              "variation_loc": [
+                {
+                  "status": "current",
+                  "assembly_name": "GRCh38",
+                  "chr": "12",
+                  "band": "12p12.1",
+                  "start": "25245350",
+                  "stop": "25245350",
+                  "inner_start": "",
+                  "inner_stop": "",
+                  "outer_start": "",
+                  "outer_stop": "",
+                  "display_start": "25245350",
+                  "display_stop": "25245350",
+                  "assembly_acc_ver": "GCF_000001405.38",
+                  "annotation_release": "",
+                  "alt": "",
+                  "ref": ""
+                },
+                {
+                  "status": "previous",
+                  "assembly_name": "GRCh37",
+                  "chr": "12",
+                  "band": "12p12.1",
+                  "start": "25398284",
+                  "stop": "25398284",
+                  "inner_start": "",
+                  "inner_stop": "",
+                  "outer_start": "",
+                  "outer_stop": "",
+                  "display_start": "25398284",
+                  "display_stop": "25398284",
+                  "assembly_acc_ver": "GCF_000001405.25",
+                  "annotation_release": "",
+                  "alt": "",
+                  "ref": ""
+                }
+              ],
+              "allele_freq_set": [
+                {
+                  "source": "Exome Aggregation Consortium (ExAC)",
+                  "value": "0.00002",
+                  "minor_allele": ""
+                },
+                {
+                  "source": "The Genome Aggregation Database (gnomAD), exomes",
+                  "value": "0.00000",
+                  "minor_allele": ""
+                },
+                {
+                  "source": "The Genome Aggregation Database (gnomAD)",
+                  "value": "0.00001",
+                  "minor_allele": ""
+                }
+              ],
+              "variant_type": "single nucleotide variant",
+              "canonical_spdi": "NC_000012.12:25245349:C:T",
+              "common_name": ""
+            }
+          ],
+          "supporting_submissions": {
+            "scv": [
+              "SCV000198478",
+              "SCV000198479",
+              "SCV000198480",
+              "SCV000693723",
+              "SCV000999192",
+              "SCV001736991",
+              "SCV001739511",
+              "SCV002601600",
+              "SCV004176950",
+              "SCV005634967",
+              "SCV005094257",
+              "SCV000992585",
+              "SCV007105520",
+              "SCV007105405",
+              "SCV007105406",
+              "SCV007105409",
+              "SCV007105413",
+              "SCV007105415",
+              "SCV007105418",
+              "SCV007105422",
+              "SCV007105432",
+              "SCV007105434",
+              "SCV000659085",
+              "SCV007538136",
+              "SCV000033658",
+              "SCV000033659",
+              "SCV000044088",
+              "SCV000051860",
+              "SCV000051861",
+              "SCV000191996",
+              "SCV007591183",
+              "SCV000611562",
+              "SCV000784594",
+              "SCV002525678",
+              "SCV002099547",
+              "SCV001550138",
+              "SCV000329383",
+              "SCV005023563",
+              "SCV005044128",
+              "SCV005414064",
+              "SCV000882686",
+              "SCV001571657",
+              "SCV004035006",
+              "SCV006076878",
+              "SCV000882700",
+              "SCV006304919",
+              "SCV002318898",
+              "SCV002821689",
+              "SCV007771141"
+            ],
+            "rcv": [
+              "RCV000013411",
+              "RCV000022799",
+              "RCV000029214",
+              "RCV000029215",
+              "RCV000144969",
+              "RCV000150896",
+              "RCV000150897",
+              "RCV000272938",
+              "RCV000433573",
+              "RCV000548006",
+              "RCV000585796",
+              "RCV000662266",
+              "RCV000856666",
+              "RCV001799604",
+              "RCV001839445",
+              "RCV002508117",
+              "RCV003327361",
+              "RCV004018620",
+              "RCV004554600",
+              "RCV004668724",
+              "RCV005007840",
+              "RCV006253522",
+              "RCV006253519",
+              "RCV006253520",
+              "RCV006253523",
+              "RCV006253525",
+              "RCV006253527",
+              "RCV006253518",
+              "RCV006253524",
+              "RCV006250158",
+              "RCV006253526",
+              "RCV006253521",
+              "RCV006820108",
+              "RCV006688346"
+            ]
+          },
+          "germline_classification": {
+            "description": "Pathogenic/Likely pathogenic",
+            "last_evaluated": "2026/01/23 00:00",
+            "review_status": "criteria provided, multiple submitters, no conflicts",
+            "fda_recognized_database": "",
+            "trait_set": [
+              {
+                "trait_xrefs": [],
+                "trait_name": "Congenital Pulmonary Airway Malformations"
+              },
+              {
+                "trait_xrefs": [],
+                "trait_name": "KRAS-related disorder"
+              },
+              {
+                "trait_xrefs": [
+                  {
+                    "db_source": "MedGen",
+                    "db_id": "C0242379"
+                  },
+                  {
+                    "db_source": "MONDO",
+                    "db_id": "MONDO:0008903"
+                  },
+                  {
+                    "db_source": "OMIM",
+                    "db_id": "211980"
+                  }
+                ],
+                "trait_name": "Lung cancer"
+              },
+              {
+                "trait_xrefs": [
+                  {
+                    "db_source": "MedGen",
+                    "db_id": "C0024623"
+                  },
+                  {
+                    "db_source": "MeSH",
+                    "db_id": "D013274"
+                  },
+                  {
+                    "db_source": "MONDO",
+                    "db_id": "MONDO:0001056"
+                  },
+                  {
+                    "db_source": "OMIM",
+                    "db_id": "613659"
+                  },
+                  {
+                    "db_source": "Human Phenotype Ontology",
+                    "db_id": "HP:0012126"
+                  }
+                ],
+                "trait_name": "Gastric cancer"
+              },
+              {
+                "trait_xrefs": [
+                  {
+                    "db_source": "Orphanet",
+                    "db_id": "268114"
+                  },
+                  {
+                    "db_source": "MedGen",
+                    "db_id": "C2674723"
+                  },
+                  {
+                    "db_source": "MONDO",
+                    "db_id": "MONDO:0013767"
+                  },
+                  {
+                    "db_source": "OMIM",
+                    "db_id": "614470"
+                  }
+                ],
+                "trait_name": "Autoimmune lymphoproliferative syndrome type 4"
+              },
+              {
+                "trait_xrefs": [
+                  {
+                    "db_source": "MedGen",
+                    "db_id": "C0005684"
+                  },
+                  {
+                    "db_source": "MONDO",
+                    "db_id": "MONDO:0001187"
+                  },
+                  {
+                    "db_source": "OMIM",
+                    "db_id": "109800"
+                  }
+                ],
+                "trait_name": "Malignant tumor of urinary bladder"
+              },
+              {
+                "trait_xrefs": [
+                  {
+                    "db_source": "Orphanet",
+                    "db_id": "3339"
+                  },
+                  {
+                    "db_source": "MedGen",
+                    "db_id": "C1838329"
+                  },
+                  {
+                    "db_source": "MONDO",
+                    "db_id": "MONDO:0010854"
+                  },
+                  {
+                    "db_source": "OMIM",
+                    "db_id": "600268"
+                  }
+                ],
+                "trait_name": "Toriello-Lacassie-Droste syndrome"
+              },
+              {
+                "trait_xrefs": [
+                  {
+                    "db_source": "Orphanet",
+                    "db_id": "46724"
+                  },
+                  {
+                    "db_source": "MedGen",
+                    "db_id": "C0917804"
+                  },
+                  {
+                    "db_source": "MONDO",
+                    "db_id": "MONDO:0007154"
+                  },
+                  {
+                    "db_source": "OMIM",
+                    "db_id": "108010"
+                  },
+                  {
+                    "db_source": "Human Phenotype Ontology",
+                    "db_id": "HP:0002408"
+                  }
+                ],
+                "trait_name": "Cerebral arteriovenous malformation"
+              },
+              {
+                "trait_xrefs": [
+                  {
+                    "db_source": "Orphanet",
+                    "db_id": "227535"
+                  },
+                  {
+                    "db_source": "MedGen",
+                    "db_id": "C0346153"
+                  },
+                  {
+                    "db_source": "MONDO",
+                    "db_id": "MONDO:0016419"
+                  },
+                  {
+                    "db_source": "OMIM",
+                    "db_id": "114480"
+                  }
+                ],
+                "trait_name": "Familial cancer of breast"
+              },
+              {
+                "trait_xrefs": [
+                  {
+                    "db_source": "Orphanet",
+                    "db_id": "1333"
+                  },
+                  {
+                    "db_source": "MedGen",
+                    "db_id": "C2931038"
+                  },
+                  {
+                    "db_source": "MONDO",
+                    "db_id": "MONDO:0015278"
+                  },
+                  {
+                    "db_source": "OMIM",
+                    "db_id": "260350"
+                  }
+                ],
+                "trait_name": "Familial pancreatic carcinoma"
+              },
+              {
+                "trait_xrefs": [
+                  {
+                    "db_source": "Orphanet",
+                    "db_id": "2612"
+                  },
+                  {
+                    "db_source": "MedGen",
+                    "db_id": "C4552097"
+                  },
+                  {
+                    "db_source": "MONDO",
+                    "db_id": "MONDO:0008097"
+                  },
+                  {
+                    "db_source": "OMIM",
+                    "db_id": "163200"
+                  },
+                  {
+                    "db_source": "Human Phenotype Ontology",
+                    "db_id": "HP:0010817"
+                  }
+                ],
+                "trait_name": "Linear nevus sebaceous syndrome"
+              },
+              {
+                "trait_xrefs": [
+                  {
+                    "db_source": "Orphanet",
+                    "db_id": "648"
+                  },
+                  {
+                    "db_source": "MedGen",
+                    "db_id": "C1860991"
+                  },
+                  {
+                    "db_source": "MONDO",
+                    "db_id": "MONDO:0012371"
+                  },
+                  {
+                    "db_source": "OMIM",
+                    "db_id": "609942"
+                  }
+                ],
+                "trait_name": "Noonan syndrome 3"
+              },
+              {
+                "trait_xrefs": [
+                  {
+                    "db_source": "Orphanet",
+                    "db_id": "1340"
+                  },
+                  {
+                    "db_source": "MedGen",
+                    "db_id": "C3809005"
+                  },
+                  {
+                    "db_source": "MONDO",
+                    "db_id": "MONDO:0014112"
+                  },
+                  {
+                    "db_source": "OMIM",
+                    "db_id": "615278"
+                  }
+                ],
+                "trait_name": "Cardiofaciocutaneous syndrome 2"
+              },
+              {
+                "trait_xrefs": [
+                  {
+                    "db_source": "Orphanet",
+                    "db_id": "519"
+                  },
+                  {
+                    "db_source": "MedGen",
+                    "db_id": "C0023467"
+                  },
+                  {
+                    "db_source": "MeSH",
+                    "db_id": "D015470"
+                  },
+                  {
+                    "db_source": "MONDO",
+                    "db_id": "MONDO:0018874"
+                  },
+                  {
+                    "db_source": "OMIM",
+                    "db_id": "601626"
+                  },
+                  {
+                    "db_source": "Human Phenotype Ontology",
+                    "db_id": "HP:0004808"
+                  },
+                  {
+                    "db_source": "Human Phenotype Ontology",
+                    "db_id": "HP:0001914"
+                  },
+                  {
+                    "db_source": "Human Phenotype Ontology",
+                    "db_id": "HP:0004843"
+                  },
+                  {
+                    "db_source": "Human Phenotype Ontology",
+                    "db_id": "HP:0005516"
+                  },
+                  {
+                    "db_source": "Human Phenotype Ontology",
+                    "db_id": "HP:0006724"
+                  },
+                  {
+                    "db_source": "Human Phenotype Ontology",
+                    "db_id": "HP:0006728"
+                  }
+                ],
+                "trait_name": "Acute myeloid leukemia"
+              },
+              {
+                "trait_xrefs": [
+                  {
+                    "db_source": "MedGen",
+                    "db_id": "CN230736"
+                  }
+                ],
+                "trait_name": "Cardiovascular phenotype"
+              },
+              {
+                "trait_xrefs": [
+                  {
+                    "db_source": "MedGen",
+                    "db_id": "C3661900"
+                  }
+                ],
+                "trait_name": "not provided"
+              },
+              {
+                "trait_xrefs": [
+                  {
+                    "db_source": "Orphanet",
+                    "db_id": "536391"
+                  },
+                  {
+                    "db_source": "MedGen",
+                    "db_id": "C5555857"
+                  },
+                  {
+                    "db_source": "MONDO",
+                    "db_id": "MONDO:0021060"
+                  }
+                ],
+                "trait_name": "RASopathy"
+              },
+              {
+                "trait_xrefs": [
+                  {
+                    "db_source": "Orphanet",
+                    "db_id": "2612"
+                  },
+                  {
+                    "db_source": "MedGen",
+                    "db_id": "C4552097"
+                  },
+                  {
+                    "db_source": "MONDO",
+                    "db_id": "MONDO:0008097"
+                  },
+                  {
+                    "db_source": "OMIM",
+                    "db_id": "163200"
+                  },
+                  {
+                    "db_source": "Human Phenotype Ontology",
+                    "db_id": "HP:0010817"
+                  }
+                ],
+                "trait_name": "Linear nevus sebaceous syndrome"
+              },
+              {
+                "trait_xrefs": [
+                  {
+                    "db_source": "Orphanet",
+                    "db_id": "46724"
+                  },
+                  {
+                    "db_source": "MedGen",
+                    "db_id": "C0917804"
+                  },
+                  {
+                    "db_source": "MONDO",
+                    "db_id": "MONDO:0007154"
+                  },
+                  {
+                    "db_source": "OMIM",
+                    "db_id": "108010"
+                  },
+                  {
+                    "db_source": "Human Phenotype Ontology",
+                    "db_id": "HP:0002408"
+                  }
+                ],
+                "trait_name": "Cerebral arteriovenous malformation"
+              }
+            ]
+          },
+          "clinical_impact_classification": {
+            "description": "Tier I - Strong",
+            "last_evaluated": "2025/04/08 00:00",
+            "review_status": "criteria provided, single submitter",
+            "fda_recognized_database": "",
+            "trait_set": [
+              {
+                "trait_xrefs": [
+                  {
+                    "db_source": "Orphanet",
+                    "db_id": "398961"
+                  },
+                  {
+                    "db_source": "MedGen",
+                    "db_id": "C1335167"
+                  },
+                  {
+                    "db_source": "MONDO",
+                    "db_id": "MONDO:0005601"
+                  }
+                ],
+                "trait_name": "Ovarian mucinous adenocarcinoma"
+              },
+              {
+                "trait_xrefs": [
+                  {
+                    "db_source": "MedGen",
+                    "db_id": "C1319315"
+                  },
+                  {
+                    "db_source": "MONDO",
+                    "db_id": "MONDO:0005008"
+                  },
+                  {
+                    "db_source": "Human Phenotype Ontology",
+                    "db_id": "HP:0040275"
+                  }
+                ],
+                "trait_name": "Adenocarcinoma of the large intestine"
+              },
+              {
+                "trait_xrefs": [
+                  {
+                    "db_source": "MedGen",
+                    "db_id": "C5669918"
+                  },
+                  {
+                    "db_source": "MONDO",
+                    "db_id": "MONDO:0858939"
+                  }
+                ],
+                "trait_name": "Diffuse pediatric-type high-grade glioma, H3-wildtype and IDH-wildtype"
+              },
+              {
+                "trait_xrefs": [
+                  {
+                    "db_source": "Orphanet",
+                    "db_id": "182067"
+                  },
+                  {
+                    "db_source": "MedGen",
+                    "db_id": "C0017638"
+                  },
+                  {
+                    "db_source": "MeSH",
+                    "db_id": "D005910"
+                  },
+                  {
+                    "db_source": "MONDO",
+                    "db_id": "MONDO:0021042"
+                  },
+                  {
+                    "db_source": "Human Phenotype Ontology",
+                    "db_id": "HP:0009733"
+                  }
+                ],
+                "trait_name": "Glioma"
+              },
+              {
+                "trait_xrefs": [
+                  {
+                    "db_source": "Orphanet",
+                    "db_id": "99757"
+                  },
+                  {
+                    "db_source": "MedGen",
+                    "db_id": "C0206656"
+                  },
+                  {
+                    "db_source": "MONDO",
+                    "db_id": "MONDO:0009993"
+                  },
+                  {
+                    "db_source": "Human Phenotype Ontology",
+                    "db_id": "HP:0006743"
+                  }
+                ],
+                "trait_name": "Embryonal rhabdomyosarcoma"
+              },
+              {
+                "trait_xrefs": [
+                  {
+                    "db_source": "Orphanet",
+                    "db_id": "146"
+                  },
+                  {
+                    "db_source": "MedGen",
+                    "db_id": "C0238463"
+                  },
+                  {
+                    "db_source": "MeSH",
+                    "db_id": "D000077273"
+                  },
+                  {
+                    "db_source": "MONDO",
+                    "db_id": "MONDO:0005075"
+                  },
+                  {
+                    "db_source": "Human Phenotype Ontology",
+                    "db_id": "HP:0002895"
+                  }
+                ],
+                "trait_name": "Papillary thyroid carcinoma"
+              },
+              {
+                "trait_xrefs": [
+                  {
+                    "db_source": "Orphanet",
+                    "db_id": "99860"
+                  },
+                  {
+                    "db_source": "MedGen",
+                    "db_id": "C0349636"
+                  },
+                  {
+                    "db_source": "MONDO",
+                    "db_id": "MONDO:0020511"
+                  },
+                  {
+                    "db_source": "Human Phenotype Ontology",
+                    "db_id": "HP:0004812"
+                  }
+                ],
+                "trait_name": "Precursor B-cell acute lymphoblastic leukemia"
+              }
+            ]
+          },
+          "oncogenicity_classification": {
+            "description": "Oncogenic",
+            "last_evaluated": "2025/03/04 00:00",
+            "review_status": "criteria provided, single submitter",
+            "fda_recognized_database": "",
+            "trait_set": [
+              {
+                "trait_xrefs": [
+                  {
+                    "db_source": "MedGen",
+                    "db_id": "C0027651"
+                  },
+                  {
+                    "db_source": "MeSH",
+                    "db_id": "D009369"
+                  },
+                  {
+                    "db_source": "MONDO",
+                    "db_id": "MONDO:0005070"
+                  },
+                  {
+                    "db_source": "Human Phenotype Ontology",
+                    "db_id": "HP:0002664"
+                  },
+                  {
+                    "db_source": "Human Phenotype Ontology",
+                    "db_id": "HP:0003008"
+                  },
+                  {
+                    "db_source": "Human Phenotype Ontology",
+                    "db_id": "HP:0006741"
+                  }
+                ],
+                "trait_name": "Neoplasm"
+              }
+            ]
+          },
+          "record_status": "",
+          "gene_sort": "KRAS",
+          "chr_sort": "12",
+          "location_sort": "00000000000025245350",
+          "variation_set_name": "",
+          "variation_set_id": "",
+          "genes": [
+            {
+              "symbol": "KRAS",
+              "geneid": "3845",
+              "strand": "-",
+              "source": "submitted"
+            }
+          ],
+          "molecular_consequence_list": [
+            "missense variant"
+          ],
+          "protein_change": "G12D",
+          "fda_recognized_database": ""
+        }
+      }
+    },
+    "submissions": {
+      "45122": [
+        {
+          "accession": "SCV000061935",
+          "description": "Pathogenic",
+          "review_status": "no assertion criteria provided",
+          "traits": []
+        },
+        {
+          "accession": "SCV001132087",
+          "description": "Pathogenic",
+          "review_status": "no assertion criteria provided",
+          "traits": [
+            "Multiple myeloma"
+          ]
+        },
+        {
+          "accession": "SCV001571410",
+          "description": "Pathogenic",
+          "review_status": "no assertion criteria provided",
+          "traits": []
+        },
+        {
+          "accession": "SCV007980208",
+          "description": "Likely pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": [
+            "not provided"
+          ]
+        },
+        {
+          "accession": "SCV004105185",
+          "description": "Likely pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": [
+            "KRAS-related condition"
+          ]
+        },
+        {
+          "accession": "SCV001550889",
+          "description": "Pathogenic",
+          "review_status": "no assertion criteria provided",
+          "traits": [
+            "not provided"
+          ]
+        },
+        {
+          "accession": "SCV004042812",
+          "description": "Likely pathogenic",
+          "review_status": "no assertion criteria provided",
+          "traits": [
+            "Lung cancer"
+          ]
+        },
+        {
+          "accession": "SCV005416700",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        },
+        {
+          "accession": "SCV007771140",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": [
+            "KRAS-related disorders"
+          ]
+        }
+      ],
+      "12583": [
+        {
+          "accession": "SCV004295856",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        },
+        {
+          "accession": "SCV000693724",
+          "description": "Pathogenic",
+          "review_status": "no assertion criteria provided",
+          "traits": [
+            "ARTERIOVENOUS MALFORMATION OF THE BRAIN, SOMATIC"
+          ]
+        },
+        {
+          "accession": "SCV000033660",
+          "description": "Pathogenic",
+          "review_status": "no assertion criteria provided",
+          "traits": [
+            "PANCREATIC CARCINOMA, SOMATIC"
+          ]
+        },
+        {
+          "accession": "SCV000051862",
+          "description": "Pathogenic",
+          "review_status": "no assertion criteria provided",
+          "traits": [
+            "NEVUS SEBACEOUS, SOMATIC"
+          ]
+        },
+        {
+          "accession": "SCV000203917",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        },
+        {
+          "accession": "SCV000198477",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        },
+        {
+          "accession": "SCV004176921",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        },
+        {
+          "accession": "SCV005902168",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        },
+        {
+          "accession": "SCV003804201",
+          "description": "Pathogenic",
+          "review_status": "no assertion criteria provided",
+          "traits": []
+        },
+        {
+          "accession": "SCV008060441",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": [
+            "KRAS-related condition"
+          ]
+        },
+        {
+          "accession": "SCV000611561",
+          "description": "Pathogenic",
+          "review_status": "no assertion criteria provided",
+          "traits": [
+            "Nevus sebaceous"
+          ]
+        },
+        {
+          "accession": "SCV002583834",
+          "description": "Pathogenic",
+          "review_status": "no assertion criteria provided",
+          "traits": []
+        },
+        {
+          "accession": "SCV001553731",
+          "description": "Pathogenic",
+          "review_status": "no assertion criteria provided",
+          "traits": [
+            "not provided"
+          ]
+        },
+        {
+          "accession": "SCV000992586",
+          "description": "Pathogenic",
+          "review_status": "no assertion criteria provided",
+          "traits": []
+        },
+        {
+          "accession": "SCV000207879",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": [
+            "Not Provided"
+          ]
+        },
+        {
+          "accession": "SCV001746133",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        }
+      ],
+      "12582": [
+        {
+          "accession": "SCV000198478",
+          "description": "Pathogenic",
+          "review_status": "no assertion criteria provided",
+          "traits": []
+        },
+        {
+          "accession": "SCV000198479",
+          "description": "Pathogenic",
+          "review_status": "no assertion criteria provided",
+          "traits": []
+        },
+        {
+          "accession": "SCV000198480",
+          "description": "Pathogenic",
+          "review_status": "no assertion criteria provided",
+          "traits": []
+        },
+        {
+          "accession": "SCV000693723",
+          "description": "Pathogenic",
+          "review_status": "no assertion criteria provided",
+          "traits": [
+            "ARTERIOVENOUS MALFORMATION OF THE BRAIN, SOMATIC"
+          ]
+        },
+        {
+          "accession": "SCV000999192",
+          "description": "Pathogenic",
+          "review_status": "no assertion criteria provided",
+          "traits": [
+            "Primary low grade serous adenocarcinoma of ovary"
+          ]
+        },
+        {
+          "accession": "SCV001736991",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        },
+        {
+          "accession": "SCV001739511",
+          "description": "Pathogenic",
+          "review_status": "no assertion criteria provided",
+          "traits": []
+        },
+        {
+          "accession": "SCV002601600",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        },
+        {
+          "accession": "SCV004176950",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        },
+        {
+          "accession": "SCV005634967",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        },
+        {
+          "accession": "SCV000992585",
+          "description": "Pathogenic",
+          "review_status": "no assertion criteria provided",
+          "traits": []
+        },
+        {
+          "accession": "SCV000659085",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        },
+        {
+          "accession": "SCV007538136",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        },
+        {
+          "accession": "SCV000033658",
+          "description": "Pathogenic",
+          "review_status": "no assertion criteria provided",
+          "traits": [
+            "PANCREATIC CARCINOMA, SOMATIC"
+          ]
+        },
+        {
+          "accession": "SCV000033659",
+          "description": "Pathogenic",
+          "review_status": "no assertion criteria provided",
+          "traits": [
+            "GASTRIC CANCER, SOMATIC"
+          ]
+        },
+        {
+          "accession": "SCV000044088",
+          "description": "Pathogenic",
+          "review_status": "no assertion criteria provided",
+          "traits": [
+            "EPIDERMAL NEVUS, SOMATIC"
+          ]
+        },
+        {
+          "accession": "SCV000051860",
+          "description": "Pathogenic",
+          "review_status": "no assertion criteria provided",
+          "traits": [
+            "NEVUS SEBACEOUS, SOMATIC"
+          ]
+        },
+        {
+          "accession": "SCV000051861",
+          "description": "Pathogenic",
+          "review_status": "no assertion criteria provided",
+          "traits": [
+            "SCHIMMELPENNING-FEUERSTEIN-MIMS SYNDROME, SOMATIC MOSAIC"
+          ]
+        },
+        {
+          "accession": "SCV000191996",
+          "description": "Pathogenic",
+          "review_status": "no assertion criteria provided",
+          "traits": [
+            "JUVENILE MYELOMONOCYTIC LEUKEMIA, SOMATIC"
+          ]
+        },
+        {
+          "accession": "SCV007591183",
+          "description": "Pathogenic",
+          "review_status": "no assertion criteria provided",
+          "traits": [
+            "RAS-ASSOCIATED AUTOIMMUNE LEUKOPROLIFERATIVE DISORDER 2, SOMATIC"
+          ]
+        },
+        {
+          "accession": "SCV000611562",
+          "description": "Pathogenic",
+          "review_status": "no assertion criteria provided",
+          "traits": [
+            "Nevus sebaceous"
+          ]
+        },
+        {
+          "accession": "SCV000784594",
+          "description": "Likely pathogenic",
+          "review_status": "no assertion criteria provided",
+          "traits": [
+            "Vascular Tumors Including Pyogenic Granuloma"
+          ]
+        },
+        {
+          "accession": "SCV002525678",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": [
+            "not provided"
+          ]
+        },
+        {
+          "accession": "SCV002099547",
+          "description": "not provided",
+          "review_status": "no classification provided",
+          "traits": []
+        },
+        {
+          "accession": "SCV001550138",
+          "description": "Pathogenic",
+          "review_status": "no assertion criteria provided",
+          "traits": [
+            "not provided"
+          ]
+        },
+        {
+          "accession": "SCV000329383",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": [
+            "Not Provided"
+          ]
+        },
+        {
+          "accession": "SCV005023563",
+          "description": "Likely pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        },
+        {
+          "accession": "SCV005044128",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": [
+            "Congenital Pulmonary Airway Malformations"
+          ]
+        },
+        {
+          "accession": "SCV005414064",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": [
+            "Not provided"
+          ]
+        },
+        {
+          "accession": "SCV000882686",
+          "description": "Pathogenic",
+          "review_status": "no assertion criteria provided",
+          "traits": []
+        },
+        {
+          "accession": "SCV001571657",
+          "description": "Pathogenic",
+          "review_status": "no assertion criteria provided",
+          "traits": [
+            "Acute myeloid leukemia"
+          ]
+        },
+        {
+          "accession": "SCV004035006",
+          "description": "association",
+          "review_status": "no assertion criteria provided",
+          "traits": []
+        },
+        {
+          "accession": "SCV000882700",
+          "description": "Pathogenic",
+          "review_status": "no assertion criteria provided",
+          "traits": []
+        },
+        {
+          "accession": "SCV006304919",
+          "description": "Likely pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        },
+        {
+          "accession": "SCV002318898",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        },
+        {
+          "accession": "SCV002821689",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        },
+        {
+          "accession": "SCV007771141",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": [
+            "KRAS-related disorders"
+          ]
+        }
+      ]
+    }
+  }
+}

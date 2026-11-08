@@ -1,0 +1,74 @@
+{
+  "source": "GTEx",
+  "retrieved": "2026-11-08T03:20:01+00:00",
+  "request": {
+    "rsid": "rs429358",
+    "variant_ids": [
+      "chr19_44908684_T_C_b38"
+    ]
+  },
+  "response": {
+    "data": [
+      {
+        "snpId": "rs429358",
+        "pos": 44908684,
+        "snpIdUpper": "RS429358",
+        "variantId": "chr19_44908684_T_C_b38",
+        "geneSymbol": "CTB-171A8.1",
+        "pValue": 0.000120521,
+        "geneSymbolUpper": "CTB-171A8.1",
+        "datasetId": "gtex_v8",
+        "tissueSiteDetailId": "Thyroid",
+        "ontologyId": "UBERON:0002046",
+        "chromosome": "chr19",
+        "gencodeId": "ENSG00000266903.1",
+        "nes": 0.296786
+      },
+      {
+        "snpId": "rs429358",
+        "pos": 44908684,
+        "snpIdUpper": "RS429358",
+        "variantId": "chr19_44908684_T_C_b38",
+        "geneSymbol": "APOC1",
+        "pValue": 2.31811e-05,
+        "geneSymbolUpper": "APOC1",
+        "datasetId": "gtex_v8",
+        "tissueSiteDetailId": "Esophagus_Mucosa",
+        "ontologyId": "UBERON:0006920",
+        "chromosome": "chr19",
+        "gencodeId": "ENSG00000130208.9",
+        "nes": -0.283485
+      },
+      {
+        "snpId": "rs429358",
+        "pos": 44908684,
+        "snpIdUpper": "RS429358",
+        "variantId": "chr19_44908684_T_C_b38",
+        "geneSymbol": "APOC1",
+        "pValue": 4.7508e-05,
+        "geneSymbolUpper": "APOC1",
+        "datasetId": "gtex_v8",
+        "tissueSiteDetailId": "Adrenal_Gland",
+        "ontologyId": "UBERON:0002369",
+        "chromosome": "chr19",
+        "gencodeId": "ENSG00000130208.9",
+        "nes": -0.364356
+      },
+      {
+        "snpId": "rs429358",
+        "pos": 44908684,
+        "snpIdUpper": "RS429358",
+        "variantId": "chr19_44908684_T_C_b38",
+        "geneSymbol": "CTB-129P6.4",
+        "pValue": 4.13792e-05,
+        "geneSymbolUpper": "CTB-129P6.4",
+        "datasetId": "gtex_v8",
+        "tissueSiteDetailId": "Esophagus_Muscularis",
+        "ontologyId": "UBERON:0004648",
+        "chromosome": "chr19",
+        "gencodeId": "ENSG00000267282.1",
+        "nes": 0.301108
+      }
+    ]
+  }
+}

@@ -1,0 +1,221 @@
+{
+  "source": "clinvar",
+  "retrieved": "2026-11-08T03:33:56+00:00",
+  "request": {
+    "term": "rs713598"
+  },
+  "response": {
+    "esearch": {
+      "header": {
+        "type": "esearch",
+        "version": "0.3"
+      },
+      "esearchresult": {
+        "count": "1",
+        "retmax": "1",
+        "retstart": "0",
+        "idlist": [
+          "2904"
+        ],
+        "translationset": [],
+        "translationstack": [
+          {
+            "term": "rs713598[All Fields]",
+            "field": "All Fields",
+            "count": "1",
+            "explode": "N"
+          },
+          "GROUP"
+        ],
+        "querytranslation": "rs713598[All Fields]"
+      }
+    },
+    "esummary": {
+      "header": {
+        "type": "esummary",
+        "version": "0.3"
+      },
+      "result": {
+        "uids": [
+          "2904"
+        ],
+        "2904": {
+          "uid": "2904",
+          "obj_type": "single nucleotide variant",
+          "accession": "VCV000002904",
+          "accession_version": "VCV000002904.1",
+          "title": "NM_176817.5(TAS2R38):c.145G>C (p.Ala49Pro)",
+          "variation_set": [
+            {
+              "measure_id": "17943",
+              "variation_xrefs": [
+                {
+                  "db_source": "ClinGen",
+                  "db_id": "CA115855"
+                },
+                {
+                  "db_source": "UniProtKB",
+                  "db_id": "P59533#VAR_017860"
+                },
+                {
+                  "db_source": "OMIM",
+                  "db_id": "607751.0001"
+                },
+                {
+                  "db_source": "dbSNP",
+                  "db_id": "713598"
+                }
+              ],
+              "variation_name": "NM_176817.5(TAS2R38):c.145G>C (p.Ala49Pro)",
+              "cdna_change": "c.145G>C",
+              "aliases": [],
+              "variation_loc": [
+                {
+                  "status": "current",
+                  "assembly_name": "GRCh38",
+                  "chr": "7",
+                  "band": "7q34",
+                  "start": "141973545",
+                  "stop": "141973545",
+                  "inner_start": "",
+                  "inner_stop": "",
+                  "outer_start": "",
+                  "outer_stop": "",
+                  "display_start": "141973545",
+                  "display_stop": "141973545",
+                  "assembly_acc_ver": "GCF_000001405.38",
+                  "annotation_release": "",
+                  "alt": "",
+                  "ref": ""
+                },
+                {
+                  "status": "previous",
+                  "assembly_name": "GRCh37",
+                  "chr": "7",
+                  "band": "7q34",
+                  "start": "141673345",
+                  "stop": "141673345",
+                  "inner_start": "",
+                  "inner_stop": "",
+                  "outer_start": "",
+                  "outer_stop": "",
+                  "display_start": "141673345",
+                  "display_stop": "141673345",
+                  "assembly_acc_ver": "GCF_000001405.25",
+                  "annotation_release": "",
+                  "alt": "",
+                  "ref": ""
+                }
+              ],
+              "allele_freq_set": [
+                {
+                  "source": "Exome Aggregation Consortium (ExAC)",
+                  "value": "0.44588",
+                  "minor_allele": ""
+                },
+                {
+                  "source": "The Genome Aggregation Database (gnomAD)",
+                  "value": "0.44670",
+                  "minor_allele": ""
+                },
+                {
+                  "source": "The Genome Aggregation Database (gnomAD)",
+                  "value": "0.44788",
+                  "minor_allele": ""
+                },
+                {
+                  "source": "The Genome Aggregation Database (gnomAD), exomes",
+                  "value": "0.45814",
+                  "minor_allele": ""
+                },
+                {
+                  "source": "Trans-Omics for Precision Medicine (TOPMed)",
+                  "value": "0.47199",
+                  "minor_allele": ""
+                },
+                {
+                  "source": "1000 Genomes Project",
+                  "value": "0.49521",
+                  "minor_allele": "C"
+                }
+              ],
+              "variant_type": "single nucleotide variant",
+              "canonical_spdi": "NC_000007.14:141973544:C:G",
+              "common_name": ""
+            }
+          ],
+          "supporting_submissions": {
+            "scv": [
+              "SCV000023196"
+            ],
+            "rcv": [
+              "RCV000003038"
+            ]
+          },
+          "germline_classification": {
+            "description": "drug response",
+            "last_evaluated": "2010/12/30 00:00",
+            "review_status": "no assertion criteria provided",
+            "fda_recognized_database": "",
+            "trait_set": [
+              {
+                "trait_xrefs": [
+                  {
+                    "db_source": "MedGen",
+                    "db_id": "C1868398"
+                  }
+                ],
+                "trait_name": "Phenylthiocarbamide tasting"
+              }
+            ]
+          },
+          "clinical_impact_classification": {
+            "description": "",
+            "last_evaluated": "1/01/01 00:00",
+            "review_status": "",
+            "fda_recognized_database": "",
+            "trait_set": []
+          },
+          "oncogenicity_classification": {
+            "description": "",
+            "last_evaluated": "1/01/01 00:00",
+            "review_status": "",
+            "fda_recognized_database": "",
+            "trait_set": []
+          },
+          "record_status": "",
+          "gene_sort": "TAS2R38",
+          "chr_sort": "07",
+          "location_sort": "00000000000141973545",
+          "variation_set_name": "",
+          "variation_set_id": "",
+          "genes": [
+            {
+              "symbol": "TAS2R38",
+              "geneid": "5726",
+              "strand": "-",
+              "source": "submitted"
+            }
+          ],
+          "molecular_consequence_list": [
+            "missense variant"
+          ],
+          "protein_change": "A49P",
+          "fda_recognized_database": ""
+        }
+      }
+    },
+    "submissions": {
+      "2904": [
+        {
+          "accession": "SCV000023196",
+          "description": "drug response",
+          "review_status": "no assertion criteria provided",
+          "traits": [
+            "PHENYLTHIOCARBAMIDE TASTING"
+          ]
+        }
+      ]
+    }
+  }
+}

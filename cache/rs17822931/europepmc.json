@@ -1,0 +1,428 @@
+{
+  "source": "europepmc",
+  "retrieved": "2026-11-08T03:17:39+00:00",
+  "request": {
+    "query": "(TITLE:rs17822931 OR ABSTRACT:rs17822931) AND PUB_TYPE:\"research-article\" NOT PUB_TYPE:review"
+  },
+  "response": {
+    "version": "6.9",
+    "hitCount": 10,
+    "request": {
+      "queryString": "(TITLE:rs17822931 OR ABSTRACT:rs17822931) AND PUB_TYPE:\"research-article\" NOT PUB_TYPE:review",
+      "resultType": "lite",
+      "cursorMark": "*",
+      "pageSize": 15,
+      "sort": "CITED desc",
+      "synonym": false
+    },
+    "resultList": {
+      "result": [
+        {
+          "id": "18817904",
+          "source": "MED",
+          "pmid": "18817904",
+          "pmcid": "PMC2561928",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC2561928"
+            ]
+          },
+          "doi": "10.1016/j.ajhg.2008.08.019",
+          "title": "Japanese population structure, based on SNP genotypes from 7003 individuals compared to other ethnic groups: effects on population-based association studies.",
+          "authorString": "Yamaguchi-Kabata Y, Nakazono K, Takahashi A, Saito S, Hosono N, Kubo M, Nakamura Y, Kamatani N.",
+          "journalTitle": "Am J Hum Genet",
+          "issue": "4",
+          "journalVolume": "83",
+          "pubYear": "2008",
+          "journalIssn": "0002-9297; 1537-6605; ",
+          "pageInfo": "445-456",
+          "pubType": "research support, non-u.s. gov't; research-article; journal article",
+          "isOpenAccess": "N",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 284,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp",
+              "omim"
+            ]
+          },
+          "firstPublicationDate": "2008-09-25",
+          "firstIndexDate": "2009-12-24"
+        },
+        {
+          "id": "19650936",
+          "source": "MED",
+          "pmid": "19650936",
+          "pmcid": "PMC2731057",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC2731057"
+            ]
+          },
+          "doi": "10.1186/1471-2156-10-42",
+          "title": "A strong association of axillary osmidrosis with the wet earwax type determined by genotyping of the ABCC11 gene.",
+          "authorString": "Nakano M, Miwa N, Hirano A, Yoshiura K, Niikawa N.",
+          "journalTitle": "BMC Genet",
+          "journalVolume": "10",
+          "pubYear": "2009",
+          "journalIssn": "1471-2156",
+          "pageInfo": "42",
+          "pubType": "research support, non-u.s. gov't; research-article; journal article",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 49,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "N",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp"
+            ]
+          },
+          "firstPublicationDate": "2009-08-04",
+          "firstIndexDate": "2009-12-23"
+        },
+        {
+          "id": "33334016",
+          "source": "MED",
+          "pmid": "33334016",
+          "pmcid": "PMC7765380",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC7765380"
+            ]
+          },
+          "doi": "10.3390/ijms21249556",
+          "title": "Role of Genetic Variation in ABC Transporters in Breast Cancer Prognosis and Therapy Response.",
+          "authorString": "Hlav\u00e1\u010d V, V\u00e1clav\u00edkov\u00e1 R, Brynychov\u00e1 V, Ko\u017eevnikovov\u00e1 R, Kope\u010dkov\u00e1 K, Vr\u00e1na D, Gat\u011bk J, Sou\u010dek P.",
+          "journalTitle": "Int J Mol Sci",
+          "issue": "24",
+          "journalVolume": "21",
+          "pubYear": "2020",
+          "journalIssn": "1422-0067",
+          "pageInfo": "E9556",
+          "pubType": "research-article; journal article",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 24,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "bioproject",
+              "refsnp",
+              "omim",
+              "doi"
+            ]
+          },
+          "firstPublicationDate": "2020-12-15",
+          "firstIndexDate": "2020-12-24"
+        },
+        {
+          "id": "23316210",
+          "source": "MED",
+          "pmid": "23316210",
+          "pmcid": "PMC3539816",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC3539816"
+            ]
+          },
+          "doi": "10.3389/fgene.2012.00306",
+          "title": "Pharmacogenetics of human ABC transporter ABCC11: new insights into apocrine gland growth and metabolite secretion.",
+          "authorString": "Ishikawa T, Toyoda Y, Yoshiura K, Niikawa N.",
+          "journalTitle": "Front Genet",
+          "journalVolume": "3",
+          "pubYear": "2012",
+          "journalIssn": "1664-8021",
+          "pageInfo": "306",
+          "pubType": "research-article; journal article",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 18,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "N",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp",
+              "doi"
+            ]
+          },
+          "firstPublicationDate": "2013-01-02",
+          "firstIndexDate": "2013-01-18"
+        },
+        {
+          "id": "23325016",
+          "source": "MED",
+          "pmid": "23325016",
+          "pmcid": "PMC3674910",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC3674910"
+            ]
+          },
+          "doi": "10.1038/jid.2012.480",
+          "title": "Dependence of deodorant usage on ABCC11 genotype: scope for personalized genetics in personal hygiene.",
+          "authorString": "Rodriguez S, Steer CD, Farrow A, Golding J, Day IN.",
+          "journalTitle": "J Invest Dermatol",
+          "issue": "7",
+          "journalVolume": "133",
+          "pubYear": "2013",
+          "journalIssn": "0022-202x; 1523-1747; ",
+          "pageInfo": "1760-1767",
+          "pubType": "research support, non-u.s. gov't; research-article; journal article",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 17,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp"
+            ]
+          },
+          "firstPublicationDate": "2013-01-17",
+          "firstIndexDate": "2013-01-18"
+        },
+        {
+          "id": "28485377",
+          "source": "MED",
+          "pmid": "28485377",
+          "pmcid": "PMC5423033",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC5423033"
+            ]
+          },
+          "doi": "10.1038/srep46335",
+          "title": "A missense variant of the ABCC11 gene is associated with Axillary Osmidrosis susceptibility and clinical phenotypes in the Chinese Han Population.",
+          "authorString": "Ren Y, Liu W, Chen J, Wang J, Wang K, Zhou J, Cai S, Zheng M, Liu J, Liu L, Xue D.",
+          "journalTitle": "Sci Rep",
+          "journalVolume": "7",
+          "pubYear": "2017",
+          "journalIssn": "2045-2322",
+          "pageInfo": "46335",
+          "pubType": "research support, non-u.s. gov't; research-article; journal article",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 10,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp"
+            ]
+          },
+          "firstPublicationDate": "2017-05-09",
+          "firstIndexDate": "2017-05-09"
+        },
+        {
+          "id": "34551727",
+          "source": "MED",
+          "pmid": "34551727",
+          "pmcid": "PMC8456657",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC8456657"
+            ]
+          },
+          "doi": "10.1186/s12862-021-01900-y",
+          "title": "Admixture with indigenous people helps local adaptation: admixture-enabled selection in Polynesians.",
+          "authorString": "Isshiki M, Naka I, Kimura R, Nishida N, Furusawa T, Natsuhara K, Yamauchi T, Nakazawa M, Ishida T, Inaoka T, Matsumura Y, Ohtsuka R, Ohashi J.",
+          "journalTitle": "BMC Ecol Evol",
+          "issue": "1",
+          "journalVolume": "21",
+          "pubYear": "2021",
+          "journalIssn": "2730-7182",
+          "pageInfo": "179",
+          "pubType": "research support, non-u.s. gov't; research-article; journal article",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 5,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp",
+              "arrayexpress"
+            ]
+          },
+          "firstPublicationDate": "2021-09-22",
+          "firstIndexDate": "2021-09-24"
+        },
+        {
+          "id": "34951141",
+          "source": "MED",
+          "pmid": "34951141",
+          "pmcid": "PMC8801137",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC8801137"
+            ]
+          },
+          "doi": "10.1002/mgg3.1845",
+          "title": "Founder genetic variants of ABCC4 and ABCC11 in the Japanese population are not associated with the development of subacute myelo-optico-neuropathy (SMON).",
+          "authorString": "Matsumoto H, Sasai H, Kawamoto N, Katsuyama M, Minamiyama M, Kuru S, Fukao T, Ohnishi H, SMON research group members.",
+          "journalTitle": "Mol Genet Genomic Med",
+          "issue": "1",
+          "journalVolume": "10",
+          "pubYear": "2022",
+          "journalIssn": "2324-9269",
+          "pageInfo": "e1845",
+          "pubType": "research support, non-u.s. gov't; research-article; journal article",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 4,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "N",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp",
+              "omim"
+            ]
+          },
+          "firstPublicationDate": "2021-12-24",
+          "firstIndexDate": "2021-12-25"
+        },
+        {
+          "id": "40801133",
+          "source": "MED",
+          "pmid": "40801133",
+          "pmcid": "PMC12671274",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC12671274"
+            ]
+          },
+          "doi": "10.1002/bmb.70010",
+          "title": "ABCC11 Earwax Trait and Genotype Are Suitable Tools for Introductory Labs to Learn Genetics and Molecular Techniques.",
+          "authorString": "Ohta T, Takai R, Yoshida A, Paudel D, Giri S, Kitagawa T, Arakawa T, Kuramitsu Y, Tokutomi T.",
+          "journalTitle": "Biochem Mol Biol Educ",
+          "issue": "6",
+          "journalVolume": "53",
+          "pubYear": "2025",
+          "journalIssn": "1470-8175; 1539-3429; ",
+          "pageInfo": "603-609",
+          "pubType": "research support, non-u.s. gov't; research-article; journal article",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 2,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp"
+            ]
+          },
+          "firstPublicationDate": "2025-08-13",
+          "firstIndexDate": "2025-08-21"
+        },
+        {
+          "id": "39543265",
+          "source": "MED",
+          "pmid": "39543265",
+          "pmcid": "PMC11564711",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC11564711"
+            ]
+          },
+          "doi": "10.1038/s41598-024-78711-w",
+          "title": "Interplay of human ABCC11 transporter gene variants with axillary skin microbiome functional genomics.",
+          "authorString": "Stevens BR, Roesch LFW.",
+          "journalTitle": "Sci Rep",
+          "issue": "1",
+          "journalVolume": "14",
+          "pubYear": "2024",
+          "journalIssn": "2045-2322",
+          "pageInfo": "28037",
+          "pubType": "research-article; journal article",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 0,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "gen",
+              "refsnp"
+            ]
+          },
+          "firstPublicationDate": "2024-11-14",
+          "firstIndexDate": "2024-11-16"
+        }
+      ]
+    }
+  }
+}

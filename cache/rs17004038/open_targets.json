@@ -1,0 +1,28 @@
+{
+  "source": "Open Targets",
+  "retrieved": "2026-11-08T03:32:21+00:00",
+  "request": {
+    "variant_ids": [
+      "22_23894404_C_A",
+      "22_23894404_C_T"
+    ]
+  },
+  "response": [
+    {
+      "variant_id": "22_23894404_C_A",
+      "body": {
+        "data": {
+          "variant": null
+        }
+      }
+    },
+    {
+      "variant_id": "22_23894404_C_T",
+      "body": {
+        "data": {
+          "variant": null
+        }
+      }
+    }
+  ]
+}

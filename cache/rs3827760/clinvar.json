@@ -1,0 +1,494 @@
+{
+  "source": "clinvar",
+  "retrieved": "2026-11-08T03:20:33+00:00",
+  "request": {
+    "term": "rs3827760"
+  },
+  "response": {
+    "esearch": {
+      "header": {
+        "type": "esearch",
+        "version": "0.3"
+      },
+      "esearchresult": {
+        "count": "1",
+        "retmax": "1",
+        "retstart": "0",
+        "idlist": [
+          "5858"
+        ],
+        "translationset": [],
+        "translationstack": [
+          {
+            "term": "rs3827760[All Fields]",
+            "field": "All Fields",
+            "count": "1",
+            "explode": "N"
+          },
+          "GROUP"
+        ],
+        "querytranslation": "rs3827760[All Fields]"
+      }
+    },
+    "esummary": {
+      "header": {
+        "type": "esummary",
+        "version": "0.3"
+      },
+      "result": {
+        "uids": [
+          "5858"
+        ],
+        "5858": {
+          "uid": "5858",
+          "obj_type": "single nucleotide variant",
+          "accession": "VCV000005858",
+          "accession_version": "VCV000005858.26",
+          "title": "NM_022336.4(EDAR):c.1109T>C (p.Val370Ala)",
+          "variation_set": [
+            {
+              "measure_id": "20897",
+              "variation_xrefs": [
+                {
+                  "db_source": "ClinGen",
+                  "db_id": "CA117813"
+                },
+                {
+                  "db_source": "UniProtKB",
+                  "db_id": "Q9UNE0#VAR_020011"
+                },
+                {
+                  "db_source": "OMIM",
+                  "db_id": "604095.0011"
+                },
+                {
+                  "db_source": "dbSNP",
+                  "db_id": "3827760"
+                }
+              ],
+              "variation_name": "NM_022336.4(EDAR):c.1109T>C (p.Val370Ala)",
+              "cdna_change": "c.1109T>C",
+              "aliases": [],
+              "variation_loc": [
+                {
+                  "status": "current",
+                  "assembly_name": "GRCh38",
+                  "chr": "2",
+                  "band": "2q13",
+                  "start": "108897145",
+                  "stop": "108897145",
+                  "inner_start": "",
+                  "inner_stop": "",
+                  "outer_start": "",
+                  "outer_stop": "",
+                  "display_start": "108897145",
+                  "display_stop": "108897145",
+                  "assembly_acc_ver": "GCF_000001405.38",
+                  "annotation_release": "",
+                  "alt": "",
+                  "ref": ""
+                },
+                {
+                  "status": "previous",
+                  "assembly_name": "GRCh37",
+                  "chr": "2",
+                  "band": "2q13",
+                  "start": "109513601",
+                  "stop": "109513601",
+                  "inner_start": "",
+                  "inner_stop": "",
+                  "outer_start": "",
+                  "outer_stop": "",
+                  "display_start": "109513601",
+                  "display_stop": "109513601",
+                  "assembly_acc_ver": "GCF_000001405.25",
+                  "annotation_release": "",
+                  "alt": "",
+                  "ref": ""
+                }
+              ],
+              "allele_freq_set": [
+                {
+                  "source": "The Genome Aggregation Database (gnomAD), exomes",
+                  "value": "0.15191",
+                  "minor_allele": ""
+                },
+                {
+                  "source": "The Genome Aggregation Database (gnomAD), exomes",
+                  "value": "0.04659",
+                  "minor_allele": ""
+                },
+                {
+                  "source": "The Genome Aggregation Database (gnomAD)",
+                  "value": "0.07017",
+                  "minor_allele": ""
+                },
+                {
+                  "source": "The Genome Aggregation Database (gnomAD)",
+                  "value": "0.05968",
+                  "minor_allele": ""
+                },
+                {
+                  "source": "Trans-Omics for Precision Medicine (TOPMed)",
+                  "value": "0.09753",
+                  "minor_allele": ""
+                },
+                {
+                  "source": "Exome Aggregation Consortium (ExAC)",
+                  "value": "0.12996",
+                  "minor_allele": ""
+                },
+                {
+                  "source": "1000 Genomes Project",
+                  "value": "0.23562",
+                  "minor_allele": "G"
+                }
+              ],
+              "variant_type": "single nucleotide variant",
+              "canonical_spdi": "NC_000002.12:108897144:A:G",
+              "common_name": ""
+            }
+          ],
+          "supporting_submissions": {
+            "scv": [
+              "SCV001293661",
+              "SCV000026398",
+              "SCV000314028",
+              "SCV001950535",
+              "SCV005239435",
+              "SCV000225691",
+              "SCV001875910",
+              "SCV001875912",
+              "SCV006053923",
+              "SCV001365407",
+              "SCV001733091"
+            ],
+            "rcv": [
+              "RCV000006216",
+              "RCV000174399",
+              "RCV001133945",
+              "RCV001261884",
+              "RCV001523395",
+              "RCV001659684",
+              "RCV001659685",
+              "RCV001723544",
+              "RCV005394125"
+            ]
+          },
+          "germline_classification": {
+            "description": "Benign",
+            "last_evaluated": "2026/01/26 00:00",
+            "review_status": "criteria provided, multiple submitters, no conflicts",
+            "fda_recognized_database": "",
+            "trait_set": [
+              {
+                "trait_xrefs": [
+                  {
+                    "db_source": "Orphanet",
+                    "db_id": "248"
+                  },
+                  {
+                    "db_source": "MedGen",
+                    "db_id": "C0406702"
+                  },
+                  {
+                    "db_source": "MONDO",
+                    "db_id": "MONDO:0016619"
+                  }
+                ],
+                "trait_name": "Autosomal recessive hypohidrotic ectodermal dysplasia syndrome"
+              },
+              {
+                "trait_xrefs": [
+                  {
+                    "db_source": "Orphanet",
+                    "db_id": "1810"
+                  },
+                  {
+                    "db_source": "Orphanet",
+                    "db_id": "238468"
+                  },
+                  {
+                    "db_source": "MedGen",
+                    "db_id": "C3888065"
+                  },
+                  {
+                    "db_source": "MONDO",
+                    "db_id": "MONDO:0007509"
+                  },
+                  {
+                    "db_source": "OMIM",
+                    "db_id": "129490"
+                  }
+                ],
+                "trait_name": "Ectodermal dysplasia 10A, hypohidrotic/hair/nail type, autosomal dominant"
+              },
+              {
+                "trait_xrefs": [
+                  {
+                    "db_source": "Orphanet",
+                    "db_id": "238468"
+                  },
+                  {
+                    "db_source": "MedGen",
+                    "db_id": "C5848103"
+                  },
+                  {
+                    "db_source": "MONDO",
+                    "db_id": "MONDO:0016535"
+                  },
+                  {
+                    "db_source": "Human Phenotype Ontology",
+                    "db_id": "HP:0007607"
+                  }
+                ],
+                "trait_name": "Hypohidrotic ectodermal dysplasia"
+              },
+              {
+                "trait_xrefs": [
+                  {
+                    "db_source": "Orphanet",
+                    "db_id": "1810"
+                  },
+                  {
+                    "db_source": "Orphanet",
+                    "db_id": "238468"
+                  },
+                  {
+                    "db_source": "MedGen",
+                    "db_id": "C3888065"
+                  },
+                  {
+                    "db_source": "MONDO",
+                    "db_id": "MONDO:0007509"
+                  },
+                  {
+                    "db_source": "OMIM",
+                    "db_id": "129490"
+                  }
+                ],
+                "trait_name": "Ectodermal dysplasia 10A, hypohidrotic/hair/nail type, autosomal dominant"
+              },
+              {
+                "trait_xrefs": [
+                  {
+                    "db_source": "Orphanet",
+                    "db_id": "238468"
+                  },
+                  {
+                    "db_source": "Orphanet",
+                    "db_id": "248"
+                  },
+                  {
+                    "db_source": "MedGen",
+                    "db_id": "C3887494"
+                  },
+                  {
+                    "db_source": "MONDO",
+                    "db_id": "MONDO:0009147"
+                  },
+                  {
+                    "db_source": "OMIM",
+                    "db_id": "224900"
+                  }
+                ],
+                "trait_name": "Ectodermal dysplasia 10B, hypohidrotic/hair/tooth type, autosomal recessive"
+              },
+              {
+                "trait_xrefs": [
+                  {
+                    "db_source": "MedGen",
+                    "db_id": "C3661900"
+                  }
+                ],
+                "trait_name": "not provided"
+              },
+              {
+                "trait_xrefs": [
+                  {
+                    "db_source": "MedGen",
+                    "db_id": "CN169374"
+                  }
+                ],
+                "trait_name": "not specified"
+              },
+              {
+                "trait_xrefs": [
+                  {
+                    "db_source": "Orphanet",
+                    "db_id": "1810"
+                  },
+                  {
+                    "db_source": "Orphanet",
+                    "db_id": "238468"
+                  },
+                  {
+                    "db_source": "MedGen",
+                    "db_id": "C3888065"
+                  },
+                  {
+                    "db_source": "MONDO",
+                    "db_id": "MONDO:0007509"
+                  },
+                  {
+                    "db_source": "OMIM",
+                    "db_id": "129490"
+                  }
+                ],
+                "trait_name": "Ectodermal dysplasia 10A, hypohidrotic/hair/nail type, autosomal dominant"
+              },
+              {
+                "trait_xrefs": [
+                  {
+                    "db_source": "Orphanet",
+                    "db_id": "238468"
+                  },
+                  {
+                    "db_source": "Orphanet",
+                    "db_id": "248"
+                  },
+                  {
+                    "db_source": "MedGen",
+                    "db_id": "C3887494"
+                  },
+                  {
+                    "db_source": "MONDO",
+                    "db_id": "MONDO:0009147"
+                  },
+                  {
+                    "db_source": "OMIM",
+                    "db_id": "224900"
+                  }
+                ],
+                "trait_name": "Ectodermal dysplasia 10B, hypohidrotic/hair/tooth type, autosomal recessive"
+              }
+            ]
+          },
+          "clinical_impact_classification": {
+            "description": "",
+            "last_evaluated": "1/01/01 00:00",
+            "review_status": "",
+            "fda_recognized_database": "",
+            "trait_set": []
+          },
+          "oncogenicity_classification": {
+            "description": "",
+            "last_evaluated": "1/01/01 00:00",
+            "review_status": "",
+            "fda_recognized_database": "",
+            "trait_set": []
+          },
+          "record_status": "",
+          "gene_sort": "EDAR",
+          "chr_sort": "02",
+          "location_sort": "00000000000108897145",
+          "variation_set_name": "",
+          "variation_set_id": "",
+          "genes": [
+            {
+              "symbol": "EDAR",
+              "geneid": "10913",
+              "strand": "-",
+              "source": "submitted"
+            },
+            {
+              "symbol": "RANBP2",
+              "geneid": "5903",
+              "strand": "+",
+              "source": "submitted"
+            }
+          ],
+          "molecular_consequence_list": [
+            "missense variant"
+          ],
+          "protein_change": "V370A",
+          "fda_recognized_database": ""
+        }
+      }
+    },
+    "submissions": {
+      "5858": [
+        {
+          "accession": "SCV001293661",
+          "description": "Benign",
+          "review_status": "criteria provided, single submitter",
+          "traits": [
+            "Hypohidrotic ectodermal dysplasia"
+          ]
+        },
+        {
+          "accession": "SCV000026398",
+          "description": "association",
+          "review_status": "no assertion criteria provided",
+          "traits": [
+            "HAIR MORPHOLOGY 1, HAIR THICKNESS"
+          ]
+        },
+        {
+          "accession": "SCV000314028",
+          "description": "Benign",
+          "review_status": "criteria provided, single submitter",
+          "traits": [
+            "NOT SPECIFIED"
+          ]
+        },
+        {
+          "accession": "SCV001950535",
+          "description": "Benign",
+          "review_status": "criteria provided, single submitter",
+          "traits": [
+            "Not Provided"
+          ]
+        },
+        {
+          "accession": "SCV005239435",
+          "description": "Benign",
+          "review_status": "criteria provided, single submitter",
+          "traits": [
+            "not provided"
+          ]
+        },
+        {
+          "accession": "SCV000225691",
+          "description": "Benign",
+          "review_status": "criteria provided, single submitter",
+          "traits": [
+            "not specified"
+          ]
+        },
+        {
+          "accession": "SCV001875910",
+          "description": "Benign",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        },
+        {
+          "accession": "SCV001875912",
+          "description": "Benign",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        },
+        {
+          "accession": "SCV006053923",
+          "description": "Benign",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        },
+        {
+          "accession": "SCV001365407",
+          "description": "Pathogenic",
+          "review_status": "no assertion criteria provided",
+          "traits": [
+            "Non-syndromic oligodontia"
+          ]
+        },
+        {
+          "accession": "SCV001733091",
+          "description": "Benign",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "source": "Open Targets",
+  "retrieved": "2026-11-08T03:17:39+00:00",
+  "request": {
+    "variant_ids": [
+      "16_48224287_C_A",
+      "16_48224287_C_G",
+      "16_48224287_C_T"
+    ]
+  },
+  "response": [
+    {
+      "variant_id": "16_48224287_C_A",
+      "body": {
+        "data": {
+          "variant": null
+        }
+      }
+    },
+    {
+      "variant_id": "16_48224287_C_G",
+      "body": {
+        "data": {
+          "variant": null
+        }
+      }
+    },
+    {
+      "variant_id": "16_48224287_C_T",
+      "body": {
+        "data": {
+          "variant": {
+            "id": "16_48224287_C_T",
+            "credibleSets": {
+              "rows": [
+                {
+                  "study": {
+                    "traitFromSource": "Cystic mastopathy (PheCode 610.1)"
+                  },
+                  "l2GPredictions": {
+                    "rows": [
+                      {
+                        "score": 0.9279791116714478,
+                        "target": {
+                          "approvedSymbol": "ABCC11"
+                        }
+                      },
+                      {
+                        "score": 0.12387369573116302,
+                        "target": {
+                          "approvedSymbol": "LONP2"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "study": {
+                    "traitFromSource": "ENSG00000121270"
+                  },
+                  "l2GPredictions": {
+                    "rows": []
+                  }
+                },
+                {
+                  "study": {
+                    "traitFromSource": "ENSG00000102910.14_16_48334312_48334358"
+                  },
+                  "l2GPredictions": {
+                    "rows": []
+                  }
+                },
+                {
+                  "study": {
+                    "traitFromSource": "ILMN_1691480"
+                  },
+                  "l2GPredictions": {
+                    "rows": []
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  ]
+}

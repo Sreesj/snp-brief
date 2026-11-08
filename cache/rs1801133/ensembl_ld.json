@@ -1,0 +1,17 @@
+{
+  "source": "Ensembl LD",
+  "retrieved": "2026-11-08T03:38:16+00:00",
+  "request": {
+    "rsid": "rs1801133",
+    "population": "EUR"
+  },
+  "response": [
+    {
+      "population_name": "1000GENOMES:phase_3:EUR",
+      "variation2": "rs55749208",
+      "r2": "0.890722",
+      "variation1": "rs1801133",
+      "d_prime": "1.000000"
+    }
+  ]
+}

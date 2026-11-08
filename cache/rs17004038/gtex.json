@@ -1,0 +1,14 @@
+{
+  "source": "GTEx",
+  "retrieved": "2026-11-08T03:32:21+00:00",
+  "request": {
+    "rsid": "rs17004038",
+    "variant_ids": [
+      "chr22_23894404_C_A_b38",
+      "chr22_23894404_C_T_b38"
+    ]
+  },
+  "response": {
+    "data": []
+  }
+}

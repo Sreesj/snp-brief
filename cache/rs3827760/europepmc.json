@@ -1,0 +1,186 @@
+{
+  "source": "europepmc",
+  "retrieved": "2026-11-08T03:20:31+00:00",
+  "request": {
+    "query": "(TITLE:rs3827760 OR ABSTRACT:rs3827760) AND PUB_TYPE:\"research-article\" NOT PUB_TYPE:review"
+  },
+  "response": {
+    "version": "6.9",
+    "hitCount": 4,
+    "request": {
+      "queryString": "(TITLE:rs3827760 OR ABSTRACT:rs3827760) AND PUB_TYPE:\"research-article\" NOT PUB_TYPE:review",
+      "resultType": "lite",
+      "cursorMark": "*",
+      "pageSize": 15,
+      "sort": "CITED desc",
+      "synonym": false
+    },
+    "resultList": {
+      "result": [
+        {
+          "id": "18817904",
+          "source": "MED",
+          "pmid": "18817904",
+          "pmcid": "PMC2561928",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC2561928"
+            ]
+          },
+          "doi": "10.1016/j.ajhg.2008.08.019",
+          "title": "Japanese population structure, based on SNP genotypes from 7003 individuals compared to other ethnic groups: effects on population-based association studies.",
+          "authorString": "Yamaguchi-Kabata Y, Nakazono K, Takahashi A, Saito S, Hosono N, Kubo M, Nakamura Y, Kamatani N.",
+          "journalTitle": "Am J Hum Genet",
+          "issue": "4",
+          "journalVolume": "83",
+          "pubYear": "2008",
+          "journalIssn": "0002-9297; 1537-6605; ",
+          "pageInfo": "445-456",
+          "pubType": "research support, non-u.s. gov't; research-article; journal article",
+          "isOpenAccess": "N",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 284,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp",
+              "omim"
+            ]
+          },
+          "firstPublicationDate": "2008-09-25",
+          "firstIndexDate": "2009-12-24"
+        },
+        {
+          "id": "29895819",
+          "source": "MED",
+          "pmid": "29895819",
+          "pmcid": "PMC5997657",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC5997657"
+            ]
+          },
+          "doi": "10.1038/s41598-018-27145-2",
+          "title": "Genome-wide association study in Japanese females identifies fifteen novel skin-related trait associations.",
+          "authorString": "Endo C, Johnson TA, Morino R, Nakazono K, Kamitsuji S, Akita M, Kawajiri M, Yamasaki T, Kami A, Hoshi Y, Tada A, Ishikawa K, Hine M, Kobayashi M, Kurume N, Tsunemi Y, Kamatani N, Kawashima M.",
+          "journalTitle": "Sci Rep",
+          "issue": "1",
+          "journalVolume": "8",
+          "pubYear": "2018",
+          "journalIssn": "2045-2322",
+          "pageInfo": "8974",
+          "pubType": "clinical trial; research support, non-u.s. gov't; research-article; journal article",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 68,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "gen",
+              "refsnp",
+              "uniprot"
+            ]
+          },
+          "firstPublicationDate": "2018-06-12",
+          "firstIndexDate": "2018-06-14"
+        },
+        {
+          "id": "32499598",
+          "source": "MED",
+          "pmid": "32499598",
+          "pmcid": "PMC7784991",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC7784991"
+            ]
+          },
+          "doi": "10.1038/s41431-020-0660-6",
+          "title": "Characterisation of a second gain of function EDAR variant, encoding EDAR380R, in East Asia.",
+          "authorString": "Riddell J, Basu Mallick C, Jacobs GS, Schoenebeck JJ, Headon DJ.",
+          "journalTitle": "Eur J Hum Genet",
+          "issue": "12",
+          "journalVolume": "28",
+          "pubYear": "2020",
+          "journalIssn": "1018-4813; 1476-5438; ",
+          "pageInfo": "1694-1702",
+          "pubType": "research support, non-u.s. gov't; research-article; journal article",
+          "isOpenAccess": "N",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 7,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "N",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp"
+            ]
+          },
+          "firstPublicationDate": "2020-06-04",
+          "firstIndexDate": "2020-06-06"
+        },
+        {
+          "id": "33664401",
+          "source": "MED",
+          "pmid": "33664401",
+          "pmcid": "PMC7933414",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC7933414"
+            ]
+          },
+          "doi": "10.1038/s41598-021-84653-4",
+          "title": "The human EDAR 370V/A polymorphism affects tooth root morphology potentially through the modification of a reaction-diffusion system.",
+          "authorString": "Kataoka K, Fujita H, Isa M, Gotoh S, Arasaki A, Ishida H, Kimura R.",
+          "journalTitle": "Sci Rep",
+          "issue": "1",
+          "journalVolume": "11",
+          "pubYear": "2021",
+          "journalIssn": "2045-2322",
+          "pageInfo": "5143",
+          "pubType": "research support, non-u.s. gov't; research-article; journal article",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 6,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp"
+            ]
+          },
+          "firstPublicationDate": "2021-03-04",
+          "firstIndexDate": "2021-03-06"
+        }
+      ]
+    }
+  }
+}

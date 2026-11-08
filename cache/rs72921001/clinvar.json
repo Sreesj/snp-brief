@@ -1,0 +1,37 @@
+{
+  "source": "clinvar",
+  "retrieved": "2026-11-08T03:16:46+00:00",
+  "request": {
+    "term": "rs72921001"
+  },
+  "response": {
+    "esearch": {
+      "header": {
+        "type": "esearch",
+        "version": "0.3"
+      },
+      "esearchresult": {
+        "count": "0",
+        "retmax": "0",
+        "retstart": "0",
+        "idlist": [],
+        "translationset": [],
+        "querytranslation": "(rs72921001[All Fields])",
+        "errorlist": {
+          "phrasesnotfound": [
+            "rs72921001"
+          ],
+          "fieldsnotfound": []
+        },
+        "warninglist": {
+          "phrasesignored": [],
+          "quotedphrasesnotfound": [],
+          "outputmessages": [
+            "No items found."
+          ]
+        }
+      }
+    },
+    "esummary": null
+  }
+}

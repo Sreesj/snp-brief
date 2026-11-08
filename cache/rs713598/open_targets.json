@@ -1,0 +1,193 @@
+{
+  "source": "Open Targets",
+  "retrieved": "2026-11-08T03:33:54+00:00",
+  "request": {
+    "variant_ids": [
+      "7_141973545_C_A",
+      "7_141973545_C_G",
+      "7_141973545_C_T"
+    ]
+  },
+  "response": [
+    {
+      "variant_id": "7_141973545_C_A",
+      "body": {
+        "data": {
+          "variant": null
+        }
+      }
+    },
+    {
+      "variant_id": "7_141973545_C_G",
+      "body": {
+        "data": {
+          "variant": {
+            "id": "7_141973545_C_G",
+            "credibleSets": {
+              "rows": [
+                {
+                  "study": {
+                    "traitFromSource": "Tea intake (UKB data field 1488)"
+                  },
+                  "l2GPredictions": {
+                    "rows": [
+                      {
+                        "score": 0.8755315542221069,
+                        "target": {
+                          "approvedSymbol": "TAS2R38"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "study": {
+                    "traitFromSource": "Added salt consumption"
+                  },
+                  "l2GPredictions": {
+                    "rows": [
+                      {
+                        "score": 0.9175286293029785,
+                        "target": {
+                          "approvedSymbol": "TAS2R38"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "study": {
+                    "traitFromSource": "Adding salt to food liking"
+                  },
+                  "l2GPredictions": {
+                    "rows": [
+                      {
+                        "score": 0.8755315542221069,
+                        "target": {
+                          "approvedSymbol": "TAS2R38"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "study": {
+                    "traitFromSource": "Red wine liking"
+                  },
+                  "l2GPredictions": {
+                    "rows": [
+                      {
+                        "score": 0.8903841972351074,
+                        "target": {
+                          "approvedSymbol": "TAS2R38"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "study": {
+                    "traitFromSource": "Red wine consumption (glasses per month) (UKB data field 1578, 4419)"
+                  },
+                  "l2GPredictions": {
+                    "rows": [
+                      {
+                        "score": 0.85122150182724,
+                        "target": {
+                          "approvedSymbol": "TAS2R38"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "study": {
+                    "traitFromSource": "Alcohol consumption (drinks per month) (UKB data field 1578, 4424)"
+                  },
+                  "l2GPredictions": {
+                    "rows": [
+                      {
+                        "score": 0.8952109217643738,
+                        "target": {
+                          "approvedSymbol": "TAS2R38"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "study": {
+                    "traitFromSource": "Drinks per week"
+                  },
+                  "l2GPredictions": {
+                    "rows": [
+                      {
+                        "score": 0.8483600616455078,
+                        "target": {
+                          "approvedSymbol": "TAS2R38"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "study": {
+                    "traitFromSource": "Bitter taste response"
+                  },
+                  "l2GPredictions": {
+                    "rows": [
+                      {
+                        "score": 0.9300010800361633,
+                        "target": {
+                          "approvedSymbol": "TAS2R38"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "study": {
+                    "traitFromSource": "Horseradish liking"
+                  },
+                  "l2GPredictions": {
+                    "rows": [
+                      {
+                        "score": 0.851536750793457,
+                        "target": {
+                          "approvedSymbol": "TAS2R38"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "study": {
+                    "traitFromSource": "Whiskey liking"
+                  },
+                  "l2GPredictions": {
+                    "rows": [
+                      {
+                        "score": 0.8479957580566406,
+                        "target": {
+                          "approvedSymbol": "TAS2R38"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "variant_id": "7_141973545_C_T",
+      "body": {
+        "data": {
+          "variant": null
+        }
+      }
+    }
+  ]
+}

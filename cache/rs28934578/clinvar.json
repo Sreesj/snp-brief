@@ -1,0 +1,863 @@
+{
+  "source": "clinvar",
+  "retrieved": "2026-11-08T03:31:30+00:00",
+  "request": {
+    "term": "rs28934578"
+  },
+  "response": {
+    "esearch": {
+      "header": {
+        "type": "esearch",
+        "version": "0.3"
+      },
+      "esearchresult": {
+        "count": "2",
+        "retmax": "2",
+        "retstart": "0",
+        "idlist": [
+          "182963",
+          "12374"
+        ],
+        "translationset": [],
+        "translationstack": [
+          {
+            "term": "rs28934578[All Fields]",
+            "field": "All Fields",
+            "count": "2",
+            "explode": "N"
+          },
+          "GROUP"
+        ],
+        "querytranslation": "rs28934578[All Fields]"
+      }
+    },
+    "esummary": {
+      "header": {
+        "type": "esummary",
+        "version": "0.3"
+      },
+      "result": {
+        "uids": [
+          "182963",
+          "12374"
+        ],
+        "182963": {
+          "uid": "182963",
+          "obj_type": "single nucleotide variant",
+          "accession": "VCV000182963",
+          "accession_version": "VCV000182963.21",
+          "title": "NM_000546.6(TP53):c.524G>T (p.Arg175Leu)",
+          "variation_set": [
+            {
+              "measure_id": "181010",
+              "variation_xrefs": [
+                {
+                  "db_source": "ClinGen",
+                  "db_id": "CA000252"
+                },
+                {
+                  "db_source": "UniProtKB",
+                  "db_id": "P04637#VAR_005930"
+                },
+                {
+                  "db_source": "dbSNP",
+                  "db_id": "28934578"
+                }
+              ],
+              "variation_name": "NM_000546.6(TP53):c.524G>T (p.Arg175Leu)",
+              "cdna_change": "c.524G>T",
+              "aliases": [
+                "NM_000546.6(TP53):c.524G>T"
+              ],
+              "variation_loc": [
+                {
+                  "status": "current",
+                  "assembly_name": "GRCh38",
+                  "chr": "17",
+                  "band": "17p13.1",
+                  "start": "7675088",
+                  "stop": "7675088",
+                  "inner_start": "",
+                  "inner_stop": "",
+                  "outer_start": "",
+                  "outer_stop": "",
+                  "display_start": "7675088",
+                  "display_stop": "7675088",
+                  "assembly_acc_ver": "GCF_000001405.38",
+                  "annotation_release": "",
+                  "alt": "",
+                  "ref": ""
+                },
+                {
+                  "status": "previous",
+                  "assembly_name": "GRCh37",
+                  "chr": "17",
+                  "band": "17p13.1",
+                  "start": "7578406",
+                  "stop": "7578406",
+                  "inner_start": "",
+                  "inner_stop": "",
+                  "outer_start": "",
+                  "outer_stop": "",
+                  "display_start": "7578406",
+                  "display_stop": "7578406",
+                  "assembly_acc_ver": "GCF_000001405.25",
+                  "annotation_release": "",
+                  "alt": "",
+                  "ref": ""
+                }
+              ],
+              "allele_freq_set": [],
+              "variant_type": "single nucleotide variant",
+              "canonical_spdi": "NC_000017.11:7675087:C:A",
+              "common_name": ""
+            }
+          ],
+          "supporting_submissions": {
+            "scv": [
+              "SCV002582385",
+              "SCV002583047",
+              "SCV005918332",
+              "SCV000951018",
+              "SCV005201130",
+              "SCV000275440",
+              "SCV007648568"
+            ],
+            "rcv": [
+              "RCV000161065",
+              "RCV000810785",
+              "RCV002288703"
+            ]
+          },
+          "germline_classification": {
+            "description": "Likely pathogenic",
+            "last_evaluated": "2024/09/06 00:00",
+            "review_status": "reviewed by expert panel",
+            "fda_recognized_database": "true",
+            "trait_set": [
+              {
+                "trait_xrefs": [
+                  {
+                    "db_source": "Orphanet",
+                    "db_id": "524"
+                  },
+                  {
+                    "db_source": "MedGen",
+                    "db_id": "C0085390"
+                  },
+                  {
+                    "db_source": "MONDO",
+                    "db_id": "MONDO:0018875"
+                  },
+                  {
+                    "db_source": "OMIM",
+                    "db_id": "PS151623"
+                  }
+                ],
+                "trait_name": "Li-Fraumeni syndrome"
+              }
+            ]
+          },
+          "clinical_impact_classification": {
+            "description": "",
+            "last_evaluated": "1/01/01 00:00",
+            "review_status": "",
+            "fda_recognized_database": "",
+            "trait_set": []
+          },
+          "oncogenicity_classification": {
+            "description": "",
+            "last_evaluated": "1/01/01 00:00",
+            "review_status": "",
+            "fda_recognized_database": "",
+            "trait_set": []
+          },
+          "record_status": "",
+          "gene_sort": "TP53",
+          "chr_sort": "17",
+          "location_sort": "00000000000007675088",
+          "variation_set_name": "",
+          "variation_set_id": "",
+          "genes": [
+            {
+              "symbol": "TP53",
+              "geneid": "7157",
+              "strand": "-",
+              "source": "submitted"
+            }
+          ],
+          "molecular_consequence_list": [
+            "missense variant"
+          ],
+          "protein_change": "R136L, R175L, R43L, R16L",
+          "fda_recognized_database": "true"
+        },
+        "12374": {
+          "uid": "12374",
+          "obj_type": "single nucleotide variant",
+          "accession": "VCV000012374",
+          "accession_version": "VCV000012374.88",
+          "title": "NM_000546.6(TP53):c.524G>A (p.Arg175His)",
+          "variation_set": [
+            {
+              "measure_id": "27413",
+              "variation_xrefs": [
+                {
+                  "db_source": "ClinGen",
+                  "db_id": "CA000251"
+                },
+                {
+                  "db_source": "UniProtKB",
+                  "db_id": "P04637#VAR_005932"
+                },
+                {
+                  "db_source": "OMIM",
+                  "db_id": "191170.0030"
+                },
+                {
+                  "db_source": "dbSNP",
+                  "db_id": "28934578"
+                }
+              ],
+              "variation_name": "NM_000546.6(TP53):c.524G>A (p.Arg175His)",
+              "cdna_change": "c.524G>A",
+              "aliases": [
+                "p.R175H:CGC>CAC",
+                "NM_000546.6(TP53):c.524G>A"
+              ],
+              "variation_loc": [
+                {
+                  "status": "current",
+                  "assembly_name": "GRCh38",
+                  "chr": "17",
+                  "band": "17p13.1",
+                  "start": "7675088",
+                  "stop": "7675088",
+                  "inner_start": "",
+                  "inner_stop": "",
+                  "outer_start": "",
+                  "outer_stop": "",
+                  "display_start": "7675088",
+                  "display_stop": "7675088",
+                  "assembly_acc_ver": "GCF_000001405.38",
+                  "annotation_release": "",
+                  "alt": "",
+                  "ref": ""
+                },
+                {
+                  "status": "previous",
+                  "assembly_name": "GRCh37",
+                  "chr": "17",
+                  "band": "17p13.1",
+                  "start": "7578406",
+                  "stop": "7578406",
+                  "inner_start": "",
+                  "inner_stop": "",
+                  "outer_start": "",
+                  "outer_stop": "",
+                  "display_start": "7578406",
+                  "display_stop": "7578406",
+                  "assembly_acc_ver": "GCF_000001405.25",
+                  "annotation_release": "",
+                  "alt": "",
+                  "ref": ""
+                }
+              ],
+              "allele_freq_set": [
+                {
+                  "source": "The Genome Aggregation Database (gnomAD), exomes",
+                  "value": "0.00000",
+                  "minor_allele": ""
+                },
+                {
+                  "source": "Exome Aggregation Consortium (ExAC)",
+                  "value": "0.00001",
+                  "minor_allele": ""
+                },
+                {
+                  "source": "The Genome Aggregation Database (gnomAD)",
+                  "value": "0.00001",
+                  "minor_allele": ""
+                }
+              ],
+              "variant_type": "single nucleotide variant",
+              "canonical_spdi": "NC_000017.11:7675087:C:T",
+              "common_name": ""
+            }
+          ],
+          "supporting_submissions": {
+            "scv": [
+              "SCV000186273",
+              "SCV005094440",
+              "SCV005872480",
+              "SCV006325613",
+              "SCV005685067",
+              "SCV000806241",
+              "SCV000189994",
+              "SCV000033420",
+              "SCV000731790",
+              "SCV002582493",
+              "SCV002583153",
+              "SCV000894156",
+              "SCV005688871",
+              "SCV000905051",
+              "SCV000488375",
+              "SCV007105501",
+              "SCV007105574",
+              "SCV007105584",
+              "SCV007105618",
+              "SCV007105627",
+              "SCV007104864",
+              "SCV007449463",
+              "SCV000692083",
+              "SCV000923920",
+              "SCV001432233",
+              "SCV001478188",
+              "SCV001551443",
+              "SCV001738476",
+              "SCV000211798",
+              "SCV001808819",
+              "SCV001906154",
+              "SCV001959136",
+              "SCV002758490",
+              "SCV002011128",
+              "SCV004044216",
+              "SCV004823789",
+              "SCV002074556",
+              "SCV004206223",
+              "SCV005201131",
+              "SCV005419199",
+              "SCV001450483",
+              "SCV001450484",
+              "SCV005368520",
+              "SCV000297733",
+              "SCV000261917",
+              "SCV007599807",
+              "SCV007665128",
+              "SCV007674822",
+              "SCV007833763"
+            ],
+            "rcv": [
+              "RCV000013173",
+              "RCV000131301",
+              "RCV000204931",
+              "RCV000213054",
+              "RCV000239398",
+              "RCV000421746",
+              "RCV000785352",
+              "RCV001270269",
+              "RCV001255668",
+              "RCV001270268",
+              "RCV001527463",
+              "RCV002476956",
+              "RCV003162247",
+              "RCV003466854",
+              "RCV004797760",
+              "RCV006253504",
+              "RCV006253505",
+              "RCV006253506",
+              "RCV006253501",
+              "RCV006253502",
+              "RCV006253503",
+              "RCV006755759"
+            ]
+          },
+          "germline_classification": {
+            "description": "Pathogenic",
+            "last_evaluated": "2024/09/06 00:00",
+            "review_status": "reviewed by expert panel",
+            "fda_recognized_database": "true",
+            "trait_set": [
+              {
+                "trait_xrefs": [
+                  {
+                    "db_source": "Orphanet",
+                    "db_id": "524"
+                  },
+                  {
+                    "db_source": "MedGen",
+                    "db_id": "C0085390"
+                  },
+                  {
+                    "db_source": "MONDO",
+                    "db_id": "MONDO:0018875"
+                  },
+                  {
+                    "db_source": "OMIM",
+                    "db_id": "PS151623"
+                  }
+                ],
+                "trait_name": "Li-Fraumeni syndrome"
+              }
+            ]
+          },
+          "clinical_impact_classification": {
+            "description": "Tier I - Strong",
+            "last_evaluated": "2025/08/20 00:00",
+            "review_status": "criteria provided, single submitter",
+            "fda_recognized_database": "",
+            "trait_set": [
+              {
+                "trait_xrefs": [
+                  {
+                    "db_source": "Orphanet",
+                    "db_id": "178315"
+                  },
+                  {
+                    "db_source": "MedGen",
+                    "db_id": "C2205345"
+                  },
+                  {
+                    "db_source": "MONDO",
+                    "db_id": "MONDO:0015795"
+                  }
+                ],
+                "trait_name": "Undifferentiated embryonal sarcoma of the liver"
+              },
+              {
+                "trait_xrefs": [
+                  {
+                    "db_source": "MedGen",
+                    "db_id": "CN377553"
+                  },
+                  {
+                    "db_source": "MONDO",
+                    "db_id": "MONDO:0956964"
+                  }
+                ],
+                "trait_name": "Medulloblastoma SHH activated and TP53 mutant"
+              },
+              {
+                "trait_xrefs": [
+                  {
+                    "db_source": "MedGen",
+                    "db_id": "CN372125"
+                  },
+                  {
+                    "db_source": "MONDO",
+                    "db_id": "MONDO:0850335"
+                  }
+                ],
+                "trait_name": "IDH-wildtype glioblastoma"
+              },
+              {
+                "trait_xrefs": [
+                  {
+                    "db_source": "MedGen",
+                    "db_id": "C4289688"
+                  },
+                  {
+                    "db_source": "MONDO",
+                    "db_id": "MONDO:0957196"
+                  }
+                ],
+                "trait_name": "Diffuse midline glioma, H3 K27M-mutant"
+              },
+              {
+                "trait_xrefs": [
+                  {
+                    "db_source": "MedGen",
+                    "db_id": "C5669733"
+                  }
+                ],
+                "trait_name": "Astrocytoma IDH-mutant"
+              }
+            ]
+          },
+          "oncogenicity_classification": {
+            "description": "Oncogenic",
+            "last_evaluated": "2025/03/04 00:00",
+            "review_status": "criteria provided, single submitter",
+            "fda_recognized_database": "",
+            "trait_set": [
+              {
+                "trait_xrefs": [
+                  {
+                    "db_source": "MedGen",
+                    "db_id": "C0027651"
+                  },
+                  {
+                    "db_source": "MeSH",
+                    "db_id": "D009369"
+                  },
+                  {
+                    "db_source": "MONDO",
+                    "db_id": "MONDO:0005070"
+                  },
+                  {
+                    "db_source": "Human Phenotype Ontology",
+                    "db_id": "HP:0002664"
+                  },
+                  {
+                    "db_source": "Human Phenotype Ontology",
+                    "db_id": "HP:0003008"
+                  },
+                  {
+                    "db_source": "Human Phenotype Ontology",
+                    "db_id": "HP:0006741"
+                  }
+                ],
+                "trait_name": "Neoplasm"
+              }
+            ]
+          },
+          "record_status": "",
+          "gene_sort": "TP53",
+          "chr_sort": "17",
+          "location_sort": "00000000000007675088",
+          "variation_set_name": "",
+          "variation_set_id": "",
+          "genes": [
+            {
+              "symbol": "TP53",
+              "geneid": "7157",
+              "strand": "-",
+              "source": "submitted"
+            }
+          ],
+          "molecular_consequence_list": [
+            "missense variant"
+          ],
+          "protein_change": "R175H, R136H, R43H, R16H",
+          "fda_recognized_database": "true"
+        }
+      }
+    },
+    "submissions": {
+      "182963": [
+        {
+          "accession": "SCV002582385",
+          "description": "Likely pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": [
+            "Hereditary cancer-predisposing syndrome"
+          ]
+        },
+        {
+          "accession": "SCV002583047",
+          "description": "Likely pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        },
+        {
+          "accession": "SCV005918332",
+          "description": "Likely pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        },
+        {
+          "accession": "SCV000951018",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        },
+        {
+          "accession": "SCV005201130",
+          "description": "Likely Pathogenic",
+          "review_status": "reviewed by expert panel",
+          "traits": []
+        },
+        {
+          "accession": "SCV000275440",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        },
+        {
+          "accession": "SCV007648568",
+          "description": "Likely pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        }
+      ],
+      "12374": [
+        {
+          "accession": "SCV000186273",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        },
+        {
+          "accession": "SCV005872480",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": [
+            "not provided"
+          ]
+        },
+        {
+          "accession": "SCV006325613",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": [
+            "not provided"
+          ]
+        },
+        {
+          "accession": "SCV005685067",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        },
+        {
+          "accession": "SCV000806241",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": [
+            "TP53-related condition"
+          ]
+        },
+        {
+          "accession": "SCV000189994",
+          "description": "Pathogenic",
+          "review_status": "no assertion criteria provided",
+          "traits": [
+            "Li-Fraumeni syndrome 1"
+          ]
+        },
+        {
+          "accession": "SCV000033420",
+          "description": "Pathogenic",
+          "review_status": "no assertion criteria provided",
+          "traits": [
+            "LI-FRAUMENI SYNDROME 1"
+          ]
+        },
+        {
+          "accession": "SCV000731790",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        },
+        {
+          "accession": "SCV002582493",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": [
+            "Hereditary cancer-predisposing syndrome"
+          ]
+        },
+        {
+          "accession": "SCV002583153",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        },
+        {
+          "accession": "SCV000894156",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        },
+        {
+          "accession": "SCV005688871",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        },
+        {
+          "accession": "SCV000905051",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        },
+        {
+          "accession": "SCV000488375",
+          "description": "Pathogenic",
+          "review_status": "no assertion criteria provided",
+          "traits": []
+        },
+        {
+          "accession": "SCV007449463",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        },
+        {
+          "accession": "SCV000692083",
+          "description": "Pathogenic",
+          "review_status": "no assertion criteria provided",
+          "traits": [
+            "not provided"
+          ]
+        },
+        {
+          "accession": "SCV000923920",
+          "description": "Likely pathogenic",
+          "review_status": "no assertion criteria provided",
+          "traits": []
+        },
+        {
+          "accession": "SCV001432233",
+          "description": "Pathogenic",
+          "review_status": "no assertion criteria provided",
+          "traits": [
+            "Lip and oral cavity carcinoma"
+          ]
+        },
+        {
+          "accession": "SCV001478188",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        },
+        {
+          "accession": "SCV001551443",
+          "description": "Pathogenic",
+          "review_status": "no assertion criteria provided",
+          "traits": [
+            "Li-Fraumeni syndrome 1"
+          ]
+        },
+        {
+          "accession": "SCV001738476",
+          "description": "Pathogenic",
+          "review_status": "no assertion criteria provided",
+          "traits": []
+        },
+        {
+          "accession": "SCV000211798",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": [
+            "Not Provided"
+          ]
+        },
+        {
+          "accession": "SCV001808819",
+          "description": "Pathogenic",
+          "review_status": "no assertion criteria provided",
+          "traits": [
+            "not provided"
+          ]
+        },
+        {
+          "accession": "SCV001906154",
+          "description": "Pathogenic",
+          "review_status": "no assertion criteria provided",
+          "traits": [
+            "not provided"
+          ]
+        },
+        {
+          "accession": "SCV001959136",
+          "description": "Pathogenic",
+          "review_status": "no assertion criteria provided",
+          "traits": [
+            "not provided"
+          ]
+        },
+        {
+          "accession": "SCV002758490",
+          "description": "Pathogenic",
+          "review_status": "no assertion criteria provided",
+          "traits": []
+        },
+        {
+          "accession": "SCV002011128",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": [
+            "not provided"
+          ]
+        },
+        {
+          "accession": "SCV004044216",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        },
+        {
+          "accession": "SCV004823789",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        },
+        {
+          "accession": "SCV002074556",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        },
+        {
+          "accession": "SCV004206223",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        },
+        {
+          "accession": "SCV005201131",
+          "description": "Pathogenic",
+          "review_status": "reviewed by expert panel",
+          "traits": []
+        },
+        {
+          "accession": "SCV005419199",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": [
+            "TP53-related disorder"
+          ]
+        },
+        {
+          "accession": "SCV001450483",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        },
+        {
+          "accession": "SCV001450484",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        },
+        {
+          "accession": "SCV005368520",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        },
+        {
+          "accession": "SCV000297733",
+          "description": "Pathogenic",
+          "review_status": "no assertion criteria provided",
+          "traits": [
+            "Esophageal cancer"
+          ]
+        },
+        {
+          "accession": "SCV000261917",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        },
+        {
+          "accession": "SCV007599807",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        },
+        {
+          "accession": "SCV007665128",
+          "description": "Likely Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        },
+        {
+          "accession": "SCV007674822",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": []
+        },
+        {
+          "accession": "SCV007833763",
+          "description": "Pathogenic",
+          "review_status": "criteria provided, single submitter",
+          "traits": [
+            "TP53-related disorders"
+          ]
+        }
+      ]
+    }
+  }
+}

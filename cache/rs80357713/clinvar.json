@@ -1,0 +1,37 @@
+{
+  "source": "clinvar",
+  "retrieved": "2026-11-08T03:36:42+00:00",
+  "request": {
+    "term": "rs80357713"
+  },
+  "response": {
+    "esearch": {
+      "header": {
+        "type": "esearch",
+        "version": "0.3"
+      },
+      "esearchresult": {
+        "count": "0",
+        "retmax": "0",
+        "retstart": "0",
+        "idlist": [],
+        "translationset": [],
+        "querytranslation": "(rs80357713[All Fields])",
+        "errorlist": {
+          "phrasesnotfound": [
+            "rs80357713"
+          ],
+          "fieldsnotfound": []
+        },
+        "warninglist": {
+          "phrasesignored": [],
+          "quotedphrasesnotfound": [],
+          "outputmessages": [
+            "No items found."
+          ]
+        }
+      }
+    },
+    "esummary": null
+  }
+}

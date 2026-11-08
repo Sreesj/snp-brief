@@ -1,0 +1,147 @@
+{
+  "source": "europepmc",
+  "retrieved": "2026-11-08T03:16:16+00:00",
+  "request": {
+    "query": "(TITLE:rs121913529 OR ABSTRACT:rs121913529) AND PUB_TYPE:\"research-article\" NOT PUB_TYPE:review"
+  },
+  "response": {
+    "version": "6.9",
+    "hitCount": 3,
+    "request": {
+      "queryString": "(TITLE:rs121913529 OR ABSTRACT:rs121913529) AND PUB_TYPE:\"research-article\" NOT PUB_TYPE:review",
+      "resultType": "lite",
+      "cursorMark": "*",
+      "pageSize": 15,
+      "sort": "CITED desc",
+      "synonym": false
+    },
+    "resultList": {
+      "result": [
+        {
+          "id": "33254149",
+          "source": "MED",
+          "pmid": "33254149",
+          "pmcid": "PMC7834984",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC7834984"
+            ]
+          },
+          "doi": "10.18632/aging.202182",
+          "title": "KRAS mutations are negatively correlated with immunity in colon cancer.",
+          "authorString": "Fu X, Wang X, Duanmu J, Li T, Jiang Q.",
+          "journalTitle": "Aging (Albany NY)",
+          "issue": "1",
+          "journalVolume": "13",
+          "pubYear": "2020",
+          "journalIssn": "1945-4589",
+          "pageInfo": "750-768",
+          "pubType": "research support, non-u.s. gov't; research-article; journal article",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 18,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp",
+              "doi"
+            ]
+          },
+          "firstPublicationDate": "2020-11-26",
+          "firstIndexDate": "2020-12-01"
+        },
+        {
+          "id": "39488539",
+          "source": "MED",
+          "pmid": "39488539",
+          "pmcid": "PMC11531595",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC11531595"
+            ]
+          },
+          "doi": "10.1038/s41598-024-75048-2",
+          "title": "Association between KRAS mutation and alcohol consumption in Brazilian patients with colorectal cancer.",
+          "authorString": "Gomes-Fernandes B, Trindade LM, de Castro Bastos Rodrigues M, Cardoso JPD, Lima FT, Rogerio L, de Vasconcelos Generoso S, Carneiro JG, da Silva RG, de Souza RP, De Marco L, Bastos-Rodrigues L.",
+          "journalTitle": "Sci Rep",
+          "issue": "1",
+          "journalVolume": "14",
+          "pubYear": "2024",
+          "journalIssn": "2045-2322",
+          "pageInfo": "26445",
+          "pubType": "research-article; journal article",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 2,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp",
+              "doi"
+            ]
+          },
+          "firstPublicationDate": "2024-11-02",
+          "firstIndexDate": "2024-11-03"
+        },
+        {
+          "id": "39001385",
+          "source": "MED",
+          "pmid": "39001385",
+          "pmcid": "PMC11240588",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC11240588"
+            ]
+          },
+          "doi": "10.3390/cancers16132323",
+          "title": "<i>KRAS</i> Exon 2 Mutations in Patients with Sporadic Colorectal Cancer: Prevalence Variations in Mexican and Latin American Populations.",
+          "authorString": "Venegas-Rodr\u00edguez JL, Hern\u00e1ndez-Sandoval JA, Guti\u00e9rrez-Angulo M, Moreno-Ortiz JM, Gonz\u00e1lez-Mercado A, Peregrina-Sandoval J, Ram\u00edrez-Plascencia HHF, Flores-L\u00f3pez BA, Alvizo-Rodr\u00edguez CR, Valenzuela-P\u00e9rez JA, Cervantes-Ortiz S, Ayala-Madrigal ML.",
+          "journalTitle": "Cancers (Basel)",
+          "issue": "13",
+          "journalVolume": "16",
+          "pubYear": "2024",
+          "journalIssn": "2072-6694",
+          "pageInfo": "2323",
+          "pubType": "research-article; journal article",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 1,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "N",
+          "hasLabsLinks": "N",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "ensembl",
+              "refsnp",
+              "doi"
+            ]
+          },
+          "firstPublicationDate": "2024-06-25",
+          "firstIndexDate": "2024-07-14"
+        }
+      ]
+    }
+  }
+}

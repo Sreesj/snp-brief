@@ -1,0 +1,107 @@
+{
+  "source": "dbsnp",
+  "retrieved": "2026-11-08T03:21:02+00:00",
+  "request": {
+    "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi",
+    "id": "113993960"
+  },
+  "response": {
+    "header": {
+      "type": "esummary",
+      "version": "0.3"
+    },
+    "result": {
+      "uids": [
+        "113993960"
+      ],
+      "113993960": {
+        "uid": "113993960",
+        "snp_id": 113993960,
+        "allele_origin": "",
+        "global_mafs": [
+          {
+            "study": "1000Genomes",
+            "freq": "-=0.0039936/20"
+          },
+          {
+            "study": "1000Genomes_30X",
+            "freq": "-=0.0039038/25"
+          },
+          {
+            "study": "Estonian",
+            "freq": "-=0.0071429/32"
+          },
+          {
+            "study": "ExAC",
+            "freq": "-=0.0067851/823"
+          },
+          {
+            "study": "GnomAD_exomes",
+            "freq": "-=0.0124506/17428"
+          },
+          {
+            "study": "GnomAD_genomes",
+            "freq": "-=0.0079298/1183"
+          },
+          {
+            "study": "GoNL",
+            "freq": "-=0.0190381/19"
+          },
+          {
+            "study": "NorthernSweden",
+            "freq": "-=0.01/6"
+          },
+          {
+            "study": "PAGE_STUDY",
+            "freq": "-=0.0035453/279"
+          },
+          {
+            "study": "TOPMED",
+            "freq": "-=0.0078507/2078"
+          },
+          {
+            "study": "ALFA",
+            "freq": "T=0.003121/290"
+          }
+        ],
+        "global_population": "",
+        "global_samplesize": "",
+        "suspected": "",
+        "clinical_significance": "risk-factor,pathogenic,likely-pathogenic,drug-response",
+        "genes": [
+          {
+            "name": "CFTR",
+            "gene_id": "1080"
+          },
+          {
+            "name": "CFTR-AS1",
+            "gene_id": "111082987"
+          }
+        ],
+        "acc": "NC_000007.14",
+        "chr": "7",
+        "handle": "EVA-GONL,AFFY,ACPOP,SNPEDIA,CLINVAR,1000G_HIGH_COVERAGE,SWEGEN,JJLAB,EVA,SANFORD_IMAGENETICS,ILLUMINA,EGCUT_WGS,NCBI-CURATED-RECORDS,EVA_DECODE,EVA_EXAC,GNOMAD,PAGE_CC,1000GENOMES,TOPMED,HUGCELL_USP",
+        "spdi": "NC_000007.14:117559590:TCTT:T,NC_000007.14:117559590:TCTT:TCTTCTT",
+        "fxn_class": "intron_variant,inframe_deletion,inframe_insertion,coding_sequence_variant",
+        "validated": "by-frequency,by-alfa,by-cluster",
+        "docsum": "HGVS=NC_000007.14:g.117559592_117559594del,NC_000007.14:g.117559592_117559594dup,NC_000007.13:g.117199646_117199648del,NC_000007.13:g.117199646_117199648dup,NG_016465.4:g.98809_98811del,NG_016465.4:g.98809_98811dup,NM_000492.4:c.1521_1523del,NM_000492.4:c.1521_1523dup,NM_000492.3:c.1521_1523del,NM_000492.3:c.1521_1523dup,NP_000483.3:p.Phe508del,NP_000483.3:p.Phe508dup|SEQ=[CTT/-/CTTCTT]|LEN=4|GENE=CFTR:1080,CFTR-AS1:111082987",
+        "tax_id": 9606,
+        "orig_build": 132,
+        "upd_build": 157,
+        "createdate": "2010/07/08 12:50",
+        "updatedate": "2024/10/31 22:09",
+        "ss": "252440416,263192966,499991547,984713522,1377595314,1594298901,1711868788,1751113321,1959046051,1959046052,2030866475,2985418268,2986049754,3001909639,3022772844,3022772845,3022772847,3653307715,3653307716,3653307718,3654179659,3669661275,3720540645,3726475926,3726475928,3735003910,3771394296,3824311653,3986397108,4760956788,6322319542,6432289362,6767825686,8237649999,8274466901,8471381085,8512473867,8563476797,8624673295,8643832132,8823421268,8848691191,8973021787",
+        "allele": "N",
+        "snp_class": "delins",
+        "chrpos": "7:117559591",
+        "chrpos_prev_assm": "7:117199645",
+        "text": "",
+        "snp_id_sort": "0113993960",
+        "clinical_sort": "1",
+        "cited_sort": "",
+        "chrpos_sort": "0117559591",
+        "merged_sort": "0"
+      }
+    }
+  }
+}

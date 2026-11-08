@@ -1,0 +1,858 @@
+{
+  "source": "Ensembl VEP",
+  "retrieved": "2026-11-08T03:37:25+00:00",
+  "request": {
+    "rsid": "rs1426654",
+    "params": {
+      "AlphaMissense": "1",
+      "CADD": "1",
+      "SpliceAI": "1",
+      "canonical": "1",
+      "variant_class": "1",
+      "domains": "1"
+    }
+  },
+  "response": [
+    {
+      "seq_region_name": "15",
+      "end": 48134287,
+      "start": 48134287,
+      "colocated_variants": [
+        {
+          "id": "CM054862",
+          "strand": 1,
+          "phenotype_or_disease": 1,
+          "allele_string": "HGMD_MUTATION",
+          "end": 48134287,
+          "start": 48134287,
+          "seq_region_name": "15"
+        },
+        {
+          "id": "COSV58316055",
+          "strand": 1,
+          "allele_string": "COSMIC_MUTATION",
+          "phenotype_or_disease": 1,
+          "somatic": 1,
+          "var_synonyms": {
+            "COSMIC": [
+              "COSM4985159"
+            ]
+          },
+          "seq_region_name": "15",
+          "end": 48134287,
+          "start": 48134287
+        },
+        {
+          "var_synonyms": {
+            "OMIM": [
+              609802.0001
+            ],
+            "ClinVar": [
+              "RCV000001552",
+              "VCV000001487",
+              "RCV000250857",
+              "VCV000263273",
+              "RCV001723865"
+            ],
+            "UniProt": [
+              "VAR_024922"
+            ]
+          },
+          "end": 48134287,
+          "start": 48134287,
+          "seq_region_name": "15",
+          "clin_sig_ref_allele": "A",
+          "pubmed": [
+            25741868,
+            18248681,
+            35197637,
+            20691427,
+            21976407,
+            17557415,
+            16255080,
+            19737746,
+            32169032,
+            25133637,
+            33692100,
+            35176104,
+            19944766,
+            21807602,
+            18282109,
+            22073278,
+            20158590,
+            21589938,
+            21208434,
+            20393453,
+            21445957,
+            21498954,
+            21611176,
+            23118974,
+            26926045,
+            19384953,
+            24809478,
+            27135931,
+            26753840,
+            27274049,
+            27502179,
+            26690364,
+            26938746,
+            17999355,
+            23071798,
+            23110848,
+            26921301,
+            19440451,
+            23771755,
+            25093503,
+            26918427,
+            28300201,
+            31315583,
+            33167923,
+            34068188,
+            33837257,
+            24473444,
+            19884608,
+            30980179,
+            25307738,
+            29109912,
+            24890271,
+            25093188,
+            19503611,
+            31762634,
+            24048645,
+            16357253,
+            18637132,
+            23224873,
+            25370040,
+            25801600,
+            26395555,
+            27866970,
+            28984396,
+            29897937,
+            30099804,
+            30895295,
+            33318654,
+            26286644,
+            24436253,
+            34233163,
+            29662168,
+            23612573,
+            34108994,
+            26567969,
+            35576557,
+            23525585,
+            25334030,
+            34626111,
+            35578825,
+            31150552,
+            24416183,
+            30530665,
+            29391530,
+            28381588,
+            33438000,
+            24980144,
+            24667780,
+            35712076,
+            26545921,
+            18683858,
+            31848607,
+            26265282,
+            30205563,
+            23055794,
+            33980902,
+            30963935,
+            28701907,
+            34411538,
+            29129317,
+            20967209,
+            24223962,
+            34440458,
+            34863217,
+            33547071,
+            23100201,
+            33618348,
+            29741686,
+            25532814,
+            30526867,
+            19133821,
+            29459739,
+            24739399,
+            2853577
+          ],
+          "clin_sig": [
+            "benign",
+            "association"
+          ],
+          "allele_string": "A/G/T",
+          "phenotype_or_disease": 1,
+          "id": "rs1426654",
+          "strand": 1,
+          "clin_sig_allele": "G:benign",
+          "frequencies": {
+            "G": {
+              "gnomade_afr": 0.8293,
+              "gnomade_nfe": 0.002044,
+              "gnomade_mid": 0.03366,
+              "gnomadg_asj": 0.002594,
+              "gnomadg_sas": 0.2484,
+              "gnomadg_remaining": 0.2424,
+              "gnomadg_fin": 0.01243,
+              "gnomadg_amr": 0.3322,
+              "gnomadg_eas": 0.9846,
+              "gnomadg_ami": 0,
+              "gnomadg_mid": 0.01701,
+              "gnomade_fin": 0.01138,
+              "gnomade_amr": 0.499,
+              "gnomade_sas": 0.194,
+              "eur": 0.003,
+              "sas": 0.3149,
+              "eas": 0.9881,
+              "gnomade_remaining": 0.1395,
+              "gnomadg": 0.2985,
+              "gnomadg_nfe": 0.003794,
+              "gnomade_eas": 0.994,
+              "amr": 0.4107,
+              "gnomade_asj": 0.003829,
+              "gnomade": 0.0806,
+              "af": 0.5623,
+              "afr": 0.9259,
+              "gnomadg_afr": 0.799
+            },
+            "T": {
+              "gnomade_mid": 0,
+              "gnomade_eas": 0,
+              "gnomade_remaining": 3.312e-05,
+              "gnomade_nfe": 1.799e-06,
+              "gnomade_afr": 2.991e-05,
+              "gnomade_sas": 0,
+              "gnomade_amr": 0,
+              "gnomade": 3.421e-06,
+              "gnomade_asj": 0,
+              "gnomade_fin": 0
+            }
+          }
+        }
+      ],
+      "transcript_consequences": [
+        {
+          "cadd_raw": 2.418916,
+          "gene_id": "ENSG00000104177",
+          "variant_allele": "G",
+          "strand": -1,
+          "transcript_id": "ENST00000267836",
+          "hgnc_id": "HGNC:17940",
+          "gene_symbol": "MYEF2",
+          "cadd_phred": 18.64,
+          "impact": "MODIFIER",
+          "consequence_terms": [
+            "downstream_gene_variant"
+          ],
+          "gene_symbol_source": "HGNC",
+          "distance": 345,
+          "biotype": "protein_coding"
+        },
+        {
+          "biotype": "protein_coding",
+          "distance": 345,
+          "gene_symbol_source": "HGNC",
+          "consequence_terms": [
+            "downstream_gene_variant"
+          ],
+          "impact": "MODIFIER",
+          "cadd_phred": 23.2,
+          "gene_symbol": "MYEF2",
+          "hgnc_id": "HGNC:17940",
+          "transcript_id": "ENST00000267836",
+          "strand": -1,
+          "variant_allele": "T",
+          "gene_id": "ENSG00000104177",
+          "cadd_raw": 3.665357
+        },
+        {
+          "biotype": "protein_coding",
+          "gene_symbol_source": "HGNC",
+          "distance": 345,
+          "cadd_phred": 18.64,
+          "impact": "MODIFIER",
+          "consequence_terms": [
+            "downstream_gene_variant"
+          ],
+          "gene_symbol": "MYEF2",
+          "transcript_id": "ENST00000324324",
+          "strand": -1,
+          "hgnc_id": "HGNC:17940",
+          "canonical": 1,
+          "gene_id": "ENSG00000104177",
+          "variant_allele": "G",
+          "cadd_raw": 2.418916
+        },
+        {
+          "gene_symbol_source": "HGNC",
+          "distance": 345,
+          "cadd_phred": 23.2,
+          "impact": "MODIFIER",
+          "consequence_terms": [
+            "downstream_gene_variant"
+          ],
+          "biotype": "protein_coding",
+          "gene_id": "ENSG00000104177",
+          "variant_allele": "T",
+          "cadd_raw": 3.665357,
+          "gene_symbol": "MYEF2",
+          "transcript_id": "ENST00000324324",
+          "hgnc_id": "HGNC:17940",
+          "canonical": 1,
+          "strand": -1
+        },
+        {
+          "cadd_raw": 2.418916,
+          "polyphen_prediction": "benign",
+          "variant_allele": "G",
+          "canonical": 1,
+          "impact": "MODERATE",
+          "consequence_terms": [
+            "missense_variant"
+          ],
+          "cdna_end": 386,
+          "cdna_start": 386,
+          "cds_start": 331,
+          "biotype": "protein_coding",
+          "protein_end": 111,
+          "sift_prediction": "tolerated",
+          "codons": "Aca/Gca",
+          "cds_end": 331,
+          "sift_score": 1,
+          "gene_id": "ENSG00000188467",
+          "hgnc_id": "HGNC:20611",
+          "transcript_id": "ENST00000341459",
+          "strand": 1,
+          "polyphen_score": 0,
+          "gene_symbol": "SLC24A5",
+          "cadd_phred": 18.64,
+          "spliceai": {
+            "DS_DG": 0,
+            "DS_DL": 0,
+            "DP_DG": 38,
+            "SYMBOL": "SLC24A5",
+            "DS_AG": 0.03,
+            "DP_AL": 28,
+            "DP_AG": -12,
+            "DP_DL": -3,
+            "DS_AL": 0
+          },
+          "gene_symbol_source": "HGNC",
+          "amino_acids": "T/A",
+          "protein_start": 111,
+          "alphamissense": {
+            "am_class": "likely_benign",
+            "am_pathogenicity": 0.027
+          },
+          "domains": [
+            {
+              "db": "NCBIFAM",
+              "name": "TIGR00367"
+            },
+            {
+              "db": "Pfam",
+              "name": "PF01699"
+            },
+            {
+              "name": 1,
+              "db": "Gene3D"
+            },
+            {
+              "db": "PANTHER",
+              "name": "PTHR10846"
+            },
+            {
+              "db": "Phobius",
+              "name": "TRANSMEMBRANE"
+            },
+            {
+              "name": "AF",
+              "db": "ENSP_mappings"
+            }
+          ]
+        },
+        {
+          "protein_end": 111,
+          "biotype": "protein_coding",
+          "cds_start": 331,
+          "cdna_start": 386,
+          "consequence_terms": [
+            "missense_variant"
+          ],
+          "impact": "MODERATE",
+          "cdna_end": 386,
+          "canonical": 1,
+          "variant_allele": "T",
+          "polyphen_prediction": "benign",
+          "cadd_raw": 3.665357,
+          "alphamissense": {
+            "am_pathogenicity": 0.1225,
+            "am_class": "likely_benign"
+          },
+          "amino_acids": "T/S",
+          "domains": [
+            {
+              "db": "NCBIFAM",
+              "name": "TIGR00367"
+            },
+            {
+              "db": "Pfam",
+              "name": "PF01699"
+            },
+            {
+              "db": "Gene3D",
+              "name": 1
+            },
+            {
+              "db": "PANTHER",
+              "name": "PTHR10846"
+            },
+            {
+              "db": "Phobius",
+              "name": "TRANSMEMBRANE"
+            },
+            {
+              "name": "AF",
+              "db": "ENSP_mappings"
+            }
+          ],
+          "protein_start": 111,
+          "gene_symbol_source": "HGNC",
+          "cadd_phred": 23.2,
+          "spliceai": {
+            "DP_DL": -3,
+            "DP_AG": -12,
+            "DS_AL": 0,
+            "DS_AG": 0.01,
+            "DP_AL": -30,
+            "DS_DL": 0,
+            "DP_DG": 38,
+            "SYMBOL": "SLC24A5",
+            "DS_DG": 0
+          },
+          "gene_symbol": "SLC24A5",
+          "polyphen_score": 0,
+          "transcript_id": "ENST00000341459",
+          "hgnc_id": "HGNC:20611",
+          "strand": 1,
+          "gene_id": "ENSG00000188467",
+          "sift_score": 0,
+          "codons": "Aca/Tca",
+          "cds_end": 331,
+          "sift_prediction": "deleterious"
+        },
+        {
+          "gene_symbol": "SLC24A5",
+          "polyphen_score": 0,
+          "strand": 1,
+          "transcript_id": "ENST00000449382",
+          "hgnc_id": "HGNC:20611",
+          "gene_id": "ENSG00000188467",
+          "sift_score": 1,
+          "codons": "Aca/Gca",
+          "cds_end": 151,
+          "sift_prediction": "tolerated",
+          "amino_acids": "T/A",
+          "protein_start": 51,
+          "domains": [
+            {
+              "name": "TMhelix",
+              "db": "Transmembrane_helices"
+            },
+            {
+              "db": "Phobius",
+              "name": "NON_CYTOPLASMIC_DOMAIN"
+            },
+            {
+              "name": 1,
+              "db": "Gene3D"
+            },
+            {
+              "name": "PF01699",
+              "db": "Pfam"
+            },
+            {
+              "db": "NCBIFAM",
+              "name": "TIGR00367"
+            },
+            {
+              "db": "PANTHER",
+              "name": "PTHR10846"
+            },
+            {
+              "db": "ENSP_mappings",
+              "name": "AF"
+            }
+          ],
+          "alphamissense": {
+            "am_class": "likely_benign",
+            "am_pathogenicity": 0.027
+          },
+          "gene_symbol_source": "HGNC",
+          "cadd_phred": 18.64,
+          "spliceai": {
+            "DS_AG": 0.03,
+            "DP_AL": 28,
+            "DP_AG": -12,
+            "DP_DL": -3,
+            "DS_AL": 0,
+            "DS_DG": 0,
+            "SYMBOL": "SLC24A5",
+            "DS_DL": 0,
+            "DP_DG": 38
+          },
+          "variant_allele": "G",
+          "polyphen_prediction": "benign",
+          "cadd_raw": 2.418916,
+          "protein_end": 51,
+          "biotype": "protein_coding",
+          "cds_start": 151,
+          "cdna_start": 206,
+          "impact": "MODERATE",
+          "consequence_terms": [
+            "missense_variant"
+          ],
+          "cdna_end": 206
+        },
+        {
+          "cdna_start": 206,
+          "impact": "MODERATE",
+          "consequence_terms": [
+            "missense_variant"
+          ],
+          "cdna_end": 206,
+          "protein_end": 51,
+          "biotype": "protein_coding",
+          "cds_start": 151,
+          "variant_allele": "T",
+          "polyphen_prediction": "benign",
+          "cadd_raw": 3.665357,
+          "gene_symbol_source": "HGNC",
+          "cadd_phred": 23.2,
+          "spliceai": {
+            "DS_DL": 0,
+            "SYMBOL": "SLC24A5",
+            "DP_DG": 38,
+            "DS_DG": 0,
+            "DP_DL": -3,
+            "DP_AG": -12,
+            "DS_AL": 0,
+            "DS_AG": 0.01,
+            "DP_AL": -30
+          },
+          "domains": [
+            {
+              "db": "Transmembrane_helices",
+              "name": "TMhelix"
+            },
+            {
+              "db": "Phobius",
+              "name": "NON_CYTOPLASMIC_DOMAIN"
+            },
+            {
+              "db": "Gene3D",
+              "name": 1
+            },
+            {
+              "name": "PF01699",
+              "db": "Pfam"
+            },
+            {
+              "name": "TIGR00367",
+              "db": "NCBIFAM"
+            },
+            {
+              "name": "PTHR10846",
+              "db": "PANTHER"
+            },
+            {
+              "db": "ENSP_mappings",
+              "name": "AF"
+            }
+          ],
+          "amino_acids": "T/S",
+          "alphamissense": {
+            "am_pathogenicity": 0.1225,
+            "am_class": "likely_benign"
+          },
+          "protein_start": 51,
+          "gene_id": "ENSG00000188467",
+          "sift_score": 0.03,
+          "cds_end": 151,
+          "codons": "Aca/Tca",
+          "sift_prediction": "deleterious",
+          "gene_symbol": "SLC24A5",
+          "polyphen_score": 0,
+          "transcript_id": "ENST00000449382",
+          "hgnc_id": "HGNC:20611",
+          "strand": 1
+        },
+        {
+          "variant_allele": "G",
+          "cadd_raw": 2.418916,
+          "consequence_terms": [
+            "non_coding_transcript_exon_variant"
+          ],
+          "impact": "MODIFIER",
+          "cdna_end": 91,
+          "cdna_start": 91,
+          "biotype": "retained_intron",
+          "gene_id": "ENSG00000188467",
+          "gene_symbol": "SLC24A5",
+          "transcript_id": "ENST00000463289",
+          "strand": 1,
+          "hgnc_id": "HGNC:20611",
+          "gene_symbol_source": "HGNC",
+          "cadd_phred": 18.64,
+          "spliceai": {
+            "DS_AG": 0.03,
+            "DP_AL": 28,
+            "DP_AG": -12,
+            "DP_DL": -3,
+            "DS_AL": 0,
+            "DS_DG": 0,
+            "SYMBOL": "SLC24A5",
+            "DS_DL": 0,
+            "DP_DG": 38
+          }
+        },
+        {
+          "gene_symbol_source": "HGNC",
+          "spliceai": {
+            "DS_AL": 0,
+            "DP_DL": -3,
+            "DP_AG": -12,
+            "DP_AL": -30,
+            "DS_AG": 0.01,
+            "SYMBOL": "SLC24A5",
+            "DS_DL": 0,
+            "DP_DG": 38,
+            "DS_DG": 0
+          },
+          "cadd_phred": 23.2,
+          "gene_id": "ENSG00000188467",
+          "gene_symbol": "SLC24A5",
+          "strand": 1,
+          "transcript_id": "ENST00000463289",
+          "hgnc_id": "HGNC:20611",
+          "cdna_start": 91,
+          "cdna_end": 91,
+          "consequence_terms": [
+            "non_coding_transcript_exon_variant"
+          ],
+          "impact": "MODIFIER",
+          "biotype": "retained_intron",
+          "variant_allele": "T",
+          "cadd_raw": 3.665357
+        },
+        {
+          "distance": 345,
+          "gene_symbol_source": "HGNC",
+          "consequence_terms": [
+            "downstream_gene_variant"
+          ],
+          "impact": "MODIFIER",
+          "cadd_phred": 18.64,
+          "biotype": "protein_coding",
+          "variant_allele": "G",
+          "gene_id": "ENSG00000104177",
+          "cadd_raw": 2.418916,
+          "gene_symbol": "MYEF2",
+          "transcript_id": "ENST00000620867",
+          "strand": -1,
+          "hgnc_id": "HGNC:17940"
+        },
+        {
+          "strand": -1,
+          "transcript_id": "ENST00000620867",
+          "hgnc_id": "HGNC:17940",
+          "gene_symbol": "MYEF2",
+          "cadd_raw": 3.665357,
+          "variant_allele": "T",
+          "gene_id": "ENSG00000104177",
+          "biotype": "protein_coding",
+          "impact": "MODIFIER",
+          "consequence_terms": [
+            "downstream_gene_variant"
+          ],
+          "cadd_phred": 23.2,
+          "distance": 345,
+          "gene_symbol_source": "HGNC"
+        },
+        {
+          "cadd_raw": 2.418916,
+          "variant_allele": "G",
+          "gene_id": "ENSG00000104177",
+          "hgnc_id": "HGNC:17940",
+          "transcript_id": "ENST00001133110",
+          "strand": -1,
+          "gene_symbol": "MYEF2",
+          "consequence_terms": [
+            "downstream_gene_variant"
+          ],
+          "impact": "MODIFIER",
+          "cadd_phred": 18.64,
+          "distance": 345,
+          "gene_symbol_source": "HGNC",
+          "biotype": "protein_coding"
+        },
+        {
+          "biotype": "protein_coding",
+          "distance": 345,
+          "gene_symbol_source": "HGNC",
+          "consequence_terms": [
+            "downstream_gene_variant"
+          ],
+          "impact": "MODIFIER",
+          "cadd_phred": 23.2,
+          "gene_symbol": "MYEF2",
+          "strand": -1,
+          "transcript_id": "ENST00001133110",
+          "hgnc_id": "HGNC:17940",
+          "variant_allele": "T",
+          "gene_id": "ENSG00000104177",
+          "cadd_raw": 3.665357
+        },
+        {
+          "polyphen_score": 0,
+          "hgnc_id": "HGNC:20611",
+          "transcript_id": "ENST00001134917",
+          "strand": 1,
+          "gene_symbol": "SLC24A5",
+          "cds_end": 331,
+          "codons": "Aca/Gca",
+          "sift_prediction": "tolerated",
+          "sift_score": 1,
+          "gene_id": "ENSG00000188467",
+          "amino_acids": "T/A",
+          "alphamissense": {
+            "am_class": "likely_benign",
+            "am_pathogenicity": 0.027
+          },
+          "protein_start": 111,
+          "domains": [
+            {
+              "db": "Phobius",
+              "name": "TRANSMEMBRANE"
+            },
+            {
+              "db": "NCBIFAM",
+              "name": "TIGR00367"
+            },
+            {
+              "name": "PF01699",
+              "db": "Pfam"
+            },
+            {
+              "db": "Gene3D",
+              "name": 1
+            },
+            {
+              "name": "PTHR10846",
+              "db": "PANTHER"
+            }
+          ],
+          "spliceai": {
+            "DP_AG": -12,
+            "DP_DL": -3,
+            "DS_AL": 0,
+            "DS_AG": 0.03,
+            "DP_AL": 28,
+            "DS_DL": 0,
+            "SYMBOL": "SLC24A5",
+            "DP_DG": 38,
+            "DS_DG": 0
+          },
+          "cadd_phred": 18.64,
+          "gene_symbol_source": "HGNC",
+          "polyphen_prediction": "benign",
+          "cadd_raw": 2.418916,
+          "variant_allele": "G",
+          "cds_start": 331,
+          "protein_end": 111,
+          "biotype": "protein_coding",
+          "cdna_start": 386,
+          "consequence_terms": [
+            "missense_variant"
+          ],
+          "cdna_end": 386,
+          "impact": "MODERATE"
+        },
+        {
+          "consequence_terms": [
+            "missense_variant"
+          ],
+          "impact": "MODERATE",
+          "cdna_end": 386,
+          "cdna_start": 386,
+          "protein_end": 111,
+          "biotype": "protein_coding",
+          "cds_start": 331,
+          "variant_allele": "T",
+          "cadd_raw": 3.665357,
+          "polyphen_prediction": "benign",
+          "gene_symbol_source": "HGNC",
+          "cadd_phred": 23.2,
+          "spliceai": {
+            "DS_DG": 0,
+            "DS_DL": 0,
+            "SYMBOL": "SLC24A5",
+            "DP_DG": 38,
+            "DP_AL": -30,
+            "DS_AG": 0.01,
+            "DS_AL": 0,
+            "DP_DL": -3,
+            "DP_AG": -12
+          },
+          "amino_acids": "T/S",
+          "protein_start": 111,
+          "alphamissense": {
+            "am_pathogenicity": 0.1225,
+            "am_class": "likely_benign"
+          },
+          "domains": [
+            {
+              "db": "Phobius",
+              "name": "TRANSMEMBRANE"
+            },
+            {
+              "name": "TIGR00367",
+              "db": "NCBIFAM"
+            },
+            {
+              "name": "PF01699",
+              "db": "Pfam"
+            },
+            {
+              "name": 1,
+              "db": "Gene3D"
+            },
+            {
+              "name": "PTHR10846",
+              "db": "PANTHER"
+            }
+          ],
+          "sift_score": 0,
+          "gene_id": "ENSG00000188467",
+          "sift_prediction": "deleterious",
+          "codons": "Aca/Tca",
+          "cds_end": 331,
+          "gene_symbol": "SLC24A5",
+          "transcript_id": "ENST00001134917",
+          "strand": 1,
+          "hgnc_id": "HGNC:20611",
+          "polyphen_score": 0
+        }
+      ],
+      "input": "rs1426654",
+      "assembly_name": "GRCh38",
+      "allele_string": "A/G/T",
+      "variant_class": "SNV",
+      "strand": 1,
+      "most_severe_consequence": "missense_variant",
+      "id": "rs1426654"
+    }
+  ]
+}

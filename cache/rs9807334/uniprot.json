@@ -1,0 +1,11 @@
+{
+  "source": "uniprot",
+  "retrieved": "2026-11-08T03:16:15+00:00",
+  "request": {
+    "gene": "LOC107985152",
+    "query": "(gene_exact:LOC107985152) AND (organism_id:9606) AND (reviewed:true)"
+  },
+  "response": {
+    "results": []
+  }
+}

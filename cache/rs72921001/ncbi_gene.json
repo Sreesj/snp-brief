@@ -1,0 +1,166 @@
+{
+  "source": "NCBI Gene",
+  "retrieved": "2026-11-08T03:17:38+00:00",
+  "request": {
+    "gene": "OR10A2"
+  },
+  "response": {
+    "header": {
+      "type": "esummary",
+      "version": "0.3"
+    },
+    "result": {
+      "uids": [
+        "341276"
+      ],
+      "341276": {
+        "uid": "341276",
+        "name": "OR10A2",
+        "description": "olfactory receptor family 10 subfamily A member 2",
+        "status": "",
+        "currentid": "",
+        "chromosome": "11",
+        "geneticsource": "genomic",
+        "maplocation": "11p15.4",
+        "otheraliases": "OR10A2P, OR11-82, OR11-86, OST363",
+        "otherdesignations": "olfactory receptor 10A2|hP4 olfactory receptor|olfactory receptor OR11-82 pseudogene|olfactory receptor OR11-86|olfactory receptor, family 10, subfamily A, member 2 pseudogene",
+        "nomenclaturesymbol": "OR10A2",
+        "nomenclaturename": "olfactory receptor family 10 subfamily A member 2",
+        "nomenclaturestatus": "Official",
+        "mim": [],
+        "genomicinfo": [
+          {
+            "chrloc": "11",
+            "chraccver": "NC_000011.10",
+            "chrstart": 6863056,
+            "chrstop": 6874716,
+            "exoncount": 2
+          }
+        ],
+        "geneweight": 255,
+        "summary": "Olfactory receptors interact with odorant molecules in the nose, to initiate a neuronal response that triggers the perception of a smell. The olfactory receptor proteins are members of a large family of G-protein-coupled receptors (GPCR) arising from single coding-exon genes. Olfactory receptors share a 7-transmembrane domain structure with many neurotransmitter and hormone receptors and are responsible for the recognition and G protein-mediated transduction of odorant signals. The olfactory receptor gene family is the largest in the genome. [provided by RefSeq, Jul 2008]",
+        "chrsort": "11",
+        "chrstart": 6863056,
+        "organism": {
+          "scientificname": "Homo sapiens",
+          "commonname": "human",
+          "taxid": 9606
+        },
+        "locationhist": [
+          {
+            "annotationrelease": "RS_2025_08",
+            "assemblyaccver": "GCF_000001405.40",
+            "chraccver": "NC_000011.10",
+            "chrstart": 6863056,
+            "chrstop": 6874716
+          },
+          {
+            "annotationrelease": "RS_2025_08",
+            "assemblyaccver": "GCF_009914755.1",
+            "chraccver": "NC_060935.1",
+            "chrstart": 6921467,
+            "chrstop": 6933095
+          },
+          {
+            "annotationrelease": "RS_2024_08",
+            "assemblyaccver": "GCF_000001405.40",
+            "chraccver": "NC_000011.10",
+            "chrstart": 6863056,
+            "chrstop": 6874716
+          },
+          {
+            "annotationrelease": "RS_2024_08",
+            "assemblyaccver": "GCF_009914755.1",
+            "chraccver": "NC_060935.1",
+            "chrstart": 6921467,
+            "chrstop": 6933095
+          },
+          {
+            "annotationrelease": "RS_2023_10",
+            "assemblyaccver": "GCF_000001405.40",
+            "chraccver": "NC_000011.10",
+            "chrstart": 6863056,
+            "chrstop": 6874716
+          },
+          {
+            "annotationrelease": "RS_2023_10",
+            "assemblyaccver": "GCF_009914755.1",
+            "chraccver": "NC_060935.1",
+            "chrstart": 6921467,
+            "chrstop": 6933095
+          },
+          {
+            "annotationrelease": "RS_2023_03",
+            "assemblyaccver": "GCF_000001405.40",
+            "chraccver": "NC_000011.10",
+            "chrstart": 6863056,
+            "chrstop": 6874716
+          },
+          {
+            "annotationrelease": "RS_2023_03",
+            "assemblyaccver": "GCF_009914755.1",
+            "chraccver": "NC_060935.1",
+            "chrstart": 6921467,
+            "chrstop": 6933095
+          },
+          {
+            "annotationrelease": "110",
+            "assemblyaccver": "GCF_000001405.40",
+            "chraccver": "NC_000011.10",
+            "chrstart": 6863056,
+            "chrstop": 6874716
+          },
+          {
+            "annotationrelease": "110",
+            "assemblyaccver": "GCF_009914755.1",
+            "chraccver": "NC_060935.1",
+            "chrstart": 6921467,
+            "chrstop": 6933095
+          },
+          {
+            "annotationrelease": "109.20211119",
+            "assemblyaccver": "GCF_000001405.39",
+            "chraccver": "NC_000011.10",
+            "chrstart": 6863056,
+            "chrstop": 6874716
+          },
+          {
+            "annotationrelease": "RS_2024_09",
+            "assemblyaccver": "GCF_000001405.25",
+            "chraccver": "NC_000011.9",
+            "chrstart": 6884287,
+            "chrstop": 6895947
+          },
+          {
+            "annotationrelease": "105.20220307",
+            "assemblyaccver": "GCF_000001405.25",
+            "chraccver": "NC_000011.9",
+            "chrstart": 6884287,
+            "chrstop": 6895947
+          },
+          {
+            "annotationrelease": "105",
+            "assemblyaccver": "GCF_000001405.25",
+            "chraccver": "NC_000011.9",
+            "chrstart": 6890985,
+            "chrstop": 6891896
+          },
+          {
+            "annotationrelease": "105",
+            "assemblyaccver": "GCF_000002125.1",
+            "chraccver": "AC_000143.1",
+            "chrstart": 6549561,
+            "chrstop": 6550472
+          },
+          {
+            "annotationrelease": "105",
+            "assemblyaccver": "GCF_000306695.2",
+            "chraccver": "NC_018922.2",
+            "chrstart": 6889922,
+            "chrstop": 6890833
+          }
+        ]
+      }
+    }
+  }
+}

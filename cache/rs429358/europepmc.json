@@ -1,0 +1,634 @@
+{
+  "source": "europepmc",
+  "retrieved": "2026-11-08T03:20:01+00:00",
+  "request": {
+    "query": "(TITLE:rs429358 OR ABSTRACT:rs429358) AND PUB_TYPE:\"research-article\" NOT PUB_TYPE:review"
+  },
+  "response": {
+    "version": "6.9",
+    "hitCount": 246,
+    "nextCursorMark": "AoJeBCgzOTk1MDI3Ng==",
+    "nextPageUrl": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=%28TITLE%3Ars429358+OR+ABSTRACT%3Ars429358%29+AND+PUB_TYPE%3A%22research-article%22+NOT+PUB_TYPE%3Areview&cursorMark=AoJeBCgzOTk1MDI3Ng%3D%3D&resultType=lite&pageSize=15&sort=CITED+desc&format=json",
+    "request": {
+      "queryString": "(TITLE:rs429358 OR ABSTRACT:rs429358) AND PUB_TYPE:\"research-article\" NOT PUB_TYPE:review",
+      "resultType": "lite",
+      "cursorMark": "*",
+      "pageSize": 15,
+      "sort": "CITED desc",
+      "synonym": false
+    },
+    "resultList": {
+      "result": [
+        {
+          "id": "23571587",
+          "source": "MED",
+          "pmid": "23571587",
+          "pmcid": "PMC3667653",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC3667653"
+            ]
+          },
+          "doi": "10.1001/jama.2013.2973",
+          "title": "Variants in the ATP-binding cassette transporter (ABCA7), apolipoprotein E \u03f54,and the risk of late-onset Alzheimer disease in African Americans.",
+          "authorString": "Reitz C, Jun G, Naj A, Rajbhandary R, Vardarajan BN, Wang LS, Valladares O, Lin CF, Larson EB, Graff-Radford NR, Evans D, De Jager PL, Crane PK, Buxbaum JD, Murrell JR, Raj T, Ertekin-Taner N, Logue M, Baldwin CT, Green RC, Barnes LL, Cantwell LB, Fallin MD, Go RC, Griffith P, Obisesan TO, Manly JJ, Lunetta KL, Kamboh MI, Lopez OL, Bennett DA, Hendrie H, Hall KS, Goate AM, Byrd GS, Kukull WA, Foroud TM, Haines JL, Farrer LA, Pericak-Vance MA, Schellenberg GD, Mayeux R, Alzheimer Disease Genetics Consortium.",
+          "journalTitle": "JAMA",
+          "issue": "14",
+          "journalVolume": "309",
+          "pubYear": "2013",
+          "journalIssn": "0098-7484; 1538-3598; ",
+          "pageInfo": "1483-1492",
+          "pubType": "meta-analysis; research support, non-u.s. gov't; research-article; research support, u.s. gov't, non-p.h.s.; journal article; research support, n.i.h., extramural",
+          "isOpenAccess": "N",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 369,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp"
+            ]
+          },
+          "firstPublicationDate": "2013-04-01",
+          "firstIndexDate": "2013-04-11"
+        },
+        {
+          "id": "29899525",
+          "source": "MED",
+          "pmid": "29899525",
+          "pmcid": "PMC6195860",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC6195860"
+            ]
+          },
+          "doi": "10.1038/s41366-018-0120-3",
+          "title": "Genome-wide association study of habitual physical activity in over 377,000 UK Biobank participants identifies multiple variants including CADM2 and APOE.",
+          "authorString": "Klimentidis YC, Raichlen DA, Bea J, Garcia DO, Wineinger NE, Mandarino LJ, Alexander GE, Chen Z, Going SB.",
+          "journalTitle": "Int J Obes (Lond)",
+          "issue": "6",
+          "journalVolume": "42",
+          "pubYear": "2018",
+          "journalIssn": "0307-0565; 1476-5497; ",
+          "pageInfo": "1161-1176",
+          "pubType": "research support, non-u.s. gov't; research-article; journal article; research support, n.i.h., extramural",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 335,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp"
+            ]
+          },
+          "firstPublicationDate": "2018-06-13",
+          "firstIndexDate": "2018-06-15"
+        },
+        {
+          "id": "31413261",
+          "source": "MED",
+          "pmid": "31413261",
+          "pmcid": "PMC6694136",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC6694136"
+            ]
+          },
+          "doi": "10.1038/s41467-019-11558-2",
+          "title": "A meta-analysis of genome-wide association studies identifies multiple longevity genes.",
+          "authorString": "Deelen J, Evans DS, Arking DE, Tesi N, Nygaard M, Liu X, Wojczynski MK, Biggs ML, van der Spek A, Atzmon G, Ware EB, Sarnowski C, Smith AV, Sepp\u00e4l\u00e4 I, Cordell HJ, Dose J, Amin N, Arnold AM, Ayers KL, Barzilai N, Becker EJ, Beekman M, Blanch\u00e9 H, Christensen K, Christiansen L, Collerton JC, Cubaynes S, Cummings SR, Davies K, Debrabant B, Deleuze JF, Duncan R, Faul JD, Franceschi C, Galan P, Gudnason V, Harris TB, Huisman M, Hurme MA, Jagger C, Jansen I, Jylh\u00e4 M, K\u00e4h\u00f6nen M, Karasik D, Kardia SLR, Kingston A, Kirkwood TBL, Launer LJ, Lehtim\u00e4ki T, Lieb W, Lyytik\u00e4inen LP, Martin-Ruiz C, Min J, Nebel A, Newman AB, Nie C, Nohr EA, Orwoll ES, Perls TT, Province MA, Psaty BM, Raitakari OT, Reinders MJT, Robine JM, Rotter JI, Sebastiani P, Smith J, S\u00f8rensen TIA, Taylor KD, Uitterlinden AG, van der Flier W, van der Lee SJ, van Duijn CM, van Heemst D, Vaupel JW, Weir D, Ye K, Zeng Y, Zheng W, Holstege H, Kiel DP, Lunetta KL, Slagboom PE, Murabito JM.",
+          "journalTitle": "Nat Commun",
+          "issue": "1",
+          "journalVolume": "10",
+          "pubYear": "2019",
+          "journalIssn": "2041-1723",
+          "pageInfo": "3669",
+          "pubType": "meta-analysis; research-article; journal article",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 332,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp",
+              "doi"
+            ]
+          },
+          "firstPublicationDate": "2019-08-14",
+          "firstIndexDate": "2019-08-16"
+        },
+        {
+          "id": "29263008",
+          "source": "MED",
+          "pmid": "29263008",
+          "pmcid": "PMC5805394",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC5805394"
+            ]
+          },
+          "doi": "10.1016/s1474-4422(17)30400-3",
+          "title": "Investigating the genetic architecture of dementia with Lewy bodies: a two-stage genome-wide association study.",
+          "authorString": "Guerreiro R, Ross OA, Kun-Rodrigues C, Hernandez DG, Orme T, Eicher JD, Shepherd CE, Parkkinen L, Darwent L, Heckman MG, Scholz SW, Troncoso JC, Pletnikova O, Ansorge O, Clarimon J, Lleo A, Morenas-Rodriguez E, Clark L, Honig LS, Marder K, Lemstra A, Rogaeva E, St George-Hyslop P, Londos E, Zetterberg H, Barber I, Braae A, Brown K, Morgan K, Troakes C, Al-Sarraj S, Lashley T, Holton J, Compta Y, Van Deerlin V, Serrano GE, Beach TG, Lesage S, Galasko D, Masliah E, Santana I, Pastor P, Diez-Fairen M, Aguilar M, Tienari PJ, Myllykangas L, Oinas M, Revesz T, Lees A, Boeve BF, Petersen RC, Ferman TJ, Escott-Price V, Graff-Radford N, Cairns NJ, Morris JC, Pickering-Brown S, Mann D, Halliday GM, Hardy J, Trojanowski JQ, Dickson DW, Singleton A, Stone DJ, Bras J.",
+          "journalTitle": "Lancet Neurol",
+          "issue": "1",
+          "journalVolume": "17",
+          "pubYear": "2018",
+          "journalIssn": "1474-4422; 1474-4465; ",
+          "pageInfo": "64-74",
+          "pubType": "research support, n.i.h., intramural; research support, non-u.s. gov't; research-article; multicenter study; journal article; research support, n.i.h., extramural",
+          "isOpenAccess": "N",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 247,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp",
+              "dbgap"
+            ]
+          },
+          "firstPublicationDate": "2017-12-16",
+          "firstIndexDate": "2017-12-22"
+        },
+        {
+          "id": "21418511",
+          "source": "MED",
+          "pmid": "21418511",
+          "pmcid": "PMC3193372",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC3193372"
+            ]
+          },
+          "doi": "10.1111/j.1474-9726.2011.00705.x",
+          "title": "Genome-wide association study identifies a single major locus contributing to survival into old age; the APOE locus revisited.",
+          "authorString": "Deelen J, Beekman M, Uh HW, Helmer Q, Kuningas M, Christiansen L, Kremer D, van der Breggen R, Suchiman HE, Lakenberg N, van den Akker EB, Passtoors WM, Tiemeier H, van Heemst D, de Craen AJ, Rivadeneira F, de Geus EJ, Perola M, van der Ouderaa FJ, Gunn DA, Boomsma DI, Uitterlinden AG, Christensen K, van Duijn CM, Heijmans BT, Houwing-Duistermaat JJ, Westendorp RG, Slagboom PE.",
+          "journalTitle": "Aging Cell",
+          "issue": "4",
+          "journalVolume": "10",
+          "pubYear": "2011",
+          "journalIssn": "1474-9718; 1474-9726; ",
+          "pageInfo": "686-698",
+          "pubType": "meta-analysis; research support, non-u.s. gov't; research-article; journal article; research support, n.i.h., extramural",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 233,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp",
+              "doi"
+            ]
+          },
+          "firstPublicationDate": "2011-05-06",
+          "firstIndexDate": "2011-03-23"
+        },
+        {
+          "id": "23419831",
+          "source": "MED",
+          "pmid": "23419831",
+          "pmcid": "PMC3661739",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC3661739"
+            ]
+          },
+          "doi": "10.1038/mp.2013.19",
+          "title": "APOE and BCHE as modulators of cerebral amyloid deposition: a florbetapir PET genome-wide association study.",
+          "authorString": "Ramanan VK, Risacher SL, Nho K, Kim S, Swaminathan S, Shen L, Foroud TM, Hakonarson H, Huentelman MJ, Aisen PS, Petersen RC, Green RC, Jack CR, Koeppe RA, Jagust WJ, Weiner MW, Saykin AJ, Alzheimer\u2019s Disease Neuroimaging Initiative.",
+          "journalTitle": "Mol Psychiatry",
+          "issue": "3",
+          "journalVolume": "19",
+          "pubYear": "2014",
+          "journalIssn": "1359-4184; 1476-5578; ",
+          "pageInfo": "351-357",
+          "pubType": "research support, non-u.s. gov't; research-article; research support, u.s. gov't, non-p.h.s.; journal article; research support, n.i.h., extramural",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 168,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp"
+            ]
+          },
+          "firstPublicationDate": "2013-02-19",
+          "firstIndexDate": "2013-02-21"
+        },
+        {
+          "id": "34038024",
+          "source": "MED",
+          "pmid": "34038024",
+          "pmcid": "PMC8208797",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC8208797"
+            ]
+          },
+          "doi": "10.1111/acel.13376",
+          "title": "Genetic associations for two biological age measures point to distinct aging phenotypes.",
+          "authorString": "Kuo CL, Pilling LC, Liu Z, Atkins JL, Levine ME.",
+          "journalTitle": "Aging Cell",
+          "issue": "6",
+          "journalVolume": "20",
+          "pubYear": "2021",
+          "journalIssn": "1474-9718; 1474-9726; ",
+          "pageInfo": "e13376",
+          "pubType": "research support, non-u.s. gov't; research-article; journal article; research support, n.i.h., extramural",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 155,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "gen",
+              "refsnp",
+              "doi"
+            ]
+          },
+          "firstPublicationDate": "2021-05-26",
+          "firstIndexDate": "2021-05-28"
+        },
+        {
+          "id": "33111402",
+          "source": "MED",
+          "pmid": "33111402",
+          "pmcid": "PMC9053517",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC9053517"
+            ]
+          },
+          "doi": "10.1002/mds.28342",
+          "title": "Genome-Wide Association Studies of Cognitive and Motor Progression in Parkinson's Disease.",
+          "authorString": "Tan MMX, Lawton MA, Jabbari E, Reynolds RH, Iwaki H, Blauwendraat C, Kanavou S, Pollard MI, Hubbard L, Malek N, Grosset KA, Marrinan SL, Bajaj N, Barker RA, Burn DJ, Bresner C, Foltynie T, Wood NW, Williams-Gray CH, Hardy J, Nalls MA, Singleton AB, Williams NM, Ben-Shlomo Y, Hu MTM, Grosset DG, Shoai M, Morris HR.",
+          "journalTitle": "Mov Disord",
+          "issue": "2",
+          "journalVolume": "36",
+          "pubYear": "2021",
+          "journalIssn": "0885-3185; 1531-8257; ",
+          "pageInfo": "424-433",
+          "pubType": "meta-analysis; research support, n.i.h., intramural; research support, non-u.s. gov't; research-article; journal article",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 153,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp",
+              "doi"
+            ]
+          },
+          "firstPublicationDate": "2020-10-28",
+          "firstIndexDate": "2020-10-29"
+        },
+        {
+          "id": "31505070",
+          "source": "MED",
+          "pmid": "31505070",
+          "pmcid": "PMC7017876",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC7017876"
+            ]
+          },
+          "doi": "10.1002/mds.27845",
+          "title": "Genomewide association study of Parkinson's disease clinical biomarkers in 12 longitudinal patients' cohorts.",
+          "authorString": "Iwaki H, Blauwendraat C, Leonard HL, Kim JJ, Liu G, Maple-Gr\u00f8dem J, Corvol JC, Pihlstr\u00f8m L, van Nimwegen M, Hutten SJ, Nguyen KH, Rick J, Eberly S, Faghri F, Auinger P, Scott KM, Wijeyekoon R, Van Deerlin VM, Hernandez DG, Gibbs JR, International Parkinson's Disease Genomics Consortium, Chitrala KN, Day-Williams AG, Brice A, Alves G, Noyce AJ, Tysnes OB, Evans JR, Breen DP, Estrada K, Wegel CE, Danjou F, Simon DK, Andreassen O, Ravina B, Toft M, Heutink P, Bloem BR, Weintraub D, Barker RA, Williams-Gray CH, van de Warrenburg BP, Van Hilten JJ, Scherzer CR, Singleton AB, Nalls MA.",
+          "journalTitle": "Mov Disord",
+          "issue": "12",
+          "journalVolume": "34",
+          "pubYear": "2019",
+          "journalIssn": "0885-3185; 1531-8257; ",
+          "pageInfo": "1839-1850",
+          "pubType": "research support, n.i.h., intramural; research support, non-u.s. gov't; research-article; journal article",
+          "isOpenAccess": "N",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 144,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp"
+            ]
+          },
+          "firstPublicationDate": "2019-09-10",
+          "firstIndexDate": "2019-09-11"
+        },
+        {
+          "id": "23207651",
+          "source": "MED",
+          "pmid": "23207651",
+          "pmcid": "PMC7321835",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC7321835"
+            ]
+          },
+          "doi": "10.1038/mp.2012.159",
+          "title": "A genome-wide association study implicates the APOE locus in nonpathological cognitive ageing.",
+          "authorString": "Davies G, Harris SE, Reynolds CA, Payton A, Knight HM, Liewald DC, Lopez LM, Luciano M, Gow AJ, Corley J, Henderson R, Murray C, Pattie A, Fox HC, Redmond P, Lutz MW, Chiba-Falek O, Linnertz C, Saith S, Haggarty P, McNeill G, Ke X, Ollier W, Horan M, Roses AD, Ponting CP, Porteous DJ, Tenesa A, Pickles A, Starr JM, Whalley LJ, Pedersen NL, Pendleton N, Visscher PM, Deary IJ.",
+          "journalTitle": "Mol Psychiatry",
+          "issue": "1",
+          "journalVolume": "19",
+          "pubYear": "2014",
+          "journalIssn": "1359-4184; 1476-5578; ",
+          "pageInfo": "76-87",
+          "pubType": "research support, non-u.s. gov't; research-article; journal article; research support, n.i.h., extramural",
+          "isOpenAccess": "N",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 139,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp"
+            ]
+          },
+          "firstPublicationDate": "2012-12-04",
+          "firstIndexDate": "2012-12-05"
+        },
+        {
+          "id": "37002253",
+          "source": "MED",
+          "pmid": "37002253",
+          "pmcid": "PMC10066300",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC10066300"
+            ]
+          },
+          "doi": "10.1038/s41598-023-31730-5",
+          "title": "Genetic correlations between Alzheimer's disease and gut microbiome genera.",
+          "authorString": "Cammann D, Lu Y, Cummings MJ, Zhang ML, Cue JM, Do J, Ebersole J, Chen X, Oh EC, Cummings JL, Chen J.",
+          "journalTitle": "Sci Rep",
+          "issue": "1",
+          "journalVolume": "13",
+          "pubYear": "2023",
+          "journalIssn": "2045-2322",
+          "pageInfo": "5258",
+          "pubType": "meta-analysis; research-article; journal article; research support, n.i.h., extramural",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 132,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp",
+              "dbgap",
+              "doi"
+            ]
+          },
+          "firstPublicationDate": "2023-03-31",
+          "firstIndexDate": "2023-04-05"
+        },
+        {
+          "id": "25080285",
+          "source": "MED",
+          "pmid": "25080285",
+          "pmcid": "PMC4163033",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC4163033"
+            ]
+          },
+          "doi": "10.1093/brain/awu201",
+          "title": "Genetic impact on cognition and brain function in newly diagnosed Parkinson's disease: ICICLE-PD study.",
+          "authorString": "Nombela C, Rowe JB, Winder-Rhodes SE, Hampshire A, Owen AM, Breen DP, Duncan GW, Khoo TK, Yarnall AJ, Firbank MJ, Chinnery PF, Robbins TW, O'Brien JT, Brooks DJ, Burn DJ, ICICLE-PD study group, Barker RA.",
+          "journalTitle": "Brain",
+          "issue": "pt 10",
+          "journalVolume": "137",
+          "pubYear": "2014",
+          "journalIssn": "0006-8950; 1460-2156; ",
+          "pageInfo": "2743-2758",
+          "pubType": "research support, non-u.s. gov't; research-article; journal article",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 129,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "N",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp"
+            ]
+          },
+          "firstPublicationDate": "2014-07-30",
+          "firstIndexDate": "2014-08-01"
+        },
+        {
+          "id": "26619808",
+          "source": "MED",
+          "pmid": "26619808",
+          "pmcid": "PMC5414071",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC5414071"
+            ]
+          },
+          "doi": "10.1038/mp.2015.177",
+          "title": "APOE*E2 allele delays age of onset in PSEN1 E280A Alzheimer's disease.",
+          "authorString": "V\u00e9lez JI, Lopera F, Sepulveda-Falla D, Patel HR, Johar AS, Chuah A, Tob\u00f3n C, Rivera D, Villegas A, Cai Y, Peng K, Arkell R, Castellanos FX, Andrews SJ, Silva Lara MF, Creagh PK, Easteal S, de Leon J, Wong ML, Licinio J, Mastronardi CA, Arcos-Burgos M.",
+          "journalTitle": "Mol Psychiatry",
+          "issue": "7",
+          "journalVolume": "21",
+          "pubYear": "2016",
+          "journalIssn": "1359-4184; 1476-5578; ",
+          "pageInfo": "916-924",
+          "pubType": "research support, non-u.s. gov't; research-article; journal article",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 98,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp"
+            ]
+          },
+          "firstPublicationDate": "2015-12-01",
+          "firstIndexDate": "2015-12-02"
+        },
+        {
+          "id": "34535985",
+          "source": "MED",
+          "pmid": "34535985",
+          "pmcid": "PMC8793997",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC8793997"
+            ]
+          },
+          "doi": "10.1002/hep4.1805",
+          "title": "Genome-Wide Association Study of NAFLD Using Electronic Health Records.",
+          "authorString": "Fairfield CJ, Drake TM, Pius R, Bretherick AD, Campbell A, Clark DW, Fallowfield JA, Hayward C, Henderson NC, Joshi PK, Mills NL, Porteous DJ, Ramachandran P, Semple RK, Shaw CA, Sudlow CLM, Timmers PRHJ, Wilson JF, Wigmore SJ, Harrison EM, Spiliopoulou A.",
+          "journalTitle": "Hepatol Commun",
+          "issue": "2",
+          "journalVolume": "6",
+          "pubYear": "2022",
+          "journalIssn": "2471-254x",
+          "pageInfo": "297-308",
+          "pubType": "meta-analysis; research support, non-u.s. gov't; research-article; journal article",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 90,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp"
+            ]
+          },
+          "firstPublicationDate": "2021-09-17",
+          "firstIndexDate": "2021-09-19"
+        },
+        {
+          "id": "31127079",
+          "source": "MED",
+          "pmid": "31127079",
+          "pmcid": "PMC6534556",
+          "fullTextIdList": {
+            "fullTextId": [
+              "PMC6534556"
+            ]
+          },
+          "doi": "10.1038/s41398-019-0485-7",
+          "title": "Alzheimer's disease polygenic risk score as a predictor of conversion from mild-cognitive impairment.",
+          "authorString": "Chaudhury S, Brookes KJ, Patel T, Fallows A, Guetta-Baranes T, Turton JC, Guerreiro R, Bras J, Hardy J, Francis PT, Croucher R, Holmes C, Morgan K, Thomas AJ.",
+          "journalTitle": "Transl Psychiatry",
+          "issue": "1",
+          "journalVolume": "9",
+          "pubYear": "2019",
+          "journalIssn": "2158-3188",
+          "pageInfo": "154",
+          "pubType": "research support, non-u.s. gov't; research-article; journal article; research support, n.i.h., extramural",
+          "isOpenAccess": "Y",
+          "inEPMC": "Y",
+          "inPMC": "Y",
+          "citedByCount": 78,
+          "hasReferences": "Y",
+          "hasTextMinedTerms": "Y",
+          "hasDbCrossReferences": "N",
+          "hasPDF": "Y",
+          "hasBook": "N",
+          "hasSuppl": "Y",
+          "hasLabsLinks": "Y",
+          "hasTMAccessionNumbers": "Y",
+          "tmAccessionTypeList": {
+            "accessionType": [
+              "refsnp",
+              "doi"
+            ]
+          },
+          "firstPublicationDate": "2019-05-24",
+          "firstIndexDate": "2019-05-26"
+        }
+      ]
+    }
+  }
+}
