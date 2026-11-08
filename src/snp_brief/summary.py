@@ -94,6 +94,7 @@ class _Plan:
     gwas_traits: list[str] = field(default_factory=list)
     gwas_best_p: str = ""
     gwas_count: int = 0
+    gwas_source: str = "GWAS Catalog"
     function_source: str = ""
     uniprot_gene: str = ""
     merged: str | None = None
@@ -298,6 +299,21 @@ def _plan(item) -> _Plan:
                 "Paper abstract",
             )
         )
+    l2g_rows = getattr(item, "l2g", None) or []
+    if not plan.gwas and l2g_rows:
+        # Fallback when the GWAS Catalog did not answer: Open Targets' credible sets come from GWAS studies.
+        traits = [t for t in dict.fromkeys(r.trait for r in l2g_rows) if t]
+        if traits:
+            plan.gwas_traits = traits
+            plan.gwas_count = len(traits)
+            plan.gwas_source = "Open Targets"
+            plan.gwas.append(
+                add(
+                    f"Open Targets lists GWAS credible sets containing {item.rsid} for {len(traits)} traits, including "
+                    + "; ".join(traits[:3]) + ".",
+                    "Open Targets",
+                )
+            )
     variant = view.variant if view is not None else (item.variants[0] if item.variants else None)
     if variant is not None:
         _frequency_facts(plan, variant, add)

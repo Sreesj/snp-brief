@@ -213,32 +213,68 @@ class GwasResult:
     hits: list[GwasHit] = field(default_factory=list)
 
 
+ENSEMBL_VARIATION = "https://rest.ensembl.org/variation/human/{rsid}"
+
+
 def fetch_gwas(rsid: str, timeout: float = 60) -> dict:
-    """v2 associations for one rsID, up to two pages of 10. A 404 means no associations."""
+    """GWAS Catalog associations: EBI's v2 API first, then the same catalogue via Ensembl.
+
+    EBI's v2 rs_id query often fails server-side (HTTP 500 after ~30 s). Ensembl imports the
+    NHGRI-EBI GWAS Catalog into its variation phenotypes, so it is a dependable fallback.
+    """
+    errors: list[str] = []
     pages: list = []
     for page in range(GWAS_MAX_PAGES):
         try:
             body = request_json(
-                GWAS_V2, params={"rs_id": rsid, "page": str(page), "size": str(GWAS_PAGE_SIZE)}, timeout=timeout, attempts=1
+                GWAS_V2, params={"rs_id": rsid, "page": str(page), "size": str(GWAS_PAGE_SIZE)},
+                timeout=min(timeout, 25), attempts=1,
             )
         except RuntimeError as exc:
             if "HTTP 404" in str(exc):
-                break
-            if pages:  # keep what already arrived
-                break
-            raise
+                return {"source": "GWAS Catalog", "retrieved": _now(), "request": {"rsid": rsid, "api": "v2"}, "response": {"pages": []}}
+            errors.append(f"EBI v2: {str(exc)[:160]}")
+            break
         pages.append(body)
         if len(_rows(body)) < GWAS_PAGE_SIZE:
             break
-    return {"source": "GWAS Catalog", "retrieved": _now(), "request": {"rsid": rsid, "api": "v2"}, "response": {"pages": pages}}
+    if pages:
+        return {"source": "GWAS Catalog", "retrieved": _now(), "request": {"rsid": rsid, "api": "v2"}, "response": {"pages": pages}}
+    try:
+        body = request_json(
+            ENSEMBL_VARIATION.format(rsid=urllib.parse.quote(rsid)),
+            params={"phenotypes": "1", "content-type": "application/json"},
+            timeout=min(timeout, 30), attempts=1,
+        )
+    except RuntimeError as exc:
+        errors.append(f"Ensembl: {str(exc)[:160]}")
+        raise RuntimeError("; ".join(errors)) from exc
+    rows = [row for row in (body.get("phenotypes") or []) if _is_gwas(row)]
+    return {
+        "source": "GWAS Catalog",
+        "retrieved": _now(),
+        "request": {"rsid": rsid, "api": "ensembl-phenotypes"},
+        "response": {"ensembl_phenotypes": rows},
+    }
+
+
+def _is_gwas(row) -> bool:
+    return isinstance(row, dict) and "gwas" in str(row.get("source") or "").lower()
 
 
 def parse_gwas(payload: dict | None) -> GwasResult:
     if not payload:
         return GwasResult(False)
     body = payload.get("response") or {}
-    bodies = body.get("pages") if isinstance(body, dict) and "pages" in body else [body]
     hits: list[GwasHit] = []
+    if isinstance(body, dict) and "ensembl_phenotypes" in body:
+        for row in body.get("ensembl_phenotypes") or []:
+            hit = _ensembl_gwas_hit(row)
+            if hit is not None:
+                hits.append(hit)
+        hits.sort(key=lambda h: (h.p_value if h.p_value is not None else 1.0))
+        return GwasResult(True, _dedupe(hits))
+    bodies = body.get("pages") if isinstance(body, dict) and "pages" in body else [body]
     for page in bodies:
         for row in _rows(page):
             hit = _gwas_hit(row)
@@ -272,6 +308,51 @@ def _rows(body) -> list[dict]:
         if isinstance(value, list) and value and isinstance(value[0], dict) and _ASSOCIATION_KEYS & set(value[0]):
             return value
     return []
+
+
+def _ensembl_gwas_hit(row: dict) -> GwasHit | None:
+    """One Ensembl phenotype row sourced from the GWAS Catalog."""
+    if not isinstance(row, dict):
+        return None
+    trait = str(row.get("trait") or row.get("description") or "").strip()
+    if not trait:
+        return None
+    attrs = row.get("attributes") if isinstance(row.get("attributes"), dict) else {}
+
+    def get(*keys):
+        for key in keys:
+            for source in (row, attrs):
+                value = source.get(key)
+                if value not in (None, ""):
+                    return value
+        return None
+
+    p_raw = get("pvalue", "p_value", "p-value")
+    p_value = _num(p_raw)
+    effect = ""
+    odds = _num(get("odds_ratio"))
+    beta = _num(get("beta_coefficient", "beta"))
+    if odds:
+        effect = f"odds ratio {odds:g}"
+    elif beta:
+        effect = f"beta {beta:g}"
+    genes_raw = get("genes", "associated_gene", "reported_genes") or ""
+    genes = [g.strip() for g in str(genes_raw).replace(";", ",").split(",") if g.strip() and g.strip() != "NR"]
+    study = str(get("study", "external_reference", "pubmed_id") or "")
+    pmid = study.split("PMID:")[-1].strip() if "PMID:" in study else (study if study.isdigit() else "")
+    risk = str(get("risk_allele") or "")
+    return GwasHit(trait, p_value, str(p_raw) if p_raw is not None else "", risk, effect, genes[:4], pmid)
+
+
+def _dedupe(hits: list[GwasHit]) -> list[GwasHit]:
+    seen: set[tuple[str, str]] = set()
+    out = []
+    for hit in hits:
+        key = (hit.trait.lower(), hit.pmid)
+        if key not in seen:
+            seen.add(key)
+            out.append(hit)
+    return out
 
 
 def _gwas_hit(row: dict) -> GwasHit | None:

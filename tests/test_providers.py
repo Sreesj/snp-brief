@@ -158,6 +158,34 @@ class ParserTests(unittest.TestCase):
         self.assertNotIn("CADD", seen[1])
         self.assertEqual(parse_vep(out).canonical_gene, "DEFB125")
 
+    def test_gwas_falls_back_to_ensembl_when_ebi_fails(self) -> None:
+        from snp_brief import providers
+
+        def fake(url, params=None, timeout=0, attempts=3):
+            if "ebi.ac.uk" in url:
+                raise RuntimeError("HTTP 500 for ebi: Internal Server Error")
+            return {"phenotypes": [
+                {"trait": "Type 2 diabetes", "source": "NHGRI-EBI GWAS catalog", "pvalue": "1e-48", "study": "PMID:17463249", "risk_allele": "T"},
+                {"trait": "Diabetes mellitus", "source": "ClinVar"},
+            ]}
+
+        with mock.patch.object(providers, "request_json", side_effect=fake):
+            out = providers.fetch_gwas(RSID)
+        self.assertEqual(out["request"]["api"], "ensembl-phenotypes")
+        hits = parse_gwas(out).hits
+        self.assertEqual([(h.trait, h.pmid, h.risk_allele) for h in hits], [("Type 2 diabetes", "17463249", "T")])
+
+    def test_open_targets_traits_stand_in_when_gwas_is_missing(self) -> None:
+        tmp = Path(tempfile.mkdtemp())
+        self.addCleanup(shutil.rmtree, tmp)
+        shutil.copytree(CACHE / RSID, tmp / RSID)
+        (tmp / RSID / "open_targets.json").write_text(json.dumps(OT), encoding="utf-8")
+        with mock.patch.dict(os.environ, {"SNP_BRIEF_EXTRAS": "on"}), contextlib.redirect_stderr(io.StringIO()):
+            item = gather(RSID, cache_dir=tmp, refresh=False, offline=True)
+        text = summarize(item).text
+        self.assertIn("Genome-wide association studies link it to body height", text)
+        self.assertEqual(triage(item)[0].category, TRAIT_ASSOCIATION)
+
     def test_gwas_unexpected_shape_is_empty_not_an_error(self) -> None:
         self.assertEqual(parse_gwas({"response": {"weird": 1}}).hits, [])
 

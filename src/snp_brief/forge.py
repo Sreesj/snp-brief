@@ -304,7 +304,8 @@ def _trait_association(item, plan, facts, function_ids) -> tuple[Triage, list[Fa
     found = []
     if plan.gwas:
         found.append(
-            f"the GWAS Catalog links it to {', '.join(plan.gwas_traits[:3])} "
+            f"{'the GWAS Catalog' if plan.gwas_source == 'GWAS Catalog' else 'GWAS credible sets in Open Targets'} "
+            f"link it to {', '.join(plan.gwas_traits[:3])} "
             f"({plan.gwas_count} association{'s' if plan.gwas_count != 1 else ''})"
         )
     if plan.eqtl:

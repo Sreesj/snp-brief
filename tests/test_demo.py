@@ -231,7 +231,8 @@ class PageTests(unittest.TestCase):
         page.button(key="run_briefs").click().run()
         self.assertFalse(page.exception)
         table = page.dataframe[0].value
-        self.assertEqual(list(table["rsID"]), FIXTURE_IDS)
+        # A merged rsID is shown as "old → current"; compare the ID that was asked for.
+        self.assertEqual([label.split(" → ")[0] for label in table["rsID"]], FIXTURE_IDS)
         self.assertEqual(list(table.columns), ["rsID", "Gene", *FIELDS])
         self.assertEqual(len(page.get("download_button")), 1)
 
