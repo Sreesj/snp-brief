@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import contextlib
+import os
 import io
 import shutil
 import tempfile
@@ -10,8 +11,10 @@ import unittest
 from pathlib import Path
 from unittest import mock
 
-from snp_brief import pipeline
-from snp_brief.pipeline import load_variant
+os.environ["SNP_BRIEF_EXTRAS"] = "off"  # these tests cover cache selection, not the newer providers
+
+from snp_brief import pipeline  # noqa: E402
+from snp_brief.pipeline import load_variant  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[1]
 CACHE = ROOT / "cache"
@@ -31,7 +34,7 @@ class LoadVariantTests(unittest.TestCase):
     def test_unknown_snp_is_fetched_live_into_the_user_cache(self) -> None:
         calls = []
 
-        def fake_gather(rsid, *, cache_dir, refresh, offline):
+        def fake_gather(rsid, *, cache_dir, refresh, offline, **kwargs):
             calls.append((rsid, cache_dir, refresh, offline))
             return mock.Mock(cache_dir=cache_dir)
 
@@ -47,7 +50,7 @@ class LoadVariantTests(unittest.TestCase):
     def test_refresh_refetches_into_the_user_cache_only(self) -> None:
         calls = []
 
-        def fake_gather(rsid, *, cache_dir, refresh, offline):
+        def fake_gather(rsid, *, cache_dir, refresh, offline, **kwargs):
             calls.append((cache_dir, refresh, offline))
             return mock.Mock(cache_dir=cache_dir)
 

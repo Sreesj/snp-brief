@@ -38,11 +38,19 @@ class Source(NamedTuple):
 
 
 SOURCES = (
-    Source("dbsnp", "dbSNP", "rsID, coordinate, alleles"),
-    Source("clinvar", "ClinVar", "gene, consequence, clinical significance"),
-    Source("gnomad", "gnomAD", "allele frequency"),
-    Source("europepmc", "Europe PMC", "papers"),
-    Source("uniprot", "UniProt (fallback)", "function only, when ClinVar has no clinical significance; never disease"),
+    Source("clinvar", "ClinVar", "rank 1 · gene, consequence, clinical significance"),
+    Source("gnomad", "gnomAD", "rank 2 · allele frequency"),
+    Source("gwas", "GWAS Catalog", "rank 3 · trait associations (statistical, not clinical)"),
+    Source("gtex", "GTEx", "rank 3 · expression QTLs (genotype linked to gene expression)"),
+    Source("dbsnp", "dbSNP", "rank 4 · rsID, coordinate, alleles, location class"),
+    Source("ensembl_ld", "Ensembl LD", "rank 4 · variants inherited together with this one"),
+    Source("ensembl_vep", "Ensembl VEP", "rank 5 · consequences, regulatory overlap, prediction scores"),
+    Source("open_targets", "Open Targets", "rank 5 · locus-to-gene score"),
+    Source("uniprot", "UniProt (fallback)", "rank 6 · function only, when ClinVar has no clinical significance; never disease"),
+    Source("ncbi_gene", "NCBI Gene", "rank 6 · gene description, when ClinVar has no clinical significance"),
+    Source("europepmc", "Europe PMC", "rank 7 · papers naming the rsID"),
+    Source("dbsnp_citations", "dbSNP citations", "rank 7 · PubMed records linked to the rsID"),
+    Source("litvar", "LitVar2", "rank 7 · publications mentioning the rsID in full text"),
 )
 NOT_CONSULTED = "not consulted"
 
@@ -194,6 +202,8 @@ def source_rows(item: Gathered) -> list[dict[str, str]]:
             answered, detail, gave = NOT_CONSULTED, _not_consulted(item), ""
         elif call.origin in {"cache", "live"}:
             answered, detail, gave = "yes", _response(call), _gave(source.key, item)
+        elif call.origin == "pending":
+            answered, detail, gave = "loading", "still loading when the time budget ran out", ""
         else:
             answered, detail, gave = "no", _response(call), ""
         rows.append(
@@ -229,6 +239,8 @@ def _total(call: CallSet) -> str:
 
 
 def _response(call: SourceCall) -> str:
+    if call.origin == "live" and call.seconds is not None:
+        return f"live, {call.seconds:.1f} s, retrieved {_when(call.retrieved)}"
     when = _when(call.retrieved)
     if call.origin == "cache":
         return f"cached, retrieved {when}" if when else "cached"
@@ -284,6 +296,31 @@ def _gave(key: str, item: Gathered) -> str:
             return "no research article names this rsID"
         plural = "s" if len(item.papers) > 1 else ""
         return f"{len(item.papers)} research article{plural}"
+    if key == "gwas":
+        hits = item.gwas.hits
+        if not hits:
+            return "no association for this rsID"
+        traits = list(dict.fromkeys(hit.trait for hit in hits))
+        return f"{len(hits)} association{'s' if len(hits) != 1 else ''}: " + ", ".join(traits[:3])
+    if key == "ensembl_vep":
+        vep = item.vep
+        if not vep.retrieved or not (vep.most_severe or vep.genes):
+            return "no annotation returned"
+        return f"{vep.most_severe.replace('_', ' ')}" + (f" in {vep.canonical_gene}" if vep.canonical_gene else "")
+    if key == "ncbi_gene":
+        gs = item.gene_summary
+        return f"{gs.symbol}: {gs.name}" if gs is not None else "no gene description"
+    if key == "gtex":
+        genes = list(dict.fromkeys(e.gene for e in item.eqtls))
+        return f"{len(item.eqtls)} eQTLs: " + ", ".join(genes[:3]) if item.eqtls else "no significant eQTL"
+    if key == "ensembl_ld":
+        return f"{len(item.ld_proxies)} variants at r² ≥ 0.8" if item.ld_proxies else "no strong LD partners"
+    if key == "open_targets":
+        return ", ".join(f"{r.gene} {r.score:.2f}" for r in item.l2g[:3]) if item.l2g else "no locus-to-gene prediction"
+    if key == "litvar":
+        return f"{len(item.litvar)} publications" if item.litvar else "no publications found"
+    if key == "dbsnp_citations":
+        return f"{len(item.citations)} PubMed records" if item.citations else "no citations linked"
     if item.uniprot is not None:
         return f"{item.uniprot.accession}: reviewed {item.fallback_gene} function text, used for function only"
     return f"no reviewed function text for {item.fallback_gene}"

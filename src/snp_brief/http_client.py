@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import threading
 import time
 import urllib.error
 import urllib.parse
@@ -10,17 +11,20 @@ import urllib.request
 
 USER_AGENT = "snp-brief/0.1 (research demo)"
 _last_ncbi = 0.0
+_ncbi_lock = threading.Lock()
 
 
 def _pace_ncbi(url: str) -> None:
+    """Space NCBI calls 0.35 s apart, across threads (public limit is 3 per second)."""
     global _last_ncbi
     host = urllib.parse.urlparse(url).netloc
     if not host.endswith("ncbi.nlm.nih.gov"):
         return
-    wait = 0.35 - (time.monotonic() - _last_ncbi)
-    if wait > 0:
-        time.sleep(wait)
-    _last_ncbi = time.monotonic()
+    with _ncbi_lock:
+        wait = 0.35 - (time.monotonic() - _last_ncbi)
+        if wait > 0:
+            time.sleep(wait)
+        _last_ncbi = time.monotonic()
 
 
 def request_text(

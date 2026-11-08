@@ -39,6 +39,12 @@ def main(argv: list[str] | None = None) -> int:
         action="store_true",
         help="also print Hypothesis Forge: stage 1 category, and LLM hypotheses when an LLM is connected",
     )
+    parser.add_argument(
+        "--speed",
+        choices=("fast", "balanced", "thorough", "complete"),
+        default="complete",
+        help="time budget for live providers: fast ~8 s, balanced ~20 s, thorough ~45 s, complete waits for all (default)",
+    )
     parser.add_argument("--regenerate", action="store_true", help="ignore cached LLM summaries and Forge results")
     parser.add_argument("--list-models", action="store_true", help="list the models your LLM provider offers, then exit")
     args = parser.parse_args(argv)
@@ -56,7 +62,13 @@ def main(argv: list[str] | None = None) -> int:
     for rsid in rsids:
         if args.refresh or args.summary == "llm" or args.forge:
             print(rsid, file=sys.stderr)
-        item = gather(rsid, cache_dir=args.cache, refresh=args.refresh, offline=args.offline)
+        from snp_brief.providers import SPEED_BUDGETS
+
+        item = gather(
+            rsid, cache_dir=args.cache, refresh=args.refresh, offline=args.offline, budget=SPEED_BUDGETS.get(args.speed)
+        )
+        if item.pending:
+            print(f"{rsid}: still loading after the time budget: {', '.join(item.pending)}", file=sys.stderr)
         block = format_item(item, args.summary, cache_dir=args.cache, regenerate=args.regenerate)
         if args.forge:
             block += "\n" + format_forge(item, cache_dir=args.cache, regenerate=args.regenerate)
@@ -86,11 +98,14 @@ def format_forge(item, cache_dir: Path | None = None, regenerate: bool = False) 
     result = forge(item, cache_dir=cache_dir, refresh=regenerate)
     tri = result.triage
     lines = [f"Forge: {tri.category}. {tri.reason}", f"Open problem: {tri.open_problem}"]
+    if tri.exploratory:
+        lines.append("  Exploratory: AI-generated from genomic context, not from evidence about this variant.")
     lines += [f"  Next: {step}" for step in tri.next_steps]
     for number, hyp in enumerate(result.hypotheses, 1):
         lines.append(f"  Hypothesis {number} ({hyp.feasibility} feasibility, {hyp.consistency}): {hyp.title}. {hyp.mechanism}")
         lines += [f"    Support: {claim['rendered']}" for claim in hyp.support]
         lines += [f"    Gap: {gap}" for gap in hyp.gaps]
+        lines += [f"    AI background (unverified): {line}" for line in hyp.background]
         lines.append(f"    Distinguish by: {hyp.discriminating_observation}")
         lines.append(f"    Experiment: {hyp.experiment}")
     for row in result.ranking:

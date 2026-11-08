@@ -37,6 +37,8 @@ CONFLICTING = "conflicting evidence"
 UNCERTAIN = "uncertain mechanism"
 INSUFFICIENT = "insufficient evidence"
 REPORTED = "mechanism proposed in literature"
+TRAIT_ASSOCIATION = "trait association, mechanism unknown"
+EXPLORATORY = "exploratory (no variant-specific evidence)"
 
 MECHANISM_WORDS = (
     "enhancer", "promoter", "chromatin", "splic", "transcription factor", "binding site",
@@ -47,6 +49,16 @@ NEXT_STEPS = {
     WELL: [
         "Open questions, if any, are context-specific: penetrance, modifiers, or effect size in under-studied ancestry groups.",
         "Re-check when ClinVar or gnomAD release new data.",
+    ],
+    TRAIT_ASSOCIATION: [
+        "Identify the target gene: check expression QTLs (GTEx) and the genes reported by the GWAS studies.",
+        "Check whether the GWAS signal is driven by this SNP or a linked one (fine-mapping, credible sets).",
+        "Look for regulatory annotation at this position in the relevant tissue.",
+    ],
+    EXPLORATORY: [
+        "Start with free public checks: GTEx expression effects, GWAS Catalog for linked SNPs, and regulatory annotation.",
+        "Treat every hypothesis below as a starting point; none rests on evidence about this specific variant.",
+        "If nothing turns up, the most likely explanation for a common variant is no functional effect.",
     ],
     REPORTED: [
         "Read the cited paper to confirm the proposed mechanism and the cell type it was tested in.",
@@ -86,6 +98,8 @@ Rules:
 - If a fact (for example a paper title) says this variant itself has a mechanism, do not propose that it is only a tag for another variant unless you mark that hypothesis "contradicted".
 - Do not name any rsID or gene that is not in the facts; say "a nearby variant" instead.
 - "consistency" is "consistent" (no fact argues against it), "partly" (some facts fit poorly), or "contradicted" (a fact argues against it).
+- "background" lists up to 3 statements from your general biology knowledge that the hypothesis relies on (for example what the nearby gene is known to do). They are shown to the user labelled as unverified AI background knowledge. Never put a number, rsID, or study result in background.
+- If the category is exploratory, include one hypothesis that the variant has no functional effect, and prefer cheap first checks (public data lookups) as experiments.
 - Do not diagnose, give medical advice, or address patients.
 
 Reply with only this JSON object:
@@ -98,7 +112,8 @@ Reply with only this JSON object:
     "discriminating_observation": "...",
     "experiment": "...",
     "feasibility": "high|medium|low",
-    "consistency": "consistent|partly|contradicted"}
+    "consistency": "consistent|partly|contradicted",
+    "background": ["..."]}
  ]}"""
 
 CONSISTENCY_SCORE = {"consistent": 2, "partly": 1, "contradicted": 0}
@@ -114,6 +129,7 @@ class Triage:
     next_steps: list[str]
     open_problem: str
     wants_hypotheses: bool
+    exploratory: bool = False
 
 
 @dataclass
@@ -127,6 +143,7 @@ class Hypothesis:
     feasibility: str
     rejected_support: list[dict] = field(default_factory=list)
     consistency: str = "consistent"
+    background: list[str] = field(default_factory=list)
 
 
 @dataclass
@@ -180,14 +197,19 @@ def triage(item) -> tuple[Triage, list[Fact]]:
             facts,
         )
     if plan.no_significance or not plan.headline:
+        if plan.gwas or plan.eqtl:
+            return _trait_association(item, plan, facts, function_ids)
+        if _has_context(plan):
+            return _exploratory(item, plan, facts, "ClinVar reports no clinical significance")
         return (
             Triage(
                 INSUFFICIENT,
                 "ClinVar reports no clinical significance"
-                + (", and no primary paper names this rsID." if not plan.papers else "."),
+                + (", and no primary paper names this rsID." if not plan.papers else ".")
+                + " No GWAS association, location annotation, or prediction was retrieved either.",
                 disease_ids + function_ids,
                 NEXT_STEPS[INSUFFICIENT],
-                f"There is too little variant-specific evidence to propose a mechanism for {item.rsid}.",
+                f"There is too little evidence of any kind to propose a mechanism for {item.rsid}.",
                 False,
             ),
             facts,
@@ -248,6 +270,10 @@ def triage(item) -> tuple[Triage, list[Fact]]:
             facts,
         )
     why = "no primary paper names this rsID" if not plan.papers else "no submission has assertion criteria"
+    if plan.gwas or plan.eqtl:
+        return _trait_association(item, plan, facts, function_ids)
+    if _has_context(plan):
+        return _exploratory(item, plan, facts, f"ClinVar's call is {plan.headline}, but {why}")
     return (
         Triage(
             INSUFFICIENT,
@@ -256,6 +282,67 @@ def triage(item) -> tuple[Triage, list[Fact]]:
             NEXT_STEPS[INSUFFICIENT],
             f"The {plan.headline} call for {item.rsid} lacks variant-specific literature.",
             False,
+        ),
+        facts,
+    )
+
+
+def _has_context(plan) -> bool:
+    return any(
+        (plan.function, plan.location_fact, plan.regulatory, plan.predictions, plan.uniprot, plan.gene_summary, plan.l2g, plan.ld)
+    )
+
+
+def _trait_association(item, plan, facts, function_ids) -> tuple[Triage, list[Fact]]:
+    where = _phrase_consequence(plan.consequence) + (f" in or near {plan.gene}" if plan.gene else "")
+    found = []
+    if plan.gwas:
+        found.append(
+            f"the GWAS Catalog links it to {', '.join(plan.gwas_traits[:3])} "
+            f"({plan.gwas_count} association{'s' if plan.gwas_count != 1 else ''})"
+        )
+    if plan.eqtl:
+        found.append(f"GTEx links it to expression of {', '.join(plan.eqtl_genes[:3])}")
+    target = ", ".join(plan.gwas_traits[:3]) if plan.gwas else f"the expression of {', '.join(plan.eqtl_genes[:3])}"
+    extra = [i for i in (plan.eqtl, plan.l2g, plan.ld, plan.regulatory) if i]
+    return (
+        Triage(
+            TRAIT_ASSOCIATION,
+            "No ClinVar classification, but " + " and ".join(found) + ". "
+            "Statistical associations say nothing yet about mechanism.",
+            function_ids + plan.gwas[:3] + extra,
+            NEXT_STEPS[TRAIT_ASSOCIATION],
+            f"How could {item.rsid} ({where}) affect {target}, and is it the causal variant at this locus"
+            + (f" or one of the {plan.ld_count} variants inherited with it" if plan.ld_count else "")
+            + "?",
+            True,
+        ),
+        facts,
+    )
+
+
+def _exploratory(item, plan, facts, lead: str) -> tuple[Triage, list[Fact]]:
+    known = []
+    if plan.function or plan.location_fact:
+        known.append("its location" + (f" relative to {plan.gene}" if plan.gene else ""))
+    if plan.regulatory:
+        known.append("regulatory annotation")
+    if plan.predictions:
+        known.append("computational predictions")
+    if plan.uniprot or plan.gene_summary:
+        known.append("the nearby gene's function")
+    ids = [i for i in (plan.function, plan.location_fact, plan.regulatory, plan.predictions, plan.uniprot, plan.gene_summary) if i]
+    return (
+        Triage(
+            EXPLORATORY,
+            f"{lead}, and no GWAS association was found. Only {', '.join(known)} is known, "
+            "so any hypothesis is exploratory.",
+            ids,
+            NEXT_STEPS[EXPLORATORY],
+            f"What, if anything, does {item.rsid} do? Propose exploratory explanations from its genomic context, "
+            "including the possibility that it has no functional effect.",
+            True,
+            exploratory=True,
         ),
         facts,
     )
@@ -278,7 +365,7 @@ def forge(item, *, use_llm: bool = True, client=None, cache_dir=None, refresh: b
     result = ForgeResult(item.rsid, found, facts)
     if not found.wants_hypotheses:
         result.note = "No hypotheses generated: " + (
-            "the variant is well characterized." if found.category == WELL else "the evidence is too thin to propose a mechanism."
+            "the variant is well characterized." if found.category == WELL else "no evidence of any kind was retrieved."
         )
         return result
     if not use_llm:
@@ -299,7 +386,8 @@ def forge(item, *, use_llm: bool = True, client=None, cache_dir=None, refresh: b
         result.note = "Stage 1 only. Connect an LLM (NEBIUS_API_KEY) to generate competing hypotheses."
         return result
     user = (
-        f"Variant: {item.rsid}\nCategory: {found.category}\nOpen problem: {found.open_problem}\n\n"
+        f"Variant: {item.rsid}\nCategory: {found.category}{' (exploratory)' if found.exploratory else ''}\n"
+        f"Open problem: {found.open_problem}\n\n"
         f"Facts:\n{block}\n\nReply with the JSON object."
     )
     try:
@@ -316,6 +404,8 @@ def forge(item, *, use_llm: bool = True, client=None, cache_dir=None, refresh: b
 
 def validate(raw: dict, facts: list[Fact]) -> dict:
     """Keep hypotheses whose support passes the fact checker, then rank their experiments."""
+    import re
+
     hypotheses: list[dict] = []
     corpus = " ".join(fact.text for fact in facts)
     for item in (raw.get("hypotheses") or [])[:3]:
@@ -352,6 +442,9 @@ def validate(raw: dict, facts: list[Fact]) -> dict:
                 "feasibility": feasibility,
                 "rejected_support": dropped,
                 "consistency": consistency,
+                "background": [
+                    scrub(b) for b in (item.get("background") or [])[:3] if b and not re.search(r"\d", str(b))
+                ],
             }
         )
     return {

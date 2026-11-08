@@ -86,6 +86,26 @@ class _Plan:
     location: str = ""
     location_fact: str | None = None
     ref_minor: tuple[str, str] | None = None
+    predictions: str | None = None
+    prediction_text: str = ""
+    regulatory: str | None = None
+    regulatory_text: str = ""
+    gwas: list[str] = field(default_factory=list)
+    gwas_traits: list[str] = field(default_factory=list)
+    gwas_best_p: str = ""
+    gwas_count: int = 0
+    function_source: str = ""
+    gene_summary: str | None = None
+    gene_summary_text: str = ""
+    eqtl: str | None = None
+    eqtl_genes: list[str] = field(default_factory=list)
+    eqtl_text: str = ""
+    ld: str | None = None
+    ld_count: int = 0
+    l2g: str | None = None
+    l2g_text: str = ""
+    litvar: str | None = None
+    litvar_count: int = 0
     no_significance: bool = False
     paper_labels: list[str] = field(default_factory=list)
 
@@ -126,12 +146,22 @@ def _plan(item) -> _Plan:
             plan.aliases = add(
                 f"ClinVar lists other names for this same variant: {', '.join(record.aliases)}.", "ClinVar"
             )
-    elif db.fxn_class and db.genes:
-        plan.gene = ", ".join(db.genes)
-        plan.location = _location_from_fxn(db.fxn_class)
+        plan.function_source = "ClinVar"
+    vep = getattr(item, "vep", None)
+    if plan.function is None and vep is not None and vep.retrieved and (vep.canonical_terms or vep.most_severe):
+        terms = [t.replace("_", " ") for t in (vep.canonical_terms or [vep.most_severe])]
+        plan.consequence = ", ".join(terms)
+        plan.gene = vep.canonical_gene or ", ".join(vep.genes) or ", ".join(db.genes)
+        where = f" in {plan.gene}" if plan.gene else " with no overlapping transcript"
+        extra = f"; most severe across transcripts: {vep.most_severe.replace('_', ' ')}" if vep.most_severe else ""
+        plan.function = add(f"{item.rsid} is {_phrase_consequence(plan.consequence)}{where} (Ensembl VEP{extra}).", "Ensembl VEP")
+        plan.function_source = "Ensembl VEP"
+    if plan.function_source != "ClinVar" and db.fxn_class and db.genes:
+        plan.gene = plan.gene or ", ".join(db.genes)
+        plan.location = _location_from_fxn(db.fxn_class).replace("the gene", ", ".join(db.genes))
         plan.location_fact = add(
             f"dbSNP classifies {item.rsid} as {', '.join(c.replace('_', ' ') for c in db.fxn_class)} "
-            f"relative to {plan.gene}: {plan.location}.",
+            f"relative to {', '.join(db.genes)}: {plan.location}.",
             "dbSNP",
         )
     if item.uniprot and item.fallback_gene:
@@ -141,6 +171,108 @@ def _plan(item) -> _Plan:
             f"Reviewed {item.fallback_gene} protein function (describes the protein, not this variant): "
             f"{item.uniprot.text} (UniProt {item.uniprot.accession}).",
             "UniProt",
+        )
+    gene_summary = getattr(item, "gene_summary", None)
+    if gene_summary is not None and (gene_summary.summary or gene_summary.name):
+        text = gene_summary.summary or gene_summary.name
+        plan.gene = plan.gene or gene_summary.symbol
+        plan.gene_summary_text = _first_sentence(text)
+        plan.gene_summary = add(
+            f"NCBI Gene description of {gene_summary.symbol} (describes the gene, not this variant): "
+            f"{gene_summary.name}{'. ' + text if gene_summary.summary else ''} (Gene ID {gene_summary.gene_id}).",
+            "NCBI Gene",
+        )
+    if vep is not None and vep.retrieved:
+        bits = []
+        if vep.sift:
+            bits.append(f"SIFT {vep.sift.replace('_', ' ')}")
+        if vep.polyphen:
+            bits.append(f"PolyPhen {vep.polyphen.replace('_', ' ')}")
+        if vep.alphamissense:
+            score = f" ({vep.alphamissense_score:g})" if vep.alphamissense_score is not None else ""
+            bits.append(f"AlphaMissense {vep.alphamissense.replace('_', ' ')}{score}")
+        if vep.cadd_phred is not None:
+            bits.append(f"CADD PHRED {vep.cadd_phred:g}")
+        if vep.spliceai_max is not None:
+            bits.append(f"SpliceAI maximum delta score {vep.spliceai_max:g}")
+        if bits:
+            plan.prediction_text = "; ".join(bits)
+            plan.predictions = add(
+                f"Computational predictions from Ensembl VEP (not experimental evidence): {plan.prediction_text}.", "Ensembl VEP"
+            )
+        if vep.regulatory or vep.motifs:
+            parts = []
+            if vep.regulatory:
+                parts.append("overlaps an annotated " + ", ".join(vep.regulatory[:3]))
+            if vep.motifs:
+                parts.append("lies in a predicted binding motif for " + ", ".join(vep.motifs[:3]))
+            plan.regulatory_text = "; ".join(parts)
+            plan.regulatory = add(
+                f"Ensembl regulatory annotation: {item.rsid} {plan.regulatory_text}.", "Ensembl VEP"
+            )
+    gwas = getattr(item, "gwas", None)
+    if gwas is not None and gwas.hits:
+        plan.gwas_count = len(gwas.hits)
+        for hit in gwas.hits:
+            if hit.trait not in plan.gwas_traits:
+                plan.gwas_traits.append(hit.trait)
+        plan.gwas_best_p = gwas.hits[0].p_text
+        for hit in gwas.hits[:3]:
+            extra = [f"p = {hit.p_text}"] if hit.p_text else []
+            if hit.risk_allele:
+                extra.append(f"risk allele {hit.risk_allele}")
+            if hit.effect:
+                extra.append(hit.effect)
+            if hit.genes:
+                extra.append("reported genes " + ", ".join(hit.genes))
+            if hit.pmid:
+                extra.append(f"PMID:{hit.pmid}")
+            plan.gwas.append(add(f"GWAS Catalog association with {hit.trait} ({'; '.join(extra)}).", "GWAS Catalog"))
+        if plan.gwas_count > 3:
+            plan.gwas.append(
+                add(f"GWAS Catalog lists {plan.gwas_count} associations for {item.rsid} in total.", "GWAS Catalog")
+            )
+    eqtls = getattr(item, "eqtls", None) or []
+    if eqtls:
+        for eq in eqtls:
+            if eq.gene not in plan.eqtl_genes:
+                plan.eqtl_genes.append(eq.gene)
+        top = eqtls[:3]
+        bits = []
+        for eq in top:
+            direction = ""
+            if eq.nes is not None:
+                direction = ", alternate allele raises expression" if eq.nes > 0 else ", alternate allele lowers expression"
+            p_text = f"p = {eq.p_value:.1e}" if eq.p_value is not None else ""
+            bits.append(f"{eq.gene} in {eq.tissue} ({p_text}{direction})")
+        plan.eqtl_text = "; ".join(bits)
+        plan.eqtl = add(
+            f"GTEx expression QTLs for {item.rsid}: {len(eqtls)} significant gene-tissue pairs across "
+            f"{len(plan.eqtl_genes)} genes; strongest: {plan.eqtl_text}.",
+            "GTEx",
+        )
+    l2g = getattr(item, "l2g", None) or []
+    if l2g:
+        top = l2g[:3]
+        plan.l2g_text = "; ".join(f"{r.gene} (score {r.score:.2f}{', ' + r.trait if r.trait else ''})" for r in top)
+        plan.l2g = add(f"Open Targets locus-to-gene predictions for loci including {item.rsid}: {plan.l2g_text}.", "Open Targets")
+    ld = getattr(item, "ld_proxies", None) or []
+    if ld:
+        plan.ld_count = len(ld)
+        shown = ", ".join(f"{p.rsid} (r² {p.r2:.2f})" for p in ld[:3])
+        plan.ld = add(
+            f"Ensembl LD (1000 Genomes, European): {len(ld)} nearby variants are inherited with {item.rsid} "
+            f"at r² ≥ 0.8, e.g. {shown}.",
+            "Ensembl LD",
+        )
+    litvar = getattr(item, "litvar", None) or []
+    if litvar:
+        plan.litvar_count = len(litvar)
+        plan.litvar = add(
+            f"LitVar2 finds {len(litvar)} publications mentioning {item.rsid} in their text, e.g. "
+            + ", ".join(f"PMID:{p}" for p in litvar[:3])
+            + ".",
+            "LitVar2",
         )
     variant = view.variant if view is not None else (item.variants[0] if item.variants else None)
     if variant is not None:
@@ -155,6 +287,22 @@ def _plan(item) -> _Plan:
         label = f"{first}{' et al.' if ',' in paper.authors else ''} {paper.year}".strip()
         plan.paper_labels.append(f"{label} (PMID:{paper.pmid})")
         plan.papers.append(add(f"Paper PMID:{paper.pmid}: {label}, {paper.title.rstrip('.')}.", "Europe PMC"))
+    if not plan.papers and plan.litvar:
+        plan.paper_labels = [f"PMID:{p}" for p in litvar[:3]]
+        plan.papers.append(plan.litvar)
+    citations = getattr(item, "citations", None) or []
+    if not plan.papers and citations:
+        shown = citations[:3]
+        plan.paper_labels = [f"PMID:{pmid}" for pmid in shown]
+        plan.papers.append(
+            add(f"dbSNP links {len(citations)} PubMed records to {item.rsid}, e.g. {', '.join(plan.paper_labels)}.", "dbSNP citations")
+        )
+    if not plan.papers and vep is not None and vep.pubmed:
+        shown = vep.pubmed[:3]
+        plan.paper_labels = [f"PMID:{pmid}" for pmid in shown]
+        plan.papers.append(
+            add(f"Ensembl lists {len(vep.pubmed)} PubMed records citing this variant, e.g. {', '.join(plan.paper_labels)}.", "Ensembl VEP")
+        )
     if not plan.no_significance and item.clinvar_retrieved and not item.has_significance:
         plan.no_significance = True
         plan.disease = plan.disease or add(f"ClinVar reports no clinical significance for {item.rsid}.", "ClinVar")
@@ -318,14 +466,14 @@ def _template_parts(rsid: str, plan: _Plan) -> list[tuple[str, str]]:
     """Template sentences, each tagged with the field it covers (function, frequency, disease, papers)."""
     parts: list[tuple[str, str]] = []
     if plan.function:
-        lead = f"{rsid} is {_phrase_consequence(plan.consequence)} in {plan.gene}"
+        lead = f"{rsid} is {_phrase_consequence(plan.consequence)}" + (f" in {plan.gene}" if plan.gene else "")
         if plan.change:
             lead += f" ({plan.change})"
         ids = [plan.function] + ([plan.aliases] if plan.aliases else [])
         alias = f", also known as {plan.alias_names}" if plan.aliases and plan.alias_names else ""
         parts.append(("function", f"{lead}{alias} [{', '.join(ids)}]."))
     if plan.location_fact:
-        parts.append(("function", f"dbSNP places {rsid} {plan.location.replace('the gene', plan.gene)} [{plan.location_fact}]."))
+        parts.append(("function", f"dbSNP places {rsid} {plan.location} [{plan.location_fact}]."))
     if plan.uniprot:
         parts.append(
             (
@@ -334,6 +482,19 @@ def _template_parts(rsid: str, plan: _Plan) -> list[tuple[str, str]]:
                 f"{plan.uniprot_text[:1].lower() + plan.uniprot_text[1:]} [{plan.uniprot}].",
             )
         )
+    if plan.gene_summary and not plan.uniprot:
+        parts.append(
+            ("function", f"NCBI Gene describes {plan.gene} (the gene, not this variant): {plan.gene_summary_text} [{plan.gene_summary}].")
+        )
+    if plan.regulatory:
+        parts.append(("function", f"It {plan.regulatory_text} [{plan.regulatory}]."))
+    if plan.eqtl:
+        genes = ", ".join(plan.eqtl_genes[:3])
+        parts.append(("function", f"In GTEx it is linked to the expression of {genes} ({plan.eqtl_text}) [{plan.eqtl}]."))
+    if plan.l2g:
+        parts.append(("function", f"Open Targets' locus-to-gene model points to {plan.l2g_text} [{plan.l2g}]."))
+    if plan.predictions:
+        parts.append(("prediction", f"Computational predictions (not experimental): {plan.prediction_text} [{plan.predictions}]."))
     if plan.frequency:
         text = f"The alternate {plan.alt.split('>')[-1]} allele ({plan.alt}) is carried on {plan.overall_pct} of alleles in {plan.overall_set}"
         ids = [plan.frequency]
@@ -369,6 +530,17 @@ def _template_parts(rsid: str, plan: _Plan) -> list[tuple[str, str]]:
             parts.append(("disease", f"ClinVar's best-supported classification is {plan.headline}{cond} [{plan.disease}]."))
     elif plan.no_significance and plan.disease:
         parts.append(("disease", f"ClinVar reports no clinical significance for this variant [{plan.disease}]."))
+    if plan.gwas:
+        traits = ", ".join(plan.gwas_traits[:3])
+        more = f" and {len(plan.gwas_traits) - 3} more traits" if len(plan.gwas_traits) > 3 else ""
+        best = f" (strongest p = {plan.gwas_best_p})" if plan.gwas_best_p else ""
+        parts.append(
+            (
+                "disease",
+                f"Genome-wide association studies link it to {traits}{more}{best}; this is a statistical association, "
+                f"not a clinical classification [{', '.join(plan.gwas)}].",
+            )
+        )
     extras = []
     extra_ids = []
     if plan.disease_other:
@@ -380,16 +552,16 @@ def _template_parts(rsid: str, plan: _Plan) -> list[tuple[str, str]]:
     if extras:
         parts.append(("disease_note", f"ClinVar note: {'; '.join(extras)} [{', '.join(extra_ids)}]."))
     if plan.papers:
-        parts.append(("papers", f"Papers that name this rsID: {'; '.join(plan.paper_labels)} [{', '.join(plan.papers)}]."))
+        parts.append(("papers", f"Papers that cite this rsID: {'; '.join(plan.paper_labels)} [{', '.join(plan.papers)}]."))
     return parts
 
 
 def field_ids(plan: _Plan) -> dict[str, set[str]]:
     """Fact ids that count as covering each required summary field."""
     return {
-        "function": {i for i in (plan.function, plan.uniprot, plan.location_fact) if i},
+        "function": {i for i in (plan.function, plan.uniprot, plan.location_fact, plan.gene_summary, plan.eqtl) if i},
         "frequency": {i for i in (plan.frequency, plan.spread, plan.callset_conflict) if i},
-        "disease": {i for i in (plan.disease,) if i},
+        "disease": {i for i in (plan.disease, *plan.gwas) if i},
     }
 
 
@@ -400,7 +572,7 @@ def _article(word: str) -> str:
 def _phrase_consequence(consequence: str) -> str:
     if not consequence:
         return "a variant"
-    first = consequence.split(",")[0].strip()
+    first = consequence.split(",")[0].strip().replace("_", " ")
     if first == "nonsense":
         first = "nonsense (stop-gained)"
     if "variant" not in first:
@@ -482,7 +654,9 @@ def render(sentences: list[str], facts: list[Fact]) -> str:
 
 
 def facts_block(facts: list[Fact]) -> str:
-    return "\n".join(f"[{fact.id}] ({fact.source}) {fact.text}" for fact in facts)
+    from snp_brief.providers import tier_label
+
+    return "\n".join(f"[{fact.id}] ({fact.source}; {tier_label(fact.source)}) {fact.text}" for fact in facts)
 
 
 # ---------------------------------------------------------------- entry point

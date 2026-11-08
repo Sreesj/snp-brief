@@ -34,7 +34,8 @@ from snp_brief.demo.view import (
     summary_row,
     unresolved_populations,
 )
-from snp_brief.forge import CONFLICTING, INSUFFICIENT, REPORTED, UNCERTAIN, WELL, forge
+from snp_brief.forge import CONFLICTING, EXPLORATORY, INSUFFICIENT, REPORTED, TRAIT_ASSOCIATION, UNCERTAIN, WELL, forge
+from snp_brief.providers import SPEED_BUDGETS, tier_label
 from snp_brief.llm import LLMClient
 from snp_brief.pipeline import Gathered, default_user_cache, load_variant
 from snp_brief.ripple import OBSERVED, PREDICTED, UNKNOWN, ripple
@@ -51,7 +52,15 @@ NAMED_CSS = STATUS_CSS[UNRESOLVED]
 SMALL_CSS = "color: #9aa0a6"
 FALLBACK_CSS = "background-color: #f3eefc; color: #5b3a99; font-weight: 600"
 MODULES = ("Variant Observatory", "Molecular Ripple", "Hypothesis Forge")
-CATEGORY_COLOR = {WELL: "green", CONFLICTING: "orange", UNCERTAIN: "blue", REPORTED: "violet", INSUFFICIENT: "gray"}
+CATEGORY_COLOR = {
+    WELL: "green",
+    CONFLICTING: "orange",
+    UNCERTAIN: "blue",
+    TRAIT_ASSOCIATION: "blue",
+    REPORTED: "violet",
+    EXPLORATORY: "gray",
+    INSUFFICIENT: "gray",
+}
 LINK_COLOR = {OBSERVED: "green", PREDICTED: "violet", UNKNOWN: "gray"}
 PAGE_CSS = """
 <style>
@@ -155,6 +164,15 @@ def sidebar() -> tuple[bool, bool]:
         st.header("SNP list")
         st.text_area("rsIDs, one per line", key="rsid_text", height=300)
         st.file_uploader("Or upload a .txt", type=["txt"], key="upload", on_change=take_upload)
+        st.radio(
+            "Speed vs completeness",
+            list(SPEED_BUDGETS),
+            index=1,
+            key="speed",
+            horizontal=True,
+            help="All providers are queried at once. Fast shows what has answered within about 8 s, balanced 20 s, "
+            "thorough 45 s. Late providers keep loading in the background; press Check again to add them.",
+        )
         offline = st.toggle("Offline only", key="offline")
         if offline:
             st.caption("Reads saved data only and makes no network call. SNPs that were never fetched come back blank.")
@@ -177,7 +195,21 @@ def take_upload() -> None:
 
 
 def fetch(root: Path, rsid: str, *, offline: bool, refresh: bool = False) -> Gathered:
-    return load_variant(rsid, repo_cache=root / "cache", user_cache=USER_CACHE, offline=offline, refresh=refresh)
+    budget = SPEED_BUDGETS.get(st.session_state.get("speed", "balanced"), 20.0)
+    return load_variant(
+        rsid, repo_cache=root / "cache", user_cache=USER_CACHE, offline=offline, refresh=refresh, budget=budget
+    )
+
+
+def reload_variant(item: Gathered) -> None:
+    """Pick up providers that finished in the background (cache first, nothing re-fetched)."""
+    current: Run | None = st.session_state.get("last_run")
+    fresh = fetch(repo_root(), item.rsid, offline=bool(st.session_state.get("offline")))
+    if current is not None:
+        current.results = [fresh if old.rsid == item.rsid else old for old in current.results]
+    modules = st.session_state.setdefault("modules", {})
+    for key in [key for key in modules if key[0] == item.rsid]:
+        modules.pop(key)
 
 
 def run_briefs(root: Path, offline: bool) -> None:
@@ -319,6 +351,13 @@ def render_detail(item: Gathered) -> None:
         else:
             st.rerun()
     st.caption(f"Evidence last retrieved: {last_retrieved(item)}")
+    if item.pending:
+        names = ", ".join(item.pending)
+        note, again = st.columns([5, 2], vertical_alignment="center")
+        note.info(f"Still loading: {names}. Shown now: the providers that answered in time.")
+        if again.button("Check again", key=f"again-{item.rsid}"):
+            reload_variant(item)
+            st.rerun()
     results = st.session_state.setdefault("modules", {})
     with st.container(horizontal=True):
         st.badge("Observatory: ready", color="green")
@@ -360,7 +399,10 @@ def render_observatory(item: Gathered) -> None:
         checked += f"; {len(summary.rejected)} rejected"
     st.caption(f"Written by {summary.writer} from {len(summary.facts)} retrieved facts. {checked}.")
     with st.expander("Facts the summary may use"):
-        st.code("\n".join(f"[{fact.id}] ({fact.source}) {fact.text}" for fact in summary.facts), language=None)
+        st.code(
+            "\n".join(f"[{fact.id}] ({fact.source}; {tier_label(fact.source)}) {fact.text}" for fact in summary.facts),
+            language=None,
+        )
         for sentence, reason in summary.rejected:
             st.caption(f"Rejected: {sentence} ({reason})")
     st.markdown("**Evidence brief**")
@@ -458,6 +500,11 @@ def render_forge(item: Gathered) -> None:
     st.markdown(f"**Open problem:** {tri.open_problem}")
     st.markdown("**Next steps**")
     st.markdown("\n".join(f"- {line}" for line in tri.next_steps))
+    if tri.exploratory:
+        st.warning(
+            "Exploratory: there is no evidence about this specific variant. The hypotheses below are AI-generated from "
+            "its genomic context and gene-level information, and may be wrong. Use them as starting points only."
+        )
     if found.note:
         st.info(found.note)
     if found.open_questions:
@@ -476,6 +523,9 @@ def render_forge(item: Gathered) -> None:
                 if hyp.gaps:
                     st.markdown("*Missing evidence*")
                     st.markdown("\n".join(f"- {gap}" for gap in hyp.gaps))
+                if hyp.background:
+                    st.markdown("*AI background knowledge (unverified)*")
+                    st.markdown("\n".join(f"- {line}" for line in hyp.background))
                 st.markdown(f"*Would be supported by:* {hyp.discriminating_observation}")
                 st.markdown(f"*Experiment:* {hyp.experiment} ({hyp.feasibility} feasibility)")
                 st.caption(f"Consistency with the facts: {hyp.consistency}")

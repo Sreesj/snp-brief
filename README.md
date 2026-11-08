@@ -36,7 +36,7 @@ Serves a local page. Run the list in the sidebar, or search any rsID at the top.
 
 - **Variant Observatory** (default): the checked plain-English summary, the evidence brief, gnomAD populations, papers, and which sources answered.
 - **Molecular Ripple** (runs when you press Run): the variant context (missense, nonsense, intronic, ...), what a mechanistic analysis should examine for that context, and molecular links labelled *observed*, *predicted*, or *unknown*. Ensembl VEP scores are the next step.
-- **Hypothesis Forge** (runs when you press Run): stage 1 sorts the variant as *well characterized*, *conflicting evidence*, *uncertain mechanism*, or *insufficient evidence*, with the reason and next steps. For conflicting and uncertain variants, an LLM proposes two or three competing hypotheses, each with fact-checked support, missing evidence, the observation that would tell it apart, and an experiment. Experiments are ranked by feasibility and open gaps. Well-characterized and thin-evidence variants get no invented hypotheses.
+- **Hypothesis Forge** (runs when you press Run): stage 1 sorts the variant as *well characterized*, *conflicting evidence*, *uncertain mechanism*, *mechanism proposed in literature*, *trait association, mechanism unknown* (GWAS or GTEx evidence only), *exploratory* (only location, gene, or prediction context: hypotheses are labelled AI-generated and include "no functional effect"), or *insufficient evidence* (nothing at all), with the reason and next steps. For conflicting and uncertain variants, an LLM proposes two or three competing hypotheses, each with fact-checked support, missing evidence, the observation that would tell it apart, and an experiment. Experiments are ranked by feasibility and open gaps. Well-characterized and thin-evidence variants get no invented hypotheses.
 
 Module results stay in the session when you switch tabs or SNPs. The checked-in `cache/` is never changed by the page.
 
@@ -61,14 +61,27 @@ uv run snp-brief --summary llm --forge    # LLM summaries and Forge hypotheses
 
 LLM summaries are saved to `cache/<rsid>/summary_llm.json` and Forge results to `cache/<rsid>/forge.json`, keyed by the facts they were written from. Generate them once with the key, commit them, and the demo shows them offline with no key. `--regenerate` ignores those files. Any other OpenAI-compatible server works with `SNP_BRIEF_LLM_URL`, `SNP_BRIEF_LLM_MODEL`, and `SNP_BRIEF_LLM_KEY`.
 
-## Sources, in order
+## Sources, ranked by dependability
 
-1. **dbSNP** (`src/snp_brief/sources/dbsnp.py`) turns the id into an rsID, a genomic coordinate, and the alternate alleles.
-2. **ClinVar** (`src/snp_brief/sources/clinvar.py`) supplies the gene, molecular consequence, and clinical significance. A record is kept only when it cross-references this rsID. A multi-variant haplotype is not this SNP, so it is left out. Distinct alternate alleles are reported separately. They are not treated as a disagreement about one allele.
-3. **gnomAD** (`src/snp_brief/sources/gnomad.py`) supplies allele counts and the reported allele frequency, for each alternate allele the rsID actually has. v4 is used when the variant is there, otherwise v3.
-4. **Europe PMC** (`src/snp_brief/sources/europepmc.py`) supplies up to three primary research articles that name the rsID in the title or abstract.
+All providers are queried in parallel. For each field, the highest-ranked provider that answered wins; lower-ranked answers are kept as supporting or fallback evidence. Every fact the summary and Forge use carries its provider's rank.
 
-**UniProt** (`src/snp_brief/sources/uniprot.py`) is only a function fallback. If ClinVar has no clinical significance, the brief uses the gene’s reviewed function text and cites UniProt. That text is protein function. It is never copied into disease relevance. Disease relevance then says that no clinical significance was found, or the field is left blank when ClinVar was not retrieved.
+| Rank | Provider | Kind of evidence | Used for |
+|---|---|---|---|
+| 1 | ClinVar | curated clinical classification | gene, consequence, disease relevance |
+| 2 | gnomAD | population measurement | allele frequency, ancestry spread |
+| 3 | GWAS Catalog | curated statistical association | trait associations (not clinical) |
+| 3 | GTEx | expression QTLs | genes whose expression the SNP is linked to |
+| 4 | dbSNP | reference annotation | coordinate, alleles, location class |
+| 4 | Ensembl LD | population linkage | variants inherited together with this one |
+| 5 | Ensembl VEP | computed annotation and predictions | consequence fallback, regulatory overlap, SIFT, PolyPhen, CADD, AlphaMissense, SpliceAI |
+| 5 | Open Targets | computed locus-to-gene score | likely target gene |
+| 6 | UniProt, NCBI Gene | gene-level function | what the nearby gene does (never disease) |
+| 7 | Europe PMC, LitVar2, dbSNP citations | literature mentions | papers |
+| — | AI background knowledge | unverified | Hypothesis Forge only, labelled |
+
+Fallbacks, highest rank first: function ClinVar → Ensembl VEP → dbSNP; gene description UniProt → NCBI Gene; disease relevance ClinVar → GWAS Catalog (labelled as association); papers Europe PMC → LitVar2 → dbSNP citations → Ensembl.
+
+**Speed vs completeness.** The page's speed setting caps how long it waits: fast ~8 s, balanced ~20 s, thorough ~45 s. Providers that miss the deadline are listed as still loading; they finish in the background and are saved, and **Check again** adds them. The CLI waits for everything unless `--speed` is set. `SNP_BRIEF_EXTRAS=off` turns off every provider added after the original five.
 
 ## Conflict rule
 

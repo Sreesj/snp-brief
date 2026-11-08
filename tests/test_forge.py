@@ -9,7 +9,19 @@ import unittest
 from pathlib import Path
 from unittest import mock
 
-from snp_brief.forge import CONFLICTING, INSUFFICIENT, REPORTED, UNCERTAIN, WELL, forge, rank, triage, validate
+from snp_brief.forge import (
+    CONFLICTING,
+    EXPLORATORY,
+    INSUFFICIENT,
+    REPORTED,
+    TRAIT_ASSOCIATION,
+    UNCERTAIN,
+    WELL,
+    forge,
+    rank,
+    triage,
+    validate,
+)
 from snp_brief.llm import NEBIUS_DEFAULT_MODEL, NEBIUS_URL, LLMClient, parse_json
 from snp_brief.pipeline import gather
 from snp_brief.ripple import OBSERVED, PREDICTED, UNKNOWN, context_key, ripple
@@ -86,7 +98,7 @@ class TriageTests(unittest.TestCase):
             "rs1801133": CONFLICTING,
             "rs4988235": UNCERTAIN,
             "rs12913832": REPORTED,
-            "rs6054257": INSUFFICIENT,
+            "rs6054257": EXPLORATORY,
         }
         for rsid, category in expected.items():
             found, _ = triage(cached(rsid))
@@ -100,11 +112,23 @@ class TriageTests(unittest.TestCase):
         self.assertIn("well characterized", result.note)
 
     def test_insufficient_evidence_does_not_invent(self) -> None:
+        import contextlib
+        import io
+
+        with contextlib.redirect_stderr(io.StringIO()):
+            item = gather("rs999999999", cache_dir=CACHE, refresh=False, offline=True)
         client = FakeClient("{}")
-        result = forge(cached("rs6054257"), client=client)
+        result = forge(item, client=client)
+        self.assertEqual(result.triage.category, INSUFFICIENT)
         self.assertEqual(client.calls, 0)
         self.assertFalse(result.triage.wants_hypotheses)
-        self.assertIn("too thin", result.note)
+
+    def test_thin_evidence_becomes_exploratory_not_a_dead_end(self) -> None:
+        found, _ = triage(cached("rs6054257"))
+        self.assertEqual(found.category, EXPLORATORY)
+        self.assertTrue(found.exploratory)
+        self.assertTrue(found.wants_hypotheses)
+        self.assertIn("no functional effect", found.open_problem)
 
     def test_reason_cites_real_facts(self) -> None:
         found, facts = triage(cached("rs1801133"))

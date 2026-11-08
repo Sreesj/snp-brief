@@ -124,16 +124,29 @@ class StatusTests(unittest.TestCase):
                 self.assertEqual(row[name] == "unresolved", marked, f"{rsid} {name}")
 
     def test_id_without_cache_is_blank_offline(self) -> None:
-        with contextlib.redirect_stderr(io.StringIO()):
+        with mock.patch.dict(os.environ, {"SNP_BRIEF_EXTRAS": "on"}), contextlib.redirect_stderr(io.StringIO()):
             item = gather("rs999999999", cache_dir=CACHE, refresh=False, offline=True)
         row = summary_row(item)
         self.assertEqual([row[name] for name in FIELDS], ["blank", "blank", "blank"])
         answered = {entry["Source"]: entry["Answered"] for entry in source_rows(item)}
         self.assertEqual(
             answered,
-            {"dbSNP": "no", "ClinVar": "no", "gnomAD": "no", "Europe PMC": "no", "UniProt (fallback)": "not consulted"},
+            {
+                "ClinVar": "no",
+                "gnomAD": "no",
+                "GWAS Catalog": "no",
+                "GTEx": "no",
+                "dbSNP": "no",
+                "Ensembl LD": "no",
+                "Ensembl VEP": "no",
+                "Open Targets": "no",
+                "UniProt (fallback)": "not consulted",
+                "NCBI Gene": "not consulted",
+                "Europe PMC": "no",
+                "dbSNP citations": "no",
+                "LitVar2": "no",
+            },
         )
-
 
 class DetailTests(unittest.TestCase):
     def test_populations_are_the_api_counts_and_name_the_brief_groups(self) -> None:
@@ -189,6 +202,7 @@ def _detail_page(cache_dir: str, rsid: str) -> None:
 class PageTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
+        os.environ["SNP_BRIEF_EXTRAS"] = "off"  # page tests must not call live providers
         logging.getLogger("streamlit.runtime.scriptrunner_utils.script_run_context").addFilter(
             lambda record: "missing ScriptRunContext" not in record.getMessage()
         )
