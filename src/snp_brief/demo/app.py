@@ -114,10 +114,7 @@ def main() -> None:
     if not password_ok():
         return
     root = repo_root()
-    st.session_state.setdefault("rsid_text", "")
-    offline, clicked = sidebar()
-    if clicked:
-        run_briefs(root, offline)
+    offline = sidebar()
     current: Run | None = st.session_state.get("last_run")
     if current is None or not current.results:
         # Landing: a centred hero and one search box. Cached SNPs still load instantly when searched.
@@ -143,12 +140,9 @@ def repo_root() -> Path:
     return Path.cwd()
 
 
-def sidebar() -> tuple[bool, bool]:
+def sidebar() -> bool:
     with st.sidebar:
-        st.html(theme.top_bar() + theme.section("What's inside") + theme.sidebar_guide() + theme.section("Batch analysis"))
-        st.text_area("rsIDs, one per line", key="rsid_text", height=220, placeholder="rs6025\nrs429358\n…")
-        st.file_uploader("Or upload a .txt file", type=["txt"], key="upload", on_change=take_upload)
-        clicked = st.button("Analyze list", key="run_briefs", type="primary", width="stretch")
+        st.html(theme.top_bar() + theme.section("What's inside") + theme.sidebar_guide())
         with st.expander("Settings"):
             st.radio(
                 "Speed",
@@ -161,13 +155,7 @@ def sidebar() -> tuple[bool, bool]:
             offline = st.toggle("Offline mode", key="offline", help="Use saved data only; no network calls.")
             if LLMClient.from_env() is not None:
                 st.toggle("AI-written summaries", key="use_llm", value=True)
-    return offline, clicked
-
-
-def take_upload() -> None:
-    upload = st.session_state.get("upload")
-    if upload is not None:
-        st.session_state.rsid_text = upload.getvalue().decode("utf-8", errors="replace")
+    return offline
 
 
 # ---------------------------------------------------------------- loading
@@ -189,62 +177,58 @@ def reload_variant(item: Gathered) -> None:
     _forget_modules(item.rsid)
 
 
-def run_briefs(root: Path, offline: bool) -> None:
-    ids, rejected = parse_rsid_text(st.session_state.rsid_text)
-    if not ids:
-        st.session_state.last_run = None
-        st.error("No rsIDs to analyse. Enter IDs such as rs6025, one per line.")
-        return
-    placeholder = st.empty()
-    results: list[Gathered] = []
-    failed: list[str] = []
-    for index, rsid in enumerate(ids):
-        placeholder.html(
-            theme.loader(f"Analyzing {rsid}", f"{index + 1} of {len(ids)} variants", index, len(ids), skeleton=False)
-        )
-        try:
-            results.append(fetch(root, rsid, offline=offline))
-        except Exception as exc:
-            failed.append(f"{rsid} could not be loaded ({exc})")
-    placeholder.empty()
-    st.session_state.run_count = st.session_state.get("run_count", 0) + 1
-    st.session_state.last_run = Run(st.session_state.run_count, not offline, results, rejected, failed)
-    if results:
-        st.session_state.active = results[0].rsid
+def _request_search() -> None:
+    st.session_state.search_go = True
 
 
 def search_bar(root: Path, offline: bool) -> None:
-    with st.form("search", border=False):
-        left, right = st.columns([6, 1], vertical_alignment="bottom")
-        query = left.text_input(
-            "Search a variant", placeholder="Search by rsID", key="search_text", label_visibility="collapsed"
-        )
-        submitted = right.form_submit_button("Search", type="primary", width="stretch")
-    if not submitted:
+    """One box for one or many rsIDs (separated by commas, spaces or new lines)."""
+    left, right = st.columns([6, 1], vertical_alignment="bottom")
+    query = left.text_input(
+        "Search variants",
+        placeholder="Search one or more rsIDs, e.g. rs6025, rs429358",
+        key="search_text",
+        label_visibility="collapsed",
+        on_change=_request_search,
+    )
+    clicked = right.button("Search", key="search_go_btn", type="primary", width="stretch")
+    if not (clicked or st.session_state.pop("search_go", False)):
         return
-    ids, _ = parse_rsid_text(query or "")
+    ids, rejected = parse_rsid_text(query or "")
     if not ids:
-        st.error("Enter an rsID, such as rs6025.")
+        st.error("Enter one or more rsIDs, such as rs6025.")
         return
-    rsid = ids[0]
+    search(root, ids, rejected, offline)
+
+
+def search(root: Path, ids: list[str], rejected: list[str], offline: bool) -> None:
     current: Run | None = st.session_state.get("last_run")
     if current is None:
         st.session_state.run_count = st.session_state.get("run_count", 0) + 1
         current = Run(st.session_state.run_count, not offline, [], [], [])
         st.session_state.last_run = current
-    existing = next((item for item in current.results if rsid in {item.rsid, item.merged_from}), None)
-    if existing is None:
-        placeholder = st.empty()
-        placeholder.html(theme.loader(f"Analyzing {rsid}", "Querying 13 databases in parallel"))
-        try:
-            existing = fetch(root, rsid, offline=offline)
-            current.results.insert(0, existing)
-        except Exception as exc:
-            placeholder.empty()
-            st.error(f"{rsid} could not be loaded ({exc}).")
-            return
-        placeholder.empty()
-    st.session_state.active = existing.rsid
+    current.rejected = rejected
+    current.failed = []
+    placeholder = st.empty()
+    found: list[Gathered] = []
+    for index, rsid in enumerate(ids):
+        existing = next((item for item in current.results if rsid in {item.rsid, item.merged_from}), None)
+        if existing is None:
+            if len(ids) > 1:
+                placeholder.html(theme.loader(f"Analyzing {rsid}", f"{index + 1} of {len(ids)} variants", index, len(ids), skeleton=False))
+            else:
+                placeholder.html(theme.loader(f"Analyzing {rsid}", "Querying 13 databases in parallel"))
+            try:
+                existing = fetch(root, rsid, offline=offline)
+            except Exception as exc:
+                current.failed.append(f"{rsid} could not be loaded ({exc})")
+                continue
+        found.append(existing)
+    placeholder.empty()
+    others = [item for item in current.results if all(item is not new for new in found)]
+    current.results = found + others
+    if found:
+        st.session_state.active = found[0].rsid
 
 
 def refresh_variant(item: Gathered) -> list[str]:
@@ -308,6 +292,10 @@ def show_results(current: Run) -> None:
             ):
                 st.session_state.active = item.rsid
                 st.rerun()
+        if st.button("Clear list", key="clear_list", width="stretch"):
+            st.session_state.last_run = None
+            st.session_state.pop("active", None)
+            st.rerun()
         st.download_button(
             "Download all briefs",
             briefs_text(current.results),

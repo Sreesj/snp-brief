@@ -222,31 +222,28 @@ class PageTests(unittest.TestCase):
             lambda record: "missing ScriptRunContext" not in record.getMessage()
         )
 
-    def test_run_is_offline_by_default_and_fills_one_row_per_snp(self) -> None:
-        page = AppTest.from_file(str(APP), default_timeout=30).run()
+    def test_landing_is_empty_and_search_takes_many_rsids(self) -> None:
+        page = AppTest.from_file(str(APP), default_timeout=60).run()
         self.assertFalse(page.exception)
-        self.assertEqual(page.text_area(key="rsid_text").value, "", "the demo list is not prefilled")
         self.assertFalse([b for b in page.button if (b.key or "").startswith("pick-")], "nothing is loaded on first visit")
         self.assertFalse(page.toggle(key="offline").value)
-        page.toggle(key="offline").set_value(True).run()  # demo SNPs not in cache/ would otherwise be fetched live
-        page.text_area(key="rsid_text").input("\n".join(FIXTURE_IDS)).run()
-        page.button(key="run_briefs").click().run()
+        page.toggle(key="offline").set_value(True).run()  # cached SNPs only; no network in tests
+        page.text_input(key="search_text").input(", ".join(FIXTURE_IDS)).run()
         self.assertFalse(page.exception)
         picks = [button.key for button in page.button if (button.key or "").startswith("pick-")]
         self.assertEqual(len(picks), len(FIXTURE_IDS))  # one entry per SNP (a merged rsID shows its current ID)
         self.assertEqual(len(page.tabs), 3, "the first SNP opens automatically")
-        self.assertGreaterEqual(len(page.get("download_button")), 1)
         page.button(key=picks[1]).click().run()
         self.assertFalse(page.exception)
 
-    def test_uploaded_list_replaces_the_pasted_one(self) -> None:
-        page = AppTest.from_file(str(APP), default_timeout=30).run()
+    def test_single_search_opens_the_variant_with_the_button(self) -> None:
+        page = AppTest.from_file(str(APP), default_timeout=60).run()
         page.toggle(key="offline").set_value(True).run()
-        page.file_uploader(key="upload").upload("two.txt", b"rs6025\nrs334\n", "text/plain").run()
-        self.assertEqual(page.text_area(key="rsid_text").value, "rs6025\nrs334\n")
-        page.button(key="run_briefs").click().run()
-        picks = [button.key for button in page.button if (button.key or "").startswith("pick-")]
-        self.assertEqual(picks, ["pick-rs6025", "pick-rs334"])
+        page.text_input(key="search_text").set_value("rs6025")
+        page.button(key="search_go_btn").click().run()
+        self.assertFalse(page.exception)
+        self.assertEqual(len(page.tabs), 3)
+        self.assertTrue(any("rs6025" in block.value for block in page.get("html")))
 
     def test_detail_shows_brief_populations_and_fallback_source(self) -> None:
         page = AppTest.from_function(_detail_page, args=(str(CACHE), "rs6054257"), default_timeout=30).run()

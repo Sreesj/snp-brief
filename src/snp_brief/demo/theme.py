@@ -207,7 +207,8 @@ GUIDE = (
     ("#f0b73c", "Hypothesis Forge", "What is not yet understood: competing explanations, evidence for and against, and "
      "the experiments that would tell them apart."),
     ("#5aa2ff", "Findings from papers", "Key results pulled from abstracts, each quoted word for word."),
-    ("#4cc38a", "Batch analysis and export", "Analyse a list of rsIDs at once, keep notes, and download a full report."),
+    ("#4cc38a", "Several at once", "Search one rsID or many: separate them with commas or spaces. Keep notes and "
+     "download a full report for any variant."),
 )
 
 
