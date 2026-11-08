@@ -233,6 +233,47 @@ class EndToEndTests(unittest.TestCase):
         self.assertFalse(item.gwas.hits)
 
 
+class CoordinateProviderTests(unittest.TestCase):
+    def test_gtex_and_open_targets_get_dbsnp_coordinates_on_a_cold_cache(self) -> None:
+        tmp = Path(tempfile.mkdtemp())
+        self.addCleanup(shutil.rmtree, tmp)
+        db_payload = json.loads((CACHE / RSID / "dbsnp.json").read_text(encoding="utf-8"))
+        seen = {}
+
+        def slow_dbsnp(rsid):
+            time.sleep(0.3)  # the dependent tasks start before dbSNP answers
+            return db_payload
+
+        def gtex(rsid, ids, timeout=20):
+            seen["gtex"] = ids
+            return GTEX
+
+        def ot(ids, timeout=20):
+            seen["ot"] = ids
+            return OT
+
+        quick = {"retrieved": "x", "response": {}}
+        with mock.patch.dict(os.environ, {"SNP_BRIEF_EXTRAS": "on"}), \
+            mock.patch.object(pipeline, "fetch_dbsnp", side_effect=slow_dbsnp), \
+            mock.patch.object(pipeline, "fetch_clinvar", return_value=quick), \
+            mock.patch.object(pipeline, "fetch_europepmc", return_value=quick), \
+            mock.patch.object(pipeline, "fetch_gnomad", return_value=quick), \
+            mock.patch.object(pipeline, "fetch_gwas", return_value=GWAS_V2), \
+            mock.patch.object(pipeline, "fetch_vep", return_value=VEP), \
+            mock.patch.object(pipeline, "fetch_citations", return_value=quick), \
+            mock.patch.object(pipeline, "fetch_litvar", return_value=quick), \
+            mock.patch.object(pipeline, "fetch_ld", return_value=quick), \
+            mock.patch.object(pipeline, "fetch_gtex", side_effect=gtex), \
+            mock.patch.object(pipeline, "fetch_open_targets", side_effect=ot), \
+            mock.patch.object(pipeline, "fetch_gene_summary", return_value=GENE), \
+            contextlib.redirect_stderr(io.StringIO()):
+            item = gather(RSID, cache_dir=tmp, refresh=False, offline=False)
+        self.assertEqual(item.calls["gtex"].origin, "live", item.calls["gtex"].error)
+        self.assertEqual(item.calls["open_targets"].origin, "live", item.calls["open_targets"].error)
+        self.assertEqual(seen["gtex"], ["chr20_85729_G_A_b38"])
+        self.assertEqual(seen["ot"], ["20_85729_G_A"])
+
+
 class BudgetTests(unittest.TestCase):
     def test_slow_provider_is_pending_and_finishes_in_background(self) -> None:
         tmp = Path(tempfile.mkdtemp())

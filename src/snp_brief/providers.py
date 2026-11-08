@@ -47,11 +47,11 @@ class Provider:
 PROVIDERS = (
     Provider("clinvar", "ClinVar", 1, "curated clinical", ("function", "disease"), 30),
     Provider("gnomad", "gnomAD", 2, "population data", ("frequency",), 30),
-    Provider("gwas", "GWAS Catalog", 3, "statistical association", ("disease",), 30),
+    Provider("gwas", "GWAS Catalog", 3, "statistical association", ("disease",), 60),
     Provider("gtex", "GTEx", 3, "expression association (eQTL)", ("function",), 20),
     Provider("ensembl_ld", "Ensembl LD", 4, "population linkage", ("context",), 20),
     Provider("dbsnp", "dbSNP", 4, "reference annotation", ("identity", "function"), 20),
-    Provider("ensembl_vep", "Ensembl VEP", 5, "computed annotation and predictions", ("function", "prediction"), 20),
+    Provider("ensembl_vep", "Ensembl VEP", 5, "computed annotation and predictions", ("function", "prediction"), 30),
     Provider("open_targets", "Open Targets", 5, "computed locus-to-gene score", ("function",), 20),
     Provider("uniprot", "UniProt", 6, "gene-level function", ("function",), 20),
     Provider("ncbi_gene", "NCBI Gene", 6, "gene-level function", ("function",), 20),
@@ -191,8 +191,9 @@ def parse_vep(payload: dict | None) -> VepAnnotation:
 
 GWAS_V2 = "https://www.ebi.ac.uk/gwas/rest/api/v2/associations"
 # The v1 API was retired (HTTP 410). v2 per the migration guide: /v2/associations?rs_id=..., page/size, default 20.
-GWAS_PAGE_SIZE = 20
-GWAS_MAX_PAGES = 3
+# The v2 rs_id query is slow (often over 30 s), so ask for small pages and allow up to 60 s.
+GWAS_PAGE_SIZE = 10
+GWAS_MAX_PAGES = 2
 
 
 @dataclass
@@ -212,8 +213,8 @@ class GwasResult:
     hits: list[GwasHit] = field(default_factory=list)
 
 
-def fetch_gwas(rsid: str, timeout: float = 30) -> dict:
-    """v2 associations for one rsID, up to three pages of 20. A 404 means no associations."""
+def fetch_gwas(rsid: str, timeout: float = 60) -> dict:
+    """v2 associations for one rsID, up to two pages of 10. A 404 means no associations."""
     pages: list = []
     for page in range(GWAS_MAX_PAGES):
         try:

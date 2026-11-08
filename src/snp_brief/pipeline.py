@@ -130,6 +130,8 @@ def gather(
         "clinvar": _POOL.submit(run, "clinvar", lambda: fetch_clinvar(rsid)),
         "europepmc": _POOL.submit(run, "europepmc", lambda: fetch_europepmc(rsid)),
     }
+    # Bound before any task that waits on it is submitted (GTEx, Open Targets, gnomAD).
+    db_future = futures["dbsnp"]
     if extras_enabled():
         futures["gwas"] = _POOL.submit(
             run, "gwas", lambda: fetch_gwas(rsid, BY_KEY["gwas"].timeout), dirs=extra_dirs, write=extra_write
@@ -160,8 +162,6 @@ def gather(
 
         futures["gtex"] = _POOL.submit(gtex_task)
         futures["open_targets"] = _POOL.submit(ot_task)
-    db_future = futures["dbsnp"]
-
     def gnomad_task():
         db_payload, _ = db_future.result()
         return run("gnomad", lambda: fetch_gnomad(rsid, parse_dbsnp(db_payload, rsid)))
