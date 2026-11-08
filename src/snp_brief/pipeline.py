@@ -30,6 +30,7 @@ from snp_brief.providers import (
     fetch_gwas,
     fetch_vep,
     orient_risk_alleles,
+    source_enabled,
     parse_citations,
     parse_gene_summary,
     parse_gwas,
@@ -194,7 +195,6 @@ def gather(
         for key, fetcher in (
             ("myvariant", lambda: extra.fetch_myvariant(rsid)),
             ("pharmgkb", lambda: extra.fetch_pharmgkb(rsid)),
-            ("regulome", lambda: extra.fetch_regulome(rsid)),
             ("timeline", lambda: extra.fetch_timeline(rsid)),
         ):
             futures[key] = _POOL.submit(run, key, fetcher, dirs=extra_dirs, write=extra_write)
@@ -221,7 +221,10 @@ def gather(
             return None, SourceCall("no data", error="not computed for this variant yet")
 
         futures["borzoi"] = _POOL.submit(borzoi_task)
-        futures["spliceai"] = _POOL.submit(splice_task)
+        if source_enabled("spliceai"):
+            futures["spliceai"] = _POOL.submit(splice_task)
+        if source_enabled("regulome"):
+            futures["regulome"] = _POOL.submit(run, "regulome", lambda: extra.fetch_regulome(rsid), dirs=extra_dirs, write=extra_write)
         futures["constraint"] = _POOL.submit(constraint_task)
     def gnomad_task():
         db_payload, _ = db_future.result()

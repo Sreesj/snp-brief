@@ -235,7 +235,7 @@ def search(root: Path, ids: list[str], rejected: list[str], offline: bool) -> No
             if len(ids) > 1:
                 placeholder.html(theme.loader(f"Analyzing {rsid}", f"{index + 1} of {len(ids)} variants", index, len(ids), skeleton=False))
             else:
-                placeholder.html(theme.loader(f"Analyzing {rsid}", "Querying 19 sources in parallel"))
+                placeholder.html(theme.loader(f"Analyzing {rsid}", "Querying 18 sources in parallel"))
             try:
                 existing = fetch(root, rsid, offline=offline)
             except Exception as exc:

@@ -74,6 +74,17 @@ AI_TIER = "AI background knowledge (unverified)"
 SPEED_BUDGETS = {"fast": 8.0, "balanced": 20.0, "thorough": 45.0}
 
 
+OPTIONAL_OFF = {"regulome", "spliceai"}  # public services that failed on every live check; opt in with SNP_BRIEF_ENABLE
+
+
+def source_enabled(key: str) -> bool:
+    """RegulomeDB and SpliceAI's public API were unreachable or timing out on every live check, so they are
+    off unless SNP_BRIEF_ENABLE lists them (e.g. SNP_BRIEF_ENABLE=regulome,spliceai)."""
+    if key not in OPTIONAL_OFF:
+        return True
+    return key in {k.strip() for k in os.environ.get("SNP_BRIEF_ENABLE", "").split(",")}
+
+
 def extras_enabled() -> bool:
     """SNP_BRIEF_EXTRAS=off turns off the newer providers (GWAS Catalog, Ensembl VEP)."""
     return os.environ.get("SNP_BRIEF_EXTRAS", "on").lower() not in {"off", "0", "false", "no"}

@@ -223,7 +223,7 @@ def top_bar() -> str:
 def hero() -> str:
     return (
         '<div class="va-hero">'
-        '<div class="va-pill"><i></i>19 genomic sources, reconciled</div>'
+        '<div class="va-pill"><i></i>18 genomic sources, reconciled</div>'
         "<h1>Understand any variant.</h1>"
         "<p>Clinical significance, population frequency, molecular context and the open questions worth testing, "
         "for any SNP, with every claim traced to its source.</p>"
@@ -233,7 +233,7 @@ def hero() -> str:
 
 GUIDE = (
     ("#7c86ff", "Variant Observatory", "What is known: clinical classification, population frequency, function and papers, "
-     "reconciled across 19 sources with every claim sourced."),
+     "reconciled across 18 sources with every claim sourced."),
     ("#f2555a", "Interpretation", "A draft of the ACMG evidence codes, how many people carry the variant, "
      "drug response from ClinPGx and cancer evidence from CIViC."),
     ("#4cc9b0", "Molecular Ripple", "What the variant touches: gene and protein effects, expression links, regulatory "
@@ -280,7 +280,7 @@ ABOUT_WHO = (
 
 ABOUT_HOW = (
     ("Ask", "Enter one rsID or a whole list, separated by commas or spaces."),
-    ("Gather", "Nineteen public sources are queried in parallel, from ClinVar, gnomAD and ClinPGx to GTEx, SpliceAI and Europe PMC."),
+    ("Gather", "Eighteen sources are queried in parallel, from ClinVar, gnomAD and ClinPGx to GTEx, Europe PMC and our own Borzoi predictions."),
     ("Reconcile", "Sources are ranked by reliability, so when they disagree the conflict is shown rather than hidden."),
     ("Explain", "A plain-text summary is written from the collected facts and checked so it says nothing the data does not."),
 )

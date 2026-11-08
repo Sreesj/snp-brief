@@ -203,8 +203,12 @@ def paper_links(item: Gathered) -> list[PaperLink]:
 
 
 def source_rows(item: Gathered) -> list[dict[str, str]]:
+    from snp_brief.providers import source_enabled
+
     rows: list[dict[str, str]] = []
     for source in SOURCES:
+        if not source_enabled(source.key) and source.key not in item.calls:
+            continue  # switched off and nothing cached for it
         call = item.calls.get(source.key)
         if call is None:
             answered, detail, gave = NOT_CONSULTED, _not_consulted(item), ""

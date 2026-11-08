@@ -161,8 +161,6 @@ class StatusTests(unittest.TestCase):
                 "ClinPGx (PharmGKB)": "no",
                 "gnomAD constraint": "no",
                 "MyVariant.info": "no",
-                "SpliceAI": "no",
-                "RegulomeDB": "no",
                 "Literature timeline": "no",
                 "Borzoi (our model run)": "no",
             },
