@@ -1,4 +1,10 @@
-"""Streamlit page: paste rsIDs, run the briefs, and open one SNP at a time."""
+"""Streamlit page: run a list of SNPs, then investigate one in three modules.
+
+Variant Observatory is the default module and shows the sourced evidence and
+summary. Molecular Ripple and Hypothesis Forge run only when someone presses
+Run in their tab; results are kept per SNP in the session and, for the Forge
+LLM stage, in cache/<rsid>/forge.json.
+"""
 
 from __future__ import annotations
 
@@ -27,8 +33,10 @@ from snp_brief.demo.view import (
     summary_row,
     unresolved_populations,
 )
+from snp_brief.forge import CONFLICTING, INSUFFICIENT, UNCERTAIN, WELL, forge
 from snp_brief.llm import LLMClient
 from snp_brief.pipeline import Gathered, gather
+from snp_brief.ripple import OBSERVED, PREDICTED, UNKNOWN, ripple
 from snp_brief.summary import summarize
 
 LIVE_CACHE = Path(tempfile.gettempdir()) / "snp-brief-live-cache"
@@ -41,6 +49,9 @@ STATUS_CSS = {
 NAMED_CSS = STATUS_CSS[UNRESOLVED]
 SMALL_CSS = "color: #9aa0a6"
 FALLBACK_CSS = "background-color: #f3eefc; color: #5b3a99; font-weight: 600"
+MODULES = ("Variant Observatory", "Molecular Ripple", "Hypothesis Forge")
+CATEGORY_COLOR = {WELL: "green", CONFLICTING: "orange", UNCERTAIN: "blue", INSUFFICIENT: "gray"}
+LINK_COLOR = {OBSERVED: "green", PREDICTED: "violet", UNKNOWN: "gray"}
 PAGE_CSS = """
 <style>
 [data-testid="stMainBlockContainer"] { padding-top: 3.5rem; }
@@ -66,20 +77,21 @@ class Run:
 
 
 def main() -> None:
-    st.set_page_config(page_title="SNP brief", layout="wide")
+    st.set_page_config(page_title="Variant Atlas", layout="wide")
     st.html(PAGE_CSS)
     root = repo_root()
     if "rsid_text" not in st.session_state:
         fixture = root / "fixture" / "snps.txt"
         st.session_state.rsid_text = fixture.read_text(encoding="utf-8") if fixture.is_file() else ""
     live, clicked = sidebar()
-    st.title("SNP brief")
+    st.title("Variant Atlas")
     st.caption(
-        "One plain-text paragraph per SNP: biological function, allele frequency, and disease relevance. "
-        "Every claim names its source. The tool does not diagnose and does not invent a number."
+        "Sourced SNP briefs: biological function, allele frequency, and disease relevance, then mechanism and "
+        "open questions. Every claim names its source. The tool does not diagnose and does not invent a number."
     )
     if clicked:
         run_briefs(root, live)
+    search_bar(root, live)
     current: Run | None = st.session_state.get("last_run")
     if current is None:
         st.info("The list in the sidebar is prefilled with fixture/snps.txt. Press Run briefs.")
@@ -142,6 +154,33 @@ def run_briefs(root: Path, live: bool) -> None:
     st.session_state.last_run = Run(st.session_state.run_count, live, results, rejected, failed)
 
 
+def search_bar(root: Path, live: bool) -> None:
+    with st.form("search", border=False):
+        left, right = st.columns([5, 1], vertical_alignment="bottom")
+        query = left.text_input("Search one rsID", placeholder="rs6025", key="search_text")
+        submitted = right.form_submit_button("Search", width="stretch")
+    if not submitted:
+        return
+    ids, _ = parse_rsid_text(query or "")
+    if not ids:
+        st.error("Enter one rsID, such as rs6025.")
+        return
+    rsid = ids[0]
+    current: Run | None = st.session_state.get("last_run")
+    if current is None:
+        st.session_state.run_count = st.session_state.get("run_count", 0) + 1
+        current = Run(st.session_state.run_count, live, [], [], [])
+        st.session_state.last_run = current
+    if all(item.rsid != rsid for item in current.results):
+        cache_dir = LIVE_CACHE if live else root / "cache"
+        try:
+            current.results.append(gather(rsid, cache_dir=cache_dir, refresh=live, offline=not live))
+        except Exception as exc:
+            st.error(f"{rsid} failed: {exc}")
+            return
+    st.session_state.active = rsid
+
+
 def show_results(current: Run) -> None:
     origin = "live sources" if current.live else "the checked-in cache, offline"
     st.markdown(f"**{len(current.results)} SNPs** from {origin}.")
@@ -151,7 +190,7 @@ def show_results(current: Run) -> None:
         st.error(problem)
     if not current.results:
         return
-    table_side, detail_side = st.columns([5, 7], gap="large")
+    table_side, detail_side = st.columns([4, 8], gap="large")
     with table_side:
         frame = pd.DataFrame([summary_row(item) for item in current.results])
         event = st.dataframe(
@@ -178,16 +217,36 @@ def show_results(current: Run) -> None:
         )
     with detail_side:
         selected = event.selection.rows
+        by_id = {item.rsid: item for item in current.results}
         if selected:
-            render_detail(current.results[selected[0]])
+            st.session_state.active = current.results[selected[0]].rsid
+        active = by_id.get(st.session_state.get("active", ""))
+        if active is not None:
+            render_detail(active)
         else:
-            st.info("Select a row to read its brief, gnomAD populations, papers, and sources.")
+            st.info("Select a row, or search an rsID, to open it in the three modules.")
 
 
 def render_detail(item: Gathered) -> None:
-    found = statements(item.sentences)
     gene = gene_label(item)
     st.subheader(f"{item.rsid} · {gene}" if gene else item.rsid)
+    results = st.session_state.setdefault("modules", {})
+    with st.container(horizontal=True):
+        st.badge("Observatory: ready", color="green")
+        for name, key in (("Ripple", "ripple"), ("Forge", "forge")):
+            done = (item.rsid, key) in results
+            st.badge(f"{name}: {'ready' if done else 'not run'}", color="green" if done else "gray")
+    observatory, ripple_tab, forge_tab = st.tabs(list(MODULES))
+    with observatory:
+        render_observatory(item)
+    with ripple_tab:
+        render_ripple(item)
+    with forge_tab:
+        render_forge(item)
+
+
+def render_observatory(item: Gathered) -> None:
+    found = statements(item.sentences)
     with st.container(horizontal=True):
         for name in FIELDS:
             status = field_status(found, name)
@@ -241,8 +300,87 @@ def cached_summary(item: Gathered, mode: str):
     store = st.session_state.setdefault("summaries", {})
     key = (item.rsid, mode, item.text)
     if key not in store:
-        store[key] = summarize(item, mode)
+        store[key] = summarize(item, mode, cache_dir=repo_root() / "cache")
     return store[key]
+
+
+def render_ripple(item: Gathered) -> None:
+    results = st.session_state.setdefault("modules", {})
+    key = (item.rsid, "ripple")
+    if key not in results:
+        st.caption("Molecular context and what a mechanistic analysis should examine for this kind of variant.")
+        if st.button("Run Molecular Ripple", key=f"run-ripple-{item.rsid}", type="primary"):
+            results[key] = ripple(item)
+            st.rerun()
+        return
+    found = results[key]
+    st.markdown(f"**Variant context:** {found.context}" + (f" · {found.gene}" if found.gene else ""))
+    st.markdown("**What to examine for this context**")
+    st.markdown("\n".join(f"- {line}" for line in found.priorities))
+    st.markdown("**Molecular links**")
+    for link in found.links:
+        tag, text = st.columns([1, 6])
+        with tag:
+            st.badge(link.label, color=LINK_COLOR[link.label])
+        text.markdown(link.text + (f" · *{link.source}*" if link.source else ""))
+    st.caption(
+        "observed: reported by a source. predicted: a computational score. unknown: not answered by the evidence. "
+        "Predictions are never drawn as established links."
+    )
+
+
+def render_forge(item: Gathered) -> None:
+    results = st.session_state.setdefault("modules", {})
+    key = (item.rsid, "forge")
+    client = LLMClient.from_env()
+    if key not in results:
+        st.caption(
+            "Stage 1 sorts the variant by what is not yet understood. For conflicting or uncertain variants, "
+            "stages 2 and 3 propose competing hypotheses and experiments to tell them apart."
+        )
+        if client is None:
+            st.caption("No LLM connected (set NEBIUS_API_KEY). Stage 1 runs; cached hypotheses are shown if present.")
+        if st.button("Run Hypothesis Forge", key=f"run-forge-{item.rsid}", type="primary"):
+            with st.spinner("Forging hypotheses…" if client else "Running stage 1…"):
+                results[key] = forge(item, client=client, cache_dir=repo_root() / "cache")
+            st.rerun()
+        return
+    found = results[key]
+    tri = found.triage
+    st.badge(tri.category, color=CATEGORY_COLOR[tri.category])
+    st.markdown(f"**Why:** {tri.reason}")
+    st.markdown(f"**Open problem:** {tri.open_problem}")
+    st.markdown("**Next steps**")
+    st.markdown("\n".join(f"- {line}" for line in tri.next_steps))
+    if found.note:
+        st.info(found.note)
+    if found.open_questions:
+        st.markdown("**Open questions**")
+        st.markdown("\n".join(f"- {q}" for q in found.open_questions))
+    if found.hypotheses:
+        st.markdown("**Competing hypotheses**")
+        columns = st.columns(len(found.hypotheses))
+        for column, hyp in zip(columns, found.hypotheses):
+            with column, st.container(border=True):
+                st.markdown(f"**{hyp.title}**")
+                st.caption("Hypothesis, not an established mechanism.")
+                st.markdown(hyp.mechanism)
+                st.markdown("*Supported by*")
+                st.markdown("\n".join(f"- {claim['rendered']}" for claim in hyp.support))
+                if hyp.gaps:
+                    st.markdown("*Missing evidence*")
+                    st.markdown("\n".join(f"- {gap}" for gap in hyp.gaps))
+                st.markdown(f"*Would be supported by:* {hyp.discriminating_observation}")
+                st.markdown(f"*Experiment:* {hyp.experiment} ({hyp.feasibility} feasibility)")
+    if found.ranking:
+        st.markdown("**Experiments, ranked**")
+        st.dataframe(
+            pd.DataFrame(found.ranking)[["rank", "experiment", "tests", "feasibility", "open_gaps"]],
+            hide_index=True,
+        )
+        st.caption("Ranked by feasibility, then by how many evidence gaps the tested hypothesis has. No model-assigned probabilities.")
+    if found.hypotheses or found.writer != "rules":
+        st.caption(f"Hypotheses written by {found.writer}. Supporting statements passed the same fact check as the summary.")
 
 
 def render_populations(table: PopulationTable) -> None:

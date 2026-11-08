@@ -5,9 +5,11 @@ from __future__ import annotations
 import contextlib
 import io
 import logging
+import os
 import re
 import unittest
 from pathlib import Path
+from unittest import mock
 
 from streamlit.testing.v1 import AppTest
 
@@ -219,6 +221,18 @@ class PageTests(unittest.TestCase):
         sources = page.table[0].value
         fallback = sources[sources["Source"] == "UniProt (fallback)"].iloc[0]
         self.assertEqual(fallback["Answered"], "yes")
+
+    def test_module_tabs_run_on_demand(self) -> None:
+        with mock.patch.dict(os.environ, {}, clear=True):
+            page = AppTest.from_function(_detail_page, args=(str(CACHE), "rs1801133"), default_timeout=30).run()
+            self.assertFalse(page.exception)
+            self.assertEqual([tab.label for tab in page.tabs], ["Variant Observatory", "Molecular Ripple", "Hypothesis Forge"])
+            page.button(key="run-forge-rs1801133").click().run()
+            self.assertFalse(page.exception)
+            self.assertTrue(any("Open problem" in block.value for block in page.markdown))
+            page.button(key="run-ripple-rs1801133").click().run()
+            self.assertFalse(page.exception)
+            self.assertTrue(any("Missense coding variant" in block.value for block in page.markdown))
 
 
 if __name__ == "__main__":

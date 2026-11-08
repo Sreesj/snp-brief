@@ -26,13 +26,31 @@ uv run snp-brief --input fixture/held-out.txt --save briefs/held-out.txt
 
 `fixture/held-out.txt` is one rsID that is not in the demo list. It is run once and saved. It is not used to tune the brief.
 
-## Page
+## Page: Variant Atlas
 
 ```bash
 uv run snp-brief-demo
 ```
 
-Serves a local page. Offline by default: it reads `cache/` and makes no network call. The sidebar starts filled with `fixture/snps.txt`. **Run briefs** builds one row per SNP, with function, frequency, and disease relevance marked sourced, unresolved, or blank. Select a row to open that paragraph, the gnomAD population counts when frequency is unresolved, the Europe PMC papers, and which sources answered. **Live fetching** calls the sources and writes a separate temp cache, leaving `cache/` unchanged.
+Serves a local page. Offline by default: it reads `cache/` and makes no network call. Run the list in the sidebar, or search one rsID at the top. The selected SNP opens in three modules:
+
+- **Variant Observatory** (default): the checked plain-English summary, the evidence brief, gnomAD populations, papers, and which sources answered.
+- **Molecular Ripple** (runs when you press Run): the variant context (missense, nonsense, intronic, ...), what a mechanistic analysis should examine for that context, and molecular links labelled *observed*, *predicted*, or *unknown*. Ensembl VEP scores are the next step.
+- **Hypothesis Forge** (runs when you press Run): stage 1 sorts the variant as *well characterized*, *conflicting evidence*, *uncertain mechanism*, or *insufficient evidence*, with the reason and next steps. For conflicting and uncertain variants, an LLM proposes two or three competing hypotheses, each with fact-checked support, missing evidence, the observation that would tell it apart, and an experiment. Experiments are ranked by feasibility and open gaps. Well-characterized and thin-evidence variants get no invented hypotheses.
+
+Module results stay in the session when you switch tabs or SNPs. **Live fetching** calls the sources and writes a separate temp cache, leaving `cache/` unchanged.
+
+## LLM: Nebius Token Factory
+
+```bash
+export NEBIUS_API_KEY=...                 # from tokenfactory.nebius.com; never commit it
+uv run snp-brief --list-models            # models your account can use
+export SNP_BRIEF_LLM_MODEL=<model id>     # optional; default openai/gpt-oss-120b
+export SNP_BRIEF_FORGE_MODEL=<model id>   # optional; a stronger model for Hypothesis Forge
+uv run snp-brief --summary llm --forge    # LLM summaries and Forge hypotheses
+```
+
+LLM summaries are saved to `cache/<rsid>/summary_llm.json` and Forge results to `cache/<rsid>/forge.json`, keyed by the facts they were written from. Generate them once with the key, commit them, and the demo shows them offline with no key. `--regenerate` ignores those files. Any other OpenAI-compatible server works with `SNP_BRIEF_LLM_URL`, `SNP_BRIEF_LLM_MODEL`, and `SNP_BRIEF_LLM_KEY`.
 
 ## Sources, in order
 
@@ -97,6 +115,9 @@ Not a pathogenicity classifier, and not a copy of the genomic-variant-classifier
 | Europe PMC | `src/snp_brief/sources/europepmc.py` |
 | Brief writer, conflict rules, and the demo | `src/snp_brief/brief.py`, `src/snp_brief/reconcile.py`, `src/snp_brief/cli.py` |
 | Plain-English summary and fact checker | `src/snp_brief/summary.py`, `src/snp_brief/llm.py` |
+| Hypothesis Forge | `src/snp_brief/forge.py` |
+| Molecular Ripple | `src/snp_brief/ripple.py` |
+| Module result cache | `src/snp_brief/module_cache.py` |
 
 The product rules are in `prd.md`.
 

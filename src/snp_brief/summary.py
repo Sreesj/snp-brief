@@ -409,8 +409,15 @@ def facts_block(facts: list[Fact]) -> str:
 # ---------------------------------------------------------------- entry point
 
 
-def summarize(item, mode: str = "template", client=None) -> Summary:
-    """mode is "template" or "llm". LLM output that fails the check falls back to the template."""
+def summarize(item, mode: str = "template", client=None, cache_dir=None, refresh: bool = False) -> Summary:
+    """mode is "template" or "llm". LLM output that fails the check falls back to the template.
+
+    With cache_dir, an LLM summary is saved to cache/<rsid>/summary_llm.json and reused while
+    the facts are unchanged. A cached LLM summary is used even without an API key, so a
+    pre-generated demo runs offline.
+    """
+    from snp_brief.module_cache import result_key, save_result
+
     fallback = template_summary(item)
     kept, rejected = check(fallback.sentences, fallback.facts)
     fallback.sentences, fallback.rejected = kept, rejected
@@ -419,6 +426,13 @@ def summarize(item, mode: str = "template", client=None) -> Summary:
     from snp_brief.llm import LLMClient, write_summary
 
     client = client or LLMClient.from_env()
+    block = facts_block(fallback.facts)
+    if not refresh:
+        cached = _cached_llm_summary(cache_dir, item.rsid, client, block)
+        if cached is not None:
+            kept, rejected = check(cached["sentences"], fallback.facts)
+            if kept and len(rejected) <= len(kept):
+                return Summary(item.rsid, kept, fallback.facts, f"llm:{cached['model']} (cached)", rejected)
     if client is None:
         return fallback
     try:
@@ -430,4 +444,38 @@ def summarize(item, mode: str = "template", client=None) -> Summary:
     if not kept or len(rejected) > len(kept):
         fallback.rejected.extend(rejected)
         return fallback
+    save_result(
+        cache_dir,
+        item.rsid,
+        "summary_llm",
+        result_key("summary_llm", client.model, block),
+        {"model": client.model, "facts_hash": _hash(block), "sentences": kept},
+    )
     return Summary(item.rsid, kept, fallback.facts, f"llm:{client.model}", rejected)
+
+
+def _hash(text: str) -> str:
+    import hashlib
+
+    return hashlib.sha256(text.encode("utf-8")).hexdigest()[:16]
+
+
+def _cached_llm_summary(cache_dir, rsid: str, client, block: str) -> dict | None:
+    """A stored LLM summary for these exact facts: same model when a client is set, any model offline."""
+    import json
+    from pathlib import Path
+
+    if cache_dir is None:
+        return None
+    path = Path(cache_dir) / rsid / "summary_llm.json"
+    if not path.is_file():
+        return None
+    try:
+        stored = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return None
+    if stored.get("facts_hash") != _hash(block):
+        return None
+    if client is not None and stored.get("model") != client.model:
+        return None
+    return stored

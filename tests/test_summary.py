@@ -31,7 +31,7 @@ class FakeClient:
         self.reply = reply
         self.prompts: list[str] = []
 
-    def chat(self, system: str, user: str) -> str:
+    def chat(self, system: str, user: str, **kwargs) -> str:
         self.prompts.append(user)
         return self.reply
 
@@ -121,7 +121,7 @@ class LLMTests(unittest.TestCase):
         class Broken:
             model = "broken"
 
-            def chat(self, system: str, user: str) -> str:
+            def chat(self, system: str, user: str, **kwargs) -> str:
                 raise RuntimeError("connection refused")
 
         summary = summarize(cached("rs6025"), "llm", client=Broken())
